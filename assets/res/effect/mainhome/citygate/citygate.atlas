@@ -1,0 +1,20 @@
+
+citygate.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+texture_citygate/dang
+  rotate: true
+  xy: 2, 2
+  size: 7, 99
+  orig: 7, 99
+  offset: 0, 0
+  index: -1
+texture_citygate/men
+  rotate: false
+  xy: 2, 11
+  size: 102, 170
+  orig: 102, 170
+  offset: 0, 0
+  index: -1

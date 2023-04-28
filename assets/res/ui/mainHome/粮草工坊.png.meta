@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "d0bf6030-c27d-46a5-9e03-aaac5ec902c2",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 230,
+  "height": 181,
+  "platformSettings": {},
+  "subMetas": {
+    "粮草工坊": {
+      "ver": "1.0.6",
+      "uuid": "44964343-20ce-4bbe-b8c5-71a84000d492",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "d0bf6030-c27d-46a5-9e03-aaac5ec902c2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 230,
+      "height": 181,
+      "rawWidth": 230,
+      "rawHeight": 181,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

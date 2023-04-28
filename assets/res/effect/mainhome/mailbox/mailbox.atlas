@@ -1,0 +1,20 @@
+
+mailbox.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+texture_mailbox/b1
+  rotate: false
+  xy: 2, 82
+  size: 84, 83
+  orig: 84, 83
+  offset: 0, 0
+  index: -1
+texture_mailbox/b2
+  rotate: false
+  xy: 2, 2
+  size: 47, 78
+  orig: 47, 78
+  offset: 0, 0
+  index: -1

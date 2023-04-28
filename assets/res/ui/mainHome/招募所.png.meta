@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "58f62269-ae38-4ce6-b2d8-04893d913d98",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 307,
+  "height": 232,
+  "platformSettings": {},
+  "subMetas": {
+    "招募所": {
+      "ver": "1.0.6",
+      "uuid": "5270f1f2-c215-45da-9348-bc3889e1ab28",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "58f62269-ae38-4ce6-b2d8-04893d913d98",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 307,
+      "height": 232,
+      "rawWidth": 307,
+      "rawHeight": 232,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

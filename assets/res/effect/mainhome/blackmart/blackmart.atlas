@@ -1,0 +1,41 @@
+
+blackmart.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+diejiaguang
+  rotate: false
+  xy: 109, 84
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+texture_blackmart/denglong1
+  rotate: false
+  xy: 2, 2
+  size: 39, 76
+  orig: 39, 76
+  offset: 0, 0
+  index: -1
+texture_blackmart/denglong2
+  rotate: false
+  xy: 253, 255
+  size: 40, 80
+  orig: 40, 80
+  offset: 0, 0
+  index: -1
+texture_blackmart/mart
+  rotate: false
+  xy: 2, 111
+  size: 249, 224
+  orig: 249, 224
+  offset: 0, 0
+  index: -1
+texture_blackmart/zhezhao
+  rotate: false
+  xy: 2, 80
+  size: 105, 29
+  orig: 105, 29
+  offset: 0, 0
+  index: -1

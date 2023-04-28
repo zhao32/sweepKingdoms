@@ -1,0 +1,216 @@
+
+bill_btn_light.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Ani_room_star
+  rotate: true
+  xy: 127, 97
+  size: 40, 42
+  orig: 40, 42
+  offset: 0, 0
+  index: -1
+zhangdan_10
+  rotate: true
+  xy: 179, 167
+  size: 39, 29
+  orig: 39, 29
+  offset: 0, 0
+  index: -1
+zhangdan_11
+  rotate: false
+  xy: 131, 139
+  size: 44, 32
+  orig: 44, 32
+  offset: 0, 0
+  index: -1
+zhangdan_12
+  rotate: true
+  xy: 40, 4
+  size: 48, 35
+  orig: 48, 35
+  offset: 0, 0
+  index: -1
+zhangdan_13
+  rotate: true
+  xy: 118, 15
+  size: 52, 38
+  orig: 52, 38
+  offset: 0, 0
+  index: -1
+zhangdan_14
+  rotate: false
+  xy: 67, 69
+  size: 57, 41
+  orig: 57, 41
+  offset: 0, 0
+  index: -1
+zhangdan_15
+  rotate: false
+  xy: 195, 210
+  size: 59, 44
+  orig: 59, 44
+  offset: 0, 0
+  index: -1
+zhangdan_16
+  rotate: false
+  xy: 132, 208
+  size: 61, 46
+  orig: 61, 46
+  offset: 0, 0
+  index: -1
+zhangdan_17
+  rotate: false
+  xy: 67, 205
+  size: 63, 49
+  orig: 63, 49
+  offset: 0, 0
+  index: -1
+zhangdan_18
+  rotate: false
+  xy: 2, 204
+  size: 63, 50
+  orig: 63, 50
+  offset: 0, 0
+  index: -1
+zhangdan_19
+  rotate: false
+  xy: 2, 152
+  size: 63, 50
+  orig: 63, 50
+  offset: 0, 0
+  index: -1
+zhangdan_20
+  rotate: false
+  xy: 2, 101
+  size: 63, 49
+  orig: 63, 49
+  offset: 0, 0
+  index: -1
+zhangdan_21
+  rotate: false
+  xy: 67, 156
+  size: 62, 47
+  orig: 62, 47
+  offset: 0, 0
+  index: -1
+zhangdan_22
+  rotate: false
+  xy: 2, 54
+  size: 60, 45
+  orig: 60, 45
+  offset: 0, 0
+  index: -1
+zhangdan_23
+  rotate: false
+  xy: 67, 112
+  size: 58, 42
+  orig: 58, 42
+  offset: 0, 0
+  index: -1
+zhangdan_24
+  rotate: true
+  xy: 77, 13
+  size: 54, 39
+  orig: 54, 39
+  offset: 0, 0
+  index: -1
+zhangdan_25
+  rotate: true
+  xy: 2, 2
+  size: 50, 36
+  orig: 50, 36
+  offset: 0, 0
+  index: -1
+zhangdan_26
+  rotate: false
+  xy: 132, 173
+  size: 45, 33
+  orig: 45, 33
+  offset: 0, 0
+  index: -1
+zhangdan_27
+  rotate: false
+  xy: 210, 179
+  size: 39, 29
+  orig: 39, 29
+  offset: 0, 0
+  index: -1
+zhangdan_28
+  rotate: false
+  xy: 177, 139
+  size: 35, 26
+  orig: 35, 26
+  offset: 0, 0
+  index: -1
+zhangdan_29
+  rotate: false
+  xy: 171, 89
+  size: 30, 23
+  orig: 30, 23
+  offset: 0, 0
+  index: -1
+zhangdan_30
+  rotate: false
+  xy: 158, 45
+  size: 26, 20
+  orig: 26, 20
+  offset: 0, 0
+  index: -1
+zhangdan_31
+  rotate: false
+  xy: 158, 26
+  size: 22, 17
+  orig: 22, 17
+  offset: 0, 0
+  index: -1
+zhangdan_32
+  rotate: false
+  xy: 186, 51
+  size: 17, 14
+  orig: 17, 14
+  offset: 0, 0
+  index: -1
+zhangdan_4
+  rotate: true
+  xy: 251, 204
+  size: 4, 3
+  orig: 4, 3
+  offset: 0, 0
+  index: -1
+zhangdan_5
+  rotate: false
+  xy: 158, 11
+  size: 16, 13
+  orig: 16, 13
+  offset: 0, 0
+  index: -1
+zhangdan_6
+  rotate: true
+  xy: 191, 67
+  size: 20, 16
+  orig: 20, 16
+  offset: 0, 0
+  index: -1
+zhangdan_7
+  rotate: false
+  xy: 163, 67
+  size: 26, 20
+  orig: 26, 20
+  offset: 0, 0
+  index: -1
+zhangdan_8
+  rotate: false
+  xy: 171, 114
+  size: 30, 23
+  orig: 30, 23
+  offset: 0, 0
+  index: -1
+zhangdan_9
+  rotate: false
+  xy: 126, 69
+  size: 35, 26
+  orig: 35, 26
+  offset: 0, 0
+  index: -1

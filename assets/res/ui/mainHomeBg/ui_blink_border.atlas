@@ -1,0 +1,146 @@
+
+ui_blink_border.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ui_bkhr_0
+  rotate: false
+  xy: 2, 266
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_1
+  rotate: false
+  xy: 2, 134
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_10
+  rotate: false
+  xy: 398, 134
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_11
+  rotate: false
+  xy: 530, 266
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_12
+  rotate: false
+  xy: 398, 2
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_13
+  rotate: false
+  xy: 530, 134
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_14
+  rotate: false
+  xy: 662, 266
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_15
+  rotate: false
+  xy: 530, 2
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_16
+  rotate: false
+  xy: 662, 134
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_17
+  rotate: false
+  xy: 794, 266
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_18
+  rotate: false
+  xy: 662, 2
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_19
+  rotate: false
+  xy: 794, 134
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_2
+  rotate: false
+  xy: 134, 266
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_3
+  rotate: false
+  xy: 2, 2
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_4
+  rotate: false
+  xy: 134, 134
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_5
+  rotate: false
+  xy: 266, 266
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_6
+  rotate: false
+  xy: 134, 2
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_7
+  rotate: false
+  xy: 266, 134
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_8
+  rotate: false
+  xy: 398, 266
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ui_bkhr_9
+  rotate: false
+  xy: 266, 2
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "220a6e4f-1b56-4e95-aff5-aa4ba41c5392",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 182,
+  "height": 179,
+  "platformSettings": {},
+  "subMetas": {
+    "部队强化": {
+      "ver": "1.0.6",
+      "uuid": "acfce10d-3e9b-4253-9efa-46cd3a588b9f",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "220a6e4f-1b56-4e95-aff5-aa4ba41c5392",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 182,
+      "height": 179,
+      "rawWidth": 182,
+      "rawHeight": 179,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

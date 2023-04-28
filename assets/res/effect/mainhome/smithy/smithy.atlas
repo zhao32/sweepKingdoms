@@ -1,0 +1,139 @@
+
+smithy.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+texture_smithy/boody
+  rotate: false
+  xy: 257, 371
+  size: 44, 33
+  orig: 44, 33
+  offset: 0, 0
+  index: -1
+texture_smithy/doudu
+  rotate: false
+  xy: 57, 178
+  size: 32, 37
+  orig: 32, 37
+  offset: 0, 0
+  index: -1
+texture_smithy/duang_light
+  rotate: false
+  xy: 111, 202
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+texture_smithy/duang_light2
+  rotate: false
+  xy: 2, 2
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+texture_smithy/head
+  rotate: false
+  xy: 2, 58
+  size: 40, 37
+  orig: 40, 37
+  offset: 0, 0
+  index: -1
+texture_smithy/jian
+  rotate: false
+  xy: 2, 97
+  size: 53, 118
+  orig: 53, 118
+  offset: 0, 0
+  index: -1
+texture_smithy/leg2
+  rotate: false
+  xy: 57, 152
+  size: 30, 24
+  orig: 30, 24
+  offset: 0, 0
+  index: -1
+texture_smithy/lishou
+  rotate: false
+  xy: 2, 24
+  size: 25, 32
+  orig: 25, 32
+  offset: 0, 0
+  index: -1
+texture_smithy/maojin
+  rotate: false
+  xy: 257, 328
+  size: 17, 41
+  orig: 17, 41
+  offset: 0, 0
+  index: -1
+texture_smithy/maojin2
+  rotate: false
+  xy: 303, 373
+  size: 27, 31
+  orig: 27, 31
+  offset: 0, 0
+  index: -1
+texture_smithy/shouli
+  rotate: false
+  xy: 91, 181
+  size: 18, 34
+  orig: 18, 34
+  offset: 0, 0
+  index: -1
+texture_smithy/tiejiangpu
+  rotate: false
+  xy: 2, 217
+  size: 253, 187
+  orig: 253, 187
+  offset: 0, 0
+  index: -1
+texture_smithy/y1
+  rotate: false
+  xy: 276, 331
+  size: 9, 8
+  orig: 9, 8
+  offset: 0, 0
+  index: -1
+texture_smithy/ysb
+  rotate: false
+  xy: 257, 301
+  size: 17, 25
+  orig: 17, 25
+  offset: 0, 0
+  index: -1
+texture_smithy/yxb
+  rotate: false
+  xy: 276, 341
+  size: 22, 28
+  orig: 22, 28
+  offset: 0, 0
+  index: -1
+texture_smithy/yy2
+  rotate: true
+  xy: 44, 80
+  size: 15, 11
+  orig: 15, 11
+  offset: 0, 0
+  index: -1
+texture_smithy/zuiba
+  rotate: false
+  xy: 29, 40
+  size: 13, 16
+  orig: 13, 16
+  offset: 0, 0
+  index: -1
+texture_smithy/zzzsz
+  rotate: false
+  xy: 57, 133
+  size: 18, 17
+  orig: 18, 17
+  offset: 0, 0
+  index: -1
+texture_smithy/zzzzs
+  rotate: false
+  xy: 332, 382
+  size: 26, 22
+  orig: 26, 22
+  offset: 0, 0
+  index: -1

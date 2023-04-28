@@ -1,0 +1,13 @@
+
+overcome.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+texture_overcome/yuanzheng
+  rotate: false
+  xy: 2, 223
+  size: 330, 109
+  orig: 330, 109
+  offset: 0, 0
+  index: -1

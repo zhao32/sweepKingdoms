@@ -1,0 +1,27 @@
+
+flybird.png
+size: 32,32
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+texture_flybird/body
+  rotate: false
+  xy: 2, 21
+  size: 13, 4
+  orig: 13, 4
+  offset: 0, 0
+  index: -1
+texture_flybird/chi1
+  rotate: false
+  xy: 17, 21
+  size: 8, 4
+  orig: 8, 4
+  offset: 0, 0
+  index: -1
+texture_flybird/chi2
+  rotate: false
+  xy: 2, 15
+  size: 12, 4
+  orig: 12, 4
+  offset: 0, 0
+  index: -1

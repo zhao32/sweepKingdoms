@@ -1,0 +1,76 @@
+
+labground.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+texture_labground/duang_light2
+  rotate: false
+  xy: 455, 455
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+texture_labground/gongjian
+  rotate: false
+  xy: 435, 428
+  size: 18, 47
+  orig: 18, 47
+  offset: 0, 0
+  index: -1
+texture_labground/jian
+  rotate: false
+  xy: 41, 180
+  size: 5, 23
+  orig: 5, 23
+  offset: 0, 0
+  index: -1
+texture_labground/lishou
+  rotate: false
+  xy: 2, 130
+  size: 10, 19
+  orig: 10, 19
+  offset: 0, 0
+  index: -1
+texture_labground/shenzi
+  rotate: false
+  xy: 2, 151
+  size: 33, 23
+  orig: 33, 23
+  offset: 0, 0
+  index: -1
+texture_labground/tou
+  rotate: false
+  xy: 2, 176
+  size: 37, 46
+  orig: 37, 46
+  offset: 0, 0
+  index: -1
+texture_labground/tui
+  rotate: false
+  xy: 71, 210
+  size: 8, 12
+  orig: 8, 12
+  offset: 0, 0
+  index: -1
+texture_labground/waishou
+  rotate: false
+  xy: 435, 407
+  size: 13, 19
+  orig: 13, 19
+  offset: 0, 0
+  index: -1
+texture_labground/xlc
+  rotate: false
+  xy: 2, 224
+  size: 431, 251
+  orig: 431, 251
+  offset: 0, 0
+  index: -1
+texture_labground/yao
+  rotate: false
+  xy: 41, 205
+  size: 28, 17
+  orig: 28, 17
+  offset: 0, 0
+  index: -1

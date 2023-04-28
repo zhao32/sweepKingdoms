@@ -1,0 +1,237 @@
+
+shopmall.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+texture_shopmall/JG_b
+  rotate: false
+  xy: 2, 165
+  size: 142, 85
+  orig: 142, 85
+  offset: 0, 0
+  index: -1
+texture_shopmall/JG_d
+  rotate: false
+  xy: 2, 252
+  size: 249, 238
+  orig: 249, 238
+  offset: 0, 0
+  index: -1
+texture_shopmall/JG_deng
+  rotate: false
+  xy: 107, 109
+  size: 36, 54
+  orig: 36, 54
+  offset: 0, 0
+  index: -1
+texture_shopmall/JG_gz
+  rotate: false
+  xy: 253, 352
+  size: 63, 57
+  orig: 63, 57
+  offset: 0, 0
+  index: -1
+texture_shopmall/JG_z
+  rotate: false
+  xy: 2, 93
+  size: 103, 70
+  orig: 103, 70
+  offset: 0, 0
+  index: -1
+texture_shopmall/arm_l
+  rotate: false
+  xy: 25, 26
+  size: 9, 14
+  orig: 9, 14
+  offset: 0, 0
+  index: -1
+texture_shopmall/arm_r
+  rotate: false
+  xy: 2, 2
+  size: 13, 14
+  orig: 13, 14
+  offset: 0, 0
+  index: -1
+texture_shopmall/arm_up_l
+  rotate: false
+  xy: 280, 328
+  size: 15, 22
+  orig: 15, 22
+  offset: 0, 0
+  index: -1
+texture_shopmall/arm_up_r
+  rotate: true
+  xy: 107, 96
+  size: 11, 19
+  orig: 11, 19
+  offset: 0, 0
+  index: -1
+texture_shopmall/body
+  rotate: false
+  xy: 253, 316
+  size: 25, 34
+  orig: 25, 34
+  offset: 0, 0
+  index: -1
+texture_shopmall/ddd
+  rotate: false
+  xy: 280, 320
+  size: 6, 6
+  orig: 6, 6
+  offset: 0, 0
+  index: -1
+texture_shopmall/eyes
+  rotate: false
+  xy: 318, 377
+  size: 25, 5
+  orig: 25, 5
+  offset: 0, 0
+  index: -1
+texture_shopmall/foot_l
+  rotate: false
+  xy: 47, 56
+  size: 11, 12
+  orig: 11, 12
+  offset: 0, 0
+  index: -1
+texture_shopmall/foot_r
+  rotate: false
+  xy: 71, 79
+  size: 10, 12
+  orig: 10, 12
+  offset: 0, 0
+  index: -1
+texture_shopmall/hair_1
+  rotate: false
+  xy: 356, 431
+  size: 58, 59
+  orig: 58, 59
+  offset: 0, 0
+  index: -1
+texture_shopmall/hair_2
+  rotate: true
+  xy: 356, 416
+  size: 13, 34
+  orig: 13, 34
+  offset: 0, 0
+  index: -1
+texture_shopmall/hand_l
+  rotate: false
+  xy: 226, 217
+  size: 11, 9
+  orig: 11, 9
+  offset: 0, 0
+  index: -1
+texture_shopmall/hand_r
+  rotate: false
+  xy: 203, 193
+  size: 12, 10
+  orig: 12, 10
+  offset: 0, 0
+  index: -1
+texture_shopmall/head
+  rotate: false
+  xy: 2, 42
+  size: 43, 49
+  orig: 43, 49
+  offset: 0, 0
+  index: -1
+texture_shopmall/hu_1
+  rotate: false
+  xy: 416, 468
+  size: 25, 22
+  orig: 25, 22
+  offset: 0, 0
+  index: -1
+texture_shopmall/hu_2
+  rotate: false
+  xy: 253, 292
+  size: 18, 22
+  orig: 18, 22
+  offset: 0, 0
+  index: -1
+texture_shopmall/hulu
+  rotate: false
+  xy: 2, 18
+  size: 21, 22
+  orig: 21, 22
+  offset: 0, 0
+  index: -1
+texture_shopmall/leg_l
+  rotate: false
+  xy: 416, 451
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+texture_shopmall/leg_r
+  rotate: true
+  xy: 392, 418
+  size: 11, 18
+  orig: 11, 18
+  offset: 0, 0
+  index: -1
+texture_shopmall/light_3
+  rotate: false
+  xy: 146, 168
+  size: 55, 82
+  orig: 55, 82
+  offset: 0, 0
+  index: -1
+texture_shopmall/light_4
+  rotate: false
+  xy: 253, 411
+  size: 101, 79
+  orig: 101, 79
+  offset: 0, 0
+  index: -1
+texture_shopmall/mei
+  rotate: false
+  xy: 203, 228
+  size: 40, 22
+  orig: 40, 22
+  offset: 0, 0
+  index: -1
+texture_shopmall/mouth
+  rotate: true
+  xy: 245, 238
+  size: 12, 6
+  orig: 12, 6
+  offset: 0, 0
+  index: -1
+texture_shopmall/paopao
+  rotate: false
+  xy: 203, 205
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+texture_shopmall/pi
+  rotate: false
+  xy: 443, 481
+  size: 20, 9
+  orig: 20, 9
+  offset: 0, 0
+  index: -1
+texture_shopmall/s
+  rotate: false
+  xy: 253, 283
+  size: 6, 7
+  orig: 6, 7
+  offset: 0, 0
+  index: -1
+texture_shopmall/yao
+  rotate: false
+  xy: 47, 70
+  size: 22, 21
+  orig: 22, 21
+  offset: 0, 0
+  index: -1
+texture_shopmall/yi
+  rotate: false
+  xy: 318, 384
+  size: 30, 25
+  orig: 30, 25
+  offset: 0, 0
+  index: -1

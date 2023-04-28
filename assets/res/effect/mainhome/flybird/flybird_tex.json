@@ -1,0 +1,27 @@
+{
+    "SubTexture": [
+        {
+            "width": 8,
+            "y": 13,
+            "height": 4,
+            "name": "texture_flybird/chi1",
+            "x": 1
+        },
+        {
+            "width": 12,
+            "y": 7,
+            "height": 4,
+            "name": "texture_flybird/chi2",
+            "x": 1
+        },
+        {
+            "width": 13,
+            "y": 1,
+            "height": 4,
+            "name": "texture_flybird/body",
+            "x": 1
+        }
+    ],
+    "imagePath": "flybird_tex.png",
+    "name": "flybird_ske"
+}

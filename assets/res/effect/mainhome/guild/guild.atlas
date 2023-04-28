@@ -1,0 +1,111 @@
+
+guild.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+texture_guild/body
+  rotate: false
+  xy: 2, 10
+  size: 30, 28
+  orig: 30, 28
+  offset: 0, 0
+  index: -1
+texture_guild/building1
+  rotate: false
+  xy: 2, 253
+  size: 420, 257
+  orig: 420, 257
+  offset: 0, 0
+  index: -1
+texture_guild/duang_light
+  rotate: false
+  xy: 2, 40
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+texture_guild/ljiao
+  rotate: true
+  xy: 2, 2
+  size: 6, 12
+  orig: 6, 12
+  offset: 0, 0
+  index: -1
+texture_guild/lshou
+  rotate: false
+  xy: 34, 24
+  size: 17, 14
+  orig: 17, 14
+  offset: 0, 0
+  index: -1
+texture_guild/paopao
+  rotate: false
+  xy: 179, 159
+  size: 13, 9
+  orig: 13, 9
+  offset: 0, 0
+  index: -1
+texture_guild/pike1
+  rotate: false
+  xy: 424, 414
+  size: 12, 96
+  orig: 12, 96
+  offset: 0, 0
+  index: -1
+texture_guild/q11
+  rotate: false
+  xy: 2, 170
+  size: 190, 81
+  orig: 190, 81
+  offset: 0, 0
+  index: -1
+texture_guild/rjiao
+  rotate: false
+  xy: 194, 159
+  size: 8, 12
+  orig: 8, 12
+  offset: 0, 0
+  index: -1
+texture_guild/rshou
+  rotate: false
+  xy: 132, 103
+  size: 15, 17
+  orig: 15, 17
+  offset: 0, 0
+  index: -1
+texture_guild/shuijiaolian
+  rotate: false
+  xy: 213, 237
+  size: 20, 14
+  orig: 20, 14
+  offset: 0, 0
+  index: -1
+texture_guild/tou
+  rotate: false
+  xy: 132, 122
+  size: 45, 46
+  orig: 45, 46
+  offset: 0, 0
+  index: -1
+texture_guild/wuqi
+  rotate: false
+  xy: 194, 173
+  size: 17, 78
+  orig: 17, 78
+  offset: 0, 0
+  index: -1
+texture_guild/xiaren
+  rotate: false
+  xy: 438, 487
+  size: 24, 23
+  orig: 24, 23
+  offset: 0, 0
+  index: -1
+texture_guild/yingzi
+  rotate: true
+  xy: 424, 394
+  size: 18, 9
+  orig: 18, 9
+  offset: 0, 0
+  index: -1

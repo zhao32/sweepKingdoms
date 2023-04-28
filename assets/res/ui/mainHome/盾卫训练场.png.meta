@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "4bc8d20c-54aa-4dc0-ab75-5bd51eafde41",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 212,
+  "height": 199,
+  "platformSettings": {},
+  "subMetas": {
+    "盾卫训练场": {
+      "ver": "1.0.6",
+      "uuid": "4a7f1ad5-f681-44cd-928a-78d1ca2e92f6",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "4bc8d20c-54aa-4dc0-ab75-5bd51eafde41",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 212,
+      "height": 199,
+      "rawWidth": 212,
+      "rawHeight": 199,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

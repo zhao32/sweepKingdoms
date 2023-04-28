@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "0ee4c76b-9a5d-44a6-9c46-fe5ff58bc251",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 228,
+  "height": 172,
+  "platformSettings": {},
+  "subMetas": {
+    "骑士训练场": {
+      "ver": "1.0.6",
+      "uuid": "fe7a0db7-906c-4742-a220-0d3f3a7bb2cc",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "0ee4c76b-9a5d-44a6-9c46-fe5ff58bc251",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 228,
+      "height": 172,
+      "rawWidth": 228,
+      "rawHeight": 172,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

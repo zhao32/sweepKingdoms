@@ -1,0 +1,97 @@
+
+fire_fight.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ui_huoyan01
+  rotate: false
+  xy: 2, 412
+  size: 210, 80
+  orig: 210, 80
+  offset: 0, 0
+  index: -1
+ui_huoyan010
+  rotate: false
+  xy: 214, 166
+  size: 210, 80
+  orig: 210, 80
+  offset: 0, 0
+  index: -1
+ui_huoyan011
+  rotate: false
+  xy: 2, 2
+  size: 210, 80
+  orig: 210, 80
+  offset: 0, 0
+  index: -1
+ui_huoyan012
+  rotate: false
+  xy: 214, 84
+  size: 210, 80
+  orig: 210, 80
+  offset: 0, 0
+  index: -1
+ui_huoyan013
+  rotate: false
+  xy: 214, 2
+  size: 210, 80
+  orig: 210, 80
+  offset: 0, 0
+  index: -1
+ui_huoyan02
+  rotate: false
+  xy: 2, 330
+  size: 210, 80
+  orig: 210, 80
+  offset: 0, 0
+  index: -1
+ui_huoyan03
+  rotate: false
+  xy: 214, 412
+  size: 210, 80
+  orig: 210, 80
+  offset: 0, 0
+  index: -1
+ui_huoyan04
+  rotate: false
+  xy: 2, 248
+  size: 210, 80
+  orig: 210, 80
+  offset: 0, 0
+  index: -1
+ui_huoyan05
+  rotate: false
+  xy: 214, 330
+  size: 210, 80
+  orig: 210, 80
+  offset: 0, 0
+  index: -1
+ui_huoyan06
+  rotate: false
+  xy: 2, 166
+  size: 210, 80
+  orig: 210, 80
+  offset: 0, 0
+  index: -1
+ui_huoyan07
+  rotate: false
+  xy: 214, 248
+  size: 210, 80
+  orig: 210, 80
+  offset: 0, 0
+  index: -1
+ui_huoyan08
+  rotate: true
+  xy: 426, 282
+  size: 210, 80
+  orig: 210, 80
+  offset: 0, 0
+  index: -1
+ui_huoyan09
+  rotate: false
+  xy: 2, 84
+  size: 210, 80
+  orig: 210, 80
+  offset: 0, 0
+  index: -1
