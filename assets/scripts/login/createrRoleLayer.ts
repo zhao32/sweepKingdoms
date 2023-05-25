@@ -5,7 +5,12 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import DataManager from "../utils/Manager/DataManager";
+import ViewManager from "../utils/Manager/ViewManager";
 import { getRandHeroName } from "./SelectRoleInfo";
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
 
 const { ccclass, property } = cc._decorator;
 
@@ -47,6 +52,7 @@ export default class NewClass extends cc.Component {
         this.editBox.node.on('editing-did-ended', (editBox: cc.EditBox) => {
             this.strName = editBox.textLabel.string
         }, this)
+
     }
 
     init() {
@@ -68,10 +74,16 @@ export default class NewClass extends cc.Component {
     selectNameHander() {
         let strName = getRandHeroName()
         this.editBox.string = strName
+        this.strName = strName
     }
 
     startHandler() {
-
+        console.log('session_id:'+ DataManager.instance.session_id)
+        if(!this.strName){
+            ViewManager.instance.showToast('请确定的名称')
+            return
+        }
+        MyProtocols.send_C2SCreateCharacter(DataManager._loginSocket,this.roleType,this.strName,DataManager.instance.session_id)
     }
 
 

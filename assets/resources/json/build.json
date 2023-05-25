@@ -1,0 +1,134 @@
+{
+  "barracks": [
+    {
+      "name": "军营",
+      "state": 1,
+      "grade": 1,
+      "group": "barracks",
+      "idx": 1
+    },
+    {
+      "name": "盾卫训练场",
+      "state": 1,
+      "grade": 1,
+      "group": "barracks",
+      "idx": 2
+    },
+    {
+      "name": "骑士训练场",
+      "state": 1,
+      "grade": 1,
+      "group": "barracks",
+      "idx": 3
+    },
+    {
+      "name": "枪兵训练场",
+      "state": 1,
+      "grade": 1,
+      "group": "barracks",
+      "idx": 4
+    },
+    {
+      "name": "箭手训练场",
+      "state": 2,
+      "grade": 1,
+      "group": "barracks",
+      "idx": 5
+    },
+    {
+      "name": "法师训练场",
+      "state": 2,
+      "grade": 1,
+      "group": "barracks",
+      "idx": 6
+    },
+    {
+      "name": "木牛工厂",
+      "state": 1,
+      "grade": 1,
+      "group": "barracks",
+      "idx": 7
+    },
+    {
+      "name": "军魂祭坛",
+      "state": 0,
+      "grade": 1,
+      "group": "barracks",
+      "idx": 8
+    },
+    {
+      "name": "部队强化",
+      "state": 0,
+      "grade": 1,
+      "group": "barracks",
+      "idx": 9
+    }
+  ],
+  "resource": [
+    {
+      "name": "铸币工坊",
+      "state": 1,
+      "grade": 1,
+      "group": "resource",
+      "idx": 1
+    },
+    {
+      "name": "粮草工坊",
+      "state": 1,
+      "grade": 1,
+      "group": "resource",
+      "idx": 2
+    },
+    {
+      "name": "领土中心",
+      "state": 1,
+      "grade": 1,
+      "group": "resource",
+      "idx": 3
+    },
+    {
+      "name": "技术研究所",
+      "state": 1,
+      "grade": 1,
+      "group": "resource",
+      "idx": 4
+    }
+  ],
+  "basic": [
+    {
+      "name": "居民区",
+      "state": 1,
+      "grade": 1,
+      "group": "basic",
+      "idx": 1
+    },
+    {
+      "name": "资源仓库",
+      "state": 1,
+      "grade": 1,
+      "group": "basic",
+      "idx": 2
+    },
+    {
+      "name": "神像",
+      "state": 1,
+      "grade": 1,
+      "group": "basic",
+      "idx": 3
+    },
+    {
+      "name": "英魂墓地",
+      "state": 1,
+      "grade": 1,
+      "group": "basic",
+      "idx": 4
+    },
+    {
+      "name": "城墙",
+      "state": 1,
+      "grade": 1,
+      "group": "basic",
+      "idx": 5
+    }
+  ]
+}

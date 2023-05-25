@@ -204,7 +204,6 @@ export default class ResManager {
      */
     static loadItemIcon(path: string, node: cc.Node) {
         console.log("path:" + path)
-        console.log("node:" + node)
         node.getComponent(cc.Sprite).spriteFrame = null;
         ResManager.Instance.loadResource(path, cc.SpriteFrame, function (error, spriteFrame: cc.SpriteFrame) {
             if (!error) {

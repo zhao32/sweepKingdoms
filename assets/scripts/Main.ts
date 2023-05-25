@@ -6,15 +6,19 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import { NetEvent } from "./net/NetEvent";
+import DataManager from "./utils/Manager/DataManager";
+import EnumManager from "./utils/Manager/EnumManager";
+import EventManager from "./utils/Manager/EventManager";
 import ViewManager from "./utils/Manager/ViewManager";
 
 //@ts-ignore
-var LejiSocket = require("LejiSocket");
-//@ts-ignore
 var MyProtocols = require("MyProtocols");
-//@ts-ignore
-var MyEventDispatcher = require("MyEventDispatcher");
 
+//@ts-ignore
+var LejiSocket = require("LejiSocket");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 const { ccclass, property } = cc._decorator;
 
@@ -24,76 +28,185 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     shortLoadLayer: cc.Prefab = null;
 
-    /**重连提示 */
-    shortMask: cc.Node = null
-
-
-
     onLoad() {
         // EventNetManager.getInstance().addListener(10014, this.login.bind(this))
-        MyEventDispatcher.addListener(NetEvent.S2CLogin, this.login.bind(this))
+
+        NetEventDispatcher.addListener(NetEvent.ErrorCode, this.errCodeBack.bind(this))
+
+        NetEventDispatcher.addListener(NetEvent.S2CUserInfoStruct, this.S2CUserInfoStruct.bind(this))
+
+        NetEventDispatcher.addListener(NetEvent.S2CCreateCharacter, this.S2CCreateCharacter.bind(this))
+
+
+        NetEventDispatcher.addListener(NetEvent.PushPropertyChange, this.PushPropertyChange.bind(this))
+
+        NetEventDispatcher.addListener(NetEvent.S2CStageList, this.S2CStageList.bind(this))
+
+        NetEventDispatcher.addListener(NetEvent.S2CCardList, this.S2CCardList.bind(this))
+
+
+
+
+        // S2CCreateCharacter
     }
-    _existInterval: number
-    _loginSocket
+    /**获取玩家信息 */
+    S2CUserInfoStruct(retObj) {
+        console.log('------------------------------')
+        console.log('retObj:' + JSON.stringify(retObj))
+        DataManager.playData.id = retObj.id
+        DataManager.playData.account_id = retObj.id
+        DataManager.playData.food = retObj.army
+        DataManager.playData.troops = retObj.troops
+        DataManager.playData.formationSlots = retObj.formationSlots
+        DataManager.playData.formationStatus = retObj.formationStatus
+        DataManager.playData.coinMoney = retObj.gameMoney
+        DataManager.playData.head_frame = retObj.head_frame
+        DataManager.playData.honor = retObj.honor
+        DataManager.playData.icon = retObj.icon
+        DataManager.playData.level = retObj.level
+        DataManager.playData.level_exp = retObj.level_exp
+        DataManager.playData.goldMoney = retObj.money
+        DataManager.playData.name = retObj.name
+        DataManager.playData.nation_id = retObj.nation_id
+        DataManager.playData.offline_add_level = retObj.offline_add_level
+        DataManager.playData.offline_minutes = retObj.offline_minutes
+        DataManager.playData.offline_rewards = retObj.offline_rewards
+        DataManager.playData.server_id = retObj.server_id
+        DataManager.playData.sex = retObj.sex
+        DataManager.playData.stamina = retObj.stamina
+        DataManager.playData.team_skills = retObj.team_skills
+        DataManager.playData.vip_exp = retObj.vip_exp
+        DataManager.playData.vip_level = retObj.vip_level
+
+        DataManager.playData.population = retObj.population
+
+        DataManager.playData.basic_build = retObj.basic_build
+        DataManager.playData.barracks_build = retObj.barracks_build
+        DataManager.playData.resource_build = retObj.resource_build
+        DataManager.playData.military_data = retObj.military_data
+
+
+        for (let i = 0; i < retObj.basic_build.length; i++) {
+            DataManager.GameData.build['basic'][i].grade = retObj.basic_build[i]
+        }
+
+        for (let i = 0; i < retObj.barracks_build.length; i++) {
+            DataManager.GameData.build['barracks'][i].grade = retObj.barracks_build[i]
+        }
+
+        for (let i = 0; i < retObj.resource_build.length; i++) {
+            DataManager.GameData.build['resource'][i].grade = retObj.resource_build[i]
+        }
+
+        EventManager.getInstance().sendListener(EventManager.UPDATE_MAINHOME_INFO)
+        EventManager.getInstance().sendListener(EventManager.UPDATE_BULID_STATE)
+
+        MyProtocols.send_C2SStageList(DataManager._loginSocket)
+
+    }
+
+    S2CStageList(retObj) {
+        // DataManager.stagesData = retObj
+        DataManager.stagesData = { "chapters": [{ "stages": [{ "star": 3, "times": 5, "is_get_award": false }, { "star": 3, "times": 19, "is_get_award": false }], "star_award": [] }], "chapters_elite": [], "formation": { "fid": 0, "formationId": 1, "forward": 1, "flip": 0, "a": 0, "b": 73, "c": 5, "d": 0, "e": 0, "f": 0, "g": 0, "h": 0, "i": 0, "j": 0 }, "elite_count": 5, "crawl_state": 10 }
+    }
+
+    S2CCreateCharacter(retObj) {
+        console.log('创建角色返回：' + JSON.stringify(retObj))
+        ViewManager.instance.hideView(EnumManager.viewPath.PAGE_ROLE, true)
+        // MyProtocols.send_C2SListRedPoints(DataManager._loginSocket)
+        MyProtocols.send_C2SEnterGame(DataManager._loginSocket, DataManager.instance.session_id)
+
+
+    }
+
+ 
+    /**监听属性变化 */
+    PushPropertyChange(retObj) {
+        // console.log('属性变化：' + JSON.stringify(retObj))
+        //属性变化：{"type":4,"value":10396}
+        //属性变化：{"type":11,"value":10400}
+        //1 游戏币  2元宝  3 等级  4 暂时没用 5 人口  6  经验  7 vip 等级 8 vip 经验 9 暂时没用  10 声望  11 兵力 12 战力
+        if (retObj.type == 1) {
+            DataManager.playData.coinMoney = retObj.value
+        } else if (retObj.type == 2) {
+            DataManager.playData.goldMoney = retObj.value
+        } else if (retObj.type == 3) {
+            DataManager.playData.level = retObj.value
+        } else if (retObj.type == 4) {
+
+        } else if (retObj.type == 5) {
+            DataManager.playData.population = retObj.value
+        } else if (retObj.type == 6) {
+            DataManager.playData.level_exp = retObj.value
+        } else if (retObj.type == 7) {
+            DataManager.playData.vip_level = retObj.value
+        } else if (retObj.type == 8) {
+            DataManager.playData.vip_exp = retObj.value
+        } else if (retObj.type == 9) {
+
+        } else if (retObj.type == 10) {
+            DataManager.playData.honor = retObj.value
+        } else if (retObj.type == 11) {
+            DataManager.playData.troops = retObj.value
+        } else if (retObj.type == 12) {
+
+        }
+
+        EventManager.getInstance().sendListener(EventManager.UPDATE_MAINHOME_INFO)
+    }
+
+    S2CCardList(retObj) {
+        console.log('我的将表:' + JSON.stringify(retObj))
+        DataManager.cardsList = retObj
+    }
+    errCodeBack(retObj) {
+        console.log('接口错误码：' + JSON.stringify(retObj))
+        ViewManager.instance.showToast(DataManager.GameData.zh[retObj.ret_code])
+    }
 
 
     start() {
+        DataManager.Main = this
         cc.macro.ENABLE_MULTI_TOUCH = false
-        // ViewManager.instance.showView(EnumManager.viewPath.START)
+        let socketUrl = "ws://8.218.9.194:7550/ws"
+        DataManager._loginSocket = new LejiSocket(socketUrl);
+        ViewManager.instance.showView(EnumManager.viewPath.PAGE_LOGIN)
 
-        let socketUrl = "ws://8.218.9.194:8550/ws"
-        this._loginSocket = new LejiSocket(socketUrl);
+        // cc.resources.load("json/zh", cc.JsonAsset, (err, res: cc.JsonAsset) => {
+        //     cc.log(`加载游戏数据${err ? '失败' : '成功'}`)
+        //     if (!err) {
+        //         var object = res.json
+        //         DataManager.zh = object
+        //     }
+        // });
 
-        this.sendLogin2Server(() => {
-            MyProtocols.send_C2SLogin(this._loginSocket, '1', '1');
-        })
-
-    }
-
-    login(retObj) {
-        console.log('----------登陆返回---------------')
-        console.log(JSON.stringify(retObj))
-    }
-
-    /**链接服务器 */
-    sendLogin2Server(cbFunc?: Function) {
-        //
-        if (this._existInterval != null) {
-            clearInterval(this._existInterval);
-        }
-        //添加loading提示
-        this.shortMask = cc.instantiate(this.shortLoadLayer);
-        this.shortMask.setPosition(0, 0);
-        cc.Canvas.instance.node.addChild(this.shortMask);
-        var self = this;
-        //判断是否连接成功
-        var sumTime = 0;
-        this._existInterval = setInterval(function () {
-            cc.log("query login server status!");
-            if (self._loginSocket.isConnected()) {
-                if (cbFunc != null) {
-                    cbFunc();
-                    console.log('-------链接成功-------------')
-                    ViewManager.instance.showToast('链接成功')
+        cc.resources.loadDir("json", (err, res: cc.JsonAsset[]) => {
+            cc.log(`加载游戏数据${err ? '失败' : '成功'}`)
+            if (!err) {
+                // var object = res.json
+                // DataManager.errCodeData = object
+                // console.log('res:' + JSON.stringify(res))
+                let keys = Object.keys(DataManager.GameData)
+                for (let i = 0; i < res.length; i++) {
+                    for (let j = 0; j < keys.length; j++) {
+                        //@ts-ignore
+                        if (res[i]._name == keys[j]) {
+                            DataManager.GameData[keys[j]] = res[i].json
+                        }
+                    }
                 }
-                clearInterval(self._existInterval);
-                self._existInterval = null;
-                //删除short loding
-                if (self.shortMask != null) {
-                    self.shortMask.removeFromParent();
-                    self.shortMask.destroy();
-                    self.shortMask = null;
-                }
+                // console.log(JSON.stringify(DataManager.GameData))
+            } else {
+                console.log(err)
             }
-            sumTime += 200;
-            if (sumTime > 3000 || self._loginSocket.isError()) {
-                //重连
-                cc.log("reconnect login socket!");
-                sumTime = 0;
-                self._loginSocket.reconnect();
-            }
-        }, 200);
+        });
+
+
+        // console.log(this.soldierData.json)
+
     }
+
+
     // update (dt) {}
 }
 

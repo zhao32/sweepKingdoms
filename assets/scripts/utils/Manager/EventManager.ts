@@ -12,17 +12,13 @@ export default class EventManager {
 
     private dic = {};
 
-    /**签到 */
-    public static DOSIGN: string = 'doSign'
+    /**进入游戏时 更新玩家信息 */
+    public static UPDATE_MAINHOME_INFO: string = 'updata_mainhome_info'
 
-    public static COLLISH:string = 'collish'
-
-    public static UPDATECOIN:string = 'updatecoin'
-
-    public static UPDATESHARE:string = 'updateshare'
+    /**更新建筑状态 */
+    public static UPDATE_BULID_STATE: string = 'updata_bulid_state'
 
 
-    public static UPDATEEXCHARGE:string = 'upexcharge'
 
 
     protected static instance: EventManager;

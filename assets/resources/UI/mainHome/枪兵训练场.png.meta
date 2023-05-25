@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "f21af1b0-14bf-4f28-abed-92cc5ecb2fc2",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 310,
+  "height": 185,
+  "platformSettings": {},
+  "subMetas": {
+    "枪兵训练场": {
+      "ver": "1.0.6",
+      "uuid": "f99b7435-2701-4704-81be-5e9750d29687",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "f21af1b0-14bf-4f28-abed-92cc5ecb2fc2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 310,
+      "height": 185,
+      "rawWidth": 310,
+      "rawHeight": 185,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

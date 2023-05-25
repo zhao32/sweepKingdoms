@@ -1,7 +1,7 @@
 var WsDecoder = require("WsDecoder");
 var WsEncoder = require("WsEncoder");
 var NetEvent = require("NetEvent");
-var MyEventDispatcher = require("MyEventDispatcher");
+var NetEventDispatcher = require("NetEventDispatcher");
 var MyProtocols = require("MyProtocols");
 var EventNetManager = require("EventNetManager");
 var EventManager = require("EventManager");
@@ -47,12 +47,12 @@ LejiSocket.prototype.initWebSocket = function () {
     this._webSocket.onerror = function (event) {
         cc.log("Websocket fired an error" + event);
         self._conn_status = 1;
-        // MyEventDispatcher.dispatchEvent("NetWork-Error",this);
+        NetEventDispatcher.dispatchEvent("NetWork-Error", this);
     };
     this._webSocket.onclose = function (event) {
         cc.log("WebSocket instance closed." + event);
         self._conn_status = 2;
-        // MyEventDispatcher.dispatchEvent("NetWork-Error",this);
+        NetEventDispatcher.dispatchEvent("NetWork-Error", this);
     };
 };
 
@@ -64,6 +64,7 @@ LejiSocket.prototype._decodeByteArray = function (rawByteArray) {
         var errcode = myDecoder.readInt();
         // cc.error("error:%d %s",errcode, i18n.t(errcode));
         // MyUiManager.OpenFloatTipPanel(new cc.Vec2(0, 130), i18n.t(errcode));
+
     }
     else {
         if (MyProtocols["get_" + msgCode] == null) {
@@ -71,7 +72,7 @@ LejiSocket.prototype._decodeByteArray = function (rawByteArray) {
         }
         else {
             var retObj = MyProtocols["get_" + msgCode].call(null, myDecoder);
-            MyEventDispatcher.dispatchEvent(msgCode,retObj);
+            NetEventDispatcher.dispatchEvent(msgCode, retObj);
             // console.log('retObj:'+retObj)
             // EventNetManager.default.prototype.dispatchEvent(msgCode, retObj)
         }
@@ -83,7 +84,7 @@ LejiSocket.prototype.sendMessage = function (byteArrayContent) {
     if (this._conn_status != 0) {
         cc.log("WebSocket instance wasn't ready...");
         this._cache_msg = byteArrayContent;
-        // MyEventDispatcher.dispatchEvent("NetWork-Error",this);
+        NetEventDispatcher.dispatchEvent("NetWork-Error", this);
         return;
     }
     var flat = new Uint8Array(byteArrayContent);

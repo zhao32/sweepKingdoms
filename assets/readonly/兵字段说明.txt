@@ -1,0 +1,27 @@
+  "1": {
+    "arm": 1,   兵种类型
+    "country":0,  国家0 无限制   1-7 对应 魏燕秦赵齐韩楚
+    "restrain": 4,  克制兵种  对应 arm 
+    "icon": "",   士兵图标
+    "name": "盾兵",
+    "attr": {
+      "addition_1": 1,    生命	
+      "addition_2": 10, 射程	
+      "addition_3": 220, 暴击	
+      "addition_4": 110,韧性	
+      "addition_5": 10, 暴击率	
+      "addition_6": 5 免暴率
+    },
+    "defense": {
+      "attack_1": 60,  挥砍攻击	
+      "attack_2": 0, 穿刺攻击	
+      "attack_3": 0, 法术攻击	
+      "attack_4": 50, 挥砍防御	
+      "attack_5": 90, 穿刺防御	
+      "attack_6": 0 法术防御
+    },
+    "consume": {
+      "battle":0.04,  出征消耗
+      "garrison":0  驻防消耗
+    }
+  },

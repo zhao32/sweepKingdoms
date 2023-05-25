@@ -28,7 +28,8 @@ export default class NewClass extends cc.Component {
 
     start() {
         this.contect.removeAllChildren()
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < Object.keys(DataManager.GameData.Soldier).length; i++) {
+            let key = Object.keys(DataManager.GameData.Soldier)[i]
             let render = cc.instantiate(this.renderPfb)
             render.parent = this.contect
             if (i < 5) {
@@ -37,11 +38,10 @@ export default class NewClass extends cc.Component {
                     render.runAction(cc.moveTo(0.4, cc.v2(0, render.y)))
                 }, 0.3 * i)
             }
-            render.getComponent(renderRecruitOffice).init()
+            render.getComponent(renderRecruitOffice).init(DataManager.GameData.Soldier[key])
             render.on(cc.Node.EventType.TOUCH_END, () => {
                 ViewManager.instance.hideWnd(DataManager.curWndPath, true)
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_RCRUIT)
-
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_RCRUIT, ...[parseInt(key) + 1])
             }, this)
         }
     }

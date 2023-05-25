@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "42ae57e4-87f9-4316-86be-04c0cf1b9abd",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 94,
+  "height": 71,
+  "platformSettings": {},
+  "subMetas": {
+    "辽坚兵": {
+      "ver": "1.0.6",
+      "uuid": "fd0cec19-d61b-4362-bf0b-60b0bacded2a",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "42ae57e4-87f9-4316-86be-04c0cf1b9abd",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 93,
+      "height": 71,
+      "rawWidth": 94,
+      "rawHeight": 71,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -127,6 +127,11 @@ export enum NetEvent {
     C2STreasureRobGrab = 4817,
     C2SActivityList = 5401,
     C2SActivitiesGetAward = 5403,
+    /**j建筑升级 */
+    C2UPBulid = 10185,
+    /**士兵招募 */
+    C2SRecSoldiers = 1057,
+
 
 
     //接收
@@ -167,11 +172,13 @@ export enum NetEvent {
     S2CReadNewMailMsg = 40006,
     S2CDelMail = 40010,
     S2CGetAttachAll = 40014,
+    /**监听属性改变 */
     PushPropertyChange = 10116,
     PushNewMail = 40012,
     S2CCardList = 2002,
     PushAddCard = 2004,
     S2CPubView = 1042,
+    /**招募将领返回 */
     S2CPubBuy = 1044,
     S2CCardTakeOnItem = 2006,
     S2CCardTakeOffItem = 2008,
@@ -311,6 +318,12 @@ export enum NetEvent {
     PushQiZhenYiBaoKaiJiang = 5412,
     S2CQedjList = 10180,
     S2CQedjAward = 10182,
+
+    S2UPBulid = 10186,
+    /**士兵招募 */
+    S2CRecSoldiers = 1057,
+
+
 }
 
 

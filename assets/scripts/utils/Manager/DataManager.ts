@@ -1,25 +1,46 @@
-import pageGame from "../../pageGame"
+import Main from "../../Main";
 
-
-export interface cusInfo {
-    cusid: string,
-    /**昵称 */
-    nickname: string,
-    /**头像 */
-    head: string,
-
-    openid: string
+interface playData {
+    id: number,
+    account_id: string,
+    server_id: number,
+    name: string,
+    sex: number,
+    level: number,
+    icon: number,
+    head_frame: number,
+    level_exp: number,
+    /**兵力 */
+    troops: number,
+    population: number,
+    coinMoney: null,
+    goldMoney: null,
+    food: number,
+    vip_level: number,
+    vip_exp: number,
+    honor: number,
+    stamina: number,
+    nation_id: number,
+    formationSlots: number,
+    formationStatus: number[],
+    team_skills: number[],
+    offline_minutes: number,
+    offline_add_level: number,
+    offline_rewards: [],
+    /** 1 军营 2 盾卫 3 骑士 4 枪兵 5 箭手 6 法师 7 木牛 8 军魂  9 士兵强化塔*/
+    barracks_build: [],
+    /**1 筑币 2 粮草 3 领土 4 技术研究所 */
+    resource_build: [],
+    /**1 居民 2 资源仓库 3 战神像 4 英魂墓地 5 城墙 */
+    basic_build: [],
+    /**军队数量 */
+    military_data: []
 
 }
 
-export interface playInfo {
-    userid: string,
-    nickname: string,
-    score: number,
-    head: string
-}
 
 export default class DataManager {
+    // retObj:{"id":9902,"account_id":"4682","server_id":1,"name":"丹阳游侠","sex":1,"level":74,"icon":194,"head_frame":1,"level_exp":14465,"fight":654920,"money":94081075,"gameMoney":692867744,"energy":494,"vip_level":13,"vip_exp":1002099996,"honor":8000,"stamina":6539,"nation_id":2,"formationSlots":10,"formationStatus":[],"team_skills":[9,8,9,9],"offline_minutes":0,"offline_add_level":0,"offline_rewards":[]}
 
     //单例唯一实例
     private static _instance: DataManager = null;
@@ -34,23 +55,50 @@ export default class DataManager {
     public bIsOpenSound: boolean = true
     public bIsOpenShake: boolean = true
 
-
     public static curWndPath: string = null
-    /**0 使用 1 出售 2 合成 */
-    public static type: number = 0 // 
 
-    public static compCount: number = 0
+    static Main: Main = null
 
-    // "head":"","nickname":"","score":0,"userid":119186}
+    static _loginSocket: any
 
-    public static cusInfo: cusInfo = {
-        cusid: '',
-        nickname: '',
-        head: '',
-        openid: ''
+    session_id: number = 0
+
+    public static playData: playData = {
+        id: null,
+        account_id: null,
+        server_id: null,
+        name: null,
+        sex: null,
+        level: null,
+        icon: null,
+        head_frame: null,
+        level_exp: null,
+        troops: null,
+        population: null,
+        coinMoney: null,
+        goldMoney: null,
+        food: null,
+        vip_level: null,
+        vip_exp: null,
+        honor: null,
+        stamina: null,
+        nation_id: null,
+        formationSlots: null,
+        formationStatus: null,
+        team_skills: null,
+        offline_minutes: null,
+        offline_add_level: null,
+        offline_rewards: null,
+        /** 1 军营 2 盾卫 3 骑士 4 枪兵 5 箭手 6 法师 7 木牛 8 军魂  9 士兵强化塔*/
+        barracks_build: [],
+        /**1 筑币 2 粮草 3 领土 4 技术研究所 */
+        resource_build: [],
+        /**1 居民 2 资源仓库 3 战神像 4 英魂墓地 5 城墙 */
+        basic_build: [],
+        /**军队数量 */
+        military_data: []
+
     }
-
-    public static pageGame: pageGame
 
     static group(array, subGroupLength) {
         let index = 0;
@@ -61,109 +109,67 @@ export default class DataManager {
         return newArray;
     }
 
-    /***************************************
-* 生成从minNum到maxNum的随机数。
-* 如果指定decimalNum个数，则生成指定小数位数的随机数
-* 如果不指定任何参数，则生成0-1之间的随机数。
-****************************************/
-    static randomNum(maxNum, minNum, decimalNum = null) {
-        var max = 0,
-            min = 0;
-        minNum <= maxNum
-            ? ((min = minNum), (max = maxNum))
-            : ((min = maxNum), (max = minNum));
-        switch (arguments.length) {
-            case 1:
-                return Math.floor(Math.random() * (max + 1));
-            case 2:
-                return Math.floor(Math.random() * (max - min + 1) + min);
-            case 3:
-                return (Math.random() * (max - min) + min).toFixed(decimalNum);
-            default:
-                return Math.random();
-        }
+
+
+    /**错误码信息 */
+    // public static errCodeData = {}
+
+    static GameData = {
+        zh: {},
+        /**兵种信息 */
+        Soldier: {},
+        /**建筑信息 */
+        build: {},
+        /**建筑升级表 */
+        buildUp: {},
+        /** 副本数据 */
+        Stages: [],
+        Cards: {}
     }
+    /**我的将表 */
+    static cardsList = []
 
-    static _getBoundingBoxToWorld(node) {
-        var p = cc.isValid(node) ? node.convertToWorldSpaceAR(cc.v2(0, 0)) : cc.v2();
-        return cc.rect(p.x, p.y, node.width, node.height);
-    }
-    /**
-     * 两个坐标距离
-     * @param p1 
-     * @param p2 
-     * @returns 
-     */
-    static pDistance(p1, p2) {
-        return p1.sub(p2).mag();
-    }
+    /**我的副本信息 */
+    static stagesData: any
+    // {
+    //     "chapters": [{
+    //         "stages": [{
+    //             "star": 3,
+    //             "times": 5,
+    //             "is_get_award": false
+    //         }],
+    //         "star_award": []
+    //     }],
+    //     "chapters_elite": [],
+    //     "formation": {
+    //         "fid": 0,
+    //         "formationId": 1,
+    //         "forward": 1,
+    //         "flip": 0,
+    //         "a": 0,
+    //         "b": 73,
+    //         "c": 5,
+    //         "d": 0,
+    //         "e": 0,
+    //         "f": 0,
+    //         "g": 0,
+    //         "h": 0,
+    //         "i": 0,
+    //         "j": 0
+    //     },
+    //     "elite_count": 5,
+    //     "crawl_state": 10
+    // }
 
-    static authorize: boolean
+    static readonly countyList = ['', '魏', '燕', '秦', '赵', '齐', '韩', '楚']
+    static readonly armList = ['', '盾', '骑', '枪', '弓', '法']
 
-    static goInfo = [
-        {
-            id: 0,
-            name: '三叶子',
-            point: 'aa',
-            info: 'aaaaaaaaaaaaaaaaa',
-            skin: '',
-            isGet: true
-        },
-        {
-            id: 1,
-            name: '南瓜幽灵',
-            point: 'bb',
-            info: 'bbbbbbbbbbbbbbbbb',
-            skin: '',
-            isGet: true
+    static readonly barracksList = ["军营", '盾卫训练场', '骑士训练场', '枪兵训练场', '箭手训练场', '法师', '木牛工厂', '军魂祭坛', '部队强化']
+    static readonly resourceList = ["铸币工坊", "粮草工坊", "领土中心", "技术研究所"];
+    static readonly basicList = ["居民区", "资源仓库", "神像", "英魂墓地", "城墙"];
+    static readonly qualityList = ['', '传奇', '天选', '无双', '名将', '大将']
 
-        },
-        {
-            id: 2,
-            name: '呆甲兽',
-            point: 'cc',
-            info: 'ccccccccccccccccc',
-            skin: '',
-            isGet: false
 
-        },
-        {
-            id: 3,
-            name: '呆苞苞',
-            point: 'dd',
-            info: 'ddddddddddddddddd',
-            skin: '',
-            isGet: false
-
-        },
-        {
-            id: 4,
-            name: '咕咕',
-            point: 'ee',
-            info: 'eeeeeeeeeeeeeeeee',
-            skin: '',
-            isGet: true
-
-        },
-        {
-            id: 5,
-            name: '哭哭蛋',
-            point: 'ff',
-            info: 'fffffffffffffffff',
-            skin: '',
-            isGet: true
-
-        }]
-
-    static getSkins: string = ''
-
-    static bollNum: number = 0
-
-    static coloTime: number = 0
-
-    static reflsahType: number = 0
-
-    static shareStart: number = 0
 
     getDateDis(sTime: any, eTime: any) {
         //将日期字符串转换为时间戳
@@ -173,12 +179,5 @@ export default class DataManager {
         return second
     }
 
-    BrowserInfo = {
-        userAgent: navigator.userAgent.toLowerCase(),
-        isAndroid: Boolean(navigator.userAgent.match(/android/ig)),
-        isIphone: Boolean(navigator.userAgent.match(/iphone|ipod/ig)),
-        isIpad: Boolean(navigator.userAgent.match(/ipad/ig)),
-        isWeixin: Boolean(navigator.userAgent.match(/MicroMessenger/ig)),
-    }
 
 }

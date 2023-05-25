@@ -7,7 +7,14 @@
 
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
+import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 const { ccclass, property } = cc._decorator;
 
@@ -57,16 +64,19 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Node, displayName: '已恢复兵力Node' })
     recoverdNode: cc.Node = null;
 
+    soliderType: number = 0
+
+    _idx: number = 0
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
 
     start() {
-
+        this.schedule(() => { this.updateData(this._idx) }, 1)
     }
 
-    init() {
+    init(idx: number) {
         for (let i = 0; i < 4; i++) {
             let render = this.contect.getChildByName(`bgRender${i}`)
             render.x = 1000
@@ -74,11 +84,81 @@ export default class NewClass extends cc.Component {
                 render.runAction(cc.moveTo(0.4, cc.v2(0, render.y)))
             }, 0.3 * i)
         }
+        this._idx = idx
+
+        // let barracksList = ["军营", '盾卫训练场', '骑士训练场', '枪兵训练场', '箭手训练场', '法师', '木牛工厂', '军魂祭坛', '部队强化']
+        let group = 'barracks'
+        // let idx = 0
+        // if (barracksList.indexOf(name) != -1) {
+        //     for (let i = 0; i < barracksList.length; i++) {
+        //         if (barracksList[i] == name) {
+        //             idx = i + 1
+        //         }
+        //     }
+        // }
+        let grade = DataManager.GameData.build[group][idx - 1].grade
+        console.log('兵：' + JSON.stringify(DataManager.GameData.buildUp[group][1][grade - 1]))
+        let maxSolider = DataManager.GameData.buildUp[group][1][grade - 1].Soldier
+
+        /**居民区等级 */
+        let jmqGrade = DataManager.GameData.build['basic'][0].grade
+        let maxProportion = DataManager.GameData.buildUp["basic"][1][jmqGrade - 1].proportion[2]
+
+        console.log('maxSolider:' + maxSolider)
+        console.log('maxProportion:' + maxProportion)
+        DataManager.GameData.buildUp['barracks']
+
+        this.soldierNameDisplay.string = DataManager.GameData.Soldier[idx - 1].name
+        this.populationDisplay.string = `${DataManager.playData.population}/${maxProportion}`
+        this.troopsDisplay.string = `${DataManager.playData.troops}/${maxSolider}`
+        let price = DataManager.GameData.Soldier[idx - 1].price
+        this.soldierPriceDisplay.string = `粮草 x${price}`
+        this.troopsDisplay1.string = String(DataManager.playData.population)
+        this.priceDisplay1.string = `x` + String(DataManager.GameData.buildUp[group][idx][grade - 1].population[1] * 0.01 * (DataManager.playData.population) * price);
+
+        this.soliderType = DataManager.GameData.buildUp[group][idx][grade - 1].soldier[0];
+
+        ResManager.loadItemIcon(`soliderHead/${DataManager.GameData.Soldier[idx - 1].name}`, this.soldierSprite.node)
+    }
+
+    updateData(idx) {
+        // let barracksList = ["军营", '盾卫训练场', '骑士训练场', '枪兵训练场', '箭手训练场', '法师', '木牛工厂', '军魂祭坛', '部队强化']
+        let group = 'barracks'
+        // let idx = 0
+        // if (barracksList.indexOf(name) != -1) {
+        //     for (let i = 0; i < barracksList.length; i++) {
+        //         if (barracksList[i] == name) {
+        //             idx = i + 1
+        //         }
+        //     }
+        // }
+        let grade = DataManager.GameData.build[group][idx - 1].grade
+        // console.log('兵：' + JSON.stringify(DataManager.GameData.buildUp[group][1][grade - 1]))
+        let maxSolider = DataManager.GameData.buildUp[group][1][grade - 1].Soldier
+
+        /**居民区等级 */
+        let jmqGrade = DataManager.GameData.build['basic'][0].grade
+        let maxProportion = DataManager.GameData.buildUp["basic"][1][jmqGrade - 1].proportion[2]
+
+        // console.log('maxSolider:' + maxSolider)
+        // console.log('maxProportion:' + maxProportion)
+        DataManager.GameData.buildUp['barracks']
+
+        this.soldierNameDisplay.string = DataManager.GameData.Soldier[idx - 1].name
+        this.populationDisplay.string = `${DataManager.playData.population}/${maxProportion}`
+        this.troopsDisplay.string = `${DataManager.playData.troops}/${maxSolider}`
+        let price = DataManager.GameData.Soldier[idx - 1].price
+        this.soldierPriceDisplay.string = `粮草 x${price}`
+        this.troopsDisplay1.string = String(DataManager.playData.population)
+        this.priceDisplay1.string = `x` + String(DataManager.GameData.buildUp[group][idx][grade - 1].population[1] * 0.01 * (DataManager.playData.population) * price);
+
+        this.soliderType = DataManager.GameData.buildUp[group][idx][grade - 1].soldier[0];
 
     }
 
     recruitHandler(event, data) {
-
+        console.log('-------招募请求-------', this._idx, this.soliderType)
+        MyProtocols.send_C2SRecSoldiers(DataManager._loginSocket, this._idx, 0, this.soliderType)
     }
 
     recoverHandler() {

@@ -5,6 +5,8 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import ResManager from "../utils/Manager/ResManager";
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -36,7 +38,21 @@ export default class NewClass extends cc.Component {
 
     }
 
-    init() {
+    init(data) {
+        console.error(JSON.stringify(data))
+        this.nameDisplay.string = data.name
+        this.describeDisplay.string = data.describe
+        if (data.state == 0) {
+            this.premiseDisplay.string = '招募条件'
+            this.node.getChildByName('price').active = false
+
+        } else if (data.state == 1) {
+            this.premiseDisplay.string = ''
+            this.node.getChildByName('price').active = true
+            this.priceDisplay.string = `x${data.price}`
+        }
+
+        ResManager.loadItemIcon(`soliderHead/${data.name}`,this.soldierSprite.node)
 
     }
 

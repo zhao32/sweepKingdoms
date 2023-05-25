@@ -59,6 +59,7 @@ export default class NewClass extends cc.Component {
                 if (i == 0) {//俸禄
 
                 } else if (i == 1) {//副本
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE)
 
                 } else if (i == 2) {//出征
 

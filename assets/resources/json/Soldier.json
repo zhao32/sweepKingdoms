@@ -1,0 +1,592 @@
+{
+  "1": {
+    "arm": 1,
+    "country": 0,
+    "restrain": 4,
+    "icon": "",
+    "name": "盾兵",
+    "attr": {
+      "addition_1": 1,
+      "addition_2": 10,
+      "addition_3": 220,
+      "addition_4": 110,
+      "addition_5": 10,
+      "addition_6": 5
+    },
+    "defense": {
+      "attack_1": 60,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 50,
+      "attack_5": 90,
+      "attack_6": 0
+    },
+    "consume": {
+      "battle": 0.04,
+      "garrison": 0
+    },
+    "state": 1,
+    "price": 3,
+    "describe": "擅长使用矩阵防御技能（防御增强），克制【弓兵】"
+  },
+  "2": {
+    "arm": 2,
+    "country": 0,
+    "restrain": 1,
+    "icon": "",
+    "name": "骑兵",
+    "attr": {
+      "addition_1": 1,
+      "addition_2": 20,
+      "addition_3": 220,
+      "addition_4": 110,
+      "addition_5": 10,
+      "addition_6": 5
+    },
+    "defense": {
+      "attack_1": 80,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 80,
+      "attack_5": 60,
+      "attack_6": 0
+    },
+    "consume": {
+      "battle": 0.06,
+      "garrison": 0
+    },
+    "state": 1,
+    "price": 3,
+    "describe": "擅长使用矩阵混合技能（降低对手防御），克制【盾兵】"
+  },
+  "3": {
+    "arm": 3,
+    "restrain": 2,
+    "country": 0,
+    "icon": "",
+    "name": "枪兵",
+    "attr": {
+      "addition_1": 1,
+      "addition_2": 30,
+      "addition_3": 220,
+      "addition_4": 110,
+      "addition_5": 10,
+      "addition_6": 5
+    },
+    "defense": {
+      "attack_1": 20,
+      "attack_2": 140,
+      "attack_3": 0,
+      "attack_4": 30,
+      "attack_5": 10,
+      "attack_6": 0
+    },
+    "consume": {
+      "battle": 0.04,
+      "garrison": 0
+    },
+    "state": 1,
+    "price": 3,
+    "describe": "擅长使用奇袭技能（命中增强），克制【骑兵】"
+  },
+  "4": {
+    "arm": 4,
+    "country": 0,
+    "restrain": 3,
+    "icon": "",
+    "name": "弓兵",
+    "attr": {
+      "addition_1": 1,
+      "addition_2": 80,
+      "addition_3": 220,
+      "addition_4": 110,
+      "addition_5": 10,
+      "addition_6": 5
+    },
+    "defense": {
+      "attack_1": 80,
+      "attack_2": 140,
+      "attack_3": 0,
+      "attack_4": 10,
+      "attack_5": 20,
+      "attack_6": 50
+    },
+    "consume": {
+      "battle": 0.06,
+      "garrison": 0
+    },
+    "state": 1,
+    "price": 3,
+    "describe": "攻击近战兵种，近战兵种不能还击，克制【枪兵】"
+  },
+  "5": {
+    "arm": 5,
+    "country": 0,
+    "restrain": [
+      3,
+      2,
+      1
+    ],
+    "icon": "",
+    "name": "术士",
+    "attr": {
+      "addition_1": 1,
+      "addition_2": 60,
+      "addition_3": 220,
+      "addition_4": 110,
+      "addition_5": 10,
+      "addition_6": 5
+    },
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 80,
+      "attack_4": 30,
+      "attack_5": 0,
+      "attack_6": 40
+    },
+    "consume": {
+      "battle": 0.09,
+      "garrison": 0
+    },
+    "state": 1,
+    "price": 3,
+    "describe": "法系兵种，拥有极高的战斗力"
+  },
+  "6": {
+    "country": 0,
+    "arm": 6,
+    "restrain": [
+      3,
+      2,
+      1
+    ],
+    "icon": "",
+    "name": "马车",
+    "attr": {
+      "addition_1": 1,
+      "addition_2": 200,
+      "addition_3": 220,
+      "addition_4": 1760,
+      "addition_5": 10,
+      "addition_6": 40
+    },
+    "defense": {
+      "attack_1": 40,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 150,
+      "attack_5": 150,
+      "attack_6": 30
+    },
+    "consume": {
+      "battle": 0.2,
+      "garrison": 0
+    },
+    "state": 0,
+    "price": 3,
+    "describe": "高防御,用于运输货物的兵种，不参与战斗，主要用于掠夺敌方资源"
+  },
+  "7": {
+    "arm": 1,
+    "country": 0,
+    "restrain": 4,
+    "icon": "",
+    "name": "精锐盾兵",
+    "attr": {
+      "addition_1": 2,
+      "addition_2": 20,
+      "addition_3": 220,
+      "addition_4": 110,
+      "addition_5": 10,
+      "addition_6": 5
+    },
+    "defense": {
+      "attack_1": 120,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 100,
+      "attack_5": 180,
+      "attack_6": 0
+    },
+    "consume": {
+      "battle": 0.04,
+      "garrison": 0
+    },
+    "state": 0,
+    "price": 6,
+    "describe": "盾兵的高阶版本，血量x2，克制【弓兵】，高防御"
+  },
+  "8": {
+    "arm": 2,
+    "country": 0,
+    "restrain": 1,
+    "icon": "",
+    "name": "精锐骑兵",
+    "attr": {
+      "addition_1": 2,
+      "addition_2": 30,
+      "addition_3": 220,
+      "addition_4": 110,
+      "addition_5": 10,
+      "addition_6": 5
+    },
+    "defense": {
+      "attack_1": 160,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 160,
+      "attack_5": 120,
+      "attack_6": 0
+    },
+    "consume": {
+      "battle": 0.06,
+      "garrison": 0
+    },
+    "state": 0,
+    "price": 6,
+    "describe": "骑兵的高阶版本，血量x2，克制【盾兵】，出手快"
+  },
+  "9": {
+    "arm": 3,
+    "restrain": 2,
+    "country": 0,
+    "icon": "",
+    "name": "精锐枪兵",
+    "attr": {
+      "addition_1": 2,
+      "addition_2": 40,
+      "addition_3": 220,
+      "addition_4": 110,
+      "addition_5": 10,
+      "addition_6": 5
+    },
+    "defense": {
+      "attack_1": 40,
+      "attack_2": 140,
+      "attack_3": 0,
+      "attack_4": 60,
+      "attack_5": 20,
+      "attack_6": 0
+    },
+    "consume": {
+      "battle": 0.04,
+      "garrison": 0
+    },
+    "state": 0,
+    "price": 6,
+    "describe": "枪兵的高阶版本，血量x2，克制【骑兵】，高攻击"
+  },
+  "10": {
+    "arm": 4,
+    "country": 0,
+    "restrain": 3,
+    "icon": "",
+    "name": "精锐弓兵",
+    "attr": {
+      "addition_1": 2,
+      "addition_2": 90,
+      "addition_3": 220,
+      "addition_4": 110,
+      "addition_5": 10,
+      "addition_6": 5
+    },
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 200,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 20,
+      "attack_6": 40
+    },
+    "consume": {
+      "battle": 0.06,
+      "garrison": 0
+    },
+    "state": 0,
+    "price": 6,
+    "describe": "弓兵的高阶版本，血量x2，克制【枪兵】，使近战无法还手"
+  },
+  "11": {
+    "arm": 5,
+    "country": 0,
+    "restrain": [
+      3,
+      2,
+      1
+    ],
+    "icon": "",
+    "name": "精锐术士",
+    "attr": {
+      "addition_1": 2,
+      "addition_2": 70,
+      "addition_3": 220,
+      "addition_4": 110,
+      "addition_5": 10,
+      "addition_6": 5
+    },
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 160,
+      "attack_4": 60,
+      "attack_5": 0,
+      "attack_6": 80
+    },
+    "consume": {
+      "battle": 0.09,
+      "garrison": 0
+    },
+    "state": 0,
+    "price": 6,
+    "describe": "术士的高阶版本，血量x2，高攻击力，使近战无法还手"
+  },
+  "12": {
+    "country": 0,
+    "arm": 6,
+    "restrain": [
+      3,
+      2,
+      1
+    ],
+    "icon": "",
+    "name": "精锐马车",
+    "attr": {
+      "addition_1": 2,
+      "addition_2": 210,
+      "addition_3": 220,
+      "addition_4": 1760,
+      "addition_5": 10,
+      "addition_6": 40
+    },
+    "defense": {
+      "attack_1": 80,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 300,
+      "attack_5": 300,
+      "attack_6": 60
+    },
+    "consume": {
+      "battle": 0.2,
+      "garrison": 0
+    },
+    "state": 0,
+    "price": 6,
+    "describe": "马车的高阶版本，血量x2，高防御力，运载量大幅提高"
+  },
+  "13": {
+    "arm": 1,
+    "country": 1,
+    "restrain": 4,
+    "icon": "",
+    "name": "魏武卒",
+    "attr": {
+      "addition_1": 2,
+      "addition_2": 10,
+      "addition_3": 220,
+      "addition_4": 110,
+      "addition_5": 10,
+      "addition_6": 5
+    },
+    "defense": {
+      "attack_1": 50,
+      "attack_2": 0,
+      "attack_3": 40,
+      "attack_4": 60,
+      "attack_5": 0,
+      "attack_6": 50
+    },
+    "consume": {
+      "battle": 0.04,
+      "garrison": 0
+    },
+    "state": 0,
+    "price": 30,
+    "describe": "【魏国特种兵】 盾兵系，拥有极高的防御能力，中原勇士，守御四方"
+  },
+  "14": {
+    "arm": 1,
+    "country": 2,
+    "restrain": 4,
+    "icon": "",
+    "name": "辽坚兵",
+    "attr": {
+      "addition_1": 2,
+      "addition_2": 10,
+      "addition_3": 220,
+      "addition_4": 110,
+      "addition_5": 10,
+      "addition_6": 5
+    },
+    "defense": {
+      "attack_1": 90,
+      "attack_2": 0,
+      "attack_3": 40,
+      "attack_4": 50,
+      "attack_5": 70,
+      "attack_6": 0
+    },
+    "consume": {
+      "battle": 0.04,
+      "garrison": 0
+    },
+    "state": 0,
+    "price": 30,
+    "describe": "【燕国特种兵】 盾兵系，拥有极高的防御能力，北地貔貅，虎视雄哉"
+  },
+  "15": {
+    "arm": 2,
+    "country": 3,
+    "restrain": 1,
+    "icon": "",
+    "name": "秦锐士",
+    "attr": {
+      "addition_1": 2,
+      "addition_2": 30,
+      "addition_3": 220,
+      "addition_4": 110,
+      "addition_5": 10,
+      "addition_6": 5
+    },
+    "defense": {
+      "attack_1": 100,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 70,
+      "attack_5": 0,
+      "attack_6": 30
+    },
+    "consume": {
+      "battle": 0.06,
+      "garrison": 0
+    },
+    "state": 0,
+    "price": 30,
+    "describe": "【秦国特种兵】 骑兵系，拥有极高的机动能力，西陲铁骑，逐鹿中原"
+  },
+  "16": {
+    "arm": 2,
+    "country": 4,
+    "restrain": 1,
+    "icon": "",
+    "name": "刀骑士",
+    "attr": {
+      "addition_1": 2,
+      "addition_2": 20,
+      "addition_3": 220,
+      "addition_4": 110,
+      "addition_5": 10,
+      "addition_6": 5
+    },
+    "defense": {
+      "attack_1": 60,
+      "attack_2": 60,
+      "attack_3": 0,
+      "attack_4": 30,
+      "attack_5": 50,
+      "attack_6": 0
+    },
+    "consume": {
+      "battle": 0.06,
+      "garrison": 0
+    },
+    "state": 0,
+    "price": 30,
+    "describe": "【赵国特种兵】 骑兵系，拥有极高的机动能力，银鞍白马，飒沓流星"
+  },
+  "17": {
+    "arm": 3,
+    "restrain": 2,
+    "country": 5,
+    "icon": "",
+    "name": "持戟士",
+    "attr": {
+      "addition_1": 2,
+      "addition_2": 30,
+      "addition_3": 220,
+      "addition_4": 110,
+      "addition_5": 10,
+      "addition_6": 5
+    },
+    "defense": {
+      "attack_1": 30,
+      "attack_2": 160,
+      "attack_3": 0,
+      "attack_4": 20,
+      "attack_5": 0,
+      "attack_6": 70
+    },
+    "consume": {
+      "battle": 0.04,
+      "garrison": 0
+    },
+    "state": 0,
+    "price": 30,
+    "describe": "【齐国特种兵】枪兵系，拥有极高的攻击力，东方猛士，争霸天下"
+  },
+  "18": {
+    "arm": 4,
+    "country": 6,
+    "restrain": 3,
+    "icon": "",
+    "name": "击弩兵",
+    "attr": {
+      "addition_1": 2,
+      "addition_2": 80,
+      "addition_3": 220,
+      "addition_4": 110,
+      "addition_5": 10,
+      "addition_6": 5
+    },
+    "defense": {
+      "attack_1": 80,
+      "attack_2": 50,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 20,
+      "attack_6": 0
+    },
+    "consume": {
+      "battle": 0.06,
+      "garrison": 0
+    },
+    "state": 0,
+    "price": 30,
+    "describe": "【韩国特种兵】弓兵系，拥有极高的远程打击力，闻声而射，百步穿杨"
+  },
+  "19": {
+    "arm": 5,
+    "country": 7,
+    "restrain": [
+      3,
+      2,
+      1
+    ],
+    "icon": "",
+    "name": "申息士",
+    "attr": {
+      "addition_1": 2,
+      "addition_2": 70,
+      "addition_3": 220,
+      "addition_4": 110,
+      "addition_5": 10,
+      "addition_6": 5
+    },
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 120,
+      "attack_4": 40,
+      "attack_5": 0,
+      "attack_6": 60
+    },
+    "consume": {
+      "battle": 0.09,
+      "garrison": 0
+    },
+    "state": 0,
+    "price": 30,
+    "describe": "【楚国特种兵】法系，拥有极高的攻击力，南国术士，问鼎中原"
+  }
+}

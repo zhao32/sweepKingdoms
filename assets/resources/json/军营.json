@@ -1,0 +1,16 @@
+{
+  "1": {
+    "curAbility": "提供100个士兵上限",
+    "precondition": "玩家等级10",
+    "upgradeAbility": "提供200个士兵上限",
+    "coinUpPrice": 100,
+    "goldUpPrice": 10
+  },
+  "2": {
+    "curAbility": "提供100个士兵上限",
+    "precondition": "玩家等级10",
+    "upgradeAbility": "提供200个士兵上限",
+    "coinUpPrice": 100,
+    "goldUpPrice": 10
+  }
+}

@@ -5,10 +5,18 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
 import hotelRecruitRender from "./hotelRecruitRender";
+import renderReciruitResult1 from "./renderReciruitResult1";
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 const { ccclass, property } = cc._decorator;
 
@@ -28,6 +36,16 @@ export default class NewClass extends cc.Component {
 
     @property(cc.Label)
     titleDisplay: cc.Label = null;
+
+    @property(cc.Label)
+    goldDisplay: cc.Label = null;
+
+    @property(cc.Label)
+    honorDisplay: cc.Label = null;
+
+    @property(cc.ScrollView)
+    scrollview: cc.ScrollView = null;
+
 
     showType: number = 0 // 0 招募 1 招募结果
     recruitData = [
@@ -59,11 +77,25 @@ export default class NewClass extends cc.Component {
 
     start() {
 
+        NetEventDispatcher.addListener(NetEvent.S2CPubView, this.S2CPubView.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CPubBuy, this.S2CPubBuy.bind(this))
+
+
+    }
+
+    S2CPubBuy(retObj) {
+        console.log('酒馆招募返回' + JSON.stringify(retObj))
+        this.showIntragroup(retObj.cards)
+    }
+
+
+    S2CPubView(retObj) {
+        console.log('retObj:' + JSON.stringify(retObj))
     }
 
     showGroups() {
         this.showType = 0
-        this.node.getChildByName('scrollView').getComponent(cc.ScrollView).scrollToTop()
+        this.scrollview.scrollToTop()
         this.contect.removeAllChildren()
         for (let i = 0; i < this.recruitData.length; i++) {
             let render = cc.instantiate(this.renderPfb)
@@ -76,17 +108,19 @@ export default class NewClass extends cc.Component {
             }
             render.getComponent(hotelRecruitRender).init(this.recruitData[i]);
             render.on(cc.Node.EventType.TOUCH_END, () => {
-                this.showIntragroup()
+                // this.showIntragroup()
+                MyProtocols.send_C2SPubBuy(DataManager._loginSocket, i)
+
             }, this)
         }
         this.titleDisplay.string = '将领招募'
     }
 
-    showIntragroup() {
+    showIntragroup(cards) {
         this.showType = 1
         this.contect.y = 0
         this.contect.removeAllChildren()
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < cards.length; i++) {
             let render = cc.instantiate(this.renderResultPfb0)
             render.parent = this.contect
             if (i < 5) {
@@ -95,12 +129,18 @@ export default class NewClass extends cc.Component {
                     render.runAction(cc.moveTo(0.4, cc.v2(0, render.y)))
                 }, 0.3 * i)
             }
+            render.getComponent(renderReciruitResult1).init(cards[i])
         }
         this.titleDisplay.string = '招募结果'
     }
 
     init() {
         this.showGroups()
+        this.goldDisplay.string = String(DataManager.playData.goldMoney)
+        this.honorDisplay.string = String(DataManager.playData.honor)
+
+        MyProtocols.send_C2SPubView(DataManager._loginSocket);
+
     }
 
     onCloseHandler() {

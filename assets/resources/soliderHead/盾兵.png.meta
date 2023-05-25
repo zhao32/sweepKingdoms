@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "78cb64e1-c3c4-436c-961d-919569854a72",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 106,
+  "height": 81,
+  "platformSettings": {},
+  "subMetas": {
+    "盾兵": {
+      "ver": "1.0.6",
+      "uuid": "33f025ce-2618-4e00-bec8-589f0c3f42bb",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "78cb64e1-c3c4-436c-961d-919569854a72",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 106,
+      "height": 81,
+      "rawWidth": 106,
+      "rawHeight": 81,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

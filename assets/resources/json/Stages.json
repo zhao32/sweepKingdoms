@@ -1,0 +1,7438 @@
+[
+  {
+    "stage": [
+      {
+        "energy_cost": 6,
+        "gamemoney": 140,
+        "exp": 60,
+        "id": 101,
+        "attrs": [
+          {
+            "unit_num": 5,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": -30
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": -3,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 5,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -90,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 2,
+            "unit_level": -2,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 5,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 3,
+            "unit_level": -1,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 1,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                2064,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "stage_event": [
+          1011,
+          1012
+        ],
+        "daily_limit": 5,
+        "prev": 0,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                2064,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 40
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 1500,
+        "isboss": true
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 140,
+        "exp": 60,
+        "id": 102,
+        "attrs": [
+          {
+            "unit_num": 5,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -30,
+                "atk": 0,
+                "def": -30
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": -2,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 5,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 2,
+            "unit_level": -1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 5,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 3,
+            "unit_level": 0,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 1,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "stage_event": [
+          1021
+        ],
+        "daily_limit": 20,
+        "prev": 101,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 1700,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 140,
+        "exp": 60,
+        "id": 103,
+        "attrs": [
+          {
+            "unit_num": 5,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -30,
+                "atk": 0,
+                "def": -30
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": -1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 5,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 2,
+            "unit_level": 0,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 5,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 3,
+            "unit_level": 1,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 1,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                2066,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "stage_event": [
+          1031
+        ],
+        "daily_limit": 5,
+        "prev": 102,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                2066,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 40
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 2100,
+        "isboss": true
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 140,
+        "exp": 60,
+        "id": 104,
+        "attrs": [
+          {
+            "unit_num": 5,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -30,
+                "atk": 0,
+                "def": -30
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 0,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 5,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 2,
+            "unit_level": 1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 5,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 3,
+            "unit_level": 2,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 1,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "stage_event": [
+          1041
+        ],
+        "daily_limit": 20,
+        "prev": 103,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 2300,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 140,
+        "exp": 60,
+        "id": 105,
+        "attrs": [
+          {
+            "unit_num": 5,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -40,
+                "atk": -25,
+                "def": -50
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 30,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 5,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -30,
+                "atk": -20,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": -80,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 2,
+            "unit_level": 2,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 5,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": -20,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": -700,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 3,
+            "unit_level": 3,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 1,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                1001,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                2065,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            65
+          ]
+        ],
+        "stage_event": [
+          1051,
+          1052,
+          1053,
+          1054
+        ],
+        "daily_limit": 5,
+        "prev": 104,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                2065,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 40
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 2500,
+        "isboss": true
+      }
+    ],
+    "name": "黄巾之乱",
+    "chapter_id": 1,
+    "require_level": 1,
+    "group": 1,
+    "rewards": [
+      {
+        "money": 0,
+        "star": 9,
+        "gamemoney": 10000,
+        "items": [
+          [
+            1600,
+            3
+          ]
+        ]
+      },
+      {
+        "money": 800,
+        "star": 15,
+        "gamemoney": 0,
+        "items": [
+          [
+            1100,
+            3
+          ],
+          [
+            1000,
+            3
+          ]
+        ]
+      }
+    ],
+    "icon": [
+      "stage_1.png",
+      "stage_1_2.png",
+      "stage_1_3.png"
+    ],
+    "pos": [
+      185,
+      434
+    ]
+  },
+  {
+    "stage": [
+      {
+        "energy_cost": 6,
+        "gamemoney": 280,
+        "exp": 60,
+        "id": 201,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -50,
+                "atk": -50,
+                "def": -50
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": -1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -50,
+                "atk": -50,
+                "def": -50
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": -1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -50,
+                "atk": -50,
+                "def": -50
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 0,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 3,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4000,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [
+          2011
+        ],
+        "daily_limit": 20,
+        "prev": 105,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4000,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4000,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 2700,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 280,
+        "exp": 60,
+        "id": 202,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -50,
+                "atk": -50,
+                "def": -50
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": -1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -50,
+                "atk": -50,
+                "def": -50
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": -1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -50,
+                "atk": -50,
+                "def": -50
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 0,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 3,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4001,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 201,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4001,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4001,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 2900,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 280,
+        "exp": 60,
+        "id": 203,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -50,
+                "atk": -50,
+                "def": -50
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": -1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -50,
+                "atk": -50,
+                "def": -50
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": -1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -50,
+                "atk": -50,
+                "def": -50
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 0,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 3,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4002,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 202,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4002,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4002,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 3100,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 280,
+        "exp": 60,
+        "id": 204,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -50,
+                "atk": -50,
+                "def": -50
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": -1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -50,
+                "atk": -50,
+                "def": -50
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": -1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -50,
+                "atk": -50,
+                "def": -50
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 0,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 3,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4003,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 203,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4003,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4003,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 3300,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 280,
+        "exp": 60,
+        "id": 205,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -50,
+                "atk": -50,
+                "def": -50
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": -1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -50,
+                "atk": -50,
+                "def": -50
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": -1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -50,
+                "atk": -50,
+                "def": -50
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 0,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 3,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4004,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                2064,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [
+          2051,
+          2052
+        ],
+        "daily_limit": 5,
+        "prev": 204,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4004,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4004,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          },
+          {
+            "items": [
+              [
+                2064,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 40
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 3500,
+        "isboss": true
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 280,
+        "exp": 60,
+        "id": 206,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -30,
+                "atk": -30,
+                "def": -30
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 0,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -30,
+                "atk": -30,
+                "def": -30
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 0,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -30,
+                "atk": -30,
+                "def": -30
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 1,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 3,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4005,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 205,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4005,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4005,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 3700,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 280,
+        "exp": 60,
+        "id": 207,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -30,
+                "atk": -30,
+                "def": -30
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 0,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -30,
+                "atk": -30,
+                "def": -30
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 0,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -30,
+                "atk": -30,
+                "def": -30
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 1,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 3,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4006,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 206,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4006,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4006,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 3900,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 280,
+        "exp": 60,
+        "id": 208,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -30,
+                "atk": -30,
+                "def": -30
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 0,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -30,
+                "atk": -30,
+                "def": -30
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 0,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -30,
+                "atk": -30,
+                "def": -30
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 1,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 3,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4007,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [
+          2081
+        ],
+        "daily_limit": 20,
+        "prev": 207,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4007,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4007,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 4100,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 280,
+        "exp": 60,
+        "id": 209,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -15,
+                "atk": -15,
+                "def": -15
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -15,
+                "atk": -15,
+                "def": -15
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -30,
+                "atk": -30,
+                "def": -30
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 2,
+            "unit_level": 2,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 3,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4008,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 208,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4008,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4008,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 4300,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 280,
+        "exp": 60,
+        "id": 210,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -15,
+                "atk": -15,
+                "def": -15
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -15,
+                "atk": -15,
+                "def": -15
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -30,
+                "atk": -30,
+                "def": -30
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 2,
+            "unit_level": 2,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 3,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4009,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                2070,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                83,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [
+          2101,
+          2102,
+          2103
+        ],
+        "daily_limit": 5,
+        "prev": 209,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4009,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4009,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          },
+          {
+            "items": [
+              [
+                2070,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 40
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 4500,
+        "isboss": true
+      }
+    ],
+    "name": "二败张角",
+    "chapter_id": 1,
+    "require_level": 3,
+    "group": 2,
+    "rewards": [
+      {
+        "money": 0,
+        "star": 12,
+        "gamemoney": 20000,
+        "items": []
+      },
+      {
+        "money": 50,
+        "star": 24,
+        "gamemoney": 0,
+        "items": [
+          [
+            1600,
+            3
+          ]
+        ]
+      },
+      {
+        "money": 500,
+        "star": 30,
+        "gamemoney": 0,
+        "items": [
+          [
+            1100,
+            3
+          ],
+          [
+            1000,
+            3
+          ]
+        ]
+      }
+    ],
+    "icon": [
+      "stage_2.png",
+      "stage_2_2.png",
+      "stage_2_3.png"
+    ],
+    "pos": [
+      396,
+      160
+    ]
+  },
+  {
+    "stage": [
+      {
+        "energy_cost": 6,
+        "gamemoney": 420,
+        "exp": 60,
+        "id": 301,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 3,
+            "unit_level": 2,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 10,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4010,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [
+          3011
+        ],
+        "daily_limit": 20,
+        "prev": 210,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4010,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4010,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 4700,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 420,
+        "exp": 60,
+        "id": 302,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 3,
+            "unit_level": 2,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 10,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4011,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 301,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4011,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4011,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 4900,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 420,
+        "exp": 60,
+        "id": 303,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 1,
+            "unit_level": 1,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 3,
+            "unit_level": 2,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 10,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4012,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 302,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4012,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4012,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 5100,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 420,
+        "exp": 60,
+        "id": 304,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 2,
+            "unit_level": 2,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 2,
+            "unit_level": 2,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 4,
+            "unit_level": 3,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 10,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4013,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 303,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4013,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4013,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 5300,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 420,
+        "exp": 60,
+        "id": 305,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 2,
+            "unit_level": 2,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 2,
+            "unit_level": 2,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 4,
+            "unit_level": 3,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 10,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4014,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                2069,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 40
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [
+          3051,
+          3052,
+          3053
+        ],
+        "daily_limit": 5,
+        "prev": 304,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4014,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4014,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          },
+          {
+            "items": [
+              [
+                2069,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 40
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 5500,
+        "isboss": true
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 420,
+        "exp": 60,
+        "id": 306,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 2,
+            "unit_level": 2,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 2,
+            "unit_level": 2,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 4,
+            "unit_level": 3,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 10,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4015,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 305,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4015,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4015,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 5700,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 420,
+        "exp": 60,
+        "id": 307,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 3,
+            "unit_level": 3,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 3,
+            "unit_level": 3,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 5,
+            "unit_level": 4,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 10,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4016,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 306,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4016,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4016,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 5900,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 420,
+        "exp": 60,
+        "id": 308,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 3,
+            "unit_level": 3,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 3,
+            "unit_level": 3,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 5,
+            "unit_level": 4,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 10,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4017,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 307,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4017,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4017,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 6100,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 420,
+        "exp": 60,
+        "id": 309,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 3,
+            "unit_level": 3,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 3,
+            "unit_level": 3,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 5,
+            "unit_level": 4,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 10,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4018,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 308,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4018,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4018,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 6300,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 420,
+        "exp": 60,
+        "id": 310,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 3,
+            "unit_level": 3,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 3,
+            "unit_level": 3,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              }
+            },
+            "unit_grade": 1,
+            "level": 5,
+            "unit_level": 4,
+            "card_grade": 1
+          }
+        ],
+        "require_level": 10,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4019,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                2068,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 40
+          },
+          {
+            "items": [
+              [
+                77,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [
+          3101,
+          3102
+        ],
+        "daily_limit": 5,
+        "prev": 309,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4019,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4019,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          },
+          {
+            "items": [
+              [
+                2068,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 40
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 6500,
+        "isboss": true
+      }
+    ],
+    "name": "黄巾残党",
+    "chapter_id": 1,
+    "require_level": 10,
+    "group": 3,
+    "rewards": [
+      {
+        "money": 0,
+        "star": 12,
+        "gamemoney": 30000,
+        "items": []
+      },
+      {
+        "money": 50,
+        "star": 24,
+        "gamemoney": 0,
+        "items": [
+          [
+            1600,
+            3
+          ]
+        ]
+      },
+      {
+        "money": 300,
+        "star": 30,
+        "gamemoney": 0,
+        "items": [
+          [
+            1100,
+            3
+          ],
+          [
+            1000,
+            3
+          ]
+        ]
+      }
+    ],
+    "icon": [
+      "stage_3.png",
+      "stage_3_2.png",
+      "stage_3_3.png"
+    ],
+    "pos": [
+      721,
+      283
+    ]
+  },
+  {
+    "stage": [
+      {
+        "energy_cost": 6,
+        "gamemoney": 560,
+        "exp": 60,
+        "id": 401,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 240,
+                "atk": 24,
+                "def": 12
+              }
+            },
+            "unit_grade": 1,
+            "level": 4,
+            "unit_level": 4,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 240,
+                "atk": 24,
+                "def": 12
+              }
+            },
+            "unit_grade": 1,
+            "level": 5,
+            "unit_level": 5,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 240,
+                "atk": 24,
+                "def": 12
+              }
+            },
+            "unit_grade": 1,
+            "level": 6,
+            "unit_level": 6,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 13,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4020,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [
+          4011
+        ],
+        "daily_limit": 20,
+        "prev": 310,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4020,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4020,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 6700,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 560,
+        "exp": 60,
+        "id": 402,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 293,
+                "atk": 29,
+                "def": 14
+              }
+            },
+            "unit_grade": 1,
+            "level": 4,
+            "unit_level": 4,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 293,
+                "atk": 29,
+                "def": 14
+              }
+            },
+            "unit_grade": 1,
+            "level": 5,
+            "unit_level": 5,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 293,
+                "atk": 29,
+                "def": 14
+              }
+            },
+            "unit_grade": 1,
+            "level": 6,
+            "unit_level": 6,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 13,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4021,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 401,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4021,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4021,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 6900,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 560,
+        "exp": 60,
+        "id": 403,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 346,
+                "atk": 34,
+                "def": 16
+              }
+            },
+            "unit_grade": 1,
+            "level": 4,
+            "unit_level": 4,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 346,
+                "atk": 34,
+                "def": 16
+              }
+            },
+            "unit_grade": 1,
+            "level": 5,
+            "unit_level": 5,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 346,
+                "atk": 34,
+                "def": 16
+              }
+            },
+            "unit_grade": 1,
+            "level": 6,
+            "unit_level": 6,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 13,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4022,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 402,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4022,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4022,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 7100,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 560,
+        "exp": 60,
+        "id": 404,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 399,
+                "atk": 39,
+                "def": 18
+              }
+            },
+            "unit_grade": 1,
+            "level": 7,
+            "unit_level": 7,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 399,
+                "atk": 39,
+                "def": 18
+              }
+            },
+            "unit_grade": 1,
+            "level": 8,
+            "unit_level": 8,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 399,
+                "atk": 39,
+                "def": 18
+              }
+            },
+            "unit_grade": 1,
+            "level": 9,
+            "unit_level": 9,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 13,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4023,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 403,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4023,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4023,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 7300,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 560,
+        "exp": 60,
+        "id": 405,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 452,
+                "atk": 44,
+                "def": 20
+              }
+            },
+            "unit_grade": 1,
+            "level": 7,
+            "unit_level": 7,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 452,
+                "atk": 44,
+                "def": 20
+              }
+            },
+            "unit_grade": 1,
+            "level": 8,
+            "unit_level": 8,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 452,
+                "atk": 44,
+                "def": 20
+              }
+            },
+            "unit_grade": 1,
+            "level": 9,
+            "unit_level": 9,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 13,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4024,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                2074,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 40
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [
+          4051
+        ],
+        "daily_limit": 5,
+        "prev": 404,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4024,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4024,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          },
+          {
+            "items": [
+              [
+                2074,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 40
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 7500,
+        "isboss": true
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 560,
+        "exp": 60,
+        "id": 406,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 505,
+                "atk": 49,
+                "def": 22
+              }
+            },
+            "unit_grade": 1,
+            "level": 7,
+            "unit_level": 7,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 505,
+                "atk": 49,
+                "def": 22
+              }
+            },
+            "unit_grade": 1,
+            "level": 8,
+            "unit_level": 8,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 505,
+                "atk": 49,
+                "def": 22
+              }
+            },
+            "unit_grade": 1,
+            "level": 9,
+            "unit_level": 9,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 13,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4000,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 405,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4000,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4000,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 7700,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 560,
+        "exp": 60,
+        "id": 407,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 558,
+                "atk": 54,
+                "def": 24
+              }
+            },
+            "unit_grade": 1,
+            "level": 10,
+            "unit_level": 10,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 558,
+                "atk": 54,
+                "def": 24
+              }
+            },
+            "unit_grade": 2,
+            "level": 11,
+            "unit_level": 11,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 558,
+                "atk": 54,
+                "def": 24
+              }
+            },
+            "unit_grade": 2,
+            "level": 12,
+            "unit_level": 12,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 13,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4001,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 406,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4001,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4001,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 7900,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 560,
+        "exp": 60,
+        "id": 408,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 611,
+                "atk": 59,
+                "def": 26
+              }
+            },
+            "unit_grade": 1,
+            "level": 10,
+            "unit_level": 10,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 611,
+                "atk": 59,
+                "def": 26
+              }
+            },
+            "unit_grade": 2,
+            "level": 11,
+            "unit_level": 11,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 611,
+                "atk": 59,
+                "def": 26
+              }
+            },
+            "unit_grade": 2,
+            "level": 12,
+            "unit_level": 12,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 13,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4002,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 407,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4002,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4002,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 8100,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 560,
+        "exp": 60,
+        "id": 409,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 664,
+                "atk": 64,
+                "def": 28
+              }
+            },
+            "unit_grade": 1,
+            "level": 10,
+            "unit_level": 10,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 664,
+                "atk": 64,
+                "def": 28
+              }
+            },
+            "unit_grade": 2,
+            "level": 11,
+            "unit_level": 11,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 664,
+                "atk": 64,
+                "def": 28
+              }
+            },
+            "unit_grade": 2,
+            "level": 12,
+            "unit_level": 12,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 13,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4003,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 408,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4003,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4003,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 8300,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 560,
+        "exp": 60,
+        "id": 410,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 717,
+                "atk": 69,
+                "def": 30
+              }
+            },
+            "unit_grade": 1,
+            "level": 10,
+            "unit_level": 10,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 717,
+                "atk": 69,
+                "def": 30
+              }
+            },
+            "unit_grade": 2,
+            "level": 11,
+            "unit_level": 11,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -20,
+                "atk": 0,
+                "def": -20
+              },
+              "statics": {
+                "maxhp": 717,
+                "atk": 69,
+                "def": 30
+              }
+            },
+            "unit_grade": 2,
+            "level": 12,
+            "unit_level": 12,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 13,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4004,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                2073,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 40
+          },
+          {
+            "items": [
+              [
+                1002,
+                100,
+                100,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [
+          4101,
+          4102,
+          4103,
+          4104,
+          4105
+        ],
+        "daily_limit": 5,
+        "prev": 409,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4004,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4004,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          },
+          {
+            "items": [
+              [
+                2073,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 40
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 8500,
+        "isboss": true
+      }
+    ],
+    "name": "董卓之乱",
+    "chapter_id": 1,
+    "require_level": 13,
+    "group": 4,
+    "rewards": [
+      {
+        "money": 0,
+        "star": 12,
+        "gamemoney": 40000,
+        "items": []
+      },
+      {
+        "money": 50,
+        "star": 24,
+        "gamemoney": 0,
+        "items": [
+          [
+            1601,
+            3
+          ]
+        ]
+      },
+      {
+        "money": 200,
+        "star": 30,
+        "gamemoney": 0,
+        "items": [
+          [
+            1101,
+            3
+          ],
+          [
+            1000,
+            3
+          ]
+        ]
+      }
+    ],
+    "icon": [
+      "stage_4.png",
+      "stage_4_2.png",
+      "stage_4_3.png"
+    ],
+    "pos": [
+      1010,
+      103
+    ]
+  },
+  {
+    "stage": [
+      {
+        "energy_cost": 6,
+        "gamemoney": 700,
+        "exp": 60,
+        "id": 501,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 10,
+                "atk": 10,
+                "def": 10
+              },
+              "statics": {
+                "maxhp": 2400,
+                "atk": 240,
+                "def": 120
+              }
+            },
+            "unit_grade": 1,
+            "level": 10,
+            "unit_level": 10,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 5,
+                "atk": 5,
+                "def": 5
+              },
+              "statics": {
+                "maxhp": 2400,
+                "atk": 240,
+                "def": 120
+              }
+            },
+            "unit_grade": 2,
+            "level": 11,
+            "unit_level": 11,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 2400,
+                "atk": 240,
+                "def": 120
+              }
+            },
+            "unit_grade": 2,
+            "level": 12,
+            "unit_level": 12,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 17,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4005,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 410,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4005,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4005,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 8700,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 700,
+        "exp": 60,
+        "id": 502,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 10,
+                "atk": 10,
+                "def": 10
+              },
+              "statics": {
+                "maxhp": 2453,
+                "atk": 245,
+                "def": 122
+              }
+            },
+            "unit_grade": 1,
+            "level": 10,
+            "unit_level": 10,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 5,
+                "atk": 5,
+                "def": 5
+              },
+              "statics": {
+                "maxhp": 2453,
+                "atk": 245,
+                "def": 122
+              }
+            },
+            "unit_grade": 2,
+            "level": 11,
+            "unit_level": 11,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 2453,
+                "atk": 245,
+                "def": 122
+              }
+            },
+            "unit_grade": 2,
+            "level": 12,
+            "unit_level": 12,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 17,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4006,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 501,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4006,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4006,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 8900,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 700,
+        "exp": 60,
+        "id": 503,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 10,
+                "atk": 10,
+                "def": 10
+              },
+              "statics": {
+                "maxhp": 2986,
+                "atk": 298,
+                "def": 148
+              }
+            },
+            "unit_grade": 2,
+            "level": 12,
+            "unit_level": 12,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 5,
+                "atk": 5,
+                "def": 5
+              },
+              "statics": {
+                "maxhp": 2986,
+                "atk": 298,
+                "def": 148
+              }
+            },
+            "unit_grade": 2,
+            "level": 13,
+            "unit_level": 13,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 2986,
+                "atk": 298,
+                "def": 148
+              }
+            },
+            "unit_grade": 2,
+            "level": 14,
+            "unit_level": 14,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 17,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4007,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 502,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4007,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4007,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 9100,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 700,
+        "exp": 60,
+        "id": 504,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 10,
+                "atk": 10,
+                "def": 10
+              },
+              "statics": {
+                "maxhp": 2319,
+                "atk": 231,
+                "def": 114
+              }
+            },
+            "unit_grade": 2,
+            "level": 12,
+            "unit_level": 12,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 5,
+                "atk": 5,
+                "def": 5
+              },
+              "statics": {
+                "maxhp": 2319,
+                "atk": 231,
+                "def": 114
+              }
+            },
+            "unit_grade": 2,
+            "level": 13,
+            "unit_level": 13,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 2319,
+                "atk": 231,
+                "def": 114
+              }
+            },
+            "unit_grade": 2,
+            "level": 14,
+            "unit_level": 14,
+            "card_grade": 0
+          }
+        ],
+        "require_level": 17,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4008,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 503,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4008,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4008,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 9300,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 700,
+        "exp": 60,
+        "id": 505,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 10,
+                "atk": 10,
+                "def": 10
+              },
+              "statics": {
+                "maxhp": 2612,
+                "atk": 260,
+                "def": 128
+              }
+            },
+            "unit_grade": 2,
+            "level": 13,
+            "unit_level": 13,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 5,
+                "atk": 5,
+                "def": 5
+              },
+              "statics": {
+                "maxhp": 2612,
+                "atk": 260,
+                "def": 128
+              }
+            },
+            "unit_grade": 2,
+            "level": 14,
+            "unit_level": 14,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 2612,
+                "atk": 260,
+                "def": 128
+              }
+            },
+            "unit_grade": 2,
+            "level": 15,
+            "unit_level": 15,
+            "card_grade": 1
+          }
+        ],
+        "require_level": 17,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4009,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                2072,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 40
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [
+          5051
+        ],
+        "daily_limit": 5,
+        "prev": 504,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4009,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4009,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          },
+          {
+            "items": [
+              [
+                2072,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 40
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 9500,
+        "isboss": true
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 700,
+        "exp": 60,
+        "id": 506,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 10,
+                "atk": 10,
+                "def": 10
+              },
+              "statics": {
+                "maxhp": 2665,
+                "atk": 265,
+                "def": 130
+              }
+            },
+            "unit_grade": 2,
+            "level": 13,
+            "unit_level": 13,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 5,
+                "atk": 5,
+                "def": 5
+              },
+              "statics": {
+                "maxhp": 2665,
+                "atk": 265,
+                "def": 130
+              }
+            },
+            "unit_grade": 2,
+            "level": 14,
+            "unit_level": 14,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 2665,
+                "atk": 265,
+                "def": 130
+              }
+            },
+            "unit_grade": 2,
+            "level": 15,
+            "unit_level": 15,
+            "card_grade": 1
+          }
+        ],
+        "require_level": 17,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4010,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 505,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4010,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4010,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 9700,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 700,
+        "exp": 60,
+        "id": 507,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 10,
+                "atk": 10,
+                "def": 10
+              },
+              "statics": {
+                "maxhp": 2718,
+                "atk": 270,
+                "def": 132
+              }
+            },
+            "unit_grade": 2,
+            "level": 16,
+            "unit_level": 16,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 5,
+                "atk": 5,
+                "def": 5
+              },
+              "statics": {
+                "maxhp": 2718,
+                "atk": 270,
+                "def": 132
+              }
+            },
+            "unit_grade": 2,
+            "level": 17,
+            "unit_level": 17,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 2718,
+                "atk": 270,
+                "def": 132
+              }
+            },
+            "unit_grade": 2,
+            "level": 18,
+            "unit_level": 18,
+            "card_grade": 1
+          }
+        ],
+        "require_level": 17,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4011,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [],
+        "daily_limit": 20,
+        "prev": 506,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4011,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4011,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 9900,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 700,
+        "exp": 60,
+        "id": 508,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 10,
+                "atk": 10,
+                "def": 10
+              },
+              "statics": {
+                "maxhp": 2771,
+                "atk": 275,
+                "def": 134
+              }
+            },
+            "unit_grade": 2,
+            "level": 16,
+            "unit_level": 16,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 5,
+                "atk": 5,
+                "def": 5
+              },
+              "statics": {
+                "maxhp": 2771,
+                "atk": 275,
+                "def": 134
+              }
+            },
+            "unit_grade": 2,
+            "level": 17,
+            "unit_level": 17,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 2771,
+                "atk": 275,
+                "def": 134
+              }
+            },
+            "unit_grade": 2,
+            "level": 18,
+            "unit_level": 18,
+            "card_grade": 1
+          }
+        ],
+        "require_level": 17,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4012,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [
+          5081
+        ],
+        "daily_limit": 20,
+        "prev": 507,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4012,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4012,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 10100,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 700,
+        "exp": 60,
+        "id": 509,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 10,
+                "atk": 10,
+                "def": 10
+              },
+              "statics": {
+                "maxhp": 2824,
+                "atk": 280,
+                "def": 136
+              }
+            },
+            "unit_grade": 2,
+            "level": 16,
+            "unit_level": 16,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 5,
+                "atk": 5,
+                "def": 5
+              },
+              "statics": {
+                "maxhp": 2824,
+                "atk": 280,
+                "def": 136
+              }
+            },
+            "unit_grade": 2,
+            "level": 17,
+            "unit_level": 17,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 2824,
+                "atk": 280,
+                "def": 136
+              }
+            },
+            "unit_grade": 2,
+            "level": 18,
+            "unit_level": 18,
+            "card_grade": 1
+          }
+        ],
+        "require_level": 17,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4013,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [
+          5091
+        ],
+        "daily_limit": 20,
+        "prev": 508,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4013,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4013,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 10300,
+        "isboss": false
+      },
+      {
+        "energy_cost": 6,
+        "gamemoney": 700,
+        "exp": 60,
+        "id": 510,
+        "attrs": [
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 10,
+                "atk": 10,
+                "def": 10
+              },
+              "statics": {
+                "maxhp": 3357,
+                "atk": 333,
+                "def": 162
+              }
+            },
+            "unit_grade": 2,
+            "level": 18,
+            "unit_level": 18,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": -30,
+                "atk": -30,
+                "def": -30
+              },
+              "statics": {
+                "maxhp": 3357,
+                "atk": 333,
+                "def": 162
+              }
+            },
+            "unit_grade": 2,
+            "level": 19,
+            "unit_level": 19,
+            "card_grade": 0
+          },
+          {
+            "unit_num": 10,
+            "add_attrs": {
+              "rates": {
+                "maxhp": 0,
+                "atk": 0,
+                "def": 0
+              },
+              "statics": {
+                "maxhp": 3357,
+                "atk": 333,
+                "def": 162
+              }
+            },
+            "unit_grade": 2,
+            "level": 20,
+            "unit_level": 20,
+            "card_grade": 1
+          }
+        ],
+        "require_level": 17,
+        "first_drops": [
+          {
+            "items": [
+              [
+                1104,
+                500,
+                500,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4014,
+                150,
+                150,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                2066,
+                1,
+                1,
+                1
+              ],
+              [
+                2042,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 40
+          },
+          {
+            "items": [
+              [
+                63,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          }
+        ],
+        "stars": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            60
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "stage_event": [
+          5101,
+          5102,
+          5103,
+          5104,
+          5105
+        ],
+        "daily_limit": 5,
+        "prev": 509,
+        "drops": [
+          {
+            "items": [
+              [
+                1104,
+                120,
+                180,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 100
+          },
+          {
+            "items": [
+              [
+                4014,
+                25,
+                50,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 70
+          },
+          {
+            "items": [
+              [
+                4014,
+                25,
+                25,
+                1
+              ]
+            ],
+            "picks": 2,
+            "rate": 30
+          },
+          {
+            "items": [
+              [
+                2066,
+                1,
+                1,
+                1
+              ],
+              [
+                2042,
+                1,
+                1,
+                1
+              ]
+            ],
+            "picks": 1,
+            "rate": 40
+          }
+        ],
+        "card_exp": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "fightpower": 10500,
+        "isboss": true
+      }
+    ],
+    "name": "神鬼吕布",
+    "chapter_id": 1,
+    "require_level": 17,
+    "group": 5,
+    "rewards": [
+      {
+        "money": 0,
+        "star": 12,
+        "gamemoney": 50000,
+        "items": []
+      },
+      {
+        "money": 50,
+        "star": 24,
+        "gamemoney": 0,
+        "items": [
+          [
+            1601,
+            3
+          ]
+        ]
+      },
+      {
+        "money": 100,
+        "star": 30,
+        "gamemoney": 0,
+        "items": [
+          [
+            1101,
+            3
+          ],
+          [
+            1000,
+            3
+          ]
+        ]
+      }
+    ],
+    "icon": [
+      "stage_5.png",
+      "stage_5_2.png",
+      "stage_5_3.png"
+    ],
+    "pos": [
+      1063,
+      441
+    ]
+  }
+]

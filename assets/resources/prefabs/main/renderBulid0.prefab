@@ -438,7 +438,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 56,
+      "width": 48,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -492,7 +492,7 @@
     "_dstBlendFactor": 771,
     "_string": "描述",
     "_N$string": "描述",
-    "_fontSize": 28,
+    "_fontSize": 24,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,

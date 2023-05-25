@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "c2988e73-3886-4e39-815c-fcce98aebe4b",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 93,
+  "height": 95,
+  "platformSettings": {},
+  "subMetas": {
+    "箭手训练场head": {
+      "ver": "1.0.6",
+      "uuid": "360e48ab-4ad5-478b-8fe1-21f224291b4f",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "c2988e73-3886-4e39-815c-fcce98aebe4b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": -1.5,
+      "trimX": 1,
+      "trimY": 3,
+      "width": 92,
+      "height": 92,
+      "rawWidth": 93,
+      "rawHeight": 95,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

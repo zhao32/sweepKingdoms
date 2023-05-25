@@ -1141,6 +1141,7 @@ var MyProtocols = {
 			}
 			retObj.item_info.exp = myDecoder.readInt();
 		}
+		console.log(JSON.stringify(retObj))
 		return retObj;
 	},
 
@@ -2011,23 +2012,25 @@ var MyProtocols = {
 		senderSocket.sendMessage(rawContent);
 	},
 
+	//获取英雄列表
 	get_2002: function (myDecoder) {
 		var retObj = {};
 		retObj.cards = [];
+		// debugger;
 		let cards_size = myDecoder.readInt();
 		if (cards_size > 0) {
 			for (var i = 0; i < cards_size; i++) {
+
 				retObj.cards[i] = {};
 				retObj.cards[i].id = myDecoder.readString();
-				retObj.cards[i].template_id = myDecoder.readInt();
-				retObj.cards[i].level = myDecoder.readInt();
+				retObj.cards[i].template_id = myDecoder.readInt();//魔板ID
+				retObj.cards[i].level = myDecoder.readInt();//
 				retObj.cards[i].num = myDecoder.readInt();
-				retObj.cards[i].exp = myDecoder.readInt();
+				retObj.cards[i].exp = myDecoder.readInt();//经验
 				retObj.cards[i].grade = myDecoder.readInt();
 				retObj.cards[i].unit_level = myDecoder.readInt();
 				retObj.cards[i].unitGrade = myDecoder.readInt();
 				retObj.cards[i].unit_type = myDecoder.readInt();
-
 				retObj.cards[i].equips = [];
 				let cardsi_equips_size = myDecoder.readInt();
 				if (cardsi_equips_size > 0) {
@@ -2043,6 +2046,7 @@ var MyProtocols = {
 					}
 				}
 				retObj.cards[i].fight = myDecoder.readInt();
+				retObj.cards[i].physical = myDecoder.readInt();
 				retObj.cards[i].runeUnlock = [];
 				let cardsi_runeUnlock_size = myDecoder.readInt();
 				if (cardsi_runeUnlock_size > 0) {
@@ -2064,6 +2068,21 @@ var MyProtocols = {
 						retObj.cards[i].runeLevel[runeLevel_idx] = myDecoder.readInt();
 					}
 				}
+				retObj.cards[i].skills_equips_size = [];
+				let skills_equips_size = myDecoder.readInt();
+				if (cardsi_runeLevel_size > 0) {
+					for (var skills_equips_id = 0; runeLevel_idx < skills_equips_id; skills_equips_id++) {
+						retObj.cards[i].skills_equips[skills_equips_id] = myDecoder.readInt();
+					}
+				}
+				retObj.cards[i].proficiency = [];  //熟练度 最多三个 对应英雄json 里 熟练兵种
+				let proficiency_size = myDecoder.readInt();
+				if (proficiency_size > 0) {
+					for (var i = 0; i < proficiency_size; i++) {
+						retObj.cards[i].proficiency[i] = myDecoder.readInt();
+					}
+				}
+
 			}
 		}
 		return retObj;
@@ -3255,12 +3274,14 @@ var MyProtocols = {
 	get_102: function (myDecoder) {
 		var retObj = {};
 		retObj.ret_code = myDecoder.readInt();
+		console.log('102:' + JSON.stringify(retObj))
 		return retObj;
 	},
 
 	get_10000: function (myDecoder) {
 		var retObj = {};
 		retObj.ret_code = myDecoder.readInt();
+		console.log("retObj   " + JSON.stringify(retObj))
 		return retObj;
 	},
 
@@ -3333,6 +3354,7 @@ var MyProtocols = {
 		retObj.in_game_session_id = myDecoder.readString();
 		retObj.has_qcjj_activity = myDecoder.readBool();
 		retObj.has_qzyb_activity = myDecoder.readBool();
+		console.log('10016:' + JSON.stringify(retObj))
 		return retObj;
 	},
 
@@ -3351,12 +3373,42 @@ var MyProtocols = {
 		retObj.money = myDecoder.readInt();
 		retObj.gameMoney = myDecoder.readInt();
 		retObj.energy = myDecoder.readInt();
+
 		retObj.vip_level = myDecoder.readInt();
 		retObj.vip_exp = myDecoder.readInt();
+
 		retObj.honor = myDecoder.readInt();
 		retObj.stamina = myDecoder.readInt();
 		retObj.nation_id = myDecoder.readInt();
+		/**战力 */
+		retObj.troops = myDecoder.readInt();
+		/**粮草 */
+		retObj.army = myDecoder.readInt();
+		retObj.population = myDecoder.readInt();
 		retObj.formationSlots = myDecoder.readInt();
+
+		retObj.barracks_build = [];
+		let barracks_build_size = myDecoder.readInt();
+		if (barracks_build_size > 0) {
+			for (var i = 0; i < barracks_build_size; i++) {
+				retObj.barracks_build[i] = myDecoder.readInt();
+			}
+		}
+		retObj.resource_build = [];
+		let resource_build_size = myDecoder.readInt();
+		if (resource_build_size > 0) {
+			for (var i = 0; i < resource_build_size; i++) {
+				retObj.resource_build[i] = myDecoder.readInt();
+			}
+		}
+		retObj.basic_build = [];
+		let basic_build_size = myDecoder.readInt();
+		if (basic_build_size > 0) {
+			for (var i = 0; i < basic_build_size; i++) {
+				retObj.basic_build[i] = myDecoder.readInt();
+			}
+		}
+
 		retObj.formationStatus = [];
 		let formationStatus_size = myDecoder.readInt();
 		if (formationStatus_size > 0) {
@@ -3388,6 +3440,16 @@ var MyProtocols = {
 			retObj.wanba_gift_ret.wanba_gift_id = myDecoder.readInt();
 			retObj.wanba_gift_ret.status = myDecoder.readInt();
 		}
+
+		retObj.military_data = [];
+		let military_data_size = myDecoder.readInt();
+		if (military_data_size > 0) {
+			for (var i = 0; i < military_data_size; i++) {
+				retObj.military_data[i] = myDecoder.readInt();
+			}
+		}
+
+		console.log('-------------10108---------------------')
 		return retObj;
 	},
 
@@ -3524,6 +3586,7 @@ var MyProtocols = {
 				retObj.activity_redpoints[i] = myDecoder.readInt();
 			}
 		}
+		console.log(JSON.stringify(retObj))
 		return retObj;
 	},
 
@@ -4087,8 +4150,8 @@ var MyProtocols = {
 		myEncoder.writeString(p_pwd);
 		var rawContent = myEncoder.end();
 		myEncoder.free();
-		console.log('senderSocket:'+senderSocket)
-		console.log('p_uname:'+p_uname)
+		console.log('senderSocket:' + senderSocket)
+		console.log('p_uname:' + p_uname)
 
 		senderSocket.sendMessage(rawContent);
 	},
@@ -5305,6 +5368,7 @@ var MyProtocols = {
 	},
 
 	send_C2SPubBuy: function (senderSocket, p_cost_type) {
+		console.log('p_cost_type:' + p_cost_type)
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(1043);
 		myEncoder.writeInt(p_cost_type);
@@ -5313,6 +5377,7 @@ var MyProtocols = {
 		senderSocket.sendMessage(rawContent);
 	},
 
+	/**将领招募返回 */
 	get_1044: function (myDecoder) {
 		var retObj = {};
 		retObj.cost_type = myDecoder.readInt();
@@ -5331,7 +5396,7 @@ var MyProtocols = {
 				retObj.cards[i].grade = myDecoder.readInt();
 				retObj.cards[i].unit_level = myDecoder.readInt();
 				retObj.cards[i].unitGrade = myDecoder.readInt();
-				retObj.cards[i].unit_type = myDecoder.readInt();
+				// retObj.cards[i].unit_type = myDecoder.readInt();
 
 				retObj.cards[i].equip1 = myDecoder.readString();
 				retObj.cards[i].equip2 = myDecoder.readString();
@@ -5578,6 +5643,7 @@ var MyProtocols = {
 		}
 		retObj.elite_count = myDecoder.readInt();
 		retObj.crawl_state = myDecoder.readInt();
+		console.log('副本控制数据：' + JSON.stringify(retObj))
 		return retObj;
 	},
 
@@ -6111,6 +6177,47 @@ var MyProtocols = {
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
+	},
+	/**  lv= 升级后等级  type=(1:资源建筑 ，2 兵营建筑 ，3 基础建筑 )    index=建筑里面 对应的 坐标从0 开始 payType 0 金币 1 元宝 */
+	send_C2UPBulid: function (senderSocket, lv, type, idx, payType) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(10185);
+		myEncoder.writeInt(lv);
+		myEncoder.writeInt(type);
+		myEncoder.writeInt(idx);
+		myEncoder.writeInt(payType);
+
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_10186: function (myDecoder) {
+		var retObj = {};
+		retObj.lv = myDecoder.readInt();
+		retObj.type = myDecoder.readInt();
+		// console.log(`升级返回：`+ JSON.stringify(retObj))
+		return retObj;
+	},
+
+	// 建筑id cost_type 1 元宝招募  2 粮草    stages_id 兵种ID
+	send_C2SRecSoldiers: function (senderSocket, bulidid, cost_type, stages_id) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(1057);
+		myEncoder.writeInt(bulidid);
+		myEncoder.writeInt(cost_type);
+		myEncoder.writeInt(stages_id);
+
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_1058: function (myDecoder) {
+		var retObj = {};
+		retObj.num = myDecoder.readInt();
+		retObj.type = myDecoder.readInt();
+		return retObj;
 	},
 
 

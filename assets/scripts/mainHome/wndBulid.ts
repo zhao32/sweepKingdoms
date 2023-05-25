@@ -9,6 +9,7 @@ import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
 import renderBulid0 from "./renderBulid0";
+import renderBulid1 from "./renderBulid1";
 
 const { ccclass, property } = cc._decorator;
 
@@ -25,7 +26,6 @@ export default class NewClass extends cc.Component {
     renderPfb1: cc.Prefab = null;
 
     showType: number = 0 // 0 分组 1 分组内
-
 
     groupsData = [
         {
@@ -67,17 +67,30 @@ export default class NewClass extends cc.Component {
             }
             render.getComponent(renderBulid0).init(this.groupsData[i])
             render.on(cc.Node.EventType.TOUCH_END, () => {
-                this.showIntragroup()
+                this.showIntragroup(i)
             }, this)
         }
     }
 
-    showIntragroup() {
+    showIntragroup(idx) {
         this.showType = 1
+        let bulidData = []
+        if (idx == 0) bulidData = DataManager.GameData.build["basic"]
+        else if (idx == 1) bulidData = DataManager.GameData.build["resource"]
+        else if (idx == 2) bulidData = DataManager.GameData.build["barracks"]
+
+        // for (let i = 0; i < Object.keys(DataManager.GameData.bulid).length; i++) {
+        //     let key = Object.keys(DataManager.GameData.bulid)[i]
+        //     let value = DataManager.GameData.bulid[key]
+        //     if (value.group == idx) {
+        //         bulidData.push(value)
+        //     }
+        // }
         this.contect.removeAllChildren()
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < bulidData.length; i++) {
             let render = cc.instantiate(this.renderPfb1)
             render.parent = this.contect
+            render.getComponent(renderBulid1).init(bulidData[i])
             if (i < 5) {
                 render.x = 1000
                 this.scheduleOnce(() => {
@@ -88,7 +101,7 @@ export default class NewClass extends cc.Component {
     }
 
     init() {
-        this.showGroups()
+        // this.showGroups()
     }
 
     onBackHandler() {
@@ -98,7 +111,6 @@ export default class NewClass extends cc.Component {
         } else if (this.showType == 1) {
             this.showGroups()
         }
-
     }
 
     // update (dt) {}

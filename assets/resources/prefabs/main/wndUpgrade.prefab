@@ -2036,17 +2036,17 @@
     "_prefab": {
       "__id__": 57
     },
-    "_opacity": 255,
+    "_opacity": 225.165,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
+      "r": 0,
       "g": 255,
-      "b": 255,
+      "b": 36,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 94.11,
+      "width": 85.56,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -2100,7 +2100,7 @@
     "_dstBlendFactor": 771,
     "_string": "升级条件:",
     "_N$string": "升级条件:",
-    "_fontSize": 22,
+    "_fontSize": 20,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,
@@ -2144,12 +2144,12 @@
     "_prefab": {
       "__id__": 60
     },
-    "_opacity": 255,
+    "_opacity": 225.165,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
+      "r": 0,
       "g": 255,
-      "b": 255,
+      "b": 36,
       "a": 255
     },
     "_contentSize": {
@@ -2294,8 +2294,27 @@
       "__id__": 1
     },
     "_enabled": true,
-    "label": null,
-    "text": "hello",
+    "nameDisplay": {
+      "__id__": 48
+    },
+    "lvDisplay": {
+      "__id__": 52
+    },
+    "upDisplay": {
+      "__id__": 59
+    },
+    "upPremiseDisplay": {
+      "__id__": 56
+    },
+    "coinLabel": {
+      "__id__": 22
+    },
+    "goldLabel": {
+      "__id__": 31
+    },
+    "pic": {
+      "__id__": 14
+    },
     "_id": ""
   },
   {

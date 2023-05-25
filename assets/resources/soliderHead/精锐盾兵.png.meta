@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "713d6ffd-131f-49b0-b3c8-d52ff688c0d2",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 100,
+  "height": 84,
+  "platformSettings": {},
+  "subMetas": {
+    "精锐盾兵": {
+      "ver": "1.0.6",
+      "uuid": "75eeb4fe-49e8-4e4f-a9d3-c47a3d2e8a26",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "713d6ffd-131f-49b0-b3c8-d52ff688c0d2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 100,
+      "height": 84,
+      "rawWidth": 100,
+      "rawHeight": 84,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

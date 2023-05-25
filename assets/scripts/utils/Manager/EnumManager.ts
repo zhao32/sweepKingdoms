@@ -24,7 +24,18 @@ export default class EnumManager {
 
         LOAD: 'prefabs/pageLoad',
 
+        /**登录页面 */
+        PAGE_LOGIN: 'prefabs/login/loginLayer',
+
+        PAGE_ROLE: 'prefabs/login/createrRoleLayer',
+
+
+        WND_LOGIN: 'prefabs/login/wndLogin',
+
+
         /////////////////////// 主页窗口
+        WND_MAIN_ACTIVEY: 'prefabs/main/wndActivity',
+
         /**建造建筑 */
         WND_MAIN_BULID: 'prefabs/main/wndBulid',
         /**首页普通窗口 */
@@ -53,9 +64,16 @@ export default class EnumManager {
         WND_PACK: 'prefabs/pack/wndPack',
 
 
+        /**巅峰战场 */
+        WND_BATTLEFILED: 'prefabs/battleFiled/wndBattleFiled',
 
+        /**部队比较 */
+        WND_BATTLE_ARMY: 'prefabs/battleFiled/wndArmy',
 
-
+        /**副本 */
+        WND_STAGE: 'prefabs/stage/wndStage',
+        /**副本 */
+        WND_STAGE_SELECT: 'prefabs/stage/wndStageSelect',
 
     }
 }

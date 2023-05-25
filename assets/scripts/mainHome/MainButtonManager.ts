@@ -66,12 +66,17 @@ export default class NewClass extends cc.Component {
             '居民区', '资源仓库', '神像', '英魂墓地', '城墙',
             '铸币工坊', '粮草工坊', '领土中心', '技术研究所',
             '军营', '枪兵训练场', '箭手训练场', '骑士训练场', '盾卫训练场', '部队强化', '军魂祭坛', '招募所', '酒馆', '木牛工厂', '资源仓库', '巅峰战场', '建造建筑'
-        ]
+        ];
+
+        // ["居民区","资源仓库","城墙","神像","英魂墓地"];
+        // ["铸币工坊","粮草工坊","领土中心","技术研究所"];
+        // ["军营",'枪兵训练场', '箭手训练场', '骑士训练场', '盾卫训练场', '军魂祭坛','部队强化','木牛工厂']
+
         let ani = ['铸币工坊', '军营', '枪兵训练场', '箭手训练场', '酒馆', '巅峰战场', '建造建筑']
 
         let normalLList = ['居民区', '资源仓库', '神像', '英魂墓地', '城墙', '铸币工坊', '粮草工坊', '领土中心', '技术研究所', '军营']
 
-        let armList = ['枪兵训练场', '箭手训练场', '骑士训练场', '盾卫训练场', '军魂祭坛']
+        let armList = ['枪兵训练场', '箭手训练场', '骑士训练场', '盾卫训练场', '军魂祭坛','木牛工厂']
 
         if (ani.indexOf(customData) != -1) {
             console.log('点中' + customData)
@@ -101,10 +106,11 @@ export default class NewClass extends cc.Component {
         } else if (customData == '部队强化') {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_STRENGTHEN)
         } else if (armList.indexOf(customData) != -1) {
-            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_ARM)
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_ARM,...[customData])
         } else if (customData == '招募所') {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_RECRUITOFFICE)
-
+        }else if (customData == '巅峰战场') {
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLEFILED)
         }
 
     }
