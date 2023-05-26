@@ -52,26 +52,26 @@ export default class NewClass extends cc.Component {
         {
             idx: 0,
             name: '元宝招募一次',
-            price: 500,
+            price: 280,
             describe: '必出名将以上的将领及对应将魂',
         },
         {
             idx: 1,
             name: '元宝招募十次',
-            price: 4000,
-            describe: '招募十次，价格八折，VIP5以上每次必出一个天选将魂'
+            price: 2520,
+            describe: '招募十次，价格八折'
         },
         {
             idx: 2,
             name: '功勋招募一次',
-            price: 3000,
-            describe: '可以招募到大将，名将以及对应的将魂'
+            price: 4000,
+            describe: '可以招募到大将，名将及以上'
         },
         {
             idx: 3,
             name: '功勋招募十次',
-            price: 30000,
-            describe: '可以招募到大将，名将以及对应的将魂'
+            price: 35200,
+            describe: '招募十次，价格八折，可以招募到大将，名将及以上'
         }
     ]
 
@@ -150,7 +150,6 @@ export default class NewClass extends cc.Component {
         } else if (this.showType == 1) {
             this.showGroups()
         }
-
     }
 
     // update (dt) {}

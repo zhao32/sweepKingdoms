@@ -25,8 +25,6 @@ export default class NewClass extends cc.Component {
     @property(cc.Node)
     heroNameBg: cc.Node = null;
 
-
-
     @property
     text: string = 'hello';
 
@@ -45,6 +43,25 @@ export default class NewClass extends cc.Component {
         ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.headBg)
         ResManager.loadItemIcon(`hero/heroNameBg${defaultData.quality - 1}`, this.heroNameBg)
 
+        for (let i = 1; i < 6; i++) {
+            this.node.getChildByName(`soldierType${i}`).active = false
+        }
+
+        for (let i = 0; i < defaultData.talents.length; i++) {
+            let node = this.node.getChildByName(`soldierType${i + 1}`)
+            node.active = true
+            ResManager.loadItemIcon(`hero/soldierType${defaultData.talents[i]}`, node)
+        }
+
+        for (let i = 1; i <= 3; i++) {
+            this.node.getChildByName(`starGet${i}`).active = false            
+        }
+
+        for (let i = 1; i <= data.unitGrade; i++) {
+            this.node.getChildByName(`starGet${i}`).active = true            
+        }
+
+        
     }
 
     // update (dt) {}

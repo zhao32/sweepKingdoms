@@ -157,7 +157,7 @@ export default class NewClass extends cc.Component {
 
     S2CCardList(retObj) {
         console.log('我的将表:' + JSON.stringify(retObj))
-        DataManager.cardsList = retObj
+        DataManager.cardsList = retObj.cards
     }
     errCodeBack(retObj) {
         console.log('接口错误码：' + JSON.stringify(retObj))

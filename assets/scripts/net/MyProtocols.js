@@ -2013,14 +2013,13 @@ var MyProtocols = {
 	},
 
 	//获取英雄列表
+	//获取英雄列表
 	get_2002: function (myDecoder) {
 		var retObj = {};
 		retObj.cards = [];
-		// debugger;
 		let cards_size = myDecoder.readInt();
 		if (cards_size > 0) {
 			for (var i = 0; i < cards_size; i++) {
-
 				retObj.cards[i] = {};
 				retObj.cards[i].id = myDecoder.readString();
 				retObj.cards[i].template_id = myDecoder.readInt();//魔板ID
@@ -2031,6 +2030,8 @@ var MyProtocols = {
 				retObj.cards[i].unit_level = myDecoder.readInt();
 				retObj.cards[i].unitGrade = myDecoder.readInt();
 				retObj.cards[i].unit_type = myDecoder.readInt();
+				retObj.cards[i].fight = myDecoder.readInt();
+				retObj.cards[i].physical = myDecoder.readInt();
 				retObj.cards[i].equips = [];
 				let cardsi_equips_size = myDecoder.readInt();
 				if (cardsi_equips_size > 0) {
@@ -2045,8 +2046,7 @@ var MyProtocols = {
 						retObj.cards[i].unitEquips[unitEquips_idx] = myDecoder.readInt();
 					}
 				}
-				retObj.cards[i].fight = myDecoder.readInt();
-				retObj.cards[i].physical = myDecoder.readInt();
+
 				retObj.cards[i].runeUnlock = [];
 				let cardsi_runeUnlock_size = myDecoder.readInt();
 				if (cardsi_runeUnlock_size > 0) {
@@ -2068,21 +2068,20 @@ var MyProtocols = {
 						retObj.cards[i].runeLevel[runeLevel_idx] = myDecoder.readInt();
 					}
 				}
-				retObj.cards[i].skills_equips_size = [];
+				retObj.cards[i].skills_equips = [];
 				let skills_equips_size = myDecoder.readInt();
-				if (cardsi_runeLevel_size > 0) {
-					for (var skills_equips_id = 0; runeLevel_idx < skills_equips_id; skills_equips_id++) {
+				if (skills_equips_size > 0) {
+					for (var skills_equips_id = 0; skills_equips_id < skills_equips_size; skills_equips_id++) {
 						retObj.cards[i].skills_equips[skills_equips_id] = myDecoder.readInt();
 					}
 				}
 				retObj.cards[i].proficiency = [];  //熟练度 最多三个 对应英雄json 里 熟练兵种
 				let proficiency_size = myDecoder.readInt();
 				if (proficiency_size > 0) {
-					for (var i = 0; i < proficiency_size; i++) {
-						retObj.cards[i].proficiency[i] = myDecoder.readInt();
+					for (var proficiency_id = 0; proficiency_id < proficiency_size; proficiency_id++) {
+						retObj.cards[i].proficiency[proficiency_id] = myDecoder.readInt();
 					}
 				}
-
 			}
 		}
 		return retObj;
