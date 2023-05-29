@@ -6,6 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import DataManager from "../utils/Manager/DataManager";
+import { Logger } from "../utils/Manager/Logger";
 import ViewManager from "../utils/Manager/ViewManager";
 
 //@ts-ignore
@@ -47,12 +48,12 @@ export default class NewClass extends cc.Component {
     start() {
         this.editAccount.node.on('editing-did-ended', (editBox: cc.EditBox) => {
             this.strAccount = editBox.string
-            console.log(editBox.string)
+            Logger.log(editBox.string)
         }, this)
 
         this.editPwd.node.on('editing-did-ended', (editBox: cc.EditBox) => {
             this.strPwd = editBox.string
-            console.log(editBox.string)
+            Logger.log(editBox.string)
         }, this)
 
 

@@ -124,7 +124,13 @@ export default class DataManager {
         buildUp: {},
         /** 副本数据 */
         Stages: [],
-        Cards: {}
+        /**将领数据 */
+        Cards: {},
+        /**将领等级 */
+        CardLevels: {},
+        /**技能表 */
+        Skill: {},
+
     }
     /**我的将表 */
     static cardsList = []
@@ -161,8 +167,14 @@ export default class DataManager {
     //     "crawl_state": 10
     // }
 
+    /**国家类型 */
     static readonly countyList = ['', '魏', '燕', '秦', '赵', '齐', '韩', '楚']
+    /**兵种类型 */
     static readonly armList = ['', '盾', '骑', '枪', '弓', '法']
+
+    // 1 砍防  2 砍功  3 穿防 4 穿攻 5 法功   6法防
+    /**技能属性索引 */
+    static readonly skillAttributeList = ['', '挥砍防御', '挥砍攻击', '穿透防御', '穿透攻击', '法术攻击', '法术防御']
 
     static readonly barracksList = ["军营", '盾卫训练场', '骑士训练场', '枪兵训练场', '箭手训练场', '法师', '木牛工厂', '军魂祭坛', '部队强化']
     static readonly resourceList = ["铸币工坊", "粮草工坊", "领土中心", "技术研究所"];

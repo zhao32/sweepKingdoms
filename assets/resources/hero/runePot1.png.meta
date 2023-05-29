@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "794d05b5-eb03-48e7-9130-b609490ef89f",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 92,
+  "height": 92,
+  "platformSettings": {},
+  "subMetas": {
+    "runePot1": {
+      "ver": "1.0.6",
+      "uuid": "94c30b0d-948a-42f1-8ab2-be87bc624e6e",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "794d05b5-eb03-48e7-9130-b609490ef89f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 92,
+      "height": 92,
+      "rawWidth": 92,
+      "rawHeight": 92,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

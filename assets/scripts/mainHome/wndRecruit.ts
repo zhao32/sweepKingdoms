@@ -7,6 +7,7 @@
 
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
+import { Logger } from "../utils/Manager/Logger";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
@@ -104,8 +105,8 @@ export default class NewClass extends cc.Component {
         let jmqGrade = DataManager.GameData.build['basic'][0].grade
         let maxProportion = DataManager.GameData.buildUp["basic"][1][jmqGrade - 1].proportion[2]
 
-        console.log('maxSolider:' + maxSolider)
-        console.log('maxProportion:' + maxProportion)
+        Logger.log('maxSolider:' + maxSolider)
+        Logger.log('maxProportion:' + maxProportion)
         DataManager.GameData.buildUp['barracks']
 
         this.soldierNameDisplay.string = DataManager.GameData.Soldier[idx - 1].name
@@ -157,7 +158,7 @@ export default class NewClass extends cc.Component {
     }
 
     recruitHandler(event, data) {
-        console.log('-------招募请求-------', this._idx, this.soliderType)
+        Logger.log('-------招募请求-------', this._idx, this.soliderType)
         MyProtocols.send_C2SRecSoldiers(DataManager._loginSocket, this._idx, 0, this.soliderType)
     }
 

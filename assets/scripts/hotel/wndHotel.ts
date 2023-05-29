@@ -93,14 +93,9 @@ export default class NewClass extends cc.Component {
                     console.log('-------打开招募--------')
                     ViewManager.instance.hideWnd(DataManager.curWndPath)
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL_RECRUIT)
-                }
-                //  else if (i == 1) {
-
-                // }
-
-                else {
+                } else {
                     ViewManager.instance.hideWnd(DataManager.curWndPath)
-                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL_LIST, ...[EnumManager.viewPath.WND_HOTEL, i])
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL_LIST, ...[EnumManager.viewPath.WND_HOTEL, this.hotelData[i]])
                 }
             }, this)
         }

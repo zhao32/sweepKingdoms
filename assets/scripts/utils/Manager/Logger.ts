@@ -1,5 +1,5 @@
 //是否打开日志
-let OPENLOGFLAG = true;
+let OPENLOGFLAG = false;
 export class Logger {
  
     /**

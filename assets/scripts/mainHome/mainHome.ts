@@ -9,6 +9,7 @@ import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import EventManager from "../utils/Manager/EventManager";
+import { Logger } from "../utils/Manager/Logger";
 import ViewManager from "../utils/Manager/ViewManager";
 
 //@ts-ignore
@@ -93,7 +94,7 @@ export default class NewClass extends cc.Component {
     }
 
     updataBulidState() {
-        console.log('-----------更新建筑状态-------------')
+        Logger.log('-----------更新建筑状态-------------')
         for (let i = 0; i < DataManager.barracksList.length; i++) {
             for (let j = 0; j < this.nodeContect.getChildByName('front').children.length; j++) {
                 if (this.nodeContect.getChildByName('front').children[j].name == DataManager.barracksList[i]) {
@@ -127,7 +128,7 @@ export default class NewClass extends cc.Component {
 
         }
 
-        console.log(DataManager.playData.basic_build)
+        Logger.log(DataManager.playData.basic_build)
         for (let i = 0; i < DataManager.basicList.length; i++) {
             for (let j = 0; j < this.nodeContect.getChildByName('front').children.length; j++) {
                 if (this.nodeContect.getChildByName('front').children[j].name == DataManager.basicList[i]) {
@@ -196,7 +197,7 @@ export default class NewClass extends cc.Component {
     }
 
     RedPointsBack(retObj) {
-        console.log('----------RedPointsBack---------------')
+        Logger.log('----------RedPointsBack---------------')
         console.log(JSON.stringify(retObj))
 
 

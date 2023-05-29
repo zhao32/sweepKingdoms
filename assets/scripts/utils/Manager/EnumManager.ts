@@ -59,6 +59,10 @@ export default class EnumManager {
         /**招募之外 */
         WND_HOTEL_LIST: 'prefabs/hotel/wndHeroList',
 
+        /**将领详情 */
+        WND_HOTEL_DETAIL: 'prefabs/hotel/wndHotelDetail',
+
+
 
         /////////////////// 背包
         WND_PACK: 'prefabs/pack/wndPack',
@@ -72,8 +76,13 @@ export default class EnumManager {
 
         /**副本 */
         WND_STAGE: 'prefabs/stage/wndStage',
-        /**副本 */
+        /**副本选关 */
         WND_STAGE_SELECT: 'prefabs/stage/wndStageSelect',
+
+        /**战斗准备 */
+        WND_STAGE_READY: 'prefabs/stage/wndStageReady',
+
+        
 
     }
 }

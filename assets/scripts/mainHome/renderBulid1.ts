@@ -9,6 +9,7 @@ import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import EventManager from "../utils/Manager/EventManager";
+import { Logger } from "../utils/Manager/Logger";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
@@ -55,7 +56,7 @@ export default class NewClass extends cc.Component {
                 this.curIdx = this._data.idx
                 MyProtocols.send_C2UPBulid(DataManager._loginSocket, 1, this.buildType, this._data.idx, 1)
             } else {
-                console.log('打开升级窗口：' + this._data.name)
+                Logger.log('打开升级窗口：' + this._data.name)
                 ViewManager.instance.hideWnd(DataManager.curWndPath)
                 ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_UPGRADE, ...[this._data.name, EnumManager.viewPath.WND_MAIN_BULID])
             }

@@ -5,10 +5,19 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { NetEvent } from "../net/NetEvent";
+import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
+import { Logger } from "../utils/Manager/Logger";
 import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -36,10 +45,13 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < ToggleList.length; i++) {
             ToggleList[i].node.on('toggle', (event: cc.Toggle) => {
                 if (event.isChecked == true) {
-                    console.log('选中' + i)
+                    Logger.log('选中' + i)
                 }
             }, this)
         }
+        MyProtocols.send_C2SBagItems(DataManager._loginSocket)
+
+        NetEventDispatcher.addListener(NetEvent.S2CBagItems, this.S2CBagItems.bind(this))
 
     }
 
@@ -52,11 +64,14 @@ export default class NewClass extends cc.Component {
             render.removeAllChildren()
             for (let j = 0; j < 4; j++) {
                 let item = cc.instantiate(this.itemPfb)
-                item.parent = render
-                
+                item.parent = render   
             }
-            
         }
+
+    }
+
+    S2CBagItems(retObj){ 
+        console.log(JSON.stringify(retObj))
 
     }
 

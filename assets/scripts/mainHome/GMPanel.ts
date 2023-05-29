@@ -7,6 +7,7 @@
 
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
+import { Logger } from "../utils/Manager/Logger";
 import ViewManager from "../utils/Manager/ViewManager";
 
 
@@ -39,7 +40,7 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.showToast(showvalue);
     }
     Send_OnClickHandler() {
-        console.log(this.m_pInput.string)
+        Logger.log(this.m_pInput.string)
         if (this.m_pInput.string == "") {
             ViewManager.instance.showToast('请输入内容')
             return;

@@ -147,6 +147,8 @@ export default class NewClass extends cc.Component {
         if (this.showType == 0) {
             console.log('关闭窗口')
             ViewManager.instance.hideWnd(DataManager.curWndPath)
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL)
+
         } else if (this.showType == 1) {
             this.showGroups()
         }

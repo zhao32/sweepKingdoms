@@ -6,6 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import EnumManager from "../utils/Manager/EnumManager";
+import { Logger } from "../utils/Manager/Logger";
 import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
@@ -64,7 +65,7 @@ export default class NewClass extends cc.Component {
                 } else if (i == 2) {//出征
 
                 } else if (i == 3) {//背包
-                    console.log('----------打开背包----------')
+                    Logger.log('----------打开背包----------')
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_PACK)
 
                 } else if (i == 4) {//奖励

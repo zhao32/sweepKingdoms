@@ -7,6 +7,7 @@
 
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
+import { Logger } from "../utils/Manager/Logger";
 import ViewManager from "../utils/Manager/ViewManager";
 import StageSelectItem from "./StageSelectItem";
 
@@ -93,8 +94,9 @@ export default class NewClass extends cc.Component {
     }
 
     onHandleStart() {
-        console.log('-----开始副本----')
-
+        Logger.log('-----开始副本----')
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_READY)
     }
 
     // update (dt) {}

@@ -16,7 +16,7 @@ export default class ViewManager {
 
         this.GameRoot = cc.find("Canvas").getChildByName("GameUI");
 
-        console.log('构造 ViewManager')
+        Logger.log('构造 ViewManager')
     }
 
     /**
@@ -203,12 +203,12 @@ export default class ViewManager {
    * @param params 展示视图时传的参数
    */
     public showWnd(path: string, ...params) {
-        console.log('params:' + params)
+        Logger.log('params:' + params)
         if (DataManager.curWndPath) return
         DataManager.curWndPath = path
         let name = ResManager.Instance.getResourcesName(path);
         let wndNode: cc.Node = this.WNDRoot.getChildByName(name);
-        console.log('name:'+name)
+        Logger.log('name:' + name)
         if (!wndNode) {
             ResManager.Instance.loadPrefab(path, (err, resource) => {
                 if (ResManager.Instance.hasNode(name)) {
@@ -220,7 +220,7 @@ export default class ViewManager {
                 wndNode.setPosition(cc.Vec2.ZERO);
                 wndNode.parent = this.WNDRoot;
                 let panel = wndNode.getComponent(BaseView);
-                console.log('wndNode.name:'+wndNode.name)
+                Logger.log('wndNode.name:' + wndNode.name)
                 wndNode.getComponent(wndNode.name).init(...params)
                 if (panel) {
                     this._curWnd = panel;
@@ -231,7 +231,7 @@ export default class ViewManager {
             });
         }
         else {
-            console.log('wndNode.name:'+wndNode.name)
+            Logger.log('wndNode.name:' + wndNode.name)
             let panel = wndNode.getComponent(BaseView);
             wndNode.getComponent(wndNode.name).init(...params)
             if (panel) {

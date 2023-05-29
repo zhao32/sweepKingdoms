@@ -44,6 +44,7 @@ export default class NewClass extends cc.Component {
 
         NetEventDispatcher.addListener(NetEvent.S2CCardList, this.S2CCardList.bind(this))
 
+        NetEventDispatcher.addListener(NetEvent.PushAddCard, this.PushAddCard.bind(this))
 
 
 
@@ -119,7 +120,7 @@ export default class NewClass extends cc.Component {
 
     }
 
- 
+
     /**监听属性变化 */
     PushPropertyChange(retObj) {
         // console.log('属性变化：' + JSON.stringify(retObj))
@@ -158,6 +159,11 @@ export default class NewClass extends cc.Component {
     S2CCardList(retObj) {
         console.log('我的将表:' + JSON.stringify(retObj))
         DataManager.cardsList = retObj.cards
+    }
+
+    PushAddCard(retObj) {
+        console.log('将表增加:' + JSON.stringify(retObj))
+        DataManager.cardsList.push(...[retObj.cards])
     }
     errCodeBack(retObj) {
         console.log('接口错误码：' + JSON.stringify(retObj))

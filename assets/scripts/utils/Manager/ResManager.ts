@@ -175,10 +175,10 @@ export default class ResManager {
      */
     public loadResource(path: string, type: typeof cc.Asset, completeCallback: (error: Error, resource: cc.Asset) => void) {
         let assetName = this.getResourcesName(path);
-        console.log('assetName:'+assetName)
-        console.log('type:' + type)
+        // console.log('assetName:'+assetName)
+        // console.log('type:' + type)
         let typeName = type.name;
-        console.log('typeName:' + typeName)
+        // console.log('typeName:' + typeName)
         typeName = typeName.split("cc_").join("")
         if(!typeName)typeName = "Unrecognized"
         // Logger.log(JSON.stringify(this._allResources))
@@ -203,12 +203,12 @@ export default class ResManager {
      * @param node 
      */
     static loadItemIcon(path: string, node: cc.Node) {
-        console.log("path:" + path)
+        Logger.log("path:" + path)
         node.getComponent(cc.Sprite).spriteFrame = null;
         ResManager.Instance.loadResource(path, cc.SpriteFrame, function (error, spriteFrame: cc.SpriteFrame) {
             if (!error) {
                 if (node && cc.isValid(node)) {
-                    console.log('spriteFrame:'+spriteFrame)
+                    Logger.log('spriteFrame:'+spriteFrame)
                     node.getComponent(cc.Sprite).spriteFrame = spriteFrame;
                 }
             } else {

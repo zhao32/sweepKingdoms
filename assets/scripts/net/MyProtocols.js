@@ -2082,15 +2082,25 @@ var MyProtocols = {
 						retObj.cards[i].proficiency[proficiency_id] = myDecoder.readInt();
 					}
 				}
+				retObj.cards[i].aptitude = [];  //对应的 资质
+				let aptitude_size = myDecoder.readInt();
+				if (aptitude_size > 0) {
+					for (var aptitude_id = 0; aptitude_id < aptitude_size; aptitude_id++) {
+						retObj.cards[i].aptitude[aptitude_id] = myDecoder.readInt();
+					}
+				}
+
+
 			}
 		}
 		return retObj;
 	},
-
+	
 	get_2004: function (myDecoder) {
 		var retObj = {};
 		let card_info_exist = myDecoder.readBool();
 		if (card_info_exist == true) {
+			debugger;
 			retObj.card_info = {};
 			retObj.card_info.id = myDecoder.readString();
 			retObj.card_info.template_id = myDecoder.readInt();
@@ -2100,9 +2110,8 @@ var MyProtocols = {
 			retObj.card_info.grade = myDecoder.readInt();
 			retObj.card_info.unit_level = myDecoder.readInt();
 			retObj.card_info.unitGrade = myDecoder.readInt();
-			retObj.card_info.unit_type = myDecoder.readInt();
 			retObj.card_info.equips = [];
-			let card_info_equips_size = myDecoder.readInt();
+			card_info_equips_size = 6
 			if (card_info_equips_size > 0) {
 				for (var equips_idx = 0; equips_idx < card_info_equips_size; equips_idx++) {
 					retObj.card_info.equips[equips_idx] = myDecoder.readString();
@@ -2116,6 +2125,7 @@ var MyProtocols = {
 				}
 			}
 			retObj.card_info.fight = myDecoder.readInt();
+			retObj.card_info.physical = myDecoder.readInt();
 			retObj.card_info.runeUnlock = [];
 			let card_info_runeUnlock_size = myDecoder.readInt();
 			if (card_info_runeUnlock_size > 0) {
@@ -2137,10 +2147,31 @@ var MyProtocols = {
 					retObj.card_info.runeLevel[runeLevel_idx] = myDecoder.readInt();
 				}
 			}
+			retObj.card_info.skills_equips = [];
+			let card_skills_equips_size = myDecoder.readInt();
+			if (card_skills_equips_size > 0) {
+				for (var skills_equips_idx = 0; skills_equips_idx < card_skills_equips_size; skills_equips_idx++) {
+					retObj.card_info.skills_equips[skills_equips_idx] = myDecoder.readInt();
+				}
+			}
+			retObj.card_info.proficiency = [];
+			let card_proficiency_size = myDecoder.readInt();
+			if (card_proficiency_size > 0) {
+				for (var proficiency_idx = 0; proficiency_idx < card_proficiency_size; proficiency_idx++) {
+					retObj.card_info.proficiency[proficiency_idx] = myDecoder.readInt();
+				}
+			}
+			retObj.card_info.aptitude = [];
+			let aptitude_size = myDecoder.readInt();
+			if (aptitude_size > 0) {
+				for (var aptitude_idx = 0; aptitude_idx < aptitude_size; aptitude_idx++) {
+					retObj.card_info.aptitude[aptitude_idx] = myDecoder.readInt();
+				}
+			}
+
 		}
 		return retObj;
 	},
-
 	send_C2SCardTakeOnItem: function (senderSocket, p_cardId, p_item_uuid) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2005);

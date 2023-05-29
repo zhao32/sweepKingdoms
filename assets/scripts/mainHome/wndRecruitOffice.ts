@@ -7,6 +7,7 @@
 
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
+import { Logger } from "../utils/Manager/Logger";
 import ViewManager from "../utils/Manager/ViewManager";
 import renderRecruitOffice from "./renderRecruitOffice";
 
@@ -51,7 +52,7 @@ export default class NewClass extends cc.Component {
     }
 
     onBackHandler() {
-        console.log('关闭窗口')
+        Logger.log('关闭窗口')
         ViewManager.instance.hideWnd(EnumManager.viewPath.WND_MAIN_RECRUITOFFICE, true)
     }
 

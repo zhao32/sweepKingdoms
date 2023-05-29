@@ -8,6 +8,7 @@
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
+import { Logger } from "../utils/Manager/Logger";
 import ViewManager from "../utils/Manager/ViewManager";
 import stageBattleRender from "./stageBattleRender";
 import stageRender from "./stageRender";
@@ -116,7 +117,7 @@ export default class NewClass extends cc.Component {
 
     onBackHandler() {
         if (this.showType == 0) {
-            console.log('关闭窗口')
+            Logger.log('关闭窗口')
             ViewManager.instance.hideWnd(DataManager.curWndPath, true)
         }
         // else if (this.showType == 1) {

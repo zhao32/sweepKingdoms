@@ -8,6 +8,7 @@
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
+import { Logger } from "../utils/Manager/Logger";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
@@ -74,7 +75,7 @@ export default class NewClass extends cc.Component {
         DataManager.GameData.build[this.group][this.idx - 1].grade = retObj.lv
         DataManager.playData[`${this.group}_build`][this.idx - 1] = retObj.lv
         this.init(this._name, this._from)
-        console.log(JSON.stringify(DataManager.GameData.build[this.group]))
+        Logger.log(JSON.stringify(DataManager.GameData.build[this.group]))
     }
 
     init(name, from: string) {
@@ -183,7 +184,7 @@ export default class NewClass extends cc.Component {
     }
 
     onUpgrade1() {
-        console.log('this.grade:' + this.grade)
+        Logger.log('this.grade:' + this.grade)
         MyProtocols.send_C2UPBulid(DataManager._loginSocket, this.grade, this.buildType, this.idx, 1)
     }
 

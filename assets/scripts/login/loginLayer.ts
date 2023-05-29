@@ -8,6 +8,7 @@
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
+import { Logger } from "../utils/Manager/Logger";
 import ViewManager from "../utils/Manager/ViewManager";
 
 //@ts-ignore
@@ -79,7 +80,7 @@ export default class NewClass extends cc.Component {
 
     loginBack(retObj) {
         // {"uid":4682,"session_id":"2891339660185600"}
-        console.log('----------登陆返回---------------')
+        Logger.log('----------登陆返回---------------')
         console.log(JSON.stringify(retObj))
         // let socketUrl = `ws://8.218.9.194:${retObj.uid}/ws`
         // this._loginSocket = new LejiSocket(socketUrl);
@@ -90,14 +91,14 @@ export default class NewClass extends cc.Component {
     }
 
     enterGameBack(retObj) {
-        console.log('----------登陆验证---------------')
+        Logger.log('----------登陆验证---------------')
         console.log(JSON.stringify(retObj))
         MyProtocols.send_C2SListRedPoints(DataManager._loginSocket)
 
     }
 
     QueryHasRoleBack(retObj) {
-        console.log('----------角色验证---------------')
+        Logger.log('----------角色验证---------------')
         console.log(JSON.stringify(retObj))
         ViewManager.instance.hideView(EnumManager.viewPath.PAGE_LOGIN, true)
         if (retObj.has_role) {
@@ -110,7 +111,7 @@ export default class NewClass extends cc.Component {
 
     /**获取服务器列表 */
     scSeverList(retObj) {
-        console.log('----------获取服务器列表返回---------------')
+        Logger.log('----------获取服务器列表返回---------------')
         console.log(JSON.stringify(retObj))
         this.node.getChildByName('bottomNode').runAction(cc.moveTo(0.5, cc.v2(0, -150)))
         this.serverList = retObj.items
@@ -145,17 +146,17 @@ export default class NewClass extends cc.Component {
     }
 
     selectServerBack(retObj) {
-        console.log('----------选择服务器---------------')
+        Logger.log('----------选择服务器---------------')
         console.log(JSON.stringify(retObj))
 
         let socketUrl = `ws://${this.selectSeverData.ip_addr}:${this.selectSeverData.port}/ws`
         DataManager._loginSocket = new LejiSocket(socketUrl);
 
-        console.log('this.session_id  1:' + DataManager.instance.session_id)
+        Logger.log('this.session_id  1:' + DataManager.instance.session_id)
         var self = this
         this.sendLogin2Server(() => {
-            console.log('self.session_id  2:' + DataManager.instance.session_id)
-            console.log(DataManager._loginSocket)
+            Logger.log('self.session_id  2:' + DataManager.instance.session_id)
+            // Logger.log(DataManager._loginSocket)
             MyProtocols.send_C2SQueryHasRole(DataManager._loginSocket, DataManager.instance.session_id)
         })
 
@@ -171,7 +172,7 @@ export default class NewClass extends cc.Component {
         }
         //添加loading提示
         if (!this.shortMask) {
-            console.log('1111111111111111')
+            Logger.log('1111111111111111')
             this.shortMask = cc.instantiate(DataManager.Main.shortLoadLayer);
             this.shortMask.setPosition(0, 0);
             cc.Canvas.instance.node.addChild(this.shortMask);
@@ -185,15 +186,15 @@ export default class NewClass extends cc.Component {
             if (DataManager._loginSocket.isConnected()) {
                 if (cbFunc != null) {
                     cbFunc();
-                    console.log('-------链接成功-------------')
+                    Logger.log('-------链接成功-------------')
                     ViewManager.instance.showToast('链接成功')
                 }
                 clearInterval(self._existInterval);
                 self._existInterval = null;
                 //删除short loding
-                console.log(self.shortMask)
+                Logger.log(self.shortMask)
                 if (self.shortMask != null) {
-                    console.log('-------------------------')
+                    Logger.log('-------------------------')
                     self.shortMask.removeFromParent();
                     self.shortMask.destroy();
                     self.shortMask = null;

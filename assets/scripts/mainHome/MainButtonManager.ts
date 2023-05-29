@@ -6,6 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import EnumManager from "../utils/Manager/EnumManager";
+import { Logger } from "../utils/Manager/Logger";
 import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
@@ -79,7 +80,7 @@ export default class NewClass extends cc.Component {
         let armList = ['枪兵训练场', '箭手训练场', '骑士训练场', '盾卫训练场', '军魂祭坛','木牛工厂']
 
         if (ani.indexOf(customData) != -1) {
-            console.log('点中' + customData)
+            Logger.log('点中' + customData)
             let ani = this.nodeArea.getChildByName(customData).getComponent(dragonBones.ArmatureDisplay)
             ani.addEventListener(dragonBones.EventObject.COMPLETE, () => {
                 ani.playAnimation('action1', 0)
