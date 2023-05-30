@@ -56,6 +56,8 @@ export default class NewClass extends cc.Component {
             this.tipDisplay0.string = `未开启`
         } else if (state == 1) {
             this.btnLabel.string = '升级'
+            this.tipDisplay0.string = `已开启`
+
         }
 
     }

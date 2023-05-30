@@ -6,6 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import DataManager from "../utils/Manager/DataManager";
+import ResManager from "../utils/Manager/ResManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -17,6 +18,10 @@ export default class NewClass extends cc.Component {
 
     @property(cc.RichText)
     richLabel: cc.RichText = null;
+
+    @property(cc.Node)
+    icon: cc.Node = null;
+
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -34,10 +39,8 @@ export default class NewClass extends cc.Component {
      */
     init(data, proficiency, talents) {
         this.nameLabel.string = data.name
-        for (let i = 0; i < data.attribute.length; i++) {
 
-        }
-
+        ResManager.loadItemIcon(`skills/${data.name}`, this.icon)
         // 三字奥义	熟练度减熟练度的10%	减去之后除以20		
         // 四字奥义	熟练度减熟练度的10%	减去之后除以18	减去之后除以40	
         // 五字奥义	熟练度减熟练度的10%	减去之后除以16.4	减去之后除以36	减去之后除以90

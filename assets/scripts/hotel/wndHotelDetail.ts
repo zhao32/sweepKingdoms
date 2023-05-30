@@ -74,11 +74,17 @@ export default class NewClass extends cc.Component {
     S2CRuneUnlock(retObj) {
         console.log('开启石槽返回：' + JSON.stringify(retObj))
         // {"card_id":19,"pos_index":2}
-        // this._data.runePutup[retObj.pos_index] = 1
-        // for (let i = 0; i < this._data.runePutup.length; i++) {
-        //     let render = this.contect.children[i]
-        //     render.getComponent(detailRuneRender).init(this._data.runePutup[i], i, this._data.template_id)
-        // }
+        console.log(this)
+
+        console.log(JSON.stringify(this._data))
+        this._data.runePutup[retObj.pos_index] = 1
+        console.log(JSON.stringify(this._data))
+
+        this._data.runePutup[retObj.pos_index] = 1
+        for (let i = 0; i < this._data.runePutup.length; i++) {
+            let render = this.contect.children[i]
+            render.getComponent(detailRuneRender).init(this._data.runePutup[i], i, this._data.template_id)
+        }
 
     }
     /**data 服务器获取的将领数据 */

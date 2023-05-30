@@ -72,7 +72,12 @@ export default class NewClass extends cc.Component {
     UPBulid(retObj) {
         console.log('升级后返回：' + JSON.stringify(retObj))
         // 升级后返回：{"lv":2,"type":2}
-        DataManager.GameData.build[this.group][this.idx - 1].grade = retObj.lv
+        console.log(this.idx - 1)
+        // console.log(JSON.stringify(DataManager.GameData.build[this.group]))
+
+        console.log(JSON.stringify(DataManager.GameData.build[this.group][this.idx]))
+
+        DataManager.GameData.build[this.group][this.idx].grade = retObj.lv
         DataManager.playData[`${this.group}_build`][this.idx - 1] = retObj.lv
         this.init(this._name, this._from)
         Logger.log(JSON.stringify(DataManager.GameData.build[this.group]))
@@ -116,7 +121,7 @@ export default class NewClass extends cc.Component {
             }
         }
         this.idx = idx - 1
-
+        console.log('grade:' + DataManager.GameData.build[this.group][idx - 1].grade)
         let grade = DataManager.GameData.build[this.group][idx - 1].grade
         this.grade = grade + 1
         let levelData = DataManager.GameData.buildUp[this.group][idx][grade - 1]
@@ -184,13 +189,13 @@ export default class NewClass extends cc.Component {
     }
 
     onUpgrade1() {
-        Logger.log('this.grade:' + this.grade)
-        MyProtocols.send_C2UPBulid(DataManager._loginSocket, this.grade, this.buildType, this.idx, 1)
+        // console.log('this.grade:' + this.grade + '  ' + this.buildType + '   ' + (parseInt(this.idx as any) + 1))
+        MyProtocols.send_C2UPBulid(DataManager._loginSocket, this.grade, this.buildType, parseInt(this.idx as any), 1)
     }
 
 
     onUpgrade2() {
-        MyProtocols.send_C2UPBulid(DataManager._loginSocket, this.grade, this.buildType, this.idx, 2)
+        MyProtocols.send_C2UPBulid(DataManager._loginSocket, this.grade, this.buildType, parseInt(this.idx as any), 2)
     }
 
 
