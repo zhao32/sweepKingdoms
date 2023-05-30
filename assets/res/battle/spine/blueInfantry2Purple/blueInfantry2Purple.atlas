@@ -1,0 +1,279 @@
+
+blueInfantry2Purple.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+blueInfantry2Purple/GuangYuDaoGuangDiLie_00185
+  rotate: true
+  xy: 169, 191
+  size: 84, 48
+  orig: 84, 48
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/arm_l
+  rotate: false
+  xy: 401, 424
+  size: 30, 24
+  orig: 30, 24
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/arm_r
+  rotate: false
+  xy: 231, 244
+  size: 22, 26
+  orig: 22, 26
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/arm_up_l
+  rotate: false
+  xy: 95, 2
+  size: 19, 20
+  orig: 19, 20
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/arm_up_r
+  rotate: false
+  xy: 219, 214
+  size: 15, 15
+  orig: 15, 15
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/biyan
+  rotate: true
+  xy: 219, 231
+  size: 44, 10
+  orig: 44, 10
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/body
+  rotate: false
+  xy: 405, 450
+  size: 33, 32
+  orig: 33, 32
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/box
+  rotate: false
+  xy: 73, 2
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/daolight_3
+  rotate: false
+  xy: 2, 127
+  size: 165, 148
+  orig: 165, 148
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/daolight_4
+  rotate: false
+  xy: 2, 46
+  size: 115, 79
+  orig: 115, 79
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/effect1
+  rotate: false
+  xy: 2, 277
+  size: 233, 233
+  orig: 233, 233
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/gongji_yan
+  rotate: false
+  xy: 2, 3
+  size: 46, 19
+  orig: 46, 19
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/gongji_zui
+  rotate: true
+  xy: 236, 214
+  size: 15, 9
+  orig: 15, 9
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/hair_h
+  rotate: false
+  xy: 360, 450
+  size: 43, 60
+  orig: 43, 60
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/hair_hl
+  rotate: false
+  xy: 287, 356
+  size: 56, 59
+  orig: 56, 59
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/hair_hr
+  rotate: false
+  xy: 169, 135
+  size: 41, 54
+  orig: 41, 54
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/hair_q
+  rotate: false
+  xy: 237, 295
+  size: 46, 31
+  orig: 46, 31
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/hair_ql
+  rotate: false
+  xy: 119, 56
+  size: 36, 69
+  orig: 36, 69
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/hair_qr
+  rotate: true
+  xy: 405, 484
+  size: 26, 68
+  orig: 26, 68
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/hand_l
+  rotate: false
+  xy: 157, 81
+  size: 15, 18
+  orig: 15, 18
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/hand_r
+  rotate: false
+  xy: 269, 276
+  size: 16, 17
+  orig: 16, 17
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/head
+  rotate: false
+  xy: 287, 417
+  size: 71, 93
+  orig: 71, 93
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/leg_l
+  rotate: false
+  xy: 345, 387
+  size: 18, 28
+  orig: 18, 28
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/leg_r
+  rotate: false
+  xy: 345, 360
+  size: 19, 25
+  orig: 19, 25
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/leg_up_l
+  rotate: false
+  xy: 255, 245
+  size: 17, 25
+  orig: 17, 25
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/leg_up_r
+  rotate: false
+  xy: 157, 101
+  size: 16, 24
+  orig: 16, 24
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/mei_l
+  rotate: true
+  xy: 101, 24
+  size: 20, 13
+  orig: 20, 13
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/mei_r
+  rotate: true
+  xy: 219, 196
+  size: 16, 11
+  orig: 16, 11
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/putong_yan
+  rotate: false
+  xy: 287, 335
+  size: 46, 19
+  orig: 46, 19
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/putong_zui
+  rotate: false
+  xy: 231, 231
+  size: 18, 11
+  orig: 18, 11
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/si_eye_l
+  rotate: false
+  xy: 50, 2
+  size: 21, 20
+  orig: 21, 20
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/si_eye_r
+  rotate: false
+  xy: 157, 61
+  size: 15, 18
+  orig: 15, 18
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/si_mouth
+  rotate: false
+  xy: 232, 203
+  size: 11, 9
+  orig: 11, 9
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/silk_1
+  rotate: false
+  xy: 440, 453
+  size: 32, 29
+  orig: 32, 29
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/silk_2
+  rotate: true
+  xy: 360, 423
+  size: 25, 39
+  orig: 25, 39
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/skirt
+  rotate: false
+  xy: 237, 272
+  size: 30, 21
+  orig: 30, 21
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/wuqi
+  rotate: true
+  xy: 2, 24
+  size: 20, 97
+  orig: 20, 97
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/wuqi2
+  rotate: false
+  xy: 237, 328
+  size: 48, 182
+  orig: 48, 182
+  offset: 0, 0
+  index: -1
+blueInfantry2Purple/yao
+  rotate: false
+  xy: 475, 489
+  size: 35, 21
+  orig: 35, 21
+  offset: 0, 0
+  index: -1

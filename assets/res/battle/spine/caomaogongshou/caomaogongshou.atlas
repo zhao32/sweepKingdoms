@@ -1,0 +1,216 @@
+
+caomaogongshou.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+caomaogongshou/G
+  rotate: false
+  xy: 2, 63
+  size: 87, 72
+  orig: 87, 72
+  offset: 0, 0
+  index: -1
+caomaogongshou/GJ_mouth
+  rotate: false
+  xy: 98, 137
+  size: 19, 10
+  orig: 19, 10
+  offset: 0, 0
+  index: -1
+caomaogongshou/JT
+  rotate: false
+  xy: 2, 137
+  size: 94, 66
+  orig: 94, 66
+  offset: 0, 0
+  index: -1
+caomaogongshou/P
+  rotate: false
+  xy: 144, 149
+  size: 33, 16
+  orig: 33, 16
+  offset: 0, 0
+  index: -1
+caomaogongshou/T_1
+  rotate: true
+  xy: 144, 167
+  size: 20, 38
+  orig: 20, 38
+  offset: 0, 0
+  index: -1
+caomaogongshou/T_2
+  rotate: false
+  xy: 62, 21
+  size: 22, 40
+  orig: 22, 40
+  offset: 0, 0
+  index: -1
+caomaogongshou/T_3
+  rotate: true
+  xy: 62, 2
+  size: 17, 38
+  orig: 17, 38
+  offset: 0, 0
+  index: -1
+caomaogongshou/T_4
+  rotate: false
+  xy: 114, 84
+  size: 10, 24
+  orig: 10, 24
+  offset: 0, 0
+  index: -1
+caomaogongshou/Z_mouth
+  rotate: true
+  xy: 128, 115
+  size: 20, 8
+  orig: 20, 8
+  offset: 0, 0
+  index: -1
+caomaogongshou/arm_l
+  rotate: false
+  xy: 128, 176
+  size: 14, 27
+  orig: 14, 27
+  offset: 0, 0
+  index: -1
+caomaogongshou/arm_r
+  rotate: true
+  xy: 91, 59
+  size: 16, 23
+  orig: 16, 23
+  offset: 0, 0
+  index: -1
+caomaogongshou/arm_up_l
+  rotate: true
+  xy: 184, 166
+  size: 21, 33
+  orig: 21, 33
+  offset: 0, 0
+  index: -1
+caomaogongshou/arm_up_r
+  rotate: true
+  xy: 179, 148
+  size: 16, 29
+  orig: 16, 29
+  offset: 0, 0
+  index: -1
+caomaogongshou/beard_1
+  rotate: true
+  xy: 111, 110
+  size: 25, 15
+  orig: 25, 15
+  offset: 0, 0
+  index: -1
+caomaogongshou/beard_2
+  rotate: true
+  xy: 119, 137
+  size: 11, 17
+  orig: 11, 17
+  offset: 0, 0
+  index: -1
+caomaogongshou/beard_3
+  rotate: true
+  xy: 91, 107
+  size: 28, 18
+  orig: 28, 18
+  offset: 0, 0
+  index: -1
+caomaogongshou/body
+  rotate: false
+  xy: 2, 11
+  size: 58, 50
+  orig: 58, 50
+  offset: 0, 0
+  index: -1
+caomaogongshou/foot_l
+  rotate: true
+  xy: 158, 132
+  size: 15, 19
+  orig: 15, 19
+  offset: 0, 0
+  index: -1
+caomaogongshou/foot_r
+  rotate: true
+  xy: 179, 131
+  size: 15, 19
+  orig: 15, 19
+  offset: 0, 0
+  index: -1
+caomaogongshou/hair
+  rotate: false
+  xy: 219, 173
+  size: 32, 22
+  orig: 32, 22
+  offset: 0, 0
+  index: -1
+caomaogongshou/hand_l
+  rotate: true
+  xy: 128, 158
+  size: 16, 14
+  orig: 16, 14
+  offset: 0, 0
+  index: -1
+caomaogongshou/hand_r
+  rotate: false
+  xy: 138, 128
+  size: 18, 19
+  orig: 18, 19
+  offset: 0, 0
+  index: -1
+caomaogongshou/hats
+  rotate: false
+  xy: 2, 205
+  size: 140, 49
+  orig: 140, 49
+  offset: 0, 0
+  index: -1
+caomaogongshou/head
+  rotate: true
+  xy: 144, 189
+  size: 65, 72
+  orig: 65, 72
+  offset: 0, 0
+  index: -1
+caomaogongshou/jian
+  rotate: true
+  xy: 114, 150
+  size: 53, 12
+  orig: 53, 12
+  offset: 0, 0
+  index: -1
+caomaogongshou/leg_l
+  rotate: false
+  xy: 86, 30
+  size: 21, 27
+  orig: 21, 27
+  offset: 0, 0
+  index: -1
+caomaogongshou/leg_r
+  rotate: false
+  xy: 91, 77
+  size: 21, 28
+  orig: 21, 28
+  offset: 0, 0
+  index: -1
+caomaogongshou/mouth
+  rotate: false
+  xy: 2, 4
+  size: 21, 5
+  orig: 21, 5
+  offset: 0, 0
+  index: -1
+caomaogongshou/weijin
+  rotate: true
+  xy: 218, 197
+  size: 57, 34
+  orig: 57, 34
+  offset: 0, 0
+  index: -1
+caomaogongshou/weijin_h
+  rotate: false
+  xy: 98, 149
+  size: 14, 54
+  orig: 14, 54
+  offset: 0, 0
+  index: -1

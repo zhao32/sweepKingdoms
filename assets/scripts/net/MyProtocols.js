@@ -2095,7 +2095,7 @@ var MyProtocols = {
 		}
 		return retObj;
 	},
-	
+
 	get_2004: function (myDecoder) {
 		var retObj = {};
 		let card_info_exist = myDecoder.readBool();
@@ -2370,6 +2370,7 @@ var MyProtocols = {
 		var retObj = {};
 		retObj.card_id = myDecoder.readInt();
 		retObj.pos_index = myDecoder.readInt();
+		console.log(`解锁符槽返回：`+JSON.stringify(retObj))
 		return retObj;
 	},
 
@@ -6249,6 +6250,26 @@ var MyProtocols = {
 		retObj.type = myDecoder.readInt();
 		return retObj;
 	},
+
+	//请求解锁石槽  参数将ID   位置ID 从0开始
+	send_C2SOpenRuneSlot: function (senderSocket, hero_id ,pos_index) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(2025);
+		myEncoder.writeInt(hero_id);
+		myEncoder.writeInt(pos_index);
+
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	// get_2026: function (myDecoder) {
+	// 	var retObj = {};
+	// 	retObj.hero_id = myDecoder.readInt();
+	// 	retObj.pos_index = myDecoder.readInt();
+	// 	return retObj;
+	// },
+
 
 
 }

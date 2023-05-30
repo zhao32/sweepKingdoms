@@ -1,0 +1,230 @@
+
+zhangjiao.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+zhangjiao/armL
+  rotate: true
+  xy: 170, 426
+  size: 33, 45
+  orig: 33, 45
+  offset: 0, 0
+  index: -1
+zhangjiao/armR
+  rotate: false
+  xy: 85, 290
+  size: 35, 37
+  orig: 35, 37
+  offset: 0, 0
+  index: -1
+zhangjiao/beard
+  rotate: false
+  xy: 2, 2
+  size: 48, 50
+  orig: 48, 50
+  offset: 0, 0
+  index: -1
+zhangjiao/box1
+  rotate: false
+  xy: 238, 440
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+zhangjiao/chest
+  rotate: false
+  xy: 95, 431
+  size: 73, 75
+  orig: 73, 75
+  offset: 0, 0
+  index: -1
+zhangjiao/forearmL
+  rotate: true
+  xy: 95, 329
+  size: 41, 43
+  orig: 41, 43
+  offset: 0, 0
+  index: -1
+zhangjiao/forearmR
+  rotate: true
+  xy: 455, 483
+  size: 23, 47
+  orig: 23, 47
+  offset: 0, 0
+  index: -1
+zhangjiao/gongji_yan
+  rotate: true
+  xy: 53, 122
+  size: 43, 24
+  orig: 43, 24
+  offset: 0, 0
+  index: -1
+zhangjiao/gongji_zui
+  rotate: false
+  xy: 154, 329
+  size: 21, 16
+  orig: 21, 16
+  offset: 0, 0
+  index: -1
+zhangjiao/hair
+  rotate: true
+  xy: 234, 462
+  size: 44, 58
+  orig: 44, 58
+  offset: 0, 0
+  index: -1
+zhangjiao/handL
+  rotate: false
+  xy: 154, 347
+  size: 23, 20
+  orig: 23, 20
+  offset: 0, 0
+  index: -1
+zhangjiao/handR
+  rotate: false
+  xy: 217, 435
+  size: 19, 24
+  orig: 19, 24
+  offset: 0, 0
+  index: -1
+zhangjiao/hat
+  rotate: false
+  xy: 2, 110
+  size: 49, 55
+  orig: 49, 55
+  offset: 0, 0
+  index: -1
+zhangjiao/head
+  rotate: false
+  xy: 2, 224
+  size: 81, 106
+  orig: 81, 106
+  offset: 0, 0
+  index: -1
+zhangjiao/hu_l
+  rotate: true
+  xy: 154, 369
+  size: 24, 36
+  orig: 24, 36
+  offset: 0, 0
+  index: -1
+zhangjiao/hu_r
+  rotate: false
+  xy: 154, 395
+  size: 14, 34
+  orig: 14, 34
+  offset: 0, 0
+  index: -1
+zhangjiao/jeweryR
+  rotate: true
+  xy: 386, 488
+  size: 18, 67
+  orig: 18, 67
+  offset: 0, 0
+  index: -1
+zhangjiao/mei_l
+  rotate: false
+  xy: 85, 227
+  size: 28, 18
+  orig: 28, 18
+  offset: 0, 0
+  index: -1
+zhangjiao/mei_r
+  rotate: false
+  xy: 145, 312
+  size: 16, 15
+  orig: 16, 15
+  offset: 0, 0
+  index: -1
+zhangjiao/putong_yan
+  rotate: true
+  xy: 70, 180
+  size: 42, 10
+  orig: 42, 10
+  offset: 0, 0
+  index: -1
+zhangjiao/qiuqiu
+  rotate: false
+  xy: 341, 463
+  size: 43, 43
+  orig: 43, 43
+  offset: 0, 0
+  index: -1
+zhangjiao/shoulderL
+  rotate: true
+  xy: 2, 54
+  size: 54, 45
+  orig: 54, 45
+  offset: 0, 0
+  index: -1
+zhangjiao/shoulderL1
+  rotate: true
+  xy: 85, 247
+  size: 41, 28
+  orig: 41, 28
+  offset: 0, 0
+  index: -1
+zhangjiao/shoulderR
+  rotate: false
+  xy: 170, 395
+  size: 36, 29
+  orig: 36, 29
+  offset: 0, 0
+  index: -1
+zhangjiao/shoulight
+  rotate: false
+  xy: 2, 167
+  size: 66, 55
+  orig: 66, 55
+  offset: 0, 0
+  index: -1
+zhangjiao/si_yan
+  rotate: true
+  xy: 140, 329
+  size: 41, 12
+  orig: 41, 12
+  offset: 0, 0
+  index: -1
+zhangjiao/si_zui
+  rotate: false
+  xy: 122, 300
+  size: 21, 27
+  orig: 21, 27
+  offset: 0, 0
+  index: -1
+zhangjiao/skirtL
+  rotate: false
+  xy: 294, 461
+  size: 45, 45
+  orig: 45, 45
+  offset: 0, 0
+  index: -1
+zhangjiao/skirtR
+  rotate: false
+  xy: 170, 461
+  size: 62, 45
+  orig: 62, 45
+  offset: 0, 0
+  index: -1
+zhangjiao/weapon
+  rotate: false
+  xy: 2, 332
+  size: 91, 174
+  orig: 91, 174
+  offset: 0, 0
+  index: -1
+zhangjiao/weapon1
+  rotate: true
+  xy: 386, 469
+  size: 17, 56
+  orig: 17, 56
+  offset: 0, 0
+  index: -1
+zhangjiao/xuanlight
+  rotate: false
+  xy: 95, 372
+  size: 57, 57
+  orig: 57, 57
+  offset: 0, 0
+  index: -1

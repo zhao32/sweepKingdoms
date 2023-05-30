@@ -1,0 +1,188 @@
+
+archer2Yellow.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+archer2Yellow/Ass
+  rotate: false
+  xy: 2, 19
+  size: 28, 15
+  orig: 28, 15
+  offset: 0, 0
+  index: -1
+archer2Yellow/HuangZ_L_arm
+  rotate: false
+  xy: 130, 202
+  size: 16, 21
+  orig: 16, 21
+  offset: 0, 0
+  index: -1
+archer2Yellow/HuangZ_L_arm_up
+  rotate: true
+  xy: 55, 80
+  size: 14, 26
+  orig: 14, 26
+  offset: 0, 0
+  index: -1
+archer2Yellow/HuangZ_L_foot
+  rotate: true
+  xy: 90, 128
+  size: 9, 11
+  orig: 9, 11
+  offset: 0, 0
+  index: -1
+archer2Yellow/HuangZ_R_foot
+  rotate: true
+  xy: 90, 128
+  size: 9, 11
+  orig: 9, 11
+  offset: 0, 0
+  index: -1
+archer2Yellow/HuangZ_L_hand
+  rotate: false
+  xy: 32, 20
+  size: 13, 14
+  orig: 13, 14
+  offset: 0, 0
+  index: -1
+archer2Yellow/HuangZ_L_leg_up
+  rotate: false
+  xy: 261, 373
+  size: 12, 18
+  orig: 12, 18
+  offset: 0, 0
+  index: -1
+archer2Yellow/HuangZ_R_leg_up
+  rotate: false
+  xy: 261, 373
+  size: 12, 18
+  orig: 12, 18
+  offset: 0, 0
+  index: -1
+archer2Yellow/HuangZ_R_arm
+  rotate: false
+  xy: 103, 167
+  size: 14, 24
+  orig: 14, 24
+  offset: 0, 0
+  index: -1
+archer2Yellow/HuangZ_R_arm_up
+  rotate: false
+  xy: 103, 193
+  size: 25, 30
+  orig: 25, 30
+  offset: 0, 0
+  index: -1
+archer2Yellow/HuangZ_R_hand
+  rotate: false
+  xy: 2, 2
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+archer2Yellow/HuangZ_body
+  rotate: false
+  xy: 2, 73
+  size: 51, 53
+  orig: 51, 53
+  offset: 0, 0
+  index: -1
+archer2Yellow/HuangZ_bow
+  rotate: false
+  xy: 181, 296
+  size: 32, 106
+  orig: 32, 106
+  offset: 0, 0
+  index: -1
+archer2Yellow/HuangZ_gongjian
+  rotate: false
+  xy: 90, 139
+  size: 11, 84
+  orig: 11, 84
+  offset: 0, 0
+  index: -1
+archer2Yellow/HuangZ_head_1
+  rotate: false
+  xy: 2, 128
+  size: 86, 95
+  orig: 86, 95
+  offset: 0, 0
+  index: -1
+archer2Yellow/HuangZ_head_3
+  rotate: false
+  xy: 2, 225
+  size: 177, 177
+  orig: 177, 177
+  offset: 0, 0
+  index: -1
+archer2Yellow/HuangZ_shoulder_1
+  rotate: false
+  xy: 215, 370
+  size: 44, 32
+  orig: 44, 32
+  offset: 0, 0
+  index: -1
+archer2Yellow/HuangZ_xiabai_2
+  rotate: false
+  xy: 2, 36
+  size: 34, 35
+  orig: 34, 35
+  offset: 0, 0
+  index: -1
+archer2Yellow/HuangZ_xiabai_3
+  rotate: false
+  xy: 55, 96
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+archer2Yellow/eyes
+  rotate: true
+  xy: 38, 36
+  size: 35, 7
+  orig: 35, 7
+  offset: 0, 0
+  index: -1
+archer2Yellow/gongjizui
+  rotate: false
+  xy: 300, 394
+  size: 13, 8
+  orig: 13, 8
+  offset: 0, 0
+  index: -1
+archer2Yellow/huzi1
+  rotate: false
+  xy: 261, 393
+  size: 37, 9
+  orig: 37, 9
+  offset: 0, 0
+  index: -1
+archer2Yellow/huzi2
+  rotate: true
+  xy: 181, 237
+  size: 57, 27
+  orig: 57, 27
+  offset: 0, 0
+  index: -1
+archer2Yellow/meimao
+  rotate: false
+  xy: 181, 226
+  size: 15, 9
+  orig: 15, 9
+  offset: 0, 0
+  index: -1
+archer2Yellow/meimao2
+  rotate: false
+  xy: 215, 342
+  size: 21, 11
+  orig: 21, 11
+  offset: 0, 0
+  index: -1
+archer2Yellow/shoujiyan
+  rotate: false
+  xy: 215, 355
+  size: 37, 13
+  orig: 37, 13
+  offset: 0, 0
+  index: -1

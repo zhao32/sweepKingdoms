@@ -1,0 +1,181 @@
+
+mage2Yellow.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+mage2Yellow/armL
+  rotate: true
+  xy: 63, 72
+  size: 30, 34
+  orig: 30, 34
+  offset: 0, 0
+  index: -1
+mage2Yellow/armR
+  rotate: true
+  xy: 182, 158
+  size: 39, 33
+  orig: 39, 33
+  offset: 0, 0
+  index: -1
+mage2Yellow/chest
+  rotate: false
+  xy: 2, 75
+  size: 59, 73
+  orig: 59, 73
+  offset: 0, 0
+  index: -1
+mage2Yellow/eye
+  rotate: true
+  xy: 100, 107
+  size: 35, 7
+  orig: 35, 7
+  offset: 0, 0
+  index: -1
+mage2Yellow/forearmL
+  rotate: false
+  xy: 63, 104
+  size: 35, 38
+  orig: 35, 38
+  offset: 0, 0
+  index: -1
+mage2Yellow/forearmR
+  rotate: true
+  xy: 70, 144
+  size: 25, 40
+  orig: 25, 40
+  offset: 0, 0
+  index: -1
+mage2Yellow/gongjiszui
+  rotate: false
+  xy: 171, 148
+  size: 17, 8
+  orig: 17, 8
+  offset: 0, 0
+  index: -1
+mage2Yellow/handL
+  rotate: false
+  xy: 137, 140
+  size: 17, 16
+  orig: 17, 16
+  offset: 0, 0
+  index: -1
+mage2Yellow/handR
+  rotate: false
+  xy: 156, 140
+  size: 13, 16
+  orig: 13, 16
+  offset: 0, 0
+  index: -1
+mage2Yellow/head
+  rotate: false
+  xy: 70, 171
+  size: 68, 83
+  orig: 68, 83
+  offset: 0, 0
+  index: -1
+mage2Yellow/huzi1
+  rotate: false
+  xy: 2, 7
+  size: 34, 7
+  orig: 34, 7
+  offset: 0, 0
+  index: -1
+mage2Yellow/huzi2
+  rotate: true
+  xy: 96, 4
+  size: 24, 18
+  orig: 24, 18
+  offset: 0, 0
+  index: -1
+mage2Yellow/meimao1
+  rotate: false
+  xy: 38, 5
+  size: 21, 9
+  orig: 21, 9
+  offset: 0, 0
+  index: -1
+mage2Yellow/meimao2
+  rotate: false
+  xy: 190, 148
+  size: 14, 8
+  orig: 14, 8
+  offset: 0, 0
+  index: -1
+mage2Yellow/qiuqiu
+  rotate: false
+  xy: 208, 211
+  size: 43, 43
+  orig: 43, 43
+  offset: 0, 0
+  index: -1
+mage2Yellow/qunbai
+  rotate: false
+  xy: 61, 30
+  size: 25, 40
+  orig: 25, 40
+  offset: 0, 0
+  index: -1
+mage2Yellow/shoulderL
+  rotate: true
+  xy: 217, 150
+  size: 31, 32
+  orig: 31, 32
+  offset: 0, 0
+  index: -1
+mage2Yellow/shoulderL1
+  rotate: false
+  xy: 112, 145
+  size: 23, 24
+  orig: 23, 24
+  offset: 0, 0
+  index: -1
+mage2Yellow/shoulderR
+  rotate: true
+  xy: 61, 6
+  size: 22, 33
+  orig: 22, 33
+  offset: 0, 0
+  index: -1
+mage2Yellow/shoulight
+  rotate: false
+  xy: 140, 199
+  size: 66, 55
+  orig: 66, 55
+  offset: 0, 0
+  index: -1
+mage2Yellow/skirt
+  rotate: true
+  xy: 217, 183
+  size: 26, 37
+  orig: 26, 37
+  offset: 0, 0
+  index: -1
+mage2Yellow/skirtL
+  rotate: true
+  xy: 140, 158
+  size: 39, 40
+  orig: 39, 40
+  offset: 0, 0
+  index: -1
+mage2Yellow/skirtR
+  rotate: false
+  xy: 88, 30
+  size: 20, 40
+  orig: 20, 40
+  offset: 0, 0
+  index: -1
+mage2Yellow/weapon
+  rotate: false
+  xy: 2, 150
+  size: 66, 104
+  orig: 66, 104
+  offset: 0, 0
+  index: -1
+mage2Yellow/xuanlight
+  rotate: false
+  xy: 2, 16
+  size: 57, 57
+  orig: 57, 57
+  offset: 0, 0
+  index: -1

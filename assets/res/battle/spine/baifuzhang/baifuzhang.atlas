@@ -1,0 +1,265 @@
+
+baifuzhang.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+baifuzhang/0
+  rotate: true
+  xy: 113, 337
+  size: 42, 30
+  orig: 42, 30
+  offset: 0, 0
+  index: -1
+baifuzhang/GJ_eye
+  rotate: false
+  xy: 150, 437
+  size: 41, 14
+  orig: 41, 14
+  offset: 0, 0
+  index: -1
+baifuzhang/GJ_mouth
+  rotate: false
+  xy: 87, 108
+  size: 26, 8
+  orig: 26, 8
+  offset: 0, 0
+  index: -1
+baifuzhang/S_eye_l
+  rotate: true
+  xy: 176, 419
+  size: 16, 15
+  orig: 16, 15
+  offset: 0, 0
+  index: -1
+baifuzhang/S_eye_r
+  rotate: false
+  xy: 498, 498
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+baifuzhang/S_mouth
+  rotate: false
+  xy: 193, 421
+  size: 17, 13
+  orig: 17, 13
+  offset: 0, 0
+  index: -1
+baifuzhang/arm_l
+  rotate: true
+  xy: 73, 53
+  size: 52, 51
+  orig: 52, 51
+  offset: 0, 0
+  index: -1
+baifuzhang/arm_r
+  rotate: true
+  xy: 111, 236
+  size: 48, 40
+  orig: 48, 40
+  offset: 0, 0
+  index: -1
+baifuzhang/arm_up_l
+  rotate: false
+  xy: 299, 457
+  size: 66, 53
+  orig: 66, 53
+  offset: 0, 0
+  index: -1
+baifuzhang/arm_up_r
+  rotate: true
+  xy: 111, 202
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index: -1
+baifuzhang/beard
+  rotate: false
+  xy: 367, 466
+  size: 69, 44
+  orig: 69, 44
+  offset: 0, 0
+  index: -1
+baifuzhang/body
+  rotate: false
+  xy: 2, 262
+  size: 103, 81
+  orig: 103, 81
+  offset: 0, 0
+  index: -1
+baifuzhang/bu
+  rotate: true
+  xy: 88, 202
+  size: 58, 21
+  orig: 58, 21
+  offset: 0, 0
+  index: -1
+baifuzhang/daolight1
+  rotate: true
+  xy: 107, 286
+  size: 49, 42
+  orig: 49, 42
+  offset: 0, 0
+  index: -1
+baifuzhang/daolight_3
+  rotate: false
+  xy: 2, 107
+  size: 83, 74
+  orig: 83, 74
+  offset: 0, 0
+  index: -1
+baifuzhang/daolight_4
+  rotate: false
+  xy: 438, 470
+  size: 58, 40
+  orig: 58, 40
+  offset: 0, 0
+  index: -1
+baifuzhang/eye
+  rotate: false
+  xy: 193, 436
+  size: 41, 15
+  orig: 41, 15
+  offset: 0, 0
+  index: -1
+baifuzhang/foot_l
+  rotate: false
+  xy: 145, 364
+  size: 24, 18
+  orig: 24, 18
+  offset: 0, 0
+  index: -1
+baifuzhang/foot_r
+  rotate: false
+  xy: 145, 345
+  size: 18, 17
+  orig: 18, 17
+  offset: 0, 0
+  index: -1
+baifuzhang/hand_l
+  rotate: false
+  xy: 31, 3
+  size: 48, 35
+  orig: 48, 35
+  offset: 0, 0
+  index: -1
+baifuzhang/hand_r
+  rotate: false
+  xy: 87, 118
+  size: 41, 41
+  orig: 41, 41
+  offset: 0, 0
+  index: -1
+baifuzhang/head
+  rotate: false
+  xy: 2, 40
+  size: 69, 65
+  orig: 69, 65
+  offset: 0, 0
+  index: -1
+baifuzhang/helmet
+  rotate: false
+  xy: 2, 183
+  size: 84, 77
+  orig: 84, 77
+  offset: 0, 0
+  index: -1
+baifuzhang/koushui
+  rotate: false
+  xy: 236, 425
+  size: 32, 26
+  orig: 32, 26
+  offset: 0, 0
+  index: -1
+baifuzhang/leg_l
+  rotate: true
+  xy: 2, 2
+  size: 36, 27
+  orig: 36, 27
+  offset: 0, 0
+  index: -1
+baifuzhang/leg_r
+  rotate: false
+  xy: 270, 423
+  size: 29, 28
+  orig: 29, 28
+  offset: 0, 0
+  index: -1
+baifuzhang/mao
+  rotate: false
+  xy: 230, 453
+  size: 67, 57
+  orig: 67, 57
+  offset: 0, 0
+  index: -1
+baifuzhang/mouth
+  rotate: false
+  xy: 367, 459
+  size: 32, 5
+  orig: 32, 5
+  offset: 0, 0
+  index: -1
+baifuzhang/scapula_l
+  rotate: false
+  xy: 150, 453
+  size: 78, 57
+  orig: 78, 57
+  offset: 0, 0
+  index: -1
+baifuzhang/scapula_l_2
+  rotate: true
+  xy: 88, 161
+  size: 39, 44
+  orig: 39, 44
+  offset: 0, 0
+  index: -1
+baifuzhang/scapula_r
+  rotate: false
+  xy: 81, 2
+  size: 43, 49
+  orig: 43, 49
+  offset: 0, 0
+  index: -1
+baifuzhang/skirt_l
+  rotate: false
+  xy: 144, 406
+  size: 30, 29
+  orig: 30, 29
+  offset: 0, 0
+  index: -1
+baifuzhang/skirt_r
+  rotate: true
+  xy: 144, 384
+  size: 20, 26
+  orig: 20, 26
+  offset: 0, 0
+  index: -1
+baifuzhang/skirt_z
+  rotate: false
+  xy: 134, 162
+  size: 28, 38
+  orig: 28, 38
+  offset: 0, 0
+  index: -1
+baifuzhang/wuqi
+  rotate: false
+  xy: 2, 443
+  size: 146, 67
+  orig: 146, 67
+  offset: 0, 0
+  index: -1
+baifuzhang/xue
+  rotate: false
+  xy: 2, 345
+  size: 109, 96
+  orig: 109, 96
+  offset: 0, 0
+  index: -1
+baifuzhang/yao
+  rotate: true
+  xy: 113, 381
+  size: 60, 29
+  orig: 60, 29
+  offset: 0, 0
+  index: -1

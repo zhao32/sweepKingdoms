@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
@@ -13,6 +14,9 @@ import detailRuneRender from "./detailRuneRender";
 import detailSkillRender from "./detailSkillRender";
 
 const { ccclass, property } = cc._decorator;
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -64,10 +68,22 @@ export default class NewClass extends cc.Component {
     // onLoad () {}
 
     start() {
+        NetEventDispatcher.addListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock.bind(this))
+    }
+
+    S2CRuneUnlock(retObj) {
+        console.log('开启石槽返回：' + JSON.stringify(retObj))
+        // {"card_id":19,"pos_index":2}
+        // this._data.runePutup[retObj.pos_index] = 1
+        // for (let i = 0; i < this._data.runePutup.length; i++) {
+        //     let render = this.contect.children[i]
+        //     render.getComponent(detailRuneRender).init(this._data.runePutup[i], i, this._data.template_id)
+        // }
 
     }
     /**data 服务器获取的将领数据 */
     init(data) {
+        console.log('-----data:' + JSON.stringify(data))
         this._data = data
         let defaultData = DataManager.GameData.Cards[data.template_id]
         // this.nameDisplay.string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
@@ -109,6 +125,10 @@ export default class NewClass extends cc.Component {
         this.expProTxt.string = `${data.exp}/${maxExp}`
         this.expProBar.progress = data.exp / maxExp
 
+        // for (let i = 0; i < 8; i++) {
+        //     ResManager.loadItemIcon(`hero/runePot2`, this.node.getChildByName('cao').children[i])
+        // }
+
         for (let i = 0; i < data.runePutup.length; i++) {
             ResManager.loadItemIcon(`hero/runePot${data.runePutup[i]}`, this.node.getChildByName('cao').children[i])
         }
@@ -146,7 +166,7 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < this._data.runePutup.length; i++) {
             let render = cc.instantiate(this.runPfb)
             render.parent = this.contect
-            render.getComponent(detailRuneRender).init(this._data.runePutup[i], i)
+            render.getComponent(detailRuneRender).init(this._data.runePutup[i], i, this._data.template_id)
         }
 
 

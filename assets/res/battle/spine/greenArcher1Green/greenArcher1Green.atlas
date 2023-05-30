@@ -1,0 +1,174 @@
+
+greenArcher1Green.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+greenArcher1Green/Ass
+  rotate: true
+  xy: 55, 74
+  size: 28, 15
+  orig: 28, 15
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_L_arm
+  rotate: false
+  xy: 72, 75
+  size: 16, 21
+  orig: 16, 21
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_L_arm_up
+  rotate: true
+  xy: 108, 127
+  size: 14, 26
+  orig: 14, 26
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_L_foot
+  rotate: false
+  xy: 2, 2
+  size: 9, 11
+  orig: 9, 11
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_R_foot
+  rotate: false
+  xy: 2, 2
+  size: 9, 11
+  orig: 9, 11
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_L_hand
+  rotate: false
+  xy: 214, 193
+  size: 13, 14
+  orig: 13, 14
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_L_leg_up
+  rotate: false
+  xy: 90, 78
+  size: 12, 18
+  orig: 12, 18
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_R_leg_up
+  rotate: false
+  xy: 90, 78
+  size: 12, 18
+  orig: 12, 18
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_R_arm
+  rotate: false
+  xy: 55, 48
+  size: 14, 24
+  orig: 14, 24
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_R_arm_up
+  rotate: false
+  xy: 229, 190
+  size: 25, 30
+  orig: 25, 30
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_R_hand
+  rotate: false
+  xy: 105, 110
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_body
+  rotate: false
+  xy: 2, 49
+  size: 51, 53
+  orig: 51, 53
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_bow
+  rotate: true
+  xy: 143, 222
+  size: 32, 106
+  orig: 32, 106
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_faron
+  rotate: true
+  xy: 184, 187
+  size: 20, 28
+  orig: 20, 28
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_gongjian
+  rotate: true
+  xy: 143, 209
+  size: 11, 84
+  orig: 11, 84
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_head_1
+  rotate: false
+  xy: 2, 180
+  size: 69, 74
+  orig: 69, 74
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_head_4
+  rotate: false
+  xy: 2, 180
+  size: 69, 74
+  orig: 69, 74
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_head_2
+  rotate: false
+  xy: 73, 180
+  size: 68, 74
+  orig: 68, 74
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_head_3
+  rotate: false
+  xy: 2, 104
+  size: 69, 74
+  orig: 69, 74
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_shoulder_1
+  rotate: false
+  xy: 2, 15
+  size: 44, 32
+  orig: 44, 32
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_xiabai_2
+  rotate: false
+  xy: 108, 143
+  size: 34, 35
+  orig: 34, 35
+  offset: 0, 0
+  index: -1
+greenArcher1Green/HuangZ_xiabai_3
+  rotate: true
+  xy: 73, 98
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+greenArcher1Green/daimao
+  rotate: true
+  xy: 143, 187
+  size: 20, 39
+  orig: 20, 39
+  offset: 0, 0
+  index: -1
+greenArcher1Green/daimao1
+  rotate: false
+  xy: 73, 128
+  size: 33, 50
+  orig: 33, 50
+  offset: 0, 0
+  index: -1

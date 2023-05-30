@@ -1,0 +1,363 @@
+{
+  "5001": {
+    "id": 5001,
+    "name": "一级暴击符石",
+    "icon": "sy_runeicon_01",
+    "quality": 0,
+    "func": 3,
+    "addon_type": "1",
+    "crit_rate": 0.09
+  },
+  "5002": {
+    "id": 5002,
+    "name": "一级致命符石",
+    "icon": "sy_runeicon_02",
+    "quality": 0,
+    "func": 1,
+    "addon_type": "2",
+    "atk": 0.5
+  },
+  "5003": {
+    "id": 5003,
+    "name": "一级坚毅符石",
+    "icon": "sy_runeicon_03",
+    "quality": 0,
+    "func": 2,
+    "addon_type": "3",
+    "def": 10
+  },
+  "5004": {
+    "id": 5004,
+    "name": "一级韧性符石",
+    "icon": "sy_runeicon_04",
+    "quality": 0,
+    "func": 1,
+    "addon_type": "4",
+    "dmg_deal_static": 0.09
+  },
+  "5005": {
+    "id": 5005,
+    "name": "二级暴击符石",
+    "icon": "sy_runeicon_01",
+    "quality": 1,
+    "func": 3,
+    "addon_type": "1",
+    "crit_rate": 0.14
+  },
+  "5006": {
+    "id": 5006,
+    "name": "二级致命符石",
+    "icon": "sy_runeicon_02",
+    "quality": 1,
+    "func": 1,
+    "addon_type": "2",
+    "atk": 0.75
+  },
+  "5007": {
+    "id": 5007,
+    "name": "二级坚毅符石",
+    "icon": "sy_runeicon_03",
+    "quality": 1,
+    "func": 2,
+    "addon_type": "3",
+    "def": 14.5
+  },
+  "5008": {
+    "id": 5008,
+    "name": "二级韧性符石",
+    "icon": "sy_runeicon_04",
+    "quality": 1,
+    "func": 1,
+    "addon_type": "4",
+    "dmg_deal_static": 0.14
+  },
+  "5009": {
+    "id": 5009,
+    "name": "三级暴击符石",
+    "icon": "sy_runeicon_01",
+    "quality": 2,
+    "func": 3,
+    "addon_type": "1",
+    "crit_rate": 0.18
+  },
+  "5010": {
+    "id": 5010,
+    "name": "三级致命符石",
+    "icon": "sy_runeicon_02",
+    "quality": 2,
+    "func": 1,
+    "addon_type": "2",
+    "atk": 1.13
+  },
+  "5011": {
+    "id": 5011,
+    "name": "三级坚毅符石",
+    "icon": "sy_runeicon_03",
+    "quality": 2,
+    "func": 2,
+    "addon_type": "3",
+    "def": 18.78
+  },
+  "5012": {
+    "id": 5012,
+    "name": "三级韧性符石",
+    "icon": "sy_runeicon_04",
+    "quality": 2,
+    "func": 1,
+    "addon_type": "4",
+    "dmg_deal_static": 0.18
+  },
+  "5013": {
+    "id": 5013,
+    "name": "四级暴击符石",
+    "icon": "sy_runeicon_01",
+    "quality": 3,
+    "func": 3,
+    "addon_type": "1",
+    "crit_rate": 0.32
+  },
+  "5014": {
+    "id": 5014,
+    "name": "四级致命符石",
+    "icon": "sy_runeicon_02",
+    "quality": 0,
+    "func": 1,
+    "addon_type": "2",
+    "atk": 1.69
+  },
+  "5015": {
+    "id": 5015,
+    "name": "四级坚毅符石",
+    "icon": "sy_runeicon_03",
+    "quality": 3,
+    "func": 2,
+    "addon_type": "3",
+    "def": 22.84
+  },
+  "5016": {
+    "id": 5016,
+    "name": "四级韧性符石",
+    "icon": "sy_runeicon_04",
+    "quality": 3,
+    "func": 1,
+    "addon_type": "4",
+    "dmg_deal_static": 0.31
+  },
+  "5017": {
+    "id": 5017,
+    "name": "五级暴击符石",
+    "icon": "sy_runeicon_01",
+    "quality": 4,
+    "func": 3,
+    "addon_type": "1",
+    "crit_rate": 0.5
+  },
+  "5018": {
+    "id": 5018,
+    "name": "五级致命符石",
+    "icon": "sy_runeicon_02",
+    "quality": 4,
+    "func": 1,
+    "addon_type": "2",
+    "atk": 2.53
+  },
+  "5019": {
+    "id": 5019,
+    "name": "五级坚毅符石",
+    "icon": "sy_runeicon_03",
+    "quality": 4,
+    "func": 2,
+    "addon_type": "3",
+    "def": 26.69
+  },
+  "5020": {
+    "id": 5020,
+    "name": "五级韧性符石",
+    "icon": "sy_runeicon_04",
+    "quality": 4,
+    "func": 1,
+    "addon_type": "4",
+    "dmg_deal_static": 0.5
+  },
+  "5021": {
+    "id": 5021,
+    "name": "六级暴击符石",
+    "icon": "sy_runeicon_01",
+    "quality": 5,
+    "func": 3,
+    "addon_type": "1",
+    "crit_rate": 0.77
+  },
+  "5022": {
+    "id": 5022,
+    "name": "六级致命符石",
+    "icon": "sy_runeicon_02",
+    "quality": 5,
+    "func": 1,
+    "addon_type": "2",
+    "atk":4.05
+  },
+  "5023": {
+    "id": 5023,
+    "name": "六级坚毅符石",
+    "icon": "sy_runeicon_03",
+    "quality": 5,
+    "func": 2,
+    "addon_type": "3",
+    "def": 30.36
+  },
+  "5024": {
+    "id": 5024,
+    "name": "六级韧性符石",
+    "icon": "sy_runeicon_04",
+    "quality": 5,
+    "func": 1,
+    "addon_type": "4",
+    "dmg_deal_static": 0.77
+  },
+  "5025": {
+    "id": 5025,
+    "name": "七级暴击符石",
+    "icon": "sy_runeicon_01",
+    "quality": 6,
+    "func": 3,
+    "addon_type": "1",
+    "crit_rate": 1.27
+  },
+  "5026": {
+    "id": 5026,
+    "name": "七级致命符石",
+    "icon": "sy_runeicon_02",
+    "quality": 6,
+    "func": 1,
+    "addon_type": "2",
+    "atk": 6.48
+  },
+  "5027": {
+    "id": 5027,
+    "name": "七级坚毅符石",
+    "icon": "sy_runeicon_03",
+    "quality": 6,
+    "func": 2,
+    "addon_type": "3",
+    "def": 33.84
+  },
+  "5028": {
+    "id": 5028,
+    "name": "七级韧性符石",
+    "icon": "sy_runeicon_04",
+    "quality": 6,
+    "func": 1,
+    "addon_type": "4",
+    "dmg_deal_static":1.27
+  },
+  "5029": {
+    "id": 5029,
+    "name": "八级暴击符石",
+    "icon": "sy_runeicon_01",
+    "quality": 7,
+    "func": 3,
+    "addon_type": "1",
+    "crit_rate": 2.05
+  },
+  "5030": {
+    "id": 5030,
+    "name": "八级致命符石",
+    "icon": "sy_runeicon_02",
+    "quality": 7,
+    "func": 1,
+    "addon_type": "2",
+    "atk": 10.37
+  },
+  "5031": {
+    "id": 5031,
+    "name": "八级坚毅符石",
+    "icon": "sy_runeicon_03",
+    "quality": 7,
+    "func": 2,
+    "addon_type": "3",
+    "def": 37.15
+  },
+  "5032": {
+    "id": 5032,
+    "name": "八级韧性符石",
+    "icon": "sy_runeicon_04",
+    "quality": 7,
+    "func": 1,
+    "addon_type": "4",
+    "dmg_deal_static":2.05
+  },
+  "5033": {
+    "id": 5033,
+    "name": "九级暴击符石",
+    "icon": "sy_runeicon_01",
+    "quality": 8,
+    "func": 3,
+    "addon_type": "1",
+    "crit_rate": 4.55
+  },
+  "5034": {
+    "id": 5034,
+    "name": "九级致命符石",
+    "icon": "sy_runeicon_02",
+    "quality": 8,
+    "func": 1,
+    "addon_type": "2",
+    "atk": 22.81
+  },
+  "5035": {
+    "id": 5035,
+    "name": "九级坚毅符石",
+    "icon": "sy_runeicon_03",
+    "quality": 8,
+    "func": 2,
+    "addon_type": "3",
+    "def": 40.29
+  },
+  "5036": {
+    "id": 5032,
+    "name": "九级韧性符石",
+    "icon": "sy_runeicon_04",
+    "quality": 8,
+    "func": 1,
+    "addon_type": "4",
+    "dmg_deal_static":4.55
+  },
+  "5037": {
+    "id": 5033,
+    "name": "十级暴击符石",
+    "icon": "sy_runeicon_01",
+    "quality": 9,
+    "func": 3,
+    "addon_type": "1",
+    "crit_rate": 10
+  },
+  "5038": {
+    "id": 5038,
+    "name": "十级致命符石",
+    "icon": "sy_runeicon_02",
+    "quality": 9,
+    "func": 1,
+    "addon_type": "2",
+    "atk": 25.69
+  },
+  "5039": {
+    "id": 5039,
+    "name": "十级坚毅符石",
+    "icon": "sy_runeicon_03",
+    "quality": 9,
+    "func": 2,
+    "addon_type": "3",
+    "def":43.28
+  },
+  "5040": {
+    "id": 5040,
+    "name": "十级韧性符石",
+    "icon": "sy_runeicon_04",
+    "quality": 9,
+    "func": 1,
+    "addon_type": "4",
+    "dmg_deal_static":10
+  }
+  
+}

@@ -1,0 +1,307 @@
+
+menghuo.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+menghuo/0
+  rotate: false
+  xy: 384, 444
+  size: 99, 66
+  orig: 99, 66
+  offset: 0, 0
+  index: -1
+menghuo/N_eyes
+  rotate: true
+  xy: 223, 232
+  size: 32, 10
+  orig: 32, 10
+  offset: 0, 0
+  index: -1
+menghuo/N_mouth
+  rotate: true
+  xy: 499, 441
+  size: 18, 11
+  orig: 18, 11
+  offset: 0, 0
+  index: -1
+menghuo/S_eyes_l
+  rotate: false
+  xy: 468, 378
+  size: 18, 16
+  orig: 18, 16
+  offset: 0, 0
+  index: -1
+menghuo/S_eyes_r
+  rotate: true
+  xy: 137, 252
+  size: 12, 14
+  orig: 12, 14
+  offset: 0, 0
+  index: -1
+menghuo/S_mouth
+  rotate: false
+  xy: 161, 43
+  size: 17, 6
+  orig: 17, 6
+  offset: 0, 0
+  index: -1
+menghuo/X_an
+  rotate: true
+  xy: 65, 42
+  size: 74, 49
+  orig: 74, 49
+  offset: 0, 0
+  index: -1
+menghuo/X_body
+  rotate: false
+  xy: 2, 252
+  size: 133, 93
+  orig: 133, 93
+  offset: 0, 0
+  index: -1
+menghuo/X_foot_1
+  rotate: true
+  xy: 268, 275
+  size: 35, 39
+  orig: 35, 39
+  offset: 0, 0
+  index: -1
+menghuo/X_foot_2
+  rotate: false
+  xy: 268, 312
+  size: 37, 48
+  orig: 37, 48
+  offset: 0, 0
+  index: -1
+menghuo/X_foot_3
+  rotate: true
+  xy: 402, 347
+  size: 29, 40
+  orig: 29, 40
+  offset: 0, 0
+  index: -1
+menghuo/X_foot_4
+  rotate: false
+  xy: 468, 396
+  size: 29, 46
+  orig: 29, 46
+  offset: 0, 0
+  index: -1
+menghuo/X_gu
+  rotate: true
+  xy: 102, 135
+  size: 46, 51
+  orig: 46, 51
+  offset: 0, 0
+  index: -1
+menghuo/X_head
+  rotate: true
+  xy: 102, 183
+  size: 67, 51
+  orig: 67, 51
+  offset: 0, 0
+  index: -1
+menghuo/X_head_2
+  rotate: false
+  xy: 116, 42
+  size: 43, 35
+  orig: 43, 35
+  offset: 0, 0
+  index: -1
+menghuo/X_leg_1
+  rotate: false
+  xy: 2, 2
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+menghuo/X_leg_2
+  rotate: true
+  xy: 155, 154
+  size: 47, 58
+  orig: 47, 58
+  offset: 0, 0
+  index: -1
+menghuo/X_s
+  rotate: true
+  xy: 116, 79
+  size: 54, 43
+  orig: 54, 43
+  offset: 0, 0
+  index: -1
+menghuo/X_scapula
+  rotate: false
+  xy: 155, 203
+  size: 66, 61
+  orig: 66, 61
+  offset: 0, 0
+  index: -1
+menghuo/arm_l
+  rotate: true
+  xy: 161, 51
+  size: 52, 40
+  orig: 52, 40
+  offset: 0, 0
+  index: -1
+menghuo/arm_r
+  rotate: true
+  xy: 307, 316
+  size: 44, 35
+  orig: 44, 35
+  offset: 0, 0
+  index: -1
+menghuo/arm_up_l
+  rotate: false
+  xy: 309, 274
+  size: 37, 40
+  orig: 37, 40
+  offset: 0, 0
+  index: -1
+menghuo/arm_up_r
+  rotate: false
+  xy: 40, 5
+  size: 23, 33
+  orig: 23, 33
+  offset: 0, 0
+  index: -1
+menghuo/body
+  rotate: false
+  xy: 402, 378
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+menghuo/box
+  rotate: false
+  xy: 235, 238
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+menghuo/daolight1
+  rotate: false
+  xy: 2, 167
+  size: 98, 83
+  orig: 98, 83
+  offset: 0, 0
+  index: -1
+menghuo/eyes
+  rotate: false
+  xy: 267, 263
+  size: 32, 10
+  orig: 32, 10
+  offset: 0, 0
+  index: -1
+menghuo/foot
+  rotate: false
+  xy: 444, 346
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+menghuo/hand_l
+  rotate: true
+  xy: 485, 487
+  size: 23, 25
+  orig: 23, 25
+  offset: 0, 0
+  index: -1
+menghuo/hand_r
+  rotate: false
+  xy: 485, 461
+  size: 23, 24
+  orig: 23, 24
+  offset: 0, 0
+  index: -1
+menghuo/head
+  rotate: false
+  xy: 161, 105
+  size: 50, 47
+  orig: 50, 47
+  offset: 0, 0
+  index: -1
+menghuo/head_G
+  rotate: false
+  xy: 252, 437
+  size: 130, 73
+  orig: 130, 73
+  offset: 0, 0
+  index: -1
+menghuo/hu
+  rotate: true
+  xy: 235, 288
+  size: 57, 31
+  orig: 57, 31
+  offset: 0, 0
+  index: -1
+menghuo/leg
+  rotate: false
+  xy: 235, 260
+  size: 30, 26
+  orig: 30, 26
+  offset: 0, 0
+  index: -1
+menghuo/mao_h
+  rotate: true
+  xy: 137, 266
+  size: 79, 96
+  orig: 79, 96
+  offset: 0, 0
+  index: -1
+menghuo/mao_l
+  rotate: false
+  xy: 2, 40
+  size: 61, 76
+  orig: 61, 76
+  offset: 0, 0
+  index: -1
+menghuo/mao_r
+  rotate: false
+  xy: 114, 2
+  size: 38, 38
+  orig: 38, 38
+  offset: 0, 0
+  index: -1
+menghuo/mohu
+  rotate: false
+  xy: 2, 347
+  size: 248, 163
+  orig: 248, 163
+  offset: 0, 0
+  index: -1
+menghuo/mouth
+  rotate: true
+  xy: 215, 178
+  size: 23, 5
+  orig: 23, 5
+  offset: 0, 0
+  index: -1
+menghuo/scapula
+  rotate: false
+  xy: 65, 2
+  size: 47, 38
+  orig: 47, 38
+  offset: 0, 0
+  index: -1
+menghuo/smok
+  rotate: false
+  xy: 2, 118
+  size: 97, 47
+  orig: 97, 47
+  offset: 0, 0
+  index: -1
+menghuo/wuqi
+  rotate: true
+  xy: 252, 362
+  size: 73, 95
+  orig: 73, 95
+  offset: 0, 0
+  index: -1
+menghuo/yao
+  rotate: true
+  xy: 349, 365
+  size: 70, 51
+  orig: 70, 51
+  offset: 0, 0
+  index: -1

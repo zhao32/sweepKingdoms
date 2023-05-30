@@ -1,0 +1,223 @@
+
+zhangfei.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+zhangfei/box
+  rotate: false
+  xy: 2, 219
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+zhangfei/daoguang
+  rotate: false
+  xy: 824, 922
+  size: 131, 100
+  orig: 131, 100
+  offset: 0, 0
+  index: -1
+zhangfei/daolight_3
+  rotate: false
+  xy: 413, 715
+  size: 165, 148
+  orig: 165, 148
+  offset: 0, 0
+  index: -1
+zhangfei/daolight_4
+  rotate: true
+  xy: 47, 320
+  size: 115, 79
+  orig: 115, 79
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_L_arm
+  rotate: true
+  xy: 991, 992
+  size: 30, 31
+  orig: 30, 31
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_L_arm_up
+  rotate: false
+  xy: 957, 988
+  size: 32, 34
+  orig: 32, 34
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_L_foot
+  rotate: false
+  xy: 439, 593
+  size: 14, 10
+  orig: 14, 10
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_L_hand
+  rotate: false
+  xy: 509, 620
+  size: 24, 20
+  orig: 24, 20
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_L_leg
+  rotate: false
+  xy: 973, 968
+  size: 16, 18
+  orig: 16, 18
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_L_leg_up
+  rotate: false
+  xy: 914, 895
+  size: 20, 25
+  orig: 20, 25
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_L_shoulder
+  rotate: true
+  xy: 824, 870
+  size: 50, 88
+  orig: 50, 88
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_R_arm
+  rotate: false
+  xy: 580, 730
+  size: 29, 23
+  orig: 29, 23
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_R_arm_up
+  rotate: false
+  xy: 413, 566
+  size: 24, 37
+  orig: 24, 37
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_R_foot
+  rotate: true
+  xy: 128, 417
+  size: 18, 10
+  orig: 18, 10
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_R_hand
+  rotate: false
+  xy: 772, 838
+  size: 21, 25
+  orig: 21, 25
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_R_leg
+  rotate: false
+  xy: 413, 548
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_R_leg_up
+  rotate: false
+  xy: 47, 291
+  size: 19, 27
+  orig: 19, 27
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_R_shoulder
+  rotate: false
+  xy: 2, 241
+  size: 36, 45
+  orig: 36, 45
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_body
+  rotate: true
+  xy: 509, 642
+  size: 71, 67
+  orig: 71, 67
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_head_1
+  rotate: false
+  xy: 413, 605
+  size: 94, 108
+  orig: 94, 108
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_head_2
+  rotate: false
+  xy: 580, 755
+  size: 94, 108
+  orig: 94, 108
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_head_3
+  rotate: false
+  xy: 47, 437
+  size: 94, 108
+  orig: 94, 108
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_head_4
+  rotate: false
+  xy: 676, 755
+  size: 94, 108
+  orig: 94, 108
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_pose_1
+  rotate: false
+  xy: 2, 865
+  size: 409, 157
+  orig: 409, 157
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_pose_2
+  rotate: false
+  xy: 2, 706
+  size: 409, 157
+  orig: 409, 157
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_pose_3
+  rotate: false
+  xy: 413, 865
+  size: 409, 157
+  orig: 409, 157
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_pose_4
+  rotate: false
+  xy: 2, 547
+  size: 409, 157
+  orig: 409, 157
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_qunbai_1
+  rotate: false
+  xy: 143, 517
+  size: 24, 28
+  orig: 24, 28
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_qunbai_2
+  rotate: false
+  xy: 991, 961
+  size: 31, 29
+  orig: 31, 29
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_qunbai_3
+  rotate: false
+  xy: 957, 963
+  size: 14, 23
+  orig: 14, 23
+  offset: 0, 0
+  index: -1
+zhangfei/zhangfei_wuqi
+  rotate: false
+  xy: 2, 288
+  size: 43, 257
+  orig: 43, 257
+  offset: 0, 0
+  index: -1

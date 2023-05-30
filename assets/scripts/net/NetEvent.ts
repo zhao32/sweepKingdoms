@@ -131,6 +131,8 @@ export enum NetEvent {
     C2UPBulid = 10185,
     /**士兵招募 */
     C2SRecSoldiers = 1057,
+    /**开启石槽 */
+    C2SOpenRuneSlot = 2025,
 
 
 
@@ -234,6 +236,7 @@ export enum NetEvent {
     S2CCardCompose = 2020,
     S2CCardEquipUnit = 2022,
     PushCardAddLevel = 2024,
+    /**解锁符槽 */
     S2CRuneUnlock = 2026,
     S2CRunePutup = 2028,
     S2CRuneHammerBuy = 2030,
@@ -322,6 +325,8 @@ export enum NetEvent {
     S2UPBulid = 10186,
     /**士兵招募 */
     S2CRecSoldiers = 1057,
+    // /**开启石槽 */
+    // S2COpenRuneSlot = 2026,
 
 
 }

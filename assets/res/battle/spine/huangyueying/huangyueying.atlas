@@ -1,0 +1,258 @@
+
+huangyueying.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+huangyueying/N_eyes
+  rotate: false
+  xy: 2, 20
+  size: 38, 21
+  orig: 38, 21
+  offset: 0, 0
+  index: -1
+huangyueying/N_mouth
+  rotate: true
+  xy: 130, 220
+  size: 10, 4
+  orig: 10, 4
+  offset: 0, 0
+  index: -1
+huangyueying/S_eyes_l
+  rotate: true
+  xy: 2, 2
+  size: 16, 15
+  orig: 16, 15
+  offset: 0, 0
+  index: -1
+huangyueying/S_eyes_r
+  rotate: false
+  xy: 169, 253
+  size: 11, 13
+  orig: 11, 13
+  offset: 0, 0
+  index: -1
+huangyueying/S_mouth
+  rotate: false
+  xy: 228, 340
+  size: 10, 7
+  orig: 10, 7
+  offset: 0, 0
+  index: -1
+huangyueying/arm_l
+  rotate: false
+  xy: 136, 243
+  size: 31, 23
+  orig: 31, 23
+  offset: 0, 0
+  index: -1
+huangyueying/arm_r
+  rotate: false
+  xy: 96, 150
+  size: 17, 35
+  orig: 17, 35
+  offset: 0, 0
+  index: -1
+huangyueying/arm_up_l
+  rotate: false
+  xy: 356, 400
+  size: 17, 23
+  orig: 17, 23
+  offset: 0, 0
+  index: -1
+huangyueying/arm_up_r
+  rotate: false
+  xy: 69, 60
+  size: 12, 22
+  orig: 12, 22
+  offset: 0, 0
+  index: -1
+huangyueying/bo
+  rotate: false
+  xy: 183, 292
+  size: 12, 10
+  orig: 12, 10
+  offset: 0, 0
+  index: -1
+huangyueying/body
+  rotate: false
+  xy: 253, 369
+  size: 28, 25
+  orig: 28, 25
+  offset: 0, 0
+  index: -1
+huangyueying/box
+  rotate: false
+  xy: 42, 21
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+huangyueying/eyes
+  rotate: true
+  xy: 183, 304
+  size: 38, 14
+  orig: 38, 14
+  offset: 0, 0
+  index: -1
+huangyueying/hair_h
+  rotate: false
+  xy: 2, 43
+  size: 65, 83
+  orig: 65, 83
+  offset: 0, 0
+  index: -1
+huangyueying/hair_q1
+  rotate: true
+  xy: 199, 349
+  size: 45, 52
+  orig: 45, 52
+  offset: 0, 0
+  index: -1
+huangyueying/hair_q2
+  rotate: false
+  xy: 431, 479
+  size: 18, 31
+  orig: 18, 31
+  offset: 0, 0
+  index: -1
+huangyueying/hair_z1
+  rotate: false
+  xy: 69, 84
+  size: 13, 42
+  orig: 13, 42
+  offset: 0, 0
+  index: -1
+huangyueying/hair_z2
+  rotate: false
+  xy: 401, 428
+  size: 14, 37
+  orig: 14, 37
+  offset: 0, 0
+  index: -1
+huangyueying/hand_l
+  rotate: false
+  xy: 96, 135
+  size: 11, 13
+  orig: 11, 13
+  offset: 0, 0
+  index: -1
+huangyueying/hand_r
+  rotate: false
+  xy: 115, 173
+  size: 11, 12
+  orig: 11, 12
+  offset: 0, 0
+  index: -1
+huangyueying/head
+  rotate: false
+  xy: 2, 128
+  size: 92, 102
+  orig: 92, 102
+  offset: 0, 0
+  index: -1
+huangyueying/jian_l
+  rotate: false
+  xy: 253, 349
+  size: 21, 18
+  orig: 21, 18
+  offset: 0, 0
+  index: -1
+huangyueying/jian_r
+  rotate: false
+  xy: 283, 381
+  size: 15, 13
+  orig: 15, 13
+  offset: 0, 0
+  index: -1
+huangyueying/mei_l
+  rotate: true
+  xy: 84, 106
+  size: 20, 7
+  orig: 20, 7
+  offset: 0, 0
+  index: -1
+huangyueying/mei_r
+  rotate: false
+  xy: 417, 460
+  size: 11, 5
+  orig: 11, 5
+  offset: 0, 0
+  index: -1
+huangyueying/mohu
+  rotate: false
+  xy: 2, 344
+  size: 195, 166
+  orig: 195, 166
+  offset: 0, 0
+  index: -1
+huangyueying/mouth
+  rotate: false
+  xy: 199, 314
+  size: 12, 6
+  orig: 12, 6
+  offset: 0, 0
+  index: -1
+huangyueying/qiuqiu
+  rotate: false
+  xy: 314, 425
+  size: 85, 85
+  orig: 85, 85
+  offset: 0, 0
+  index: -1
+huangyueying/shoulight
+  rotate: false
+  xy: 2, 232
+  size: 132, 110
+  orig: 132, 110
+  offset: 0, 0
+  index: -1
+huangyueying/skirt_l
+  rotate: false
+  xy: 96, 187
+  size: 32, 43
+  orig: 32, 43
+  offset: 0, 0
+  index: -1
+huangyueying/skirt_r
+  rotate: false
+  xy: 401, 467
+  size: 28, 43
+  orig: 28, 43
+  offset: 0, 0
+  index: -1
+huangyueying/skirt_z
+  rotate: true
+  xy: 314, 398
+  size: 25, 40
+  orig: 25, 40
+  offset: 0, 0
+  index: -1
+huangyueying/wuqi
+  rotate: false
+  xy: 136, 268
+  size: 45, 74
+  orig: 45, 74
+  offset: 0, 0
+  index: -1
+huangyueying/wuqi_2
+  rotate: true
+  xy: 136, 236
+  size: 5, 21
+  orig: 5, 21
+  offset: 0, 0
+  index: -1
+huangyueying/xuanlight
+  rotate: false
+  xy: 199, 396
+  size: 113, 114
+  orig: 113, 114
+  offset: 0, 0
+  index: -1
+huangyueying/yao
+  rotate: false
+  xy: 199, 322
+  size: 27, 25
+  orig: 27, 25
+  offset: 0, 0
+  index: -1

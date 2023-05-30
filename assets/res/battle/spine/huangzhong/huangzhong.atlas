@@ -1,0 +1,244 @@
+
+huangzhong.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+huangzhong/ArmL
+  rotate: true
+  xy: 468, 490
+  size: 20, 32
+  orig: 20, 32
+  offset: 0, 0
+  index: -1
+huangzhong/ArmR
+  rotate: false
+  xy: 361, 479
+  size: 40, 31
+  orig: 40, 31
+  offset: 0, 0
+  index: -1
+huangzhong/Arrow
+  rotate: false
+  xy: 2, 65
+  size: 11, 78
+  orig: 11, 78
+  offset: 0, 0
+  index: -1
+huangzhong/Beard
+  rotate: false
+  xy: 313, 461
+  size: 46, 49
+  orig: 46, 49
+  offset: 0, 0
+  index: -1
+huangzhong/BeardL
+  rotate: false
+  xy: 236, 399
+  size: 30, 42
+  orig: 30, 42
+  offset: 0, 0
+  index: -1
+huangzhong/BeardR
+  rotate: false
+  xy: 244, 358
+  size: 19, 39
+  orig: 19, 39
+  offset: 0, 0
+  index: -1
+huangzhong/Body
+  rotate: false
+  xy: 236, 443
+  size: 75, 67
+  orig: 75, 67
+  offset: 0, 0
+  index: -1
+huangzhong/Bodyb
+  rotate: false
+  xy: 15, 123
+  size: 50, 20
+  orig: 50, 20
+  offset: 0, 0
+  index: -1
+huangzhong/Bow
+  rotate: false
+  xy: 181, 399
+  size: 53, 111
+  orig: 53, 111
+  offset: 0, 0
+  index: -1
+huangzhong/Dead
+  rotate: false
+  xy: 2, 333
+  size: 177, 177
+  orig: 177, 177
+  offset: 0, 0
+  index: -1
+huangzhong/FootL
+  rotate: false
+  xy: 175, 262
+  size: 19, 14
+  orig: 19, 14
+  offset: 0, 0
+  index: -1
+huangzhong/FootR
+  rotate: false
+  xy: 361, 461
+  size: 20, 16
+  orig: 20, 16
+  offset: 0, 0
+  index: -1
+huangzhong/ForehandL
+  rotate: false
+  xy: 175, 278
+  size: 39, 53
+  orig: 39, 53
+  offset: 0, 0
+  index: -1
+huangzhong/ForehandR
+  rotate: false
+  xy: 15, 97
+  size: 29, 24
+  orig: 29, 24
+  offset: 0, 0
+  index: -1
+huangzhong/HandL
+  rotate: true
+  xy: 347, 440
+  size: 19, 20
+  orig: 19, 20
+  offset: 0, 0
+  index: -1
+huangzhong/HandR
+  rotate: false
+  xy: 41, 74
+  size: 20, 21
+  orig: 20, 21
+  offset: 0, 0
+  index: -1
+huangzhong/Hat
+  rotate: false
+  xy: 2, 255
+  size: 89, 76
+  orig: 89, 76
+  offset: 0, 0
+  index: -1
+huangzhong/Head
+  rotate: false
+  xy: 2, 178
+  size: 78, 75
+  orig: 78, 75
+  offset: 0, 0
+  index: -1
+huangzhong/LegL
+  rotate: true
+  xy: 437, 486
+  size: 24, 29
+  orig: 24, 29
+  offset: 0, 0
+  index: -1
+huangzhong/LegR
+  rotate: false
+  xy: 46, 97
+  size: 18, 24
+  orig: 18, 24
+  offset: 0, 0
+  index: -1
+huangzhong/Penis
+  rotate: true
+  xy: 403, 486
+  size: 24, 32
+  orig: 24, 32
+  offset: 0, 0
+  index: -1
+huangzhong/Quiver
+  rotate: false
+  xy: 2, 145
+  size: 72, 31
+  orig: 72, 31
+  offset: 0, 0
+  index: -1
+huangzhong/ShoulderL
+  rotate: true
+  xy: 93, 263
+  size: 68, 80
+  orig: 68, 80
+  offset: 0, 0
+  index: -1
+huangzhong/ShoulderL2
+  rotate: false
+  xy: 15, 70
+  size: 24, 25
+  orig: 24, 25
+  offset: 0, 0
+  index: -1
+huangzhong/ShoulderR
+  rotate: false
+  xy: 217, 350
+  size: 25, 47
+  orig: 25, 47
+  offset: 0, 0
+  index: -1
+huangzhong/SkirtL
+  rotate: true
+  xy: 313, 441
+  size: 18, 32
+  orig: 18, 32
+  offset: 0, 0
+  index: -1
+huangzhong/SkirtR
+  rotate: false
+  xy: 268, 404
+  size: 31, 37
+  orig: 31, 37
+  offset: 0, 0
+  index: -1
+huangzhong/box
+  rotate: false
+  xy: 217, 328
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+huangzhong/gongji_zui
+  rotate: true
+  xy: 301, 420
+  size: 21, 10
+  orig: 21, 10
+  offset: 0, 0
+  index: -1
+huangzhong/jianlight
+  rotate: false
+  xy: 181, 333
+  size: 34, 64
+  orig: 34, 64
+  offset: 0, 0
+  index: -1
+huangzhong/mei_l
+  rotate: false
+  xy: 313, 425
+  size: 20, 14
+  orig: 20, 14
+  offset: 0, 0
+  index: -1
+huangzhong/mei_r
+  rotate: true
+  xy: 335, 427
+  size: 12, 10
+  orig: 12, 10
+  offset: 0, 0
+  index: -1
+huangzhong/putong_yan
+  rotate: false
+  xy: 468, 478
+  size: 32, 10
+  orig: 32, 10
+  offset: 0, 0
+  index: -1
+huangzhong/si_yan
+  rotate: true
+  xy: 502, 478
+  size: 32, 8
+  orig: 32, 8
+  offset: 0, 0
+  index: -1

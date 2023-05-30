@@ -1,0 +1,265 @@
+
+xiaoqiao.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+xiaoqiao/ArmL
+  rotate: false
+  xy: 65, 36
+  size: 13, 16
+  orig: 13, 16
+  offset: 0, 0
+  index: -1
+xiaoqiao/ArmR
+  rotate: false
+  xy: 53, 32
+  size: 10, 20
+  orig: 10, 20
+  offset: 0, 0
+  index: -1
+xiaoqiao/Belt
+  rotate: true
+  xy: 44, 2
+  size: 15, 12
+  orig: 15, 12
+  offset: 0, 0
+  index: -1
+xiaoqiao/Chest
+  rotate: true
+  xy: 112, 132
+  size: 27, 25
+  orig: 27, 25
+  offset: 0, 0
+  index: -1
+xiaoqiao/FootL
+  rotate: true
+  xy: 116, 119
+  size: 11, 25
+  orig: 11, 25
+  offset: 0, 0
+  index: -1
+xiaoqiao/FootR
+  rotate: false
+  xy: 240, 201
+  size: 14, 23
+  orig: 14, 23
+  offset: 0, 0
+  index: -1
+xiaoqiao/HairB
+  rotate: false
+  xy: 2, 55
+  size: 55, 100
+  orig: 55, 100
+  offset: 0, 0
+  index: -1
+xiaoqiao/HairL
+  rotate: true
+  xy: 148, 205
+  size: 20, 45
+  orig: 20, 45
+  offset: 0, 0
+  index: -1
+xiaoqiao/HairLF
+  rotate: false
+  xy: 2, 19
+  size: 49, 34
+  orig: 49, 34
+  offset: 0, 0
+  index: -1
+xiaoqiao/HairR
+  rotate: false
+  xy: 59, 110
+  size: 13, 45
+  orig: 13, 45
+  offset: 0, 0
+  index: -1
+xiaoqiao/HairRF
+  rotate: false
+  xy: 59, 68
+  size: 27, 40
+  orig: 27, 40
+  offset: 0, 0
+  index: -1
+xiaoqiao/HandL
+  rotate: false
+  xy: 84, 132
+  size: 26, 27
+  orig: 26, 27
+  offset: 0, 0
+  index: -1
+xiaoqiao/HandR
+  rotate: false
+  xy: 195, 203
+  size: 18, 22
+  orig: 18, 22
+  offset: 0, 0
+  index: -1
+xiaoqiao/Head
+  rotate: false
+  xy: 2, 157
+  size: 75, 97
+  orig: 75, 97
+  offset: 0, 0
+  index: -1
+xiaoqiao/Penis
+  rotate: true
+  xy: 59, 54
+  size: 12, 27
+  orig: 12, 27
+  offset: 0, 0
+  index: -1
+xiaoqiao/Pine2
+  rotate: false
+  xy: 215, 201
+  size: 23, 23
+  orig: 23, 23
+  offset: 0, 0
+  index: -1
+xiaoqiao/PineL1
+  rotate: true
+  xy: 154, 163
+  size: 16, 28
+  orig: 16, 28
+  offset: 0, 0
+  index: -1
+xiaoqiao/PineR1
+  rotate: true
+  xy: 84, 120
+  size: 10, 30
+  orig: 10, 30
+  offset: 0, 0
+  index: -1
+xiaoqiao/PineR2
+  rotate: true
+  xy: 184, 166
+  size: 13, 24
+  orig: 13, 24
+  offset: 0, 0
+  index: -1
+xiaoqiao/ShoulderL
+  rotate: true
+  xy: 242, 186
+  size: 13, 12
+  orig: 13, 12
+  offset: 0, 0
+  index: -1
+xiaoqiao/ShoulderR
+  rotate: false
+  xy: 65, 25
+  size: 9, 9
+  orig: 9, 9
+  offset: 0, 0
+  index: -1
+xiaoqiao/SkirtB
+  rotate: true
+  xy: 216, 226
+  size: 28, 37
+  orig: 28, 37
+  offset: 0, 0
+  index: -1
+xiaoqiao/SkirtF
+  rotate: false
+  xy: 154, 181
+  size: 36, 22
+  orig: 36, 22
+  offset: 0, 0
+  index: -1
+xiaoqiao/Slash1
+  rotate: false
+  xy: 148, 227
+  size: 66, 27
+  orig: 66, 27
+  offset: 0, 0
+  index: -1
+xiaoqiao/Slash2
+  rotate: false
+  xy: 79, 204
+  size: 67, 50
+  orig: 67, 50
+  offset: 0, 0
+  index: -1
+xiaoqiao/ThighL
+  rotate: true
+  xy: 214, 188
+  size: 11, 26
+  orig: 11, 26
+  offset: 0, 0
+  index: -1
+xiaoqiao/ThighR
+  rotate: true
+  xy: 214, 176
+  size: 10, 24
+  orig: 10, 24
+  offset: 0, 0
+  index: -1
+xiaoqiao/Weapon
+  rotate: false
+  xy: 79, 161
+  size: 59, 41
+  orig: 59, 41
+  offset: 0, 0
+  index: -1
+xiaoqiao/box
+  rotate: false
+  xy: 192, 181
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+xiaoqiao/gongji_zui
+  rotate: false
+  xy: 58, 5
+  size: 9, 12
+  orig: 9, 12
+  offset: 0, 0
+  index: -1
+xiaoqiao/mei_l
+  rotate: false
+  xy: 240, 174
+  size: 13, 10
+  orig: 13, 10
+  offset: 0, 0
+  index: -1
+xiaoqiao/mei_r
+  rotate: false
+  xy: 210, 165
+  size: 18, 9
+  orig: 18, 9
+  offset: 0, 0
+  index: -1
+xiaoqiao/putong_mei
+  rotate: true
+  xy: 74, 118
+  size: 37, 8
+  orig: 37, 8
+  offset: 0, 0
+  index: -1
+xiaoqiao/putong_yan
+  rotate: false
+  xy: 2, 2
+  size: 40, 15
+  orig: 40, 15
+  offset: 0, 0
+  index: -1
+xiaoqiao/putong_zui
+  rotate: true
+  xy: 80, 39
+  size: 13, 8
+  orig: 13, 8
+  offset: 0, 0
+  index: -1
+xiaoqiao/si_yan
+  rotate: true
+  xy: 140, 163
+  size: 39, 12
+  orig: 39, 12
+  offset: 0, 0
+  index: -1
+xiaoqiao/si_zui
+  rotate: true
+  xy: 53, 19
+  size: 11, 8
+  orig: 11, 8
+  offset: 0, 0
+  index: -1

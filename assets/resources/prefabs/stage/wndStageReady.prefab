@@ -8268,10 +8268,12 @@
   },
   {
     "__type__": "cc.ClickEvent",
-    "target": null,
+    "target": {
+      "__id__": 1
+    },
     "component": "",
-    "_componentId": "1ba6aYytuNMeK4xpVUbHsc8",
-    "handler": "onBack",
+    "_componentId": "f65c8xUMVNPwqpSrOeZviwj",
+    "handler": "onClose",
     "customEventData": ""
   },
   {

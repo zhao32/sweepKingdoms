@@ -1,0 +1,132 @@
+
+WJ0053.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body_01
+  rotate: false
+  xy: 342, 2
+  size: 217, 162
+  orig: 217, 162
+  offset: 0, 0
+  index: -1
+Body_02
+  rotate: false
+  xy: 599, 202
+  size: 223, 166
+  orig: 223, 166
+  offset: 0, 0
+  index: -1
+Body_03
+  rotate: true
+  xy: 289, 166
+  size: 226, 168
+  orig: 226, 168
+  offset: 0, 0
+  index: -1
+Body_04
+  rotate: false
+  xy: 611, 370
+  size: 229, 172
+  orig: 229, 172
+  offset: 0, 0
+  index: -1
+Body_05
+  rotate: true
+  xy: 297, 432
+  size: 239, 178
+  orig: 239, 178
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 2, 673
+  size: 344, 340
+  orig: 344, 340
+  offset: 0, 0
+  index: -1
+Land
+  rotate: false
+  xy: 2, 13
+  size: 338, 131
+  orig: 338, 131
+  offset: 0, 0
+  index: -1
+Mouth
+  rotate: false
+  xy: 615, 778
+  size: 285, 235
+  orig: 285, 235
+  offset: 0, 0
+  index: -1
+Neck_01
+  rotate: false
+  xy: 348, 713
+  size: 265, 300
+  orig: 265, 300
+  offset: 0, 0
+  index: -1
+Neck_02
+  rotate: false
+  xy: 2, 394
+  size: 293, 277
+  orig: 293, 277
+  offset: 0, 0
+  index: -1
+Neck_03
+  rotate: false
+  xy: 2, 146
+  size: 285, 246
+  orig: 285, 246
+  offset: 0, 0
+  index: -1
+Neck_04
+  rotate: false
+  xy: 615, 544
+  size: 274, 232
+  orig: 274, 232
+  offset: 0, 0
+  index: -1
+effects_001
+  rotate: true
+  xy: 459, 230
+  size: 179, 138
+  orig: 179, 138
+  offset: 0, 0
+  index: -1
+effects_002
+  rotate: false
+  xy: 902, 813
+  size: 94, 80
+  orig: 94, 80
+  offset: 0, 0
+  index: -1
+effects_003
+  rotate: false
+  xy: 902, 895
+  size: 118, 118
+  orig: 118, 118
+  offset: 0, 0
+  index: -1
+effects_004
+  rotate: false
+  xy: 561, 74
+  size: 128, 126
+  orig: 128, 126
+  offset: 0, 0
+  index: -1
+effects_005
+  rotate: true
+  xy: 477, 411
+  size: 146, 132
+  orig: 146, 132
+  offset: 0, 0
+  index: -1
+effects_006
+  rotate: true
+  xy: 477, 559
+  size: 152, 134
+  orig: 152, 134
+  offset: 0, 0
+  index: -1

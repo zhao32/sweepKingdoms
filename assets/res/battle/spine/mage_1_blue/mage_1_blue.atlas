@@ -1,0 +1,97 @@
+
+mage_1_blue.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+units/mage_1_blue/1
+  rotate: false
+  xy: 132, 197
+  size: 44, 57
+  orig: 44, 57
+  offset: 0, 0
+  index: -1
+units/mage_1_blue/2
+  rotate: false
+  xy: 2, 172
+  size: 58, 82
+  orig: 58, 82
+  offset: 0, 0
+  index: -1
+units/mage_1_blue/ArmL
+  rotate: false
+  xy: 31, 103
+  size: 13, 21
+  orig: 13, 21
+  offset: 0, 0
+  index: -1
+units/mage_1_blue/ArmR
+  rotate: true
+  xy: 178, 202
+  size: 15, 21
+  orig: 15, 21
+  offset: 0, 0
+  index: -1
+units/mage_1_blue/Blood
+  rotate: true
+  xy: 2, 59
+  size: 111, 27
+  orig: 111, 27
+  offset: 0, 0
+  index: -1
+units/mage_1_blue/Chest
+  rotate: false
+  xy: 2, 37
+  size: 21, 20
+  orig: 21, 20
+  offset: 0, 0
+  index: -1
+units/mage_1_blue/Hair
+  rotate: false
+  xy: 229, 215
+  size: 25, 39
+  orig: 25, 39
+  offset: 0, 0
+  index: -1
+units/mage_1_blue/Head
+  rotate: false
+  xy: 31, 126
+  size: 32, 44
+  orig: 32, 44
+  offset: 0, 0
+  index: -1
+units/mage_1_blue/SkirtL
+  rotate: false
+  xy: 65, 154
+  size: 13, 16
+  orig: 13, 16
+  offset: 0, 0
+  index: -1
+units/mage_1_blue/SkirtR
+  rotate: true
+  xy: 132, 183
+  size: 12, 16
+  orig: 12, 16
+  offset: 0, 0
+  index: -1
+units/mage_1_blue/Weapon
+  rotate: true
+  xy: 62, 172
+  size: 9, 35
+  orig: 9, 35
+  offset: 0, 0
+  index: -1
+units/mage_1_blue/fslight
+  rotate: false
+  xy: 62, 183
+  size: 68, 71
+  orig: 68, 71
+  offset: 0, 0
+  index: -1
+units/mage_1_blue/sblood
+  rotate: false
+  xy: 178, 219
+  size: 49, 35
+  orig: 49, 35
+  offset: 0, 0
+  index: -1

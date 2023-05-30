@@ -1,0 +1,188 @@
+
+blueMage1Red.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+blueMage1Red/armL
+  rotate: false
+  xy: 2, 2
+  size: 23, 25
+  orig: 23, 25
+  offset: 0, 0
+  index: -1
+blueMage1Red/armR
+  rotate: false
+  xy: 27, 2
+  size: 22, 25
+  orig: 22, 25
+  offset: 0, 0
+  index: -1
+blueMage1Red/chest
+  rotate: false
+  xy: 141, 202
+  size: 55, 52
+  orig: 55, 52
+  offset: 0, 0
+  index: -1
+blueMage1Red/forearmL
+  rotate: false
+  xy: 51, 2
+  size: 19, 25
+  orig: 19, 25
+  offset: 0, 0
+  index: -1
+blueMage1Red/forearmR
+  rotate: false
+  xy: 233, 227
+  size: 20, 27
+  orig: 20, 27
+  offset: 0, 0
+  index: -1
+blueMage1Red/gongji_yan
+  rotate: false
+  xy: 141, 193
+  size: 34, 7
+  orig: 34, 7
+  offset: 0, 0
+  index: -1
+blueMage1Red/gongji_zui
+  rotate: false
+  xy: 72, 57
+  size: 14, 8
+  orig: 14, 8
+  offset: 0, 0
+  index: -1
+blueMage1Red/handL
+  rotate: false
+  xy: 230, 210
+  size: 20, 15
+  orig: 20, 15
+  offset: 0, 0
+  index: -1
+blueMage1Red/handR
+  rotate: false
+  xy: 93, 65
+  size: 17, 18
+  orig: 17, 18
+  offset: 0, 0
+  index: -1
+blueMage1Red/head
+  rotate: false
+  xy: 2, 145
+  size: 79, 109
+  orig: 79, 109
+  offset: 0, 0
+  index: -1
+blueMage1Red/hu_l
+  rotate: false
+  xy: 177, 193
+  size: 15, 7
+  orig: 15, 7
+  offset: 0, 0
+  index: -1
+blueMage1Red/hu_r
+  rotate: false
+  xy: 61, 29
+  size: 11, 6
+  orig: 11, 6
+  offset: 0, 0
+  index: -1
+blueMage1Red/legl
+  rotate: true
+  xy: 198, 211
+  size: 19, 30
+  orig: 19, 30
+  offset: 0, 0
+  index: -1
+blueMage1Red/legr
+  rotate: false
+  xy: 115, 115
+  size: 19, 28
+  orig: 19, 28
+  offset: 0, 0
+  index: -1
+blueMage1Red/mei_l
+  rotate: true
+  xy: 93, 85
+  size: 23, 13
+  orig: 23, 13
+  offset: 0, 0
+  index: -1
+blueMage1Red/mei_r
+  rotate: true
+  xy: 61, 37
+  size: 17, 11
+  orig: 17, 11
+  offset: 0, 0
+  index: -1
+blueMage1Red/putong_yan
+  rotate: true
+  xy: 128, 154
+  size: 34, 6
+  orig: 34, 6
+  offset: 0, 0
+  index: -1
+blueMage1Red/qiuqiu
+  rotate: false
+  xy: 83, 145
+  size: 43, 43
+  orig: 43, 43
+  offset: 0, 0
+  index: -1
+blueMage1Red/qunbai
+  rotate: false
+  xy: 93, 110
+  size: 20, 33
+  orig: 20, 33
+  offset: 0, 0
+  index: -1
+blueMage1Red/shoulight
+  rotate: false
+  xy: 2, 88
+  size: 66, 55
+  orig: 66, 55
+  offset: 0, 0
+  index: -1
+blueMage1Red/si_yan
+  rotate: true
+  xy: 61, 56
+  size: 30, 9
+  orig: 30, 9
+  offset: 0, 0
+  index: -1
+blueMage1Red/skirtL
+  rotate: false
+  xy: 198, 232
+  size: 33, 22
+  orig: 33, 22
+  offset: 0, 0
+  index: -1
+blueMage1Red/skirtR
+  rotate: false
+  xy: 72, 67
+  size: 19, 22
+  orig: 19, 22
+  offset: 0, 0
+  index: -1
+blueMage1Red/weapon
+  rotate: false
+  xy: 70, 91
+  size: 21, 52
+  orig: 21, 52
+  offset: 0, 0
+  index: -1
+blueMage1Red/weapon2
+  rotate: false
+  xy: 83, 190
+  size: 56, 64
+  orig: 56, 64
+  offset: 0, 0
+  index: -1
+blueMage1Red/xuanlight
+  rotate: false
+  xy: 2, 29
+  size: 57, 57
+  orig: 57, 57
+  offset: 0, 0
+  index: -1

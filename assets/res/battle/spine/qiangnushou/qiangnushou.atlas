@@ -1,0 +1,195 @@
+
+qiangnushou.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+qiangnushou/N_eyes
+  rotate: false
+  xy: 146, 301
+  size: 41, 15
+  orig: 41, 15
+  offset: 0, 0
+  index: -1
+qiangnushou/Nu
+  rotate: false
+  xy: 2, 423
+  size: 199, 86
+  orig: 199, 86
+  offset: 0, 0
+  index: -1
+qiangnushou/S_eyes
+  rotate: false
+  xy: 390, 479
+  size: 41, 19
+  orig: 41, 19
+  offset: 0, 0
+  index: -1
+qiangnushou/S_mouth
+  rotate: false
+  xy: 2, 2
+  size: 20, 7
+  orig: 20, 7
+  offset: 0, 0
+  index: -1
+qiangnushou/Sq
+  rotate: false
+  xy: 203, 481
+  size: 185, 28
+  orig: 185, 28
+  offset: 0, 0
+  index: -1
+qiangnushou/arm_l
+  rotate: true
+  xy: 260, 432
+  size: 47, 56
+  orig: 47, 56
+  offset: 0, 0
+  index: -1
+qiangnushou/arm_r
+  rotate: false
+  xy: 2, 83
+  size: 59, 57
+  orig: 59, 57
+  offset: 0, 0
+  index: -1
+qiangnushou/arm_up_l
+  rotate: false
+  xy: 203, 424
+  size: 55, 55
+  orig: 55, 55
+  offset: 0, 0
+  index: -1
+qiangnushou/arm_up_r
+  rotate: true
+  xy: 318, 444
+  size: 35, 53
+  orig: 35, 53
+  offset: 0, 0
+  index: -1
+qiangnushou/body
+  rotate: false
+  xy: 2, 209
+  size: 111, 89
+  orig: 111, 89
+  offset: 0, 0
+  index: -1
+qiangnushou/bq_1
+  rotate: false
+  xy: 2, 300
+  size: 142, 121
+  orig: 142, 121
+  offset: 0, 0
+  index: -1
+qiangnushou/eyes
+  rotate: true
+  xy: 373, 438
+  size: 41, 15
+  orig: 41, 15
+  offset: 0, 0
+  index: -1
+qiangnushou/foot_l
+  rotate: false
+  xy: 38, 18
+  size: 26, 21
+  orig: 26, 21
+  offset: 0, 0
+  index: -1
+qiangnushou/foot_r
+  rotate: false
+  xy: 433, 480
+  size: 20, 18
+  orig: 20, 18
+  offset: 0, 0
+  index: -1
+qiangnushou/hair
+  rotate: true
+  xy: 146, 354
+  size: 67, 49
+  orig: 67, 49
+  offset: 0, 0
+  index: -1
+qiangnushou/hand_l
+  rotate: true
+  xy: 74, 154
+  size: 53, 38
+  orig: 53, 38
+  offset: 0, 0
+  index: -1
+qiangnushou/hand_r
+  rotate: false
+  xy: 146, 318
+  size: 42, 34
+  orig: 42, 34
+  offset: 0, 0
+  index: -1
+qiangnushou/head
+  rotate: false
+  xy: 2, 142
+  size: 70, 65
+  orig: 70, 65
+  offset: 0, 0
+  index: -1
+qiangnushou/leg_l
+  rotate: true
+  xy: 115, 216
+  size: 39, 31
+  orig: 39, 31
+  offset: 0, 0
+  index: -1
+qiangnushou/leg_r
+  rotate: false
+  xy: 151, 269
+  size: 33, 30
+  orig: 33, 30
+  offset: 0, 0
+  index: -1
+qiangnushou/mei_l
+  rotate: false
+  xy: 390, 461
+  size: 33, 16
+  orig: 33, 16
+  offset: 0, 0
+  index: -1
+qiangnushou/mei_r
+  rotate: false
+  xy: 390, 443
+  size: 23, 16
+  orig: 23, 16
+  offset: 0, 0
+  index: -1
+qiangnushou/mouth
+  rotate: false
+  xy: 74, 141
+  size: 27, 11
+  orig: 27, 11
+  offset: 0, 0
+  index: -1
+qiangnushou/skirt
+  rotate: false
+  xy: 38, 41
+  size: 28, 40
+  orig: 28, 40
+  offset: 0, 0
+  index: -1
+qiangnushou/yann
+  rotate: true
+  xy: 115, 257
+  size: 41, 34
+  orig: 41, 34
+  offset: 0, 0
+  index: -1
+qiangnushou/yao
+  rotate: true
+  xy: 2, 11
+  size: 70, 34
+  orig: 70, 34
+  offset: 0, 0
+  index: -1
+qiangnushou/zg
+  rotate: false
+  xy: 390, 500
+  size: 64, 9
+  orig: 64, 9
+  offset: 0, 0
+  index: -1

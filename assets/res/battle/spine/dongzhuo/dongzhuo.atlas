@@ -1,0 +1,272 @@
+
+dongzhuo.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dongzhuo/H
+  rotate: true
+  xy: 138, 302
+  size: 22, 18
+  orig: 22, 18
+  offset: 0, 0
+  index: -1
+dongzhuo/arm_l
+  rotate: false
+  xy: 2, 159
+  size: 58, 92
+  orig: 58, 92
+  offset: 0, 0
+  index: -1
+dongzhuo/arm_r
+  rotate: true
+  xy: 2, 8
+  size: 72, 71
+  orig: 72, 71
+  offset: 0, 0
+  index: -1
+dongzhuo/arm_up_l
+  rotate: false
+  xy: 168, 333
+  size: 62, 45
+  orig: 62, 45
+  offset: 0, 0
+  index: -1
+dongzhuo/arm_up_r
+  rotate: true
+  xy: 367, 452
+  size: 27, 53
+  orig: 27, 53
+  offset: 0, 0
+  index: -1
+dongzhuo/beard_sl
+  rotate: false
+  xy: 469, 481
+  size: 41, 29
+  orig: 41, 29
+  offset: 0, 0
+  index: -1
+dongzhuo/beard_sr
+  rotate: false
+  xy: 105, 301
+  size: 31, 23
+  orig: 31, 23
+  offset: 0, 0
+  index: -1
+dongzhuo/beard_x
+  rotate: false
+  xy: 287, 345
+  size: 35, 35
+  orig: 35, 35
+  offset: 0, 0
+  index: -1
+dongzhuo/beard_xl_1
+  rotate: true
+  xy: 393, 421
+  size: 29, 27
+  orig: 29, 27
+  offset: 0, 0
+  index: -1
+dongzhuo/beard_xl_2
+  rotate: false
+  xy: 361, 421
+  size: 30, 29
+  orig: 30, 29
+  offset: 0, 0
+  index: -1
+dongzhuo/beard_xr
+  rotate: true
+  xy: 422, 453
+  size: 26, 39
+  orig: 26, 39
+  offset: 0, 0
+  index: -1
+dongzhuo/biyan
+  rotate: true
+  xy: 105, 260
+  size: 39, 8
+  orig: 39, 8
+  offset: 0, 0
+  index: -1
+dongzhuo/body
+  rotate: false
+  xy: 2, 253
+  size: 101, 72
+  orig: 101, 72
+  offset: 0, 0
+  index: -1
+dongzhuo/box
+  rotate: false
+  xy: 74, 146
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+dongzhuo/bu
+  rotate: false
+  xy: 422, 425
+  size: 30, 26
+  orig: 30, 26
+  offset: 0, 0
+  index: -1
+dongzhuo/cap
+  rotate: true
+  xy: 230, 380
+  size: 61, 53
+  orig: 61, 53
+  offset: 0, 0
+  index: -1
+dongzhuo/eyes
+  rotate: false
+  xy: 107, 326
+  size: 41, 10
+  orig: 41, 10
+  offset: 0, 0
+  index: -1
+dongzhuo/foot_l
+  rotate: false
+  xy: 287, 329
+  size: 26, 14
+  orig: 26, 14
+  offset: 0, 0
+  index: -1
+dongzhuo/foot_r
+  rotate: false
+  xy: 264, 443
+  size: 15, 12
+  orig: 15, 12
+  offset: 0, 0
+  index: -1
+dongzhuo/gongji_yan
+  rotate: true
+  xy: 344, 416
+  size: 39, 15
+  orig: 39, 15
+  offset: 0, 0
+  index: -1
+dongzhuo/gongji_zui
+  rotate: true
+  xy: 145, 413
+  size: 28, 14
+  orig: 28, 14
+  offset: 0, 0
+  index: -1
+dongzhuo/hair_s
+  rotate: false
+  xy: 145, 443
+  size: 117, 67
+  orig: 117, 67
+  offset: 0, 0
+  index: -1
+dongzhuo/hand_l
+  rotate: true
+  xy: 107, 338
+  size: 73, 59
+  orig: 73, 59
+  offset: 0, 0
+  index: -1
+dongzhuo/hand_r
+  rotate: false
+  xy: 168, 380
+  size: 60, 61
+  orig: 60, 61
+  offset: 0, 0
+  index: -1
+dongzhuo/head
+  rotate: true
+  xy: 2, 82
+  size: 75, 70
+  orig: 75, 70
+  offset: 0, 0
+  index: -1
+dongzhuo/lei
+  rotate: false
+  xy: 285, 382
+  size: 49, 17
+  orig: 49, 17
+  offset: 0, 0
+  index: -1
+dongzhuo/mei_l
+  rotate: true
+  xy: 115, 272
+  size: 27, 19
+  orig: 27, 19
+  offset: 0, 0
+  index: -1
+dongzhuo/mei_r
+  rotate: false
+  xy: 74, 129
+  size: 18, 15
+  orig: 18, 15
+  offset: 0, 0
+  index: -1
+dongzhuo/mohu
+  rotate: false
+  xy: 2, 413
+  size: 141, 97
+  orig: 141, 97
+  offset: 0, 0
+  index: -1
+dongzhuo/piezui
+  rotate: true
+  xy: 161, 420
+  size: 21, 5
+  orig: 21, 5
+  offset: 0, 0
+  index: -1
+dongzhuo/shoulder_l_1
+  rotate: true
+  xy: 232, 329
+  size: 49, 53
+  orig: 49, 53
+  offset: 0, 0
+  index: -1
+dongzhuo/shoulder_l_2
+  rotate: false
+  xy: 285, 401
+  size: 57, 54
+  orig: 57, 54
+  offset: 0, 0
+  index: -1
+dongzhuo/shoulder_r
+  rotate: false
+  xy: 463, 446
+  size: 36, 33
+  orig: 36, 33
+  offset: 0, 0
+  index: -1
+dongzhuo/skirt
+  rotate: false
+  xy: 367, 481
+  size: 100, 29
+  orig: 100, 29
+  offset: 0, 0
+  index: -1
+dongzhuo/yann
+  rotate: false
+  xy: 2, 327
+  size: 103, 84
+  orig: 103, 84
+  offset: 0, 0
+  index: -1
+dongzhuo/yao
+  rotate: false
+  xy: 264, 457
+  size: 101, 53
+  orig: 101, 53
+  offset: 0, 0
+  index: -1
+dongzhuo/yaoya
+  rotate: true
+  xy: 324, 351
+  size: 29, 11
+  orig: 29, 11
+  offset: 0, 0
+  index: -1
+dongzhuo/zhuahen
+  rotate: true
+  xy: 62, 168
+  size: 83, 40
+  orig: 83, 40
+  offset: 0, 0
+  index: -1

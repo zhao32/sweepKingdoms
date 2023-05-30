@@ -1,0 +1,279 @@
+
+xuchu.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+xuchu/armL
+  rotate: false
+  xy: 218, 299
+  size: 58, 53
+  orig: 58, 53
+  offset: 0, 0
+  index: -1
+xuchu/armR
+  rotate: true
+  xy: 218, 259
+  size: 38, 45
+  orig: 38, 45
+  offset: 0, 0
+  index: -1
+xuchu/beard
+  rotate: true
+  xy: 2, 2
+  size: 27, 24
+  orig: 27, 24
+  offset: 0, 0
+  index: -1
+xuchu/belt
+  rotate: false
+  xy: 2, 31
+  size: 92, 32
+  orig: 92, 32
+  offset: 0, 0
+  index: -1
+xuchu/biyan
+  rotate: true
+  xy: 496, 428
+  size: 40, 5
+  orig: 40, 5
+  offset: 0, 0
+  index: -1
+xuchu/body
+  rotate: false
+  xy: 278, 316
+  size: 94, 77
+  orig: 94, 77
+  offset: 0, 0
+  index: -1
+xuchu/box
+  rotate: false
+  xy: 297, 251
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+xuchu/calfL
+  rotate: false
+  xy: 126, 66
+  size: 34, 25
+  orig: 34, 25
+  offset: 0, 0
+  index: -1
+xuchu/calfR
+  rotate: false
+  xy: 265, 273
+  size: 32, 24
+  orig: 32, 24
+  offset: 0, 0
+  index: -1
+xuchu/dead
+  rotate: false
+  xy: 2, 333
+  size: 177, 177
+  orig: 177, 177
+  offset: 0, 0
+  index: -1
+xuchu/roar
+  rotate: false
+  xy: 2, 333
+  size: 177, 177
+  orig: 177, 177
+  offset: 0, 0
+  index: -1
+xuchu/effect1
+  rotate: false
+  xy: 2, 182
+  size: 149, 149
+  orig: 149, 149
+  offset: 0, 0
+  index: -1
+xuchu/effect2
+  rotate: false
+  xy: 2, 65
+  size: 122, 115
+  orig: 122, 115
+  offset: 0, 0
+  index: -1
+xuchu/effect3
+  rotate: false
+  xy: 278, 395
+  size: 122, 115
+  orig: 122, 115
+  offset: 0, 0
+  index: -1
+xuchu/flash1
+  rotate: false
+  xy: 456, 340
+  size: 54, 53
+  orig: 54, 53
+  offset: 0, 0
+  index: -1
+xuchu/footL
+  rotate: false
+  xy: 265, 226
+  size: 25, 20
+  orig: 25, 20
+  offset: 0, 0
+  index: -1
+xuchu/footR
+  rotate: true
+  xy: 299, 273
+  size: 24, 20
+  orig: 24, 20
+  offset: 0, 0
+  index: -1
+xuchu/forearmL
+  rotate: false
+  xy: 153, 202
+  size: 39, 50
+  orig: 39, 50
+  offset: 0, 0
+  index: -1
+xuchu/forearmR
+  rotate: true
+  xy: 92, 2
+  size: 26, 28
+  orig: 26, 28
+  offset: 0, 0
+  index: -1
+xuchu/hair
+  rotate: false
+  xy: 456, 299
+  size: 54, 39
+  orig: 54, 39
+  offset: 0, 0
+  index: -1
+xuchu/handL
+  rotate: false
+  xy: 126, 136
+  size: 37, 44
+  orig: 37, 44
+  offset: 0, 0
+  index: -1
+xuchu/handR
+  rotate: false
+  xy: 28, 2
+  size: 23, 27
+  orig: 23, 27
+  offset: 0, 0
+  index: -1
+xuchu/head
+  rotate: false
+  xy: 374, 313
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+xuchu/lei
+  rotate: true
+  xy: 126, 93
+  size: 41, 36
+  orig: 41, 36
+  offset: 0, 0
+  index: -1
+xuchu/mei1
+  rotate: false
+  xy: 122, 2
+  size: 16, 21
+  orig: 16, 21
+  offset: 0, 0
+  index: -1
+xuchu/mei2
+  rotate: false
+  xy: 265, 248
+  size: 30, 23
+  orig: 30, 23
+  offset: 0, 0
+  index: -1
+xuchu/penis
+  rotate: false
+  xy: 194, 210
+  size: 32, 42
+  orig: 32, 42
+  offset: 0, 0
+  index: -1
+xuchu/pty
+  rotate: true
+  xy: 496, 470
+  size: 40, 11
+  orig: 40, 11
+  offset: 0, 0
+  index: -1
+xuchu/putongz
+  rotate: false
+  xy: 278, 299
+  size: 37, 15
+  orig: 37, 15
+  offset: 0, 0
+  index: -1
+xuchu/salsh1
+  rotate: false
+  xy: 402, 395
+  size: 92, 115
+  orig: 92, 115
+  offset: 0, 0
+  index: -1
+xuchu/shoulderL
+  rotate: false
+  xy: 153, 254
+  size: 63, 77
+  orig: 63, 77
+  offset: 0, 0
+  index: -1
+xuchu/shoulderR
+  rotate: true
+  xy: 53, 4
+  size: 25, 37
+  orig: 25, 37
+  offset: 0, 0
+  index: -1
+xuchu/skirtL
+  rotate: true
+  xy: 127, 25
+  size: 39, 23
+  orig: 39, 23
+  offset: 0, 0
+  index: -1
+xuchu/skirtR
+  rotate: true
+  xy: 153, 188
+  size: 12, 24
+  orig: 12, 24
+  offset: 0, 0
+  index: -1
+xuchu/teshuy
+  rotate: false
+  xy: 317, 303
+  size: 40, 11
+  orig: 40, 11
+  offset: 0, 0
+  index: -1
+xuchu/teshuz
+  rotate: false
+  xy: 181, 337
+  size: 32, 15
+  orig: 32, 15
+  offset: 0, 0
+  index: -1
+xuchu/thighL
+  rotate: false
+  xy: 228, 219
+  size: 35, 38
+  orig: 35, 38
+  offset: 0, 0
+  index: -1
+xuchu/thighR
+  rotate: false
+  xy: 96, 30
+  size: 29, 33
+  orig: 29, 33
+  offset: 0, 0
+  index: -1
+xuchu/weapon
+  rotate: false
+  xy: 181, 354
+  size: 95, 156
+  orig: 95, 156
+  offset: 0, 0
+  index: -1

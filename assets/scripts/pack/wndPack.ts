@@ -46,6 +46,17 @@ export default class NewClass extends cc.Component {
             ToggleList[i].node.on('toggle', (event: cc.Toggle) => {
                 if (event.isChecked == true) {
                     Logger.log('选中' + i)
+                    this.contect.removeAllChildren()
+                    let list = this[`list${i + 1}`]
+                    for (let j = 0; j < list.length; j++) {
+                        let render = cc.instantiate(this.renderPfb)
+                        render.removeAllChildren()
+                        render.parent = this.contect
+                        for (let k = 0; k < list[j].length; k++) {
+                            let item = cc.instantiate(this.itemPfb)
+                            item.parent = render
+                        }
+                    }
                 }
             }, this)
         }
@@ -56,22 +67,51 @@ export default class NewClass extends cc.Component {
     }
 
     init() {
+        // this.contect.removeAllChildren()
+        // for (let i = 0; i < 8; i++) {
+        //     let render = cc.instantiate(this.renderPfb)
+        //     render.parent = this.contect
+        //     render.removeAllChildren()
+        //     for (let j = 0; j < 4; j++) {
+        //         let item = cc.instantiate(this.itemPfb)
+        //         item.parent = render
+        //     }
+        // }
+    }
+    list1 = []
+    list2 = []
+    list3 = []
+    list4 = []
+    S2CBagItems(retObj) {
+        console.log(JSON.stringify(retObj))
 
         this.contect.removeAllChildren()
-        for (let i = 0; i < 8; i++) {
-            let render = cc.instantiate(this.renderPfb)
-            render.parent = this.contect
-            render.removeAllChildren()
-            for (let j = 0; j < 4; j++) {
-                let item = cc.instantiate(this.itemPfb)
-                item.parent = render   
+        for (let i = 0; i < retObj.item_list.length; i++) {
+            if (retObj.item_list[i].bagId == 1) {
+                this.list1.push(retObj.item_list[i])
+            } else if (retObj.item_list[i].bagId == 2) {
+                this.list2.push(retObj.item_list[i])
+            } else if (retObj.item_list[i].bagId == 3) {
+                this.list3.push(retObj.item_list[i])
+            } else if (retObj.item_list[i].bagId == 4) {
+                this.list4.push(retObj.item_list[i])
             }
         }
 
-    }
+        this.list1 = DataManager.group(this.list1, 4)
+        this.list2 = DataManager.group(this.list2, 4)
+        this.list3 = DataManager.group(this.list3, 4)
+        this.list4 = DataManager.group(this.list4, 4)
 
-    S2CBagItems(retObj){ 
-        console.log(JSON.stringify(retObj))
+        for (let i = 0; i < this.list1.length; i++) {
+            let render = cc.instantiate(this.renderPfb)
+            render.removeAllChildren()
+            render.parent = this.contect
+            for (let j = 0; j < this.list1[i].length; j++) {
+                let item = cc.instantiate(this.itemPfb)
+                item.parent = render
+            }
+        }
 
     }
 

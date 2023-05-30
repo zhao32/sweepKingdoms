@@ -1,0 +1,328 @@
+
+ganning.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ganning/box
+  rotate: false
+  xy: 165, 245
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+ganning/daolight
+  rotate: false
+  xy: 373, 377
+  size: 58, 40
+  orig: 58, 40
+  offset: 0, 0
+  index: -1
+ganning/daolight_2
+  rotate: false
+  xy: 2, 13
+  size: 83, 74
+  orig: 83, 74
+  offset: 0, 0
+  index: -1
+ganning/ganning_L_arm
+  rotate: true
+  xy: 296, 325
+  size: 27, 30
+  orig: 27, 30
+  offset: 0, 0
+  index: -1
+ganning/ganning_L_arm_up
+  rotate: false
+  xy: 125, 93
+  size: 22, 30
+  orig: 22, 30
+  offset: 0, 0
+  index: -1
+ganning/ganning_L_foot
+  rotate: false
+  xy: 42, 2
+  size: 17, 9
+  orig: 17, 9
+  offset: 0, 0
+  index: -1
+ganning/ganning_L_hand
+  rotate: true
+  xy: 149, 92
+  size: 24, 21
+  orig: 24, 21
+  offset: 0, 0
+  index: -1
+ganning/ganning_L_hand_2
+  rotate: true
+  xy: 165, 267
+  size: 24, 21
+  orig: 24, 21
+  offset: 0, 0
+  index: -1
+ganning/ganning_L_leg
+  rotate: false
+  xy: 165, 293
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+ganning/ganning_L_leg_up
+  rotate: true
+  xy: 165, 222
+  size: 21, 19
+  orig: 21, 19
+  offset: 0, 0
+  index: -1
+ganning/ganning_L_quanbai
+  rotate: true
+  xy: 181, 299
+  size: 25, 27
+  orig: 25, 27
+  offset: 0, 0
+  index: -1
+ganning/ganning_R_arm
+  rotate: false
+  xy: 149, 118
+  size: 21, 26
+  orig: 21, 26
+  offset: 0, 0
+  index: -1
+ganning/ganning_R_arm_up
+  rotate: false
+  xy: 165, 309
+  size: 14, 22
+  orig: 14, 22
+  offset: 0, 0
+  index: -1
+ganning/ganning_R_foot
+  rotate: false
+  xy: 2, 2
+  size: 18, 9
+  orig: 18, 9
+  offset: 0, 0
+  index: -1
+ganning/ganning_R_hand
+  rotate: false
+  xy: 165, 175
+  size: 19, 20
+  orig: 19, 20
+  offset: 0, 0
+  index: -1
+ganning/ganning_R_leg
+  rotate: false
+  xy: 344, 354
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+ganning/ganning_R_leg_up
+  rotate: false
+  xy: 169, 153
+  size: 15, 20
+  orig: 15, 20
+  offset: 0, 0
+  index: -1
+ganning/ganning_R_quanbai
+  rotate: false
+  xy: 165, 197
+  size: 17, 23
+  orig: 17, 23
+  offset: 0, 0
+  index: -1
+ganning/ganning_body
+  rotate: false
+  xy: 451, 460
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+ganning/ganning_hair_1
+  rotate: true
+  xy: 262, 326
+  size: 26, 32
+  orig: 26, 32
+  offset: 0, 0
+  index: -1
+ganning/ganning_hair_2
+  rotate: true
+  xy: 224, 327
+  size: 25, 36
+  orig: 25, 36
+  offset: 0, 0
+  index: -1
+ganning/ganning_head_1
+  rotate: false
+  xy: 373, 419
+  size: 76, 91
+  orig: 76, 91
+  offset: 0, 0
+  index: -1
+ganning/ganning_head_2
+  rotate: false
+  xy: 2, 333
+  size: 177, 177
+  orig: 177, 177
+  offset: 0, 0
+  index: -1
+ganning/ganning_head_3
+  rotate: false
+  xy: 2, 333
+  size: 177, 177
+  orig: 177, 177
+  offset: 0, 0
+  index: -1
+ganning/ganning_pose_1
+  rotate: false
+  xy: 2, 254
+  size: 161, 77
+  orig: 161, 77
+  offset: 0, 0
+  index: -1
+ganning/ganning_pose_2
+  rotate: false
+  xy: 181, 433
+  size: 161, 77
+  orig: 161, 77
+  offset: 0, 0
+  index: -1
+ganning/ganning_pose_3
+  rotate: false
+  xy: 2, 175
+  size: 161, 77
+  orig: 161, 77
+  offset: 0, 0
+  index: -1
+ganning/ganning_pose_4
+  rotate: false
+  xy: 181, 354
+  size: 161, 77
+  orig: 161, 77
+  offset: 0, 0
+  index: -1
+ganning/ganning_qianbai
+  rotate: false
+  xy: 328, 326
+  size: 21, 26
+  orig: 21, 26
+  offset: 0, 0
+  index: -1
+ganning/ganning_shoulder
+  rotate: true
+  xy: 451, 417
+  size: 41, 46
+  orig: 41, 46
+  offset: 0, 0
+  index: -1
+ganning/ganning_tousheng
+  rotate: false
+  xy: 125, 125
+  size: 22, 48
+  orig: 22, 48
+  offset: 0, 0
+  index: -1
+ganning/ganning_wuqi
+  rotate: false
+  xy: 344, 368
+  size: 27, 142
+  orig: 27, 142
+  offset: 0, 0
+  index: -1
+ganning/ganningguang
+  rotate: false
+  xy: 88, 90
+  size: 35, 83
+  orig: 35, 83
+  offset: 0, 0
+  index: -1
+ganning/gongji_zui
+  rotate: false
+  xy: 448, 399
+  size: 17, 16
+  orig: 17, 16
+  offset: 0, 0
+  index: -1
+ganning/guangzhao
+  rotate: false
+  xy: 2, 89
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+ganning/mei_l
+  rotate: true
+  xy: 433, 394
+  size: 23, 13
+  orig: 23, 13
+  offset: 0, 0
+  index: -1
+ganning/mei_r
+  rotate: true
+  xy: 499, 443
+  size: 15, 11
+  orig: 15, 11
+  offset: 0, 0
+  index: -1
+ganning/pyan1
+  rotate: false
+  xy: 61, 2
+  size: 12, 9
+  orig: 12, 9
+  offset: 0, 0
+  index: -1
+ganning/pyan2
+  rotate: false
+  xy: 22, 2
+  size: 18, 9
+  orig: 18, 9
+  offset: 0, 0
+  index: -1
+ganning/si_yan1
+  rotate: true
+  xy: 433, 377
+  size: 15, 13
+  orig: 15, 13
+  offset: 0, 0
+  index: -1
+ganning/si_yan2
+  rotate: false
+  xy: 448, 384
+  size: 15, 13
+  orig: 15, 13
+  offset: 0, 0
+  index: -1
+ganning/si_zui
+  rotate: true
+  xy: 149, 146
+  size: 27, 18
+  orig: 27, 18
+  offset: 0, 0
+  index: -1
+ganning/xyan1
+  rotate: false
+  xy: 467, 400
+  size: 18, 15
+  orig: 18, 15
+  offset: 0, 0
+  index: -1
+ganning/xyan2
+  rotate: false
+  xy: 210, 309
+  size: 13, 15
+  orig: 13, 15
+  offset: 0, 0
+  index: -1
+ganning/ya1
+  rotate: false
+  xy: 181, 326
+  size: 41, 26
+  orig: 41, 26
+  offset: 0, 0
+  index: -1
+ganning/zui
+  rotate: true
+  xy: 503, 492
+  size: 18, 7
+  orig: 18, 7
+  offset: 0, 0
+  index: -1

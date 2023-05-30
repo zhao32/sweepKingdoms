@@ -1,0 +1,286 @@
+
+blueInfantry1White.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+blueInfantry1White/0
+  rotate: true
+  xy: 305, 411
+  size: 99, 123
+  orig: 99, 123
+  offset: 0, 0
+  index: -1
+blueInfantry1White/bodyNull
+  rotate: false
+  xy: 362, 331
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+blueInfantry1White/canying
+  rotate: false
+  xy: 2, 408
+  size: 301, 102
+  orig: 301, 102
+  offset: 0, 0
+  index: -1
+blueInfantry1White/daolight1
+  rotate: false
+  xy: 2, 36
+  size: 98, 83
+  orig: 98, 83
+  offset: 0, 0
+  index: -1
+blueInfantry1White/daolight_2
+  rotate: false
+  xy: 119, 258
+  size: 165, 148
+  orig: 165, 148
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_L_arm
+  rotate: false
+  xy: 301, 140
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_L_arm_up
+  rotate: false
+  xy: 102, 2
+  size: 34, 40
+  orig: 34, 40
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_L_hand
+  rotate: true
+  xy: 308, 55
+  size: 20, 17
+  orig: 20, 17
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_L_hand_2
+  rotate: false
+  xy: 384, 375
+  size: 20, 17
+  orig: 20, 17
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_L_leg
+  rotate: false
+  xy: 79, 13
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_L_leg_up
+  rotate: true
+  xy: 383, 353
+  size: 20, 15
+  orig: 20, 15
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_L_quanbai
+  rotate: false
+  xy: 301, 172
+  size: 33, 30
+  orig: 33, 30
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_R_arm
+  rotate: false
+  xy: 138, 15
+  size: 36, 27
+  orig: 36, 27
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_R_arm_up
+  rotate: false
+  xy: 362, 353
+  size: 19, 26
+  orig: 19, 26
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_R_hand
+  rotate: false
+  xy: 412, 393
+  size: 17, 16
+  orig: 17, 16
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_R_leg
+  rotate: true
+  xy: 308, 77
+  size: 22, 17
+  orig: 22, 17
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_R_leg_up
+  rotate: true
+  xy: 384, 332
+  size: 19, 17
+  orig: 19, 17
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_R_quanbai
+  rotate: false
+  xy: 362, 381
+  size: 20, 28
+  orig: 20, 28
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_body
+  rotate: true
+  xy: 286, 259
+  size: 61, 63
+  orig: 61, 63
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_dun
+  rotate: false
+  xy: 189, 33
+  size: 68, 86
+  orig: 68, 86
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_head_1
+  rotate: false
+  xy: 286, 322
+  size: 74, 84
+  orig: 74, 84
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_head_2
+  rotate: false
+  xy: 430, 425
+  size: 75, 85
+  orig: 75, 85
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_head_3
+  rotate: true
+  xy: 102, 44
+  size: 75, 85
+  orig: 75, 85
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_shoulder
+  rotate: true
+  xy: 301, 204
+  size: 53, 37
+  orig: 53, 37
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_shoulder2
+  rotate: true
+  xy: 2, 2
+  size: 32, 35
+  orig: 32, 35
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_tousheng
+  rotate: false
+  xy: 259, 2
+  size: 65, 37
+  orig: 65, 37
+  offset: 0, 0
+  index: -1
+blueInfantry1White/ganning_wuqi
+  rotate: false
+  xy: 257, 140
+  size: 42, 116
+  orig: 42, 116
+  offset: 0, 0
+  index: -1
+blueInfantry1White/gongji_yan
+  rotate: true
+  xy: 308, 101
+  size: 37, 13
+  orig: 37, 13
+  offset: 0, 0
+  index: -1
+blueInfantry1White/gongji_zui
+  rotate: false
+  xy: 79, 2
+  size: 14, 9
+  orig: 14, 9
+  offset: 0, 0
+  index: -1
+blueInfantry1White/mei_l
+  rotate: false
+  xy: 431, 398
+  size: 17, 13
+  orig: 17, 13
+  offset: 0, 0
+  index: -1
+blueInfantry1White/mei_r
+  rotate: false
+  xy: 384, 394
+  size: 26, 15
+  orig: 26, 15
+  offset: 0, 0
+  index: -1
+blueInfantry1White/quanq
+  rotate: false
+  xy: 119, 121
+  size: 136, 135
+  orig: 136, 135
+  offset: 0, 0
+  index: -1
+blueInfantry1White/si_yan
+  rotate: false
+  xy: 430, 413
+  size: 31, 10
+  orig: 31, 10
+  offset: 0, 0
+  index: -1
+blueInfantry1White/si_zui
+  rotate: true
+  xy: 406, 375
+  size: 17, 4
+  orig: 17, 4
+  offset: 0, 0
+  index: -1
+blueInfantry1White/smok
+  rotate: true
+  xy: 259, 41
+  size: 97, 47
+  orig: 97, 47
+  offset: 0, 0
+  index: -1
+blueInfantry1White/tiao
+  rotate: false
+  xy: 2, 121
+  size: 115, 285
+  orig: 115, 285
+  offset: 0, 0
+  index: -1
+blueInfantry1White/yan
+  rotate: false
+  xy: 138, 2
+  size: 35, 11
+  orig: 35, 11
+  offset: 0, 0
+  index: -1
+blueInfantry1White/yao
+  rotate: false
+  xy: 39, 9
+  size: 38, 25
+  orig: 38, 25
+  offset: 0, 0
+  index: -1
+blueInfantry1White/zhangzui
+  rotate: true
+  xy: 308, 41
+  size: 12, 6
+  orig: 12, 6
+  offset: 0, 0
+  index: -1
+blueInfantry1White/zui
+  rotate: true
+  xy: 351, 305
+  size: 15, 8
+  orig: 15, 8
+  offset: 0, 0
+  index: -1

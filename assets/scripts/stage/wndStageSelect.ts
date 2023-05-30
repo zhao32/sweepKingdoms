@@ -36,7 +36,9 @@ export default class NewClass extends cc.Component {
 
     _selectIdx: number = 1
 
+    _data
 
+    _stateData
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -62,7 +64,9 @@ export default class NewClass extends cc.Component {
     }
 
     // stateData:{"stages":[{"star":3,"times":5,"is_get_award":false},{"star":3,"times":19,"is_get_award":false}],"star_award":[]}
-    init(data, stateData) {
+    init(data = this._data, stateData = this._stateData) {
+        this._data = data
+        this._stateData = stateData
         // console.log('stateData:'+ JSON.stringify(data))
         console.log(`stateData:` + JSON.stringify(stateData))
         this.nameLabel.string = data.name;
@@ -89,7 +93,7 @@ export default class NewClass extends cc.Component {
     }
 
     onBack() {
-        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE)
     }
 

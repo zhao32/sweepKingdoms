@@ -1,0 +1,314 @@
+
+machao.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+machao/M_1_leg
+  rotate: false
+  xy: 415, 415
+  size: 18, 19
+  orig: 18, 19
+  offset: 0, 0
+  index: -1
+machao/M_1_leg_up
+  rotate: false
+  xy: 132, 248
+  size: 27, 46
+  orig: 27, 46
+  offset: 0, 0
+  index: -1
+machao/M_2_leg
+  rotate: false
+  xy: 453, 421
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+machao/M_2_leg_up
+  rotate: true
+  xy: 261, 405
+  size: 20, 43
+  orig: 20, 43
+  offset: 0, 0
+  index: -1
+machao/M_3_leg
+  rotate: false
+  xy: 48, 59
+  size: 18, 24
+  orig: 18, 24
+  offset: 0, 0
+  index: -1
+machao/M_3_leg_up
+  rotate: false
+  xy: 254, 360
+  size: 29, 43
+  orig: 29, 43
+  offset: 0, 0
+  index: -1
+machao/M_4_leg
+  rotate: false
+  xy: 435, 417
+  size: 16, 20
+  orig: 16, 20
+  offset: 0, 0
+  index: -1
+machao/M_4_leg_up
+  rotate: false
+  xy: 48, 85
+  size: 21, 36
+  orig: 21, 36
+  offset: 0, 0
+  index: -1
+machao/M_body
+  rotate: true
+  xy: 132, 296
+  size: 102, 48
+  orig: 102, 48
+  offset: 0, 0
+  index: -1
+machao/M_bozi
+  rotate: true
+  xy: 37, 247
+  size: 50, 67
+  orig: 50, 67
+  offset: 0, 0
+  index: -1
+machao/M_foot_1
+  rotate: true
+  xy: 285, 353
+  size: 29, 24
+  orig: 29, 24
+  offset: 0, 0
+  index: -1
+machao/M_foot_2
+  rotate: true
+  xy: 161, 272
+  size: 22, 19
+  orig: 22, 19
+  offset: 0, 0
+  index: -1
+machao/M_head
+  rotate: false
+  xy: 181, 409
+  size: 78, 101
+  orig: 78, 101
+  offset: 0, 0
+  index: -1
+machao/M_wei
+  rotate: false
+  xy: 2, 58
+  size: 44, 63
+  orig: 44, 63
+  offset: 0, 0
+  index: -1
+machao/N_eyes
+  rotate: true
+  xy: 146, 214
+  size: 32, 12
+  orig: 32, 12
+  offset: 0, 0
+  index: -1
+machao/N_mouth
+  rotate: false
+  xy: 2, 247
+  size: 13, 9
+  orig: 13, 9
+  offset: 0, 0
+  index: -1
+machao/S_eyes_l
+  rotate: false
+  xy: 471, 421
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+machao/S_eyes_r
+  rotate: false
+  xy: 254, 303
+  size: 12, 13
+  orig: 12, 13
+  offset: 0, 0
+  index: -1
+machao/S_mouth
+  rotate: true
+  xy: 242, 303
+  size: 18, 10
+  orig: 18, 10
+  offset: 0, 0
+  index: -1
+machao/arm_l
+  rotate: false
+  xy: 351, 407
+  size: 30, 27
+  orig: 30, 27
+  offset: 0, 0
+  index: -1
+machao/arm_r
+  rotate: false
+  xy: 435, 439
+  size: 58, 71
+  orig: 58, 71
+  offset: 0, 0
+  index: -1
+machao/arm_up_l
+  rotate: false
+  xy: 115, 202
+  size: 29, 44
+  orig: 29, 44
+  offset: 0, 0
+  index: -1
+machao/body
+  rotate: true
+  xy: 68, 187
+  size: 58, 45
+  orig: 58, 45
+  offset: 0, 0
+  index: -1
+machao/box
+  rotate: false
+  xy: 161, 250
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+machao/daolight-5
+  rotate: false
+  xy: 2, 184
+  size: 64, 61
+  orig: 64, 61
+  offset: 0, 0
+  index: -1
+machao/daolight_3
+  rotate: false
+  xy: 350, 436
+  size: 83, 74
+  orig: 83, 74
+  offset: 0, 0
+  index: -1
+machao/daolight_4
+  rotate: false
+  xy: 182, 281
+  size: 58, 40
+  orig: 58, 40
+  offset: 0, 0
+  index: -1
+machao/eyes
+  rotate: true
+  xy: 495, 477
+  size: 33, 13
+  orig: 33, 13
+  offset: 0, 0
+  index: -1
+machao/foot
+  rotate: false
+  xy: 254, 318
+  size: 29, 40
+  orig: 29, 40
+  offset: 0, 0
+  index: -1
+machao/hand_l
+  rotate: false
+  xy: 285, 384
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+machao/head
+  rotate: true
+  xy: 2, 3
+  size: 53, 46
+  orig: 53, 46
+  offset: 0, 0
+  index: -1
+machao/helmet
+  rotate: false
+  xy: 37, 299
+  size: 93, 99
+  orig: 93, 99
+  offset: 0, 0
+  index: -1
+machao/leg
+  rotate: false
+  xy: 383, 410
+  size: 30, 24
+  orig: 30, 24
+  offset: 0, 0
+  index: -1
+machao/mao
+  rotate: false
+  xy: 261, 427
+  size: 87, 83
+  orig: 87, 83
+  offset: 0, 0
+  index: -1
+machao/mei_l
+  rotate: false
+  xy: 115, 187
+  size: 20, 13
+  orig: 20, 13
+  offset: 0, 0
+  index: -1
+machao/mei_r
+  rotate: false
+  xy: 306, 384
+  size: 16, 10
+  orig: 16, 10
+  offset: 0, 0
+  index: -1
+machao/mohu
+  rotate: false
+  xy: 37, 400
+  size: 142, 110
+  orig: 142, 110
+  offset: 0, 0
+  index: -1
+machao/mouth
+  rotate: false
+  xy: 495, 468
+  size: 15, 7
+  orig: 15, 7
+  offset: 0, 0
+  index: -1
+machao/pi
+  rotate: true
+  xy: 182, 323
+  size: 84, 70
+  orig: 84, 70
+  offset: 0, 0
+  index: -1
+machao/shoulder
+  rotate: false
+  xy: 2, 123
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+machao/skirt
+  rotate: false
+  xy: 285, 324
+  size: 24, 27
+  orig: 24, 27
+  offset: 0, 0
+  index: -1
+machao/smok
+  rotate: true
+  xy: 106, 248
+  size: 49, 24
+  orig: 49, 24
+  offset: 0, 0
+  index: -1
+machao/wuqi
+  rotate: false
+  xy: 2, 258
+  size: 33, 252
+  orig: 33, 252
+  offset: 0, 0
+  index: -1
+machao/yao
+  rotate: false
+  xy: 306, 396
+  size: 43, 29
+  orig: 43, 29
+  offset: 0, 0
+  index: -1

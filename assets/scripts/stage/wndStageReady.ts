@@ -6,6 +6,8 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import DataManager from "../utils/Manager/DataManager";
+import EnumManager from "../utils/Manager/EnumManager";
+import ViewManager from "../utils/Manager/ViewManager";
 import stageHeroRender from "./stageHeroRender";
 import stageSoliderRender from "./stageSoliderRender";
 
@@ -85,6 +87,11 @@ export default class NewClass extends cc.Component {
                 solider.getComponent(stageSoliderRender).init(i + 1)
             }
         }
+    }
+
+    onClose() {
+        ViewManager.instance.hideWnd(EnumManager.viewPath.WND_STAGE_READY)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_SELECT)
     }
 
     // update (dt) {}

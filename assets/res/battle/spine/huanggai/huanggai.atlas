@@ -1,0 +1,272 @@
+
+huanggai.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+huanggai/box
+  rotate: false
+  xy: 490, 435
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+huanggai/gongji_yan
+  rotate: false
+  xy: 449, 445
+  size: 39, 10
+  orig: 39, 10
+  offset: 0, 0
+  index: -1
+huanggai/gongji_zui
+  rotate: false
+  xy: 352, 418
+  size: 16, 11
+  orig: 16, 11
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_L_arm
+  rotate: false
+  xy: 2, 5
+  size: 29, 35
+  orig: 29, 35
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_L_arm_up
+  rotate: false
+  xy: 76, 104
+  size: 30, 31
+  orig: 30, 31
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_L_foot
+  rotate: false
+  xy: 341, 431
+  size: 19, 8
+  orig: 19, 8
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_L_leg
+  rotate: false
+  xy: 335, 397
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_L_leg_up
+  rotate: true
+  xy: 219, 337
+  size: 22, 31
+  orig: 22, 31
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_Lhand
+  rotate: true
+  xy: 76, 74
+  size: 28, 29
+  orig: 28, 29
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_R_arm
+  rotate: true
+  xy: 108, 108
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_R_arm_up
+  rotate: false
+  xy: 33, 10
+  size: 20, 30
+  orig: 20, 30
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_R_foot
+  rotate: false
+  xy: 362, 431
+  size: 19, 8
+  orig: 19, 8
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_R_hand
+  rotate: true
+  xy: 153, 150
+  size: 23, 22
+  orig: 23, 22
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_R_leg
+  rotate: true
+  xy: 383, 426
+  size: 13, 14
+  orig: 13, 14
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_R_leg_up
+  rotate: true
+  xy: 181, 335
+  size: 24, 36
+  orig: 24, 36
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_body
+  rotate: false
+  xy: 449, 457
+  size: 59, 53
+  orig: 59, 53
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_erhuan
+  rotate: false
+  xy: 399, 426
+  size: 14, 13
+  orig: 14, 13
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_hair_1
+  rotate: false
+  xy: 289, 388
+  size: 44, 43
+  orig: 44, 43
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_hair_2
+  rotate: true
+  xy: 289, 362
+  size: 24, 31
+  orig: 24, 31
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_head_1
+  rotate: false
+  xy: 2, 77
+  size: 72, 96
+  orig: 72, 96
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_head_2
+  rotate: false
+  xy: 2, 333
+  size: 177, 177
+  orig: 177, 177
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_head_3
+  rotate: false
+  xy: 2, 333
+  size: 177, 177
+  orig: 177, 177
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_pose1
+  rotate: false
+  xy: 2, 254
+  size: 158, 77
+  orig: 158, 77
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_pose2
+  rotate: false
+  xy: 181, 433
+  size: 158, 77
+  orig: 158, 77
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_pose3
+  rotate: false
+  xy: 2, 175
+  size: 158, 77
+  orig: 158, 77
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_qianbai
+  rotate: true
+  xy: 252, 336
+  size: 23, 29
+  orig: 23, 29
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_shoulder
+  rotate: false
+  xy: 76, 137
+  size: 43, 36
+  orig: 43, 36
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_wuqi
+  rotate: true
+  xy: 181, 361
+  size: 70, 106
+  orig: 70, 106
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_wuqi_2
+  rotate: true
+  xy: 341, 441
+  size: 69, 106
+  orig: 69, 106
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_youbai
+  rotate: false
+  xy: 56, 47
+  size: 18, 28
+  orig: 18, 28
+  offset: 0, 0
+  index: -1
+huanggai/huanggai_zuobai
+  rotate: false
+  xy: 121, 145
+  size: 30, 28
+  orig: 30, 28
+  offset: 0, 0
+  index: -1
+huanggai/light0
+  rotate: false
+  xy: 2, 42
+  size: 52, 33
+  orig: 52, 33
+  offset: 0, 0
+  index: -1
+huanggai/light1
+  rotate: true
+  xy: 76, 47
+  size: 25, 29
+  orig: 25, 29
+  offset: 0, 0
+  index: -1
+huanggai/mei_l
+  rotate: true
+  xy: 322, 362
+  size: 24, 18
+  orig: 24, 18
+  offset: 0, 0
+  index: -1
+huanggai/mei_r
+  rotate: false
+  xy: 335, 413
+  size: 15, 16
+  orig: 15, 16
+  offset: 0, 0
+  index: -1
+huanggai/putong_yan
+  rotate: true
+  xy: 162, 292
+  size: 39, 11
+  orig: 39, 11
+  offset: 0, 0
+  index: -1
+huanggai/putong_zui
+  rotate: false
+  xy: 121, 137
+  size: 14, 6
+  orig: 14, 6
+  offset: 0, 0
+  index: -1
+huanggai/si_yan
+  rotate: true
+  xy: 162, 253
+  size: 37, 5
+  orig: 37, 5
+  offset: 0, 0
+  index: -1

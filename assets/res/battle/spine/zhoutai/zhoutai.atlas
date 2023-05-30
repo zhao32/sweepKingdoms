@@ -1,0 +1,300 @@
+
+zhoutai.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+zhoutai/N_eyes
+  rotate: true
+  xy: 197, 108
+  size: 38, 15
+  orig: 38, 15
+  offset: 0, 0
+  index: -1
+zhoutai/N_mouth
+  rotate: false
+  xy: 235, 30
+  size: 19, 8
+  orig: 19, 8
+  offset: 0, 0
+  index: -1
+zhoutai/S_eyes
+  rotate: true
+  xy: 244, 62
+  size: 35, 10
+  orig: 35, 10
+  offset: 0, 0
+  index: -1
+zhoutai/S_mouth
+  rotate: true
+  xy: 236, 68
+  size: 14, 4
+  orig: 14, 4
+  offset: 0, 0
+  index: -1
+zhoutai/arm_l
+  rotate: false
+  xy: 122, 2
+  size: 12, 17
+  orig: 12, 17
+  offset: 0, 0
+  index: -1
+zhoutai/arm_r
+  rotate: true
+  xy: 178, 28
+  size: 24, 16
+  orig: 24, 16
+  offset: 0, 0
+  index: -1
+zhoutai/arm_up_l
+  rotate: false
+  xy: 196, 28
+  size: 15, 25
+  orig: 15, 25
+  offset: 0, 0
+  index: -1
+zhoutai/arm_up_r
+  rotate: true
+  xy: 206, 56
+  size: 26, 28
+  orig: 26, 28
+  offset: 0, 0
+  index: -1
+zhoutai/body
+  rotate: true
+  xy: 209, 216
+  size: 38, 43
+  orig: 38, 43
+  offset: 0, 0
+  index: -1
+zhoutai/box1
+  rotate: false
+  xy: 213, 19
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+zhoutai/eyes
+  rotate: false
+  xy: 214, 99
+  size: 36, 12
+  orig: 36, 12
+  offset: 0, 0
+  index: -1
+zhoutai/foot_l
+  rotate: false
+  xy: 198, 13
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+zhoutai/foot_r
+  rotate: false
+  xy: 236, 40
+  size: 18, 20
+  orig: 18, 20
+  offset: 0, 0
+  index: -1
+zhoutai/guanglight
+  rotate: false
+  xy: 214, 113
+  size: 36, 36
+  orig: 36, 36
+  offset: 0, 0
+  index: -1
+zhoutai/hair_1
+  rotate: true
+  xy: 212, 151
+  size: 63, 38
+  orig: 63, 38
+  offset: 0, 0
+  index: -1
+zhoutai/hair_2
+  rotate: true
+  xy: 43, 57
+  size: 60, 51
+  orig: 60, 51
+  offset: 0, 0
+  index: -1
+zhoutai/hair_3
+  rotate: false
+  xy: 96, 78
+  size: 35, 59
+  orig: 35, 59
+  offset: 0, 0
+  index: -1
+zhoutai/hair_4
+  rotate: true
+  xy: 158, 85
+  size: 20, 46
+  orig: 20, 46
+  offset: 0, 0
+  index: -1
+zhoutai/hair_h
+  rotate: true
+  xy: 43, 4
+  size: 51, 57
+  orig: 51, 57
+  offset: 0, 0
+  index: -1
+zhoutai/hair_l
+  rotate: false
+  xy: 139, 33
+  size: 10, 32
+  orig: 10, 32
+  offset: 0, 0
+  index: -1
+zhoutai/hair_r
+  rotate: true
+  xy: 96, 60
+  size: 16, 36
+  orig: 16, 36
+  offset: 0, 0
+  index: -1
+zhoutai/hand_l
+  rotate: true
+  xy: 136, 2
+  size: 15, 16
+  orig: 15, 16
+  offset: 0, 0
+  index: -1
+zhoutai/hand_r
+  rotate: true
+  xy: 134, 67
+  size: 20, 22
+  orig: 20, 22
+  offset: 0, 0
+  index: -1
+zhoutai/hand_r2
+  rotate: true
+  xy: 102, 2
+  size: 17, 18
+  orig: 17, 18
+  offset: 0, 0
+  index: -1
+zhoutai/head
+  rotate: false
+  xy: 91, 139
+  size: 64, 72
+  orig: 64, 72
+  offset: 0, 0
+  index: -1
+zhoutai/leg_l
+  rotate: false
+  xy: 151, 29
+  size: 25, 23
+  orig: 25, 23
+  offset: 0, 0
+  index: -1
+zhoutai/leg_r
+  rotate: false
+  xy: 158, 54
+  size: 29, 29
+  orig: 29, 29
+  offset: 0, 0
+  index: -1
+zhoutai/mei_l
+  rotate: false
+  xy: 213, 41
+  size: 21, 13
+  orig: 21, 13
+  offset: 0, 0
+  index: -1
+zhoutai/mei_r
+  rotate: false
+  xy: 235, 15
+  size: 16, 13
+  orig: 16, 13
+  offset: 0, 0
+  index: -1
+zhoutai/mohu
+  rotate: false
+  xy: 2, 119
+  size: 87, 135
+  orig: 87, 135
+  offset: 0, 0
+  index: -1
+zhoutai/mouth
+  rotate: true
+  xy: 151, 55
+  size: 10, 5
+  orig: 10, 5
+  offset: 0, 0
+  index: -1
+zhoutai/p
+  rotate: true
+  xy: 133, 89
+  size: 48, 23
+  orig: 48, 23
+  offset: 0, 0
+  index: -1
+zhoutai/pi_1
+  rotate: true
+  xy: 157, 148
+  size: 63, 53
+  orig: 63, 53
+  offset: 0, 0
+  index: -1
+zhoutai/pi_2
+  rotate: false
+  xy: 158, 107
+  size: 37, 39
+  orig: 37, 39
+  offset: 0, 0
+  index: -1
+zhoutai/skirt_l
+  rotate: false
+  xy: 174, 13
+  size: 22, 13
+  orig: 22, 13
+  offset: 0, 0
+  index: -1
+zhoutai/skirt_r
+  rotate: true
+  xy: 189, 55
+  size: 28, 15
+  orig: 28, 15
+  offset: 0, 0
+  index: -1
+zhoutai/skirt_z
+  rotate: false
+  xy: 154, 7
+  size: 18, 20
+  orig: 18, 20
+  offset: 0, 0
+  index: -1
+zhoutai/wuqi
+  rotate: false
+  xy: 91, 213
+  size: 116, 41
+  orig: 116, 41
+  offset: 0, 0
+  index: -1
+zhoutai/wuqi2
+  rotate: true
+  xy: 2, 2
+  size: 115, 39
+  orig: 115, 39
+  offset: 0, 0
+  index: -1
+zhoutai/wuqi_2
+  rotate: true
+  xy: 206, 84
+  size: 13, 36
+  orig: 13, 36
+  offset: 0, 0
+  index: -1
+zhoutai/yann
+  rotate: true
+  xy: 102, 21
+  size: 37, 30
+  orig: 37, 30
+  offset: 0, 0
+  index: -1
+zhoutai/yilight
+  rotate: true
+  xy: 134, 21
+  size: 39, 3
+  orig: 39, 3
+  offset: 0, 0
+  index: -1

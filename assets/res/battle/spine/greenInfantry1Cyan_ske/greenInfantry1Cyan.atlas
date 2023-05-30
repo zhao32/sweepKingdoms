@@ -1,0 +1,216 @@
+
+greenInfantry1Cyan.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+greenInfantry1Cyan/0
+  rotate: false
+  xy: 169, 405
+  size: 99, 69
+  orig: 99, 69
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/body
+  rotate: false
+  xy: 102, 268
+  size: 59, 56
+  orig: 59, 56
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/daolight1
+  rotate: false
+  xy: 2, 241
+  size: 98, 83
+  orig: 98, 83
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/daolight_2
+  rotate: false
+  xy: 2, 326
+  size: 165, 148
+  orig: 165, 148
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/duzui
+  rotate: false
+  xy: 26, 113
+  size: 11, 10
+  orig: 11, 10
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/gongjiyan
+  rotate: false
+  xy: 397, 455
+  size: 38, 19
+  orig: 38, 19
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/gongjizui
+  rotate: false
+  xy: 2, 83
+  size: 16, 9
+  orig: 16, 9
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/huzi
+  rotate: false
+  xy: 2, 125
+  size: 51, 31
+  orig: 51, 31
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/ljianjia
+  rotate: false
+  xy: 230, 370
+  size: 30, 33
+  orig: 30, 33
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/ljiao
+  rotate: false
+  xy: 140, 251
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/lqunbai
+  rotate: false
+  xy: 262, 381
+  size: 23, 22
+  orig: 23, 22
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/lshangbi
+  rotate: false
+  xy: 2, 94
+  size: 22, 29
+  orig: 22, 29
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/lshou
+  rotate: false
+  xy: 230, 345
+  size: 19, 23
+  orig: 19, 23
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/ltui
+  rotate: false
+  xy: 163, 295
+  size: 25, 29
+  orig: 25, 29
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/lxiabi
+  rotate: true
+  xy: 169, 326
+  size: 24, 32
+  orig: 24, 32
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/meimao
+  rotate: true
+  xy: 73, 194
+  size: 45, 14
+  orig: 45, 14
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/qunbai
+  rotate: true
+  xy: 102, 243
+  size: 23, 36
+  orig: 23, 36
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/rjianjia
+  rotate: false
+  xy: 270, 415
+  size: 40, 36
+  orig: 40, 36
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/rjiao
+  rotate: false
+  xy: 190, 309
+  size: 11, 15
+  orig: 11, 15
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/rqunbai
+  rotate: false
+  xy: 73, 173
+  size: 13, 19
+  orig: 13, 19
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/rshou
+  rotate: false
+  xy: 55, 139
+  size: 16, 17
+  orig: 16, 17
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/rtui
+  rotate: false
+  xy: 163, 269
+  size: 17, 24
+  orig: 17, 24
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/shoujiyan
+  rotate: false
+  xy: 437, 461
+  size: 37, 13
+  orig: 37, 13
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/tou
+  rotate: false
+  xy: 2, 158
+  size: 69, 81
+  orig: 69, 81
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/toufa
+  rotate: false
+  xy: 169, 352
+  size: 59, 51
+  orig: 59, 51
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/tshangbi
+  rotate: true
+  xy: 203, 330
+  size: 20, 25
+  orig: 20, 25
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/txiabi
+  rotate: false
+  xy: 312, 423
+  size: 23, 28
+  orig: 23, 28
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/wuqi
+  rotate: true
+  xy: 270, 453
+  size: 21, 125
+  orig: 21, 125
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/yanjing
+  rotate: false
+  xy: 270, 405
+  size: 38, 8
+  orig: 38, 8
+  offset: 0, 0
+  index: -1
+greenInfantry1Cyan/zui
+  rotate: true
+  xy: 89, 222
+  size: 17, 10
+  orig: 17, 10
+  offset: 0, 0
+  index: -1

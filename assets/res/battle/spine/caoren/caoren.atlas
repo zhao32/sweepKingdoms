@@ -1,0 +1,314 @@
+
+caoren.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+caoren/0
+  rotate: true
+  xy: 2, 140
+  size: 99, 60
+  orig: 99, 60
+  offset: 0, 0
+  index: -1
+caoren/arm_l
+  rotate: true
+  xy: 206, 544
+  size: 45, 53
+  orig: 45, 53
+  offset: 0, 0
+  index: -1
+caoren/arm_r
+  rotate: false
+  xy: 386, 683
+  size: 70, 71
+  orig: 70, 71
+  offset: 0, 0
+  index: -1
+caoren/arm_up_l
+  rotate: false
+  xy: 960, 974
+  size: 56, 48
+  orig: 56, 48
+  offset: 0, 0
+  index: -1
+caoren/biti
+  rotate: true
+  xy: 828, 963
+  size: 9, 33
+  orig: 9, 33
+  offset: 0, 0
+  index: -1
+caoren/body
+  rotate: false
+  xy: 743, 881
+  size: 82, 78
+  orig: 82, 78
+  offset: 0, 0
+  index: -1
+caoren/box
+  rotate: false
+  xy: 206, 522
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+caoren/ciya
+  rotate: true
+  xy: 193, 527
+  size: 26, 11
+  orig: 26, 11
+  offset: 0, 0
+  index: -1
+caoren/congguang
+  rotate: false
+  xy: 626, 961
+  size: 200, 61
+  orig: 200, 61
+  offset: 0, 0
+  index: -1
+caoren/daolight_3
+  rotate: false
+  xy: 459, 874
+  size: 165, 148
+  orig: 165, 148
+  offset: 0, 0
+  index: -1
+caoren/daolight_4
+  rotate: false
+  xy: 626, 880
+  size: 115, 79
+  orig: 115, 79
+  offset: 0, 0
+  index: -1
+caoren/daolight_6
+  rotate: false
+  xy: 2, 241
+  size: 98, 83
+  orig: 98, 83
+  offset: 0, 0
+  index: -1
+caoren/foot_l
+  rotate: false
+  xy: 102, 268
+  size: 33, 31
+  orig: 33, 31
+  offset: 0, 0
+  index: -1
+caoren/foot_r
+  rotate: false
+  xy: 160, 318
+  size: 26, 28
+  orig: 26, 28
+  offset: 0, 0
+  index: -1
+caoren/hand_l
+  rotate: false
+  xy: 64, 137
+  size: 37, 32
+  orig: 37, 32
+  offset: 0, 0
+  index: -1
+caoren/hand_r
+  rotate: false
+  xy: 261, 546
+  size: 44, 43
+  orig: 44, 43
+  offset: 0, 0
+  index: -1
+caoren/head
+  rotate: true
+  xy: 336, 591
+  size: 75, 64
+  orig: 75, 64
+  offset: 0, 0
+  index: -1
+caoren/helmet
+  rotate: false
+  xy: 2, 326
+  size: 104, 111
+  orig: 104, 111
+  offset: 0, 0
+  index: -1
+caoren/hu_l
+  rotate: false
+  xy: 107, 198
+  size: 26, 17
+  orig: 26, 17
+  offset: 0, 0
+  index: -1
+caoren/hu_r
+  rotate: true
+  xy: 605, 797
+  size: 18, 16
+  orig: 18, 16
+  offset: 0, 0
+  index: -1
+caoren/hu_x
+  rotate: false
+  xy: 459, 761
+  size: 73, 34
+  orig: 73, 34
+  offset: 0, 0
+  index: -1
+caoren/huo_yan
+  rotate: false
+  xy: 351, 560
+  size: 50, 29
+  orig: 50, 29
+  offset: 0, 0
+  index: -1
+caoren/leg_l
+  rotate: false
+  xy: 534, 762
+  size: 47, 33
+  orig: 47, 33
+  offset: 0, 0
+  index: -1
+caoren/leg_r
+  rotate: false
+  xy: 107, 217
+  size: 27, 30
+  orig: 27, 30
+  offset: 0, 0
+  index: -1
+caoren/mao
+  rotate: false
+  xy: 206, 591
+  size: 128, 75
+  orig: 128, 75
+  offset: 0, 0
+  index: -1
+caoren/mei_l
+  rotate: false
+  xy: 102, 249
+  size: 34, 17
+  orig: 34, 17
+  offset: 0, 0
+  index: -1
+caoren/mei_r
+  rotate: false
+  xy: 228, 528
+  size: 19, 14
+  orig: 19, 14
+  offset: 0, 0
+  index: -1
+caoren/mohu
+  rotate: false
+  xy: 2, 555
+  size: 202, 199
+  orig: 202, 199
+  offset: 0, 0
+  index: -1
+caoren/mohu_2
+  rotate: false
+  xy: 2, 756
+  size: 455, 266
+  orig: 455, 266
+  offset: 0, 0
+  index: -1
+caoren/putong_yan
+  rotate: true
+  xy: 605, 817
+  size: 55, 16
+  orig: 55, 16
+  offset: 0, 0
+  index: -1
+caoren/putong_zui
+  rotate: false
+  xy: 386, 674
+  size: 20, 7
+  orig: 20, 7
+  offset: 0, 0
+  index: -1
+caoren/scapula-_l
+  rotate: true
+  xy: 108, 348
+  size: 89, 77
+  orig: 89, 77
+  offset: 0, 0
+  index: -1
+caoren/shield
+  rotate: true
+  xy: 459, 797
+  size: 75, 144
+  orig: 75, 144
+  offset: 0, 0
+  index: -1
+caoren/si_mei
+  rotate: false
+  xy: 108, 322
+  size: 50, 24
+  orig: 50, 24
+  offset: 0, 0
+  index: -1
+caoren/si_yan
+  rotate: false
+  xy: 102, 301
+  size: 46, 19
+  orig: 46, 19
+  offset: 0, 0
+  index: -1
+caoren/skirt_l
+  rotate: false
+  xy: 307, 549
+  size: 42, 40
+  orig: 42, 40
+  offset: 0, 0
+  index: -1
+caoren/skirt_r
+  rotate: false
+  xy: 583, 761
+  size: 30, 34
+  orig: 30, 34
+  offset: 0, 0
+  index: -1
+caoren/skirt_z
+  rotate: true
+  xy: 2, 2
+  size: 37, 48
+  orig: 37, 48
+  offset: 0, 0
+  index: -1
+caoren/smok
+  rotate: true
+  xy: 2, 41
+  size: 97, 47
+  orig: 97, 47
+  offset: 0, 0
+  index: -1
+caoren/wuqi
+  rotate: false
+  xy: 206, 668
+  size: 178, 86
+  orig: 178, 86
+  offset: 0, 0
+  index: -1
+caoren/wuqi_2
+  rotate: false
+  xy: 828, 974
+  size: 130, 48
+  orig: 130, 48
+  offset: 0, 0
+  index: -1
+caoren/wuqi_3
+  rotate: false
+  xy: 2, 439
+  size: 189, 114
+  orig: 189, 114
+  offset: 0, 0
+  index: -1
+caoren/yao
+  rotate: true
+  xy: 64, 171
+  size: 68, 41
+  orig: 68, 41
+  offset: 0, 0
+  index: -1
+caoren/zhangzuui
+  rotate: false
+  xy: 107, 177
+  size: 24, 19
+  orig: 24, 19
+  offset: 0, 0
+  index: -1

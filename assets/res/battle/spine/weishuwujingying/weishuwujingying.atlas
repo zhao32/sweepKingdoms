@@ -1,0 +1,216 @@
+
+weishuwujingying.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+weishuwujingying/N_eyes
+  rotate: true
+  xy: 222, 140
+  size: 38, 13
+  orig: 38, 13
+  offset: 0, 0
+  index: -1
+weishuwujingying/S_eyes
+  rotate: true
+  xy: 222, 103
+  size: 35, 13
+  orig: 35, 13
+  offset: 0, 0
+  index: -1
+weishuwujingying/arm_l
+  rotate: true
+  xy: 96, 5
+  size: 16, 24
+  orig: 16, 24
+  offset: 0, 0
+  index: -1
+weishuwujingying/arm_r
+  rotate: false
+  xy: 237, 94
+  size: 16, 21
+  orig: 16, 21
+  offset: 0, 0
+  index: -1
+weishuwujingying/arm_up_l
+  rotate: false
+  xy: 96, 23
+  size: 22, 30
+  orig: 22, 30
+  offset: 0, 0
+  index: -1
+weishuwujingying/arm_up_r
+  rotate: true
+  xy: 134, 35
+  size: 14, 26
+  orig: 14, 26
+  offset: 0, 0
+  index: -1
+weishuwujingying/body
+  rotate: false
+  xy: 80, 55
+  size: 52, 45
+  orig: 52, 45
+  offset: 0, 0
+  index: -1
+weishuwujingying/daolight1
+  rotate: true
+  xy: 134, 51
+  size: 49, 42
+  orig: 49, 42
+  offset: 0, 0
+  index: -1
+weishuwujingying/daolight_3
+  rotate: false
+  xy: 150, 180
+  size: 83, 74
+  orig: 83, 74
+  offset: 0, 0
+  index: -1
+weishuwujingying/daolight_4
+  rotate: true
+  xy: 38, 41
+  size: 58, 40
+  orig: 58, 40
+  offset: 0, 0
+  index: -1
+weishuwujingying/eyes
+  rotate: false
+  xy: 178, 96
+  size: 38, 13
+  orig: 38, 13
+  offset: 0, 0
+  index: -1
+weishuwujingying/foot_l
+  rotate: true
+  xy: 237, 144
+  size: 13, 17
+  orig: 13, 17
+  offset: 0, 0
+  index: -1
+weishuwujingying/foot_r
+  rotate: true
+  xy: 237, 159
+  size: 14, 17
+  orig: 14, 17
+  offset: 0, 0
+  index: -1
+weishuwujingying/hand_l
+  rotate: true
+  xy: 120, 40
+  size: 13, 12
+  orig: 13, 12
+  offset: 0, 0
+  index: -1
+weishuwujingying/hand_r
+  rotate: false
+  xy: 237, 175
+  size: 17, 17
+  orig: 17, 17
+  offset: 0, 0
+  index: -1
+weishuwujingying/head
+  rotate: false
+  xy: 160, 111
+  size: 60, 67
+  orig: 60, 67
+  offset: 0, 0
+  index: -1
+weishuwujingying/helmet
+  rotate: false
+  xy: 74, 152
+  size: 74, 102
+  orig: 74, 102
+  offset: 0, 0
+  index: -1
+weishuwujingying/helmet_2
+  rotate: false
+  xy: 80, 13
+  size: 14, 40
+  orig: 14, 40
+  offset: 0, 0
+  index: -1
+weishuwujingying/leg_l
+  rotate: true
+  xy: 178, 52
+  size: 20, 23
+  orig: 20, 23
+  offset: 0, 0
+  index: -1
+weishuwujingying/leg_r
+  rotate: false
+  xy: 162, 24
+  size: 18, 25
+  orig: 18, 25
+  offset: 0, 0
+  index: -1
+weishuwujingying/lightlie
+  rotate: false
+  xy: 74, 102
+  size: 84, 48
+  orig: 84, 48
+  offset: 0, 0
+  index: -1
+weishuwujingying/mei_l
+  rotate: true
+  xy: 237, 117
+  size: 25, 16
+  orig: 25, 16
+  offset: 0, 0
+  index: -1
+weishuwujingying/mei_r
+  rotate: true
+  xy: 182, 30
+  size: 20, 14
+  orig: 20, 14
+  offset: 0, 0
+  index: -1
+weishuwujingying/scapula_l
+  rotate: false
+  xy: 2, 8
+  size: 40, 26
+  orig: 40, 26
+  offset: 0, 0
+  index: -1
+weishuwujingying/scapula_r
+  rotate: false
+  xy: 44, 13
+  size: 34, 26
+  orig: 34, 26
+  offset: 0, 0
+  index: -1
+weishuwujingying/skirt_l
+  rotate: false
+  xy: 178, 74
+  size: 29, 20
+  orig: 29, 20
+  offset: 0, 0
+  index: -1
+weishuwujingying/skirt_r
+  rotate: false
+  xy: 235, 235
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+weishuwujingying/wuqi
+  rotate: false
+  xy: 2, 36
+  size: 34, 218
+  orig: 34, 218
+  offset: 0, 0
+  index: -1
+weishuwujingying/wuqi_2
+  rotate: false
+  xy: 38, 101
+  size: 34, 153
+  orig: 34, 153
+  offset: 0, 0
+  index: -1
+weishuwujingying/yao
+  rotate: true
+  xy: 235, 194
+  size: 39, 17
+  orig: 39, 17
+  offset: 0, 0
+  index: -1

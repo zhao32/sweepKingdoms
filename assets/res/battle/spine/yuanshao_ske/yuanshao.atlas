@@ -1,0 +1,370 @@
+
+yuanshao.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+topIconMask
+  rotate: false
+  xy: 166, 174
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+yuanshao/M_bo
+  rotate: true
+  xy: 222, 161
+  size: 47, 55
+  orig: 47, 55
+  offset: 0, 0
+  index: -1
+yuanshao/M_bo2
+  rotate: false
+  xy: 2, 2
+  size: 45, 75
+  orig: 45, 75
+  offset: 0, 0
+  index: -1
+yuanshao/M_body
+  rotate: true
+  xy: 424, 276
+  size: 85, 41
+  orig: 85, 41
+  offset: 0, 0
+  index: -1
+yuanshao/M_foot_1
+  rotate: true
+  xy: 446, 363
+  size: 22, 19
+  orig: 22, 19
+  offset: 0, 0
+  index: -1
+yuanshao/M_foot_3
+  rotate: false
+  xy: 238, 140
+  size: 21, 19
+  orig: 21, 19
+  offset: 0, 0
+  index: -1
+yuanshao/M_head
+  rotate: false
+  xy: 366, 282
+  size: 56, 79
+  orig: 56, 79
+  offset: 0, 0
+  index: -1
+yuanshao/M_leg_1
+  rotate: true
+  xy: 443, 170
+  size: 24, 27
+  orig: 24, 27
+  offset: 0, 0
+  index: -1
+yuanshao/M_leg_2
+  rotate: false
+  xy: 203, 161
+  size: 17, 17
+  orig: 17, 17
+  offset: 0, 0
+  index: -1
+yuanshao/M_leg_3
+  rotate: false
+  xy: 216, 136
+  size: 20, 23
+  orig: 20, 23
+  offset: 0, 0
+  index: -1
+yuanshao/M_leg_4
+  rotate: false
+  xy: 261, 140
+  size: 17, 19
+  orig: 17, 19
+  offset: 0, 0
+  index: -1
+yuanshao/M_leg_up_1
+  rotate: false
+  xy: 279, 172
+  size: 22, 36
+  orig: 22, 36
+  offset: 0, 0
+  index: -1
+yuanshao/M_leg_up_2
+  rotate: true
+  xy: 303, 155
+  size: 19, 34
+  orig: 19, 34
+  offset: 0, 0
+  index: -1
+yuanshao/M_leg_up_3
+  rotate: false
+  xy: 443, 196
+  size: 26, 29
+  orig: 26, 29
+  offset: 0, 0
+  index: -1
+yuanshao/M_leg_up_4
+  rotate: false
+  xy: 166, 137
+  size: 21, 29
+  orig: 21, 29
+  offset: 0, 0
+  index: -1
+yuanshao/M_skirt_1
+  rotate: true
+  xy: 467, 353
+  size: 32, 43
+  orig: 32, 43
+  offset: 0, 0
+  index: -1
+yuanshao/M_skirt_2
+  rotate: false
+  xy: 467, 303
+  size: 38, 48
+  orig: 38, 48
+  offset: 0, 0
+  index: -1
+yuanshao/M_skirt_3
+  rotate: false
+  xy: 403, 180
+  size: 38, 46
+  orig: 38, 46
+  offset: 0, 0
+  index: -1
+yuanshao/M_wei
+  rotate: false
+  xy: 352, 218
+  size: 45, 55
+  orig: 45, 55
+  offset: 0, 0
+  index: -1
+yuanshao/N_eyes
+  rotate: false
+  xy: 472, 163
+  size: 32, 10
+  orig: 32, 10
+  offset: 0, 0
+  index: -1
+yuanshao/N_mouth
+  rotate: true
+  xy: 292, 344
+  size: 17, 6
+  orig: 17, 6
+  offset: 0, 0
+  index: -1
+yuanshao/S_eyes
+  rotate: false
+  xy: 169, 168
+  size: 32, 10
+  orig: 32, 10
+  offset: 0, 0
+  index: -1
+yuanshao/S_mouth
+  rotate: false
+  xy: 366, 275
+  size: 17, 5
+  orig: 17, 5
+  offset: 0, 0
+  index: -1
+yuanshao/arm_l
+  rotate: false
+  xy: 189, 134
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+yuanshao/arm_r
+  rotate: false
+  xy: 451, 227
+  size: 29, 47
+  orig: 29, 47
+  offset: 0, 0
+  index: -1
+yuanshao/arm_up_l
+  rotate: false
+  xy: 482, 221
+  size: 28, 33
+  orig: 28, 33
+  offset: 0, 0
+  index: -1
+yuanshao/body
+  rotate: false
+  xy: 352, 170
+  size: 49, 46
+  orig: 49, 46
+  offset: 0, 0
+  index: -1
+yuanshao/box
+  rotate: false
+  xy: 188, 112
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+yuanshao/dai_l
+  rotate: false
+  xy: 495, 256
+  size: 15, 45
+  orig: 15, 45
+  offset: 0, 0
+  index: -1
+yuanshao/dai_r
+  rotate: true
+  xy: 403, 169
+  size: 9, 38
+  orig: 9, 38
+  offset: 0, 0
+  index: -1
+yuanshao/daolight_3
+  rotate: false
+  xy: 2, 177
+  size: 165, 148
+  orig: 165, 148
+  offset: 0, 0
+  index: -1
+yuanshao/daolight_4
+  rotate: true
+  xy: 222, 210
+  size: 115, 79
+  orig: 115, 79
+  offset: 0, 0
+  index: -1
+yuanshao/daolight_5
+  rotate: false
+  xy: 446, 387
+  size: 64, 123
+  orig: 64, 123
+  offset: 0, 0
+  index: -1
+yuanshao/daolight_6
+  rotate: false
+  xy: 292, 363
+  size: 152, 147
+  orig: 152, 147
+  offset: 0, 0
+  index: -1
+yuanshao/eyes
+  rotate: true
+  xy: 166, 73
+  size: 32, 10
+  orig: 32, 10
+  offset: 0, 0
+  index: -1
+yuanshao/foot
+  rotate: true
+  xy: 471, 199
+  size: 20, 34
+  orig: 20, 34
+  offset: 0, 0
+  index: -1
+yuanshao/hand_l
+  rotate: false
+  xy: 193, 93
+  size: 15, 17
+  orig: 15, 17
+  offset: 0, 0
+  index: -1
+yuanshao/head
+  rotate: true
+  xy: 49, 2
+  size: 69, 84
+  orig: 69, 84
+  offset: 0, 0
+  index: -1
+yuanshao/hu
+  rotate: true
+  xy: 166, 107
+  size: 28, 20
+  orig: 28, 20
+  offset: 0, 0
+  index: -1
+yuanshao/leg
+  rotate: false
+  xy: 472, 175
+  size: 32, 22
+  orig: 32, 22
+  offset: 0, 0
+  index: -1
+yuanshao/mao
+  rotate: false
+  xy: 303, 275
+  size: 61, 86
+  orig: 61, 86
+  offset: 0, 0
+  index: -1
+yuanshao/mei_l
+  rotate: true
+  xy: 178, 85
+  size: 20, 13
+  orig: 20, 13
+  offset: 0, 0
+  index: -1
+yuanshao/mei_r
+  rotate: false
+  xy: 482, 263
+  size: 11, 11
+  orig: 11, 11
+  offset: 0, 0
+  index: -1
+yuanshao/mohu
+  rotate: false
+  xy: 2, 327
+  size: 288, 183
+  orig: 288, 183
+  offset: 0, 0
+  index: -1
+yuanshao/mouth
+  rotate: false
+  xy: 49, 73
+  size: 16, 4
+  orig: 16, 4
+  offset: 0, 0
+  index: -1
+yuanshao/pi
+  rotate: false
+  xy: 135, 2
+  size: 79, 69
+  orig: 79, 69
+  offset: 0, 0
+  index: -1
+yuanshao/shoulder
+  rotate: false
+  xy: 399, 228
+  size: 50, 46
+  orig: 50, 46
+  offset: 0, 0
+  index: -1
+yuanshao/skirt
+  rotate: false
+  xy: 467, 276
+  size: 26, 25
+  orig: 26, 25
+  offset: 0, 0
+  index: -1
+yuanshao/smok
+  rotate: true
+  xy: 303, 176
+  size: 97, 47
+  orig: 97, 47
+  offset: 0, 0
+  index: -1
+yuanshao/wuqi
+  rotate: false
+  xy: 169, 180
+  size: 51, 145
+  orig: 51, 145
+  offset: 0, 0
+  index: -1
+yuanshao/wuqi2
+  rotate: false
+  xy: 113, 73
+  size: 51, 102
+  orig: 51, 102
+  offset: 0, 0
+  index: -1
+yuanshao/xue
+  rotate: false
+  xy: 2, 79
+  size: 109, 96
+  orig: 109, 96
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,158 @@
+{
+  "575": {
+    "craft_num": 80,
+    "name": "王翦之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 1,
+    "des": "收集80个就可以召唤英雄王翦。同时也是王翦升阶到+5及以上的必要材料",
+    "icon": "blueMage2Purple",
+    "quality": 2
+  },
+  "583": {
+    "craft_num": 80,
+    "name": "李斯之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 2,
+    "des": "收集80个就可以召唤英雄李斯。同时也是李斯升阶到+5及以上的必要材料",
+    "icon": "blueArcher1Blue",
+    "quality": 2
+  },
+  "591": {
+    "craft_num": 80,
+    "name": "荆轲之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 3,
+    "des": "收集80个就可以召唤英雄荆轲。同时也是荆轲升阶到+5及以上的必要材料",
+    "icon": "blueMage1Red",
+    "quality": 2
+  },
+  "599": {
+    "craft_num": 80,
+    "name": "项燕之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 4,
+    "des": "收集15个就可以召唤英雄项燕。同时也是项燕升阶到+5及以上的必要材料",
+    "icon": "blueInfantry1White",
+    "quality": 2
+  },
+  "607": {
+    "craft_num": 80,
+    "name": "吕不韦之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 5,
+    "des": "收集80个就可以召唤英雄吕不韦。同时也是吕不韦升阶到+5及以上的必要材料",
+    "icon": "blueMage1Red",
+    "quality": 2
+  },
+  "500": {
+    "craft_num": 60,
+    "name": "李信之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 6,
+    "des": "收集30个就可以召唤英雄李信。同时也是李信升阶到+5及以上的必要材料",
+    "icon": "blueMage1White",
+    "quality": 2
+  },
+  "504": {
+    "craft_num": 60,
+    "name": "燕丹之忠",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 7,
+    "des": "收集30个就可以召唤英雄燕丹。同时也是燕丹升阶到+5及以上的必要材料",
+    "icon": "huaxiong",
+    "quality": 3
+  },
+  "508": {
+    "craft_num": 60,
+    "name": "扶苏之忠",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 8,
+    "des": "收集30个就可以召唤英雄扶苏。同时也是扶苏升阶到+5及以上的必要材料",
+    "icon": "yanliang",
+    "quality": 3
+  },
+  "512": {
+    "craft_num": 60,
+    "name": "高渐离之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 9,
+    "des": "收集30个就可以召唤英雄高渐离。同时也是高渐离升阶到+5及以上的必要材料",
+    "icon": "diaochan",
+    "quality": 3
+  },
+  "520": {
+    "craft_num": 60,
+    "name": "张良之忠",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 10,
+    "des": "收集30个就可以召唤英雄张良。同时也是张良升阶到+5及以上的必要材料",
+    "icon": "machao",
+    "quality": 3
+  },
+  "528": {
+    "craft_num": 60,
+    "name": "韩非之忠",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 11,
+    "des": "收集30个就可以召唤英雄韩非。同时也是韩非升阶到+5及以上的必要材料",
+    "icon": "zhurong",
+    "quality": 3
+  },
+  "536": {
+    "craft_num": 60,
+    "name": "郭开之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 12,
+    "des": "收集60个就可以召唤英雄郭开。同时也是郭开升阶到+5及以上的必要材料",
+    "icon": "WJ089",
+    "quality": 4
+  },
+  "544": {
+    "craft_num": 45,
+    "name": "魏无忌之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 13,
+    "des": "收集45个就可以召唤英雄魏无忌。同时也是魏无忌升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 2
+  }
+}

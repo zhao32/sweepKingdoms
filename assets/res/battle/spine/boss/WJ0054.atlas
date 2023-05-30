@@ -1,0 +1,573 @@
+
+WJ0054.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Abdomen
+  rotate: false
+  xy: 339, 452
+  size: 144, 140
+  orig: 144, 140
+  offset: 0, 0
+  index: -1
+Analprotrusion
+  rotate: false
+  xy: 580, 582
+  size: 98, 37
+  orig: 98, 37
+  offset: 0, 0
+  index: -1
+Cephalothorax
+  rotate: false
+  xy: 232, 278
+  size: 123, 152
+  orig: 123, 152
+  offset: 0, 0
+  index: -1
+Chin
+  rotate: false
+  xy: 241, 432
+  size: 96, 68
+  orig: 96, 68
+  offset: 0, 0
+  index: -1
+Fossa
+  rotate: true
+  xy: 357, 300
+  size: 150, 126
+  orig: 150, 126
+  offset: 0, 0
+  index: -1
+Glasses
+  rotate: false
+  xy: 158, 5
+  size: 82, 36
+  orig: 82, 36
+  offset: 0, 0
+  index: -1
+Heartspot
+  rotate: false
+  xy: 2, 440
+  size: 237, 182
+  orig: 237, 182
+  offset: 0, 0
+  index: -1
+L_Afterthebutterflysection
+  rotate: true
+  xy: 551, 168
+  size: 49, 69
+  orig: 49, 69
+  offset: 0, 0
+  index: -1
+L_Afterthebutterflysection_02
+  rotate: false
+  xy: 563, 490
+  size: 50, 90
+  orig: 50, 90
+  offset: 0, 0
+  index: -1
+L_Afterthebutterflysection_03
+  rotate: false
+  xy: 390, 176
+  size: 52, 122
+  orig: 52, 122
+  offset: 0, 0
+  index: -1
+L_Afterthebutterflysection_04
+  rotate: false
+  xy: 580, 621
+  size: 104, 103
+  orig: 104, 103
+  offset: 0, 0
+  index: -1
+L_Afterthebutterflysection_05
+  rotate: false
+  xy: 615, 498
+  size: 56, 82
+  orig: 56, 82
+  offset: 0, 0
+  index: -1
+L_AoFestival
+  rotate: true
+  xy: 754, 583
+  size: 38, 50
+  orig: 38, 50
+  offset: 0, 0
+  index: -1
+L_Claw
+  rotate: false
+  xy: 407, 2
+  size: 27, 47
+  orig: 27, 47
+  offset: 0, 0
+  index: -1
+L_Claw_02
+  rotate: true
+  xy: 806, 524
+  size: 30, 56
+  orig: 30, 56
+  offset: 0, 0
+  index: -1
+L_Claw_03
+  rotate: false
+  xy: 725, 504
+  size: 45, 76
+  orig: 45, 76
+  offset: 0, 0
+  index: -1
+L_Claw_04
+  rotate: false
+  xy: 374, 49
+  size: 30, 81
+  orig: 30, 81
+  offset: 0, 0
+  index: -1
+L_KneeJoint
+  rotate: true
+  xy: 531, 730
+  size: 24, 22
+  orig: 24, 22
+  offset: 0, 0
+  index: -1
+L_KneeJoint_01
+  rotate: false
+  xy: 357, 278
+  size: 22, 20
+  orig: 22, 20
+  offset: 0, 0
+  index: -1
+L_KneeJoint_02
+  rotate: true
+  xy: 531, 704
+  size: 24, 22
+  orig: 24, 22
+  offset: 0, 0
+  index: -1
+L_KneeJoint_03
+  rotate: true
+  xy: 374, 13
+  size: 34, 31
+  orig: 34, 31
+  offset: 0, 0
+  index: -1
+L_KneeJoint_04
+  rotate: true
+  xy: 435, 51
+  size: 40, 38
+  orig: 40, 38
+  offset: 0, 0
+  index: -1
+L_KneeJoint_05
+  rotate: false
+  xy: 622, 122
+  size: 40, 35
+  orig: 40, 35
+  offset: 0, 0
+  index: -1
+L_KneeJoint_06
+  rotate: false
+  xy: 531, 794
+  size: 25, 23
+  orig: 25, 23
+  offset: 0, 0
+  index: -1
+L_KneeJoint_07
+  rotate: false
+  xy: 967, 557
+  size: 34, 31
+  orig: 34, 31
+  offset: 0, 0
+  index: -1
+L_KneeJoint_08
+  rotate: false
+  xy: 967, 557
+  size: 34, 31
+  orig: 34, 31
+  offset: 0, 0
+  index: -1
+L_Leg Festival
+  rotate: true
+  xy: 406, 51
+  size: 79, 27
+  orig: 79, 27
+  offset: 0, 0
+  index: -1
+L_Leg Festival_02
+  rotate: false
+  xy: 880, 589
+  size: 70, 35
+  orig: 70, 35
+  offset: 0, 0
+  index: -1
+L_Leg Festival_03
+  rotate: true
+  xy: 686, 582
+  size: 39, 66
+  orig: 39, 66
+  offset: 0, 0
+  index: -1
+L_Leg Festival_04
+  rotate: false
+  xy: 686, 623
+  size: 106, 101
+  orig: 106, 101
+  offset: 0, 0
+  index: -1
+L_Sidenodules
+  rotate: false
+  xy: 531, 756
+  size: 19, 36
+  orig: 19, 36
+  offset: 0, 0
+  index: -1
+L_Sidenodules_02
+  rotate: false
+  xy: 436, 9
+  size: 36, 40
+  orig: 36, 40
+  offset: 0, 0
+  index: -1
+L_Sidenodules_06
+  rotate: true
+  xy: 952, 590
+  size: 34, 54
+  orig: 34, 54
+  offset: 0, 0
+  index: -1
+Petiole
+  rotate: false
+  xy: 2, 814
+  size: 302, 204
+  orig: 302, 204
+  offset: 0, 0
+  index: -1
+R_AoFestival
+  rotate: true
+  xy: 880, 549
+  size: 38, 50
+  orig: 38, 50
+  offset: 0, 0
+  index: -1
+R_ButterflyFestival
+  rotate: false
+  xy: 306, 815
+  size: 31, 31
+  orig: 31, 31
+  offset: 0, 0
+  index: -1
+R_Claw
+  rotate: false
+  xy: 553, 219
+  size: 49, 85
+  orig: 49, 85
+  offset: 0, 0
+  index: -1
+R_Claw_02
+  rotate: false
+  xy: 673, 501
+  size: 50, 79
+  orig: 50, 79
+  offset: 0, 0
+  index: -1
+R_Claw_03
+  rotate: false
+  xy: 772, 522
+  size: 32, 59
+  orig: 32, 59
+  offset: 0, 0
+  index: -1
+R_Claw_04
+  rotate: true
+  xy: 864, 517
+  size: 30, 50
+  orig: 30, 50
+  offset: 0, 0
+  index: -1
+R_KneeJoint
+  rotate: true
+  xy: 390, 132
+  size: 42, 40
+  orig: 42, 40
+  offset: 0, 0
+  index: -1
+R_KneeJointR_KneeJoint
+  rotate: false
+  xy: 487, 220
+  size: 64, 84
+  orig: 64, 84
+  offset: 0, 0
+  index: -1
+R_KneeJointR_KneeJoint_02
+  rotate: false
+  xy: 584, 133
+  size: 36, 33
+  orig: 36, 33
+  offset: 0, 0
+  index: -1
+R_KneeJointR_KneeJoint_03
+  rotate: false
+  xy: 589, 461
+  size: 29, 27
+  orig: 29, 27
+  offset: 0, 0
+  index: -1
+R_KneeJointR_KneeJoint_04
+  rotate: true
+  xy: 563, 462
+  size: 26, 24
+  orig: 26, 24
+  offset: 0, 0
+  index: -1
+R_KneeJoint_01
+  rotate: false
+  xy: 435, 93
+  size: 46, 40
+  orig: 46, 40
+  offset: 0, 0
+  index: -1
+R_KneeJoint_02
+  rotate: true
+  xy: 932, 551
+  size: 36, 33
+  orig: 36, 33
+  offset: 0, 0
+  index: -1
+R_KneeJoint_03
+  rotate: true
+  xy: 531, 819
+  size: 27, 25
+  orig: 27, 25
+  offset: 0, 0
+  index: -1
+R_KneeJoint_04
+  rotate: false
+  xy: 583, 406
+  size: 26, 24
+  orig: 26, 24
+  offset: 0, 0
+  index: -1
+R_Leg Festival
+  rotate: true
+  xy: 462, 704
+  size: 142, 67
+  orig: 142, 67
+  offset: 0, 0
+  index: -1
+R_Leg Festival_02
+  rotate: true
+  xy: 622, 159
+  size: 67, 47
+  orig: 67, 47
+  offset: 0, 0
+  index: -1
+R_Leg Festival_03
+  rotate: false
+  xy: 583, 380
+  size: 23, 24
+  orig: 23, 24
+  offset: 0, 0
+  index: -1
+R_Leg Festival_04
+  rotate: false
+  xy: 583, 432
+  size: 34, 27
+  orig: 34, 27
+  offset: 0, 0
+  index: -1
+R_Sidenodules
+  rotate: true
+  xy: 487, 170
+  size: 48, 62
+  orig: 48, 62
+  offset: 0, 0
+  index: -1
+R_Sidenodules_02
+  rotate: true
+  xy: 539, 136
+  size: 30, 43
+  orig: 30, 43
+  offset: 0, 0
+  index: -1
+R_Sidenodules_03
+  rotate: true
+  xy: 444, 135
+  size: 45, 41
+  orig: 45, 41
+  offset: 0, 0
+  index: -1
+R_Tibia
+  rotate: false
+  xy: 462, 594
+  size: 116, 108
+  orig: 116, 108
+  offset: 0, 0
+  index: -1
+R_Tibia_02
+  rotate: false
+  xy: 241, 502
+  size: 96, 114
+  orig: 96, 114
+  offset: 0, 0
+  index: -1
+R_Tibia_03
+  rotate: true
+  xy: 485, 306
+  size: 52, 92
+  orig: 52, 92
+  offset: 0, 0
+  index: -1
+R_Tibia_04
+  rotate: true
+  xy: 579, 306
+  size: 52, 73
+  orig: 52, 73
+  offset: 0, 0
+  index: -1
+Shadow
+  rotate: true
+  xy: 444, 182
+  size: 116, 41
+  orig: 116, 41
+  offset: 0, 0
+  index: -1
+Tongue
+  rotate: false
+  xy: 487, 138
+  size: 50, 30
+  orig: 50, 30
+  offset: 0, 0
+  index: -1
+effects_00001
+  rotate: true
+  xy: 250, 618
+  size: 194, 88
+  orig: 194, 88
+  offset: 0, 0
+  index: -1
+effects_00002
+  rotate: true
+  xy: 252, 132
+  size: 144, 136
+  orig: 144, 136
+  offset: 0, 0
+  index: -1
+effects_00003
+  rotate: true
+  xy: 485, 462
+  size: 130, 76
+  orig: 130, 76
+  offset: 0, 0
+  index: -1
+effects_00004
+  rotate: false
+  xy: 814, 726
+  size: 188, 98
+  orig: 188, 98
+  offset: 0, 0
+  index: -1
+effects_00005
+  rotate: false
+  xy: 2, 8
+  size: 154, 240
+  orig: 154, 240
+  offset: 0, 0
+  index: -1
+effects_00036
+  rotate: false
+  xy: 814, 826
+  size: 192, 192
+  orig: 192, 192
+  offset: 0, 0
+  index: -1
+effects_00037
+  rotate: true
+  xy: 902, 626
+  size: 98, 102
+  orig: 98, 102
+  offset: 0, 0
+  index: -1
+effects_00038
+  rotate: true
+  xy: 158, 43
+  size: 205, 92
+  orig: 205, 92
+  offset: 0, 0
+  index: -1
+effects_00039
+  rotate: false
+  xy: 485, 360
+  size: 96, 100
+  orig: 96, 100
+  offset: 0, 0
+  index: -1
+effects_00040
+  rotate: true
+  xy: 604, 228
+  size: 76, 60
+  orig: 76, 60
+  offset: 0, 0
+  index: -1
+effects_00041
+  rotate: false
+  xy: 252, 14
+  size: 120, 116
+  orig: 120, 116
+  offset: 0, 0
+  index: -1
+effects_00042
+  rotate: true
+  xy: 794, 626
+  size: 98, 106
+  orig: 98, 106
+  offset: 0, 0
+  index: -1
+effects_00043
+  rotate: false
+  xy: 2, 250
+  size: 228, 188
+  orig: 228, 188
+  offset: 0, 0
+  index: -1
+effects_00044
+  rotate: false
+  xy: 2, 624
+  size: 246, 188
+  orig: 246, 188
+  offset: 0, 0
+  index: -1
+effects_00045
+  rotate: false
+  xy: 306, 848
+  size: 250, 170
+  orig: 250, 170
+  offset: 0, 0
+  index: -1
+effects_00046
+  rotate: false
+  xy: 558, 866
+  size: 254, 152
+  orig: 254, 152
+  offset: 0, 0
+  index: -1
+effects_00047
+  rotate: false
+  xy: 558, 726
+  size: 254, 138
+  orig: 254, 138
+  offset: 0, 0
+  index: -1
+effects_00048
+  rotate: true
+  xy: 340, 594
+  size: 252, 120
+  orig: 252, 120
+  offset: 0, 0
+  index: -1
+effects_00049
+  rotate: false
+  xy: 806, 556
+  size: 72, 68
+  orig: 72, 68
+  offset: 0, 0
+  index: -1

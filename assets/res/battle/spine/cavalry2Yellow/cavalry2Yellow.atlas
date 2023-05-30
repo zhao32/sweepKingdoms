@@ -1,0 +1,265 @@
+
+cavalry2Yellow.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cavalry2Yellow/R_arm
+  rotate: false
+  xy: 35, 17
+  size: 29, 27
+  orig: 29, 27
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/R_arm_up
+  rotate: false
+  xy: 453, 465
+  size: 36, 45
+  orig: 36, 45
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/R_foot
+  rotate: false
+  xy: 38, 80
+  size: 35, 50
+  orig: 35, 50
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/R_hand
+  rotate: true
+  xy: 488, 434
+  size: 24, 22
+  orig: 24, 22
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/body
+  rotate: false
+  xy: 181, 337
+  size: 63, 57
+  orig: 63, 57
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/daolight_3
+  rotate: false
+  xy: 38, 204
+  size: 83, 74
+  orig: 83, 74
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/gongji_yan
+  rotate: false
+  xy: 35, 2
+  size: 36, 13
+  orig: 36, 13
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/gongji_zui
+  rotate: false
+  xy: 377, 405
+  size: 12, 6
+  orig: 12, 6
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/head_1
+  rotate: false
+  xy: 181, 396
+  size: 107, 114
+  orig: 107, 114
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/head_2
+  rotate: false
+  xy: 2, 333
+  size: 177, 177
+  orig: 177, 177
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/head_3
+  rotate: false
+  xy: 2, 333
+  size: 177, 177
+  orig: 177, 177
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/ma_body
+  rotate: false
+  xy: 38, 280
+  size: 112, 51
+  orig: 112, 51
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/ma_foot_1
+  rotate: false
+  xy: 152, 277
+  size: 22, 15
+  orig: 22, 15
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/ma_foot_2
+  rotate: true
+  xy: 66, 61
+  size: 17, 13
+  orig: 17, 13
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/ma_foot_3
+  rotate: true
+  xy: 75, 108
+  size: 22, 15
+  orig: 22, 15
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/ma_foot_4
+  rotate: true
+  xy: 75, 84
+  size: 22, 15
+  orig: 22, 15
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/ma_head
+  rotate: false
+  xy: 343, 428
+  size: 74, 82
+  orig: 74, 82
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/ma_leg_1
+  rotate: false
+  xy: 38, 46
+  size: 26, 32
+  orig: 26, 32
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/ma_leg_2
+  rotate: false
+  xy: 123, 209
+  size: 19, 28
+  orig: 19, 28
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/ma_leg_3
+  rotate: true
+  xy: 88, 134
+  size: 21, 29
+  orig: 21, 29
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/ma_leg_4
+  rotate: false
+  xy: 92, 110
+  size: 17, 22
+  orig: 17, 22
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/ma_leg_up_1
+  rotate: false
+  xy: 2, 5
+  size: 31, 39
+  orig: 31, 39
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/ma_leg_up_2
+  rotate: true
+  xy: 343, 405
+  size: 21, 32
+  orig: 21, 32
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/ma_leg_up_3
+  rotate: false
+  xy: 88, 157
+  size: 32, 45
+  orig: 32, 45
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/ma_leg_up_4
+  rotate: false
+  xy: 123, 239
+  size: 21, 39
+  orig: 21, 39
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/ma_lingdang
+  rotate: false
+  xy: 92, 88
+  size: 11, 20
+  orig: 11, 20
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/ma_mawei
+  rotate: false
+  xy: 38, 132
+  size: 48, 70
+  orig: 48, 70
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/ma_neck
+  rotate: false
+  xy: 290, 401
+  size: 51, 109
+  orig: 51, 109
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/mei_l
+  rotate: true
+  xy: 66, 42
+  size: 17, 10
+  orig: 17, 10
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/mei_r
+  rotate: false
+  xy: 419, 432
+  size: 26, 14
+  orig: 26, 14
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/shoulder
+  rotate: true
+  xy: 246, 342
+  size: 52, 40
+  orig: 52, 40
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/si_yan
+  rotate: false
+  xy: 453, 449
+  size: 33, 14
+  orig: 33, 14
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/tuijia
+  rotate: true
+  xy: 152, 294
+  size: 37, 25
+  orig: 37, 25
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/wuqi
+  rotate: false
+  xy: 2, 46
+  size: 34, 285
+  orig: 34, 285
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/yan
+  rotate: false
+  xy: 377, 413
+  size: 34, 13
+  orig: 34, 13
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/yany
+  rotate: false
+  xy: 419, 448
+  size: 32, 62
+  orig: 32, 62
+  offset: 0, 0
+  index: -1
+cavalry2Yellow/yao
+  rotate: true
+  xy: 491, 460
+  size: 50, 19
+  orig: 50, 19
+  offset: 0, 0
+  index: -1

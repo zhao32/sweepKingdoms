@@ -1,0 +1,202 @@
+
+rouboyongshi.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+rouboyongshi/N_eyes
+  rotate: true
+  xy: 242, 94
+  size: 32, 11
+  orig: 32, 11
+  offset: 0, 0
+  index: -1
+rouboyongshi/N_mouth
+  rotate: false
+  xy: 115, 35
+  size: 28, 15
+  orig: 28, 15
+  offset: 0, 0
+  index: -1
+rouboyongshi/Nu
+  rotate: true
+  xy: 241, 213
+  size: 12, 13
+  orig: 12, 13
+  offset: 0, 0
+  index: -1
+rouboyongshi/P
+  rotate: true
+  xy: 93, 63
+  size: 65, 25
+  orig: 65, 25
+  offset: 0, 0
+  index: -1
+rouboyongshi/S_eyes
+  rotate: false
+  xy: 174, 84
+  size: 33, 5
+  orig: 33, 5
+  offset: 0, 0
+  index: -1
+rouboyongshi/arm_l
+  rotate: false
+  xy: 120, 83
+  size: 52, 50
+  orig: 52, 50
+  offset: 0, 0
+  index: -1
+rouboyongshi/arm_r
+  rotate: false
+  xy: 164, 51
+  size: 32, 30
+  orig: 32, 30
+  offset: 0, 0
+  index: -1
+rouboyongshi/arm_up_l
+  rotate: true
+  xy: 117, 135
+  size: 53, 62
+  orig: 53, 62
+  offset: 0, 0
+  index: -1
+rouboyongshi/arm_up_r
+  rotate: true
+  xy: 120, 52
+  size: 29, 42
+  orig: 29, 42
+  offset: 0, 0
+  index: -1
+rouboyongshi/body
+  rotate: false
+  xy: 2, 47
+  size: 89, 81
+  orig: 89, 81
+  offset: 0, 0
+  index: -1
+rouboyongshi/daolight1
+  rotate: false
+  xy: 2, 3
+  size: 49, 42
+  orig: 49, 42
+  offset: 0, 0
+  index: -1
+rouboyongshi/eyes
+  rotate: true
+  xy: 198, 50
+  size: 32, 10
+  orig: 32, 10
+  offset: 0, 0
+  index: -1
+rouboyongshi/flate
+  rotate: false
+  xy: 117, 190
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+rouboyongshi/foot_l
+  rotate: true
+  xy: 145, 30
+  size: 20, 16
+  orig: 20, 16
+  offset: 0, 0
+  index: -1
+rouboyongshi/foot_r
+  rotate: true
+  xy: 95, 4
+  size: 20, 17
+  orig: 20, 17
+  offset: 0, 0
+  index: -1
+rouboyongshi/hand_l
+  rotate: false
+  xy: 183, 163
+  size: 40, 33
+  orig: 40, 33
+  offset: 0, 0
+  index: -1
+rouboyongshi/hand_l_2
+  rotate: false
+  xy: 181, 128
+  size: 40, 33
+  orig: 40, 33
+  offset: 0, 0
+  index: -1
+rouboyongshi/hand_r
+  rotate: false
+  xy: 174, 91
+  size: 32, 35
+  orig: 32, 35
+  offset: 0, 0
+  index: -1
+rouboyongshi/hand_r_2
+  rotate: false
+  xy: 208, 91
+  size: 32, 35
+  orig: 32, 35
+  offset: 0, 0
+  index: -1
+rouboyongshi/head
+  rotate: false
+  xy: 183, 198
+  size: 56, 56
+  orig: 56, 56
+  offset: 0, 0
+  index: -1
+rouboyongshi/hu_l
+  rotate: false
+  xy: 241, 227
+  size: 13, 27
+  orig: 13, 27
+  offset: 0, 0
+  index: -1
+rouboyongshi/hu_r
+  rotate: true
+  xy: 93, 54
+  size: 7, 25
+  orig: 7, 25
+  offset: 0, 0
+  index: -1
+rouboyongshi/jian
+  rotate: false
+  xy: 95, 26
+  size: 18, 26
+  orig: 18, 26
+  offset: 0, 0
+  index: -1
+rouboyongshi/leg_l
+  rotate: false
+  xy: 223, 128
+  size: 30, 33
+  orig: 30, 33
+  offset: 0, 0
+  index: -1
+rouboyongshi/leg_r
+  rotate: false
+  xy: 225, 164
+  size: 27, 32
+  orig: 27, 32
+  offset: 0, 0
+  index: -1
+rouboyongshi/light
+  rotate: false
+  xy: 53, 5
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+rouboyongshi/mohu
+  rotate: false
+  xy: 2, 130
+  size: 113, 124
+  orig: 113, 124
+  offset: 0, 0
+  index: -1
+rouboyongshi/mouth
+  rotate: false
+  xy: 115, 26
+  size: 28, 7
+  orig: 28, 7
+  offset: 0, 0
+  index: -1

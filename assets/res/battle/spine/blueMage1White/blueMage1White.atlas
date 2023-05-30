@@ -1,0 +1,153 @@
+
+blueMage1White.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+blueMage1White/armL
+  rotate: true
+  xy: 213, 224
+  size: 30, 37
+  orig: 30, 37
+  offset: 0, 0
+  index: -1
+blueMage1White/armR
+  rotate: true
+  xy: 2, 2
+  size: 31, 30
+  orig: 31, 30
+  offset: 0, 0
+  index: -1
+blueMage1White/chest
+  rotate: false
+  xy: 71, 199
+  size: 59, 55
+  orig: 59, 55
+  offset: 0, 0
+  index: -1
+blueMage1White/forearmL
+  rotate: false
+  xy: 173, 220
+  size: 38, 34
+  orig: 38, 34
+  offset: 0, 0
+  index: -1
+blueMage1White/forearmR
+  rotate: true
+  xy: 34, 13
+  size: 20, 32
+  orig: 20, 32
+  offset: 0, 0
+  index: -1
+blueMage1White/gongji_zui
+  rotate: false
+  xy: 52, 3
+  size: 14, 8
+  orig: 14, 8
+  offset: 0, 0
+  index: -1
+blueMage1White/handR
+  rotate: false
+  xy: 191, 190
+  size: 18, 18
+  orig: 18, 18
+  offset: 0, 0
+  index: -1
+blueMage1White/head
+  rotate: false
+  xy: 2, 151
+  size: 67, 103
+  orig: 67, 103
+  offset: 0, 0
+  index: -1
+blueMage1White/hu_l
+  rotate: true
+  xy: 191, 177
+  size: 11, 13
+  orig: 11, 13
+  offset: 0, 0
+  index: -1
+blueMage1White/hu_r
+  rotate: false
+  xy: 61, 56
+  size: 7, 13
+  orig: 7, 13
+  offset: 0, 0
+  index: -1
+blueMage1White/mei_l
+  rotate: true
+  xy: 61, 71
+  size: 21, 10
+  orig: 21, 10
+  offset: 0, 0
+  index: -1
+blueMage1White/mei_r
+  rotate: false
+  xy: 34, 2
+  size: 16, 9
+  orig: 16, 9
+  offset: 0, 0
+  index: -1
+blueMage1White/putong_yan
+  rotate: false
+  xy: 173, 210
+  size: 33, 8
+  orig: 33, 8
+  offset: 0, 0
+  index: -1
+blueMage1White/qiuqiu
+  rotate: false
+  xy: 71, 154
+  size: 43, 43
+  orig: 43, 43
+  offset: 0, 0
+  index: -1
+blueMage1White/qunbai
+  rotate: false
+  xy: 142, 172
+  size: 33, 33
+  orig: 33, 33
+  offset: 0, 0
+  index: -1
+blueMage1White/shoulight
+  rotate: false
+  xy: 2, 94
+  size: 66, 55
+  orig: 66, 55
+  offset: 0, 0
+  index: -1
+blueMage1White/skirtL
+  rotate: false
+  xy: 116, 158
+  size: 24, 39
+  orig: 24, 39
+  offset: 0, 0
+  index: -1
+blueMage1White/skirtR
+  rotate: true
+  xy: 142, 152
+  size: 18, 34
+  orig: 18, 34
+  offset: 0, 0
+  index: -1
+blueMage1White/weapon
+  rotate: false
+  xy: 132, 207
+  size: 39, 47
+  orig: 39, 47
+  offset: 0, 0
+  index: -1
+blueMage1White/xuanlight
+  rotate: false
+  xy: 2, 35
+  size: 57, 57
+  orig: 57, 57
+  offset: 0, 0
+  index: -1
+blueMage1White/zhebu
+  rotate: false
+  xy: 177, 176
+  size: 12, 32
+  orig: 12, 32
+  offset: 0, 0
+  index: -1

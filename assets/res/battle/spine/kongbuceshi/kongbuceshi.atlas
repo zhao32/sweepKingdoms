@@ -1,0 +1,314 @@
+
+kongbuceshi.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+kongbuceshi/1
+  rotate: true
+  xy: 99, 123
+  size: 84, 48
+  orig: 84, 48
+  offset: 0, 0
+  index: -1
+kongbuceshi/Dd
+  rotate: false
+  xy: 114, 5
+  size: 4, 10
+  orig: 4, 10
+  offset: 0, 0
+  index: -1
+kongbuceshi/Fu
+  rotate: false
+  xy: 149, 182
+  size: 19, 25
+  orig: 19, 25
+  offset: 0, 0
+  index: -1
+kongbuceshi/KL_head
+  rotate: false
+  xy: 482, 484
+  size: 28, 26
+  orig: 28, 26
+  offset: 0, 0
+  index: -1
+kongbuceshi/Pi
+  rotate: false
+  xy: 412, 405
+  size: 23, 11
+  orig: 23, 11
+  offset: 0, 0
+  index: -1
+kongbuceshi/T_1
+  rotate: true
+  xy: 363, 396
+  size: 17, 30
+  orig: 17, 30
+  offset: 0, 0
+  index: -1
+kongbuceshi/T_2
+  rotate: false
+  xy: 156, 7
+  size: 13, 36
+  orig: 13, 36
+  offset: 0, 0
+  index: -1
+kongbuceshi/arm_l
+  rotate: true
+  xy: 99, 109
+  size: 12, 19
+  orig: 12, 19
+  offset: 0, 0
+  index: -1
+kongbuceshi/arm_r
+  rotate: false
+  xy: 395, 396
+  size: 15, 17
+  orig: 15, 17
+  offset: 0, 0
+  index: -1
+kongbuceshi/arm_up_l
+  rotate: false
+  xy: 75, 2
+  size: 19, 31
+  orig: 19, 31
+  offset: 0, 0
+  index: -1
+kongbuceshi/arm_up_r
+  rotate: true
+  xy: 181, 355
+  size: 11, 28
+  orig: 11, 28
+  offset: 0, 0
+  index: -1
+kongbuceshi/body
+  rotate: false
+  xy: 181, 368
+  size: 34, 43
+  orig: 34, 43
+  offset: 0, 0
+  index: -1
+kongbuceshi/daizi
+  rotate: false
+  xy: 217, 378
+  size: 36, 35
+  orig: 36, 35
+  offset: 0, 0
+  index: -1
+kongbuceshi/eye
+  rotate: true
+  xy: 165, 261
+  size: 32, 8
+  orig: 32, 8
+  offset: 0, 0
+  index: -1
+kongbuceshi/eyebrow_l
+  rotate: true
+  xy: 169, 353
+  size: 22, 10
+  orig: 22, 10
+  offset: 0, 0
+  index: -1
+kongbuceshi/eyebrow_r
+  rotate: true
+  xy: 169, 334
+  size: 17, 10
+  orig: 17, 10
+  offset: 0, 0
+  index: -1
+kongbuceshi/foot_l
+  rotate: true
+  xy: 96, 2
+  size: 13, 16
+  orig: 13, 16
+  offset: 0, 0
+  index: -1
+kongbuceshi/foot_r
+  rotate: false
+  xy: 181, 337
+  size: 11, 16
+  orig: 11, 16
+  offset: 0, 0
+  index: -1
+kongbuceshi/fu2_1
+  rotate: false
+  xy: 106, 250
+  size: 57, 43
+  orig: 57, 43
+  offset: 0, 0
+  index: -1
+kongbuceshi/fu2_2
+  rotate: false
+  xy: 106, 209
+  size: 59, 39
+  orig: 59, 39
+  offset: 0, 0
+  index: -1
+kongbuceshi/fu2_3
+  rotate: false
+  xy: 107, 329
+  size: 60, 46
+  orig: 60, 46
+  offset: 0, 0
+  index: -1
+kongbuceshi/gan
+  rotate: true
+  xy: 291, 395
+  size: 18, 38
+  orig: 18, 38
+  offset: 0, 0
+  index: -1
+kongbuceshi/hair_h
+  rotate: false
+  xy: 412, 418
+  size: 68, 92
+  orig: 68, 92
+  offset: 0, 0
+  index: -1
+kongbuceshi/hair_l
+  rotate: true
+  xy: 109, 377
+  size: 34, 70
+  orig: 34, 70
+  offset: 0, 0
+  index: -1
+kongbuceshi/hair_r
+  rotate: true
+  xy: 2, 4
+  size: 29, 71
+  orig: 29, 71
+  offset: 0, 0
+  index: -1
+kongbuceshi/hand_l
+  rotate: false
+  xy: 194, 341
+  size: 14, 12
+  orig: 14, 12
+  offset: 0, 0
+  index: -1
+kongbuceshi/hand_r
+  rotate: false
+  xy: 437, 403
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+kongbuceshi/head
+  rotate: false
+  xy: 120, 45
+  size: 53, 76
+  orig: 53, 76
+  offset: 0, 0
+  index: -1
+kongbuceshi/leg_l
+  rotate: true
+  xy: 96, 17
+  size: 16, 22
+  orig: 16, 22
+  offset: 0, 0
+  index: -1
+kongbuceshi/leg_r
+  rotate: false
+  xy: 149, 126
+  size: 12, 24
+  orig: 12, 24
+  offset: 0, 0
+  index: -1
+kongbuceshi/mohu
+  rotate: false
+  xy: 2, 35
+  size: 116, 72
+  orig: 116, 72
+  offset: 0, 0
+  index: -1
+kongbuceshi/pijian
+  rotate: true
+  xy: 120, 2
+  size: 41, 34
+  orig: 41, 34
+  offset: 0, 0
+  index: -1
+kongbuceshi/scapula
+  rotate: false
+  xy: 255, 388
+  size: 34, 25
+  orig: 34, 25
+  offset: 0, 0
+  index: -1
+kongbuceshi/skirt_l
+  rotate: true
+  xy: 331, 393
+  size: 20, 30
+  orig: 20, 30
+  offset: 0, 0
+  index: -1
+kongbuceshi/skirt_r
+  rotate: false
+  xy: 149, 152
+  size: 12, 28
+  orig: 12, 28
+  offset: 0, 0
+  index: -1
+kongbuceshi/xz1
+  rotate: false
+  xy: 316, 415
+  size: 94, 95
+  orig: 94, 95
+  offset: 0, 0
+  index: -1
+kongbuceshi/xz2
+  rotate: false
+  xy: 2, 109
+  size: 95, 98
+  orig: 95, 98
+  offset: 0, 0
+  index: -1
+kongbuceshi/xz3
+  rotate: false
+  xy: 2, 310
+  size: 103, 98
+  orig: 103, 98
+  offset: 0, 0
+  index: -1
+kongbuceshi/xz4
+  rotate: false
+  xy: 215, 415
+  size: 99, 95
+  orig: 99, 95
+  offset: 0, 0
+  index: -1
+kongbuceshi/xz5
+  rotate: false
+  xy: 109, 413
+  size: 104, 97
+  orig: 104, 97
+  offset: 0, 0
+  index: -1
+kongbuceshi/xz6
+  rotate: false
+  xy: 2, 410
+  size: 105, 100
+  orig: 105, 100
+  offset: 0, 0
+  index: -1
+kongbuceshi/xz7
+  rotate: false
+  xy: 2, 209
+  size: 102, 99
+  orig: 102, 99
+  offset: 0, 0
+  index: -1
+kongbuceshi/yi_l
+  rotate: true
+  xy: 107, 295
+  size: 32, 66
+  orig: 32, 66
+  offset: 0, 0
+  index: -1
+kongbuceshi/yi_r
+  rotate: false
+  xy: 482, 420
+  size: 20, 62
+  orig: 20, 62
+  offset: 0, 0
+  index: -1

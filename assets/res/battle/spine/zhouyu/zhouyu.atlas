@@ -1,0 +1,258 @@
+
+zhouyu.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+zhouyu/J
+  rotate: false
+  xy: 87, 166
+  size: 82, 24
+  orig: 82, 24
+  offset: 0, 0
+  index: -1
+zhouyu/JQ
+  rotate: true
+  xy: 146, 101
+  size: 63, 20
+  orig: 63, 20
+  offset: 0, 0
+  index: -1
+zhouyu/J_2
+  rotate: false
+  xy: 120, 109
+  size: 24, 55
+  orig: 24, 55
+  offset: 0, 0
+  index: -1
+zhouyu/N_eyes
+  rotate: false
+  xy: 87, 82
+  size: 39, 24
+  orig: 39, 24
+  offset: 0, 0
+  index: -1
+zhouyu/N_mouth
+  rotate: false
+  xy: 168, 119
+  size: 13, 12
+  orig: 13, 12
+  offset: 0, 0
+  index: -1
+zhouyu/S_eyes
+  rotate: true
+  xy: 147, 2
+  size: 37, 8
+  orig: 37, 8
+  offset: 0, 0
+  index: -1
+zhouyu/S_mouth
+  rotate: false
+  xy: 28, 4
+  size: 13, 3
+  orig: 13, 3
+  offset: 0, 0
+  index: -1
+zhouyu/arm_l
+  rotate: true
+  xy: 2, 2
+  size: 18, 24
+  orig: 18, 24
+  offset: 0, 0
+  index: -1
+zhouyu/arm_r
+  rotate: true
+  xy: 181, 167
+  size: 14, 20
+  orig: 14, 20
+  offset: 0, 0
+  index: -1
+zhouyu/arm_up_l
+  rotate: true
+  xy: 227, 185
+  size: 25, 27
+  orig: 25, 27
+  offset: 0, 0
+  index: -1
+zhouyu/arm_up_r
+  rotate: false
+  xy: 149, 47
+  size: 26, 30
+  orig: 26, 30
+  offset: 0, 0
+  index: -1
+zhouyu/body
+  rotate: false
+  xy: 79, 39
+  size: 34, 41
+  orig: 34, 41
+  offset: 0, 0
+  index: -1
+zhouyu/box1
+  rotate: false
+  xy: 146, 79
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+zhouyu/daolight_3
+  rotate: false
+  xy: 2, 87
+  size: 83, 74
+  orig: 83, 74
+  offset: 0, 0
+  index: -1
+zhouyu/eyes
+  rotate: false
+  xy: 28, 9
+  size: 38, 11
+  orig: 38, 11
+  offset: 0, 0
+  index: -1
+zhouyu/foot_l
+  rotate: false
+  xy: 168, 133
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+zhouyu/foot_r
+  rotate: true
+  xy: 179, 2
+  size: 12, 14
+  orig: 12, 14
+  offset: 0, 0
+  index: -1
+zhouyu/hair
+  rotate: false
+  xy: 235, 219
+  size: 15, 35
+  orig: 15, 35
+  offset: 0, 0
+  index: -1
+zhouyu/hand_l
+  rotate: true
+  xy: 168, 148
+  size: 15, 13
+  orig: 15, 13
+  offset: 0, 0
+  index: -1
+zhouyu/hand_r1
+  rotate: false
+  xy: 168, 105
+  size: 10, 12
+  orig: 10, 12
+  offset: 0, 0
+  index: -1
+zhouyu/hand_r2
+  rotate: true
+  xy: 203, 168
+  size: 13, 19
+  orig: 13, 19
+  offset: 0, 0
+  index: -1
+zhouyu/head
+  rotate: false
+  xy: 2, 163
+  size: 83, 91
+  orig: 83, 91
+  offset: 0, 0
+  index: -1
+zhouyu/jsui
+  rotate: false
+  xy: 171, 165
+  size: 8, 25
+  orig: 8, 25
+  offset: 0, 0
+  index: -1
+zhouyu/mao
+  rotate: false
+  xy: 2, 22
+  size: 75, 63
+  orig: 75, 63
+  offset: 0, 0
+  index: -1
+zhouyu/mei_l
+  rotate: false
+  xy: 157, 2
+  size: 20, 12
+  orig: 20, 12
+  offset: 0, 0
+  index: -1
+zhouyu/mei_r
+  rotate: true
+  xy: 168, 91
+  size: 12, 10
+  orig: 12, 10
+  offset: 0, 0
+  index: -1
+zhouyu/mouth
+  rotate: false
+  xy: 235, 212
+  size: 12, 5
+  orig: 12, 5
+  offset: 0, 0
+  index: -1
+zhouyu/pifeng
+  rotate: false
+  xy: 87, 192
+  size: 93, 62
+  orig: 93, 62
+  offset: 0, 0
+  index: -1
+zhouyu/scapula_l
+  rotate: true
+  xy: 115, 41
+  size: 36, 32
+  orig: 36, 32
+  offset: 0, 0
+  index: -1
+zhouyu/skirt1
+  rotate: false
+  xy: 128, 79
+  size: 16, 28
+  orig: 16, 28
+  offset: 0, 0
+  index: -1
+zhouyu/skirt2
+  rotate: false
+  xy: 79, 2
+  size: 36, 35
+  orig: 36, 35
+  offset: 0, 0
+  index: -1
+zhouyu/yann
+  rotate: false
+  xy: 182, 212
+  size: 51, 42
+  orig: 51, 42
+  offset: 0, 0
+  index: -1
+zhouyu/yi_l1
+  rotate: false
+  xy: 87, 108
+  size: 31, 56
+  orig: 31, 56
+  offset: 0, 0
+  index: -1
+zhouyu/yi_l2
+  rotate: false
+  xy: 117, 3
+  size: 28, 36
+  orig: 28, 36
+  offset: 0, 0
+  index: -1
+zhouyu/yi_r1
+  rotate: true
+  xy: 182, 183
+  size: 27, 43
+  orig: 27, 43
+  offset: 0, 0
+  index: -1
+zhouyu/yi_r2
+  rotate: false
+  xy: 157, 16
+  size: 21, 29
+  orig: 21, 29
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,293 @@
+
+blueArcher4Red.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+blueArcher4Red/arm_l
+  rotate: false
+  xy: 363, 339
+  size: 26, 20
+  orig: 26, 20
+  offset: 0, 0
+  index: -1
+blueArcher4Red/arm_r
+  rotate: false
+  xy: 392, 370
+  size: 19, 23
+  orig: 19, 23
+  offset: 0, 0
+  index: -1
+blueArcher4Red/arm_up_l
+  rotate: false
+  xy: 153, 277
+  size: 15, 18
+  orig: 15, 18
+  offset: 0, 0
+  index: -1
+blueArcher4Red/arm_up_r
+  rotate: false
+  xy: 229, 298
+  size: 12, 13
+  orig: 12, 13
+  offset: 0, 0
+  index: -1
+blueArcher4Red/body
+  rotate: true
+  xy: 336, 308
+  size: 29, 27
+  orig: 29, 27
+  offset: 0, 0
+  index: -1
+blueArcher4Red/box
+  rotate: false
+  xy: 413, 373
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+blueArcher4Red/foot_l
+  rotate: true
+  xy: 156, 297
+  size: 14, 26
+  orig: 14, 26
+  offset: 0, 0
+  index: -1
+blueArcher4Red/foot_r
+  rotate: true
+  xy: 436, 393
+  size: 19, 24
+  orig: 19, 24
+  offset: 0, 0
+  index: -1
+blueArcher4Red/gongji_yan
+  rotate: true
+  xy: 101, 9
+  size: 42, 15
+  orig: 42, 15
+  offset: 0, 0
+  index: -1
+blueArcher4Red/gongji_zui
+  rotate: false
+  xy: 243, 306
+  size: 14, 6
+  orig: 14, 6
+  offset: 0, 0
+  index: -1
+blueArcher4Red/hair_b1
+  rotate: false
+  xy: 310, 340
+  size: 26, 62
+  orig: 26, 62
+  offset: 0, 0
+  index: -1
+blueArcher4Red/hair_b2
+  rotate: false
+  xy: 338, 339
+  size: 23, 63
+  orig: 23, 63
+  offset: 0, 0
+  index: -1
+blueArcher4Red/hair_h
+  rotate: false
+  xy: 398, 425
+  size: 70, 85
+  orig: 70, 85
+  offset: 0, 0
+  index: -1
+blueArcher4Red/hair_q1
+  rotate: true
+  xy: 363, 361
+  size: 41, 27
+  orig: 41, 27
+  offset: 0, 0
+  index: -1
+blueArcher4Red/hand_l
+  rotate: false
+  xy: 153, 260
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+blueArcher4Red/hand_r
+  rotate: false
+  xy: 153, 244
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+blueArcher4Red/head
+  rotate: false
+  xy: 243, 314
+  size: 65, 84
+  orig: 65, 84
+  offset: 0, 0
+  index: -1
+blueArcher4Red/jian
+  rotate: false
+  xy: 140, 220
+  size: 11, 84
+  orig: 11, 84
+  offset: 0, 0
+  index: -1
+blueArcher4Red/jianguang
+  rotate: true
+  xy: 117, 62
+  size: 105, 30
+  orig: 105, 30
+  offset: 0, 0
+  index: -1
+blueArcher4Red/leg_l
+  rotate: true
+  xy: 184, 298
+  size: 13, 21
+  orig: 13, 21
+  offset: 0, 0
+  index: -1
+blueArcher4Red/leg_r
+  rotate: true
+  xy: 207, 296
+  size: 15, 20
+  orig: 15, 20
+  offset: 0, 0
+  index: -1
+blueArcher4Red/mohu
+  rotate: false
+  xy: 2, 169
+  size: 136, 135
+  orig: 136, 135
+  offset: 0, 0
+  index: -1
+blueArcher4Red/mohu2
+  rotate: false
+  xy: 2, 306
+  size: 152, 204
+  orig: 152, 204
+  offset: 0, 0
+  index: -1
+blueArcher4Red/putong_mei
+  rotate: true
+  xy: 500, 475
+  size: 35, 8
+  orig: 35, 8
+  offset: 0, 0
+  index: -1
+blueArcher4Red/putong_yan
+  rotate: true
+  xy: 140, 176
+  size: 42, 14
+  orig: 42, 14
+  offset: 0, 0
+  index: -1
+blueArcher4Red/putong_zui
+  rotate: true
+  xy: 170, 279
+  size: 16, 11
+  orig: 16, 11
+  offset: 0, 0
+  index: -1
+blueArcher4Red/qiuqiu
+  rotate: false
+  xy: 156, 313
+  size: 85, 85
+  orig: 85, 85
+  offset: 0, 0
+  index: -1
+blueArcher4Red/quan
+  rotate: false
+  xy: 290, 404
+  size: 106, 106
+  orig: 106, 106
+  offset: 0, 0
+  index: -1
+blueArcher4Red/shoulight
+  rotate: false
+  xy: 156, 400
+  size: 132, 110
+  orig: 132, 110
+  offset: 0, 0
+  index: -1
+blueArcher4Red/si_yan
+  rotate: false
+  xy: 398, 395
+  size: 36, 17
+  orig: 36, 17
+  offset: 0, 0
+  index: -1
+blueArcher4Red/si_zui
+  rotate: false
+  xy: 500, 466
+  size: 10, 7
+  orig: 10, 7
+  offset: 0, 0
+  index: -1
+blueArcher4Red/skirt_1
+  rotate: true
+  xy: 310, 304
+  size: 34, 24
+  orig: 34, 24
+  offset: 0, 0
+  index: -1
+blueArcher4Red/skirt_2
+  rotate: false
+  xy: 150, 2
+  size: 15, 22
+  orig: 15, 22
+  offset: 0, 0
+  index: -1
+blueArcher4Red/skirt_h
+  rotate: true
+  xy: 118, 26
+  size: 34, 31
+  orig: 34, 31
+  offset: 0, 0
+  index: -1
+blueArcher4Red/skirt_l
+  rotate: false
+  xy: 365, 307
+  size: 21, 30
+  orig: 21, 30
+  offset: 0, 0
+  index: -1
+blueArcher4Red/skiry_r
+  rotate: true
+  xy: 118, 2
+  size: 22, 30
+  orig: 22, 30
+  offset: 0, 0
+  index: -1
+blueArcher4Red/smok
+  rotate: false
+  xy: 2, 4
+  size: 97, 47
+  orig: 97, 47
+  offset: 0, 0
+  index: -1
+blueArcher4Red/wuqi
+  rotate: false
+  xy: 470, 430
+  size: 28, 80
+  orig: 28, 80
+  offset: 0, 0
+  index: -1
+blueArcher4Red/xuanlight
+  rotate: false
+  xy: 2, 53
+  size: 113, 114
+  orig: 113, 114
+  offset: 0, 0
+  index: -1
+blueArcher4Red/yao
+  rotate: false
+  xy: 435, 376
+  size: 27, 15
+  orig: 27, 15
+  offset: 0, 0
+  index: -1
+blueArcher4Red/zg
+  rotate: false
+  xy: 398, 414
+  size: 64, 9
+  orig: 64, 9
+  offset: 0, 0
+  index: -1

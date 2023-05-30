@@ -1,0 +1,223 @@
+
+huatuo.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+huatuo/X_X
+  rotate: true
+  xy: 279, 378
+  size: 27, 12
+  orig: 27, 12
+  offset: 0, 0
+  index: -1
+huatuo/arm_l
+  rotate: false
+  xy: 2, 37
+  size: 32, 30
+  orig: 32, 30
+  offset: 0, 0
+  index: -1
+huatuo/arm_r
+  rotate: false
+  xy: 331, 477
+  size: 39, 33
+  orig: 39, 33
+  offset: 0, 0
+  index: -1
+huatuo/arm_up_l
+  rotate: false
+  xy: 49, 140
+  size: 29, 32
+  orig: 29, 32
+  offset: 0, 0
+  index: -1
+huatuo/body
+  rotate: true
+  xy: 154, 276
+  size: 64, 52
+  orig: 64, 52
+  offset: 0, 0
+  index: -1
+huatuo/box
+  rotate: false
+  xy: 49, 118
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+huatuo/cao
+  rotate: false
+  xy: 154, 244
+  size: 44, 30
+  orig: 44, 30
+  offset: 0, 0
+  index: -1
+huatuo/dai
+  rotate: false
+  xy: 254, 369
+  size: 23, 36
+  orig: 23, 36
+  offset: 0, 0
+  index: -1
+huatuo/diaochan_yezi
+  rotate: false
+  xy: 2, 220
+  size: 150, 120
+  orig: 150, 120
+  offset: 0, 0
+  index: -1
+huatuo/hair
+  rotate: true
+  xy: 209, 350
+  size: 11, 39
+  orig: 11, 39
+  offset: 0, 0
+  index: -1
+huatuo/hand_l
+  rotate: false
+  xy: 110, 198
+  size: 19, 20
+  orig: 19, 20
+  offset: 0, 0
+  index: -1
+huatuo/hand_r
+  rotate: true
+  xy: 301, 414
+  size: 20, 18
+  orig: 20, 18
+  offset: 0, 0
+  index: -1
+huatuo/head
+  rotate: false
+  xy: 209, 407
+  size: 70, 103
+  orig: 70, 103
+  offset: 0, 0
+  index: -1
+huatuo/hu_l
+  rotate: false
+  xy: 281, 407
+  size: 18, 27
+  orig: 18, 27
+  offset: 0, 0
+  index: -1
+huatuo/hu_r
+  rotate: true
+  xy: 131, 208
+  size: 10, 23
+  orig: 10, 23
+  offset: 0, 0
+  index: -1
+huatuo/hu_x
+  rotate: false
+  xy: 2, 2
+  size: 25, 33
+  orig: 25, 33
+  offset: 0, 0
+  index: -1
+huatuo/hulu
+  rotate: false
+  xy: 49, 174
+  size: 33, 44
+  orig: 33, 44
+  offset: 0, 0
+  index: -1
+huatuo/kuang
+  rotate: false
+  xy: 209, 363
+  size: 43, 42
+  orig: 43, 42
+  offset: 0, 0
+  index: -1
+huatuo/mei_l
+  rotate: true
+  xy: 154, 220
+  size: 22, 31
+  orig: 22, 31
+  offset: 0, 0
+  index: -1
+huatuo/mei_r
+  rotate: false
+  xy: 372, 479
+  size: 14, 31
+  orig: 14, 31
+  offset: 0, 0
+  index: -1
+huatuo/p_l
+  rotate: false
+  xy: 187, 222
+  size: 12, 20
+  orig: 12, 20
+  offset: 0, 0
+  index: -1
+huatuo/p_r
+  rotate: true
+  xy: 110, 187
+  size: 9, 19
+  orig: 9, 19
+  offset: 0, 0
+  index: -1
+huatuo/putong_yan
+  rotate: true
+  xy: 200, 244
+  size: 30, 6
+  orig: 30, 6
+  offset: 0, 0
+  index: -1
+huatuo/putong_zui
+  rotate: false
+  xy: 388, 490
+  size: 13, 9
+  orig: 13, 9
+  offset: 0, 0
+  index: -1
+huatuo/skirt_l
+  rotate: false
+  xy: 281, 474
+  size: 48, 36
+  orig: 48, 36
+  offset: 0, 0
+  index: -1
+huatuo/skirt_r
+  rotate: false
+  xy: 281, 436
+  size: 38, 36
+  orig: 38, 36
+  offset: 0, 0
+  index: -1
+huatuo/skirt_z
+  rotate: false
+  xy: 84, 183
+  size: 24, 35
+  orig: 24, 35
+  offset: 0, 0
+  index: -1
+huatuo/wuqi
+  rotate: false
+  xy: 2, 115
+  size: 45, 103
+  orig: 45, 103
+  offset: 0, 0
+  index: -1
+huatuo/wuqi_2
+  rotate: false
+  xy: 2, 69
+  size: 38, 44
+  orig: 38, 44
+  offset: 0, 0
+  index: -1
+huatuo/yann
+  rotate: false
+  xy: 2, 342
+  size: 205, 168
+  orig: 205, 168
+  offset: 0, 0
+  index: -1
+huatuo/zhengyan
+  rotate: false
+  xy: 388, 501
+  size: 30, 9
+  orig: 30, 9
+  offset: 0, 0
+  index: -1

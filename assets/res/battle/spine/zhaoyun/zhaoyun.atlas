@@ -1,0 +1,300 @@
+
+zhaoyun.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+zhaoyun/R_arm
+  rotate: false
+  xy: 467, 280
+  size: 27, 38
+  orig: 27, 38
+  offset: 0, 0
+  index: -1
+zhaoyun/R_arm_up
+  rotate: false
+  xy: 349, 122
+  size: 33, 47
+  orig: 33, 47
+  offset: 0, 0
+  index: -1
+zhaoyun/R_foot
+  rotate: true
+  xy: 2, 2
+  size: 26, 39
+  orig: 26, 39
+  offset: 0, 0
+  index: -1
+zhaoyun/R_hand
+  rotate: true
+  xy: 384, 118
+  size: 17, 19
+  orig: 17, 19
+  offset: 0, 0
+  index: -1
+zhaoyun/body
+  rotate: true
+  xy: 350, 202
+  size: 76, 56
+  orig: 76, 56
+  offset: 0, 0
+  index: -1
+zhaoyun/box1
+  rotate: false
+  xy: 379, 73
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+zhaoyun/daolight-5
+  rotate: false
+  xy: 2, 265
+  size: 254, 245
+  orig: 254, 245
+  offset: 0, 0
+  index: -1
+zhaoyun/daolight_3
+  rotate: false
+  xy: 258, 362
+  size: 165, 148
+  orig: 165, 148
+  offset: 0, 0
+  index: -1
+zhaoyun/daolight_4
+  rotate: true
+  xy: 425, 395
+  size: 115, 79
+  orig: 115, 79
+  offset: 0, 0
+  index: -1
+zhaoyun/effect1
+  rotate: false
+  xy: 2, 30
+  size: 233, 233
+  orig: 233, 233
+  offset: 0, 0
+  index: -1
+zhaoyun/gongji_zui
+  rotate: true
+  xy: 496, 280
+  size: 13, 11
+  orig: 13, 11
+  offset: 0, 0
+  index: -1
+zhaoyun/hair_1
+  rotate: true
+  xy: 408, 203
+  size: 22, 60
+  orig: 22, 60
+  offset: 0, 0
+  index: -1
+zhaoyun/hair_2
+  rotate: true
+  xy: 470, 177
+  size: 48, 38
+  orig: 48, 38
+  offset: 0, 0
+  index: -1
+zhaoyun/hair_3
+  rotate: true
+  xy: 97, 7
+  size: 21, 52
+  orig: 21, 52
+  offset: 0, 0
+  index: -1
+zhaoyun/head_1
+  rotate: false
+  xy: 273, 200
+  size: 75, 86
+  orig: 75, 86
+  offset: 0, 0
+  index: -1
+zhaoyun/head_2
+  rotate: false
+  xy: 273, 115
+  size: 74, 83
+  orig: 74, 83
+  offset: 0, 0
+  index: -1
+zhaoyun/head_3
+  rotate: false
+  xy: 273, 30
+  size: 74, 83
+  orig: 74, 83
+  offset: 0, 0
+  index: -1
+zhaoyun/ma_body
+  rotate: false
+  xy: 408, 227
+  size: 102, 51
+  orig: 102, 51
+  offset: 0, 0
+  index: -1
+zhaoyun/ma_foot_1
+  rotate: true
+  xy: 43, 2
+  size: 26, 25
+  orig: 26, 25
+  offset: 0, 0
+  index: -1
+zhaoyun/ma_foot_2
+  rotate: false
+  xy: 372, 54
+  size: 19, 17
+  orig: 19, 17
+  offset: 0, 0
+  index: -1
+zhaoyun/ma_foot_3
+  rotate: true
+  xy: 70, 2
+  size: 26, 25
+  orig: 26, 25
+  offset: 0, 0
+  index: -1
+zhaoyun/ma_foot_4
+  rotate: false
+  xy: 349, 22
+  size: 22, 21
+  orig: 22, 21
+  offset: 0, 0
+  index: -1
+zhaoyun/ma_head
+  rotate: true
+  xy: 258, 288
+  size: 72, 103
+  orig: 72, 103
+  offset: 0, 0
+  index: -1
+zhaoyun/ma_leg_1
+  rotate: false
+  xy: 349, 45
+  size: 21, 32
+  orig: 21, 32
+  offset: 0, 0
+  index: -1
+zhaoyun/ma_leg_2
+  rotate: false
+  xy: 373, 32
+  size: 14, 20
+  orig: 14, 20
+  offset: 0, 0
+  index: -1
+zhaoyun/ma_leg_3
+  rotate: true
+  xy: 309, 9
+  size: 19, 28
+  orig: 19, 28
+  offset: 0, 0
+  index: -1
+zhaoyun/ma_leg_4
+  rotate: true
+  xy: 258, 271
+  size: 15, 13
+  orig: 15, 13
+  offset: 0, 0
+  index: -1
+zhaoyun/ma_leg_up_1
+  rotate: false
+  xy: 349, 79
+  size: 28, 41
+  orig: 28, 41
+  offset: 0, 0
+  index: -1
+zhaoyun/ma_leg_up_2
+  rotate: false
+  xy: 384, 137
+  size: 19, 32
+  orig: 19, 32
+  offset: 0, 0
+  index: -1
+zhaoyun/ma_leg_up_3
+  rotate: true
+  xy: 467, 320
+  size: 25, 43
+  orig: 25, 43
+  offset: 0, 0
+  index: -1
+zhaoyun/ma_leg_up_4
+  rotate: true
+  xy: 151, 9
+  size: 19, 39
+  orig: 19, 39
+  offset: 0, 0
+  index: -1
+zhaoyun/ma_mawei
+  rotate: false
+  xy: 422, 283
+  size: 43, 62
+  orig: 43, 62
+  offset: 0, 0
+  index: -1
+zhaoyun/ma_neck
+  rotate: true
+  xy: 425, 347
+  size: 46, 76
+  orig: 46, 76
+  offset: 0, 0
+  index: -1
+zhaoyun/mei_l
+  rotate: true
+  xy: 496, 295
+  size: 23, 14
+  orig: 23, 14
+  offset: 0, 0
+  index: -1
+zhaoyun/mei_r
+  rotate: false
+  xy: 373, 21
+  size: 15, 9
+  orig: 15, 9
+  offset: 0, 0
+  index: -1
+zhaoyun/putong_yan
+  rotate: false
+  xy: 192, 12
+  size: 37, 16
+  orig: 37, 16
+  offset: 0, 0
+  index: -1
+zhaoyun/putong_zui
+  rotate: true
+  xy: 393, 55
+  size: 16, 10
+  orig: 16, 10
+  offset: 0, 0
+  index: -1
+zhaoyun/shoulder
+  rotate: false
+  xy: 363, 280
+  size: 57, 80
+  orig: 57, 80
+  offset: 0, 0
+  index: -1
+zhaoyun/si_yan
+  rotate: false
+  xy: 273, 16
+  size: 34, 12
+  orig: 34, 12
+  offset: 0, 0
+  index: -1
+zhaoyun/tuijia
+  rotate: false
+  xy: 379, 95
+  size: 24, 21
+  orig: 24, 21
+  offset: 0, 0
+  index: -1
+zhaoyun/wuqi
+  rotate: false
+  xy: 237, 17
+  size: 34, 246
+  orig: 34, 246
+  offset: 0, 0
+  index: -1
+zhaoyun/yao
+  rotate: false
+  xy: 350, 171
+  size: 50, 29
+  orig: 50, 29
+  offset: 0, 0
+  index: -1

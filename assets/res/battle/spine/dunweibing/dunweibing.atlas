@@ -1,0 +1,195 @@
+
+dunweibing.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dunweibing/0
+  rotate: false
+  xy: 84, 248
+  size: 42, 30
+  orig: 42, 30
+  offset: 0, 0
+  index: -1
+dunweibing/Dun
+  rotate: false
+  xy: 2, 237
+  size: 80, 141
+  orig: 80, 141
+  offset: 0, 0
+  index: -1
+dunweibing/N_mouth
+  rotate: true
+  xy: 105, 192
+  size: 19, 13
+  orig: 19, 13
+  offset: 0, 0
+  index: -1
+dunweibing/S_eyes
+  rotate: true
+  xy: 283, 360
+  size: 35, 17
+  orig: 35, 17
+  offset: 0, 0
+  index: -1
+dunweibing/S_mouth
+  rotate: true
+  xy: 60, 67
+  size: 18, 7
+  orig: 18, 7
+  offset: 0, 0
+  index: -1
+dunweibing/arm_l
+  rotate: false
+  xy: 107, 368
+  size: 64, 35
+  orig: 64, 35
+  offset: 0, 0
+  index: -1
+dunweibing/arm_r
+  rotate: false
+  xy: 84, 317
+  size: 49, 49
+  orig: 49, 49
+  offset: 0, 0
+  index: -1
+dunweibing/arm_up_l
+  rotate: true
+  xy: 311, 444
+  size: 66, 77
+  orig: 66, 77
+  offset: 0, 0
+  index: -1
+dunweibing/arm_up_r
+  rotate: true
+  xy: 226, 358
+  size: 37, 55
+  orig: 37, 55
+  offset: 0, 0
+  index: -1
+dunweibing/body
+  rotate: false
+  xy: 107, 405
+  size: 117, 105
+  orig: 117, 105
+  offset: 0, 0
+  index: -1
+dunweibing/daolight_3
+  rotate: false
+  xy: 226, 436
+  size: 83, 74
+  orig: 83, 74
+  offset: 0, 0
+  index: -1
+dunweibing/eyes
+  rotate: false
+  xy: 2, 2
+  size: 36, 14
+  orig: 36, 14
+  offset: 0, 0
+  index: -1
+dunweibing/foot_l
+  rotate: false
+  xy: 76, 190
+  size: 27, 21
+  orig: 27, 21
+  offset: 0, 0
+  index: -1
+dunweibing/foot_r
+  rotate: false
+  xy: 76, 168
+  size: 23, 20
+  orig: 23, 20
+  offset: 0, 0
+  index: -1
+dunweibing/hand_l
+  rotate: true
+  xy: 2, 150
+  size: 85, 72
+  orig: 85, 72
+  offset: 0, 0
+  index: -1
+dunweibing/head
+  rotate: false
+  xy: 2, 87
+  size: 66, 61
+  orig: 66, 61
+  offset: 0, 0
+  index: -1
+dunweibing/head_r
+  rotate: false
+  xy: 84, 280
+  size: 44, 35
+  orig: 44, 35
+  offset: 0, 0
+  index: -1
+dunweibing/helmet
+  rotate: true
+  xy: 2, 18
+  size: 67, 56
+  orig: 67, 56
+  offset: 0, 0
+  index: -1
+dunweibing/hu
+  rotate: true
+  xy: 457, 444
+  size: 66, 42
+  orig: 66, 42
+  offset: 0, 0
+  index: -1
+dunweibing/leg_l
+  rotate: true
+  xy: 135, 325
+  size: 41, 34
+  orig: 41, 34
+  offset: 0, 0
+  index: -1
+dunweibing/leg_r
+  rotate: false
+  xy: 84, 213
+  size: 34, 33
+  orig: 34, 33
+  offset: 0, 0
+  index: -1
+dunweibing/lian
+  rotate: true
+  xy: 173, 355
+  size: 48, 51
+  orig: 48, 51
+  offset: 0, 0
+  index: -1
+dunweibing/mohu
+  rotate: false
+  xy: 2, 380
+  size: 103, 130
+  orig: 103, 130
+  offset: 0, 0
+  index: -1
+dunweibing/mouth
+  rotate: false
+  xy: 76, 153
+  size: 24, 13
+  orig: 24, 13
+  offset: 0, 0
+  index: -1
+dunweibing/scapula_l
+  rotate: false
+  xy: 390, 448
+  size: 65, 62
+  orig: 65, 62
+  offset: 0, 0
+  index: -1
+dunweibing/smok
+  rotate: false
+  xy: 171, 329
+  size: 49, 24
+  orig: 49, 24
+  offset: 0, 0
+  index: -1
+dunweibing/yao
+  rotate: false
+  xy: 226, 397
+  size: 75, 37
+  orig: 75, 37
+  offset: 0, 0
+  index: -1

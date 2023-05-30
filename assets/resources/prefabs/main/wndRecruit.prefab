@@ -1717,7 +1717,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 880,
-      "height": 517
+      "height": 277
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3963,7 +3963,7 @@
         "__id__": 129
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 132
@@ -5035,7 +5035,7 @@
         "__id__": 157
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 162
@@ -6158,7 +6158,7 @@
     "_layoutSize": {
       "__type__": "cc.Size",
       "width": 880,
-      "height": 517
+      "height": 277
     },
     "_resize": 1,
     "_N$layoutType": 2,

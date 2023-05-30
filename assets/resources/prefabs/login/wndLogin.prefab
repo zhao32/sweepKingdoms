@@ -2150,7 +2150,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 61
@@ -2296,7 +2296,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -85.758,
+        -147.75799999999998,
         0,
         0,
         0,

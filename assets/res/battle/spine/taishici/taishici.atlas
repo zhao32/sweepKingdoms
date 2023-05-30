@@ -1,0 +1,216 @@
+
+taishici.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+taishici/N_eyes
+  rotate: false
+  xy: 402, 405
+  size: 20, 15
+  orig: 20, 15
+  offset: 0, 0
+  index: -1
+taishici/N_mouth
+  rotate: true
+  xy: 78, 12
+  size: 16, 6
+  orig: 16, 6
+  offset: 0, 0
+  index: -1
+taishici/S_eyes
+  rotate: true
+  xy: 158, 317
+  size: 19, 7
+  orig: 19, 7
+  offset: 0, 0
+  index: -1
+taishici/S_lei
+  rotate: false
+  xy: 158, 338
+  size: 8, 22
+  orig: 8, 22
+  offset: 0, 0
+  index: -1
+taishici/arm_l
+  rotate: false
+  xy: 124, 166
+  size: 32, 36
+  orig: 32, 36
+  offset: 0, 0
+  index: -1
+taishici/arm_r
+  rotate: true
+  xy: 2, 2
+  size: 26, 24
+  orig: 26, 24
+  offset: 0, 0
+  index: -1
+taishici/arm_up_l
+  rotate: true
+  xy: 455, 428
+  size: 36, 29
+  orig: 36, 29
+  offset: 0, 0
+  index: -1
+taishici/arm_up_r
+  rotate: false
+  xy: 124, 204
+  size: 39, 47
+  orig: 39, 47
+  offset: 0, 0
+  index: -1
+taishici/body
+  rotate: false
+  xy: 351, 401
+  size: 49, 63
+  orig: 49, 63
+  offset: 0, 0
+  index: -1
+taishici/box1
+  rotate: false
+  xy: 207, 364
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+taishici/daolight_3
+  rotate: false
+  xy: 2, 362
+  size: 165, 148
+  orig: 165, 148
+  offset: 0, 0
+  index: -1
+taishici/eyes
+  rotate: false
+  xy: 245, 387
+  size: 18, 9
+  orig: 18, 9
+  offset: 0, 0
+  index: -1
+taishici/foot_l
+  rotate: false
+  xy: 28, 2
+  size: 18, 26
+  orig: 18, 26
+  offset: 0, 0
+  index: -1
+taishici/foot_r
+  rotate: true
+  xy: 424, 406
+  size: 14, 21
+  orig: 14, 21
+  offset: 0, 0
+  index: -1
+taishici/hair
+  rotate: false
+  xy: 70, 129
+  size: 52, 122
+  orig: 52, 122
+  offset: 0, 0
+  index: -1
+taishici/hand_l
+  rotate: true
+  xy: 486, 459
+  size: 20, 24
+  orig: 20, 24
+  offset: 0, 0
+  index: -1
+taishici/hand_r
+  rotate: true
+  xy: 229, 366
+  size: 18, 17
+  orig: 18, 17
+  offset: 0, 0
+  index: -1
+taishici/head
+  rotate: false
+  xy: 70, 253
+  size: 86, 107
+  orig: 86, 107
+  offset: 0, 0
+  index: -1
+taishici/leg_l
+  rotate: false
+  xy: 485, 481
+  size: 25, 29
+  orig: 25, 29
+  offset: 0, 0
+  index: -1
+taishici/leg_r
+  rotate: false
+  xy: 486, 432
+  size: 22, 25
+  orig: 22, 25
+  offset: 0, 0
+  index: -1
+taishici/mouth
+  rotate: false
+  xy: 70, 123
+  size: 16, 4
+  orig: 16, 4
+  offset: 0, 0
+  index: -1
+taishici/pifeng
+  rotate: true
+  xy: 2, 30
+  size: 91, 82
+  orig: 91, 82
+  offset: 0, 0
+  index: -1
+taishici/shoulder
+  rotate: false
+  xy: 402, 422
+  size: 51, 42
+  orig: 51, 42
+  offset: 0, 0
+  index: -1
+taishici/skirt_l
+  rotate: false
+  xy: 124, 134
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+taishici/skirt_r
+  rotate: true
+  xy: 48, 6
+  size: 22, 28
+  orig: 22, 28
+  offset: 0, 0
+  index: -1
+taishici/skirt_z
+  rotate: true
+  xy: 169, 364
+  size: 20, 36
+  orig: 20, 36
+  offset: 0, 0
+  index: -1
+taishici/wuqi
+  rotate: true
+  xy: 2, 123
+  size: 237, 66
+  orig: 237, 66
+  offset: 0, 0
+  index: -1
+taishici/wuqi_2
+  rotate: true
+  xy: 351, 466
+  size: 44, 132
+  orig: 44, 132
+  offset: 0, 0
+  index: -1
+taishici/wuqi_b
+  rotate: true
+  xy: 169, 398
+  size: 112, 180
+  orig: 112, 180
+  offset: 0, 0
+  index: -1
+taishici/yilight
+  rotate: false
+  xy: 169, 386
+  size: 74, 10
+  orig: 74, 10
+  offset: 0, 0
+  index: -1
