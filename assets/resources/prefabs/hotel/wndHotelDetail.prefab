@@ -10115,6 +10115,17 @@
     "runPfb": {
       "__uuid__": "f8ccc9f2-0700-41bd-b899-db8064be6a15"
     },
+    "runePotsFrame": [
+      {
+        "__uuid__": "d71ca2cd-2f38-4c36-a7b7-523ecc046f69"
+      },
+      {
+        "__uuid__": "4838dfde-0a68-444a-a0fb-b5e1103d166f"
+      },
+      {
+        "__uuid__": "cba82162-afe3-4b5f-9223-34c8664ef178"
+      }
+    ],
     "_id": ""
   },
   {

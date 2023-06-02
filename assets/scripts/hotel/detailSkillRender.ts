@@ -39,6 +39,7 @@ export default class NewClass extends cc.Component {
      */
     init(data, proficiency, talents) {
         this.nameLabel.string = data.name
+        //skillAttributeList ['', '挥砍防御', '挥砍攻击', '穿透防御', '穿透攻击', '法术攻击', '法术防御']
 
         ResManager.loadItemIcon(`skills/${data.name}`, this.icon)
         // 三字奥义	熟练度减熟练度的10%	减去之后除以20		

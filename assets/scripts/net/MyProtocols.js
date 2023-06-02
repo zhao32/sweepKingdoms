@@ -2100,7 +2100,7 @@ var MyProtocols = {
 		var retObj = {};
 		let card_info_exist = myDecoder.readBool();
 		if (card_info_exist == true) {
-			debugger;
+			// debugger;
 			retObj.card_info = {};
 			retObj.card_info.id = myDecoder.readString();
 			retObj.card_info.template_id = myDecoder.readInt();

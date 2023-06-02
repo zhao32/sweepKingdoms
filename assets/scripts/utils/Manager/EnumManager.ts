@@ -82,7 +82,9 @@ export default class EnumManager {
         /**战斗准备 */
         WND_STAGE_READY: 'prefabs/stage/wndStageReady',
 
-        
+        /**战斗 */
+        WND_STAGE_BATTLE: 'prefabs/stage/wndBattle',
+
 
     }
 }

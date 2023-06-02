@@ -65,6 +65,16 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 500
+          }, {
+            "arm": 3,
+            "count": 500
+          }
+        ],
         "require_level": 1,
         "first_drops": [
           {
@@ -211,6 +221,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 1,
         "first_drops": [
           {
@@ -330,6 +347,13 @@
             "level": 3,
             "unit_level": 1,
             "card_grade": 0
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 1,
@@ -477,6 +501,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 1,
         "first_drops": [
           {
@@ -596,6 +627,13 @@
             "level": 3,
             "unit_level": 3,
             "card_grade": 0
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 1,
@@ -801,6 +839,13 @@
             "level": 1,
             "unit_level": 0,
             "card_grade": 0
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 3,
@@ -2475,6 +2520,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 10,
         "first_drops": [
           {
@@ -2632,6 +2684,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 2,
+            "count": 100
+          }
+        ],
         "require_level": 10,
         "first_drops": [
           {
@@ -2785,6 +2844,13 @@
             "level": 3,
             "unit_level": 2,
             "card_grade": 0
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 10,
@@ -2942,6 +3008,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 10,
         "first_drops": [
           {
@@ -3095,6 +3168,13 @@
             "level": 4,
             "unit_level": 3,
             "card_grade": 0
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 10,
@@ -3280,6 +3360,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 10,
         "first_drops": [
           {
@@ -3433,6 +3520,13 @@
             "level": 5,
             "unit_level": 4,
             "card_grade": 0
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 10,
@@ -3590,6 +3684,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 10,
         "first_drops": [
           {
@@ -3745,6 +3846,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 10,
         "first_drops": [
           {
@@ -3898,6 +4006,13 @@
             "level": 5,
             "unit_level": 4,
             "card_grade": 1
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 10,
@@ -4145,6 +4260,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 13,
         "first_drops": [
           {
@@ -4302,6 +4424,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 13,
         "first_drops": [
           {
@@ -4455,6 +4584,13 @@
             "level": 6,
             "unit_level": 6,
             "card_grade": 0
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 13,
@@ -4612,6 +4748,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 13,
         "first_drops": [
           {
@@ -4765,6 +4908,13 @@
             "level": 9,
             "unit_level": 9,
             "card_grade": 0
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 13,
@@ -4948,6 +5098,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 13,
         "first_drops": [
           {
@@ -5101,6 +5258,13 @@
             "level": 12,
             "unit_level": 12,
             "card_grade": 0
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 13,
@@ -5258,6 +5422,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 13,
         "first_drops": [
           {
@@ -5413,6 +5584,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 13,
         "first_drops": [
           {
@@ -5566,6 +5744,13 @@
             "level": 12,
             "unit_level": 12,
             "card_grade": 0
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 13,
@@ -5816,6 +6001,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 17,
         "first_drops": [
           {
@@ -5969,6 +6161,13 @@
             "level": 12,
             "unit_level": 12,
             "card_grade": 0
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 17,
@@ -6126,6 +6325,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 17,
         "first_drops": [
           {
@@ -6281,6 +6487,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 17,
         "first_drops": [
           {
@@ -6434,6 +6647,13 @@
             "level": 15,
             "unit_level": 15,
             "card_grade": 1
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 17,
@@ -6617,6 +6837,13 @@
             "card_grade": 1
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 17,
         "first_drops": [
           {
@@ -6772,6 +6999,13 @@
             "card_grade": 1
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 17,
         "first_drops": [
           {
@@ -6925,6 +7159,13 @@
             "level": 18,
             "unit_level": 18,
             "card_grade": 1
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 17,
@@ -7084,6 +7325,13 @@
             "card_grade": 1
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 17,
         "first_drops": [
           {
@@ -7239,6 +7487,13 @@
             "level": 20,
             "unit_level": 20,
             "card_grade": 1
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 17,

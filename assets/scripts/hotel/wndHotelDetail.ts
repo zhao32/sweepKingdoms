@@ -61,6 +61,11 @@ export default class NewClass extends cc.Component {
 
     @property({ type: cc.Prefab, displayName: '石槽预制体' })
     runPfb: cc.Prefab = null;
+
+    @property({ type: cc.SpriteFrame, displayName: '石槽图' })
+    runePotsFrame: cc.SpriteFrame[] = [];
+
+
     // LIFE-CYCLE CALLBACKS:
 
     _data
@@ -68,31 +73,28 @@ export default class NewClass extends cc.Component {
     // onLoad () {}
 
     start() {
-        NetEventDispatcher.addListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock.bind(this))
     }
 
     S2CRuneUnlock(retObj) {
         console.log('开启石槽返回：' + JSON.stringify(retObj))
-        // {"card_id":19,"pos_index":2}
-        console.log(this)
+        this._data.runeUnlock.push(retObj.pos_index)
+        this.node.getChildByName('cao').children[retObj.pos_index].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[1]
 
-        console.log(JSON.stringify(this._data))
-        this._data.runePutup[retObj.pos_index] = 1
-        console.log(JSON.stringify(this._data))
-
-        this._data.runePutup[retObj.pos_index] = 1
         for (let i = 0; i < this._data.runePutup.length; i++) {
             let render = this.contect.children[i]
-            render.getComponent(detailRuneRender).init(this._data.runePutup[i], i, this._data.template_id)
+            let state = this._data.runeUnlock.indexOf(i) != -1 ? 1 : 0
+            render.getComponent(detailRuneRender).init(state, i, this._data.template_id)
         }
 
     }
     /**data 服务器获取的将领数据 */
     init(data) {
+        NetEventDispatcher.addListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock.bind(this))
+
+
         console.log('-----data:' + JSON.stringify(data))
         this._data = data
         let defaultData = DataManager.GameData.Cards[data.template_id]
-        // this.nameDisplay.string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
         ResManager.loadItemIcon(`hero/${defaultData.name}`, this.head)
         ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.headBg)
         ResManager.loadItemIcon(`hero/heroNameBg${defaultData.quality - 1}`, this.heroNameBg)
@@ -136,8 +138,15 @@ export default class NewClass extends cc.Component {
         // }
 
         for (let i = 0; i < data.runePutup.length; i++) {
-            ResManager.loadItemIcon(`hero/runePot${data.runePutup[i]}`, this.node.getChildByName('cao').children[i])
+            // ResManager.loadItemIcon(`hero/runePot${data.runePutup[i]}`, this.node.getChildByName('cao').children[i])
+            this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[data.runePutup[i]]
         }
+
+        for (let i = 0; i < data.runeUnlock.length; i++) {
+            // ResManager.loadItemIcon(`hero/runePot1`, this.node.getChildByName('cao').children[data.runeUnlock[i]])
+            this.node.getChildByName('cao').children[data.runeUnlock[i]].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[1]
+        }
+
 
         this.node.getChildByName(`btnSkill`).on(cc.Node.EventType.TOUCH_END, () => {
             this.initSkills(defaultData.skills, data.proficiency, defaultData.talents)
@@ -172,15 +181,22 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < this._data.runePutup.length; i++) {
             let render = cc.instantiate(this.runPfb)
             render.parent = this.contect
-            render.getComponent(detailRuneRender).init(this._data.runePutup[i], i, this._data.template_id)
+
+            let state = 0
+            if (this._data.runeUnlock.indexOf(i) != -1) {
+                state = 1
+            }
+            render.getComponent(detailRuneRender).init(state, i, this._data.template_id)
         }
 
 
     }
 
     onClose() {
-        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL_LIST)
+
+        NetEventDispatcher.removeListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock.bind(this))
 
     }
 

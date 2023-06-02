@@ -29,6 +29,9 @@ export default class NewClass extends cc.Component {
     @property(cc.Label)
     tipDisplay1: cc.Label = null;
 
+    @property({ type: cc.SpriteFrame, displayName: '石槽图' })
+    runePotsFrame: cc.SpriteFrame[] = [];
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -49,8 +52,8 @@ export default class NewClass extends cc.Component {
         this._state = state
         this._heroid = heroid
         this._idx = idx
-        ResManager.loadItemIcon(`hero/runePot${state}`, this.node.getChildByName('rune'))
-
+        // ResManager.loadItemIcon(`hero/runePot${state}`, this.node.getChildByName('rune'))
+        this.node.getChildByName('rune').getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[state]
         if (state == 0) {
             this.btnLabel.string = '开启'
             this.tipDisplay0.string = `未开启`

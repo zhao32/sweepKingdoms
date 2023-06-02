@@ -28,13 +28,13 @@ interface playData {
     offline_add_level: number,
     offline_rewards: [],
     /** 1 军营 2 盾卫 3 骑士 4 枪兵 5 箭手 6 法师 7 木牛 8 军魂  9 士兵强化塔*/
-    barracks_build: [],
+    barracks_build: number[],
     /**1 筑币 2 粮草 3 领土 4 技术研究所 */
-    resource_build: [],
+    resource_build: number[],
     /**1 居民 2 资源仓库 3 战神像 4 英魂墓地 5 城墙 */
-    basic_build: [],
+    basic_build: number[],
     /**军队数量 */
-    military_data: []
+    military_data: number[]
 
 }
 

@@ -20,7 +20,7 @@ export default class GameUtil {
 
     public static _isPlaying: boolean = false
 
-  
+
     static addPfbNode(path: string, parent, posX, container) {
         let name = ResManager.Instance.getResourcesName(path);
         let viewNode: cc.Node = null// this.UIRoot.getChildByName(name);
@@ -50,10 +50,31 @@ export default class GameUtil {
     static group(array, subGroupLength) {
         let index = 0;
         let newArray = [];
-        while(index < array.length) {
+        while (index < array.length) {
             newArray.push(array.slice(index, index += subGroupLength));
         }
         return newArray;
+    }
+
+    static deepClone(obj) {
+        if (typeof obj !== 'object' || obj == null) { // obj==null相当于obj===null || obj===undefined
+            // obj为null或undefined或者不是对象不是数组，则直接返回
+            return obj
+        }
+
+        // 初始化返回结果
+        let result
+        if (obj instanceof Array) {
+            result = []
+        } else {
+            result = {}
+        }
+        for (let key in obj) {
+            if (obj.hasOwnProperty(key)) {  // 保证key不是从原型继承来的
+                result[key] = this.deepClone(obj[key]) // 递归调用
+            }
+        }
+        return result // 返回结果
     }
 
 }

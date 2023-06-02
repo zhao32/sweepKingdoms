@@ -7,6 +7,7 @@
 
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
+import GameUtil from "../utils/Manager/GameUtil";
 import { Logger } from "../utils/Manager/Logger";
 import ViewManager from "../utils/Manager/ViewManager";
 import StageSelectItem from "./StageSelectItem";
@@ -62,13 +63,17 @@ export default class NewClass extends cc.Component {
 
 
     }
-
+    curStageData: any
     // stateData:{"stages":[{"star":3,"times":5,"is_get_award":false},{"star":3,"times":19,"is_get_award":false}],"star_award":[]}
     init(data = this._data, stateData = this._stateData) {
+        data = GameUtil.deepClone(data)
         this._data = data
         this._stateData = stateData
+        this.curStageData = data.stage[0]
+
         // console.log('stateData:'+ JSON.stringify(data))
-        console.log(`stateData:` + JSON.stringify(stateData))
+        // console.log(`stageData:` + JSON.stringify(data))
+        // console.log(`stateData:` + JSON.stringify(stateData))
         this.nameLabel.string = data.name;
         this.awardExpLabel.string = 'x' + data.stage[0].exp
         this.awardCoinLabel.string = 'x' + data.stage[0].gamemoney
@@ -88,6 +93,7 @@ export default class NewClass extends cc.Component {
                 item.getChildByName('selected').active = true
                 this._selectIdx = i + 1
                 // console.log('this._selectIdx:' + this._selectIdx)
+                this.curStageData = data.stage[i]
             }, this)
         }
     }
@@ -100,7 +106,7 @@ export default class NewClass extends cc.Component {
     onHandleStart() {
         Logger.log('-----开始副本----')
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_READY)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_READY,...[this.curStageData])
     }
 
     // update (dt) {}

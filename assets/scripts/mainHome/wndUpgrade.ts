@@ -57,24 +57,24 @@ export default class NewClass extends cc.Component {
     /**建筑序号 从0开始*/
     idx: number = 0
 
-    group: string
+    private group: string = ''
 
     _name: string
 
     start() {
-        NetEventDispatcher.addListener(NetEvent.S2UPBulid, this.UPBulid.bind(this))
     }
 
     protected onDestroy(): void {
-        NetEventDispatcher.removeListener(NetEvent.S2UPBulid, this.UPBulid.bind(this))
+        console.log(`---------关闭升级页面-----------`)
+        // NetEventDispatcher.removeListener(NetEvent.S2UPBulid, this.UPBulid.bind(this))
     }
 
-    UPBulid(retObj) {
+    private UPBulid(retObj) {
         console.log('升级后返回：' + JSON.stringify(retObj))
         // 升级后返回：{"lv":2,"type":2}
         console.log(this.idx - 1)
+        console.log('retObj back grolup:' + this.group)
         // console.log(JSON.stringify(DataManager.GameData.build[this.group]))
-
         console.log(JSON.stringify(DataManager.GameData.build[this.group][this.idx]))
 
         DataManager.GameData.build[this.group][this.idx].grade = retObj.lv
@@ -84,12 +84,15 @@ export default class NewClass extends cc.Component {
     }
 
     init(name, from: string) {
+        NetEventDispatcher.addListener(NetEvent.S2UPBulid, this.UPBulid.bind(this))
+
+        console.log('init this.group:' + this.group)
+
         this._name = name
         // let barracksList = ["军营", '盾卫训练场', '骑士训练场', '枪兵训练场', '箭手训练场', '法师训练场', '木牛工厂', '军魂祭坛', '部队强化']
         // let resourceList = ["铸币工坊", "粮草工坊", "领土中心", "技术研究所"];
         // let basicList = ["居民区", "资源仓库", "神像", "英魂墓地", "城墙"];
 
-        this.group = ''
         let idx = 0
         if (DataManager.barracksList.indexOf(name) != -1) {
             this.group = 'barracks'
@@ -120,6 +123,7 @@ export default class NewClass extends cc.Component {
                 }
             }
         }
+        console.log('init this.group:' + this.group)
         this.idx = idx - 1
         console.log('grade:' + DataManager.GameData.build[this.group][idx - 1].grade)
         let grade = DataManager.GameData.build[this.group][idx - 1].grade
@@ -182,10 +186,12 @@ export default class NewClass extends cc.Component {
     }
 
     onCloseHandler() {
-        ViewManager.instance.hideWnd(EnumManager.viewPath.WND_MAIN_UPGRADE, true)
+        ViewManager.instance.hideWnd(EnumManager.viewPath.WND_MAIN_UPGRADE)
         if (this._from) {
             ViewManager.instance.showWnd(this._from)
         }
+        NetEventDispatcher.removeListener(NetEvent.S2UPBulid, this.UPBulid.bind(this))
+
     }
 
     onUpgrade1() {
