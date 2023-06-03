@@ -256,8 +256,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 580,
-      "height": 680
+      "width": 739,
+      "height": 750
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -309,7 +309,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "4f04bdaa-0e1e-4733-a764-bc6ff7ec1730"
+      "__uuid__": "aa345081-e8f1-4707-89e6-829b1fbb0ce7"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -344,7 +344,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 9
@@ -483,7 +483,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        138,
+        118,
         0,
         0,
         0,
@@ -590,7 +590,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        136.97899999999998,
+        116.97899999999998,
         0,
         0,
         0,
@@ -685,7 +685,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 487,
-      "height": 226
+      "height": 232
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -697,7 +697,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        138,
+        118,
         0,
         0,
         0,
@@ -814,7 +814,7 @@
       "ctor": "Float64Array",
       "array": [
         6,
-        -126,
+        -172,
         0,
         0,
         0,
@@ -1163,7 +1163,7 @@
       "ctor": "Float64Array",
       "array": [
         5,
-        -202,
+        -248,
         0,
         0,
         0,
@@ -1512,7 +1512,7 @@
       "ctor": "Float64Array",
       "array": [
         3,
-        -278,
+        -324,
         0,
         0,
         0,
@@ -1851,7 +1851,7 @@
       "ctor": "Float64Array",
       "array": [
         -6.2,
-        -35.236999999999995,
+        -56.236999999999995,
         0,
         0,
         0,
@@ -1949,8 +1949,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 84,
-      "height": 54.4
+      "width": 106,
+      "height": 56.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1962,7 +1962,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        283.63300000000004,
+        312.63300000000004,
         0,
         0,
         0,
@@ -2003,7 +2003,7 @@
     "_dstBlendFactor": 771,
     "_string": "工坊",
     "_N$string": "工坊",
-    "_fontSize": 40,
+    "_fontSize": 50,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,
@@ -2034,7 +2034,7 @@
       "b": 0,
       "a": 255
     },
-    "_width": 2,
+    "_width": 3,
     "_id": ""
   },
   {
@@ -2220,7 +2220,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -200.726,
+        -246.726,
         0,
         0,
         0,

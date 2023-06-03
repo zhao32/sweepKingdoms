@@ -1528,9 +1528,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 0,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
@@ -1587,8 +1587,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "水电费",
-    "_N$string": "水电费",
+    "_string": "000",
+    "_N$string": "000",
     "_fontSize": 20,
     "_lineHeight": 28,
     "_enableWrapText": true,
@@ -1636,9 +1636,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 0,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
@@ -1695,8 +1695,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "水电费",
-    "_N$string": "水电费",
+    "_string": "000",
+    "_N$string": "000",
     "_fontSize": 20,
     "_lineHeight": 28,
     "_enableWrapText": true,
@@ -1744,9 +1744,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 0,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
@@ -1803,8 +1803,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "水电费",
-    "_N$string": "水电费",
+    "_string": "000",
+    "_N$string": "000",
     "_fontSize": 20,
     "_lineHeight": 28,
     "_enableWrapText": true,

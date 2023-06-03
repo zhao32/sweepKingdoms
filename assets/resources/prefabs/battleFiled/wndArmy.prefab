@@ -264,7 +264,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 919,
+      "width": 990,
       "height": 670
     },
     "_anchorPoint": {
@@ -309,7 +309,7 @@
       "__id__": 6
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 8
@@ -331,7 +331,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 899,
+      "width": 970,
       "height": 580
     },
     "_anchorPoint": {
@@ -478,7 +478,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        278.4,
+        312.4,
         0,
         0,
         0,
@@ -588,7 +588,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        286.633,
+        320.633,
         0,
         0,
         0,
@@ -807,9 +807,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 0,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
@@ -915,9 +915,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 0,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
@@ -1023,9 +1023,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 0,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
@@ -1212,9 +1212,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 0,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
@@ -1320,9 +1320,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 0,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
@@ -1428,9 +1428,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 0,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
@@ -1555,7 +1555,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 910,
-      "height": 170
+      "height": 180
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1566,7 +1566,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        0,
+        -13,
         101,
         0,
         0,
@@ -1662,7 +1662,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 910,
-      "height": 170
+      "height": 180
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1673,7 +1673,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        0,
+        -13,
         -143,
         0,
         0,
@@ -1775,7 +1775,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 890,
+      "width": 900,
       "height": 160
     },
     "_anchorPoint": {
@@ -1787,8 +1787,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        0.001,
-        105.681,
+        -14,
+        104,
         0,
         0,
         0,
@@ -1965,11 +1965,11 @@
       "height": 40
     },
     "_N$startAxis": 0,
-    "_N$paddingLeft": 10,
-    "_N$paddingRight": 10,
+    "_N$paddingLeft": 0,
+    "_N$paddingRight": 0,
     "_N$paddingTop": 0,
     "_N$paddingBottom": 0,
-    "_N$spacingX": 10,
+    "_N$spacingX": 5,
     "_N$spacingY": 0,
     "_N$verticalDirection": 1,
     "_N$horizontalDirection": 0,
@@ -2087,7 +2087,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "scrollView1",
+    "_name": " ",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -2119,7 +2119,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 890,
+      "width": 900,
       "height": 160
     },
     "_anchorPoint": {
@@ -2131,8 +2131,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        0,
-        -139.133,
+        -14,
+        -141,
         0,
         0,
         0,
@@ -2309,11 +2309,11 @@
       "height": 40
     },
     "_N$startAxis": 0,
-    "_N$paddingLeft": 10,
-    "_N$paddingRight": 10,
+    "_N$paddingLeft": 0,
+    "_N$paddingRight": 0,
     "_N$paddingTop": 0,
     "_N$paddingBottom": 0,
-    "_N$spacingX": 10,
+    "_N$spacingX": 5,
     "_N$spacingY": 0,
     "_N$verticalDirection": 1,
     "_N$horizontalDirection": 0,

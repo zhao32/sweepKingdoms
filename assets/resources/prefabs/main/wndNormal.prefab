@@ -263,8 +263,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 700,
-      "height": 555
+      "width": 739,
+      "height": 680
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -316,7 +316,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "4f04bdaa-0e1e-4733-a764-bc6ff7ec1730"
+      "__uuid__": "aa345081-e8f1-4707-89e6-829b1fbb0ce7"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -351,7 +351,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 10
@@ -490,7 +490,7 @@
       "ctor": "Float64Array",
       "array": [
         -5.188,
-        78.259,
+        88.259,
         0,
         0,
         0,
@@ -597,7 +597,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        81.979,
+        91.979,
         0,
         0,
         0,
@@ -692,7 +692,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 487,
-      "height": 226
+      "height": 232
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -704,7 +704,7 @@
       "ctor": "Float64Array",
       "array": [
         -3.459,
-        81.718,
+        91.718,
         0,
         0,
         0,
@@ -811,7 +811,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -88.237,
+        -78.237,
         0,
         0,
         0,
@@ -909,8 +909,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 84,
-      "height": 54.4
+      "width": 104,
+      "height": 67
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -922,7 +922,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        227.633,
+        278.63300000000004,
         0,
         0,
         0,
@@ -963,8 +963,8 @@
     "_dstBlendFactor": 771,
     "_string": "工坊",
     "_N$string": "工坊",
-    "_fontSize": 40,
-    "_lineHeight": 40,
+    "_fontSize": 50,
+    "_lineHeight": 50,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -1038,7 +1038,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 67.45,
+      "width": 69.2,
       "height": 54.4
     },
     "_anchorPoint": {
@@ -1099,7 +1099,7 @@
     "_isSystemFontUsed": true,
     "_spacingX": 0,
     "_batchAsBitmap": false,
-    "_styleFlags": 0,
+    "_styleFlags": 1,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
@@ -1187,7 +1187,7 @@
       "ctor": "Float64Array",
       "array": [
         -150,
-        -211,
+        -239,
         0,
         0,
         0,
@@ -1536,7 +1536,7 @@
       "ctor": "Float64Array",
       "array": [
         150,
-        -211,
+        -239,
         0,
         0,
         0,
@@ -1878,7 +1878,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -149.726,
+        -141.726,
         0,
         0,
         0,

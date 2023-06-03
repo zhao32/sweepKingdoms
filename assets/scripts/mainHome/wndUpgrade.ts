@@ -123,6 +123,10 @@ export default class NewClass extends cc.Component {
                 }
             }
         }
+
+        if (this.buildType == 0) {
+            console.error('出现错误，此时建筑为：' + name)
+        }
         console.log('init this.group:' + this.group)
         this.idx = idx - 1
         console.log('grade:' + DataManager.GameData.build[this.group][idx - 1].grade)

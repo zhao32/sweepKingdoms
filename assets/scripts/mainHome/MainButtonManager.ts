@@ -77,7 +77,7 @@ export default class NewClass extends cc.Component {
 
         let normalLList = ['居民区', '资源仓库', '神像', '英魂墓地', '城墙', '铸币工坊', '粮草工坊', '领土中心', '技术研究所', '军营']
 
-        let armList = ['枪兵训练场', '箭手训练场', '骑士训练场', '盾卫训练场', '军魂祭坛','木牛工厂']
+        let armList = ['枪兵训练场', '箭手训练场', '骑士训练场', '盾卫训练场', '军魂祭坛', '木牛工厂']
 
         if (ani.indexOf(customData) != -1) {
             Logger.log('点中' + customData)
@@ -95,6 +95,7 @@ export default class NewClass extends cc.Component {
                 this.nodeArea.getChildByName(customData).getComponent(dragonBones.ArmatureDisplay).playAnimation('action2', 1)
             }
         } else {
+            console.log('customData:' + customData)
             this.nodeArea.getChildByName(customData).runAction(cc.sequence(cc.fadeTo(0.4, 180), cc.fadeTo(0.3, 255)))
         }
 
@@ -107,10 +108,10 @@ export default class NewClass extends cc.Component {
         } else if (customData == '部队强化') {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_STRENGTHEN)
         } else if (armList.indexOf(customData) != -1) {
-            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_ARM,...[customData])
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_ARM, ...[customData])
         } else if (customData == '招募所') {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_RECRUITOFFICE)
-        }else if (customData == '巅峰战场') {
+        } else if (customData == '巅峰战场') {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLEFILED)
         }
 
