@@ -5687,10 +5687,10 @@ var MyProtocols = {
 		myEncoder.writeInt(p_seconds);
 		myEncoder.writeInt(p_hpPercent);
 
-		myDecoder.writeInt(arm_size)
+		myEncoder.writeInt(arm_size)
 		for (var i = 0; i < arm_size.length; i++) {
-			myDecoder.writeInt(myEncoder[i].arm);
-			myDecoder.writeInt(myEncoder[i].count);
+			myEncoder.writeInt(arm_size[i].arm);
+			myEncoder.writeInt(arm_size[i].count);
 		}
 
 		var rawContent = myEncoder.end();

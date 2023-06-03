@@ -146,12 +146,14 @@ export default class NewClass extends cc.Component {
         DataManager.GameData.buildUp['barracks']
 
         this.soldierNameDisplay.string = DataManager.GameData.Soldier[idx - 1].name
-        this.populationDisplay.string = `${DataManager.playData.population}/${maxProportion}`
-        this.troopsDisplay.string = `${DataManager.playData.troops}/${maxSolider}`
+        this.populationDisplay.string = `${Math.floor(DataManager.playData.population / maxProportion)}`
+        this.troopsDisplay.string = `${Math.floor(DataManager.playData.troops / maxSolider)}`
         let price = DataManager.GameData.Soldier[idx - 1].price
         this.soldierPriceDisplay.string = `粮草 x${price}`
         this.troopsDisplay1.string = String(DataManager.playData.population)
-        this.priceDisplay1.string = `x` + String(DataManager.GameData.buildUp[group][idx][grade - 1].population[1] * 0.01 * (DataManager.playData.population) * price);
+        let price1 = DataManager.GameData.buildUp[group][idx][grade - 1].population[1] * 0.01 * (DataManager.playData.population) * price
+        price1 = Math.floor(price1)
+        this.priceDisplay1.string = `x` + String(price1);
 
         this.soliderType = DataManager.GameData.buildUp[group][idx][grade - 1].soldier[0];
 
