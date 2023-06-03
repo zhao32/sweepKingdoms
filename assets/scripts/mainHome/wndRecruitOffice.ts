@@ -45,6 +45,18 @@ export default class NewClass extends cc.Component {
                     ViewManager.instance.showToast('请先建造居民区')
                     return
                 }
+
+                if (parseInt(key) >= 13) {
+                    ViewManager.instance.showToast('特殊兵种无法在招募所中招募')
+                    return
+                }
+                console.log('key:' + key)
+                let idx = parseInt(key) >= 7 ? parseInt(key) - 6 : parseInt(key)
+                console.log('barracks bulid:' + JSON.stringify(DataManager.GameData.build['barracks'][idx]))
+                if (DataManager.GameData.build['barracks'][idx].grade == 0) {
+                    ViewManager.instance.showToast(`请先建造${DataManager.GameData.build['barracks'][idx].name}`)
+                    return
+                }
                 ViewManager.instance.hideWnd(DataManager.curWndPath, true)
                 ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_RCRUIT, ...[parseInt(key) + 1])
             }, this)

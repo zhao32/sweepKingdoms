@@ -53,8 +53,14 @@ export default class NewClass extends cc.Component {
     start() {
         this.node.on(cc.Node.EventType.TOUCH_END, () => {
             if (this._data.grade == 0) {
-                this.curIdx = this._data.idx
-                MyProtocols.send_C2UPBulid(DataManager._loginSocket, 1, this.buildType, this._data.idx - 1, 1)
+                if (DataManager.playData.level >= DataManager.GameData.buildUp[this._data.group][this._data.idx][this._data.grade].unlocklevel) {
+                    this.curIdx = this._data.idx
+                    MyProtocols.send_C2UPBulid(DataManager._loginSocket, 1, this.buildType, this._data.idx - 1, 1)
+                } else {
+                    let unlocklevel = DataManager.GameData.buildUp[this._data.group][this._data.idx][this._data.grade].unlocklevel
+                    ViewManager.instance.showToast(`达到${unlocklevel}级,才能解锁该建筑`)
+                }
+
             } else {
                 Logger.log('打开升级窗口：' + this._data.name)
                 ViewManager.instance.hideWnd(DataManager.curWndPath)
@@ -95,12 +101,16 @@ export default class NewClass extends cc.Component {
 
         if (!this._data) this._data = data
         this.nameDisplay.string = data.name + ` Lv${data.grade}`
+
         if (data.grade == 0) {
             if (DataManager.playData.level >= DataManager.GameData.buildUp[data.group][data.idx][data.grade].unlocklevel) {
+                this.tipDisplay.string = '解锁建筑'
                 this.typeSprite.spriteFrame = this.typeFrames[1]
             } else {
                 this.typeSprite.spriteFrame = this.typeFrames[3]
+                this.tipDisplay.string = '未解锁建筑'
             }
+            this.nameDisplay.string = data.name
         } else if (data.grade == DataManager.GameData.buildUp[data.group][data.idx].length) {
             this.typeSprite.spriteFrame = this.typeFrames[2]
         } else {
@@ -108,7 +118,6 @@ export default class NewClass extends cc.Component {
         }
 
         if (data.grade == 0) {
-            this.tipDisplay.string = '解锁建筑'
 
             if (data.group == 'basic') {
                 this.buildType = 3

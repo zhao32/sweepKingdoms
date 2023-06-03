@@ -51,8 +51,8 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName('price').active = true
             this.priceDisplay.string = `x${data.price}`
         }
-
-        ResManager.loadItemIcon(`soliderHead/${data.name}`,this.soldierSprite.node)
+        this.powerDisplay.string = `x${data.defense.attack_1 + data.defense.attack_2 + data.defense.attack_3}`
+        ResManager.loadItemIcon(`soliderHead/${data.name}`, this.soldierSprite.node)
 
     }
 

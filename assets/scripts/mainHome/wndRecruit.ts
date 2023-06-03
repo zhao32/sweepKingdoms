@@ -98,7 +98,7 @@ export default class NewClass extends cc.Component {
         //     }
         // }
         let grade = DataManager.GameData.build[group][idx - 1].grade
-        console.log('兵：' + JSON.stringify(DataManager.GameData.buildUp[group][1][grade - 1]))
+        // console.log('兵：' + JSON.stringify(DataManager.GameData.buildUp[group][1][grade - 1]))
         let maxSolider = DataManager.GameData.buildUp[group][1][grade - 1].Soldier
 
         /**居民区等级 */
