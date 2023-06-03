@@ -42,6 +42,10 @@ export default class NewClass extends cc.Component {
     _stateData
     // LIFE-CYCLE CALLBACKS:
 
+    groupIdx: number
+
+    stageIdx: number
+
     // onLoad () {}
 
     start() {
@@ -65,12 +69,13 @@ export default class NewClass extends cc.Component {
     }
     curStageData: any
     // stateData:{"stages":[{"star":3,"times":5,"is_get_award":false},{"star":3,"times":19,"is_get_award":false}],"star_award":[]}
-    init(data = this._data, stateData = this._stateData) {
+    init(data = this._data, stateData = this._stateData, groupIdx: number) {
         data = GameUtil.deepClone(data)
         this._data = data
         this._stateData = stateData
         this.curStageData = data.stage[0]
-
+        this.groupIdx = groupIdx
+        this.stageIdx = 0
         // console.log('stateData:'+ JSON.stringify(data))
         // console.log(`stageData:` + JSON.stringify(data))
         // console.log(`stateData:` + JSON.stringify(stateData))
@@ -92,6 +97,7 @@ export default class NewClass extends cc.Component {
                 }
                 item.getChildByName('selected').active = true
                 this._selectIdx = i + 1
+                this.stageIdx = i
                 // console.log('this._selectIdx:' + this._selectIdx)
                 this.curStageData = data.stage[i]
             }, this)
@@ -106,7 +112,7 @@ export default class NewClass extends cc.Component {
     onHandleStart() {
         Logger.log('-----开始副本----')
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_READY,...[this.curStageData])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_READY, ...[this.curStageData, this.groupIdx, this.stageIdx])
     }
 
     // update (dt) {}

@@ -101,7 +101,7 @@ export default class NewClass extends cc.Component {
                 // this.showIntragroup(DataManager.GameData.Stages[i].stage)
                 if (isOpen) {
                     ViewManager.instance.hideWnd(DataManager.curWndPath, true)
-                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_SELECT, ...[DataManager.GameData.Stages[i], data[i]])
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_SELECT, ...[DataManager.GameData.Stages[i], data[i]],i)
                 } else {
                     ViewManager.instance.showToast('关卡尚未开启')
                 }

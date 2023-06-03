@@ -47,13 +47,17 @@ export default class NewClass extends cc.Component {
     // otherHeroData: any
     _stageData
 
+    groupIdx: number
 
+    stageIdx: number
     start() {
 
     }
 
 
-    init(stageData) {
+    init(stageData, groupIdx, stageIdx) {
+        this.groupIdx = groupIdx
+        this.stageIdx = stageIdx
         this._stageData = stageData
         // "cardId":1,"soliders":[{"arm":1,"count":100}]
         console.log('stageData:' + JSON.stringify(stageData))
@@ -152,9 +156,10 @@ export default class NewClass extends cc.Component {
                 let render = this.myContect.children[i]
                 let data = render.getComponent(stageSoliderRender).getSelectNum()
                 myData.soliderList.push(data)
-                allNum += data[1]
+                allNum += data.count
                 // console.log(JSON.stringify(render.getComponent(stageSoliderRender).getSelectNum()))
             }
+
 
             if (allNum == 0) {
                 ViewManager.instance.showToast('请选择上阵士兵')
@@ -163,7 +168,7 @@ export default class NewClass extends cc.Component {
 
             console.log('my_template_id:' + this.my_template_id)
             ViewManager.instance.hideWnd(DataManager.curWndPath)
-            ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_BATTLE, ...[myData, otherData])
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_BATTLE, ...[myData, otherData, this.groupIdx, this.stageIdx])
         }
     }
 

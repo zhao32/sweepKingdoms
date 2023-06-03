@@ -2370,7 +2370,7 @@ var MyProtocols = {
 		var retObj = {};
 		retObj.card_id = myDecoder.readInt();
 		retObj.pos_index = myDecoder.readInt();
-		console.log(`解锁符槽返回：`+JSON.stringify(retObj))
+		console.log(`解锁符槽返回：` + JSON.stringify(retObj))
 		return retObj;
 	},
 
@@ -5678,7 +5678,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	send_C2SStageEnd: function (senderSocket, p_group_index, p_stage_index, p_is_win, p_seconds, p_hpPercent, p_die_num) {
+	send_C2SStageEnd: function (senderSocket, p_group_index, p_stage_index, p_is_win, p_seconds, p_hpPercent, arm_size) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3003);
 		myEncoder.writeInt(p_group_index);
@@ -5686,12 +5686,17 @@ var MyProtocols = {
 		myEncoder.writeBool(p_is_win);
 		myEncoder.writeInt(p_seconds);
 		myEncoder.writeInt(p_hpPercent);
-		myEncoder.writeInt(p_die_num);
+
+		myDecoder.writeInt(arm_size)
+		for (var i = 0; i < arm_size.length; i++) {
+			myDecoder.writeInt(myEncoder[i].arm);
+			myDecoder.writeInt(myEncoder[i].count);
+		}
+
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
 	},
-
 	get_3004: function (myDecoder) {
 		var retObj = {};
 		retObj.group_index = myDecoder.readInt();
@@ -5708,6 +5713,8 @@ var MyProtocols = {
 				retObj.rewards[i].num = myDecoder.readInt();
 			}
 		}
+
+		console.log(JSON.stringify(retObj))
 		return retObj;
 	},
 
@@ -6252,7 +6259,7 @@ var MyProtocols = {
 	},
 
 	//请求解锁石槽  参数将ID   位置ID 从0开始
-	send_C2SOpenRuneSlot: function (senderSocket, hero_id ,pos_index) {
+	send_C2SOpenRuneSlot: function (senderSocket, hero_id, pos_index) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2025);
 		myEncoder.writeInt(hero_id);

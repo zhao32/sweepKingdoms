@@ -39,7 +39,6 @@ export default class NewClass extends cc.Component {
         ResManager.loadItemIcon(`hero/soldierType${data.arm}`, this.typeNode)
 
         this.arm = data.arm
-
     }
 
     changeState(count) {

@@ -7,10 +7,18 @@
 
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
+import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 import enemyHeroItem from "./enemyHeroItem";
 import heroItem from "./heroItem";
 import soliderItem from "./soliderItem";
+
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 const { ccclass, property } = cc._decorator;
 
@@ -72,7 +80,24 @@ export default class NewClass extends cc.Component {
     enemyAttackList = []
     // LIFE-CYCLE CALLBACKS:
 
+    myCount = {
+        troops: 0,
+        hurt: 0
+    }
+
+    enemyCount = {
+        troops: 0,
+        hurt: 0
+    }
+
+    battleInfo: string = ''
     // onLoad () {}
+
+    groupIdx: number
+
+    stageIdx: number
+
+    startTime: number
 
     start() {
 
@@ -206,7 +231,12 @@ export default class NewClass extends cc.Component {
     }
     // myData:{"heroData":{"id":"150717","template_id":19,"level":1,"num":1,"exp":0,"grade":0,"unit_level":1,"unitGrade":1,"unit_type":3,"fight":3201,"physical":200,"equips":["0","0","0","0","0","0"],"unitEquips":[0,0,0,0,0],"runeUnlock":[0,1,2,4,5,3],"runePutup":[0,0,0,0,0,0,0,0],"runeLevel":[0,0,0,0,0,0,0,0],"skills_equips":[0],"proficiency":[1430,115,198],"aptitude":[481,373,213]},"soliderList":[{"arm":1,"count":106},{"arm":2,"count":0},{"arm":3,"count":0}]}
 
-    init(myData, otherData) {
+    init(myData, otherData, groupIdx, stageIdx) {
+        this.groupIdx = groupIdx
+        this.stageIdx = stageIdx
+
+        this.startTime = new Date().getTime()
+
         console.log('myData:' + JSON.stringify(myData))
         console.log('otherData:' + JSON.stringify(otherData))
         for (let i = 0; i < myData.soliderList.length; i++) {
@@ -286,6 +316,7 @@ export default class NewClass extends cc.Component {
             let item = cc.instantiate(this.soliderPfb)
             item.parent = this.myContect
             item.getComponent(soliderItem).init(myData.soliderList[i])
+            this.myCount.troops += myData.soliderList[i].count
         }
 
         this.otherContect.removeAllChildren()
@@ -296,6 +327,8 @@ export default class NewClass extends cc.Component {
             let item = cc.instantiate(this.soliderPfb)
             item.parent = this.otherContect
             item.getComponent(soliderItem).init(otherData.soliderList[i])
+            this.enemyCount.troops += otherData.soliderList[i].count
+
         }
         // this.myAttack(0, 0)
 
@@ -306,6 +339,7 @@ export default class NewClass extends cc.Component {
         let enemyAttackList = []
         console.error('otherData:' + JSON.stringify(otherData))
 
+        let self = this
         myAttack()
 
         function myAttack() {
@@ -321,11 +355,18 @@ export default class NewClass extends cc.Component {
                 enemyNum: 0
             }
 
+            let info: string
             if (myAttacknum - enemyDefensenum > 0) {//打死了这一波敌人
+                let disCount = enemySolider.count
                 enemySolider.count = 0
                 data.enemyNum = 0
                 myAttackList.push(data)
-                console.log('我方攻击数据：' + JSON.stringify(data))
+                // console.log('我方攻击数据：' + JSON.stringify(data));
+                info = `我方${DataManager.GameData.Soldier[mySolider.arm].name}攻击敌方${DataManager.GameData.Soldier[enemySolider.arm].name},歼灭${disCount}人\n`;
+                self.battleInfo += info
+                console.log(info)
+                self.enemyCount.hurt += disCount
+
                 if (enemyIdx == otherData.soliderList.length - 1) {
                     console.log(`敌方士兵全部战死，挑战成功`)
                 } else {
@@ -333,11 +374,19 @@ export default class NewClass extends cc.Component {
                     enemyAttack()
                 }
             } else {
+                let disCount = (1 - (enemyDefensenum - myAttacknum) / enemyDefensenum) * enemySolider.count
+                disCount = Math.floor(disCount) + 1
                 enemySolider.count = ((enemyDefensenum - myAttacknum) / enemyDefensenum) * enemySolider.count
                 enemySolider.count = Math.floor(enemySolider.count)
                 data.enemyNum = enemySolider.count
                 myAttackList.push(data)
-                console.log('我方攻击数据：' + JSON.stringify(data))
+                // console.log('我方攻击数据：' + JSON.stringify(data));
+                info = `我方${DataManager.GameData.Soldier[mySolider.arm].name}攻击敌方${DataManager.GameData.Soldier[enemySolider.arm].name},歼灭${disCount}人\n`;
+                console.log(info)
+                self.battleInfo += info
+                console.log(JSON.stringify(self.enemyCount))
+                self.enemyCount.hurt += disCount
+
                 console.log('enemySolider.count:' + enemySolider.count)
                 if (enemySolider.count == 0) {
                     if (enemyIdx == otherData.soliderList.length - 1) {
@@ -365,11 +414,18 @@ export default class NewClass extends cc.Component {
                 myNum: 0
             }
 
+            let info: string
             if (enemyAttackNum - myDefanceNum > 0) {//我的本批士兵被消灭
+                let disCount = mySolider.count
                 mySolider.count = 0
                 data.myNum = 0
                 enemyAttackList.push(data)
-                console.log('敌方攻击数据：' + JSON.stringify(data))
+                // console.log('敌方攻击数据：' + JSON.stringify(data))
+                info = `敌方${DataManager.GameData.Soldier[enemySolider.arm].name}攻击我方${DataManager.GameData.Soldier[mySolider.arm].name},损失${disCount}人\n`;
+                console.log(info)
+                self.myCount.hurt += disCount
+                self.battleInfo += info
+
                 if (myIdx == myData.soliderList.length - 1) {
                     console.log(`我的士兵全部战死，挑战失败`)
                 } else {
@@ -377,11 +433,17 @@ export default class NewClass extends cc.Component {
                     myAttack()
                 }
             } else {
+                let disCount = (1 - (myDefanceNum - enemyAttackNum) / myDefanceNum) * mySolider.count
+                disCount = Math.floor(disCount) + 1
                 mySolider.count = ((myDefanceNum - enemyAttackNum) / myDefanceNum) * mySolider.count
                 mySolider.count = Math.floor(mySolider.count)
                 data.myNum = mySolider.count
                 enemyAttackList.push(data)
-                console.log('敌方攻击数据：' + JSON.stringify(data))
+                // console.log('敌方攻击数据：' + JSON.stringify(data))
+                info = `敌方${DataManager.GameData.Soldier[enemySolider.arm].name}攻击我方${DataManager.GameData.Soldier[mySolider.arm].name},损失${disCount}人\n`;
+                console.log(info)
+                self.myCount.hurt += disCount
+                self.battleInfo += info
                 if (mySolider.count == 0) {
                     if (myIdx == myData.soliderList.length - 1) {
                         console.log(`我的士兵全部战死，挑战失败`)
@@ -395,8 +457,8 @@ export default class NewClass extends cc.Component {
             }
         }
 
-        console.log('myAttackList:' + JSON.stringify(myAttackList))
-        console.log('enemyAttackList:' + JSON.stringify(enemyAttackList))
+        // console.log('myAttackList:' + JSON.stringify(myAttackList))
+        // console.log('enemyAttackList:' + JSON.stringify(enemyAttackList))
 
         this.myAttIdx = 0
         this.enemyAttIdx = 0
@@ -425,9 +487,66 @@ export default class NewClass extends cc.Component {
         }
     }
 
+    initResultPanel() {
+        let panel = this.node.getChildByName('resultPanel')
+        let meNode = panel.getChildByName('iconMe')
+        let otherNode = panel.getChildByName('iconEnemy')
+
+
+        let defaultData = DataManager.GameData.Cards[this.myData.heroData.template_id]
+
+        console.log('this.myData:' + JSON.stringify(this.myData))
+
+        // this.nameDisplay.string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
+        ResManager.loadItemIcon(`hero/${defaultData.name}`, meNode.getChildByName('head'))
+        ResManager.loadItemIcon(`hero/${this.enemyData.heroData.name}`, otherNode.getChildByName('head'))
+
+        meNode.getChildByName('troops').getComponent(cc.Label).string = `兵力 x${this.myCount.troops}`
+        meNode.getChildByName('hurt').getComponent(cc.Label).string = `x${this.myCount.hurt}`
+        meNode.getChildByName('dead').getComponent(cc.Label).string = `x${Math.floor(this.myCount.hurt * 0.2)}`
+        meNode.getChildByName('recover').getComponent(cc.Label).string = `x${this.myCount.hurt - Math.floor(this.myCount.hurt * 0.2)}`
+
+        otherNode.getChildByName('troops').getComponent(cc.Label).string = `x${this.enemyCount.troops} 兵力`
+        otherNode.getChildByName('hurt').getComponent(cc.Label).string = `x${this.enemyCount.hurt}`
+        otherNode.getChildByName('dead').getComponent(cc.Label).string = `x${this.enemyCount.hurt}`
+        otherNode.getChildByName('recover').getComponent(cc.Label).string = `0`
+
+        console.log('this.battleInfo:' + this.battleInfo)
+        panel.getChildByName(`scrollView`).getComponent(cc.ScrollView).content.getComponentInChildren(cc.Label).string = this.battleInfo
+
+    }
+
+    sendResult(isWin) {
+        // send_C2SStageEnd: function (senderSocket, p_group_index, p_stage_index, p_is_win, p_seconds, p_hpPercent, arm_size) {
+        let armList = []
+        for (let i = 0; i < this.myData.soliderList.length; i++) {
+            let data = {
+                arm: 0,
+                count: 0
+            }
+            data.arm = this.myData.soliderList[i].arm
+            data.count = this.myData.soliderList[i].count
+            armList.push(data)
+        }
+
+        console.log('this.groupIdx:' + this.groupIdx)
+        console.log('stageIdx:' + this.stageIdx)
+        console.log('armList:' + JSON.stringify(armList))
+
+        // let disTime = new Date().getTime() - this.startTime
+        let time = DataManager.instance.getDateDis(this.startTime, new Date().getTime())
+        console.log('time:' + time)
+        MyProtocols.send_C2SStageEnd(DataManager._loginSocket, this.groupIdx, this.stageIdx, isWin, time, 0, armList);
+
+    }
+
     myAttackAni() {
         if (this.myAttIdx == this.myAttackList.length) {
             console.log('我方全军覆没，挑战失败')
+            this.node.getChildByName('resultPanel').active = true
+            this.node.getChildByName('resultPanel').zIndex = 10
+            this.sendResult(false)
+            this.initResultPanel()
             return
         }
         this.posMy.removeAllChildren()
@@ -455,8 +574,10 @@ export default class NewClass extends cc.Component {
         mySolider.getComponent(sp.Skeleton).setAnimation(0, 'move', true)
         otherSolider.getComponent(sp.Skeleton).setAnimation(0, 'stand', true)
 
-        mySolider.runAction(cc.sequence(cc.moveBy(1, cc.v2(-420, 0)), cc.callFunc(() => {
-            mySolider.getComponent(sp.Skeleton).setAnimation(0, 'attack1', false)
+        mySolider.runAction(cc.sequence(cc.moveBy(.8, cc.v2(-320, 0)), cc.callFunc(() => {
+            mySolider.getComponent(sp.Skeleton).setAnimation(0, `attack${Math.floor(Math.random() * 3) + 1}`, false)
+            this.posMy.zIndex = 0
+            this.posEnemy.zIndex = 1
         })))
 
         mySolider.getComponent(sp.Skeleton).setCompleteListener((trackEnery, loopCount) => {
@@ -499,6 +620,10 @@ export default class NewClass extends cc.Component {
     otherAttackAni() {
         if (this.enemyAttIdx == this.enemyAttackList.length) {
             console.log('敌方全军覆没，挑战成功')
+            this.node.getChildByName('resultPanel').active = true
+            this.node.getChildByName('resultPanel').zIndex = 10
+            this.initResultPanel()
+            this.sendResult(true)
             return
         }
         this.posMy.removeAllChildren()
@@ -527,8 +652,10 @@ export default class NewClass extends cc.Component {
         otherSolider.getComponent(sp.Skeleton).setAnimation(0, 'move', true)
         mySolider.getComponent(sp.Skeleton).setAnimation(0, 'stand', true)
 
-        otherSolider.runAction(cc.sequence(cc.moveBy(1, cc.v2(-420, 0)), cc.callFunc(() => {
-            otherSolider.getComponent(sp.Skeleton).setAnimation(0, 'attack1', false)
+        otherSolider.runAction(cc.sequence(cc.moveBy(.8, cc.v2(-320, 0)), cc.callFunc(() => {
+            otherSolider.getComponent(sp.Skeleton).setAnimation(0, `attack${Math.floor(Math.random() * 3) + 1}`, false)
+            this.posMy.zIndex = 1
+            this.posEnemy.zIndex = 0
         })))
 
         otherSolider.getComponent(sp.Skeleton).setCompleteListener((trackEnery, loopCount) => {
@@ -576,6 +703,7 @@ export default class NewClass extends cc.Component {
     }
 
     doBack() {
+        this.node.getChildByName('resultPanel').active = false
         ViewManager.instance.hideWnd(DataManager.curWndPath)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE)
     }
