@@ -109,6 +109,14 @@ export default class NewClass extends cc.Component {
 
         if (data.grade == 0) {
             this.tipDisplay.string = '解锁建筑'
+
+            if (data.group == 'basic') {
+                this.buildType = 3
+            } else if (data.group == 'resource') {
+                this.buildType = 1
+            } else if (data.group == 'barracks') {
+                this.buildType = 2
+            }
             return
         }
 
