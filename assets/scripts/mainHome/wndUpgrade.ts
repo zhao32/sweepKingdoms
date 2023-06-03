@@ -174,9 +174,9 @@ export default class NewClass extends cc.Component {
             }
             this.upDisplay.string = `升级效果: ${tipStr}`
         } else {
-            this.upDisplay.string = '已满级'
-            this.upDisplay.horizontalAlign = cc.Label.HorizontalAlign.CENTER
-            this.upPremiseDisplay.string = ''
+            // this.upDisplay.string = '已满级'
+            // this.upDisplay.horizontalAlign = cc.Label.HorizontalAlign.CENTER
+            this.upPremiseDisplay.string = '已满级'
 
             this.node.getChildByName('btnClose').y = -250;//this.node.getChildByName('bntUp2').y;
             this.node.getChildByName('btnUp').active = false;

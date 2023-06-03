@@ -149,6 +149,9 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.hideWnd(DataManager.curWndPath)
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL)
 
+            NetEventDispatcher.addListener(NetEvent.S2CPubView, this.S2CPubView.bind(this))
+            NetEventDispatcher.addListener(NetEvent.S2CPubBuy, this.S2CPubBuy.bind(this))
+
         } else if (this.showType == 1) {
             this.showGroups()
         }
