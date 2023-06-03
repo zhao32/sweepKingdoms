@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "1ddfdcf8-3803-4ff8-be3b-d834d67796e2",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 84,
+  "height": 83,
+  "platformSettings": {},
+  "subMetas": {
+    "赤日裂天弓": {
+      "ver": "1.0.6",
+      "uuid": "f2bb2894-c509-4962-b26a-9511f297c2a4",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "1ddfdcf8-3803-4ff8-be3b-d834d67796e2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -4,
+      "offsetY": -0.5,
+      "trimX": 4,
+      "trimY": 1,
+      "width": 68,
+      "height": 82,
+      "rawWidth": 84,
+      "rawHeight": 83,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

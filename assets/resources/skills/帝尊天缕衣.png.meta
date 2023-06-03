@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "d0e9f57d-7f86-4ef7-98ef-ece18c56b933",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 84,
+  "height": 81,
+  "platformSettings": {},
+  "subMetas": {
+    "帝尊天缕衣": {
+      "ver": "1.0.6",
+      "uuid": "36480a5f-42c4-455e-afe2-6186d7472d24",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "d0e9f57d-7f86-4ef7-98ef-ece18c56b933",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 2.5,
+      "offsetY": 0,
+      "trimX": 16,
+      "trimY": 0,
+      "width": 57,
+      "height": 81,
+      "rawWidth": 84,
+      "rawHeight": 81,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

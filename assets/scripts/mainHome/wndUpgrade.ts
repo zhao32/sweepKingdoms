@@ -79,15 +79,17 @@ export default class NewClass extends cc.Component {
 
         DataManager.GameData.build[this.group][this.idx].grade = retObj.lv
         DataManager.playData[`${this.group}_build`][this.idx - 1] = retObj.lv
-        this.init(this._name, this._from)
+        this.reInit(this._name, this._from)
         Logger.log(JSON.stringify(DataManager.GameData.build[this.group]))
     }
 
     init(name, from: string) {
         NetEventDispatcher.addListener(NetEvent.S2UPBulid, this.UPBulid.bind(this))
+        this.reInit(name, from)
+    }
 
+    reInit(name, from: string) {
         console.log('init this.group:' + this.group)
-
         this._name = name
         // let barracksList = ["军营", '盾卫训练场', '骑士训练场', '枪兵训练场', '箭手训练场', '法师训练场', '木牛工厂', '军魂祭坛', '部队强化']
         // let resourceList = ["铸币工坊", "粮草工坊", "领土中心", "技术研究所"];
@@ -134,6 +136,7 @@ export default class NewClass extends cc.Component {
         this.grade = grade + 1
         let levelData = DataManager.GameData.buildUp[this.group][idx][grade - 1]
         let upLevelData = DataManager.GameData.buildUp[this.group][idx][grade]
+        this.upPremiseDisplay.string = `升级条件: 玩家等级达到${levelData.unlocklevel}`
         if (upLevelData) {
             let tipStr = ''
             if (this.group == 'basic') {
@@ -172,13 +175,14 @@ export default class NewClass extends cc.Component {
             this.upDisplay.string = `升级效果: ${tipStr}`
         } else {
             this.upDisplay.string = '已满级'
+            this.upDisplay.horizontalAlign = cc.Label.HorizontalAlign.CENTER
+            this.upPremiseDisplay.string = ''
 
-            this.node.getChildByName('btnClose').y = -215;//this.node.getChildByName('bntUp2').y;
+            this.node.getChildByName('btnClose').y = -250;//this.node.getChildByName('bntUp2').y;
             this.node.getChildByName('btnUp').active = false;
             this.node.getChildByName('btnUp2').active = false;
         }
 
-        this.upPremiseDisplay.string = `升级条件: 玩家等级达到${levelData.unlocklevel}`
         this.lvDisplay.string = `LV ${grade}`
 
         this.coinLabel.string = `金币升级${(levelData.money)}`
@@ -195,7 +199,6 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showWnd(this._from)
         }
         NetEventDispatcher.removeListener(NetEvent.S2UPBulid, this.UPBulid.bind(this))
-
     }
 
     onUpgrade1() {
