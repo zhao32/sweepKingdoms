@@ -61,7 +61,7 @@ export default class NewClass extends cc.Component {
         this._stageData = stageData
         // "cardId":1,"soliders":[{"arm":1,"count":100}]
         console.log('stageData:' + JSON.stringify(stageData))
-        DataManager.playData.military_data = [500, 500, 500]
+        // DataManager.playData.military_data = [500, 500, 500]
         this.myContect.removeAllChildren()
         this.onSelectSolider = true
         for (let i = 0; i < DataManager.playData.military_data.length; i++) {

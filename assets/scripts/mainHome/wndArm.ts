@@ -150,6 +150,10 @@ export default class NewClass extends cc.Component {
     }
 
     onRecruit() {
+        if (DataManager.GameData.build['basic'][0].grade == 0) {
+            ViewManager.instance.showToast('请先建造居民区')
+            return
+        }
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_RCRUIT, ...[this._idx])
 

@@ -54,7 +54,7 @@ export default class NewClass extends cc.Component {
         this.node.on(cc.Node.EventType.TOUCH_END, () => {
             if (this._data.grade == 0) {
                 this.curIdx = this._data.idx
-                MyProtocols.send_C2UPBulid(DataManager._loginSocket, 1, this.buildType, this._data.idx, 1)
+                MyProtocols.send_C2UPBulid(DataManager._loginSocket, 1, this.buildType, this._data.idx - 1, 1)
             } else {
                 Logger.log('打开升级窗口：' + this._data.name)
                 ViewManager.instance.hideWnd(DataManager.curWndPath)
