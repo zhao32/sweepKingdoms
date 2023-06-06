@@ -50,9 +50,8 @@ export default class NewClass extends cc.Component {
     init(idx, soliderNum) {
         this.idx = idx
         this.allNum = soliderNum
-        this.nameLabel.string = `${DataManager.armList[idx]}兵 ${DataManager.playData.military_data[idx - 1]}`
-
-        ResManager.loadItemIcon(`soliderHead/${DataManager.armList[idx]}兵`, this.node.getChildByName(`head`))
+        this.nameLabel.string = `${DataManager.GameData.Soldier[idx].name} ${DataManager.playData.military_data[idx - 1]}`
+        ResManager.loadItemIcon(`soliderHead/${DataManager.GameData.Soldier[idx].name}`, this.node.getChildByName(`head`))
     }
 
     // update (dt) {}

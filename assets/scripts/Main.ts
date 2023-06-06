@@ -107,8 +107,12 @@ export default class NewClass extends cc.Component {
     }
 
     S2CStageList(retObj) {
-        // DataManager.stagesData = retObj
-        DataManager.stagesData = { "chapters": [{ "stages": [{ "star": 3, "times": 5, "is_get_award": false }, { "star": 3, "times": 19, "is_get_award": false }], "star_award": [] }], "chapters_elite": [], "formation": { "fid": 0, "formationId": 1, "forward": 1, "flip": 0, "a": 0, "b": 73, "c": 5, "d": 0, "e": 0, "f": 0, "g": 0, "h": 0, "i": 0, "j": 0 }, "elite_count": 5, "crawl_state": 10 }
+        DataManager.stagesData = retObj
+        // {"chapters":[],"chapters_elite":[],"elite_count":5,"crawl_state":0}
+        // if (retObj.chapters.length == 0) {
+        //     DataManager.stagesData.chapters = [{ "stages": [] }]
+        // }
+        // DataManager.stagesData = { "chapters": [{ "stages": [{ "star": 3, "times": 5, "is_get_award": false }, { "star": 3, "times": 19, "is_get_award": false }], "star_award": [] }], "chapters_elite": [], "formation": { "fid": 0, "formationId": 1, "forward": 1, "flip": 0, "a": 0, "b": 73, "c": 5, "d": 0, "e": 0, "f": 0, "g": 0, "h": 0, "i": 0, "j": 0 }, "elite_count": 5, "crawl_state": 10 }
     }
 
     S2CCreateCharacter(retObj) {

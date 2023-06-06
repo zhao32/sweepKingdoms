@@ -363,20 +363,20 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 86.05,
+      "width": 66.03999999999999,
       "height": 43.8
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0,
+      "x": 0.5,
       "y": 0.5
     },
     "_trs": {
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -115.6,
-        54.487,
+        -67,
+        49.487,
         0,
         0,
         0,
@@ -417,7 +417,7 @@
     "_dstBlendFactor": 771,
     "_string": "name",
     "_N$string": "name",
-    "_fontSize": 32,
+    "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": true,
     "_N$file": null,
@@ -1853,13 +1853,13 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
+      "g": 219,
+      "b": 0,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 13.35,
+      "width": 12.24,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1913,7 +1913,7 @@
     "_dstBlendFactor": 771,
     "_string": "1",
     "_N$string": "1",
-    "_fontSize": 24,
+    "_fontSize": 22,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,
@@ -1980,7 +1980,15 @@
       "__id__": 1
     },
     "_enabled": true,
-    "label": null,
+    "nameLabel": {
+      "__id__": 9
+    },
+    "idxLabel": {
+      "__id__": 52
+    },
+    "headNode": {
+      "__id__": 2
+    },
     "text": "hello",
     "_id": ""
   },

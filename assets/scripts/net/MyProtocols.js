@@ -3709,6 +3709,7 @@ var MyProtocols = {
 	},
 
 	send_C2SRankView: function (senderSocket, p_rank_type) {
+		console.log(`请求巅峰战场列表：`+p_rank_type)
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(10143);
 		myEncoder.writeInt(p_rank_type);
@@ -3756,6 +3757,7 @@ var MyProtocols = {
 				retObj.pkWinLoose[i] = myDecoder.readInt();
 			}
 		}
+		console.log(JSON.stringify(retObj))
 		return retObj;
 	},
 
@@ -6253,8 +6255,8 @@ var MyProtocols = {
 
 	get_1058: function (myDecoder) {
 		var retObj = {};
-		retObj.num = myDecoder.readInt();
 		retObj.type = myDecoder.readInt();
+		retObj.num = myDecoder.readInt();
 		return retObj;
 	},
 

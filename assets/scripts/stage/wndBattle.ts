@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
@@ -231,7 +232,30 @@ export default class NewClass extends cc.Component {
     }
     // myData:{"heroData":{"id":"150717","template_id":19,"level":1,"num":1,"exp":0,"grade":0,"unit_level":1,"unitGrade":1,"unit_type":3,"fight":3201,"physical":200,"equips":["0","0","0","0","0","0"],"unitEquips":[0,0,0,0,0],"runeUnlock":[0,1,2,4,5,3],"runePutup":[0,0,0,0,0,0,0,0],"runeLevel":[0,0,0,0,0,0,0,0],"skills_equips":[0],"proficiency":[1430,115,198],"aptitude":[481,373,213]},"soliderList":[{"arm":1,"count":106},{"arm":2,"count":0},{"arm":3,"count":0}]}
 
+    S2CStageEnd(retObj) {
+        // {"chapters":[],"chapters_elite":[],"elite_count":5,"crawl_state":0}
+        if (!DataManager.stagesData.chapters[retObj.group_index]) {
+            DataManager.stagesData.chapters[retObj.group_index] = { "stages": [] }
+        }
+        
+        if (DataManager.stagesData.chapters[retObj.group_index].stages[retObj.stage_index]) {
+            DataManager.stagesData.chapters[retObj.group_index].stages[retObj.stage_index].star = retObj.star
+            DataManager.stagesData.chapters[retObj.group_index].stages[retObj.stage_index].times = retObj.times
+            // DataManager.stagesData.chapters[retObj.group_index][retObj.stage_index].is_get_award = retObj.rewards.length > 0
+
+        } else {
+            let obj = { "star": retObj.star, "times": retObj.times, "is_get_award": false }
+            DataManager.stagesData.chapters[retObj.group_index].stages.push(obj)
+        }
+
+        // {"group_index":0,"stage_index":0,"is_win":true,"star":2,"times":4,"rewards":[{"template_id":1104,"num":500},{"template_id":2064,"num":1},{"template_id":1006,"num":1}]}
+        this.initResultPanel()
+
+    }
     init(myData, otherData, groupIdx, stageIdx) {
+        this.battleInfo = ''
+        NetEventDispatcher.addListener(NetEvent.S2CStageEnd, this.S2CStageEnd.bind(this))
+
         this.groupIdx = groupIdx
         this.stageIdx = stageIdx
 
@@ -546,7 +570,6 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName('resultPanel').active = true
             this.node.getChildByName('resultPanel').zIndex = 10
             this.sendResult(false)
-            this.initResultPanel()
             return
         }
         this.posMy.removeAllChildren()
@@ -622,7 +645,7 @@ export default class NewClass extends cc.Component {
             console.log('敌方全军覆没，挑战成功')
             this.node.getChildByName('resultPanel').active = true
             this.node.getChildByName('resultPanel').zIndex = 10
-            this.initResultPanel()
+            // this.initResultPanel()
             this.sendResult(true)
             return
         }

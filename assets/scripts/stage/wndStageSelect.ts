@@ -72,6 +72,7 @@ export default class NewClass extends cc.Component {
     init(data = this._data, stateData = this._stateData, groupIdx: number) {
         data = GameUtil.deepClone(data)
         this._data = data
+        if(!stateData)stateData = {"stages":[],"star_award":[]}
         this._stateData = stateData
         this.curStageData = data.stage[0]
         this.groupIdx = groupIdx
@@ -87,7 +88,15 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < data.stage.length; i++) {
             let item = cc.instantiate(this.itemPfb)
             item.parent = this.contect
-            let isopen = (i <= stateData.stages.length) ? true : false
+            let isopen
+
+            console.log('stateData:'+JSON.stringify(stateData))
+            if (!stateData) {
+                isopen = false
+                // stateData =  [{ "stages": [{ "star": 0, "times": 5, "is_get_award": false}] }]
+            } else {
+                isopen = (i <= stateData.stages.length) ? true : false
+            }
             let rank = String(i + 1)
             item.getComponent(StageSelectItem).init(stateData.stages[i], isopen, rank, data.stage[0].attrs[0].unit_num)
 

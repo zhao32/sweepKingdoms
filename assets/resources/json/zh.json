@@ -141,7 +141,7 @@
   "1108": "发件人:",
   "1109": "删除邮件成功！",
   "1110": "删  除",
-  "1201": "烧酒数量不足！",
+  "1201": "粮草数量不足！",
   "1202": "排行榜类型错误！",
   "1301":"目标卡片不存在",
   "1302":"装备不存在",
@@ -547,5 +547,6 @@
   "guozhan012":"<color=#000000>%{dateval}</c> 您成功的击退了<color=#ff0000>%{nationName}国</c><color=#0fffff>%{enemyName}</c>的攻击，守住了【<color=#00ff00>%{cityName}</c>】城！",
   "guozhan013":"<color=#000000>%{dateval}</c> 您的【<color=#00ff00>%{cityName}</c>】城击退了<color=#ff0000>%{nationName}国</c>的<color=#0fffff>%{enemyName}</c>的攻击，您身负重伤，退守后方！",
   "guozhan014":"<color=#000000>%{dateval}</c> 您所在的城池【<color=#00ff00>%{cityName}</c>】被<color=#ff0000>%{nationName}国</c>的<color=#0fffff>%{enemyName}</c>占领，您身负重伤，退守后方！",
-  "activity_qizhenyibao_join_success":"参与抽奖成功！"
+  "activity_qizhenyibao_join_success":"参与抽奖成功！",
+  "304":"人口不足"
 }

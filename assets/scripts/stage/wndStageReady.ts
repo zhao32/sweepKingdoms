@@ -155,7 +155,9 @@ export default class NewClass extends cc.Component {
             for (let i = 0; i < this.myContect.children.length; i++) {
                 let render = this.myContect.children[i]
                 let data = render.getComponent(stageSoliderRender).getSelectNum()
-                myData.soliderList.push(data)
+                if (data.count > 0) {
+                    myData.soliderList.push(data)
+                }
                 allNum += data.count
                 // console.log(JSON.stringify(render.getComponent(stageSoliderRender).getSelectNum()))
             }

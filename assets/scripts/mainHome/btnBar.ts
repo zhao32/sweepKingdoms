@@ -63,6 +63,7 @@ export default class NewClass extends cc.Component {
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE)
 
                 } else if (i == 2) {//出征
+                    ViewManager.instance.showView(EnumManager.viewPath.PAGE_GOBATTLE)
 
                 } else if (i == 3) {//背包
                     Logger.log('----------打开背包----------')

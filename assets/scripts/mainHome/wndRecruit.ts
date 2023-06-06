@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import { Logger } from "../utils/Manager/Logger";
@@ -120,6 +121,19 @@ export default class NewClass extends cc.Component {
         this.soliderType = DataManager.GameData.buildUp[group][idx][grade - 1].soldier[0];
 
         ResManager.loadItemIcon(`soliderHead/${DataManager.GameData.Soldier[idx - 1].name}`, this.soldierSprite.node)
+        NetEventDispatcher.addListener(NetEvent.S2CRecSoldiers, this.S2CRecSoldiers.bind(this))
+
+    }
+
+    S2CRecSoldiers(retObj) {
+        console.log(`------------招募返回-------------`)
+        console.log(JSON.stringify(retObj))
+        // {"type":2,"num":630}
+        console.log('招募成功')
+        DataManager.playData.military_data[retObj.type - 1] += retObj.num
+        console.log(JSON.stringify(DataManager.playData.military_data))
+        ViewManager.instance.showToast('招募成功')
+
     }
 
     updateData(idx) {
@@ -160,7 +174,7 @@ export default class NewClass extends cc.Component {
     }
 
     recruitHandler(event, data) {
-        Logger.log('-------招募请求-------', this._idx, this.soliderType)
+        console.log('-------招募请求-------', this._idx, this.soliderType)
         MyProtocols.send_C2SRecSoldiers(DataManager._loginSocket, this._idx, 0, this.soliderType)
     }
 

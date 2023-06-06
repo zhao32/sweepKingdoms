@@ -1005,6 +1005,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 3,
         "first_drops": [
           {
@@ -1158,6 +1165,13 @@
             "level": 1,
             "unit_level": 0,
             "card_grade": 0
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 3,
@@ -1315,6 +1329,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 3,
         "first_drops": [
           {
@@ -1468,6 +1489,13 @@
             "level": 1,
             "unit_level": 0,
             "card_grade": 0
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 3,
@@ -1652,6 +1680,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 3,
         "first_drops": [
           {
@@ -1807,6 +1842,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 3,
         "first_drops": [
           {
@@ -1960,6 +2002,13 @@
             "level": 1,
             "unit_level": 1,
             "card_grade": 0
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 3,
@@ -2119,6 +2168,13 @@
             "card_grade": 0
           }
         ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
+          }
+        ],
         "require_level": 3,
         "first_drops": [
           {
@@ -2272,6 +2328,13 @@
             "level": 2,
             "unit_level": 2,
             "card_grade": 0
+          }
+        ],
+        "cardId": 1,
+        "soliders": [
+          {
+            "arm": 1,
+            "count": 100
           }
         ],
         "require_level": 3,

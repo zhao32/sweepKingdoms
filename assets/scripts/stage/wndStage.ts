@@ -86,7 +86,7 @@ export default class NewClass extends cc.Component {
                 }, 0.3 * i)
             }
 
-            let isOpen = (i <= data.length) ? true : false
+            let isOpen = (i < data.length) ? true : false
             // 
             let rank
             if (data[i]) {

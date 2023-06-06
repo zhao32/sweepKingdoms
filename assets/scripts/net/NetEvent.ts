@@ -324,7 +324,7 @@ export enum NetEvent {
 
     S2UPBulid = 10186,
     /**士兵招募 */
-    S2CRecSoldiers = 1057,
+    S2CRecSoldiers = 1058,
     // /**开启石槽 */
     // S2COpenRuneSlot = 2026,
 

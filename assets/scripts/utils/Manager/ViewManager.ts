@@ -181,6 +181,7 @@ export default class ViewManager {
     public hideView(path: string, isDestroy: boolean = false) {
         let name = ResManager.Instance.getResourcesName(path);
         // if (!this._curViewList.get(name)) return
+        console.log('name:'+name)
         let viewNode: cc.Node = this._curViewList.get(name);
         if (viewNode) {
             this._curViewList.delete(name);

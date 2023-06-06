@@ -85,6 +85,31 @@ export default class EnumManager {
         /**战斗 */
         WND_STAGE_BATTLE: 'prefabs/stage/wndBattle',
 
+        /**出征 */
+        PAGE_GOBATTLE: 'prefabs/goBattle/pageGoBattle',
+
+        /**肥羊 */
+        WND_GOBATTLE_FY: 'prefabs/goBattle/wndFeiYang',
+
+        /**矿产农田详情 */
+        WND_GOBATTLE_DETAILS: 'prefabs/goBattle/wndFiledDetails',
+
+
+        /**日志 */
+        WND_GOBATTLE_RECORD: 'prefabs/goBattle/wndRecord',
+
+        /**查找 */
+        WND_GOBATTLE_FIND: 'prefabs/goBattle/wndFind',
+
+        /**按玩家查找 */
+        WND_GOBATTLE_FINDBYPLAYER: 'prefabs/goBattle/wndFindByPlayer',
+
+        /**按坐标查找 */
+        WND_GOBATTLE_FINDBYPOS: 'prefabs/goBattle/wndFindByPos',
+
+        /**查找高级资源点 */
+        WND_GOBATTLE_FINDHIGHT: 'prefabs/goBattle/wndFindHeight',
+
 
     }
 }
