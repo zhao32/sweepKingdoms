@@ -80,6 +80,11 @@ export default class NewClass extends cc.Component {
         DataManager.playData.basic_build = retObj.basic_build
         DataManager.playData.barracks_build = retObj.barracks_build
         DataManager.playData.resource_build = retObj.resource_build
+        if (retObj.military_data.length == 0) {
+            for (let i = 0; i < 19; i++) {
+                retObj.military_data.push(0)
+            }
+        }
         DataManager.playData.military_data = retObj.military_data
 
 
@@ -105,7 +110,7 @@ export default class NewClass extends cc.Component {
     S2CStageList(retObj) {
         DataManager.stagesData = retObj
         if (retObj.chapters.length == 0) {
-            retObj.chapters = [{"stages":[]}]
+            retObj.chapters = [{ "stages": [] }]
         }
         // {"chapters":[],"chapters_elite":[],"elite_count":5,"crawl_state":0}
         // if (retObj.chapters.length == 0) {

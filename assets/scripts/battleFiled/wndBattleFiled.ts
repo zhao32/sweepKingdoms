@@ -84,6 +84,8 @@ export default class NewClass extends cc.Component {
         console.log('-----------------------------')
         MyProtocols.send_C2SRankView(DataManager._loginSocket, 2)
         NetEventDispatcher.addListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))
+
+        // let retObj = {"my_rank":0,"my_rank change":0, "rank type":2,"items":{"playerId":9935,"nickname":"相心的官读知","sexid":1,"icon":1,"head frame":1,"level":48,"fight":9889,"viplevel":0,"rank change":8, "hero count":8,"hero stars":8,"win count":8 "like count":8 "card":[0,8,0]},["playerid":9952,"nickname":"伏义的巴都力""sexid":0,"icon":8,"head frame":1,"level"78 "fight":2395,"yiplevel";0, "rankchange":0,"hero count":e,"hero stars":e "win count":e "like count":e "card";[e,8,e]}]"today my like players":[],"pkwinLoose":[]}
     }
 
     S2CRankView(retObj) {
@@ -102,10 +104,20 @@ export default class NewClass extends cc.Component {
                     render.runAction(cc.moveTo(0.4, cc.v2(0, render.y)))
                 }, 0.3 * i)
             }
-            render.on(cc.Node.EventType.TOUCH_END, () => {
-                ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLEFILED)
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_ARMY,...[retObj.rank_type,retObj.items[i].playerId])
-            }, this)
+
+            if (retObj.rank_type, retObj.items[i].playerId == DataManager.playData.account_id) {
+                render.on(cc.Node.EventType.TOUCH_END, () => {
+                    ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLEFILED)
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_MYTEAM, ...[retObj.rank_type, retObj.items[i].playerId])
+                }, this)
+
+            } else {
+                render.on(cc.Node.EventType.TOUCH_END, () => {
+                    ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLEFILED)
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_ARMY, ...[retObj.rank_type, retObj.items[i].playerId])
+                }, this)
+
+            }
 
         }
 
