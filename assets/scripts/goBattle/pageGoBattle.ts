@@ -8,6 +8,7 @@
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
+import filedItem from "./filedItem";
 
 const { ccclass, property } = cc._decorator;
 
@@ -39,13 +40,7 @@ export default class NewClass extends cc.Component {
     // onLoad () {}
 
     start() {
-        cc.resources.loadDir("Mine/Mine_01", cc.JsonAsset, (err, json) => {
-            if (err) {
-                console.log(err)
-            } else {
-                console.log('json:'+ JSON.stringify(json))
-            }
-        });
+       
     }
 
     init() {
@@ -57,15 +52,29 @@ export default class NewClass extends cc.Component {
             myItem.parent = this.myContect
         }
 
-        this.filedContect.removeAllChildren()
-        for (let i = 0; i < 27; i++) {
-            let filedItem = cc.instantiate(this.filedItemPfb)
-            filedItem.parent = this.filedContect
+        cc.resources.loadDir("Mine/Mine_01", cc.JsonAsset, (err, filedJSON) => {
+            if (err) {
+                console.log(err)
+            } else {
+                console.log('json:'+ JSON.stringify(filedJSON))
 
-            filedItem.on(cc.Node.EventType.TOUCH_END, () => {
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS)
-            }, this)
-        }
+                //@ts-ignore
+                let filedList = filedJSON[0].json
+
+                this.filedContect.removeAllChildren()
+                for (let i = 0; i < filedList.length; i++) {
+                    let filedNode = cc.instantiate(this.filedItemPfb)
+                    filedNode.parent = this.filedContect
+                    filedNode.getComponent(filedItem).init(filedList[i])
+                    filedNode.on(cc.Node.EventType.TOUCH_END, () => {
+                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS,...[filedList[i]])
+                    }, this)
+                }
+
+            }
+        });
+
+      
     }
 
     btnLeft() {

@@ -2877,7 +2877,18 @@
       "__id__": 1
     },
     "_enabled": true,
-    "label": null,
+    "nameLabel": {
+      "__id__": 73
+    },
+    "posLabel": {
+      "__id__": 61
+    },
+    "lordLabel": {
+      "__id__": 64
+    },
+    "troopsLabel": {
+      "__id__": 70
+    },
     "text": "hello",
     "_id": ""
   },
