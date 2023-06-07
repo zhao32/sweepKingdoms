@@ -22,10 +22,10 @@ const { ccclass, property } = cc._decorator;
 export default class NewClass extends cc.Component {
 
     @property(cc.Node)
-    contect0: cc.Node = null;
+    myContect: cc.Node = null;
 
     @property(cc.Node)
-    contect1: cc.Node = null;
+    otherContect: cc.Node = null;
 
     @property(cc.Prefab)
     armPfb: cc.Prefab = null;
@@ -35,23 +35,23 @@ export default class NewClass extends cc.Component {
     // onLoad () {}
 
     start() {
+        this.myContect.removeAllChildren()
         for (let i = 0; i < 10; i++) {
             let arm = cc.instantiate(this.armPfb)
-            arm.parent = this.contect0
-
+            arm.parent = this.myContect
         }
-
+        
+        this.otherContect.removeAllChildren()
         for (let i = 0; i < 10; i++) {
             let arm = cc.instantiate(this.armPfb)
-            arm.parent = this.contect1
-
+            arm.parent = this.otherContect
         }
     }
 
     init(rankType, playerid) {
         // (senderSocket, p_rank_type, p_player_id)
-        console.log(rankType)
-        console.log(playerid)
+        // console.error('rankType:'+ rankType)
+        // console.error('playerid'+ playerid)
 
         MyProtocols.send_C2SRankPlayerDetail(DataManager._loginSocket, rankType, playerid)
         NetEventDispatcher.addListener(NetEvent.S2CRankPlayerDetail, this.S2CRankPlayerDetail.bind(this))

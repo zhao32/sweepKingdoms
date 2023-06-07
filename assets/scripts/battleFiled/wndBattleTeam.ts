@@ -11,6 +11,11 @@ import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
 
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+
 @ccclass
 export default class NewClass extends cc.Component {
 
@@ -27,7 +32,11 @@ export default class NewClass extends cc.Component {
 
     }
 
-    init() {
+    init(rankType,playerid) {
+        console.error('rankType:'+ rankType)
+        console.error('playerid'+ playerid)
+
+        MyProtocols.send_C2SRankPlayerDetail(DataManager._loginSocket, rankType, playerid)
 
         this.contect.removeAllChildren()
         for (let i = 0; i < 5; i++) {

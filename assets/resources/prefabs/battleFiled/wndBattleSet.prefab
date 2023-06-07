@@ -1955,7 +1955,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 640,
-      "height": 700
+      "height": 640
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3007,7 +3007,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 367.06,
+      "width": 216.76,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -3059,8 +3059,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "最多可派兵150000，已派99998",
-    "_N$string": "最多可派兵150000，已派99998",
+    "_string": "最多可派兵150000",
+    "_N$string": "最多可派兵150000",
     "_fontSize": 26,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -3515,7 +3515,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 640,
-      "height": 700
+      "height": 640
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",

@@ -2087,7 +2087,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": " ",
+    "_name": "scrollView1",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -2676,10 +2676,10 @@
       "__id__": 1
     },
     "_enabled": true,
-    "contect0": {
+    "myContect": {
       "__id__": 50
     },
-    "contect1": {
+    "otherContect": {
       "__id__": 60
     },
     "armPfb": {

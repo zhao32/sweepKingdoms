@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "stageSoliderRender",
+    "_name": "soliderRender",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -197,7 +197,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "ac0060cf-57cd-4b0c-824b-a02ee52da7f0"
     },
     "fileId": "ad2wERP/VA8Y7nwgzbDkmH",
     "sync": false
@@ -304,7 +304,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "ac0060cf-57cd-4b0c-824b-a02ee52da7f0"
     },
     "fileId": "e7P/dIvIhIWJrAfbleMgFZ",
     "sync": false
@@ -482,7 +482,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "ac0060cf-57cd-4b0c-824b-a02ee52da7f0"
     },
     "fileId": "07GK50lH9P5IB6qWwyUH7d",
     "sync": false
@@ -676,7 +676,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "ac0060cf-57cd-4b0c-824b-a02ee52da7f0"
     },
     "fileId": "09QhEFk6dKoKPv9plFXSXo",
     "sync": false
@@ -707,7 +707,7 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "2a456pHH+dEUa5zBENnUoSj",
+    "_componentId": "5bee7uYl0pOPa5E6vjOejN8",
     "handler": "onSlider",
     "customEventData": ""
   },
@@ -717,7 +717,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "ac0060cf-57cd-4b0c-824b-a02ee52da7f0"
     },
     "fileId": "17OoSZSeRCVrPPIDf7d7RM",
     "sync": false
@@ -824,7 +824,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "ac0060cf-57cd-4b0c-824b-a02ee52da7f0"
     },
     "fileId": "8dsiwZOWNHVqxwyt8nDloU",
     "sync": false
@@ -932,7 +932,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "ac0060cf-57cd-4b0c-824b-a02ee52da7f0"
     },
     "fileId": "83wnfcqBxK2KqNUIq02wrW",
     "sync": false
@@ -1040,7 +1040,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "ac0060cf-57cd-4b0c-824b-a02ee52da7f0"
     },
     "fileId": "43vULK4YxNwaKiJNgFtnTC",
     "sync": false
@@ -1078,7 +1078,7 @@
     "_id": ""
   },
   {
-    "__type__": "2a456pHH+dEUa5zBENnUoSj",
+    "__type__": "5bee7uYl0pOPa5E6vjOejN8",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1102,7 +1102,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "ac0060cf-57cd-4b0c-824b-a02ee52da7f0"
     },
     "fileId": "",
     "sync": false
