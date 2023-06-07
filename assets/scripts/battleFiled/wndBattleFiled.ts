@@ -82,7 +82,7 @@ export default class NewClass extends cc.Component {
         this.scrollView.active = true
         this.bonusArea.active = false
         console.log('-----------------------------')
-        MyProtocols.send_C2SRankView(DataManager._loginSocket, 1)
+        MyProtocols.send_C2SRankView(DataManager._loginSocket, 2)
         NetEventDispatcher.addListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))
     }
 

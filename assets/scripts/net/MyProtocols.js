@@ -3709,7 +3709,7 @@ var MyProtocols = {
 	},
 
 	send_C2SRankView: function (senderSocket, p_rank_type) {
-		console.log(`请求巅峰战场列表：`+p_rank_type)
+		console.log(`请求巅峰战场列表：` + p_rank_type)
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(10143);
 		myEncoder.writeInt(p_rank_type);
@@ -3790,6 +3790,11 @@ var MyProtocols = {
 			retObj.rank_player.hero_stars = myDecoder.readInt();
 			retObj.rank_player.win_count = myDecoder.readInt();
 			retObj.rank_player.like_count = myDecoder.readInt();
+
+			var size = myDecoder.readInt();
+			for (var i = 0; i < size; i++) {
+				retObj.rank_player.item[i]= myDecoder.readInt();
+			}
 		}
 		retObj.cardlist = [];
 		let cardlist_size = myDecoder.readInt();

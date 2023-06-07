@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "wndStageReady",
+    "_name": "wndBattleSet",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -3908,29 +3908,6 @@
     "_id": ""
   },
   {
-    "__type__": "f65c8xUMVNPwqpSrOeZviwj",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "myContect": {
-      "__id__": 38
-    },
-    "otherContect": null,
-    "heroPfb": {
-      "__uuid__": "2725e9f6-9ca9-4aab-a116-1d99370b60fa"
-    },
-    "soliderPfb": {
-      "__uuid__": "07f65e8f-dfa3-4338-95be-d4eb5b4f97b3"
-    },
-    "eSoliderPfb": {
-      "__uuid__": "93d9e599-2793-4b80-ab84-5808689ca99a"
-    },
-    "_id": ""
-  },
-  {
     "__type__": "8f4a8OLBxBLmpVryKCkw0bp",
     "_name": "",
     "_objFlags": 0,
@@ -3942,6 +3919,18 @@
     "isHasAnim": false,
     "view": null,
     "isHasViewAnim": false,
+    "_id": ""
+  },
+  {
+    "__type__": "040bfvx1phMob7R8NUWIqOR",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "label": null,
+    "text": "hello",
     "_id": ""
   },
   {
