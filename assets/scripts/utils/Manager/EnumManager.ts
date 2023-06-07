@@ -74,6 +74,12 @@ export default class EnumManager {
         /**部队比较 */
         WND_BATTLE_ARMY: 'prefabs/battleFiled/wndArmy',
 
+        /**我的战队 */
+        WND_BATTLE_MYTEAM: 'prefabs/battleFiled/wndBattleTeam',
+
+        /**战队配置 */
+        WND_BATTLE_TEAMSET: 'prefabs/battleFiled/wndBattleSet',
+
         /**副本 */
         WND_STAGE: 'prefabs/stage/wndStage',
         /**副本选关 */
@@ -113,13 +119,3 @@ export default class EnumManager {
 
     }
 }
-
-/**刷新类型 */
-export enum refash {
-    /**刷新球 */
-    REDASH_BOLL,
-    /**刷新按钮 */
-    REDASH_BTN,
-    /**刷新 Go */
-    REDASH_GO
-} 

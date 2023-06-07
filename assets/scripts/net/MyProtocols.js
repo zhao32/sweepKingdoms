@@ -3741,6 +3741,12 @@ var MyProtocols = {
 				retObj.items[i].hero_stars = myDecoder.readInt();
 				retObj.items[i].win_count = myDecoder.readInt();
 				retObj.items[i].like_count = myDecoder.readInt();
+				var size = myDecoder.readInt();
+				// debugger;
+				retObj.items[i].card = [];
+				for (var x = 0; x < size; x++) {
+					retObj.items[i].card[x] = myDecoder.readInt();
+				}
 			}
 		}
 		retObj.today_my_like_players = [];
@@ -3760,7 +3766,6 @@ var MyProtocols = {
 		console.log(JSON.stringify(retObj))
 		return retObj;
 	},
-
 	send_C2SRankPlayerDetail: function (senderSocket, p_rank_type, p_player_id) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(10145);
@@ -3790,10 +3795,15 @@ var MyProtocols = {
 			retObj.rank_player.hero_stars = myDecoder.readInt();
 			retObj.rank_player.win_count = myDecoder.readInt();
 			retObj.rank_player.like_count = myDecoder.readInt();
+		}
+		retObj.item = []
+		let bing_size = myDecoder.readInt();
+		if (bing_size > 0) {
+			for (var i = 0; i < bing_size; i++) {
 
-			var size = myDecoder.readInt();
-			for (var i = 0; i < size; i++) {
-				retObj.rank_player.item[i]= myDecoder.readInt();
+				retObj.item[i] = {};
+				retObj.item[i].template_id = myDecoder.readInt();
+				retObj.item[i].num = myDecoder.readInt();
 			}
 		}
 		retObj.cardlist = [];
@@ -3842,6 +3852,7 @@ var MyProtocols = {
 		}
 		return retObj;
 	},
+
 
 	send_C2SZMPayCheck: function (senderSocket, p_fee_id, p_goodsName) {
 		var myEncoder = WsEncoder.alloc();

@@ -37,7 +37,6 @@ export default class NewClass extends cc.Component {
 
         NetEventDispatcher.addListener(NetEvent.S2CCreateCharacter, this.S2CCreateCharacter.bind(this))
 
-
         NetEventDispatcher.addListener(NetEvent.PushPropertyChange, this.PushPropertyChange.bind(this))
 
         NetEventDispatcher.addListener(NetEvent.S2CStageList, this.S2CStageList.bind(this))
@@ -45,9 +44,6 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.addListener(NetEvent.S2CCardList, this.S2CCardList.bind(this))
 
         NetEventDispatcher.addListener(NetEvent.PushAddCard, this.PushAddCard.bind(this))
-
-
-
         // S2CCreateCharacter
     }
     /**获取玩家信息 */
@@ -108,6 +104,9 @@ export default class NewClass extends cc.Component {
 
     S2CStageList(retObj) {
         DataManager.stagesData = retObj
+        if (retObj.chapters.length == 0) {
+            retObj.chapters = [{"stages":[]}]
+        }
         // {"chapters":[],"chapters_elite":[],"elite_count":5,"crawl_state":0}
         // if (retObj.chapters.length == 0) {
         //     DataManager.stagesData.chapters = [{ "stages": [] }]
