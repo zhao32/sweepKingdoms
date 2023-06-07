@@ -45,17 +45,17 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 172
-      },
-      {
         "__id__": 173
       },
       {
         "__id__": 174
+      },
+      {
+        "__id__": 175
       }
     ],
     "_prefab": {
-      "__id__": 175
+      "__id__": 176
     },
     "_opacity": 255,
     "_color": {
@@ -5613,8 +5613,8 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "f65c8xUMVNPwqpSrOeZviwj",
-    "handler": "onClose",
+    "_componentId": "c255atLFupH4YqgMfjGhSoO",
+    "handler": "onBackHandler",
     "customEventData": ""
   },
   {
@@ -5895,7 +5895,7 @@
       }
     ],
     "_prefab": {
-      "__id__": 171
+      "__id__": 172
     },
     "_opacity": 255,
     "_color": {
@@ -6122,7 +6122,11 @@
     "_grayMaterial": null,
     "duration": 0.1,
     "zoomScale": 1.2,
-    "clickEvents": [],
+    "clickEvents": [
+      {
+        "__id__": 171
+      }
+    ],
     "_N$interactable": true,
     "_N$enableAutoGrayEffect": false,
     "_N$transition": 2,
@@ -6169,14 +6173,30 @@
       "b": 124,
       "a": 255
     },
-    "_N$normalSprite": null,
-    "_N$pressedSprite": null,
-    "pressedSprite": null,
+    "_N$normalSprite": {
+      "__uuid__": "95432d00-bbbf-4690-8520-a4d28c2d1bda"
+    },
+    "_N$pressedSprite": {
+      "__uuid__": "e10b5c71-c595-481a-8372-4676c7166173"
+    },
+    "pressedSprite": {
+      "__uuid__": "e10b5c71-c595-481a-8372-4676c7166173"
+    },
     "_N$hoverSprite": null,
     "hoverSprite": null,
     "_N$disabledSprite": null,
     "_N$target": null,
     "_id": ""
+  },
+  {
+    "__type__": "cc.ClickEvent",
+    "target": {
+      "__id__": 1
+    },
+    "component": "",
+    "_componentId": "c255atLFupH4YqgMfjGhSoO",
+    "handler": "onSetHandler",
+    "customEventData": ""
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -6238,8 +6258,12 @@
       "__id__": 1
     },
     "_enabled": true,
-    "label": null,
-    "text": "hello",
+    "contect": {
+      "__id__": 42
+    },
+    "soliderPfb": {
+      "__uuid__": "732bc98b-3e3c-4232-a123-f8cc85048cf0"
+    },
     "_id": ""
   },
   {

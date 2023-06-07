@@ -38,10 +38,11 @@ export default class NewClass extends cc.Component {
 
     init() {
         this.selectCards = [DataManager.cardsList[0], DataManager.cardsList[1], DataManager.cardsList[2]]
+        this.heroContect.removeAllChildren()
 
     }
 
-    heroHandler0() {
+    heroHandler(event, idx) {
         this.heroContect.removeAllChildren()
         let cardsList = []
         for (let i = 0; i < DataManager.cardsList.length; i++) {
@@ -63,20 +64,20 @@ export default class NewClass extends cc.Component {
                 this.node.getChildByName('soliderScroll').active = true
 
                 let defaultData = DataManager.GameData.Cards[data.template_id]
-                ResManager.loadItemIcon(`hero/${defaultData.name}`, this.node.getChildByName('hero').getChildByName(`hero0`))
-                ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.node.getChildByName('hero').getChildByName(`bg0`))
+                ResManager.loadItemIcon(`hero/${defaultData.name}`, this.node.getChildByName('hero').getChildByName(`head${idx}`))
+                ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.node.getChildByName('hero').getChildByName(`bg${idx}`))
 
             }, this)
         }
     }
 
-    heroHandler1() {
+    // heroHandler1() {
 
-    }
+    // }
 
-    heroHandler2() {
+    // heroHandler2() {
 
-    }
+    // }
 
     doSaveHandler() {
 

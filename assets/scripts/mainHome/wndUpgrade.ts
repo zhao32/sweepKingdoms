@@ -136,7 +136,10 @@ export default class NewClass extends cc.Component {
         this.grade = grade + 1
         let levelData = DataManager.GameData.buildUp[this.group][idx][grade - 1]
         let upLevelData = DataManager.GameData.buildUp[this.group][idx][grade]
+        console.log('upLevelData:' + JSON.stringify(upLevelData))
         this.upPremiseDisplay.string = `升级条件: 玩家等级达到${levelData.unlocklevel}`
+        this.upPremiseDisplay.horizontalAlign = cc.Label.HorizontalAlign.LEFT
+
         if (upLevelData) {
             let tipStr = ''
             if (this.group == 'basic') {
@@ -173,10 +176,14 @@ export default class NewClass extends cc.Component {
                 }
             }
             this.upDisplay.string = `升级效果: ${tipStr}`
+
+            this.node.getChildByName('btnClose').y = -320;//this.node.getChildByName('bntUp2').y;
+            this.node.getChildByName('btnUp').active = true;
+            this.node.getChildByName('btnUp2').active = true;
         } else {
-            // this.upDisplay.string = '已满级'
-            // this.upDisplay.horizontalAlign = cc.Label.HorizontalAlign.CENTER
+            this.upDisplay.string = ''
             this.upPremiseDisplay.string = '已满级'
+            this.upPremiseDisplay.horizontalAlign = cc.Label.HorizontalAlign.CENTER
 
             this.node.getChildByName('btnClose').y = -250;//this.node.getChildByName('bntUp2').y;
             this.node.getChildByName('btnUp').active = false;

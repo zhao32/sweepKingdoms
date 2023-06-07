@@ -51,7 +51,7 @@ export default class NewClass extends cc.Component {
         console.log('------------------------------')
         console.log('retObj:' + JSON.stringify(retObj))
         DataManager.playData.id = retObj.id
-        DataManager.playData.account_id = retObj.id
+        DataManager.playData.account_id = retObj.account_id
         DataManager.playData.food = retObj.army
         DataManager.playData.troops = retObj.troops
         DataManager.playData.formationSlots = retObj.formationSlots
