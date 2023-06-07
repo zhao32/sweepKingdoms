@@ -43,7 +43,12 @@ export default class NewClass extends cc.Component {
     }
 
     heroHandler(event, idx) {
+        console.log(`-------点击英雄头像${idx}---------`)
         this.heroContect.removeAllChildren()
+
+        this.node.getChildByName('heroScroll').active = true
+        this.node.getChildByName('soliderScroll').active = false
+
         let cardsList = []
         for (let i = 0; i < DataManager.cardsList.length; i++) {
             if (this.selectCards.indexOf(DataManager.cardsList[i]) == -1) {
