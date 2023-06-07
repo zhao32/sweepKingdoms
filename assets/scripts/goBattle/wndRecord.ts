@@ -5,10 +5,17 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -28,9 +35,13 @@ export default class NewClass extends cc.Component {
     }
 
     init() {
-
+        MyProtocols.send_C2SMineHistory(DataManager._loginSocket)
+        NetEventDispatcher.addListener(NetEvent.S2CMineHistory, this.S2CMineHistory.bind(this))
     }
 
+    S2CMineHistory(data){
+        console.log('日志返回：'+JSON.stringify(data))
+    }
 
     onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)

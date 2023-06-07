@@ -10,6 +10,12 @@ import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
 
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
+
 @ccclass
 export default class NewClass extends cc.Component {
 
@@ -28,11 +34,14 @@ export default class NewClass extends cc.Component {
     }
 
     init() {
-
     }
 
     onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+    }
+
+    onBattleHandler(){
+        MyProtocols.send_C2SMineBattleCalculate(DataManager._loginSocket,1,1,true,10)
     }
 
 

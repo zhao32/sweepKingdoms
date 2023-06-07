@@ -215,6 +215,27 @@ export default class NewClass extends cc.Component {
             }
         });
 
+        cc.resources.loadDir("Mine", (err, res: cc.JsonAsset[]) => {
+            cc.log(`加载游戏数据${err ? '失败' : '成功'}`)
+            if (!err) {
+                // var object = res.json
+                // DataManager.errCodeData = object
+                // console.log('res:' + JSON.stringify(res))
+                let keys = Object.keys(DataManager.GameData)
+                for (let i = 0; i < res.length; i++) {
+                    for (let j = 0; j < keys.length; j++) {
+                        //@ts-ignore
+                        if (res[i]._name == keys[j]) {
+                            DataManager.GameData[keys[j]] = res[i].json
+                        }
+                    }
+                }
+                // console.log(JSON.stringify(DataManager.GameData))
+            } else {
+                console.log(err)
+            }
+        });
+
 
         // console.log(this.soldierData.json)
 

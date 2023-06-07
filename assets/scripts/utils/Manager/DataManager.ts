@@ -130,6 +130,7 @@ export default class DataManager {
         CardLevels: {},
         /**技能表 */
         Skill: {},
+        Mine:[]
 
     }
     /**我的将表 */

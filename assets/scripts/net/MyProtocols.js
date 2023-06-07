@@ -1403,6 +1403,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
+	/**请求矿场列表 */
 	send_C2SMineList: function (senderSocket, p_level_index, p_page_index) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3101);
@@ -1456,9 +1457,11 @@ var MyProtocols = {
 				}
 			}
 		}
+		console.log('矿场返回：'+ JSON.stringify(retObj))
 		return retObj;
 	},
 
+	/**请求敌方的矿场防守  */
 	send_C2SMineEnemyDetail: function (senderSocket, p_level_index, p_point_index) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3103);
@@ -1543,6 +1546,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
+	/**矿场战斗结果 */
 	send_C2SMineBattleCalculate: function (senderSocket, p_level_index, p_point_index, p_result, p_rand_key) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3105);
@@ -1642,6 +1646,7 @@ var MyProtocols = {
 			}
 			retObj.mine_point_detail.rand_key = myDecoder.readLong();
 		}
+		console.log(`战斗返回：`+JSON.stringify(retObj))
 		return retObj;
 	},
 
@@ -1663,6 +1668,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
+	/**矿场奖励 */
 	send_C2SMineGetAward: function (senderSocket) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3109);
@@ -1685,6 +1691,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
+	/* */
 	send_C2SMineHistory: function (senderSocket) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3111);
@@ -1719,6 +1726,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
+	/**我的矿场防守阵型 */
 	send_C2SMineDefFormationSave: function (senderSocket, p_level_index, p_point_index, p_formation) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3113);

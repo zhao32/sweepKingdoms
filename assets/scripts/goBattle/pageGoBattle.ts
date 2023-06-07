@@ -11,6 +11,12 @@ import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
 
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
+
 @ccclass
 export default class NewClass extends cc.Component {
 
@@ -33,10 +39,17 @@ export default class NewClass extends cc.Component {
     // onLoad () {}
 
     start() {
-
+        cc.resources.loadDir("Mine/Mine_01", cc.JsonAsset, (err, json) => {
+            if (err) {
+                console.log(err)
+            } else {
+                console.log('json:'+ JSON.stringify(json))
+            }
+        });
     }
 
     init() {
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 1, 1)
 
         this.myContect.removeAllChildren()
         for (let i = 0; i < 5; i++) {
