@@ -51,24 +51,21 @@ export default class NewClass extends cc.Component {
 
     myHeroData: any
 
-    // otherHeroData: any
-    _stageData
-
     groupIdx: number
 
-    stageIdx: number
+    enemyData: any
+
+    filedData:any
+
     start() {
 
     }
 
 
-    init(stageData, groupIdx, stageIdx) {
-        this.groupIdx = groupIdx
-        this.stageIdx = stageIdx
-        this._stageData = stageData
-        // "cardId":1,"soliders":[{"arm":1,"count":100}]
-        console.log('stageData:' + JSON.stringify(stageData))
-        // DataManager.playData.military_data = [500, 500, 500]
+    init(enemyData,filedData) {
+        this.enemyData = enemyData
+        this.filedData = filedData
+
         this.myContect.removeAllChildren()
         this.onSelectSolider = true
         for (let i = 0; i < DataManager.playData.military_data.length; i++) {
@@ -82,21 +79,22 @@ export default class NewClass extends cc.Component {
 
         this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(DataManager.cardsList[0])
         this.myHeroData = DataManager.cardsList[0]
-        this.initEnemyData(stageData.cardId, stageData.soliders)
+        this.initEnemyData(enemyData.cardId, enemyData.soliders)
     }
 
     initEnemyData(cardId, soliders) {
         console.log(`soliders:` + JSON.stringify(soliders))
-        // {"arm":1,"count":100}
-        // let template_id = 12
-        // this.otherHeroData = DataManager.cardsList[cardId]
-        let defaultData = DataManager.GameData.Cards[cardId]
 
-        let enemyContect = this.node.getChildByName("enemy");
-        enemyContect.getChildByName('name').getComponent(cc.Label).string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
-        ResManager.loadItemIcon(`hero/${defaultData.name}`, enemyContect.getChildByName('head'))
-        ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, enemyContect.getChildByName('iconBg'))
-        ResManager.loadItemIcon(`hero/heroNameBg${defaultData.quality - 1}`, enemyContect.getChildByName('heroNameBg0'))
+        if (cardId == 0) {
+            this.node.getChildByName("enemy").active = false
+        } else {
+            let defaultData = DataManager.GameData.Cards[cardId]
+            let enemyContect = this.node.getChildByName("enemy");
+            enemyContect.getChildByName('name').getComponent(cc.Label).string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
+            ResManager.loadItemIcon(`hero/${defaultData.name}`, enemyContect.getChildByName('head'))
+            ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, enemyContect.getChildByName('iconBg'))
+            ResManager.loadItemIcon(`hero/heroNameBg${defaultData.quality - 1}`, enemyContect.getChildByName('heroNameBg0'))
+        }
 
         this.otherContect.removeAllChildren()
         for (let i = 0; i < soliders.length; i++) {
@@ -153,8 +151,8 @@ export default class NewClass extends cc.Component {
             }
 
             let otherData = {
-                heroData: DataManager.GameData.Cards[this._stageData.cardId],
-                soliderList: this._stageData.soliders
+                heroData: DataManager.GameData.Cards[this.enemyData.cardId],
+                soliderList: this.enemyData.soliders
             }
 
             let allNum = 0
@@ -162,11 +160,16 @@ export default class NewClass extends cc.Component {
             for (let i = 0; i < this.myContect.children.length; i++) {
                 let render = this.myContect.children[i]
                 let data = render.getComponent(battleSoliderRender).getSelectNum()
+                let defineData = {
+                    arm:data.arm,
+                    count:data.count,
+                    fight: 0,
+                    defense: 0
+                }
                 if (data.count > 0) {
-                    myData.soliderList.push(data)
+                    myData.soliderList.push(defineData)
                 }
                 allNum += data.count
-                // console.log(JSON.stringify(render.getComponent(stageSoliderRender).getSelectNum()))
             }
 
 
@@ -181,7 +184,7 @@ export default class NewClass extends cc.Component {
 
             console.log('my_template_id:' + this.my_template_id)
             ViewManager.instance.hideWnd(DataManager.curWndPath)
-            ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_BATTLE, ...[myData, otherData, this.groupIdx, this.stageIdx])
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_BATTLE, ...[myData, otherData,this.filedData])
         }
     }
 

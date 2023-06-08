@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "stageHeroRender",
+    "_name": "battleHeroRender",
     "_objFlags": 0,
     "_parent": null,
     "_children": [

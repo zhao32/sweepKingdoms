@@ -72,7 +72,7 @@ export default class NewClass extends cc.Component {
     init(data = this._data, stateData = this._stateData, groupIdx: number) {
         data = GameUtil.deepClone(data)
         this._data = data
-        if(!stateData)stateData = {"stages":[],"star_award":[]}
+        if (!stateData) stateData = { "stages": [], "star_award": [] }
         this._stateData = stateData
         this.curStageData = data.stage[0]
         this.groupIdx = groupIdx
@@ -90,7 +90,7 @@ export default class NewClass extends cc.Component {
             item.parent = this.contect
             let isopen
 
-            console.log('stateData:'+JSON.stringify(stateData))
+            console.log('stateData:' + JSON.stringify(stateData))
             if (!stateData) {
                 isopen = false
                 // stateData =  [{ "stages": [{ "star": 0, "times": 5, "is_get_award": false}] }]
@@ -120,6 +120,11 @@ export default class NewClass extends cc.Component {
 
     onHandleStart() {
         Logger.log('-----开始副本----')
+
+        if (this._stateData.stages && this._stateData.stages[this._selectIdx - 1]&& this._stateData.stages[this._selectIdx - 1].times == 0) {
+            ViewManager.instance.showToast(`关卡已达今日最大征战次数`)
+            return
+        }
         ViewManager.instance.hideWnd(DataManager.curWndPath)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_READY, ...[this.curStageData, this.groupIdx, this.stageIdx])
     }

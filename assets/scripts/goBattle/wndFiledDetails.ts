@@ -6,6 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import DataManager from "../utils/Manager/DataManager";
+import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
@@ -56,7 +57,7 @@ export default class NewClass extends cc.Component {
     init(data) {
         this._data = data
         this.nameLabel.string = data.lv + '级' + data.name
-        this.posLabel.string =`(${data.x},${data.y})`  //`(${data.x,data.y})`
+        this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`
     }
 
     onCloseHandler() {
@@ -64,7 +65,21 @@ export default class NewClass extends cc.Component {
     }
 
     onBattleHandler() {
-        MyProtocols.send_C2SMineBattleCalculate(DataManager._loginSocket, this._data.x, this._data.y, true, 10)
+        // MyProtocols.send_C2SMineBattleCalculate(DataManager._loginSocket, this._data.x, this._data.y, true, 10)
+        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        let defineData =
+        {
+            cardId: 0,
+            soliders: [
+                {
+                    arm: 1,
+                    count: 1000,
+                    fight: 0,
+                    defense: 0
+                }
+            ]
+        }
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData,this._data])
     }
 
 

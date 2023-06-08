@@ -28,8 +28,14 @@ export default class NewClass extends cc.Component {
     @property(cc.SpriteFrame)
     bgFrame: cc.SpriteFrame[] = [];
 
-    @property
-    text: string = 'hello';
+    @property(cc.Node)
+    generalHead0: cc.Node = null;
+
+    @property(cc.Node)
+    generalHead1: cc.Node = null;
+
+    @property(cc.Node)
+    generalHead2: cc.Node = null;
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -38,7 +44,7 @@ export default class NewClass extends cc.Component {
     start() {
 
     }
-    // "playerId":9953,"nickname":"肥胖的怀安浪子","sexId":0,"icon":0,"head_frame":1,"level":100,"fight":0,"vipLevel":0,"rank_change":0,"hero_count":0,"hero_stars":0,"win_count":0,"like_count":0}
+    // {"playerId":9971,"nickname":"内向的谯郡狱卒","sexId":1,"icon":1,"head_frame":1,"level":22,"fight":0,"vipLevel":0,"rank_change":0,"hero_count":10,"hero_stars":0,"win_count":0,"like_count":0,"card":[0,0,0]}
     init(data, idx) {
         this.nameLabel.string = data.nickname
         this.idxLabel.string = `No.${idx}`
@@ -53,6 +59,24 @@ export default class NewClass extends cc.Component {
             ResManager.loadItemIcon(`hero/head_1_1`, this.headNode)
         } else if (data.icon == 1) {
             ResManager.loadItemIcon(`hero/head_2_1`, this.headNode)
+        }
+
+        if (data.card[0] == 0) {
+            this.generalHead0.parent.active = false
+        } else {
+
+        }
+
+        if (data.card[1] == 0) {
+            this.generalHead1.parent.active = false
+        } else {
+
+        }
+
+        if (data.card[2] == 0) {
+            this.generalHead2.parent.active = false
+        } else {
+
         }
 
     }

@@ -5,7 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
-import stageHeroRender from "../stage/stageHeroRender";
+import battleHeroRender from "../battle/battleHeroRender";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
@@ -114,7 +114,7 @@ export default class NewClass extends cc.Component {
             let hero = cc.instantiate(this.heroPfb)
             hero.x = 0
             hero.parent = this.heroContect
-            hero.getComponent(stageHeroRender).init(cardsList[i])
+            hero.getComponent(battleHeroRender).init(cardsList[i])
             hero.getChildByName('btnSelect').on(cc.Node.EventType.TOUCH_END, () => {
                 let data = cardsList[i]
                 // this.node.getChildByName('stageHeroRender').getComponent(stageHeroRender).init(DataManager.cardsList[i])

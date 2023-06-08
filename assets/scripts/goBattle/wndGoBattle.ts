@@ -48,7 +48,6 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     eHeroPfb: cc.Prefab = null;
 
-
     @property(cc.Node)
     myContect: cc.Node = null;
 
@@ -64,10 +63,6 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     soliderPfbList: cc.Prefab[] = [];
 
-    // mySolider
-
-    // otherSolider
-
     /**进攻方 */
     attacker: string
 
@@ -80,7 +75,6 @@ export default class NewClass extends cc.Component {
 
     myAttackList = []
     enemyAttackList = []
-    // LIFE-CYCLE CALLBACKS:
 
     myCount = {
         troops: 0,
@@ -93,24 +87,28 @@ export default class NewClass extends cc.Component {
     }
 
     battleInfo: string = ''
-    // onLoad () {}
-
-    groupIdx: number
-
-    stageIdx: number
 
     startTime: number
 
+    filedData: any
+
     start() {
 
+        NetEventDispatcher.addListener(NetEvent.S2CMineBattleCalculate, this.S2CMineBattleCalculate.bind(this))
+    }
+
+    S2CMineBattleCalculate(data) {
+        console.log("矿场战斗返回")
+        console.log(JSON.stringify(data))
+        this.initResultPanel()
     }
 
     /**
- * 
- * @param data 技能数据
- * @param proficiency 熟练度
- * @param talents 熟练兵种
- */
+     * 
+     * @param data 技能数据
+     * @param proficiency 熟练度
+     * @param talents 熟练兵种
+     */
     doCount(data, proficiency, talents) {
         // this.nameLabel.string = data.name
         //skillAttributeList ['', '挥砍防御', '挥砍攻击', '穿透防御', '穿透攻击', '法术攻击', '法术防御']
@@ -231,69 +229,31 @@ export default class NewClass extends cc.Component {
         console.log('敌方将领加成：' + JSON.stringify(plusList))
         return plusList
     }
-    // myData:{"heroData":{"id":"150717","template_id":19,"level":1,"num":1,"exp":0,"grade":0,"unit_level":1,"unitGrade":1,"unit_type":3,"fight":3201,"physical":200,"equips":["0","0","0","0","0","0"],"unitEquips":[0,0,0,0,0],"runeUnlock":[0,1,2,4,5,3],"runePutup":[0,0,0,0,0,0,0,0],"runeLevel":[0,0,0,0,0,0,0,0],"skills_equips":[0],"proficiency":[1430,115,198],"aptitude":[481,373,213]},"soliderList":[{"arm":1,"count":106},{"arm":2,"count":0},{"arm":3,"count":0}]}
 
-    S2CStageEnd(retObj) {
-        console.log('S2CStageEnd:' + JSON.stringify(retObj))
+    // showResult() {
+    //     this.initResultPanel()
+    // }
 
-        // {"chapters":[],"chapters_elite":[],"elite_count":5,"crawl_state":0}
-        if (!DataManager.stagesData.chapters[retObj.group_index]) {
-            DataManager.stagesData.chapters[retObj.group_index] = { "stages": [] }
-        }
-
-
-        // if (retObj.chapters[retObj.chapters.length -1].stages.length == DataManager.GameData.Stages[retObj.chapters.length - 1].stage.length && DataManager.GameData.Stages[retObj.chapters.length]) {
-        //     retObj.chapters.push({ "stages": [] })
-        // }
-
-        if (DataManager.GameData.Stages[retObj.group_index].stage.length == retObj.stage_index + 1 && !DataManager.stagesData.chapters[retObj.group_index + 1] && DataManager.GameData.Stages[retObj.group_index + 1]) {
-            DataManager.stagesData.chapters.push({ "stages": [] })
-        }
-
-        if (DataManager.stagesData.chapters[retObj.group_index].stages[retObj.stage_index]) {
-            DataManager.stagesData.chapters[retObj.group_index].stages[retObj.stage_index].star = retObj.star
-            DataManager.stagesData.chapters[retObj.group_index].stages[retObj.stage_index].times = retObj.times
-            // DataManager.stagesData.chapters[retObj.group_index][retObj.stage_index].is_get_award = retObj.rewards.length > 0
-
-        } else {
-            let obj = { "star": retObj.star, "times": retObj.times, "is_get_award": false }
-            DataManager.stagesData.chapters[retObj.group_index].stages.push(obj)
-        }
-
-        // {"group_index":0,"stage_index":0,"is_win":true,"star":2,"times":4,"rewards":[{"template_id":1104,"num":500},{"template_id":2064,"num":1},{"template_id":1006,"num":1}]}
-        this.initResultPanel()
-
-    }
-    init(myData, otherData, groupIdx, stageIdx) {
+    init(myData, otherData, filedData) {
         this.battleInfo = ''
-        NetEventDispatcher.addListener(NetEvent.S2CStageEnd, this.S2CStageEnd.bind(this))
-
-        this.groupIdx = groupIdx
-        this.stageIdx = stageIdx
-
+        this.filedData = filedData
         this.startTime = new Date().getTime()
 
-        console.log('myData:' + JSON.stringify(myData))
-        console.log('otherData:' + JSON.stringify(otherData))
-        for (let i = 0; i < myData.soliderList.length; i++) {
-            let obj: solider = {
-                arm: myData.soliderList[i].arm,
-                count: myData.soliderList[i].count,
-                fight: 0,
-                defense: 0
-            }
-            myData.soliderList[i] = obj
+        this.myAttackList = []
+        this.enemyAttackList = []
+
+        this.myCount = {
+            troops: 0,
+            hurt: 0
         }
 
-        for (let i = 0; i < otherData.soliderList.length; i++) {
-            let obj: solider = {
-                arm: otherData.soliderList[i].arm,
-                count: otherData.soliderList[i].count,
-                fight: 0,
-                defense: 0
-            }
-            otherData.soliderList[i] = obj
+        this.enemyCount = {
+            troops: 0,
+            hurt: 0
         }
+
+        this.node.getChildByName('resultPanel').active = false
+
         this.myData = myData
         this.enemyData = otherData
 
@@ -301,7 +261,6 @@ export default class NewClass extends cc.Component {
         console.error('otherData:' + JSON.stringify(otherData))
 
         let myPlusList = this.getMyPlusList()
-
         for (let i = 0; i < myData.soliderList.length; i++) {
             myData.soliderList[i].fight += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_1
             myData.soliderList[i].fight += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_2
@@ -319,30 +278,36 @@ export default class NewClass extends cc.Component {
             }
         }
 
-        // console.log('myData:' + JSON.stringify(myData))
+        if (!otherData.heroData) {
+            for (let i = 0; i < otherData.soliderList.length; i++) {
+                otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_1
+                otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_2
+                otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_3
 
-        let enemyPlusList = this.getEnemyPlusList()
+                otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_4
+                otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_5
+                otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_6
+            }
+        } else {
+            let enemyPlusList = this.getEnemyPlusList()
 
-        for (let i = 0; i < otherData.soliderList.length; i++) {
-            otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_1
-            otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_2
-            otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_3
+            for (let i = 0; i < otherData.soliderList.length; i++) {
+                otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_1
+                otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_2
+                otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_3
 
-            otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_4
-            otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_5
-            otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_6
+                otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_4
+                otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_5
+                otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_6
 
-            for (let j = 0; j < enemyPlusList.length; j++) {
-                if (enemyPlusList[j].arm == otherData.soliderList[i].arm) {
-                    otherData.soliderList[i].fight += enemyPlusList[j].fight
-                    otherData.soliderList[i].defense += enemyPlusList[j].defense
+                for (let j = 0; j < enemyPlusList.length; j++) {
+                    if (enemyPlusList[j].arm == otherData.soliderList[i].arm) {
+                        otherData.soliderList[i].fight += enemyPlusList[j].fight
+                        otherData.soliderList[i].defense += enemyPlusList[j].defense
+                    }
                 }
             }
         }
-        // console.log('enemyData:' + JSON.stringify(otherData))
-
-
-
 
         this.myContect.removeAllChildren()
         let item0 = cc.instantiate(this.heroPfb)
@@ -356,9 +321,12 @@ export default class NewClass extends cc.Component {
         }
 
         this.otherContect.removeAllChildren()
-        let item = cc.instantiate(this.eHeroPfb)
-        item.getComponent(enemyHeroItem).init(otherData.heroData)
-        item.parent = this.otherContect
+        if (otherData.heroData) {
+            let item = cc.instantiate(this.eHeroPfb)
+            item.getComponent(enemyHeroItem).init(otherData.heroData)
+            item.parent = this.otherContect
+        }
+
         for (let i = 0; i < otherData.soliderList.length; i++) {
             let item = cc.instantiate(this.soliderPfb)
             item.parent = this.otherContect
@@ -373,7 +341,6 @@ export default class NewClass extends cc.Component {
 
         let myAttackList = []
         let enemyAttackList = []
-        console.error('otherData:' + JSON.stringify(otherData))
 
         let self = this
         myAttack()
@@ -493,9 +460,6 @@ export default class NewClass extends cc.Component {
             }
         }
 
-        // console.log('myAttackList:' + JSON.stringify(myAttackList))
-        // console.log('enemyAttackList:' + JSON.stringify(enemyAttackList))
-
         this.myAttIdx = 0
         this.enemyAttIdx = 0
 
@@ -553,7 +517,6 @@ export default class NewClass extends cc.Component {
     }
 
     sendResult(isWin) {
-        // send_C2SStageEnd: function (senderSocket, p_group_index, p_stage_index, p_is_win, p_seconds, p_hpPercent, arm_size) {
         let armList = []
         for (let i = 0; i < this.myData.soliderList.length; i++) {
             let data = {
@@ -565,14 +528,13 @@ export default class NewClass extends cc.Component {
             armList.push(data)
         }
 
-        console.log('this.groupIdx:' + this.groupIdx)
-        console.log('stageIdx:' + this.stageIdx)
         console.log('armList:' + JSON.stringify(armList))
 
         // let disTime = new Date().getTime() - this.startTime
         let time = DataManager.instance.getDateDis(this.startTime, new Date().getTime())
         console.log('战斗耗时:' + time)
-        MyProtocols.send_C2SStageEnd(DataManager._loginSocket, this.groupIdx, this.stageIdx, isWin, time.toFixed(0), 0, armList);
+        // MyProtocols.send_C2SStageEnd(DataManager._loginSocket, this.groupIdx, this.stageIdx, isWin, time.toFixed(0), 0, armList);
+        MyProtocols.send_C2SMineBattleCalculate(DataManager._loginSocket, this.filedData.x, this.filedData.y, isWin, 10)
 
     }
 
@@ -621,16 +583,12 @@ export default class NewClass extends cc.Component {
             if (aniName == 'attack') {
                 this.posMy.zIndex = 0
                 this.posEnemy.zIndex = 1
-                // mySolider.getComponent(sp.Skeleton).setAnimation(0, 'victory', false)
                 if (enemyCount == 0) {
                     otherSolider.getComponent(sp.Skeleton).setAnimation(0, 'dead', false)
                     mySolider.getComponent(sp.Skeleton).addAnimation(0, 'victory', false)
                 } else {
                     otherSolider.getComponent(sp.Skeleton).setAnimation(0, 'hurt2', false)
                     mySolider.getComponent(sp.Skeleton).addAnimation(0, 'stand', false)
-
-                    // otherSolider.getComponent(sp.Skeleton).addAnimation(0, 'attack1', false)
-                    // otherSolider.getComponent(sp.Skeleton).addAnimation(0, 'victory', false)
                 }
                 this.updateEnemySolider(myIdx + 1, enemyCount)
             }
@@ -640,16 +598,6 @@ export default class NewClass extends cc.Component {
                 this.otherAttackAni()
             }
         })
-
-        // otherSolider.getComponent(sp.Skeleton).setCompleteListener((trackEnery, loopCount) => {
-        //     let aniName: string = trackEnery.animation.name
-        //     aniName = aniName.slice(0, aniName.length - 1);
-        //     if (aniName == 'attack') {
-        //         // mySolider.getComponent(sp.Skeleton).setAnimation(0, 'stand', true)
-        //         mySolider.getComponent(sp.Skeleton).addAnimation(0, 'hurt2', false)
-        //         mySolider.getComponent(sp.Skeleton).addAnimation(0, 'stand', false)
-        //     }
-        // })
     }
 
     otherAttackAni() {
@@ -667,10 +615,6 @@ export default class NewClass extends cc.Component {
         let myIdx = this.enemyAttackList[this.enemyAttIdx].myArm - 1
         let otherIdx = this.enemyAttackList[this.enemyAttIdx].enemyArm - 1
         let myCount = this.enemyAttackList[this.enemyAttIdx].myNum
-
-        console.log("otherAttackAni myIdx:" + myIdx)
-        console.log("otherAttackAni otherIdx:" + otherIdx)
-        console.log("otherAttackAni myCount:" + myCount)
 
         this.posMy.zIndex = 0
         this.posEnemy.zIndex = 1
@@ -707,41 +651,23 @@ export default class NewClass extends cc.Component {
                 } else {
                     mySolider.getComponent(sp.Skeleton).setAnimation(0, 'hurt2', false)
                     otherSolider.getComponent(sp.Skeleton).addAnimation(0, 'stand', false)
-
-                    // mySolider.getComponent(sp.Skeleton).addAnimation(0, 'attack1', false)
-                    // mySolider.getComponent(sp.Skeleton).addAnimation(0, 'victory', false)
                 }
                 this.updateMySolider(myIdx + 1, myCount)
 
             }
 
             if (this.attacker == 'enemy' && (aniName == 'stan' || aniName == 'victor')) {
-                // if (this.enemyAttIdx == this.enemyAttackList.length) {
-                //     console.log('我方全灭,挑战失败')
-                // } else {
-                //     this.enemyAttIdx += 1
-                //     this.myAttackAni()
-                // }
                 this.enemyAttIdx += 1
                 this.myAttackAni()
             }
         })
 
-        // mySolider.getComponent(sp.Skeleton).setCompleteListener((trackEnery, loopCount) => {
-        //     let aniName: string = trackEnery.animation.name
-        //     aniName = aniName.slice(0, aniName.length - 1);
-        //     if (aniName == 'attack') {
-        //         otherSolider.getComponent(sp.Skeleton).addAnimation(0, 'hurt2', false)
-        //         otherSolider.getComponent(sp.Skeleton).addAnimation(0, 'stand', false)
-        //     }
-        // })
     }
 
     doBack() {
+        console.log(`--------点击返回---------`)
         this.node.getChildByName('resultPanel').active = false
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE)
+        // ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE)
     }
-
-    // update (dt) {}
 }

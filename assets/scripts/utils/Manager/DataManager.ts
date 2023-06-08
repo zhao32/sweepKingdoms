@@ -191,6 +191,7 @@ export default class DataManager {
     static readonly qualityList = ['', '传奇', '天选', '无双', '名将', '大将']
 
 
+    static battleSoliderConfig = []
 
     getDateDis(sTime: any, eTime: any) {
         //将日期字符串转换为时间戳

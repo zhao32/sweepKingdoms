@@ -54,6 +54,7 @@ export default class NewClass extends cc.Component {
         // console.error('playerid'+ playerid)
 
         MyProtocols.send_C2SRankPlayerDetail(DataManager._loginSocket, rankType, playerid)
+        
         NetEventDispatcher.addListener(NetEvent.S2CRankPlayerDetail, this.S2CRankPlayerDetail.bind(this))
     }
 

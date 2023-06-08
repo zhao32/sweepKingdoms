@@ -40,7 +40,7 @@ export default class NewClass extends cc.Component {
     // onLoad () {}
 
     start() {
-       
+        // S2CMineList
     }
 
     init() {
@@ -56,7 +56,7 @@ export default class NewClass extends cc.Component {
             if (err) {
                 console.log(err)
             } else {
-                console.log('json:'+ JSON.stringify(filedJSON))
+                console.log('json:' + JSON.stringify(filedJSON))
 
                 //@ts-ignore
                 let filedList = filedJSON[0].json
@@ -67,14 +67,16 @@ export default class NewClass extends cc.Component {
                     filedNode.parent = this.filedContect
                     filedNode.getComponent(filedItem).init(filedList[i])
                     filedNode.on(cc.Node.EventType.TOUCH_END, () => {
-                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS,...[filedList[i]])
+                        if (filedList[i].type != 0) {
+                            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[filedList[i]])
+                        }
                     }, this)
                 }
 
             }
         });
 
-      
+
     }
 
     btnLeft() {

@@ -77,15 +77,24 @@ export default class NewClass extends cc.Component {
             this.bonusArea.active = true
         }, this)
 
-        NetEventDispatcher.addListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))
-
     }
 
     init() {
+        if(DataManager.battleSoliderConfig.length == 0){
+            for (let i = 0; i < DataManager.playData.military_data.length; i++) {
+                if(DataManager.playData.military_data[i]!=0){
+                    let data = {
+                        arm:i+1,
+                        count:DataManager.playData.military_data[i]
+                    }
+                    DataManager.battleSoliderConfig.push(data)
+                }
+            }
+        }
         this.scrollView.active = true
         this.bonusArea.active = false
         console.log('-----------------------------')
-        MyProtocols.send_C2SRankView(DataManager._loginSocket, 3)
+        MyProtocols.send_C2SRankView(DataManager._loginSocket, 4)
 
         // let retObj = { "my_rank": 0, "my_rank change": 0, "rank_type": 2, "items": [{ "playerId": 9935, "nickname": "相心的官读知", "sexid": 1, "icon": 1, "head_frame": 1, "level": 48, "fight": 9889, "viplevel": 0, "rank_change": 8, "hero count": 8, "hero_stars": 8, "win_count": 8, "like_count": 8, "card": [1, 2, 3] }, { "playerId": 9952, "nickname": "伏义的巴都力", "sexid": 0, "icon": 8, "head_frame": 1, "level": 78, "fight": 2395, "viplevel": 0, "rankchange": 0, "hero_count": 0, "hero_stars": 0, "win count": 0, "like count": 0, "card": [4, 5, 6] }, { "playerId": 5798, "nickname": "我的测试", "sexid": 0, "icon": 8, "head_frame": 1, "level": 78, "fight": 2395, "viplevel": 0, "rankchange": 0, "hero_count": 0, "hero_stars": 0, "win count": 0, "like count": 0, "card": [1, 11, 15] }], "today_my_like_players": [], "pkwinLoose": [] }
         // this.S2CRankView(retObj)
@@ -132,7 +141,7 @@ export default class NewClass extends cc.Component {
 
     onClose() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-
+        DataManager.battleSoliderConfig =  []
     }
 
     // update (dt) {}
