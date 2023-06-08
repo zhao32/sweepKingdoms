@@ -233,11 +233,22 @@ export default class NewClass extends cc.Component {
     // myData:{"heroData":{"id":"150717","template_id":19,"level":1,"num":1,"exp":0,"grade":0,"unit_level":1,"unitGrade":1,"unit_type":3,"fight":3201,"physical":200,"equips":["0","0","0","0","0","0"],"unitEquips":[0,0,0,0,0],"runeUnlock":[0,1,2,4,5,3],"runePutup":[0,0,0,0,0,0,0,0],"runeLevel":[0,0,0,0,0,0,0,0],"skills_equips":[0],"proficiency":[1430,115,198],"aptitude":[481,373,213]},"soliderList":[{"arm":1,"count":106},{"arm":2,"count":0},{"arm":3,"count":0}]}
 
     S2CStageEnd(retObj) {
+        console.log('S2CStageEnd:' + JSON.stringify(retObj))
+
         // {"chapters":[],"chapters_elite":[],"elite_count":5,"crawl_state":0}
         if (!DataManager.stagesData.chapters[retObj.group_index]) {
             DataManager.stagesData.chapters[retObj.group_index] = { "stages": [] }
         }
-        
+
+
+        // if (retObj.chapters[retObj.chapters.length -1].stages.length == DataManager.GameData.Stages[retObj.chapters.length - 1].stage.length && DataManager.GameData.Stages[retObj.chapters.length]) {
+        //     retObj.chapters.push({ "stages": [] })
+        // }
+
+        if (DataManager.GameData.Stages[retObj.group_index].stage.length == retObj.stage_index + 1 && !DataManager.stagesData.chapters[retObj.group_index + 1] && DataManager.GameData.Stages[retObj.group_index + 1]) {
+            DataManager.stagesData.chapters.push({ "stages": [] })
+        }
+
         if (DataManager.stagesData.chapters[retObj.group_index].stages[retObj.stage_index]) {
             DataManager.stagesData.chapters[retObj.group_index].stages[retObj.stage_index].star = retObj.star
             DataManager.stagesData.chapters[retObj.group_index].stages[retObj.stage_index].times = retObj.times

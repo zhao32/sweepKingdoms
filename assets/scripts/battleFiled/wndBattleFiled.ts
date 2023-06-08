@@ -76,17 +76,19 @@ export default class NewClass extends cc.Component {
             this.scrollView.active = false
             this.bonusArea.active = true
         }, this)
+
+        NetEventDispatcher.addListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))
+
     }
 
     init() {
         this.scrollView.active = true
         this.bonusArea.active = false
         console.log('-----------------------------')
-        // MyProtocols.send_C2SRankView(DataManager._loginSocket, 2)
-        NetEventDispatcher.addListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))
+        MyProtocols.send_C2SRankView(DataManager._loginSocket, 3)
 
-        let retObj = { "my_rank": 0, "my_rank change": 0, "rank_type": 2, "items": [{ "playerId": 9935, "nickname": "相心的官读知", "sexid": 1, "icon": 1, "head_frame": 1, "level": 48, "fight": 9889, "viplevel": 0, "rank_change": 8, "hero count": 8, "hero_stars": 8, "win_count": 8, "like_count": 8, "card": [1, 2, 3] }, { "playerId": 9952, "nickname": "伏义的巴都力", "sexid": 0, "icon": 8, "head_frame": 1, "level": 78, "fight": 2395, "viplevel": 0, "rankchange": 0, "hero_count": 0, "hero_stars": 0, "win count": 0, "like count": 0, "card": [4, 5, 6] }, { "playerId": 5798, "nickname": "我的测试", "sexid": 0, "icon": 8, "head_frame": 1, "level": 78, "fight": 2395, "viplevel": 0, "rankchange": 0, "hero_count": 0, "hero_stars": 0, "win count": 0, "like count": 0, "card": [1, 11, 15] }], "today_my_like_players": [], "pkwinLoose": [] }
-        this.S2CRankView(retObj)
+        // let retObj = { "my_rank": 0, "my_rank change": 0, "rank_type": 2, "items": [{ "playerId": 9935, "nickname": "相心的官读知", "sexid": 1, "icon": 1, "head_frame": 1, "level": 48, "fight": 9889, "viplevel": 0, "rank_change": 8, "hero count": 8, "hero_stars": 8, "win_count": 8, "like_count": 8, "card": [1, 2, 3] }, { "playerId": 9952, "nickname": "伏义的巴都力", "sexid": 0, "icon": 8, "head_frame": 1, "level": 78, "fight": 2395, "viplevel": 0, "rankchange": 0, "hero_count": 0, "hero_stars": 0, "win count": 0, "like count": 0, "card": [4, 5, 6] }, { "playerId": 5798, "nickname": "我的测试", "sexid": 0, "icon": 8, "head_frame": 1, "level": 78, "fight": 2395, "viplevel": 0, "rankchange": 0, "hero_count": 0, "hero_stars": 0, "win count": 0, "like count": 0, "card": [1, 11, 15] }], "today_my_like_players": [], "pkwinLoose": [] }
+        // this.S2CRankView(retObj)
     }
 
     S2CRankView(retObj) {
@@ -129,7 +131,8 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+
     }
 
     // update (dt) {}

@@ -2,31 +2,29 @@
 * Created by kenkozheng on 2014/8/20.
 */
 var NetEventDispatcher = {
-    _listenerMap : {},
-    addListener : function(event, callback){
-        if(!callback || !event)
+    _listenerMap: {},
+    addListener: function (event, callback) {
+        if (!callback || !event)
             return;
         var listenerList = this._listenerMap[event];
-        if(!listenerList)
+        if (!listenerList)
             listenerList = this._listenerMap[event] = new Array();
 
         for (var i = 0; i < listenerList.length; i++) {
-            if(listenerList[i] == callback)
+            if (listenerList[i] == callback)
                 return;
         }
         listenerList.push(callback);
         //cc.log("add event,size=%d",listenerList.length);
     },
 
-    removeListener : function(event, callback){
-        if(!callback || !event)
+    removeListener: function (event, callback) {
+        if (!callback || !event)
             return;
         var listenerList = this._listenerMap[event];
-        if(listenerList)
-        {
+        if (listenerList) {
             for (var i = 0; i < listenerList.length; i++) {
-                if(listenerList[i] == callback)
-                {
+                if (listenerList[i] == callback) {
                     listenerList.splice(i, 1);
                     break;
                 }
@@ -35,17 +33,16 @@ var NetEventDispatcher = {
         }
     },
 
-    removeEvent :function(event){
+    removeEvent: function (event) {
         var listenerList = this._listenerMap[event];
-        if(listenerList){
+        if (listenerList) {
             delete this._listenerMap[event];
             listenerList = [];
         }
     },
 
-    dispatchEvent : function(event,param){
-        if(this._listenerMap[event])
-        {
+    dispatchEvent: function (event, param) {
+        if (this._listenerMap[event]) {
             var listeners = this._listenerMap[event];
             for (var i = 0; i < listeners.length; i++) {
                 listeners[i](param);

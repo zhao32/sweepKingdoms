@@ -112,6 +112,15 @@ export default class NewClass extends cc.Component {
         if (retObj.chapters.length == 0) {
             retObj.chapters = [{ "stages": [] }]
         }
+       
+        console.log( retObj.chapters[retObj.chapters.length -1].stages.length)
+        console.log(DataManager.GameData.Stages[retObj.chapters.length - 1].stage.length)
+
+        if (retObj.chapters[retObj.chapters.length -1].stages.length == DataManager.GameData.Stages[retObj.chapters.length - 1].stage.length && DataManager.GameData.Stages[retObj.chapters.length]) {
+            retObj.chapters.push({ "stages": [] })
+        }
+
+        console.log('retObj:' + JSON.stringify(retObj))
         // {"chapters":[],"chapters_elite":[],"elite_count":5,"crawl_state":0}
         // if (retObj.chapters.length == 0) {
         //     DataManager.stagesData.chapters = [{ "stages": [] }]
@@ -195,27 +204,6 @@ export default class NewClass extends cc.Component {
         // });
 
         cc.resources.loadDir("json", (err, res: cc.JsonAsset[]) => {
-            cc.log(`加载游戏数据${err ? '失败' : '成功'}`)
-            if (!err) {
-                // var object = res.json
-                // DataManager.errCodeData = object
-                // console.log('res:' + JSON.stringify(res))
-                let keys = Object.keys(DataManager.GameData)
-                for (let i = 0; i < res.length; i++) {
-                    for (let j = 0; j < keys.length; j++) {
-                        //@ts-ignore
-                        if (res[i]._name == keys[j]) {
-                            DataManager.GameData[keys[j]] = res[i].json
-                        }
-                    }
-                }
-                // console.log(JSON.stringify(DataManager.GameData))
-            } else {
-                console.log(err)
-            }
-        });
-
-        cc.resources.loadDir("Mine", (err, res: cc.JsonAsset[]) => {
             cc.log(`加载游戏数据${err ? '失败' : '成功'}`)
             if (!err) {
                 // var object = res.json

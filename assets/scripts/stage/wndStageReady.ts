@@ -15,6 +15,13 @@ import stageSoliderRender from "./stageSoliderRender";
 
 const { ccclass, property } = cc._decorator;
 
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
+
 @ccclass
 export default class NewClass extends cc.Component {
 
@@ -167,6 +174,10 @@ export default class NewClass extends cc.Component {
                 ViewManager.instance.showToast('请选择上阵士兵')
                 return
             }
+
+            let data = { fid: 1, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.template_id, b: 0, c: 0, soldier: myData.soliderList }
+            console.log(JSON.stringify(data))
+            MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
 
             console.log('my_template_id:' + this.my_template_id)
             ViewManager.instance.hideWnd(DataManager.curWndPath)

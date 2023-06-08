@@ -1457,7 +1457,7 @@ var MyProtocols = {
 				}
 			}
 		}
-		console.log('矿场返回：'+ JSON.stringify(retObj))
+		console.log('矿场返回：' + JSON.stringify(retObj))
 		return retObj;
 	},
 
@@ -1646,7 +1646,7 @@ var MyProtocols = {
 			}
 			retObj.mine_point_detail.rand_key = myDecoder.readLong();
 		}
-		console.log(`战斗返回：`+JSON.stringify(retObj))
+		console.log(`战斗返回：` + JSON.stringify(retObj))
 		return retObj;
 	},
 
@@ -5744,6 +5744,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
+	//派将与兵
 	send_C2SBattleFormationSave: function (senderSocket, p_formation) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3005);
@@ -5758,13 +5759,19 @@ var MyProtocols = {
 			myEncoder.writeInt(p_formation.a);
 			myEncoder.writeInt(p_formation.b);
 			myEncoder.writeInt(p_formation.c);
-			myEncoder.writeInt(p_formation.d);
-			myEncoder.writeInt(p_formation.e);
-			myEncoder.writeInt(p_formation.f);
-			myEncoder.writeInt(p_formation.g);
-			myEncoder.writeInt(p_formation.h);
-			myEncoder.writeInt(p_formation.i);
-			myEncoder.writeInt(p_formation.j);
+			// myEncoder.writeInt(p_formation.d);
+			// myEncoder.writeInt(p_formation.e);
+			// myEncoder.writeInt(p_formation.f);
+			// myEncoder.writeInt(p_formation.g);
+			// myEncoder.writeInt(p_formation.h);
+			// myEncoder.writeInt(p_formation.i);
+			// myEncoder.writeInt(p_formation.j);
+			myEncoder.writeInt(p_formation.soldier.length)//派兵是数据
+			for (var i = 0; i < p_formation.soldier.length; i++) {
+				myEncoder.writeInt(p_formation.soldier[i].arm)//兵种
+				myEncoder.writeInt(p_formation.soldier[i].count)//数量
+			}
+
 		}
 		var rawContent = myEncoder.end();
 		myEncoder.free();
