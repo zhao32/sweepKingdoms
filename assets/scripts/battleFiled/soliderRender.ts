@@ -51,8 +51,8 @@ export default class NewClass extends cc.Component {
             }
         }
 
-        if (count > 500 && this.slider.progress > this.selectNum / this.allNum) {
-            let selectNum = 500 - (count - myCount)
+        if (count > 150000000 && this.slider.progress > this.selectNum / this.allNum) {
+            let selectNum = 150000000 - (count - myCount)
             // selectNum = Math.max(0, selectNum)
             this.slider.progress = Math.max(selectNum / this.allNum, 0)
             ViewManager.instance.showToast('已招满500r人')

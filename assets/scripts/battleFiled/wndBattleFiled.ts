@@ -76,6 +76,7 @@ export default class NewClass extends cc.Component {
             this.scrollView.active = false
             this.bonusArea.active = true
         }, this)
+        NetEventDispatcher.addListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))
 
     }
 
@@ -121,7 +122,7 @@ export default class NewClass extends cc.Component {
                 console.log(`-------点击我的-----------`)
                 render.on(cc.Node.EventType.TOUCH_END, () => {
                     ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLEFILED)
-                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_MYTEAM, ...[retObj.rank_type, retObj.items[i].playerId])
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_MYTEAM, ...[retObj.items[i].card])
                 }, this)
 
             } else {
