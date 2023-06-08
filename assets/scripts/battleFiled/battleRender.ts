@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import DataManager from "../utils/Manager/DataManager";
 import ResManager from "../utils/Manager/ResManager";
 
 const { ccclass, property } = cc._decorator;
@@ -21,6 +22,12 @@ export default class NewClass extends cc.Component {
     @property(cc.Node)
     headNode: cc.Node = null;
 
+    @property(cc.Sprite)
+    bgSprite: cc.Sprite = null;
+
+    @property(cc.SpriteFrame)
+    bgFrame: cc.SpriteFrame[] = [];
+
     @property
     text: string = 'hello';
 
@@ -35,6 +42,12 @@ export default class NewClass extends cc.Component {
     init(data, idx) {
         this.nameLabel.string = data.nickname
         this.idxLabel.string = `No.${idx}`
+
+        if (data.playerId == DataManager.playData.id) {
+            this.bgSprite.spriteFrame = this.bgFrame[1]
+        } else {
+            this.bgSprite.spriteFrame = this.bgFrame[0]
+        }
 
         if (data.icon == 0) {
             ResManager.loadItemIcon(`hero/head_1_1`, this.headNode)

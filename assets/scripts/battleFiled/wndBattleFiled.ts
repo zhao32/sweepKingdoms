@@ -108,7 +108,7 @@ export default class NewClass extends cc.Component {
                 }, 0.3 * i)
             }
 
-            if (retObj.items[i].playerId == DataManager.playData.account_id) {
+            if (retObj.items[i].playerId == DataManager.playData.id) {
                 console.log(`-------点击我的-----------`)
                 render.on(cc.Node.EventType.TOUCH_END, () => {
                     ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLEFILED)
@@ -117,7 +117,7 @@ export default class NewClass extends cc.Component {
 
             } else {
                 console.log('retObj.items[i].playerId:' + retObj.items[i].playerId)
-                console.log('DataManager.playData.account_id:' + DataManager.playData.account_id)
+                console.log('DataManager.playData.account_id:' + DataManager.playData.id)
                 render.on(cc.Node.EventType.TOUCH_END, () => {
                     ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLEFILED)
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_ARMY, ...[retObj.rank_type, retObj.items[i].playerId])

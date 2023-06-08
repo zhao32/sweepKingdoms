@@ -1989,6 +1989,17 @@
     "headNode": {
       "__id__": 2
     },
+    "bgSprite": {
+      "__id__": 54
+    },
+    "bgFrame": [
+      {
+        "__uuid__": "97da432c-f233-4700-94fe-feee14c65f35"
+      },
+      {
+        "__uuid__": "cae05f21-cf84-4cb5-8b32-3e6bb3987602"
+      }
+    ],
     "text": "hello",
     "_id": ""
   },
