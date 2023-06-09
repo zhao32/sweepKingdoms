@@ -113,7 +113,7 @@ export default class NewClass extends cc.Component {
             rank: retObj.my_rank,
             name: DataManager.playData.name,
             rank_type: retObj.rank_type,
-            icon:0
+            icon: 0
         }
 
         let ePlayerData = {
@@ -121,7 +121,7 @@ export default class NewClass extends cc.Component {
             rank: 0,
             name: '',
             rank_type: retObj.rank_type,
-            icon:0
+            icon: 0
         }
 
         this.contect.removeAllChildren()
@@ -129,6 +129,9 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < retObj.items.length; i++) {
             let render = cc.instantiate(this.renderPfb)
             render.parent = this.contect
+
+
+            let honer = Math.max(365, Math.floor(15000 * Math.pow(1 - 0.01, i)) )
             render.getComponent(battleRender).init(retObj.items[i], i + 1)
 
             if (i < 5) {

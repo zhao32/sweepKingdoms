@@ -63,7 +63,6 @@ export default class NewClass extends cc.Component {
     S2CPkBattleCalculate(data) {
         console.log(`战斗结果提交返回`)
         console.log(JSON.stringify(data))
-
     }
 
     deepClone(obj) {
@@ -209,7 +208,7 @@ export default class NewClass extends cc.Component {
         let resultData = []
         myAttack()
         function myAttack() {
-            let result = self.fightDeduction(myResetData[myIdx].soliders, enemyResetData[eIdx].soliders, true)
+            let result = self.fightDeduction(self.deepClone(myResetData[myIdx].soliders), self.deepClone(enemyResetData[eIdx].soliders), true)
             let myData = myResetData[myIdx]
             let eData = enemyResetData[eIdx]
             let defineData = {
@@ -242,7 +241,7 @@ export default class NewClass extends cc.Component {
         }
 
         function eAttack() {
-            let result = self.fightDeduction(myResetData[myIdx].soldiers, enemyResetData[eIdx].soldiers, false)
+            let result = self.fightDeduction(self.deepClone(myResetData[myIdx].soldiers), self.deepClone(enemyResetData[eIdx].soldiers), false)
             let myData = myResetData[myIdx]
             let eData = enemyResetData[eIdx]
             let defineData = {
@@ -313,8 +312,8 @@ export default class NewClass extends cc.Component {
         }
 
         function myAttack() {
-            let mySolider: solider = self.deepClone(mySoliders[myIdx])
-            let enemySolider: solider = self.deepClone(eSoliders[enemyIdx])
+            let mySolider: solider = (mySoliders[myIdx])
+            let enemySolider: solider = (eSoliders[enemyIdx])
 
             let myAttacknum = mySolider.fight * mySolider.count
             let enemyDefensenum = enemySolider.defense * enemySolider.count
@@ -354,11 +353,11 @@ export default class NewClass extends cc.Component {
                 info = `我方${DataManager.GameData.Soldier[mySolider.arm].name}攻击敌方${DataManager.GameData.Soldier[enemySolider.arm].name},歼灭${disCount}人\n`;
                 console.log(info)
                 battleInfo += info
-                console.log(JSON.stringify(enemyCount))
+                console.log('敌方伤亡：' + JSON.stringify(enemyCount))
                 enemyCount.hurt += disCount
 
                 console.log('enemySolider.count:' + enemySolider.count)
-                if (enemySolider.count == 0) {
+                if (enemySolider.count <= 0) {
                     if (enemyIdx == eSoliders.length - 1) {
                         console.log(`敌方士兵全部战死，挑战成功`)
                     } else {
@@ -372,8 +371,8 @@ export default class NewClass extends cc.Component {
         }
 
         function enemyAttack() {
-            let mySolider: solider = self.deepClone(mySoliders[myIdx])
-            let enemySolider: solider = self.deepClone(eSoliders[enemyIdx])
+            let mySolider: solider = (mySoliders[myIdx])
+            let enemySolider: solider = (eSoliders[enemyIdx])
 
             let enemyAttackNum = enemySolider.fight * enemySolider.count
             let myDefanceNum = mySolider.defense * mySolider.count
@@ -415,7 +414,7 @@ export default class NewClass extends cc.Component {
                 console.log(info)
                 myCount.hurt += disCount
                 battleInfo += info
-                if (mySolider.count == 0) {
+                if (mySolider.count <= 0) {
                     if (myIdx == mySoliders.length - 1) {
                         console.log(`我的士兵全部战死，挑战失败`)
                     } else {
