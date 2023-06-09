@@ -66,7 +66,7 @@ export default class NewClass extends cc.Component {
 
     getSelectNum() {
         // return [this.idx, this.selectNum]
-        return { arm: this.idx, count: this.selectNum }
+        return { arm: this.idx, count: this.selectNum, countAll: this.allNum }
     }
 
     getCheckSelectNum() {
@@ -76,9 +76,12 @@ export default class NewClass extends cc.Component {
         return { arm: this.idx, count: this._selectNum }
     }
 
-    init(idx, soliderNum) {
+    init(idx, soliderNum, allNum) {
         this.idx = idx
-        this.allNum = soliderNum
+        this.allNum = allNum
+        this.selectNum = soliderNum
+        this.useLabel.string = `调动数量 ${soliderNum}`;
+        this.slider.progress = Math.max(soliderNum / this.allNum, 0);
         this.nameLabel.string = `${DataManager.GameData.Soldier[idx].name} ${DataManager.playData.military_data[idx - 1]}`
         ResManager.loadItemIcon(`soliderHead/${DataManager.GameData.Soldier[idx].name}`, this.node.getChildByName(`head`))
     }

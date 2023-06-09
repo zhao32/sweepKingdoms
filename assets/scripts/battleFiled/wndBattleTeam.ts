@@ -32,31 +32,35 @@ export default class NewClass extends cc.Component {
 
     // onLoad () {}
 
-    heroList
+    // heroList
 
     start() {
         // NetEventDispatcher.addListener(NetEvent.S2CRankPlayerDetail, this.S2CRankPlayerDetail.bind(this))
 
     }
 
-    init(heroList) {
+    init() {
         // MyProtocols.send_C2SRankPlayerDetail(DataManager._loginSocket, rankType, playerid)
-        this.heroList = heroList
+        // this.heroList = heroList
         this.contect.removeAllChildren()
-        for (let i = 0; i < DataManager.battleSoliderConfig.length; i++) {
+        for (let i = 0; i < DataManager.myBattleFiledConfig.soliders.length; i++) {
+            let soliderData = DataManager.myBattleFiledConfig.soliders[i]
             let solider = cc.instantiate(this.soliderPfb)
             solider.parent = this.contect
-            solider.getChildByName('nameLabel').getComponent(cc.Label).string = DataManager.GameData.Soldier[DataManager.battleSoliderConfig[i].arm].name
-            solider.getChildByName('countLabel').getComponent(cc.Label).string = 'x' + DataManager.battleSoliderConfig[i].count
+            let name =  DataManager.GameData.Soldier[soliderData.arm].name
+            solider.getChildByName('nameLabel').getComponent(cc.Label).string = name
+            solider.getChildByName('countLabel').getComponent(cc.Label).string = 'x' + soliderData.count
+
+            ResManager.loadItemIcon(`soliderHead/${name}`, solider.getChildByName('iocn'))
+
         }
 
-        for (let i = 0; i < heroList.length; i++) {
-            if (heroList[i] != 0) {
-                let defaultData = DataManager.GameData.Cards[heroList[i]]
+        for (let i = 0; i < DataManager.myBattleFiledConfig.card.length; i++) {
+            if (DataManager.myBattleFiledConfig.card[i] != 0) {
+                let defaultData = DataManager.GameData.Cards[DataManager.myBattleFiledConfig.card[i]]
                 ResManager.loadItemIcon(`hero/${defaultData.name}`, this.node.getChildByName('hero').getChildByName(`head${i}`))
                 ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.node.getChildByName('hero').getChildByName(`bg${i}`))
             }
-
         }
 
     }
@@ -68,7 +72,7 @@ export default class NewClass extends cc.Component {
 
     onSetHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_TEAMSET, ...[this.heroList])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_TEAMSET)
     }
 
 

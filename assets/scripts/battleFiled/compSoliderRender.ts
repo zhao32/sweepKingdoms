@@ -5,6 +5,9 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import DataManager from "../utils/Manager/DataManager";
+import ResManager from "../utils/Manager/ResManager";
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -26,7 +29,11 @@ export default class NewClass extends cc.Component {
 
     }
 
-    init() {
+    init(data) {
+        this.label0.string = DataManager.GameData.Soldier[data.arm].name
+        this.label1.string = 'x' + data.count
+
+        ResManager.loadItemIcon(`soliderHead/${DataManager.GameData.Soldier[data.arm].name}`, this.icon)
 
     }
 

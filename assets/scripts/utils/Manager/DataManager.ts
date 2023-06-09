@@ -138,7 +138,7 @@ export default class DataManager {
         /**技能 */
         packSkills: {},
         /**将魂 */
-        packGeneralPice:{}
+        packGeneralPice: {}
 
     }
     /**我的将表 */
@@ -191,7 +191,7 @@ export default class DataManager {
     static readonly qualityList = ['', '传奇', '天选', '无双', '名将', '大将']
 
 
-    static battleSoliderConfig = []
+    static myBattleFiledConfig = { card: [], soliders: [] }
 
     getDateDis(sTime: any, eTime: any) {
         //将日期字符串转换为时间戳

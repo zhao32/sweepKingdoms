@@ -2203,7 +2203,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 500,
+      "width": 300,
       "height": 40
     },
     "_anchorPoint": {
@@ -3007,7 +3007,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 216.76,
+      "width": 104,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -3059,8 +3059,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "最多可派兵150000",
-    "_N$string": "最多可派兵150000",
+    "_string": "兵力调配",
+    "_N$string": "兵力调配",
     "_fontSize": 26,
     "_lineHeight": 40,
     "_enableWrapText": true,

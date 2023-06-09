@@ -6,6 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import battleHeroRender from "../battle/battleHeroRender";
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
@@ -13,6 +14,12 @@ import ViewManager from "../utils/Manager/ViewManager";
 import soliderRender from "./soliderRender";
 
 const { ccclass, property } = cc._decorator;
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -29,19 +36,28 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     soliderPfb: cc.Prefab = null;
 
-    selectCards = []
+    // selectCards = []
 
     // soliderList = []
 
     // onLoad () {}
 
     start() {
-
+        NetEventDispatcher.addListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave.bind(this))
     }
 
-    init(selectCards) {
-        this.selectCards = selectCards//[DataManager.cardsList[0], DataManager.cardsList[1], DataManager.cardsList[2]]
+    S2CBattleFormationSave(data) {
+        console.log('军队配置返回' + JSON.stringify(data))
+        ViewManager.instance.showToast(`战队配置保存成功`)
+        ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLE_TEAMSET)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_MYTEAM)
+    }
+
+    init() {
+        // this.selectCards = selectCards//[DataManager.cardsList[0], DataManager.cardsList[1], DataManager.cardsList[2]]
         this.heroContect.removeAllChildren()
+
+        // console.log(`selectCards:` + selectCards)
 
         // this.soliderList = [
         //     {
@@ -69,16 +85,20 @@ export default class NewClass extends cc.Component {
         //     soliderItem.parent = this.soliderContect
         // }
 
-        for (let i = 0; i < DataManager.battleSoliderConfig.length; i++) {
+        for (let i = 0; i < DataManager.myBattleFiledConfig.soliders.length; i++) {
             let soliderItem = cc.instantiate(this.soliderPfb)
-            soliderItem.getComponent(soliderRender).init(DataManager.battleSoliderConfig[i].arm, DataManager.battleSoliderConfig[i].count)
+            let soliderData = DataManager.myBattleFiledConfig.soliders[i]
+            soliderItem.getComponent(soliderRender).init(soliderData.arm, soliderData.count, soliderData.countAll)
             soliderItem.parent = this.soliderContect
         }
 
-        for (let i = 0; i < this.selectCards.length; i++) {
-            let defaultData = DataManager.GameData.Cards[this.selectCards[i]]
-            ResManager.loadItemIcon(`hero/${defaultData.name}`, this.node.getChildByName('hero').getChildByName(`head${i}`))
-            ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.node.getChildByName('hero').getChildByName(`bg${i}`))
+        for (let i = 0; i < DataManager.myBattleFiledConfig.card.length; i++) {
+            if (DataManager.myBattleFiledConfig.card[i]) {
+                let defaultData = DataManager.GameData.Cards[DataManager.myBattleFiledConfig.card[i]]
+                ResManager.loadItemIcon(`hero/${defaultData.name}`, this.node.getChildByName('hero').getChildByName(`head${i}`))
+                ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.node.getChildByName('hero').getChildByName(`bg${i}`))
+            }
+
         }
     }
 
@@ -91,13 +111,13 @@ export default class NewClass extends cc.Component {
 
         let cardsList = []
         let tempIdList = []
-        for (let i = 0; i < this.selectCards.length; i++) {
-            tempIdList.push(this.selectCards[i].id)
+        for (let i = 0; i < DataManager.myBattleFiledConfig.card.length; i++) {
+            tempIdList.push(DataManager.myBattleFiledConfig.card[i])
         }
 
         console.log(JSON.stringify(tempIdList))
         for (let i = 0; i < DataManager.cardsList.length; i++) {
-            if (tempIdList.indexOf(DataManager.cardsList[i].id) == -1) {
+            if (tempIdList.indexOf(DataManager.cardsList[i].template_id) == -1) {
                 cardsList.push(DataManager.cardsList[i])
             }
         }
@@ -115,7 +135,7 @@ export default class NewClass extends cc.Component {
                 this.node.getChildByName('heroScroll').active = false
                 this.node.getChildByName('soliderScroll').active = true
 
-                this.selectCards[idx] = cardsList[i]
+                DataManager.myBattleFiledConfig.card[idx] = cardsList[i].template_id
 
                 let defaultData = DataManager.GameData.Cards[data.template_id]
                 ResManager.loadItemIcon(`hero/${defaultData.name}`, this.node.getChildByName('hero').getChildByName(`head${idx}`))
@@ -134,18 +154,21 @@ export default class NewClass extends cc.Component {
     // }
 
     doSaveHandler() {
-        DataManager.battleSoliderConfig = []
+        DataManager.myBattleFiledConfig.soliders = []
         for (let i = 0; i < this.soliderContect.children.length; i++) {
             let soliderItem = this.soliderContect.children[i]
             let data = soliderItem.getComponent(soliderRender).getSelectNum()
-            DataManager.battleSoliderConfig.push(data)
+            DataManager.myBattleFiledConfig.soliders.push(data)
         }
-
+        let card = DataManager.myBattleFiledConfig.card
+        let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: card[0], b: card[1], c: card[2], soldier: DataManager.myBattleFiledConfig.soliders }
+        console.log(JSON.stringify(data))
+        MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
     }
 
     onBackHandler() {
-        ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLE_TEAMSET, true)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_MYTEAM, ...[this.selectCards])
+        ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLE_TEAMSET)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_MYTEAM)
 
     }
 

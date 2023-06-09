@@ -72,7 +72,7 @@ export default class EnumManager {
         WND_BATTLEFILED: 'prefabs/battleFiled/wndBattleFiled',
 
         /**部队比较 */
-        WND_BATTLE_ARMY: 'prefabs/battleFiled/wndArmy',
+        WND_BATTLE_COMPARMY: 'prefabs/battleFiled/wndCompArmy',
 
         /**我的战队 */
         WND_BATTLE_MYTEAM: 'prefabs/battleFiled/wndBattleTeam',
@@ -81,7 +81,6 @@ export default class EnumManager {
         WND_BATTLE_TEAMSET: 'prefabs/battleFiled/wndBattleSet',
 
         
-
         /**副本 */
         WND_STAGE: 'prefabs/stage/wndStage',
         /**副本选关 */
