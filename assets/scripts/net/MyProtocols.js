@@ -3835,6 +3835,15 @@ var MyProtocols = {
 				retObj.cardlist[i].unitDef = myDecoder.readInt();
 				retObj.cardlist[i].unitNum = myDecoder.readInt();
 				retObj.cardlist[i].fight = myDecoder.readInt();
+
+				retObj.cardlist[i].proficiency = [];
+				let proficiency_size = myDecoder.readInt();
+				if (proficiency_size > 0) {
+					for (var proficiency_idx = 0; proficiency_idx < cardlisti_proficiency_size; proficiency_idx++) {
+						retObj.cardlist[i].proficiency[proficiency_idx] = myDecoder.readInt();
+					}
+				}
+
 				retObj.cardlist[i].equips = [];
 				let cardlisti_equips_size = myDecoder.readInt();
 				if (cardlisti_equips_size > 0) {
