@@ -3825,7 +3825,7 @@ var MyProtocols = {
 				retObj.cardlist[i].grade = myDecoder.readInt();
 				retObj.cardlist[i].unitLevel = myDecoder.readInt();
 				retObj.cardlist[i].unitGrade = myDecoder.readInt();
-				retObj.cardlist[i].unit_type = myDecoder.readInt();
+				//retObj.cardlist[i].unit_type = myDecoder.readInt();
 
 				retObj.cardlist[i].maxhp = myDecoder.readInt();
 				retObj.cardlist[i].atk = myDecoder.readInt();
@@ -3835,11 +3835,11 @@ var MyProtocols = {
 				retObj.cardlist[i].unitDef = myDecoder.readInt();
 				retObj.cardlist[i].unitNum = myDecoder.readInt();
 				retObj.cardlist[i].fight = myDecoder.readInt();
-
+				// debugger;
 				retObj.cardlist[i].proficiency = [];
 				let proficiency_size = myDecoder.readInt();
 				if (proficiency_size > 0) {
-					for (var proficiency_idx = 0; proficiency_idx < cardlisti_proficiency_size; proficiency_idx++) {
+					for (var proficiency_idx = 0; proficiency_idx < proficiency_size; proficiency_idx++) {
 						retObj.cardlist[i].proficiency[proficiency_idx] = myDecoder.readInt();
 					}
 				}

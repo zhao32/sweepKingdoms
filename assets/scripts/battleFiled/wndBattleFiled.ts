@@ -82,13 +82,13 @@ export default class NewClass extends cc.Component {
     init() {
         NetEventDispatcher.addListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))
 
-        if(DataManager.myBattleFiledConfig.soliders.length == 0){
+        if (DataManager.myBattleFiledConfig.soliders.length == 0) {
             for (let i = 0; i < DataManager.playData.military_data.length; i++) {
-                if(DataManager.playData.military_data[i]!=0){
+                if (DataManager.playData.military_data[i] != 0) {
                     let data = {
-                        arm:i+1,
-                        count:DataManager.playData.military_data[i],
-                        countAll:DataManager.playData.military_data[i],
+                        arm: i + 1,
+                        count: DataManager.playData.military_data[i],
+                        countAll: DataManager.playData.military_data[i],
                     }
                     DataManager.myBattleFiledConfig.soliders.push(data)
                 }
@@ -108,6 +108,22 @@ export default class NewClass extends cc.Component {
         console.log(`巅峰战场列表返回`)
         console.log(JSON.stringify(retObj))
 
+        let myData = {
+            playerId: DataManager.playData.id,
+            rank: retObj.my_rank,
+            name: DataManager.playData.name,
+            rank_type: retObj.rank_type,
+            icon:0
+        }
+
+        let ePlayerData = {
+            playerId: 0,
+            rank: 0,
+            name: '',
+            rank_type: retObj.rank_type,
+            icon:0
+        }
+
         this.contect.removeAllChildren()
         this.scrollView.getComponent(cc.ScrollView).scrollToTop()
         for (let i = 0; i < retObj.items.length; i++) {
@@ -124,6 +140,7 @@ export default class NewClass extends cc.Component {
 
             if (retObj.items[i].playerId == DataManager.playData.id) {
                 DataManager.myBattleFiledConfig.card = retObj.items[i].card
+                myData.icon = retObj.items[i].icon
                 console.log(`-------点击我的-----------`)
                 render.on(cc.Node.EventType.TOUCH_END, () => {
                     ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLEFILED)
@@ -132,8 +149,13 @@ export default class NewClass extends cc.Component {
                 }, this)
             } else {
                 render.on(cc.Node.EventType.TOUCH_END, () => {
+                    ePlayerData.name = retObj.items[i].nickname
+                    ePlayerData.playerId = retObj.items[i].playerId
+                    ePlayerData.rank = i + 1
+                    ePlayerData.icon = retObj.items[i].icon
+
                     ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLEFILED)
-                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_COMPARMY, ...[retObj.rank_type, retObj.items[i].playerId])
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_COMPARMY, ...[myData, ePlayerData])
                     NetEventDispatcher.removeListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))
                 }, this)
             }
@@ -146,8 +168,8 @@ export default class NewClass extends cc.Component {
 
     onClose() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        DataManager.myBattleFiledConfig.soliders =  []
-        DataManager.myBattleFiledConfig.card =  []
+        DataManager.myBattleFiledConfig.soliders = []
+        DataManager.myBattleFiledConfig.card = []
         NetEventDispatcher.removeListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))
     }
 

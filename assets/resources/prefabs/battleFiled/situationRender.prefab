@@ -51,11 +51,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 42
+        "__id__": 43
       }
     ],
     "_prefab": {
-      "__id__": 43
+      "__id__": 44
     },
     "_opacity": 255,
     "_color": {
@@ -106,7 +106,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Label",
+    "_name": "result0",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -240,7 +240,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Label",
+    "_name": "hurt0",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -586,7 +586,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Label",
+    "_name": "VS",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -720,7 +720,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Label",
+    "_name": "hurt1",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -854,7 +854,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Label",
+    "_name": "result1",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -988,7 +988,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "bg0",
+    "_name": "bg1",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1095,7 +1095,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "head0",
+    "_name": "head1",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1220,7 +1220,7 @@
       }
     ],
     "_prefab": {
-      "__id__": 41
+      "__id__": 42
     },
     "_opacity": 255,
     "_color": {
@@ -1448,7 +1448,9 @@
     "duration": 0.1,
     "zoomScale": 1.2,
     "clickEvents": [
-      null
+      {
+        "__id__": 41
+      }
     ],
     "_N$interactable": true,
     "_N$enableAutoGrayEffect": false,
@@ -1510,6 +1512,16 @@
     "_N$disabledSprite": null,
     "_N$target": null,
     "_id": ""
+  },
+  {
+    "__type__": "cc.ClickEvent",
+    "target": {
+      "__id__": 1
+    },
+    "component": "",
+    "_componentId": "39bc03+UJlLrKprZJcEMeXt",
+    "handler": "onBackBattle",
+    "customEventData": ""
   },
   {
     "__type__": "cc.PrefabInfo",

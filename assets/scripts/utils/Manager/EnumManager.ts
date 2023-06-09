@@ -80,6 +80,12 @@ export default class EnumManager {
         /**战队配置 */
         WND_BATTLE_TEAMSET: 'prefabs/battleFiled/wndBattleSet',
 
+        /**对战结果 */
+        WND_BATTLE_RESULT: 'prefabs/battleFiled/wndBattleResult',
+
+        /**战斗页面 */
+        WND_BATTLE_BATTLE: 'prefabs/battleFiled/wndBattleFiledBattle',
+
         
         /**副本 */
         WND_STAGE: 'prefabs/stage/wndStage',

@@ -48,6 +48,14 @@ export default class NewClass extends cc.Component {
     otherRankLabel: cc.Label = null;
 
 
+    myData
+    eData
+
+
+    myAllData
+    eAllData
+
+    enemyPlayerId
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -66,14 +74,25 @@ export default class NewClass extends cc.Component {
         }
 
         NetEventDispatcher.addListener(NetEvent.S2CRankPlayerDetail, this.S2CRankPlayerDetail.bind(this))
+
+        NetEventDispatcher.addListener(NetEvent.S2CPkEnemyFormation, this.S2CPkEnemyFormation.bind(this))
+
     }
 
-    init(rankType, playerid) {
+    S2CPkEnemyFormation(retObj) {
+        console.log('------返回是否可以PK的信息---------')
+        // console.log(JSON.stringify(retObj))
+
+    }
+
+    init(myData, eData) {
         // (senderSocket, p_rank_type, p_player_id)
         // console.error('rankType:'+ rankType)
-        // console.error('playerid'+ playerid)
 
-        MyProtocols.send_C2SRankPlayerDetail(DataManager._loginSocket, rankType, playerid)
+        this.myData = myData
+        this.eData = eData
+
+        MyProtocols.send_C2SRankPlayerDetail(DataManager._loginSocket, eData.rank_type, eData.playerId)
     }
 
     onClose() {
@@ -84,9 +103,10 @@ export default class NewClass extends cc.Component {
     // {"rank_type":4,"rank_player":{"playerId":9961,"nickname":"瘦弱的武都拳师","sexId":0,"icon":0,"head_frame":1,"level":46,"fight":2796,"vipLevel":0,"rank_change":0,"hero_count":0,"hero_stars":0,"win_count":0,"like_count":0},"item":[{"template_id":1,"num":2730},{"template_id":2,"num":2100},{"template_id":3,"num":0},{"template_id":4,"num":0},{"template_id":5,"num":0},{"template_id":6,"num":0},{"template_id":7,"num":0},{"template_id":8,"num":0},{"template_id":9,"num":0},{"template_id":10,"num":0},{"template_id":11,"num":0},{"template_id":12,"num":0},{"template_id":13,"num":0},{"template_id":14,"num":0},{"template_id":15,"num":0},{"template_id":16,"num":0},{"template_id":17,"num":0},{"template_id":18,"num":0},{"template_id":19,"num":0}],"cardlist":[{"template_id":1,"level":1,"exp":0,"grade":0,"unitLevel":0,"unitGrade":0,"unit_type":0,"maxhp":0,"atk":0,"def":0,"unitMaxhp":0,"unitAtk":0,"unitDef":0,"unitNum":2796,"fight":0,"equips":[],"runes":[0,0]}],"pkWinLoose":[]}
     S2CRankPlayerDetail(retObj) {
         console.log('--------------------1046--------------------')
-        console.log(JSON.stringify(retObj))
+        // console.log(JSON.stringify(retObj))
         this.myNameLabel.string = '攻方：' + DataManager.playData.name
         this.otherNameLabel.string = '守方：' + retObj.rank_player.nickname
+        this.enemyPlayerId = retObj.rank_player.playerId
 
         let eSoliderList = []
         for (let i = 0; i < retObj.item.length; i++) {
@@ -143,11 +163,59 @@ export default class NewClass extends cc.Component {
             item.parent = this.myContect
             item.getComponent(compSoliderRender).init(DataManager.myBattleFiledConfig.soliders[i])
         }
+
+        // console.log("myCards:" + JSON.stringify(myCards))
+        // console.log("soliders:" + JSON.stringify(DataManager.myBattleFiledConfig.soliders))
+
+        let mySoliderList = []
+        for (let i = 0; i < DataManager.myBattleFiledConfig.soliders.length; i++) {
+            let data = {
+                arm: DataManager.myBattleFiledConfig.soliders[i].arm,
+                count: DataManager.myBattleFiledConfig.soliders[i].count,
+                defense: 0,
+                fight: 0
+            }
+            mySoliderList.push(data)
+        }
+
+        let enemySoliderList = []
+        for (let i = 0; i < eSoliderList.length; i++) {
+            let data = {
+                arm: eSoliderList[i].arm,
+                count: eSoliderList[i].count,
+                defense: 0,
+                fight: 0
+            }
+            enemySoliderList.push(data)
+        }
+
+        let myData = {
+            player: this.myData,
+            cards: myCards,
+            soliders: mySoliderList
+        }
+
+        let enemyData = {
+            player: this.eData,
+            cards: retObj.cardlist,
+            soliders: enemySoliderList
+        }
+
+        this.myAllData = myData
+        this.eAllData = enemyData
+
+        console.log('myData:' + JSON.stringify(myData))
+        console.log('enemyData:' + JSON.stringify(enemyData))
+
     }
 
     doBattle() {
         //进行战斗
         console.log(`-----------进行挑战-----------`)
+        MyProtocols.send_C2SPkEnemyFormation(DataManager._loginSocket, this.enemyPlayerId)
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_RESULT, ...[this.myAllData, this.eAllData])
+
 
     }
 
