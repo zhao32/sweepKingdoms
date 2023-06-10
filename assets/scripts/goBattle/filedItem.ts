@@ -68,6 +68,47 @@ export default class NewClass extends cc.Component {
                 icon0:"",
                 icon1:""
             },
+
+            3:{
+                name:"秦国矿场",
+                icon0:"",
+                icon1:""
+            },
+
+            4:{
+                name:"齐国矿场",
+                icon0:"",
+                icon1:""
+            },
+            5:{
+                name:"楚国矿场",
+                icon0:"",
+                icon1:""
+            },
+
+            6:{
+                name:"燕国矿场",
+                icon0:"",
+                icon1:""
+            },
+
+            7:{
+                name:"赵国矿场",
+                icon0:"",
+                icon1:""
+            },
+
+            8:{
+                name:"魏国矿场",
+                icon0:"",
+                icon1:""
+            },
+
+            9:{
+                name:"韩国矿场",
+                icon0:"",
+                icon1:""
+            },
         }
         if (!data.hold_player) {//城池
             this.icon.active = false
