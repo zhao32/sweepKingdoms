@@ -241,7 +241,7 @@ export default class NewClass extends cc.Component {
         }
 
         function eAttack() {
-            let result = self.fightDeduction(self.deepClone(myResetData[myIdx].soldiers), self.deepClone(enemyResetData[eIdx].soldiers), false)
+            let result = self.fightDeduction(self.deepClone(myResetData[myIdx].soliders), self.deepClone(enemyResetData[eIdx].soliders), false)
             let myData = myResetData[myIdx]
             let eData = enemyResetData[eIdx]
             let defineData = {
@@ -371,6 +371,7 @@ export default class NewClass extends cc.Component {
         }
 
         function enemyAttack() {
+          
             let mySolider: solider = (mySoliders[myIdx])
             let enemySolider: solider = (eSoliders[enemyIdx])
 

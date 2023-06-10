@@ -131,7 +131,6 @@ export default class NewClass extends cc.Component {
             render.parent = this.contect
 
 
-            let honer = Math.max(365, Math.floor(15000 * Math.pow(1 - 0.01, i)) )
             render.getComponent(battleRender).init(retObj.items[i], i + 1)
 
             if (i < 5) {
