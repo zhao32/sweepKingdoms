@@ -2889,6 +2889,9 @@
     "troopsLabel": {
       "__id__": 70
     },
+    "icon": {
+      "__id__": 14
+    },
     "text": "hello",
     "_id": ""
   },

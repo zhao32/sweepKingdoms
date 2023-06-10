@@ -106,37 +106,37 @@ export default class NewClass extends cc.Component {
 
     btnLeft() {
         console.log('左刷新')
-        this.filedContect.removeAllChildren()
+        // this.filedContect.removeAllChildren()
 
-        for (let i = 0; i < 27; i++) {
-            let filedItem = cc.instantiate(this.filedItemPfb)
-            this.scheduleOnce(() => {
-                filedItem.parent = this.filedContect
-            }, 0.01 * i)
+        // for (let i = 0; i < 27; i++) {
+        //     let filedItem = cc.instantiate(this.filedItemPfb)
+        //     this.scheduleOnce(() => {
+        //         filedItem.parent = this.filedContect
+        //     }, 0.01 * i)
 
-            filedItem.on(cc.Node.EventType.TOUCH_END, () => {
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS)
-            }, this)
-        }
+        //     filedItem.on(cc.Node.EventType.TOUCH_END, () => {
+        //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS)
+        //     }, this)
+        // }
     }
     btnRight() {
         console.log('右刷新')
-        this.filedContect.removeAllChildren()
-        for (let i = 0; i < 27; i++) {
-            let filedItem = cc.instantiate(this.filedItemPfb)
-            this.scheduleOnce(() => {
-                filedItem.parent = this.filedContect
-            }, 0.01 * i)
-            filedItem.on(cc.Node.EventType.TOUCH_END, () => {
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS)
-            }, this)
-        }
+        // this.filedContect.removeAllChildren()
+        // for (let i = 0; i < 27; i++) {
+        //     let filedItem = cc.instantiate(this.filedItemPfb)
+        //     this.scheduleOnce(() => {
+        //         filedItem.parent = this.filedContect
+        //     }, 0.01 * i)
+        //     filedItem.on(cc.Node.EventType.TOUCH_END, () => {
+        //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS)
+        //     }, this)
+        // }
     }
 
 
     onBackHandler() {
         console.log('------点击关闭---------')
-        ViewManager.instance.hideView(EnumManager.viewPath.PAGE_GOBATTLE, true)
+        ViewManager.instance.hideView(EnumManager.viewPath.PAGE_GOBATTLE)
     }
 
     onRecordHandler() {

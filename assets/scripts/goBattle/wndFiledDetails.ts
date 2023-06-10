@@ -7,6 +7,7 @@
 
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
+import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
@@ -31,6 +32,9 @@ export default class NewClass extends cc.Component {
 
     @property(cc.Label)
     troopsLabel: cc.Label = null;
+
+    @property(cc.Node)
+    icon: cc.Node = null;
 
     @property
     text: string = 'hello';
@@ -60,11 +64,18 @@ export default class NewClass extends cc.Component {
 
     init(data) {
         this._data = data
-        this.nameLabel.string = data.lv + '级' + data.name
-        this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`
+        this.nameLabel.string = data.hold_player.lv + '级' + data.hold_player.nickname
+        // this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`
 
         // : function (senderSocket, p_level_index, p_point_index) {
         // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket,)
+
+        if(data.hold_player.id){
+            ResManager.loadItemIcon(`goBattle/icon1`,this.icon)
+        }else{
+            ResManager.loadItemIcon(`goBattle/icon0`,this.icon)
+        }
+
 
     }
 

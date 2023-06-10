@@ -5,6 +5,8 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import ResManager from "../utils/Manager/ResManager";
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -119,6 +121,12 @@ export default class NewClass extends cc.Component {
             let filed = filedData[data.hold_player.group]
             this.icon.active = true
             this.bload.active = true
+
+            if(data.hold_player.id){
+                ResManager.loadItemIcon(`goBattle/icon1`,this.icon)
+            }else{
+                ResManager.loadItemIcon(`goBattle/icon0`,this.icon)
+            }
 
             let str:string
             let name:string = data.hold_player.nickname
