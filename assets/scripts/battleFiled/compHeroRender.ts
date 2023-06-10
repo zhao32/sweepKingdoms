@@ -31,7 +31,7 @@ export default class NewClass extends cc.Component {
 
     init(data) {
         let defaultData = DataManager.GameData.Cards[data.template_id]
-        ResManager.loadItemIcon(`hero/${defaultData.name}`, this.icon)
+        ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.icon)
         ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.bg)
 
         this.label0.string = defaultData.name

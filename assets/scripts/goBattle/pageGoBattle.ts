@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
@@ -41,40 +42,64 @@ export default class NewClass extends cc.Component {
 
     start() {
         // S2CMineList
+        NetEventDispatcher.addListener(NetEvent.S2CMineList, this.S2CMineList.bind(this))
     }
 
-    init() {
-        MyProtocols.send_C2SMineList(DataManager._loginSocket, 1, 1)
-
+    S2CMineList(data) {
+        data.mine_points
+        data.my_hold
         this.myContect.removeAllChildren()
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < data.my_hold.length; i++) {
             let myItem = cc.instantiate(this.myItemPfb)
             myItem.parent = this.myContect
         }
 
-        cc.resources.loadDir("Mine/Mine_01", cc.JsonAsset, (err, filedJSON) => {
-            if (err) {
-                console.log(err)
-            } else {
-                console.log('json:' + JSON.stringify(filedJSON))
 
-                //@ts-ignore
-                let filedList = filedJSON[0].json
-
-                this.filedContect.removeAllChildren()
-                for (let i = 0; i < filedList.length; i++) {
-                    let filedNode = cc.instantiate(this.filedItemPfb)
-                    filedNode.parent = this.filedContect
-                    filedNode.getComponent(filedItem).init(filedList[i])
-                    filedNode.on(cc.Node.EventType.TOUCH_END, () => {
-                        if (filedList[i].type != 0) {
-                            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[filedList[i]])
-                        }
-                    }, this)
+        this.filedContect.removeAllChildren()
+        for (let i = 0; i < data.mine_points.length; i++) {
+            let filedNode = cc.instantiate(this.filedItemPfb)
+            filedNode.parent = this.filedContect
+            filedNode.getComponent(filedItem).init(data.mine_points[i])
+            filedNode.on(cc.Node.EventType.TOUCH_END, () => {
+                if(data.mine_points[i].hold_player){
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[data.mine_points[i]])
                 }
+            }, this)
+        }
+    }
 
-            }
-        });
+    init() {
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 1, 1, DataManager.playData.nation_id)
+
+        // this.myContect.removeAllChildren()
+        // for (let i = 0; i < 5; i++) {
+        //     let myItem = cc.instantiate(this.myItemPfb)
+        //     myItem.parent = this.myContect
+        // }
+
+        // cc.resources.loadDir("Mine/Mine_01", cc.JsonAsset, (err, filedJSON) => {
+        //     if (err) {
+        //         console.log(err)
+        //     } else {
+        //         // console.log('json:' + JSON.stringify(filedJSON))
+
+        //         //@ts-ignore
+        //         let filedList = filedJSON[0].json
+
+        //         this.filedContect.removeAllChildren()
+        //         for (let i = 0; i < filedList.length; i++) {
+        //             let filedNode = cc.instantiate(this.filedItemPfb)
+        //             filedNode.parent = this.filedContect
+        //             filedNode.getComponent(filedItem).init(filedList[i])
+        //             filedNode.on(cc.Node.EventType.TOUCH_END, () => {
+        //                 if (filedList[i].type != 0) {
+        //                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[filedList[i]])
+        //                 }
+        //             }, this)
+        //         }
+
+        //     }
+        // });
 
 
     }

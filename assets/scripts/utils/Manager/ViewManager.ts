@@ -140,6 +140,7 @@ export default class ViewManager {
         let name = ResManager.Instance.getResourcesName(path);
         let viewNode: cc.Node = this.UIRoot.getChildByName(name);
         if (!viewNode) {
+            cc.Canvas.instance.node.getChildByName('loadTip').active = true
             ResManager.Instance.loadPrefab(path, (err, resource) => {
                 if (ResManager.Instance.hasNode(name)) {
                     viewNode = ResManager.Instance.getNode(name);
@@ -157,6 +158,7 @@ export default class ViewManager {
                     this._curView.showPanel();
                     this._curViewList.set(viewNode.name, viewNode);
                 }
+                cc.Canvas.instance.node.getChildByName('loadTip').active = false
             });
         }
         else {
@@ -181,7 +183,7 @@ export default class ViewManager {
     public hideView(path: string, isDestroy: boolean = false) {
         let name = ResManager.Instance.getResourcesName(path);
         // if (!this._curViewList.get(name)) return
-        console.log('name:'+name)
+        console.log('name:' + name)
         let viewNode: cc.Node = this._curViewList.get(name);
         if (viewNode) {
             this._curViewList.delete(name);
@@ -211,6 +213,7 @@ export default class ViewManager {
         let wndNode: cc.Node = this.WNDRoot.getChildByName(name);
         Logger.log('name:' + name)
         if (!wndNode) {
+            cc.Canvas.instance.node.getChildByName('loadTip').active = true
             ResManager.Instance.loadPrefab(path, (err, resource) => {
                 if (ResManager.Instance.hasNode(name)) {
                     wndNode = ResManager.Instance.getNode(name);
@@ -229,9 +232,9 @@ export default class ViewManager {
                     this._curWnd.showPanel();
                     this._curWndList.set(wndNode.name, wndNode);
                 }
+                cc.Canvas.instance.node.getChildByName('loadTip').active = false
             });
-        }
-        else {
+        } else {
             Logger.log('wndNode.name:' + wndNode.name)
             let panel = wndNode.getComponent(BaseView);
             wndNode.getComponent(wndNode.name).init(...params)

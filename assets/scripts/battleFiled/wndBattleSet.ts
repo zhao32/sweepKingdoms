@@ -95,7 +95,7 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < DataManager.myBattleFiledConfig.card.length; i++) {
             if (DataManager.myBattleFiledConfig.card[i]) {
                 let defaultData = DataManager.GameData.Cards[DataManager.myBattleFiledConfig.card[i]]
-                ResManager.loadItemIcon(`hero/${defaultData.name}`, this.node.getChildByName('hero').getChildByName(`head${i}`))
+                ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.node.getChildByName('hero').getChildByName(`head${i}`))
                 ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.node.getChildByName('hero').getChildByName(`bg${i}`))
             }
 
@@ -138,7 +138,7 @@ export default class NewClass extends cc.Component {
                 DataManager.myBattleFiledConfig.card[idx] = cardsList[i].template_id
 
                 let defaultData = DataManager.GameData.Cards[data.template_id]
-                ResManager.loadItemIcon(`hero/${defaultData.name}`, this.node.getChildByName('hero').getChildByName(`head${idx}`))
+                ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.node.getChildByName('hero').getChildByName(`head${idx}`))
                 ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.node.getChildByName('hero').getChildByName(`bg${idx}`))
 
             }, this)

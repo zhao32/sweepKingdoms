@@ -37,11 +37,11 @@ export default class NewClass extends cc.Component {
         data.result.myWin;
 
         let defaultData0 = DataManager.GameData.Cards[data.myData.card.template_id]
-        ResManager.loadItemIcon(`hero/${defaultData0.name}`, this.node.getChildByName(`head0`))
+        ResManager.loadItemIcon(`hero/icon/${defaultData0.name}`, this.node.getChildByName(`head0`))
         ResManager.loadItemIcon(`hero/heroHeadBg${defaultData0.quality - 1}`, this.node.getChildByName(`bg0`))
 
         let defaultData1 = DataManager.GameData.Cards[data.eData.card.template_id]
-        ResManager.loadItemIcon(`hero/${defaultData1.name}`, this.node.getChildByName(`head1`))
+        ResManager.loadItemIcon(`hero/icon/${defaultData1.name}`, this.node.getChildByName(`head1`))
         ResManager.loadItemIcon(`hero/heroHeadBg${defaultData1.quality - 1}`, this.node.getChildByName(`bg1`))
         this.node.getChildByName('result0').getComponent(cc.Label).string = data.result.myWin ? "赢" : "输"
         this.node.getChildByName('result1').getComponent(cc.Label).string = !data.result.myWin ? "赢" : "输"

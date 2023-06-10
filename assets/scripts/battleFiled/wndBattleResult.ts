@@ -152,7 +152,7 @@ export default class NewClass extends cc.Component {
 
             if (myData.cards[i].template_id != 0) {
                 let defaultData = DataManager.GameData.Cards[myData.cards[i].template_id]
-                ResManager.loadItemIcon(`hero/${defaultData.name}`, this.myNode.getChildByName(`head${i}`))
+                ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.myNode.getChildByName(`head${i}`))
                 ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.myNode.getChildByName(`bg${i}`))
             }
         }
@@ -178,7 +178,7 @@ export default class NewClass extends cc.Component {
 
             if (enemyData.cards[i].template_id != 0) {
                 let defaultData = DataManager.GameData.Cards[enemyData.cards[i].template_id]
-                ResManager.loadItemIcon(`hero/${defaultData.name}`, this.enemyNode.getChildByName(`head${i}`))
+                ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.enemyNode.getChildByName(`head${i}`))
                 ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.enemyNode.getChildByName(`bg${i}`))
             }
         }

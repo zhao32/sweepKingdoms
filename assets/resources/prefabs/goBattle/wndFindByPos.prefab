@@ -1496,8 +1496,8 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "87184lcoThNw6XVIVGbP049",
-    "handler": "onUpgradeHandler",
+    "_componentId": "f31ae/qk8JHyLon6cMWomzm",
+    "handler": "onFindHandler",
     "customEventData": ""
   },
   {
@@ -2047,8 +2047,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "",
-    "_N$string": "",
+    "_string": "输入X坐标",
+    "_N$string": "输入X坐标",
     "_fontSize": 24,
     "_lineHeight": 25,
     "_enableWrapText": false,
@@ -2680,8 +2680,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "",
-    "_N$string": "",
+    "_string": "输入Y坐标",
+    "_N$string": "输入Y坐标",
     "_fontSize": 24,
     "_lineHeight": 25,
     "_enableWrapText": false,
@@ -2944,8 +2944,12 @@
       "__id__": 1
     },
     "_enabled": true,
-    "label": null,
-    "text": "hello",
+    "editPosX": {
+      "__id__": 58
+    },
+    "editPosY": {
+      "__id__": 76
+    },
     "_id": ""
   },
   {

@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import { Logger } from "../utils/Manager/Logger";
 import ViewManager from "../utils/Manager/ViewManager";
@@ -112,6 +113,10 @@ export default class NewClass extends cc.Component {
         } else if (customData == '招募所') {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_RECRUITOFFICE)
         } else if (customData == '巅峰战场') {
+            if (DataManager.playData.level < 30) {
+                ViewManager.instance.showToast(`30级之后解锁巅峰战场`)
+                return
+            }
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLEFILED)
         }
 

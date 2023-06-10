@@ -69,21 +69,21 @@ export default class NewClass extends cc.Component {
             this.generalHead0.parent.active = false
         } else {
             let defaultData = DataManager.GameData.Cards[data.card[0]]
-            ResManager.loadItemIcon(`hero/${defaultData.name}`, this.generalHead0)
+            ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.generalHead0)
         }
 
         if (data.card[1] == 0) {
             this.generalHead1.parent.active = false
         } else {
             let defaultData = DataManager.GameData.Cards[data.card[1]]
-            ResManager.loadItemIcon(`hero/${defaultData.name}`, this.generalHead1)
+            ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.generalHead1)
         }
 
         if (data.card[2] == 0) {
             this.generalHead2.parent.active = false
         } else {
             let defaultData = DataManager.GameData.Cards[data.card[2]]
-            ResManager.loadItemIcon(`hero/${defaultData.name}`, this.generalHead2)
+            ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.generalHead2)
         }
 
     }

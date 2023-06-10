@@ -78,12 +78,12 @@ export default class NewClass extends cc.Component {
     }
 
     startHandler() {
-        console.log('session_id:'+ DataManager.instance.session_id)
-        if(!this.strName){
+        console.log('session_id:' + DataManager.instance.session_id)
+        if (!this.strName) {
             ViewManager.instance.showToast('请确定的名称')
             return
         }
-        MyProtocols.send_C2SCreateCharacter(DataManager._loginSocket,this.roleType,this.strName,DataManager.instance.session_id)
+        MyProtocols.send_C2SCreateCharacter(DataManager._loginSocket, this.roleType, this.strName, DataManager.instance.session_id)
     }
 
 

@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import { Logger } from "../utils/Manager/Logger";
 import ViewManager from "../utils/Manager/ViewManager";
@@ -59,20 +60,23 @@ export default class NewClass extends cc.Component {
             this.btnArr[i].on(cc.Node.EventType.TOUCH_END, () => {
                 if (i == 0) {//俸禄
 
-                } else if (i == 1) {//副本
+                } else if (i == 1) {//副本   
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE)
-
                 } else if (i == 2) {//出征
+                    if(DataManager.playData.level < 30){
+                        ViewManager.instance.showToast(`等级达到30级时开放`)
+                        return
+                    }
                     ViewManager.instance.showView(EnumManager.viewPath.PAGE_GOBATTLE)
-
                 } else if (i == 3) {//背包
                     Logger.log('----------打开背包----------')
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_PACK)
-
+                    return
                 } else if (i == 4) {//奖励
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_REWARD)
 
                 } else if (i == 5) {//系统
-
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_USERINFO)
                 }
             }, this)
 

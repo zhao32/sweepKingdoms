@@ -95,7 +95,7 @@ export default class NewClass extends cc.Component {
         console.log('-----data:' + JSON.stringify(data))
         this._data = data
         let defaultData = DataManager.GameData.Cards[data.template_id]
-        ResManager.loadItemIcon(`hero/${defaultData.name}`, this.head)
+        ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.head)
         ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.headBg)
         ResManager.loadItemIcon(`hero/heroNameBg${defaultData.quality - 1}`, this.heroNameBg)
 

@@ -1404,11 +1404,13 @@ var MyProtocols = {
 	},
 
 	/**请求矿场列表 */
-	send_C2SMineList: function (senderSocket, p_level_index, p_page_index) {
+	send_C2SMineList: function (senderSocket, p_level_index, p_page_index, county) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3101);
 		myEncoder.writeInt(p_level_index);
 		myEncoder.writeInt(p_page_index);
+		myEncoder.writeInt(county);
+
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
@@ -1424,7 +1426,7 @@ var MyProtocols = {
 			for (var i = 0; i < my_income_size; i++) {
 				retObj.my_income[i] = myDecoder.readInt();
 			}
-		}
+		} 
 		retObj.my_hold = [];
 		let my_hold_size = myDecoder.readInt();
 		if (my_hold_size > 0) {
@@ -1454,6 +1456,8 @@ var MyProtocols = {
 					retObj.mine_points[i].hold_player.head_frame_id = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.fight = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.cd_time = myDecoder.readInt();
+					retObj.mine_points[i].hold_player.group = myDecoder.readInt();
+					retObj.mine_points[i].hold_player.lv = myDecoder.readInt();
 				}
 			}
 		}

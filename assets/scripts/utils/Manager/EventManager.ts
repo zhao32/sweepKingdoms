@@ -18,9 +18,6 @@ export default class EventManager {
     /**更新建筑状态 */
     public static UPDATE_BULID_STATE: string = 'updata_bulid_state'
 
-
-
-
     protected static instance: EventManager;
     public static getInstance(): EventManager {
         if (!this.instance) {

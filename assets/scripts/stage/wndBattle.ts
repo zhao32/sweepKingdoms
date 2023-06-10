@@ -534,8 +534,8 @@ export default class NewClass extends cc.Component {
         console.log('this.myData:' + JSON.stringify(this.myData))
 
         // this.nameDisplay.string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
-        ResManager.loadItemIcon(`hero/${defaultData.name}`, meNode.getChildByName('head'))
-        ResManager.loadItemIcon(`hero/${this.enemyData.heroData.name}`, otherNode.getChildByName('head'))
+        ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, meNode.getChildByName('head'))
+        ResManager.loadItemIcon(`hero/icon/${this.enemyData.heroData.name}`, otherNode.getChildByName('head'))
 
         meNode.getChildByName('troops').getComponent(cc.Label).string = `兵力 x${this.myCount.troops}`
         meNode.getChildByName('hurt').getComponent(cc.Label).string = `x${this.myCount.hurt}`

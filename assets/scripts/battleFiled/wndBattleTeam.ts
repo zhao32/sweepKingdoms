@@ -58,7 +58,7 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < DataManager.myBattleFiledConfig.card.length; i++) {
             if (DataManager.myBattleFiledConfig.card[i] != 0) {
                 let defaultData = DataManager.GameData.Cards[DataManager.myBattleFiledConfig.card[i]]
-                ResManager.loadItemIcon(`hero/${defaultData.name}`, this.node.getChildByName('hero').getChildByName(`head${i}`))
+                ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.node.getChildByName('hero').getChildByName(`head${i}`))
                 ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.node.getChildByName('hero').getChildByName(`bg${i}`))
             }
         }

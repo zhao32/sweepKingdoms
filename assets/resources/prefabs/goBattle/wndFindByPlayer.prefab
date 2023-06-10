@@ -1487,8 +1487,8 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "87184lcoThNw6XVIVGbP049",
-    "handler": "onUpgradeHandler",
+    "_componentId": "b5107GOLQ5Ly7RCpm+x+fP+",
+    "handler": "onFindHandler",
     "customEventData": ""
   },
   {
@@ -1911,7 +1911,7 @@
     "_batchAsBitmap": false,
     "_styleFlags": 0,
     "_underlineHeight": 0,
-    "_N$horizontalAlign": 1,
+    "_N$horizontalAlign": 0,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
     "_N$overflow": 1,
@@ -2120,7 +2120,7 @@
       "__id__": 47
     },
     "_N$inputFlag": 5,
-    "_N$inputMode": 6,
+    "_N$inputMode": 3,
     "_N$stayOnTop": false,
     "_id": ""
   },
@@ -2194,8 +2194,9 @@
       "__id__": 1
     },
     "_enabled": true,
-    "label": null,
-    "text": "hello",
+    "editAccount": {
+      "__id__": 58
+    },
     "_id": ""
   },
   {

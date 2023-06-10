@@ -91,7 +91,7 @@ export default class NewClass extends cc.Component {
             let defaultData = DataManager.GameData.Cards[cardId]
             let enemyContect = this.node.getChildByName("enemy");
             enemyContect.getChildByName('name').getComponent(cc.Label).string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
-            ResManager.loadItemIcon(`hero/${defaultData.name}`, enemyContect.getChildByName('head'))
+            ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, enemyContect.getChildByName('head'))
             ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, enemyContect.getChildByName('iconBg'))
             ResManager.loadItemIcon(`hero/heroNameBg${defaultData.quality - 1}`, enemyContect.getChildByName('heroNameBg0'))
         }
@@ -136,8 +136,8 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        ViewManager.instance.hideWnd(EnumManager.viewPath.WND_STAGE_READY)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_SELECT)
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        // ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_SELECT)
     }
 
     enterFight() {

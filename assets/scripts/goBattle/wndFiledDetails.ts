@@ -44,20 +44,28 @@ export default class NewClass extends cc.Component {
 
     }
 
-    // {
-    //     "x": 1,
-    //     "y": 25,
-    //     "type": 1,
-    //     "name": "农田",
-    //     "lv": 2,
-    //     "troops": 1000,
-    //     "min": 0,
-    //     "max": 9500
-    //   },
+ // {
+    // 	"hold_player": {
+    // 		"id": 0,
+    // 		"nickname": "",
+    // 		"level": 0,
+    // 		"icon": 0,
+    // 		"head_frame_id": 0,
+    // 		"fight": 0,
+    // 		"cd_time": 0,
+    // 		"group": 0,
+    // 		"lv": 0
+    // 	}
+    // }
+
     init(data) {
         this._data = data
         this.nameLabel.string = data.lv + '级' + data.name
         this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`
+
+        // : function (senderSocket, p_level_index, p_point_index) {
+        // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket,)
+
     }
 
     onCloseHandler() {
@@ -79,7 +87,7 @@ export default class NewClass extends cc.Component {
                 }
             ]
         }
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData,this._data])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data])
     }
 
 

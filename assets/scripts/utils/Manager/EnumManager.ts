@@ -51,6 +51,12 @@ export default class EnumManager {
         /**升级 */
         WND_MAIN_UPGRADE: 'prefabs/main/wndUpgrade',
 
+        /**奖励 */
+        WND_MAIN_REWARD: 'prefabs/main/wndReward',
+
+        WND_MAIN_USERINFO: 'prefabs/main/wndUserInfo',
+  
+
         ///////////////////// 酒馆
         /**酒馆 */
         WND_HOTEL: 'prefabs/hotel/wndHotel',
