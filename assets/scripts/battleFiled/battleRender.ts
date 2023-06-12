@@ -49,7 +49,7 @@ export default class NewClass extends cc.Component {
         this.nameLabel.string = data.nickname
         this.idxLabel.string = `No.${idx}`
 
-        let honer = Math.max(365, Math.floor(15000 * Math.pow(1 - 0.01, idx-1)) )
+        let honer = Math.max(365, Math.floor(15000 * Math.pow(1 - 0.01, idx - 1)))
         this.node.getChildByName('honer').getComponent(cc.Label).string = `x${honer}`
 
 

@@ -11,6 +11,7 @@ import EnumManager from "../utils/Manager/EnumManager";
 import EventManager from "../utils/Manager/EventManager";
 import ViewManager from "../utils/Manager/ViewManager";
 import battleRender from "./battleRender";
+import filedBounsArea from "./filedBounsArea";
 
 const { ccclass, property } = cc._decorator;
 
@@ -162,6 +163,7 @@ export default class NewClass extends cc.Component {
                 }, this)
             }
         }
+        this.node.getChildByName('bounsArea').getComponent(filedBounsArea).init(myData)
     }
 
     getBonus() {

@@ -140,7 +140,7 @@ export default class NewClass extends cc.Component {
 
     /**监听属性变化 */
     PushPropertyChange(retObj) {
-        // console.log('属性变化：' + JSON.stringify(retObj))
+        console.log('属性变化：' + JSON.stringify(retObj))
         //属性变化：{"type":4,"value":10396}
         //属性变化：{"type":11,"value":10400}
         //1 游戏币  2元宝  3 等级  4 暂时没用 5 人口  6  经验  7 vip 等级 8 vip 经验 9 暂时没用  10 声望  11 兵力 12 战力
