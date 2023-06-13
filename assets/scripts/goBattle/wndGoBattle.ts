@@ -76,6 +76,8 @@ export default class NewClass extends cc.Component {
     myAttackList = []
     enemyAttackList = []
 
+    moveTime: number = 0.6
+
     myCount = {
         troops: 0,
         hurt: 0
@@ -92,6 +94,8 @@ export default class NewClass extends cc.Component {
 
     filedData: any
 
+    isSkip: boolean = false
+
     start() {
 
         NetEventDispatcher.addListener(NetEvent.S2CMineBattleCalculate, this.S2CMineBattleCalculate.bind(this))
@@ -100,7 +104,7 @@ export default class NewClass extends cc.Component {
     S2CMineBattleCalculate(data) {
         console.log("矿场战斗返回")
         console.log(JSON.stringify(data))
-        this.initResultPanel()
+        // this.initResultPanel()
     }
 
     /**
@@ -235,6 +239,8 @@ export default class NewClass extends cc.Component {
     // }
 
     init(myData, otherData, filedData) {
+        this.moveTime = 0.6
+
         this.battleInfo = ''
         this.filedData = filedData
         this.startTime = new Date().getTime()
@@ -372,6 +378,7 @@ export default class NewClass extends cc.Component {
 
                 if (enemyIdx == otherData.soliderList.length - 1) {
                     console.log(`敌方士兵全部战死，挑战成功`)
+                    self.sendResult(true)
                 } else {
                     enemyIdx += 1
                     enemyAttack()
@@ -394,6 +401,7 @@ export default class NewClass extends cc.Component {
                 if (enemySolider.count == 0) {
                     if (enemyIdx == otherData.soliderList.length - 1) {
                         console.log(`敌方士兵全部战死，挑战成功`)
+                        self.sendResult(true)
                     } else {
                         enemyIdx += 1
                         enemyAttack()
@@ -431,6 +439,7 @@ export default class NewClass extends cc.Component {
 
                 if (myIdx == myData.soliderList.length - 1) {
                     console.log(`我的士兵全部战死，挑战失败`)
+                    self.sendResult(false)
                 } else {
                     myIdx += 1
                     myAttack()
@@ -450,6 +459,7 @@ export default class NewClass extends cc.Component {
                 if (mySolider.count == 0) {
                     if (myIdx == myData.soliderList.length - 1) {
                         console.log(`我的士兵全部战死，挑战失败`)
+                        self.sendResult(false)
                     } else {
                         myIdx += 1
                         myAttack()
@@ -496,10 +506,16 @@ export default class NewClass extends cc.Component {
         let defaultData = DataManager.GameData.Cards[this.myData.heroData.template_id]
 
         console.log('this.myData:' + JSON.stringify(this.myData))
+        console.log('this.enemyData:' + JSON.stringify(this.enemyData))
+
 
         // this.nameDisplay.string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
         ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, meNode.getChildByName('head'))
-        ResManager.loadItemIcon(`hero/${this.enemyData.heroData.name}`, otherNode.getChildByName('head'))
+        if (this.enemyData.heroData) {
+            ResManager.loadItemIcon(`hero/${this.enemyData.heroData.name}`, otherNode.getChildByName('head'))
+        } else {
+            ResManager.loadItemIcon(`soliderHead/${DataManager.GameData.Soldier[this.enemyData.soliderList[0].arm].name}`, otherNode.getChildByName('head'))
+        }
 
         meNode.getChildByName('troops').getComponent(cc.Label).string = `兵力 x${this.myCount.troops}`
         meNode.getChildByName('hurt').getComponent(cc.Label).string = `x${this.myCount.hurt}`
@@ -539,11 +555,13 @@ export default class NewClass extends cc.Component {
     }
 
     myAttackAni() {
+        if (this.isSkip) return
         if (this.myAttIdx == this.myAttackList.length) {
             console.log('我方全军覆没，挑战失败')
             this.node.getChildByName('resultPanel').active = true
             this.node.getChildByName('resultPanel').zIndex = 10
-            this.sendResult(false)
+            // this.sendResult(false)
+            this.initResultPanel()
             return
         }
         this.posMy.removeAllChildren()
@@ -571,7 +589,7 @@ export default class NewClass extends cc.Component {
         mySolider.getComponent(sp.Skeleton).setAnimation(0, 'move', true)
         otherSolider.getComponent(sp.Skeleton).setAnimation(0, 'stand', true)
 
-        mySolider.runAction(cc.sequence(cc.moveBy(.6, cc.v2(-320, 0)), cc.callFunc(() => {
+        mySolider.runAction(cc.sequence(cc.moveBy(this.moveTime, cc.v2(-320, 0)), cc.callFunc(() => {
             mySolider.getComponent(sp.Skeleton).setAnimation(0, `attack${Math.floor(Math.random() * 3) + 1}`, false)
             this.posMy.zIndex = 0
             this.posEnemy.zIndex = 1
@@ -601,12 +619,13 @@ export default class NewClass extends cc.Component {
     }
 
     otherAttackAni() {
+        if (this.isSkip) return
         if (this.enemyAttIdx == this.enemyAttackList.length) {
             console.log('敌方全军覆没，挑战成功')
             this.node.getChildByName('resultPanel').active = true
             this.node.getChildByName('resultPanel').zIndex = 10
-            // this.initResultPanel()
-            this.sendResult(true)
+            this.initResultPanel()
+            // this.sendResult(true)
             return
         }
         this.posMy.removeAllChildren()
@@ -631,7 +650,7 @@ export default class NewClass extends cc.Component {
         otherSolider.getComponent(sp.Skeleton).setAnimation(0, 'move', true)
         mySolider.getComponent(sp.Skeleton).setAnimation(0, 'stand', true)
 
-        otherSolider.runAction(cc.sequence(cc.moveBy(.6, cc.v2(-320, 0)), cc.callFunc(() => {
+        otherSolider.runAction(cc.sequence(cc.moveBy(this.moveTime, cc.v2(-320, 0)), cc.callFunc(() => {
             otherSolider.getComponent(sp.Skeleton).setAnimation(0, `attack${Math.floor(Math.random() * 3) + 1}`, false)
             this.posMy.zIndex = 1
             this.posEnemy.zIndex = 0
@@ -669,5 +688,18 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName('resultPanel').active = false
         ViewManager.instance.hideWnd(DataManager.curWndPath)
         // ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE)
+    }
+
+    onSkipHandler() {
+        this.node.getChildByName('resultPanel').active = true
+        this.node.getChildByName('resultPanel').zIndex = 10
+        this.initResultPanel()
+        this.isSkip = true
+    }
+
+    onSpeedPlusHanlder() {
+        this.moveTime = 0.3
+        this.posEnemy.children[0].getComponent(sp.Skeleton).timeScale = 0.5
+        this.posMy.children[0].getComponent(sp.Skeleton).timeScale = 2
     }
 }

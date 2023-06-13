@@ -3618,7 +3618,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 48.71,
+      "width": 62.06,
       "height": 39.8
     },
     "_anchorPoint": {
@@ -3631,7 +3631,7 @@
       "ctor": "Float64Array",
       "array": [
         -67.144,
-        -29.892,
+        -31.892,
         0,
         0,
         0,
@@ -3670,8 +3670,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "1/10",
-    "_N$string": "1/10",
+    "_string": "0/500",
+    "_N$string": "0/500",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -7396,6 +7396,12 @@
     },
     "honerLabel": {
       "__id__": 103
+    },
+    "honerProLabel": {
+      "__id__": 99
+    },
+    "proBar": {
+      "__id__": 96
     },
     "_id": ""
   },

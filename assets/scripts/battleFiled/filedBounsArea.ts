@@ -28,16 +28,24 @@ export default class NewClass extends cc.Component {
     @property(cc.Node)
     contect: cc.Node = null;
 
-
     @property(cc.Prefab)
     exBonusPfb: cc.Prefab = null;
-
 
     @property(cc.Label)
     rankLabel: cc.Label = null;
 
     @property(cc.Label)
     honerLabel: cc.Label = null;
+
+    @property(cc.Label)
+    honerProLabel: cc.Label = null;
+
+    @property(cc.ProgressBar)
+    proBar: cc.ProgressBar = null;
+
+    getHoner: number = 0
+
+    schFun: Function
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -58,9 +66,10 @@ export default class NewClass extends cc.Component {
     //     rank: retObj.my_rank,
     //     name: DataManager.playData.name,
     //     rank_type: retObj.rank_type,
-    //     icon: 0
+    //     icon: 0,
+    //     last_time: retObj.last_time,
+    //     myHonerBouns:0
     // }
-
     S2CArenaExchangeList(data) {
         console.log('请求兑换列表返回')
         console.log(JSON.stringify(data))
@@ -69,7 +78,7 @@ export default class NewClass extends cc.Component {
 
     init(data) {
         NetEventDispatcher.addListener(NetEvent.S2CArenaExchangeList, this.S2CArenaExchangeList.bind(this))
-        MyProtocols.send_C2SArenaExchangeList(DataManager._loginSocket)
+        this.unschedule(this.schFun)
 
         this._data = data
         ResManager.loadItemIcon(`hero/icon/${data.icon}`, this.head)
@@ -77,7 +86,41 @@ export default class NewClass extends cc.Component {
 
         this.honerLabel.string = `现有荣耀值：${DataManager.playData.honor}`;
 
+        let secend = DataManager.instance.getDateDis(data.last_time, new Date().getTime())
+        let preHoner = data.myHonerBouns / 10 / 60
+        this.getHoner = Math.min(50000, preHoner * secend)
 
+        // if (this.getHoner == 50000) {
+        //     this.honerProLabel.string = `${this.getHoner}/50000`
+        // } else {
+        //     this.schFun = () => {
+        //         this.getHoner += preHoner
+        //         this.getHoner = Math.min(50000, this.getHoner)
+        //         if (this.getHoner == 50000) {
+        //             this.unschedule(this.schFun)
+        //         }
+        //         this.honerProLabel.string = `${this.getHoner}/50000`
+        //     }
+        //     this.schedule(this.schFun,1)
+        // }
+
+        this.honerProLabel.string = `${Math.floor(this.getHoner)}/50000`
+        this.proBar.progress = Math.floor(this.getHoner) / 50000
+
+        this.schFun = () => {
+            this.getHoner += preHoner
+            this.getHoner = Math.min(50000, this.getHoner)
+            if (this.getHoner == 50000) {
+                this.unschedule(this.schFun)
+            }
+            this.honerProLabel.string = `${Math.floor(this.getHoner)}/50000`
+            this.proBar.progress = Math.floor(this.getHoner) / 50000
+        }
+        this.schedule(this.schFun, 1)
+
+        console.log('getHoner:' + this.getHoner)
+
+        // DataManager. 
         let bonusData = [
             {
                 "item": 5001,
@@ -119,13 +162,14 @@ export default class NewClass extends cc.Component {
     btnExchange() {
         /**领取功勋值 */
         console.log('领取功勋值')
-        MyProtocols.send_C2SRankLike(DataManager._loginSocket, 800)
+        MyProtocols.send_C2SRankLike(DataManager._loginSocket, this.getHoner)
     }
 
     S2CRankLike(data) {
         console.log(`领取功勋值返回`)
         console.log(JSON.stringify(data))
-        this.honerLabel.string = String(DataManager.playData.honor)
+        this.getHoner = 0
+        this.honerLabel.string = '现有荣耀值：' + String(DataManager.playData.honor)
 
     }
 

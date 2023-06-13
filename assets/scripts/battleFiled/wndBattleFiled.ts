@@ -45,6 +45,8 @@ export default class NewClass extends cc.Component {
     @property(cc.ProgressBar)
     proExploit: cc.ProgressBar = null;
 
+    _myData: any
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -71,16 +73,20 @@ export default class NewClass extends cc.Component {
         this.toggle0.node.on('toggle', () => {
             this.scrollView.active = true
             this.bonusArea.active = false
+            MyProtocols.send_C2SRankView(DataManager._loginSocket, 4)
         }, this)
 
         this.toggle1.node.on('toggle', () => {
             this.scrollView.active = false
             this.bonusArea.active = true
+            this.node.getChildByName('bounsArea').getComponent(filedBounsArea).init(this._myData)
+
         }, this)
 
     }
 
     init() {
+        MyProtocols.send_C2SArenaExchangeList(DataManager._loginSocket)
 
         NetEventDispatcher.addListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))
 
@@ -115,7 +121,9 @@ export default class NewClass extends cc.Component {
             rank: retObj.my_rank,
             name: DataManager.playData.name,
             rank_type: retObj.rank_type,
-            icon: 0
+            icon: 0,
+            last_time: retObj.last_time,
+            myHonerBouns: 0
         }
 
         let ePlayerData = {
@@ -125,25 +133,28 @@ export default class NewClass extends cc.Component {
             rank_type: retObj.rank_type,
             icon: 0
         }
+        let myHoner: number = 0
 
         this.contect.removeAllChildren()
         this.scrollView.getComponent(cc.ScrollView).scrollToTop()
         for (let i = 0; i < retObj.items.length; i++) {
             let render = cc.instantiate(this.renderPfb)
             render.parent = this.contect
-
-
             render.getComponent(battleRender).init(retObj.items[i], i + 1)
 
             if (i < 5) {
                 render.x = 1000
                 this.scheduleOnce(() => {
-                    render.runAction(cc.moveTo(0.4, cc.v2(0, render.y)))
-                }, 0.3 * i)
+                    render.runAction(cc.moveTo(DataManager.SCROLLTIME, cc.v2(0, render.y)))
+                }, DataManager.SCROLLTIME * i)
             }
 
             if (retObj.items[i].playerId == DataManager.playData.id) {
                 DataManager.myBattleFiledConfig.card = retObj.items[i].card
+
+                myHoner = Math.max(365, Math.floor(15000 * Math.pow(1 - 0.01, i)))
+                console.log('myHoner:' + myHoner)
+
                 myData.icon = retObj.items[i].icon
                 console.log(`-------点击我的-----------`)
                 render.on(cc.Node.EventType.TOUCH_END, () => {
@@ -164,7 +175,9 @@ export default class NewClass extends cc.Component {
                 }, this)
             }
         }
-        this.node.getChildByName('bounsArea').getComponent(filedBounsArea).init(myData)
+
+        myData.myHonerBouns = myHoner
+        this._myData = myData
     }
 
     getBonus() {

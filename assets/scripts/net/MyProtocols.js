@@ -3735,7 +3735,7 @@ var MyProtocols = {
 		retObj.my_rank = myDecoder.readInt();
 		retObj.my_rank_change = myDecoder.readInt();
 		retObj.rank_type = myDecoder.readInt();
-		retObj.last_time = myDecoder.readInt();
+		retObj.last_time = myDecoder.readLong();
 		retObj.items = [];
 		let items_size = myDecoder.readInt();
 		if (items_size > 0) {

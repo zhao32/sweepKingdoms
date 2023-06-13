@@ -201,5 +201,7 @@ export default class DataManager {
         return second
     }
 
+    static readonly SCROLLTIME:number = 0.2
+
 
 }

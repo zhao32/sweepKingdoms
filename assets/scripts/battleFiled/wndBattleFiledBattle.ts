@@ -506,6 +506,6 @@ export default class NewClass extends cc.Component {
     onSpeedPlusHanlder(){
         this.moveTime = 0.3
         this.posEnemy.children[0].getComponent(sp.Skeleton).timeScale = 0.5
-        this.posMy.children[0].getComponent(sp.Skeleton).timeScale = 0.5
+        this.posMy.children[0].getComponent(sp.Skeleton).timeScale = 2
     }
 }
