@@ -23,7 +23,7 @@
       "def": 260
     },
     "potential": 105,
-    "quality": 4,
+    "quality": 1,
     "root_id": 65,
     "rune": [
       1,
@@ -66,7 +66,7 @@
     "group": 4,
     "int": 92,
     "potential": 105,
-    "quality": 3,
+    "quality": 1,
     "additions": {
       "addition_1": 0,
       "addition_2": 0,
@@ -146,7 +146,7 @@
     },
     "co": 85,
     "id": 3,
-    "quality": 3,
+    "quality": 1,
     "add_attrs": {
       "maxhp": 552,
       "atk": 36,
@@ -199,7 +199,7 @@
     },
     "co": 89,
     "id": 4,
-    "quality": 3,
+    "quality": 1,
     "add_attrs": {
       "maxhp": 396,
       "atk": 55,
@@ -252,7 +252,7 @@
     "co": 88,
     "id": 5,
     "name": "吕不韦",
-    "quality": 3,
+    "quality": 1,
     "add_attrs": {
       "maxhp": 440,
       "atk": 48,
@@ -301,7 +301,7 @@
     "group": 4,
     "int": 95,
     "potential": 95,
-    "quality": 3,
+    "quality": 2,
     "additions": {
       "addition_1": 0,
       "addition_2": 0,
@@ -358,7 +358,7 @@
     "group": 4,
     "int": 98,
     "potential": 95,
-    "quality": 3,
+    "quality": 2,
     "additions": {
       "addition_1": 0,
       "addition_2": 0,
@@ -416,7 +416,7 @@
     },
     "co": 90,
     "id": 8,
-    "quality": 3,
+    "quality": 2,
     "add_attrs": {
       "maxhp": 414,
       "atk": 57,
@@ -469,7 +469,7 @@
     "co": 90,
     "name": "高渐离",
     "id": 9,
-    "quality": 3,
+    "quality": 2,
     "add_attrs": {
       "maxhp": 414,
       "atk": 57,
@@ -519,7 +519,7 @@
     "group": 4,
     "int": 98,
     "potential": 95,
-    "quality": 3,
+    "quality": 2,
     "additions": {
       "addition_1": 0,
       "addition_2": 0,
@@ -576,7 +576,7 @@
     "name": "韩非",
     "co": 90,
     "id": 11,
-    "quality": 3,
+    "quality": 2,
     "add_attrs": {
       "maxhp": 460,
       "atk": 42,
@@ -626,7 +626,7 @@
     "name": "郭开",
     "int": 90,
     "potential": 85,
-    "quality": 3,
+    "quality": 2,
     "additions": {
       "addition_1": 0,
       "addition_2": 0,
@@ -658,7 +658,7 @@
       0,
       0
     ],
-    "free_skills": 3,
+    "free_skills": 2,
     "skills": [
       [
         3003
@@ -735,7 +735,7 @@
     "name": "司马尚",
     "potential": 100,
     "is_spine": true,
-    "quality": 4,
+    "quality": 2,
     "additions": {
       "addition_1": 0,
       "addition_2": 0,
@@ -848,7 +848,7 @@
     "extend_id": [
       193
     ],
-    "quality": 3,
+    "quality": 2,
     "add_attrs": {
       "maxhp": 460,
       "atk": 50,
@@ -898,7 +898,7 @@
     "name": "陈胜",
     "int": 95,
     "potential": 95,
-    "quality": 3,
+    "quality": 2,
     "additions": {
       "addition_1": 0,
       "addition_2": 0,
@@ -952,7 +952,7 @@
     "name": "项羽",
     "int": 80,
     "potential": 90,
-    "quality": 3,
+    "quality": 2,
     "additions": {
       "addition_1": 0,
       "addition_2": 0,
@@ -1011,7 +1011,7 @@
     },
     "co": 99,
     "id": 19,
-    "quality": 4,
+    "quality": 2,
     "add_attrs": {
       "maxhp": 512,
       "atk": 86,
@@ -1067,7 +1067,7 @@
     "co": 95,
     "name": "韩信",
     "id": 20,
-    "quality": 3,
+    "quality": 2,
     "add_attrs": {
       "maxhp": 576,
       "atk": 33,
@@ -1123,7 +1123,7 @@
     "extend_id": [
       214
     ],
-    "quality": 3,
+    "quality": 2,
     "add_attrs": {
       "maxhp": 460,
       "atk": 48,

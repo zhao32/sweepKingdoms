@@ -84,15 +84,15 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.addListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))
 
         if (DataManager.myBattleFiledConfig.soliders.length == 0) {
-            for (let i = 0; i < DataManager.playData.military_data.length; i++) {
-                if (DataManager.playData.military_data[i] != 0) {
-                    let data = {
-                        arm: i + 1,
-                        count: DataManager.playData.military_data[i],
-                        countAll: DataManager.playData.military_data[i],
-                    }
-                    DataManager.myBattleFiledConfig.soliders.push(data)
+            for (let i = 0; i < 5; i++) {
+                // if (DataManager.playData.military_data[i] != 0) {
+                let data = {
+                    arm: i + 1,
+                    count: 30000,//DataManager.playData.military_data[i],
+                    countAll: 100000//DataManager.playData.military_data[i],
                 }
+                DataManager.myBattleFiledConfig.soliders.push(data)
+                // }
             }
         }
         this.scrollView.active = true

@@ -4693,7 +4693,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "bgRender0",
+    "_name": "runeExRender",
     "_objFlags": 0,
     "_parent": {
       "__id__": 122
@@ -4935,10 +4935,10 @@
   {
     "__type__": "cc.PrefabInfo",
     "root": {
-      "__id__": 1
+      "__id__": 127
     },
     "asset": {
-      "__uuid__": "c15c2b3f-e2e0-403d-8a4c-57a7ece5dd31"
+      "__uuid__": "d46fdcfe-3f09-4ff2-8f9f-def565bd05ed"
     },
     "fileId": "27w/VTGOZIjY+rORl5Lw23",
     "sync": false
@@ -4978,10 +4978,10 @@
   {
     "__type__": "cc.PrefabInfo",
     "root": {
-      "__id__": 1
+      "__id__": 127
     },
     "asset": {
-      "__uuid__": "c15c2b3f-e2e0-403d-8a4c-57a7ece5dd31"
+      "__uuid__": "d46fdcfe-3f09-4ff2-8f9f-def565bd05ed"
     },
     "fileId": "97dpQNRWBGU4ZWBXm8M1wf",
     "sync": false
@@ -5049,10 +5049,10 @@
   {
     "__type__": "cc.PrefabInfo",
     "root": {
-      "__id__": 1
+      "__id__": 127
     },
     "asset": {
-      "__uuid__": "c15c2b3f-e2e0-403d-8a4c-57a7ece5dd31"
+      "__uuid__": "d46fdcfe-3f09-4ff2-8f9f-def565bd05ed"
     },
     "fileId": "b0jPWp/9FFJ4RzlJSTNfL6",
     "sync": false
@@ -5157,10 +5157,10 @@
   {
     "__type__": "cc.PrefabInfo",
     "root": {
-      "__id__": 1
+      "__id__": 127
     },
     "asset": {
-      "__uuid__": "c15c2b3f-e2e0-403d-8a4c-57a7ece5dd31"
+      "__uuid__": "d46fdcfe-3f09-4ff2-8f9f-def565bd05ed"
     },
     "fileId": "a8qEiN5dhIwYKzJbRPKH79",
     "sync": false
@@ -5265,10 +5265,10 @@
   {
     "__type__": "cc.PrefabInfo",
     "root": {
-      "__id__": 1
+      "__id__": 127
     },
     "asset": {
-      "__uuid__": "c15c2b3f-e2e0-403d-8a4c-57a7ece5dd31"
+      "__uuid__": "d46fdcfe-3f09-4ff2-8f9f-def565bd05ed"
     },
     "fileId": "25wCO67A5IVIhQ2cQwgyd3",
     "sync": false
@@ -5308,10 +5308,10 @@
   {
     "__type__": "cc.PrefabInfo",
     "root": {
-      "__id__": 1
+      "__id__": 127
     },
     "asset": {
-      "__uuid__": "c15c2b3f-e2e0-403d-8a4c-57a7ece5dd31"
+      "__uuid__": "d46fdcfe-3f09-4ff2-8f9f-def565bd05ed"
     },
     "fileId": "53MpBxa/9KJ42Ctmh92hQJ",
     "sync": false
@@ -7384,6 +7384,12 @@
     "_enabled": true,
     "head": {
       "__id__": 79
+    },
+    "contect": {
+      "__id__": 122
+    },
+    "exBonusPfb": {
+      "__uuid__": "d46fdcfe-3f09-4ff2-8f9f-def565bd05ed"
     },
     "rankLabel": {
       "__id__": 89

@@ -3735,6 +3735,7 @@ var MyProtocols = {
 		retObj.my_rank = myDecoder.readInt();
 		retObj.my_rank_change = myDecoder.readInt();
 		retObj.rank_type = myDecoder.readInt();
+		retObj.last_time = myDecoder.readInt();
 		retObj.items = [];
 		let items_size = myDecoder.readInt();
 		if (items_size > 0) {
@@ -3778,6 +3779,7 @@ var MyProtocols = {
 		console.log(JSON.stringify(retObj))
 		return retObj;
 	},
+
 	send_C2SRankPlayerDetail: function (senderSocket, p_rank_type, p_player_id) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(10145);

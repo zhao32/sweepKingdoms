@@ -205,10 +205,23 @@ export default class NewClass extends cc.Component {
         let myIdx = 0
         let eIdx = 0
 
+        let mySoliders
+        let enemySoliders
+
+        let myHeroDeath = false
+        let enemyHeroDeath = false
+
         let resultData = []
         myAttack()
         function myAttack() {
-            let result = self.fightDeduction(self.deepClone(myResetData[myIdx].soliders), self.deepClone(enemyResetData[eIdx].soliders), true)
+            if (myHeroDeath) {
+                mySoliders = self.deepClone(myResetData[myIdx].soliders)
+            } else {
+                if (!mySoliders) mySoliders = self.deepClone(myResetData[myIdx].soliders)
+            }
+
+
+            let result = self.fightDeduction(mySoliders, self.deepClone(enemyResetData[eIdx].soliders), true)
             let myData = myResetData[myIdx]
             let eData = enemyResetData[eIdx]
             let defineData = {
@@ -241,7 +254,13 @@ export default class NewClass extends cc.Component {
         }
 
         function eAttack() {
-            let result = self.fightDeduction(self.deepClone(myResetData[myIdx].soliders), self.deepClone(enemyResetData[eIdx].soliders), false)
+            if (enemyHeroDeath) {
+                enemySoliders = self.deepClone(enemyResetData[myIdx].soliders)
+            } else {
+                if (!enemySoliders) enemySoliders = self.deepClone(enemyResetData[myIdx].soliders)
+            }
+
+            let result = self.fightDeduction(self.deepClone(myResetData[myIdx].soliders), enemySoliders, false)
             let myData = myResetData[myIdx]
             let eData = enemyResetData[eIdx]
             let defineData = {
@@ -300,7 +319,7 @@ export default class NewClass extends cc.Component {
             hurt: 0
         }
 
-        let result = { myWin: false, mHurt: 0, eHurt: 0 }
+        let result = { myWin: false, mHurt: 0, eHurt: 0, mCount: 0, eCount: 0 }
 
         let battleInfo = ''
 
@@ -337,7 +356,7 @@ export default class NewClass extends cc.Component {
 
                 if (enemyIdx == eSoliders.length - 1) {
                     console.log(`敌方士兵全部战死，挑战成功`)
-                    result = { myWin: true, mHurt: myCount.hurt, eHurt: enemyCount.hurt }
+                    result = { myWin: true, mHurt: myCount.hurt, eHurt: enemyCount.hurt, mCount: mySolider.count, eCount: enemySolider.count }
                 } else {
                     enemyIdx += 1
                     enemyAttack()
@@ -371,7 +390,7 @@ export default class NewClass extends cc.Component {
         }
 
         function enemyAttack() {
-          
+
             let mySolider: solider = (mySoliders[myIdx])
             let enemySolider: solider = (eSoliders[enemyIdx])
 
@@ -398,7 +417,7 @@ export default class NewClass extends cc.Component {
 
                 if (myIdx == mySoliders.length - 1) {
                     console.log(`我的士兵全部战死，挑战失败`)
-                    result = { myWin: false, mHurt: myCount.hurt, eHurt: enemyCount.hurt }
+                    result = { myWin: false, mHurt: myCount.hurt, eHurt: enemyCount.hurt, mCount: mySolider.count, eCount: enemySolider.count }
                 } else {
                     myIdx += 1
                     myAttack()

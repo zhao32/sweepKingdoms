@@ -188,7 +188,7 @@ export default class DataManager {
     static readonly barracksList = ["军营", '盾卫训练场', '骑士训练场', '枪兵训练场', '箭手训练场', '法师', '木牛工厂', '军魂祭坛', '部队强化']
     static readonly resourceList = ["铸币工坊", "粮草工坊", "领土中心", "技术研究所"];
     static readonly basicList = ["居民区", "资源仓库", "神像", "英魂墓地", "城墙"];
-    static readonly qualityList = ['', '传奇', '天选', '无双', '名将', '大将']
+    static readonly qualityList = ['', '上古', '传奇', '天选', '无双', '名将']
 
 
     static myBattleFiledConfig = { card: [], soliders: [] }

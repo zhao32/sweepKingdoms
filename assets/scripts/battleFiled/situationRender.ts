@@ -45,8 +45,8 @@ export default class NewClass extends cc.Component {
         ResManager.loadItemIcon(`hero/heroHeadBg${defaultData1.quality - 1}`, this.node.getChildByName(`bg1`))
         this.node.getChildByName('result0').getComponent(cc.Label).string = data.result.myWin ? "赢" : "输"
         this.node.getChildByName('result1').getComponent(cc.Label).string = !data.result.myWin ? "赢" : "输"
-        this.node.getChildByName('hurt0').getComponent(cc.Label).string = `x${data.result.mHurt}`
-        this.node.getChildByName('hurt1').getComponent(cc.Label).string = `x${data.result.eHurt}`
+        this.node.getChildByName('hurt0').getComponent(cc.Label).string = `x${data.result.mCount}`
+        this.node.getChildByName('hurt1').getComponent(cc.Label).string = `x${data.result.eCount}`
 
         this.node.getChildByName('VS').getComponent(cc.Label).string = `第${idx}局\nVS`
     }
