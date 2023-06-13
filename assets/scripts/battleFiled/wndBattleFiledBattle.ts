@@ -92,12 +92,15 @@ export default class NewClass extends cc.Component {
 
     filedData: any
 
+    moveTime: number = 0.6
+
     start() {
 
     }
 
 
     init(myData, otherData, filedData) {
+        this.moveTime = 0.6
         this.battleInfo = ''
         this.filedData = filedData
         this.startTime = new Date().getTime()
@@ -388,7 +391,7 @@ export default class NewClass extends cc.Component {
         mySolider.getComponent(sp.Skeleton).setAnimation(0, 'move', true)
         otherSolider.getComponent(sp.Skeleton).setAnimation(0, 'stand', true)
 
-        mySolider.runAction(cc.sequence(cc.moveBy(.6, cc.v2(-320, 0)), cc.callFunc(() => {
+        mySolider.runAction(cc.sequence(cc.moveBy(this.moveTime, cc.v2(-320, 0)), cc.callFunc(() => {
             mySolider.getComponent(sp.Skeleton).setAnimation(0, `attack${Math.floor(Math.random() * 3) + 1}`, false)
             this.posMy.zIndex = 0
             this.posEnemy.zIndex = 1
@@ -449,7 +452,7 @@ export default class NewClass extends cc.Component {
         otherSolider.getComponent(sp.Skeleton).setAnimation(0, 'move', true)
         mySolider.getComponent(sp.Skeleton).setAnimation(0, 'stand', true)
 
-        otherSolider.runAction(cc.sequence(cc.moveBy(.6, cc.v2(-320, 0)), cc.callFunc(() => {
+        otherSolider.runAction(cc.sequence(cc.moveBy(this.moveTime, cc.v2(-320, 0)), cc.callFunc(() => {
             otherSolider.getComponent(sp.Skeleton).setAnimation(0, `attack${Math.floor(Math.random() * 3) + 1}`, false)
             this.posMy.zIndex = 1
             this.posEnemy.zIndex = 0
@@ -485,7 +488,24 @@ export default class NewClass extends cc.Component {
     doBack() {
         console.log(`--------点击返回---------`)
         this.node.getChildByName('resultPanel').active = false
-        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_RESULT)
+    }
+
+    onSkipHandler() {
+        this.node.getChildByName('resultPanel').active = false
+        this.posMy.children[0].stopAllActions()
+        this.posEnemy.children[0].stopAllActions()
+
+        this.posEnemy.children[0].getComponent(sp.Skeleton).clearTracks()
+        this.posMy.children[0].getComponent(sp.Skeleton).clearTracks()
+        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_RESULT)
+    }
+
+    onSpeedPlusHanlder(){
+        this.moveTime = 0.3
+        this.posEnemy.children[0].getComponent(sp.Skeleton).timeScale = 0.5
+        this.posMy.children[0].getComponent(sp.Skeleton).timeScale = 0.5
     }
 }

@@ -6,35 +6,50 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import DataManager from "../utils/Manager/DataManager";
-import ResManager from "../utils/Manager/ResManager";
 
 const { ccclass, property } = cc._decorator;
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
 
 @ccclass
 export default class NewClass extends cc.Component {
 
     @property(cc.Node)
-    bg: cc.Node = null;
-
-    @property(cc.Node)
     icon: cc.Node = null;
 
     @property(cc.Label)
-    label0: cc.Label = null;
+    nameLabel: cc.Label = null;
 
-    @property(cc.Label)
-    label1: cc.Label = null;
+    _data
+
+    // onLoad () {}
 
     start() {
 
     }
 
+    // {
+    //     "item": 5004,
+    //     "gamemone": 75
+    // }
     init(data) {
-        this.label0.string = DataManager.GameData.Soldier[data.arm].name
-        this.label1.string = 'x' + data.count
+        this._data = data
+        this.nameLabel.string = `兑换【${data.name}】`
 
-        ResManager.loadItemIcon(`soliderHead/${DataManager.GameData.Soldier[data.arm].name}`, this.icon)
     }
+
+    btnExchange() {
+        this.ExchangeRune(this._data.item, 50)
+
+    }
+
+    ExchangeRune(id, num) {
+        console.log('id:'+id)
+        console.log('num:'+num)
+        MyProtocols.send_C2SArenaExchange(DataManager._loginSocket, id, num)
+    }
+
 
     // update (dt) {}
 }

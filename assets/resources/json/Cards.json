@@ -50,7 +50,7 @@
     "talents": [
       1,
       2,
-      3
+      4
     ],
     "str": 75,
     "unit_type": 5
@@ -60,7 +60,7 @@
     "talents": [
       1,
       2,
-      3
+      4
     ],
     "arrow": 4,
     "group": 4,
@@ -135,9 +135,8 @@
       ]
     ],
     "talents": [
-      1,
-      2,
-      3
+      3,
+      4
     ],
     "additions": {
       "addition_1": 0,
@@ -188,9 +187,9 @@
       ]
     ],
     "talents": [
-      1,
       2,
-      3
+      3,
+      4
     ],
     "additions": {
       "addition_1": 0,
@@ -240,9 +239,9 @@
       ]
     ],
     "talents": [
-      1,
-      2,
-      3
+      3,
+      4,
+      5
     ],
     "additions": {
       "addition_1": 0,
@@ -269,7 +268,31 @@
     "group": 4
   },
   "6": {
-    "str": 60,
+    "add_attrs": {
+      "maxhp": 368,
+      "atk": 71,
+      "def": 11
+    },
+    "name": "王翦",
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "arrow": 4,
+    "co": 95,
+    "group": 4,
+    "id": 1,
+    "int": 102,
+    "is_spine": true,
+    "ori_attrs": {
+      "maxhp": 9280,
+      "atk": 1998,
+      "def": 260
+    },
+    "potential": 105,
+    "quality": 2,
+    "root_id": 65,
     "rune": [
       1,
       0,
@@ -295,6 +318,244 @@
     "talents": [
       1,
       2,
+      4
+    ],
+    "str": 75,
+    "unit_type": 5
+  },
+  "7": {
+    "str": 70,
+    "talents": [
+      1,
+      2,
+      4
+    ],
+    "arrow": 4,
+    "group": 4,
+    "int": 92,
+    "potential": 105,
+    "quality": 1,
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "name": "李斯",
+    "id": 2,
+    "ori_attrs": {
+      "maxhp": 7680,
+      "atk": 1566,
+      "def": 260
+    },
+    "unit_type": 5,
+    "add_attrs": {
+      "maxhp": 336,
+      "atk": 62,
+      "def": 11
+    },
+    "co": 80
+  },
+  "8": {
+    "name": "荆轲",
+    "str": 90,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      3
+    ],
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "co": 85,
+    "id": 3,
+    "quality": 2,
+    "add_attrs": {
+      "maxhp": 552,
+      "atk": 36,
+      "def": 27
+    },
+    "ori_attrs": {
+      "maxhp": 13920,
+      "atk": 990,
+      "def": 624
+    },
+    "int": 65,
+    "potential": 105,
+    "unit_type": 1,
+    "group": 4
+  },
+  "9": {
+    "str": 92,
+    "name": "项燕",
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      2
+    ],
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "co": 89,
+    "id": 4,
+    "quality": 2,
+    "add_attrs": {
+      "maxhp": 396,
+      "atk": 55,
+      "def": 13
+    },
+    "ori_attrs": {
+      "maxhp": 9360,
+      "atk": 1300,
+      "def": 348
+    },
+    "int": 75,
+    "potential": 100,
+    "unit_type": 4,
+    "group": 4
+  },
+  "10": {
+    "str": 92,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      5
+    ],
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "co": 88,
+    "id": 5,
+    "name": "吕不韦",
+    "quality": 2,
+    "add_attrs": {
+      "maxhp": 440,
+      "atk": 48,
+      "def": 21
+    },
+    "ori_attrs": {
+      "maxhp": 10400,
+      "atk": 1320,
+      "def": 480
+    },
+    "int": 65,
+    "potential": 100,
+    "unit_type": 2,
+    "group": 4
+  },
+  "11": {
+    "str": 60,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      1,
       3
     ],
     "arrow": 4,
@@ -325,7 +586,7 @@
     },
     "co": 80
   },
-  "7": {
+  "12": {
     "str": 75,
     "rune": [
       1,
@@ -350,9 +611,7 @@
       ]
     ],
     "talents": [
-      1,
-      2,
-      3
+      4
     ],
     "arrow": 4,
     "group": 4,
@@ -379,7 +638,7 @@
     },
     "co": 90
   },
-  "8": {
+  "13": {
     "str": 95,
     "rune": [
       1,
@@ -404,8 +663,6 @@
       ]
     ],
     "talents": [
-      1,
-      2,
       3
     ],
     "name": "扶苏",
@@ -432,7 +689,7 @@
     "unit_type": 4,
     "group": 4
   },
-  "9": {
+  "14": {
     "str": 96,
     "rune": [
       1,
@@ -457,9 +714,8 @@
       ]
     ],
     "talents": [
-      1,
       2,
-      3
+      4
     ],
     "additions": {
       "addition_1": 0,
@@ -485,7 +741,7 @@
     "unit_type": 4,
     "group": 4
   },
-  "10": {
+  "15": {
     "name": "张良",
     "str": 75,
     "rune": [
@@ -511,9 +767,8 @@
       ]
     ],
     "talents": [
-      1,
-      2,
-      3
+      4,
+      5
     ],
     "arrow": 4,
     "group": 4,
@@ -539,7 +794,7 @@
     },
     "co": 95
   },
-  "11": {
+  "16": {
     "str": 80,
     "rune": [
       1,
@@ -564,9 +819,8 @@
       ]
     ],
     "talents": [
-      1,
-      2,
-      3
+      4,
+      5
     ],
     "additions": {
       "addition_1": 0,
@@ -592,7 +846,7 @@
     "unit_type": 2,
     "group": 4
   },
-  "12": {
+  "17": {
     "str": 80,
     "rune": [
       1,
@@ -617,7 +871,6 @@
       ]
     ],
     "talents": [
-      1,
       2,
       3
     ],
@@ -646,7 +899,7 @@
     },
     "co": 83
   },
-  "13": {
+  "18": {
     "str": 75,
     "rune": [
       1,
@@ -671,16 +924,15 @@
       ]
     ],
     "talents": [
-      1,
       2,
-      3
+      4
     ],
     "arrow": 4,
     "group": 4,
     "int": 95,
     "name": "魏无忌",
     "potential": 95,
-    "quality": 3,
+    "quality": 2,
     "additions": {
       "addition_1": 0,
       "addition_2": 0,
@@ -700,7 +952,7 @@
     },
     "co": 90
   },
-  "14": {
+  "19": {
     "str": 75,
     "rune": [
       1,
@@ -726,8 +978,7 @@
     ],
     "talents": [
       1,
-      2,
-      3
+      2
     ],
     "arrow": 4,
     "group": 2,
@@ -755,7 +1006,7 @@
     },
     "co": 94
   },
-  "15": {
+  "20": {
     "str": 93,
     "rune": [
       1,
@@ -780,9 +1031,7 @@
       ]
     ],
     "talents": [
-      1,
-      2,
-      3
+      5
     ],
     "name": "赵高",
     "additions": {
@@ -808,7 +1057,7 @@
     "unit_type": 4,
     "group": 2
   },
-  "16": {
+  "21": {
     "str": 98,
     "rune": [
       1,
@@ -833,9 +1082,9 @@
       ]
     ],
     "talents": [
-      1,
-      2,
-      3
+      3,
+      4,
+      5
     ],
     "name": "蒙恬",
     "additions": {
@@ -864,7 +1113,7 @@
     "unit_type": 2,
     "group": 2
   },
-  "17": {
+  "22": {
     "str": 80,
     "rune": [
       1,
@@ -889,8 +1138,6 @@
       ]
     ],
     "talents": [
-      1,
-      2,
       3
     ],
     "arrow": 4,
@@ -918,7 +1165,7 @@
     },
     "co": 85
   },
-  "18": {
+  "23": {
     "str": 90,
     "rune": [
       1,
@@ -975,7 +1222,7 @@
     },
     "co": 88
   },
-  "19": {
+  "24": {
     "str": 107,
     "rune": [
       1,
@@ -1030,7 +1277,7 @@
     "group": 2,
     "is_spine": true
   },
-  "20": {
+  "25": {
     "str": 80,
     "rune": [
       1,
@@ -1055,9 +1302,7 @@
       ]
     ],
     "talents": [
-      1,
-      2,
-      3
+      2
     ],
     "additions": {
       "addition_1": 0,
@@ -1083,7 +1328,7 @@
     "unit_type": 1,
     "group": 2
   },
-  "21": {
+  "26": {
     "str": 97,
     "rune": [
       1,
@@ -1108,9 +1353,7 @@
       ]
     ],
     "talents": [
-      1,
-      2,
-      3
+      1
     ],
     "name": "荀子",
     "additions": {
@@ -1139,114 +1382,32 @@
     "unit_type": 2,
     "group": 2
   },
-  "22": {
-    "str": 74,
-    "rune": [
-      1,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "free_skills": 3,
-    "skills": [
-      [
-        3003
-      ],
-      [
-        2007
-      ],
-      [
-        1010
-      ]
-    ],
-    "talents": [
-      1,
-      2,
-      3
-    ],
-    "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
-    },
-    "co": 78,
-    "id": 22,
-    "name": "嫪毐",
-    "quality": 2,
+  "27": {
     "add_attrs": {
-      "maxhp": 420,
-      "atk": 36,
-      "def": 20
+      "maxhp": 368,
+      "atk": 71,
+      "def": 11
     },
-    "ori_attrs": {
-      "maxhp": 9600,
-      "atk": 720,
-      "def": 440
-    },
-    "int": 94,
-    "potential": 80,
-    "unit_type": 2,
-    "group": 2
-  },
-  "23": {
-    "str": 93,
-    "rune": [
-      1,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "free_skills": 3,
-    "skills": [
-      [
-        3003
-      ],
-      [
-        2007
-      ],
-      [
-        1010
-      ]
-    ],
-    "talents": [
-      1,
-      2,
-      3
-    ],
+    "name": "王翦",
     "additions": {
       "addition_1": 0,
       "addition_2": 0,
       "addition_3": 0
     },
-    "name": "赵姬",
-    "co": 80,
-    "id": 23,
+    "arrow": 4,
+    "co": 95,
+    "group": 4,
+    "id": 1,
+    "int": 102,
+    "is_spine": true,
+    "ori_attrs": {
+      "maxhp": 9280,
+      "atk": 1998,
+      "def": 260
+    },
+    "potential": 105,
     "quality": 3,
-    "add_attrs": {
-      "maxhp": 460,
-      "atk": 46,
-      "def": 20
-    },
-    "ori_attrs": {
-      "maxhp": 11600,
-      "atk": 1160,
-      "def": 440
-    },
-    "int": 66,
-    "potential": 85,
-    "unit_type": 2,
-    "group": 2
-  },
-  "24": {
-    "str": 94,
+    "root_id": 65,
     "rune": [
       1,
       0,
@@ -1272,88 +1433,68 @@
     "talents": [
       1,
       2,
-      3
+      4
     ],
-    "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
-    },
-    "co": 90,
-    "id": 24,
-    "name": "郑国",
-    "quality": 3,
-    "add_attrs": {
-      "maxhp": 460,
-      "atk": 48,
-      "def": 22
-    },
-    "ori_attrs": {
-      "maxhp": 11600,
-      "atk": 1320,
-      "def": 520
-    },
-    "int": 78,
-    "potential": 90,
-    "unit_type": 2,
-    "group": 2
+    "str": 75,
+    "unit_type": 5
   },
-  "25": {
+  "28": {
     "str": 70,
-    "rune": [
-      1,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "free_skills": 3,
-    "skills": [
-      [
-        3003
-      ],
-      [
-        2007
-      ],
-      [
-        1010
-      ]
-    ],
     "talents": [
       1,
       2,
-      3
+      4
     ],
     "arrow": 4,
-    "group": 2,
-    "int": 90,
-    "name": "秦舞阳",
-    "potential": 80,
-    "quality": 2,
+    "group": 4,
+    "int": 92,
+    "potential": 105,
+    "quality": 3,
     "additions": {
       "addition_1": 0,
       "addition_2": 0,
       "addition_3": 0
     },
-    "id": 25,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "name": "李斯",
+    "id": 2,
     "ori_attrs": {
       "maxhp": 7680,
-      "atk": 1296,
-      "def": 160
+      "atk": 1566,
+      "def": 260
     },
     "unit_type": 5,
     "add_attrs": {
       "maxhp": 336,
-      "atk": 56,
-      "def": 8
+      "atk": 62,
+      "def": 11
     },
-    "co": 85
+    "co": 80
   },
-  "26": {
-    "str": 74,
+  "29": {
+    "name": "荆轲",
+    "str": 90,
     "rune": [
       1,
       0,
@@ -1377,92 +1518,242 @@
       ]
     ],
     "talents": [
-      1,
-      2,
       3
     ],
-    "arrow": 4,
-    "group": 2,
-    "int": 96,
-    "potential": 80,
-    "name": "吴广",
-    "quality": 2,
     "additions": {
       "addition_1": 0,
       "addition_2": 0,
       "addition_3": 0
     },
-    "id": 26,
-    "ori_attrs": {
-      "maxhp": 4480,
-      "atk": 972,
-      "def": 220
-    },
-    "unit_type": 5,
-    "add_attrs": {
-      "maxhp": 224,
-      "atk": 48,
-      "def": 10
-    },
-    "co": 88
-  },
-  "27": {
-    "str": 99,
-    "rune": [
-      1,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "free_skills": 3,
-    "skills": [
-      [
-        3003
-      ],
-      [
-        2007
-      ],
-      [
-        1010
-      ]
-    ],
-    "talents": [
-      1,
-      2,
-      3
-    ],
-    "name": "王贲",
-    "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
-    },
-    "co": 94,
-    "id": 27,
-    "extend_id": [
-      194
-    ],
+    "co": 85,
+    "id": 3,
     "quality": 3,
     "add_attrs": {
-      "maxhp": 414,
-      "atk": 62,
+      "maxhp": 552,
+      "atk": 36,
+      "def": 27
+    },
+    "ori_attrs": {
+      "maxhp": 13920,
+      "atk": 990,
+      "def": 624
+    },
+    "int": 65,
+    "potential": 105,
+    "unit_type": 1,
+    "group": 4
+  },
+  "30": {
+    "str": 92,
+    "name": "项燕",
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      2
+    ],
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "co": 89,
+    "id": 4,
+    "quality": 3,
+    "add_attrs": {
+      "maxhp": 396,
+      "atk": 55,
       "def": 13
     },
     "ori_attrs": {
-      "maxhp": 10440,
-      "atk": 1850,
-      "def": 312
+      "maxhp": 9360,
+      "atk": 1300,
+      "def": 348
     },
-    "int": 70,
-    "potential": 95,
+    "int": 75,
+    "potential": 100,
     "unit_type": 4,
-    "group": 2
+    "group": 4
   },
-  "28": {
+  "31": {
+    "str": 92,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      5
+    ],
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "co": 88,
+    "id": 5,
+    "name": "吕不韦",
+    "quality": 3,
+    "add_attrs": {
+      "maxhp": 440,
+      "atk": 48,
+      "def": 21
+    },
+    "ori_attrs": {
+      "maxhp": 10400,
+      "atk": 1320,
+      "def": 480
+    },
+    "int": 65,
+    "potential": 100,
+    "unit_type": 2,
+    "group": 4
+  },
+  "32": {
+    "str": 60,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      1,
+      3
+    ],
+    "arrow": 4,
+    "group": 4,
+    "int": 95,
+    "potential": 95,
+    "quality": 3,
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "name": "李信",
+    "id": 6,
+    "extend_id": [
+      192
+    ],
+    "ori_attrs": {
+      "maxhp": 11840,
+      "atk": 1188,
+      "def": 290
+    },
+    "unit_type": 5,
+    "add_attrs": {
+      "maxhp": 400,
+      "atk": 54,
+      "def": 11
+    },
+    "co": 80
+  },
+  "33": {
+    "str": 75,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      4
+    ],
+    "arrow": 4,
+    "group": 4,
+    "int": 98,
+    "potential": 95,
+    "quality": 3,
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "name": "燕丹",
+    "id": 7,
+    "ori_attrs": {
+      "maxhp": 10560,
+      "atk": 1782,
+      "def": 260
+    },
+    "unit_type": 5,
+    "add_attrs": {
+      "maxhp": 384,
+      "atk": 64,
+      "def": 11
+    },
+    "co": 90
+  },
+  "34": {
     "str": 95,
     "rune": [
       1,
@@ -1487,9 +1778,1063 @@
       ]
     ],
     "talents": [
+      3
+    ],
+    "name": "扶苏",
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "co": 90,
+    "id": 8,
+    "quality": 3,
+    "add_attrs": {
+      "maxhp": 414,
+      "atk": 57,
+      "def": 12
+    },
+    "ori_attrs": {
+      "maxhp": 10440,
+      "atk": 1450,
+      "def": 264
+    },
+    "int": 68,
+    "potential": 85,
+    "unit_type": 4,
+    "group": 4
+  },
+  "35": {
+    "str": 96,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      2,
+      4
+    ],
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "co": 90,
+    "name": "高渐离",
+    "id": 9,
+    "quality": 3,
+    "add_attrs": {
+      "maxhp": 414,
+      "atk": 57,
+      "def": 12
+    },
+    "ori_attrs": {
+      "maxhp": 10440,
+      "atk": 1450,
+      "def": 288
+    },
+    "int": 68,
+    "potential": 85,
+    "unit_type": 4,
+    "group": 4
+  },
+  "36": {
+    "name": "张良",
+    "str": 75,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      4,
+      5
+    ],
+    "arrow": 4,
+    "group": 4,
+    "int": 98,
+    "potential": 95,
+    "quality": 3,
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "id": 10,
+    "ori_attrs": {
+      "maxhp": 9280,
+      "atk": 1998,
+      "def": 260
+    },
+    "unit_type": 5,
+    "add_attrs": {
+      "maxhp": 368,
+      "atk": 67,
+      "def": 11
+    },
+    "co": 95
+  },
+  "37": {
+    "str": 80,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      4,
+      5
+    ],
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "name": "韩非",
+    "co": 90,
+    "id": 11,
+    "quality": 3,
+    "add_attrs": {
+      "maxhp": 460,
+      "atk": 42,
+      "def": 23
+    },
+    "ori_attrs": {
+      "maxhp": 11600,
+      "atk": 960,
+      "def": 580
+    },
+    "int": 80,
+    "potential": 85,
+    "unit_type": 2,
+    "group": 4
+  },
+  "38": {
+    "str": 80,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      2,
+      3
+    ],
+    "arrow": 4,
+    "group": 4,
+    "name": "郭开",
+    "int": 90,
+    "potential": 85,
+    "quality": 3,
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "id": 12,
+    "ori_attrs": {
+      "maxhp": 8320,
+      "atk": 1404,
+      "def": 260
+    },
+    "unit_type": 5,
+    "add_attrs": {
+      "maxhp": 352,
+      "atk": 59,
+      "def": 11
+    },
+    "co": 83
+  },
+  "39": {
+    "str": 75,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 2,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      2,
+      4
+    ],
+    "arrow": 4,
+    "group": 4,
+    "int": 95,
+    "name": "魏无忌",
+    "potential": 95,
+    "quality": 3,
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "id": 13,
+    "ori_attrs": {
+      "maxhp": 9280,
+      "atk": 1998,
+      "def": 260
+    },
+    "unit_type": 5,
+    "add_attrs": {
+      "maxhp": 368,
+      "atk": 67,
+      "def": 11
+    },
+    "co": 90
+  },
+  "40": {
+    "str": 75,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      1,
+      2
+    ],
+    "arrow": 4,
+    "group": 2,
+    "int": 105,
+    "name": "司马尚",
+    "potential": 100,
+    "is_spine": true,
+    "quality": 3,
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "id": 14,
+    "ori_attrs": {
+      "maxhp": 12560,
+      "atk": 1428,
+      "def": 310
+    },
+    "unit_type": 5,
+    "add_attrs": {
+      "maxhp": 404,
+      "atk": 64,
+      "def": 13
+    },
+    "co": 94
+  },
+  "41": {
+    "str": 93,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      5
+    ],
+    "name": "赵高",
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "co": 93,
+    "id": 15,
+    "quality": 3,
+    "add_attrs": {
+      "maxhp": 288,
+      "atk": 50,
+      "def": 12
+    },
+    "ori_attrs": {
+      "maxhp": 5760,
+      "atk": 1100,
+      "def": 264
+    },
+    "int": 68,
+    "potential": 80,
+    "unit_type": 4,
+    "group": 2
+  },
+  "42": {
+    "str": 98,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      3,
+      4,
+      5
+    ],
+    "name": "蒙恬",
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "co": 96,
+    "id": 16,
+    "extend_id": [
+      193
+    ],
+    "quality": 3,
+    "add_attrs": {
+      "maxhp": 460,
+      "atk": 50,
+      "def": 22
+    },
+    "ori_attrs": {
+      "maxhp": 13200,
+      "atk": 1480,
+      "def": 480
+    },
+    "int": 80,
+    "potential": 95,
+    "unit_type": 2,
+    "group": 2
+  },
+  "43": {
+    "str": 80,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      3
+    ],
+    "arrow": 4,
+    "group": 2,
+    "name": "陈胜",
+    "int": 95,
+    "potential": 95,
+    "quality": 3,
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "id": 17,
+    "ori_attrs": {
+      "maxhp": 10560,
+      "atk": 1782,
+      "def": 260
+    },
+    "unit_type": 5,
+    "add_attrs": {
+      "maxhp": 384,
+      "atk": 64,
+      "def": 11
+    },
+    "co": 85
+  },
+  "44": {
+    "str": 90,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
       1,
       2,
       3
+    ],
+    "arrow": 2,
+    "group": 2,
+    "name": "项羽",
+    "int": 80,
+    "potential": 90,
+    "quality": 3,
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "id": 18,
+    "extend_id": [
+      215
+    ],
+    "ori_attrs": {
+      "maxhp": 8640,
+      "atk": 1650,
+      "def": 312
+    },
+    "unit_type": 3,
+    "add_attrs": {
+      "maxhp": 378,
+      "atk": 60,
+      "def": 13
+    },
+    "co": 88
+  },
+  "45": {
+    "str": 107,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      1,
+      2,
+      3
+    ],
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "co": 99,
+    "id": 19,
+    "quality": 3,
+    "add_attrs": {
+      "maxhp": 512,
+      "atk": 86,
+      "def": 12
+    },
+    "ori_attrs": {
+      "maxhp": 11440,
+      "atk": 2250,
+      "def": 305
+    },
+    "name": "刘邦",
+    "int": 91,
+    "potential": 100,
+    "unit_type": 3,
+    "arrow": 2,
+    "group": 2,
+    "is_spine": true
+  },
+  "46": {
+    "str": 80,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      2
+    ],
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "co": 95,
+    "name": "韩信",
+    "id": 20,
+    "quality": 3,
+    "add_attrs": {
+      "maxhp": 576,
+      "atk": 33,
+      "def": 29
+    },
+    "ori_attrs": {
+      "maxhp": 17760,
+      "atk": 720,
+      "def": 754
+    },
+    "int": 89,
+    "potential": 90,
+    "unit_type": 1,
+    "group": 2
+  },
+  "47": {
+    "str": 97,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      1
+    ],
+    "name": "荀子",
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "co": 95,
+    "id": 21,
+    "extend_id": [
+      214
+    ],
+    "quality": 3,
+    "add_attrs": {
+      "maxhp": 460,
+      "atk": 48,
+      "def": 22
+    },
+    "ori_attrs": {
+      "maxhp": 11600,
+      "atk": 1320,
+      "def": 520
+    },
+    "int": 75,
+    "potential": 90,
+    "unit_type": 2,
+    "group": 2
+  },
+  "48": {
+    "str": 74,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      3
+    ],
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "co": 78,
+    "id": 22,
+    "name": "嫪毐",
+    "quality": 4,
+    "add_attrs": {
+      "maxhp": 420,
+      "atk": 36,
+      "def": 20
+    },
+    "ori_attrs": {
+      "maxhp": 9600,
+      "atk": 720,
+      "def": 440
+    },
+    "int": 94,
+    "potential": 80,
+    "unit_type": 2,
+    "group": 2
+  },
+  "49": {
+    "str": 93,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      2
+    ],
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "name": "赵姬",
+    "co": 80,
+    "id": 23,
+    "quality": 4,
+    "add_attrs": {
+      "maxhp": 460,
+      "atk": 46,
+      "def": 20
+    },
+    "ori_attrs": {
+      "maxhp": 11600,
+      "atk": 1160,
+      "def": 440
+    },
+    "int": 66,
+    "potential": 85,
+    "unit_type": 2,
+    "group": 2
+  },
+  "50": {
+    "str": 94,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      1
+    ],
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "co": 90,
+    "id": 24,
+    "name": "郑国",
+    "quality": 4,
+    "add_attrs": {
+      "maxhp": 460,
+      "atk": 48,
+      "def": 22
+    },
+    "ori_attrs": {
+      "maxhp": 11600,
+      "atk": 1320,
+      "def": 520
+    },
+    "int": 78,
+    "potential": 90,
+    "unit_type": 2,
+    "group": 2
+  },
+  "51": {
+    "str": 70,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      4
+    ],
+    "arrow": 4,
+    "group": 2,
+    "int": 90,
+    "name": "秦舞阳",
+    "potential": 80,
+    "quality": 4,
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "id": 25,
+    "ori_attrs": {
+      "maxhp": 7680,
+      "atk": 1296,
+      "def": 160
+    },
+    "unit_type": 5,
+    "add_attrs": {
+      "maxhp": 336,
+      "atk": 56,
+      "def": 8
+    },
+    "co": 85
+  },
+  "52": {
+    "str": 74,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      1,
+      2
+    ],
+    "arrow": 4,
+    "group": 2,
+    "int": 96,
+    "potential": 80,
+    "name": "吴广",
+    "quality": 4,
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "id": 26,
+    "ori_attrs": {
+      "maxhp": 4480,
+      "atk": 972,
+      "def": 220
+    },
+    "unit_type": 5,
+    "add_attrs": {
+      "maxhp": 224,
+      "atk": 48,
+      "def": 10
+    },
+    "co": 88
+  },
+  "53": {
+    "str": 99,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      4
+    ],
+    "name": "王贲",
+    "additions": {
+      "addition_1": 0,
+      "addition_2": 0,
+      "addition_3": 0
+    },
+    "co": 94,
+    "id": 27,
+    "extend_id": [
+      194
+    ],
+    "quality": 4,
+    "add_attrs": {
+      "maxhp": 414,
+      "atk": 62,
+      "def": 13
+    },
+    "ori_attrs": {
+      "maxhp": 10440,
+      "atk": 1850,
+      "def": 312
+    },
+    "int": 70,
+    "potential": 95,
+    "unit_type": 4,
+    "group": 2
+  },
+  "54": {
+    "str": 95,
+    "rune": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "free_skills": 3,
+    "skills": [
+      [
+        3003
+      ],
+      [
+        2007
+      ],
+      [
+        1010
+      ]
+    ],
+    "talents": [
+      2
     ],
     "arrow": 4,
     "group": 2,
@@ -1517,7 +2862,7 @@
     },
     "co": 108
   },
-  "29": {
+  "55": {
     "str": 90,
     "rune": [
       1,
@@ -1542,9 +2887,7 @@
       ]
     ],
     "talents": [
-      1,
-      2,
-      3
+      5
     ],
     "additions": {
       "addition_1": 0,
@@ -1554,7 +2897,7 @@
     "name": "韩安",
     "co": 82,
     "id": 29,
-    "quality": 3,
+    "quality": 4,
     "add_attrs": {
       "maxhp": 440,
       "atk": 46,
@@ -1570,7 +2913,7 @@
     "unit_type": 2,
     "group": 2
   },
-  "30": {
+  "56": {
     "str": 85,
     "rune": [
       1,
@@ -1595,8 +2938,6 @@
       ]
     ],
     "talents": [
-      1,
-      2,
       3
     ],
     "name": "魏假",
@@ -1607,7 +2948,7 @@
     },
     "co": 100,
     "id": 30,
-    "quality": 3,
+    "quality": 4,
     "add_attrs": {
       "maxhp": 600,
       "atk": 34,
@@ -1623,7 +2964,7 @@
     "unit_type": 1,
     "group": 1
   },
-  "31": {
+  "57": {
     "str": 90,
     "rune": [
       1,
@@ -1648,9 +2989,8 @@
       ]
     ],
     "talents": [
-      1,
-      2,
-      3
+      4,
+      5
     ],
     "additions": {
       "addition_1": 0,
@@ -1660,7 +3000,7 @@
     "name": "燕喜",
     "co": 98,
     "id": 31,
-    "quality": 3,
+    "quality": 4,
     "add_attrs": {
       "maxhp": 576,
       "atk": 30,
@@ -1676,7 +3016,7 @@
     "unit_type": 1,
     "group": 1
   },
-  "32": {
+  "58": {
     "str": 80,
     "rune": [
       1,
@@ -1701,16 +3041,14 @@
       ]
     ],
     "talents": [
-      1,
-      2,
-      3
+      1
     ],
     "arrow": 2,
     "group": 1,
     "int": 88,
     "potential": 85,
     "name": "齐建",
-    "quality": 3,
+    "quality": 4,
     "additions": {
       "addition_1": 0,
       "addition_2": 0,
@@ -1730,7 +3068,7 @@
     },
     "co": 90
   },
-  "33": {
+  "59": {
     "str": 98,
     "rune": [
       1,
@@ -1755,8 +3093,6 @@
       ]
     ],
     "talents": [
-      1,
-      2,
       3
     ],
     "additions": {
@@ -1767,7 +3103,7 @@
     "name": "尉缭",
     "co": 85,
     "id": 33,
-    "quality": 3,
+    "quality": 4,
     "add_attrs": {
       "maxhp": 552,
       "atk": 34,
@@ -1783,7 +3119,7 @@
     "unit_type": 1,
     "group": 1
   },
-  "34": {
+  "60": {
     "str": 77,
     "rune": [
       1,
@@ -1809,15 +3145,14 @@
     ],
     "talents": [
       1,
-      2,
-      3
+      5
     ],
     "arrow": 4,
     "group": 1,
     "int": 99,
     "name": "赵葱",
     "potential": 95,
-    "quality": 3,
+    "quality": 4,
     "additions": {
       "addition_1": 0,
       "addition_2": 0,
@@ -1837,7 +3172,7 @@
     },
     "co": 95
   },
-  "35": {
+  "61": {
     "str": 88,
     "rune": [
       1,
@@ -1862,16 +3197,15 @@
       ]
     ],
     "talents": [
-      1,
-      2,
-      3
+      3,
+      4
     ],
     "arrow": 2,
     "group": 1,
     "int": 80,
     "name": "张三",
     "potential": 80,
-    "quality": 2,
+    "quality": 5,
     "additions": {
       "addition_1": 0,
       "addition_2": 0,
@@ -1891,7 +3225,7 @@
     },
     "co": 88
   },
-  "36": {
+  "62": {
     "str": 79,
     "rune": [
       1,
@@ -1917,8 +3251,7 @@
     ],
     "talents": [
       1,
-      2,
-      3
+      2
     ],
     "arrow": 4,
     "group": 1,
@@ -1926,7 +3259,7 @@
     "name": "李四",
     "potential": 100,
     "is_spine": true,
-    "quality": 4,
+    "quality": 5,
     "additions": {
       "addition_1": 0,
       "addition_2": 0,
@@ -1946,7 +3279,7 @@
     },
     "co": 98
   },
-  "37": {
+  "63": {
     "str": 102,
     "rune": [
       1,
@@ -1971,8 +3304,6 @@
       ]
     ],
     "talents": [
-      1,
-      2,
       3
     ],
     "additions": {
@@ -1983,7 +3314,7 @@
     "name": "王五",
     "co": 100,
     "id": 37,
-    "quality": 4,
+    "quality": 5,
     "add_attrs": {
       "maxhp": 477,
       "atk": 68,
@@ -2000,7 +3331,7 @@
     "group": 1,
     "is_spine": true
   },
-  "38": {
+  "64": {
     "str": 92,
     "rune": [
       1,
@@ -2025,9 +3356,7 @@
       ]
     ],
     "talents": [
-      1,
-      2,
-      3
+      1
     ],
     "additions": {
       "addition_1": 0,
@@ -2037,7 +3366,7 @@
     "name": "赵六",
     "co": 90,
     "id": 38,
-    "quality": 3,
+    "quality": 5,
     "add_attrs": {
       "maxhp": 552,
       "atk": 36,
@@ -2053,7 +3382,7 @@
     "unit_type": 1,
     "group": 1
   },
-  "39": {
+  "65": {
     "str": 98,
     "rune": [
       1,
@@ -2078,9 +3407,7 @@
       ]
     ],
     "talents": [
-      1,
-      2,
-      3
+      2
     ],
     "additions": {
       "addition_1": 0,
@@ -2090,7 +3417,7 @@
     "name": "孙七",
     "co": 90,
     "id": 39,
-    "quality": 3,
+    "quality": 5,
     "add_attrs": {
       "maxhp": 600,
       "atk": 33,
@@ -2106,7 +3433,7 @@
     "unit_type": 1,
     "group": 1
   },
-  "40": {
+  "66": {
     "str": 63,
     "rune": [
       1,
@@ -2131,16 +3458,14 @@
       ]
     ],
     "talents": [
-      1,
-      2,
-      3
+      2
     ],
     "arrow": 2,
     "group": 1,
     "int": 89,
     "name": "周八",
     "potential": 85,
-    "quality": 3,
+    "quality": 5,
     "additions": {
       "addition_1": 0,
       "addition_2": 0,
@@ -2160,7 +3485,7 @@
     },
     "co": 80
   },
-  "41": {
+  "67": {
     "str": 85,
     "rune": [
       1,
@@ -2185,9 +3510,7 @@
       ]
     ],
     "talents": [
-      1,
-      2,
-      3
+      5
     ],
     "additions": {
       "addition_1": 0,
@@ -2197,7 +3520,7 @@
     "name": "吴九",
     "co": 90,
     "id": 41,
-    "quality": 3,
+    "quality": 5,
     "add_attrs": {
       "maxhp": 552,
       "atk": 31,
@@ -2213,7 +3536,7 @@
     "unit_type": 1,
     "group": 1
   },
-  "42": {
+  "68": {
     "str": 84,
     "rune": [
       1,
@@ -2238,9 +3561,7 @@
       ]
     ],
     "talents": [
-      1,
-      2,
-      3
+      4
     ],
     "additions": {
       "addition_1": 0,
@@ -2250,7 +3571,7 @@
     "name": "郑十",
     "co": 78,
     "id": 42,
-    "quality": 2,
+    "quality": 5,
     "add_attrs": {
       "maxhp": 360,
       "atk": 50,

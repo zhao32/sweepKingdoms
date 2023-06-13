@@ -8,6 +8,7 @@
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import ResManager from "../utils/Manager/ResManager";
+import runeExRender from "./runeExRender";
 
 const { ccclass, property } = cc._decorator;
 
@@ -46,9 +47,10 @@ export default class NewClass extends cc.Component {
 
     start() {
         NetEventDispatcher.addListener(NetEvent.S2CRankLike, this.S2CRankLike.bind(this))
-
         NetEventDispatcher.addListener(NetEvent.S2CArenaExchange, this.S2CArenaExchange.bind(this))
 
+
+        // S2CArenaExchangeList
     }
 
     // let myData = {
@@ -59,28 +61,42 @@ export default class NewClass extends cc.Component {
     //     icon: 0
     // }
 
+    S2CArenaExchangeList(data) {
+        console.log('请求兑换列表返回')
+        console.log(JSON.stringify(data))
+
+    }
+
     init(data) {
+        NetEventDispatcher.addListener(NetEvent.S2CArenaExchangeList, this.S2CArenaExchangeList.bind(this))
+        MyProtocols.send_C2SArenaExchangeList(DataManager._loginSocket)
+
         this._data = data
         ResManager.loadItemIcon(`hero/icon/${data.icon}`, this.head)
         this.rankLabel.string = `${data.rank}`;
 
         this.honerLabel.string = `现有荣耀值：${DataManager.playData.honor}`;
 
+
         let bonusData = [
             {
                 "item": 5001,
+                "name": "暴击符石",
                 "gamemone": 75
             },
             {
                 "item": 5002,
+                "name": "致命符石",
                 "gamemone": 75
             },
             {
                 "item": 5003,
+                "name": "坚毅符石",
                 "gamemone": 75
             },
             {
                 "item": 5004,
+                "name": "韧性符石",
                 "gamemone": 75
             }
         ]
@@ -90,11 +106,11 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < bonusData.length; i++) {
             let render = cc.instantiate(this.exBonusPfb)
             render.parent = this.contect
+            render.getComponent(runeExRender).init(bonusData[i])
 
-            render.on(cc.Node.EventType.TOUCH_END, () => {
-                console.log('---------点击兑换----------')
-                this.ExchangeRune(bonusData[i].item, 50)
-            }, this)
+            // render.on(cc.Node.EventType.TOUCH_END, () => {
+            //     console.log('---------点击兑换----------')
+            // }, this)
         }
 
 
@@ -109,7 +125,7 @@ export default class NewClass extends cc.Component {
     S2CRankLike(data) {
         console.log(`领取功勋值返回`)
         console.log(JSON.stringify(data))
-        this.honerLabel.string = String(DataManager.playData.honor) 
+        this.honerLabel.string = String(DataManager.playData.honor)
 
     }
 
@@ -117,12 +133,6 @@ export default class NewClass extends cc.Component {
         console.log(`兑换符石返回`)
         console.log(JSON.stringify(data))
 
-    }
-    ExchangeRune(id, num) {
-
-        console.log('id:'+id)
-        console.log('num:'+num)
-        MyProtocols.send_C2SArenaExchange(DataManager._loginSocket, id, num)
     }
 
 

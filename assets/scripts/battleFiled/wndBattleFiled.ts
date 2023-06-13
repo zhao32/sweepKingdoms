@@ -81,6 +81,7 @@ export default class NewClass extends cc.Component {
     }
 
     init() {
+
         NetEventDispatcher.addListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))
 
         if (DataManager.myBattleFiledConfig.soliders.length == 0) {
