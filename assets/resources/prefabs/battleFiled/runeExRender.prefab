@@ -516,7 +516,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 334.51,
+      "width": 342.29,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -568,8 +568,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "消耗75w功勋兑换50颗符石",
-    "_N$string": "消耗75w功勋兑换50颗符石",
+    "_string": "消耗7.5w功勋兑换50颗符石",
+    "_N$string": "消耗7.5w功勋兑换50颗符石",
     "_fontSize": 28,
     "_lineHeight": 40,
     "_enableWrapText": true,

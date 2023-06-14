@@ -112,6 +112,10 @@ export default class EnumManager {
 
         /**矿产农田详情 */
         WND_GOBATTLE_DETAILS: 'prefabs/goBattle/wndFiledDetails',
+        /**我的主城 */
+        WND_GOBATTLE_MYCITY_DETAILS: 'prefabs/goBattle/wndMyCityDetails',
+        /**我的矿 */
+        WND_GOBATTLE_MYMINE_DETAILS: 'prefabs/goBattle/wndMyMineDetails',
 
         /**战斗配置 */
         WND_GOBATTLE_CONFIG:'prefabs/goBattle/wndGoBattleConfig',

@@ -139,6 +139,9 @@ export default class NewClass extends cc.Component {
             ResManager.loadItemIcon(`hero/head_1_1`, this.myNode.getChildByName("icon"))
         } else if (myData.player.icon == 1) {
             ResManager.loadItemIcon(`hero/head_2_1`, this.myNode.getChildByName("icon"))
+        } else {
+            let defaultData = DataManager.GameData.Cards[myData.player.icon]
+            ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.myNode.getChildByName("icon"))
         }
 
         for (let i = 0; i < 3; i++) {
@@ -165,7 +168,11 @@ export default class NewClass extends cc.Component {
             ResManager.loadItemIcon(`hero/head_1_1`, this.enemyNode.getChildByName("icon"))
         } else if (enemyData.player.icon == 1) {
             ResManager.loadItemIcon(`hero/head_2_1`, this.enemyNode.getChildByName("icon"))
+        }else {
+            let defaultData = DataManager.GameData.Cards[enemyData.player.icon]
+            ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.enemyNode.getChildByName("icon"))
         }
+
 
         for (let i = 0; i < 3; i++) {
             this.enemyNode.getChildByName(`head${i}`).active = false

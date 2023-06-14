@@ -86,6 +86,7 @@ export default class NewClass extends cc.Component {
     }
 
     init() {
+        this.toggle0.isChecked = true
         MyProtocols.send_C2SArenaExchangeList(DataManager._loginSocket)
 
         NetEventDispatcher.addListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))

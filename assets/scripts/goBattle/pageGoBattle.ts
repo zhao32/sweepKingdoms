@@ -34,7 +34,7 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     filedItemPfb: cc.Prefab = null;
 
-
+    curPageIdx: number = 0
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -54,22 +54,30 @@ export default class NewClass extends cc.Component {
             myItem.parent = this.myContect
         }
 
-
         this.filedContect.removeAllChildren()
         for (let i = 0; i < data.mine_points.length; i++) {
             let filedNode = cc.instantiate(this.filedItemPfb)
             filedNode.parent = this.filedContect
             filedNode.getComponent(filedItem).init(data.mine_points[i])
             filedNode.on(cc.Node.EventType.TOUCH_END, () => {
-                if(data.mine_points[i].hold_player){
-                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[data.mine_points[i]])
+                if (data.mine_points[i].hold_player) {
+                    if (data.mine_points[i].hold_player.id == DataManager.playData.id) {
+                        if (data.mine_points[i].hold_player.group == 101) {
+                            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[data.mine_points[i]])
+                        } else {
+                            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[data.mine_points[i]])
+                        }
+                    } else {
+                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[data.mine_points[i]])
+                    }
                 }
             }, this)
         }
     }
 
     init() {
-        MyProtocols.send_C2SMineList(DataManager._loginSocket, 1, 1, DataManager.playData.nation_id)
+        this.curPageIdx = 0
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, DataManager.playData.nation_id)
 
         // this.myContect.removeAllChildren()
         // for (let i = 0; i < 5; i++) {
@@ -106,6 +114,12 @@ export default class NewClass extends cc.Component {
 
     btnLeft() {
         console.log('左刷新')
+        if (this.curPageIdx > 0) {
+            this.curPageIdx--
+            MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, DataManager.playData.nation_id)
+        } else {
+            ViewManager.instance.showToast('没有更多了')
+        }
         // this.filedContect.removeAllChildren()
 
         // for (let i = 0; i < 27; i++) {
@@ -121,6 +135,12 @@ export default class NewClass extends cc.Component {
     }
     btnRight() {
         console.log('右刷新')
+        if (this.curPageIdx < 399) {
+            this.curPageIdx++
+            MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, DataManager.playData.nation_id)
+        } else {
+            ViewManager.instance.showToast('没有更多了')
+        }
         // this.filedContect.removeAllChildren()
         // for (let i = 0; i < 27; i++) {
         //     let filedItem = cc.instantiate(this.filedItemPfb)

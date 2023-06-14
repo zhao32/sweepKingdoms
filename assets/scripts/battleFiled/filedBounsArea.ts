@@ -8,6 +8,7 @@
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import ResManager from "../utils/Manager/ResManager";
+import ViewManager from "../utils/Manager/ViewManager";
 import runeExRender from "./runeExRender";
 
 const { ccclass, property } = cc._decorator;
@@ -81,7 +82,18 @@ export default class NewClass extends cc.Component {
         this.unschedule(this.schFun)
 
         this._data = data
-        ResManager.loadItemIcon(`hero/icon/${data.icon}`, this.head)
+        // ResManager.loadItemIcon(`hero/icon/${data.icon}`, this.head)
+
+        if (data.icon == 0) {
+            ResManager.loadItemIcon(`hero/head_1_1`, this.head)
+        } else if (data.icon == 1) {
+            ResManager.loadItemIcon(`hero/head_2_1`, this.head)
+        } else {
+            let defaultData = DataManager.GameData.Cards[data.icon]
+            ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.head)
+        }
+
+
         this.rankLabel.string = `${data.rank}`;
 
         this.honerLabel.string = `现有荣耀值：${DataManager.playData.honor}`;
@@ -177,6 +189,9 @@ export default class NewClass extends cc.Component {
     S2CArenaExchange(data) {
         console.log(`兑换符石返回`)
         console.log(JSON.stringify(data))
+        // {"slot_index":5003,"buy_count":1,"rewards":{"item_template_id":5003,"item_count":50}}
+        ViewManager.instance.showToast(`兑换符石成功`)
+        this.honerLabel.string = `现有荣耀值：${DataManager.playData.honor}`;
 
     }
 
