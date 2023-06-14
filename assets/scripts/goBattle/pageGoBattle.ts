@@ -36,6 +36,8 @@ export default class NewClass extends cc.Component {
 
     curPageIdx: number = 0
 
+    nation_id:number = 0
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -76,8 +78,24 @@ export default class NewClass extends cc.Component {
     }
 
     init() {
+        this.nation_id = DataManager.playData.nation_id
         this.curPageIdx = 0
-        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, DataManager.playData.nation_id)
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
+
+        for (let i = 0; i < this.node.getChildByName(`toggleContainer`).children.length; i++) {
+            let child = this.node.getChildByName(`toggleContainer`).children[i]
+            if(i+1 == this.nation_id){
+                child.getComponent(cc.Toggle).isChecked = true 
+            }
+            child.on('toggle', () => {
+                if (child.getComponent(cc.Toggle).isChecked == true) {
+                    this.nation_id = i + 1
+                    MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
+                }
+            }, this)
+
+
+        }
 
         // this.myContect.removeAllChildren()
         // for (let i = 0; i < 5; i++) {
@@ -116,7 +134,7 @@ export default class NewClass extends cc.Component {
         console.log('左刷新')
         if (this.curPageIdx > 0) {
             this.curPageIdx--
-            MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, DataManager.playData.nation_id)
+            MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
         } else {
             ViewManager.instance.showToast('没有更多了')
         }
@@ -137,7 +155,7 @@ export default class NewClass extends cc.Component {
         console.log('右刷新')
         if (this.curPageIdx < 399) {
             this.curPageIdx++
-            MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, DataManager.playData.nation_id)
+            MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
         } else {
             ViewManager.instance.showToast('没有更多了')
         }
