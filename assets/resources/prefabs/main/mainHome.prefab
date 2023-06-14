@@ -15603,6 +15603,9 @@
     "labelName": {
       "__id__": 340
     },
+    "head": {
+      "__id__": 351
+    },
     "labelCombatPower": {
       "__id__": 297
     },

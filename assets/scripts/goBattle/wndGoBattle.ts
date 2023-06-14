@@ -680,13 +680,12 @@ export default class NewClass extends cc.Component {
                 this.myAttackAni()
             }
         })
-
     }
 
     doBack() {
         console.log(`--------点击返回---------`)
         this.node.getChildByName('resultPanel').active = false
-        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
         // ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE)
     }
 
@@ -699,7 +698,7 @@ export default class NewClass extends cc.Component {
 
     onSpeedPlusHanlder() {
         this.moveTime = 0.3
-        this.posEnemy.children[0].getComponent(sp.Skeleton).timeScale = 0.5
+        this.posEnemy.children[0].getComponent(sp.Skeleton).timeScale = 2
         this.posMy.children[0].getComponent(sp.Skeleton).timeScale = 2
     }
 }

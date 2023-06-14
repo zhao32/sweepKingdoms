@@ -36,7 +36,6 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Label, displayName: '名称' })
     nameLabel: cc.Label = null;
 
-
     @property({ type: cc.Label, displayName: '等级' })
     gradeDisplay: cc.Label = null;
 
@@ -61,6 +60,9 @@ export default class NewClass extends cc.Component {
 
     @property({ type: cc.Prefab, displayName: '石槽预制体' })
     runPfb: cc.Prefab = null;
+
+    @property({ type: cc.Prefab, displayName: '装备预制体' })
+    equipPfb: cc.Prefab = null;
 
     @property({ type: cc.SpriteFrame, displayName: '石槽图' })
     runePotsFrame: cc.SpriteFrame[] = [];
@@ -156,11 +158,16 @@ export default class NewClass extends cc.Component {
             this.initRunes()
         }, this)
 
+        this.node.getChildByName(`btnEquip`).on(cc.Node.EventType.TOUCH_END, () => {
+            this.initEquips()
+        }, this)
+
         this.initSkills(defaultData.skills, data.proficiency, defaultData.talents)
     }
     initSkills(skillList, proficiency, talents) {
         this.node.getChildByName('btnSkill').getComponent(cc.Sprite).spriteFrame = this.checkFrames[1]
         this.node.getChildByName('btnRune').getComponent(cc.Sprite).spriteFrame = this.checkFrames[0]
+        this.node.getChildByName('btnEquip').getComponent(cc.Sprite).spriteFrame = this.checkFrames[0]
 
         this.contect.removeAllChildren();
 
@@ -176,6 +183,7 @@ export default class NewClass extends cc.Component {
     initRunes() {
         this.contect.removeAllChildren();
         this.node.getChildByName('btnSkill').getComponent(cc.Sprite).spriteFrame = this.checkFrames[0]
+        this.node.getChildByName('btnEquip').getComponent(cc.Sprite).spriteFrame = this.checkFrames[0]
         this.node.getChildByName('btnRune').getComponent(cc.Sprite).spriteFrame = this.checkFrames[1]
 
         for (let i = 0; i < this._data.runePutup.length; i++) {
@@ -188,8 +196,18 @@ export default class NewClass extends cc.Component {
             }
             render.getComponent(detailRuneRender).init(state, i, this._data.template_id)
         }
+    }
 
+    initEquips() {
+        this.node.getChildByName('btnSkill').getComponent(cc.Sprite).spriteFrame = this.checkFrames[0]
+        this.node.getChildByName('btnRune').getComponent(cc.Sprite).spriteFrame = this.checkFrames[0]
+        this.node.getChildByName('btnEquip').getComponent(cc.Sprite).spriteFrame = this.checkFrames[1]
 
+        this.contect.removeAllChildren();
+        for (let i = 0; i < this._data.unitEquips.length; i++) {
+            let equip = cc.instantiate(this.equipPfb)
+            equip.parent = this.contect
+        }
     }
 
     onClose() {

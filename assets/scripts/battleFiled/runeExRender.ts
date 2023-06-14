@@ -40,7 +40,7 @@ export default class NewClass extends cc.Component {
     }
 
     btnExchange() {
-        this.ExchangeRune(this._data.item, 50)
+        this.ExchangeRune(this._data.item, 1)
 
     }
 

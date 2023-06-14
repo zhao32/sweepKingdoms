@@ -145,8 +145,8 @@ export default class NewClass extends cc.Component {
             if (i < 5) {
                 render.x = 1000
                 this.scheduleOnce(() => {
-                    render.runAction(cc.moveTo(DataManager.SCROLLTIME, cc.v2(0, render.y)))
-                }, DataManager.SCROLLTIME * i)
+                    render.runAction(cc.moveTo(DataManager.SCROLLTIME1, cc.v2(0, render.y)))
+                }, DataManager.SCROLLTIME2 * i)
             }
 
             if (retObj.items[i].playerId == DataManager.playData.id) {

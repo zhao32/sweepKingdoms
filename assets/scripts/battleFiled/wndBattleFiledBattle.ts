@@ -94,12 +94,15 @@ export default class NewClass extends cc.Component {
 
     moveTime: number = 0.6
 
+    isSkip: boolean = false
+
     start() {
 
     }
 
 
     init(myData, otherData, filedData) {
+        this.isSkip = false
         this.moveTime = 0.6
         this.battleInfo = ''
         this.filedData = filedData
@@ -358,6 +361,7 @@ export default class NewClass extends cc.Component {
     }
 
     myAttackAni() {
+        if(this.isSkip)return
         if (this.myAttIdx == this.myAttackList.length) {
             console.log('我方全军覆没，挑战失败')
             this.node.getChildByName('resultPanel').active = true
@@ -421,6 +425,7 @@ export default class NewClass extends cc.Component {
     }
 
     otherAttackAni() {
+        if(this.isSkip)return
         if (this.enemyAttIdx == this.enemyAttackList.length) {
             console.log('敌方全军覆没，挑战成功')
             this.node.getChildByName('resultPanel').active = true
@@ -493,19 +498,23 @@ export default class NewClass extends cc.Component {
     }
 
     onSkipHandler() {
-        this.node.getChildByName('resultPanel').active = false
-        this.posMy.children[0].stopAllActions()
-        this.posEnemy.children[0].stopAllActions()
+        // this.node.getChildByName('resultPanel').active = false
+        // this.posMy.children[0].stopAllActions()
+        // this.posEnemy.children[0].stopAllActions()
 
-        this.posEnemy.children[0].getComponent(sp.Skeleton).clearTracks()
-        this.posMy.children[0].getComponent(sp.Skeleton).clearTracks()
-        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_RESULT)
+        // this.posEnemy.children[0].getComponent(sp.Skeleton).clearTracks()
+        // this.posMy.children[0].getComponent(sp.Skeleton).clearTracks()
+        // ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        // ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_RESULT)
+        this.node.getChildByName('resultPanel').active = true
+        this.node.getChildByName('resultPanel').zIndex = 10
+        this.initResultPanel()
+        this.isSkip = true
     }
 
-    onSpeedPlusHanlder(){
+    onSpeedPlusHanlder() {
         this.moveTime = 0.3
-        this.posEnemy.children[0].getComponent(sp.Skeleton).timeScale = 0.5
+        this.posEnemy.children[0].getComponent(sp.Skeleton).timeScale = 2
         this.posMy.children[0].getComponent(sp.Skeleton).timeScale = 2
     }
 }

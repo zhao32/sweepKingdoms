@@ -5,11 +5,19 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
+import EventManager from "../utils/Manager/EventManager";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -20,20 +28,31 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     headPfb: cc.Prefab = null;
 
-    selectName: string
+    selectName
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
 
     start() {
-       
+        NetEventDispatcher.addListener(NetEvent.S2CChangeIcon, this.S2CChangeIcon.bind(this))
+
+    }
+
+    S2CChangeIcon(data) {
+        console.log(`修改头像返回`)
+        ViewManager.instance.showToast(`更改头像成功`)
+        console.log(JSON.stringify(data))
+        // {"iconId":32}
+        DataManager.playData.icon = data.iconId
+        EventManager.getInstance().sendListener(EventManager.UPDATE_MAINHOME_INFO)
+        this.node.active = false
     }
 
     open() {
-        this.selectName = ''
+        this.selectName = 0
         this.contect.removeAllChildren()
-        for (let i = 1; i <= 42; i++) {
+        for (let i = 27; i <= 68; i++) {
             let item = cc.instantiate(this.headPfb)
             item.parent = this.contect
             ResManager.loadItemIcon(`hero/icon/${DataManager.GameData.Cards[i].name}`, item.getChildByName(`icon`))
@@ -49,7 +68,7 @@ export default class NewClass extends cc.Component {
                 }
                 item.getChildByName('light').active = true
                 item.getChildByName('name').color = cc.Color.YELLOW
-                this.selectName = DataManager.GameData.Cards[i].name
+                this.selectName = i
             })
         }
 
@@ -64,6 +83,7 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showToast(`请选择头像`)
             return
         }
+        MyProtocols.send_C2SChangeIcon(DataManager._loginSocket, this.selectName)
     }
 
     // update (dt) {}

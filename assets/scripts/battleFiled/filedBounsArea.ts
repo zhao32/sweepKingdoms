@@ -169,6 +169,7 @@ export default class NewClass extends cc.Component {
         console.log(`领取功勋值返回`)
         console.log(JSON.stringify(data))
         this.getHoner = 0
+        this.proBar.progress = 0
         this.honerLabel.string = '现有荣耀值：' + String(DataManager.playData.honor)
 
     }

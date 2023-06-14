@@ -84,8 +84,8 @@ export default class NewClass extends cc.Component {
             if (i < 5) {
                 render.x = 1000
                 this.scheduleOnce(() => {
-                    render.runAction(cc.moveTo(0.4, cc.v2(0, render.y)))
-                }, 0.3 * i)
+                    render.runAction(cc.moveTo(DataManager.SCROLLTIME1, cc.v2(0, render.y)))
+                }, DataManager.SCROLLTIME2 * i)
             }
 
             render.on(cc.Node.EventType.TOUCH_END, () => {

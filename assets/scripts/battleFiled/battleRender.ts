@@ -63,6 +63,9 @@ export default class NewClass extends cc.Component {
             ResManager.loadItemIcon(`hero/head_1_1`, this.headNode)
         } else if (data.icon == 1) {
             ResManager.loadItemIcon(`hero/head_2_1`, this.headNode)
+        } else {
+            let defaultData = DataManager.GameData.Cards[data.icon]
+            ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.headNode)
         }
 
         if (data.card[0] == 0) {

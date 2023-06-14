@@ -426,6 +426,7 @@ var MyProtocols = {
 			retObj.rewards.item_template_id = myDecoder.readInt();
 			retObj.rewards.item_count = myDecoder.readInt();
 		}
+		console.log('兑换石符返回：'+ JSON.stringify(retObj))
 		return retObj;
 	},
 

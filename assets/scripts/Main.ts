@@ -112,11 +112,11 @@ export default class NewClass extends cc.Component {
         if (retObj.chapters.length == 0) {
             retObj.chapters = [{ "stages": [] }]
         }
-       
-        console.log( retObj.chapters[retObj.chapters.length -1].stages.length)
+
+        console.log(retObj.chapters[retObj.chapters.length - 1].stages.length)
         console.log(DataManager.GameData.Stages[retObj.chapters.length - 1].stage.length)
 
-        if (retObj.chapters[retObj.chapters.length -1].stages.length == DataManager.GameData.Stages[retObj.chapters.length - 1].stage.length && DataManager.GameData.Stages[retObj.chapters.length]) {
+        if (retObj.chapters[retObj.chapters.length - 1].stages.length == DataManager.GameData.Stages[retObj.chapters.length - 1].stage.length && DataManager.GameData.Stages[retObj.chapters.length]) {
             retObj.chapters.push({ "stages": [] })
         }
 
@@ -174,7 +174,11 @@ export default class NewClass extends cc.Component {
     }
 
     S2CCardList(retObj) {
+        retObj.cards.sort((a, b) => 
+             a.template_id - b.template_id
+        )
         console.log('我的将表:' + JSON.stringify(retObj))
+
         DataManager.cardsList = retObj.cards
     }
 

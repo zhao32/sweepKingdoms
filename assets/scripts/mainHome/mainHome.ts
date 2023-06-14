@@ -10,6 +10,7 @@ import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import EventManager from "../utils/Manager/EventManager";
 import { Logger } from "../utils/Manager/Logger";
+import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
 //@ts-ignore
@@ -36,6 +37,9 @@ export default class NewClass extends cc.Component {
 
     @property({ type: cc.Label, displayName: '玩家名称' })
     labelName: cc.Label = null;
+
+    @property({ type: cc.Node, displayName: '玩家头像' })
+    head: cc.Node = null;
 
     @property({ type: cc.Label, displayName: '战力' })
     labelCombatPower: cc.Label = null;
@@ -91,6 +95,18 @@ export default class NewClass extends cc.Component {
         this.labelLevel.string = String(DataManager.playData.level)
         this.labelName.string = String(DataManager.playData.name)
         this.labelProvisions.string = String(DataManager.playData.food)
+
+        if (DataManager.playData.icon == 0) {
+            ResManager.loadItemIcon(`hero/head_1_1`, this.head)
+        } else if (DataManager.playData.icon == 1) {
+            ResManager.loadItemIcon(`hero/head_2_1`, this.head)
+        } else {
+            let defaultData = DataManager.GameData.Cards[DataManager.playData.icon]
+            ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.head)
+        }
+
+
+
     }
 
     updataBulidState() {
