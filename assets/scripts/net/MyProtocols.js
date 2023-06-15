@@ -1421,6 +1421,8 @@ var MyProtocols = {
 		var retObj = {};
 		retObj.level_index = myDecoder.readInt();
 		retObj.page_index = myDecoder.readInt();
+		retObj.contry = myDecoder.readInt();
+		retObj.pagecount = myDecoder.readInt();
 		retObj.my_income = [];
 		let my_income_size = myDecoder.readInt();
 		if (my_income_size > 0) {
@@ -1462,10 +1464,30 @@ var MyProtocols = {
 				}
 			}
 		}
+		retObj.my_points = [];
+		let my_points_size = myDecoder.readInt();
+		if (my_points_size > 0) {
+			for (var i = 0; i < my_points_size; i++) {
+				retObj.my_points[i] = {};
+				let my_pointssi_hold_player_exist = myDecoder.readBool();
+				if (my_pointssi_hold_player_exist == true) {
+					retObj.my_points[i].hold_player = {};
+					retObj.my_points[i].hold_player.id = myDecoder.readInt();
+					retObj.my_points[i].hold_player.nickname = myDecoder.readString();
+					retObj.my_points[i].hold_player.level = myDecoder.readInt();
+					retObj.my_points[i].hold_player.icon = myDecoder.readInt();
+					retObj.my_points[i].hold_player.head_frame_id = myDecoder.readInt();
+					retObj.my_points[i].hold_player.fight = myDecoder.readInt();
+					retObj.my_points[i].hold_player.cd_time = myDecoder.readInt();
+					retObj.my_points[i].hold_player.group = myDecoder.readInt();
+					retObj.my_points[i].hold_player.lv = myDecoder.readInt();
+				}
+			}
+		}
+
 		console.log('矿场返回：' + JSON.stringify(retObj))
 		return retObj;
 	},
-
 	/**请求敌方的矿场防守  */
 	send_C2SMineEnemyDetail: function (senderSocket, p_level_index, p_point_index) {
 		var myEncoder = WsEncoder.alloc();
