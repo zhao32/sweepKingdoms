@@ -41,6 +41,8 @@ export default class NewClass extends cc.Component {
 
     maxPage: number = 1
 
+    selectIdx: number = -1
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -56,11 +58,11 @@ export default class NewClass extends cc.Component {
     S2CFindMines(retObj) {
         console.log(`查找矿返回：` + JSON.stringify(retObj))
         // retObj.mine_points
-       
-        if( retObj.type == 111){//肥羊
+
+        if (retObj.type == 111) {//肥羊
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FY, ...[retObj.mine_points])
         }
-      
+
     }
 
     S2CMineList(data) {
@@ -70,12 +72,18 @@ export default class NewClass extends cc.Component {
         this.maxPage = data.pagecount
         this.myContect.removeAllChildren()
         for (let i = 0; i < data.my_points.length; i++) {
-            if(data.my_points[i].hold_player){
+            if (data.my_points[i].hold_player) {
                 let myNode = cc.instantiate(this.myItemPfb)
                 myNode.getComponent(myItem).init(data.my_points[i].hold_player)
                 myNode.parent = this.myContect
+
+                myNode.on(cc.Node.EventType.TOUCH_END, () => {
+                    console.log(`定位矿的位置`)
+                    this.selectIdx = data.my_points[i].hold_player.idx
+                    MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, data.my_points[i].hold_player.page, this.nation_id)
+                }, this)
             }
-         
+
         }
 
         this.filedContect.removeAllChildren()
@@ -83,6 +91,13 @@ export default class NewClass extends cc.Component {
             let filedNode = cc.instantiate(this.filedItemPfb)
             filedNode.parent = this.filedContect
             filedNode.getComponent(filedItem).init(data.mine_points[i])
+            if (this.selectIdx == i) {
+                console.log('-----------------------')
+                filedNode.getChildByName(`light`).active = true
+            }else{
+                // filedNode.getChildByName(`light`).active = false
+            }
+            this.selectIdx = -1
             filedNode.on(cc.Node.EventType.TOUCH_END, () => {
                 if (data.mine_points[i].hold_player) {
                     if (data.mine_points[i].hold_player.id == DataManager.playData.id) {
@@ -206,7 +221,7 @@ export default class NewClass extends cc.Component {
 
     onFeiYHandler() {
         console.log('------肥羊---------')
-        MyProtocols.send_C2SFindMines(DataManager._loginSocket, 0, 0, 0, 0)
+        MyProtocols.send_C2SFindMines(DataManager._loginSocket, 111, DataManager.pageGoBattle.nation_id, 0, 0)
 
         // ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FY)
     }

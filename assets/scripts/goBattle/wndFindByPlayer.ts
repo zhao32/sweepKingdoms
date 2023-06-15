@@ -59,7 +59,7 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showToast('请输入查找账号')
             return
         }
-        MyProtocols.send_C2SFindMines(DataManager._loginSocket, 110, 0, this.strAccount, 0)
+        MyProtocols.send_C2SFindMines(DataManager._loginSocket, 110, DataManager.pageGoBattle.nation_id, this.strAccount, 0)
 
     }
 

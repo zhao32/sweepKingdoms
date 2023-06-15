@@ -97,9 +97,9 @@ export default class NewClass extends cc.Component {
                 // this.showIntragroup(i)
                 console.log(`查找${this.groupsData[i].group}`)
                 if (i < 7) {//查找国家矿
-                    MyProtocols.send_C2SFindMines(DataManager._loginSocket, 0, i + 1, 0, 0)
+                    MyProtocols.send_C2SFindMines(DataManager._loginSocket, i + 1, DataManager.pageGoBattle.nation_id, 0, 0)
                 } else {
-                    MyProtocols.send_C2SFindMines(DataManager._loginSocket, i + 1, 0, 0, 4)
+                    MyProtocols.send_C2SFindMines(DataManager._loginSocket, i + 1, DataManager.pageGoBattle.nation_id, 0, 4)
                 }
 
             }, this)
