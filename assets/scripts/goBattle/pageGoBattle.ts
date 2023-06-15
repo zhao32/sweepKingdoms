@@ -10,6 +10,7 @@ import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
 import filedItem from "./filedItem";
+import myItem from "./myItem";
 
 const { ccclass, property } = cc._decorator;
 
@@ -67,9 +68,13 @@ export default class NewClass extends cc.Component {
         data.my_hold
         this.maxPage = data.pagecount
         this.myContect.removeAllChildren()
-        for (let i = 0; i < data.my_hold.length; i++) {
-            let myItem = cc.instantiate(this.myItemPfb)
-            myItem.parent = this.myContect
+        for (let i = 0; i < data.my_points.length; i++) {
+            if(data.my_points[i].hold_player){
+                let myNode = cc.instantiate(this.myItemPfb)
+                myNode.getComponent(myItem).init(data.my_points[i].hold_player)
+                myNode.parent = this.myContect
+            }
+         
         }
 
         this.filedContect.removeAllChildren()
