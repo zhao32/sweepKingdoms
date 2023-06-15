@@ -356,12 +356,12 @@ export default class NewClass extends cc.Component {
         let time = DataManager.instance.getDateDis(this.startTime, new Date().getTime())
         console.log('战斗耗时:' + time)
         // MyProtocols.send_C2SStageEnd(DataManager._loginSocket, this.groupIdx, this.stageIdx, isWin, time.toFixed(0), 0, armList);
-        MyProtocols.send_C2SMineBattleCalculate(DataManager._loginSocket, this.filedData.x, this.filedData.y, isWin, 10,DataManager.pageGoBattle.nation_id)
+        MyProtocols.send_C2SMineBattleCalculate(DataManager._loginSocket, this.filedData.x, this.filedData.y, isWin, 10)
 
     }
 
     myAttackAni() {
-        if(this.isSkip)return
+        if (this.isSkip) return
         if (this.myAttIdx == this.myAttackList.length) {
             console.log('我方全军覆没，挑战失败')
             this.node.getChildByName('resultPanel').active = true
@@ -425,7 +425,7 @@ export default class NewClass extends cc.Component {
     }
 
     otherAttackAni() {
-        if(this.isSkip)return
+        if (this.isSkip) return
         if (this.enemyAttIdx == this.enemyAttackList.length) {
             console.log('敌方全军覆没，挑战成功')
             this.node.getChildByName('resultPanel').active = true
