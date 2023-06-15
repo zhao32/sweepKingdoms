@@ -426,7 +426,7 @@ var MyProtocols = {
 			retObj.rewards.item_template_id = myDecoder.readInt();
 			retObj.rewards.item_count = myDecoder.readInt();
 		}
-		console.log('兑换石符返回：'+ JSON.stringify(retObj))
+		console.log('兑换石符返回：' + JSON.stringify(retObj))
 		return retObj;
 	},
 
@@ -1429,7 +1429,7 @@ var MyProtocols = {
 			for (var i = 0; i < my_income_size; i++) {
 				retObj.my_income[i] = myDecoder.readInt();
 			}
-		} 
+		}
 		retObj.my_hold = [];
 		let my_hold_size = myDecoder.readInt();
 		if (my_hold_size > 0) {
@@ -6348,6 +6348,49 @@ var MyProtocols = {
 	// 	return retObj;
 	// },
 
+	/**根据类型查找矿 */
+	send_C2SFindMines: function (senderSocket, type, country, id, lv) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(3115);
+		myEncoder.writeInt(type);
+		myEncoder.writeInt(country);
+		myEncoder.writeInt(id);
+		myEncoder.writeInt(lv);
+
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_3116: function (myDecoder) {
+		var retObj = {};
+
+		retObj.type = myDecoder.readInt();
+		if (retObj.type == 110) {
+
+		}
+		retObj.mine_points = [];
+		let mine_points_size = myDecoder.readInt();
+		if (mine_points_size > 0) {
+			for (var i = 0; i < mine_points_size; i++) {
+				retObj.mine_points[i] = {};
+				let mine_pointsi_hold_player_exist = myDecoder.readBool();
+				if (mine_pointsi_hold_player_exist == true) {
+					retObj.mine_points[i].hold_player = {};
+					retObj.mine_points[i].hold_player.id = myDecoder.readInt();
+					retObj.mine_points[i].hold_player.nickname = myDecoder.readString();
+					retObj.mine_points[i].hold_player.level = myDecoder.readInt();
+					retObj.mine_points[i].hold_player.icon = myDecoder.readInt();
+					retObj.mine_points[i].hold_player.head_frame_id = myDecoder.readInt();
+					retObj.mine_points[i].hold_player.fight = myDecoder.readInt();
+					retObj.mine_points[i].hold_player.cd_time = myDecoder.readInt();
+					retObj.mine_points[i].hold_player.group = myDecoder.readInt();
+					retObj.mine_points[i].hold_player.lv = myDecoder.readInt();
+				}
+			}
+		}
+		return retObj;
+	},
 
 
 }

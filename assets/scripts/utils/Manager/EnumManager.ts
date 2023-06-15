@@ -139,6 +139,13 @@ export default class EnumManager {
         /**查找高级资源点 */
         WND_GOBATTLE_FINDHIGHT: 'prefabs/goBattle/wndFindHeight',
 
+        /**查找特殊矿 */
+        WND_GOBATTLE_FINDSPECIAL: 'prefabs/goBattle/wndFindSpecial',
+
+        WND_GOBATTLE_FINDBACK: 'prefabs/goBattle/wndFindBack',
+
+
+
 
     }
 }

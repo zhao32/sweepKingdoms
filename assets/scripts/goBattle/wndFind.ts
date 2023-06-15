@@ -48,6 +48,11 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FINDHIGHT)
     }
 
+    onFindSpecialHandler() {
+        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FINDSPECIAL)
+    }
+
 
 
     onCloseHandler() {

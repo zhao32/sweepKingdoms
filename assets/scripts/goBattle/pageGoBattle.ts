@@ -36,7 +36,9 @@ export default class NewClass extends cc.Component {
 
     curPageIdx: number = 0
 
-    nation_id:number = 0
+    nation_id: number = 0
+
+    maxPage: number = 1
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -44,12 +46,26 @@ export default class NewClass extends cc.Component {
 
     start() {
         // S2CMineList
+        DataManager.pageGoBattle = this
         NetEventDispatcher.addListener(NetEvent.S2CMineList, this.S2CMineList.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
+
+    }
+
+    S2CFindMines(retObj) {
+        console.log(`查找矿返回：` + JSON.stringify(retObj))
+        // retObj.mine_points
+       
+        if( retObj.type == 111){//肥羊
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FY, ...[retObj.mine_points])
+        }
+      
     }
 
     S2CMineList(data) {
         data.mine_points
         data.my_hold
+        this.maxPage = data.pageCount
         this.myContect.removeAllChildren()
         for (let i = 0; i < data.my_hold.length; i++) {
             let myItem = cc.instantiate(this.myItemPfb)
@@ -84,8 +100,8 @@ export default class NewClass extends cc.Component {
 
         for (let i = 0; i < this.node.getChildByName(`toggleContainer`).children.length; i++) {
             let child = this.node.getChildByName(`toggleContainer`).children[i]
-            if(i+1 == this.nation_id){
-                child.getComponent(cc.Toggle).isChecked = true 
+            if (i + 1 == this.nation_id) {
+                child.getComponent(cc.Toggle).isChecked = true
             }
             child.on('toggle', () => {
                 if (child.getComponent(cc.Toggle).isChecked == true) {
@@ -93,8 +109,6 @@ export default class NewClass extends cc.Component {
                     MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
                 }
             }, this)
-
-
         }
 
         // this.myContect.removeAllChildren()
@@ -153,7 +167,7 @@ export default class NewClass extends cc.Component {
     }
     btnRight() {
         console.log('右刷新')
-        if (this.curPageIdx < 399) {
+        if (this.curPageIdx < this.maxPage - 1) {
             this.curPageIdx++
             MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
         } else {
@@ -186,7 +200,9 @@ export default class NewClass extends cc.Component {
 
     onFeiYHandler() {
         console.log('------肥羊---------')
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FY)
+        MyProtocols.send_C2SFindMines(DataManager._loginSocket, 0, 0, 0, 0)
+
+        // ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FY)
     }
 
     onFindHandler() {

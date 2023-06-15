@@ -5,12 +5,20 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import { Logger } from "../utils/Manager/Logger";
 import ViewManager from "../utils/Manager/ViewManager";
 import renderFindHieght1 from "./renderFindHieght1";
 
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
+
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -26,32 +34,33 @@ export default class NewClass extends cc.Component {
     showType: number = 0 // 0 分组 1 分组内
 
     groupsData = [
+
         {
-            group: '高级金矿',
-        },
-        {
-            group: '高级农田',
-        },
-        {
-            group: '秦国矿石',
-        },
-        {
-            group: '齐国矿石',
-        },
-        {
-            group: '楚国矿石',
+            group: '魏国矿石',
         },
         {
             group: '燕国矿石',
         },
         {
+            group: '秦国矿石',
+        },
+        {
+            group: '楚国矿石',
+        },
+        {
             group: '赵国矿石',
         },
         {
-            group: '魏国矿石',
+            group: '韩国矿石',
         },
         {
-            group: '韩国矿石',
+            group: '楚国矿石',
+        },
+        {
+            group: '高级金矿',
+        },
+        {
+            group: '高级农田',
         }
     ]
 
@@ -61,7 +70,15 @@ export default class NewClass extends cc.Component {
 
     start() {
         this.showGroups()
+        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
     }
+
+    S2CFindMines(retObj) {
+        console.log(`查找高级矿返回：` + JSON.stringify(retObj))
+        // retObj.mine_points
+        this.showIntragroup(retObj.mine_points)
+    }
+
 
     showGroups() {
         this.showType = 0
@@ -77,14 +94,23 @@ export default class NewClass extends cc.Component {
             }
             render.getComponent(renderFindHieght1).init(this.groupsData[i].group)
             render.on(cc.Node.EventType.TOUCH_END, () => {
-                this.showIntragroup(i)
+                // this.showIntragroup(i)
+                console.log(`查找${this.groupsData[i].group}`)
+                if (i < 7) {//查找国家矿
+                    MyProtocols.send_C2SFindMines(DataManager._loginSocket, 0, i + 1, 0, 0)
+                } else {
+                    MyProtocols.send_C2SFindMines(DataManager._loginSocket, i + 1, 0, 0, 4)
+                }
+
             }, this)
         }
     }
 
-    showIntragroup(idx) {
+
+
+    showIntragroup(data) {
         this.showType = 1
-       
+
 
         // for (let i = 0; i < Object.keys(DataManager.GameData.bulid).length; i++) {
         //     let key = Object.keys(DataManager.GameData.bulid)[i]
@@ -94,7 +120,7 @@ export default class NewClass extends cc.Component {
         //     }
         // }
         this.contect.removeAllChildren()
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < data.length; i++) {
             let render = cc.instantiate(this.renderPfb1)
             render.parent = this.contect
             if (i < 5) {
@@ -113,7 +139,7 @@ export default class NewClass extends cc.Component {
     onBackHandler() {
         if (this.showType == 0) {
             Logger.log('关闭窗口')
-            ViewManager.instance.hideWnd(DataManager.curWndPath,true)
+            ViewManager.instance.hideWnd(DataManager.curWndPath, true)
         } else if (this.showType == 1) {
             this.showGroups()
         }

@@ -134,7 +134,8 @@ export enum NetEvent {
     /**开启石槽 */
     C2SOpenRuneSlot = 2025,
 
-
+    /**根据类型查找矿 */
+    C2SFindMines = 3115,
 
     //接收
     ErrorCode = 10000,
@@ -327,6 +328,9 @@ export enum NetEvent {
     S2CRecSoldiers = 1058,
     // /**开启石槽 */
     // S2COpenRuneSlot = 2026,
+    /**根据类型查找矿 */
+    S2CFindMines = 3115,
+
 
 
 }

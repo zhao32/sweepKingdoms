@@ -1,3 +1,4 @@
+import pageGoBattle from "../../goBattle/pageGoBattle";
 import Main from "../../Main";
 
 interface playData {
@@ -203,6 +204,8 @@ export default class DataManager {
 
     static readonly SCROLLTIME1:number = 0.25
     static readonly SCROLLTIME2:number = 0.2
+
+    static pageGoBattle:pageGoBattle
 
 
 

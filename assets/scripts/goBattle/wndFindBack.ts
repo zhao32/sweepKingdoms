@@ -18,7 +18,7 @@ export default class NewClass extends cc.Component {
     contect: cc.Node = null;
 
     @property(cc.Prefab)
-    FYPfb: cc.Prefab = null;
+    specialPfb: cc.Prefab = null;
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -32,10 +32,11 @@ export default class NewClass extends cc.Component {
     init(data) {
         this.contect.removeAllChildren()
         for (let i = 0; i < data.length; i++) {
-            let render = cc.instantiate(this.FYPfb)
+            let render = cc.instantiate(this.specialPfb)
             render.parent = this.contect
         }
     }
+
     onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
     }
