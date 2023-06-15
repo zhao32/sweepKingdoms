@@ -64,6 +64,7 @@ export default class NewClass extends cc.Component {
     }
 
     S2CMineList(data) {
+        console.log('------------------------------------')
         data.mine_points
         data.my_hold
         this.maxPage = data.pagecount

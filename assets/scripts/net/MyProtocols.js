@@ -1418,6 +1418,7 @@ var MyProtocols = {
 	},
 
 	get_3102: function (myDecoder) {
+		console.log(`------------3102-----------`)
 		var retObj = {};
 		retObj.level_index = myDecoder.readInt();
 		retObj.page_index = myDecoder.readInt();
@@ -1461,6 +1462,9 @@ var MyProtocols = {
 					retObj.mine_points[i].hold_player.cd_time = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.group = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.lv = myDecoder.readInt();
+
+					retObj.mine_points[i].hold_player.page = myDecoder.readInt();
+					retObj.mine_points[i].hold_player.idx = myDecoder.readInt();
 					
 				}
 			}
@@ -1483,8 +1487,8 @@ var MyProtocols = {
 					retObj.my_points[i].hold_player.group = myDecoder.readInt();
 					retObj.my_points[i].hold_player.lv = myDecoder.readInt();
 
-					// retObj.mine_points[i].hold_player.page = myDecoder.readInt();
-					// retObj.mine_points[i].hold_player.idx = myDecoder.readInt();
+					retObj.my_points[i].hold_player.page = myDecoder.readInt();
+					retObj.my_points[i].hold_player.idx = myDecoder.readInt();
 				}
 			}
 		}

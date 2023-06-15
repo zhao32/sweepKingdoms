@@ -123,6 +123,9 @@ export default class EnumManager {
         /**战斗页面 */
         WND_GOBATTLE_BATTLE:'prefabs/goBattle/wndGoBattle',
 
+         /**兵力驻扎 */
+         WND_GOBATTLE_ARMYHUT:'prefabs/goBattle/wndArmyHut',
+
 
         /**日志 */
         WND_GOBATTLE_RECORD: 'prefabs/goBattle/wndRecord',
