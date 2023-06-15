@@ -239,6 +239,7 @@ export default class NewClass extends cc.Component {
     // }
 
     init(myData, otherData, filedData) {
+        console.log('filedData:'+JSON.stringify(filedData) )
         this.moveTime = 0.6
 
         this.battleInfo = ''
@@ -549,8 +550,9 @@ export default class NewClass extends cc.Component {
         // let disTime = new Date().getTime() - this.startTime
         let time = DataManager.instance.getDateDis(this.startTime, new Date().getTime())
         console.log('战斗耗时:' + time)
+        console.log(JSON.stringify(this.filedData))
         // MyProtocols.send_C2SStageEnd(DataManager._loginSocket, this.groupIdx, this.stageIdx, isWin, time.toFixed(0), 0, armList);
-        MyProtocols.send_C2SMineBattleCalculate(DataManager._loginSocket, this.filedData.x, this.filedData.y, isWin, 10)
+        MyProtocols.send_C2SMineBattleCalculate(DataManager._loginSocket, this.filedData.page, this.filedData.idx, isWin, 10)
 
     }
 

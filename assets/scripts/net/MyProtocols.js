@@ -1540,6 +1540,18 @@ var MyProtocols = {
 			retObj.formation.i = myDecoder.readInt();
 			retObj.formation.j = myDecoder.readInt();
 		}
+
+		retObj.item = []
+		let bing_size = myDecoder.readInt();
+		if (bing_size > 0) {
+			for (var i = 0; i < bing_size; i++) {
+
+				retObj.item[i] = {};
+				retObj.item[i].template_id = myDecoder.readInt();
+				retObj.item[i].num = myDecoder.readInt();
+			}
+		}
+		
 		retObj.cards = [];
 		let cards_size = myDecoder.readInt();
 		if (cards_size > 0) {
@@ -1569,6 +1581,8 @@ var MyProtocols = {
 					}
 				}
 			}
+
+
 		}
 		retObj.exclude_cards = [];
 		let exclude_cards_size = myDecoder.readInt();

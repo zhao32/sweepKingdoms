@@ -63,6 +63,7 @@ export default class NewClass extends cc.Component {
     // }
 
     init(data) {
+        console.log('filedData:'+JSON.stringify(data))
         this._data = data
         this.nameLabel.string = data.hold_player.lv + '级' + data.hold_player.nickname
         // this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`

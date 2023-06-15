@@ -66,7 +66,7 @@ export default class NewClass extends cc.Component {
 
     onFindHandler(event, data) {
         console.log('data:' + data)
-        MyProtocols.send_C2SFindMines(DataManager._loginSocket, data, 0, 0, 0)
+        MyProtocols.send_C2SFindMines(DataManager._loginSocket, data, DataManager.pageGoBattle.nation_id, 0, 0)
     }
 
     onCloseHandler() {

@@ -63,6 +63,7 @@ export default class NewClass extends cc.Component {
 
 
     init(enemyData,filedData) {
+        console.log('filedData:'+JSON.stringify(filedData))
         this.enemyData = enemyData
         this.filedData = filedData
 

@@ -8,10 +8,18 @@
 import battleHeroRender from "../battle/battleHeroRender";
 import battleSoliderRender from "../battle/battleSoliderRender";
 import eSoliderRender from "../battle/eSoliderRender";
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
+
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -33,7 +41,17 @@ export default class NewClass extends cc.Component {
 
     }
 
-    init() {
+    S2CMineEnemyDetail(data) {
+        console.log("返回矿场阵容")
+        console.log(JSON.stringify(data))
+    }
+
+    init(data) {
+        console.log('--------data------' + JSON.stringify(data))
+        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx)
+        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail.bind(this))
+
+
         this.myContect.removeAllChildren()
         // this.onSelectSolider = true
         for (let i = 0; i < DataManager.playData.military_data.length; i++) {
@@ -49,7 +67,7 @@ export default class NewClass extends cc.Component {
         // this.myHeroData = DataManager.cardsList[0]
     }
 
-    
+
     changeHero() {
         // this.onSelectSolider = false
         this.myContect.removeAllChildren()
@@ -86,8 +104,8 @@ export default class NewClass extends cc.Component {
 
     enterFight() {
         // let soliderList = 
-      
-        
+
+
     }
 
     // update (dt) {}

@@ -14,6 +14,12 @@ import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
 
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
+
 @ccclass
 export default class NewClass extends cc.Component {
 
@@ -89,6 +95,21 @@ export default class NewClass extends cc.Component {
         // let soliderList = 
       
         
+    }
+
+    doSave(){
+        DataManager.myBattleFiledConfig.soliders = []
+        for (let i = 0; i < this.soliderContect.children.length; i++) {
+            let soliderItem = this.soliderContect.children[i]
+            let data = soliderItem.getComponent(soliderRender).getSelectNum()
+            if (data.count != 0) {
+                DataManager.myBattleFiledConfig.soliders.push(data)
+            }
+        }
+        let card = DataManager.myBattleFiledConfig.card
+        let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: card[0], b: card[1], c: card[2], soldier: DataManager.myBattleFiledConfig.soliders }
+        console.log(JSON.stringify(data))
+        MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
     }
 
     // update (dt) {}

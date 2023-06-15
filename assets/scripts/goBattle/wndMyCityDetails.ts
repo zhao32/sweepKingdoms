@@ -86,7 +86,7 @@ export default class NewClass extends cc.Component {
     onSetHandler() {
         console.log(`我的驻扎`)
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUT, ...[])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUT, ...[this._data])
 
         // MyProtocols.send_C2SMineBattleCalculate(DataManager._loginSocket, this._data.x, this._data.y, true, 10)
         // ViewManager.instance.hideWnd(DataManager.curWndPath, true)
