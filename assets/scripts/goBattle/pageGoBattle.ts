@@ -71,6 +71,8 @@ export default class NewClass extends cc.Component {
         data.my_hold
         this.maxPage = data.pagecount
         this.myContect.removeAllChildren()
+        this.nation_id = data.contry
+        this.node.getChildByName(`toggleContainer`).children[this.nation_id -1].getComponent(cc.Toggle).isChecked = true
         for (let i = 0; i < data.my_points.length; i++) {
             if (data.my_points[i].hold_player) {
                 let myNode = cc.instantiate(this.myItemPfb)
