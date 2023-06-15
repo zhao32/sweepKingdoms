@@ -65,7 +65,7 @@ export default class NewClass extends cc.Component {
     S2CMineList(data) {
         data.mine_points
         data.my_hold
-        this.maxPage = data.pageCount
+        this.maxPage = data.pagecount
         this.myContect.removeAllChildren()
         for (let i = 0; i < data.my_hold.length; i++) {
             let myItem = cc.instantiate(this.myItemPfb)
