@@ -1551,7 +1551,7 @@ var MyProtocols = {
 				retObj.item[i].num = myDecoder.readInt();
 			}
 		}
-		
+
 		retObj.cards = [];
 		let cards_size = myDecoder.readInt();
 		if (cards_size > 0) {
@@ -1596,13 +1596,15 @@ var MyProtocols = {
 	},
 
 	/**矿场战斗结果 */
-	send_C2SMineBattleCalculate: function (senderSocket, p_level_index, p_point_index, p_result, p_rand_key) {
+	send_C2SMineBattleCalculate: function (senderSocket, p_level_index, p_point_index, p_result, p_rand_key,nation) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3105);
 		myEncoder.writeInt(p_level_index);
 		myEncoder.writeInt(p_point_index);
 		myEncoder.writeInt(p_result);
 		myEncoder.writeLong(p_rand_key);
+		myEncoder.writeInt(nation);
+
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
