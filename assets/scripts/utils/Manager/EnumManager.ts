@@ -55,7 +55,7 @@ export default class EnumManager {
         WND_MAIN_REWARD: 'prefabs/main/wndReward',
 
         WND_MAIN_USERINFO: 'prefabs/main/wndUserInfo',
-  
+
 
         ///////////////////// 酒馆
         /**酒馆 */
@@ -92,7 +92,7 @@ export default class EnumManager {
         /**战斗页面 */
         WND_BATTLE_BATTLE: 'prefabs/battleFiled/wndBattleFiledBattle',
 
-        
+
         /**副本 */
         WND_STAGE: 'prefabs/stage/wndStage',
         /**副本选关 */
@@ -118,13 +118,17 @@ export default class EnumManager {
         WND_GOBATTLE_MYMINE_DETAILS: 'prefabs/goBattle/wndMyMineDetails',
 
         /**战斗配置 */
-        WND_GOBATTLE_CONFIG:'prefabs/goBattle/wndGoBattleConfig',
+        WND_GOBATTLE_CONFIG: 'prefabs/goBattle/wndGoBattleConfig',
 
         /**战斗页面 */
-        WND_GOBATTLE_BATTLE:'prefabs/goBattle/wndGoBattle',
+        WND_GOBATTLE_BATTLE: 'prefabs/goBattle/wndGoBattle',
 
-         /**兵力驻扎 */
-         WND_GOBATTLE_ARMYHUT:'prefabs/goBattle/wndArmyHut',
+        /**兵力驻扎 */
+        WND_GOBATTLE_ARMYHUT: 'prefabs/goBattle/wndArmyHut',
+
+        /**兵力调遣 */
+        WND_GOBATTLE_ARMYHUTDISPATCH: 'prefabs/goBattle/wndArmyHutDispatch',
+
 
 
         /**日志 */

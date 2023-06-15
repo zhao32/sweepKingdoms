@@ -48,7 +48,7 @@ export default class NewClass extends cc.Component {
 
     }
 
- // {
+    // {
     // 	"hold_player": {
     // 		"id": 0,
     // 		"nickname": "",
@@ -83,23 +83,22 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
     }
 
-    onSetHandler() {
-        // MyProtocols.send_C2SMineBattleCalculate(DataManager._loginSocket, this._data.x, this._data.y, true, 10)
-        // ViewManager.instance.hideWnd(DataManager.curWndPath, true)
-        // let defineData =
-        // {
-        //     cardId: 0,
-        //     soliders: [
-        //         {
-        //             arm: 1,
-        //             count: 1000,
-        //             fight: 0,
-        //             defense: 0
-        //         }
-        //     ]
-        // }
-        // ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data])
+    /**调兵驻防 */
+    ondispatchArmyHandler() {
+
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH)
     }
+
+    /**撤回主城 */
+    onRevokeHandler() {
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH)
+    }
+    /**查看详情 */
+    onDetailHutHandler(){
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUT)
+    }
+
+
 
 
     // update (dt) {}
