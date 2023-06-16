@@ -1541,14 +1541,27 @@ var MyProtocols = {
 			retObj.formation.j = myDecoder.readInt();
 		}
 
-		retObj.item = []
+		/**已经在矿里的兵 */
+		retObj.soliderUsed = []
 		let bing_size = myDecoder.readInt();
 		if (bing_size > 0) {
 			for (var i = 0; i < bing_size; i++) {
 
-				retObj.item[i] = {};
-				retObj.item[i].template_id = myDecoder.readInt();
-				retObj.item[i].num = myDecoder.readInt();
+				retObj.soliderUsed[i] = {};
+				retObj.soliderUsed[i].template_id = myDecoder.readInt();
+				retObj.soliderUsed[i].num = myDecoder.readInt();
+			}
+		}
+
+		/**可以往矿里调的兵 */
+		retObj.soliderUse = []
+		let solider_size = myDecoder.readInt();
+		if (solider_size > 0) {
+			for (var i = 0; i < solider_size; i++) {
+
+				retObj.soliderUse[i] = {};
+				retObj.soliderUse[i].template_id = myDecoder.readInt();
+				retObj.soliderUse[i].num = myDecoder.readInt();
 			}
 		}
 
