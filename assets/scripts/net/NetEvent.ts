@@ -329,7 +329,7 @@ export enum NetEvent {
     // /**开启石槽 */
     // S2COpenRuneSlot = 2026,
     /**根据类型查找矿 */
-    S2CFindMines = 3115,
+    S2CFindMines = 3116,
 
 
 
