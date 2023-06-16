@@ -34,6 +34,7 @@ export default class NewClass extends cc.Component {
     soliderPfb: cc.Prefab = null;
 
     // LIFE-CYCLE CALLBACKS:
+    myHeroData
 
     // onLoad () {}
 
@@ -64,7 +65,7 @@ export default class NewClass extends cc.Component {
         }
 
         this.node.getChildByName('heroRender').getComponent(battleHeroRender).init(DataManager.cardsList[0])
-        // this.myHeroData = DataManager.cardsList[0]
+        this.myHeroData = DataManager.cardsList[0]
     }
 
 
@@ -77,9 +78,14 @@ export default class NewClass extends cc.Component {
             hero.parent = this.myContect
             hero.getComponent(battleHeroRender).init(DataManager.cardsList[i])
             hero.getChildByName('btnSelect').on(cc.Node.EventType.TOUCH_END, () => {
-                // this.myHeroData = DataManager.cardsList[i]
-                this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(DataManager.cardsList[i])
+                this.myHeroData = DataManager.cardsList[i]
+                this.node.getChildByName('heroRender').getComponent(battleHeroRender).init(DataManager.cardsList[i])
                 this.changeScrollView();
+
+
+                let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.template_id, b: 0, c: 0, soldier: DataManager.myBattleFiledConfig.soliders }
+                console.log(JSON.stringify(data))
+                MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
             }, this)
         }
     }
@@ -105,6 +111,12 @@ export default class NewClass extends cc.Component {
     enterFight() {
         // let soliderList = 
     }
+
+    // doSove() {
+    //     let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.template_id, b: 0, c: 0, soldier: DataManager.myBattleFiledConfig.soliders }
+    //     console.log(JSON.stringify(data))
+    //     MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
+    // }
 
 
     // update (dt) {}

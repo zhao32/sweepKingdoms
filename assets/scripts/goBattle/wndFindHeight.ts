@@ -10,6 +10,7 @@ import DataManager from "../utils/Manager/DataManager";
 import { Logger } from "../utils/Manager/Logger";
 import ViewManager from "../utils/Manager/ViewManager";
 import renderFindHieght1 from "./renderFindHieght1";
+import renderFindHieght2 from "./renderFindHieght2";
 
 const { ccclass, property } = cc._decorator;
 
@@ -119,9 +120,17 @@ export default class NewClass extends cc.Component {
         //         bulidData.push(value)
         //     }
         // }
-        this.contect.removeAllChildren()
+        let mineData = []
         for (let i = 0; i < data.length; i++) {
+            if (data[i].hold_player) {
+                mineData.push(data[i])
+            }
+        }
+        this.contect.removeAllChildren()
+        for (let i = 0; i < mineData.length; i++) {
             let render = cc.instantiate(this.renderPfb1)
+            render.getComponent(renderFindHieght2).init(mineData[i].hold_player)
+
             render.parent = this.contect
             if (i < 5) {
                 render.x = 1000
@@ -129,6 +138,13 @@ export default class NewClass extends cc.Component {
                     render.runAction(cc.moveTo(DataManager.SCROLLTIME1, cc.v2(0, render.y)))
                 }, DataManager.SCROLLTIME2 * i)
             }
+
+            render.on(cc.Node.EventType.TOUCH_END, () => {
+                DataManager.pageGoBattle.selectIdx = mineData[i].hold_player.idx
+                console.log(`查找第 ${mineData[i].hold_player.page} 页   第${mineData[i].hold_player.idx}个`)
+                MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, mineData[i].hold_player.page, DataManager.pageGoBattle.nation_id)
+                ViewManager.instance.hideWnd(DataManager.curWndPath,true)
+            }, this)
         }
     }
 

@@ -1,9 +1,4 @@
-// Learn TypeScript:
-//  - https://docs.cocos.com/creator/manual/en/scripting/typescript.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
+
 
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
@@ -62,11 +57,11 @@ export default class NewClass extends cc.Component {
         if (retObj.type == 111) {//肥羊
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FY, ...[retObj.mine_points])
         }
-
     }
 
     S2CMineList(data) {
         console.log('------------------------------------')
+        console.log(`this.selectIdx:`+this.selectIdx)
         data.mine_points
         data.my_hold
         this.maxPage = data.pagecount
@@ -85,7 +80,6 @@ export default class NewClass extends cc.Component {
                     MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, data.my_points[i].hold_player.page, this.nation_id)
                 }, this)
             }
-
         }
 
         this.filedContect.removeAllChildren()
@@ -94,13 +88,15 @@ export default class NewClass extends cc.Component {
             filedNode.parent = this.filedContect
             filedNode.getComponent(filedItem).init(data.mine_points[i])
             if (this.selectIdx == i) {
-                console.log('-----------------------')
+                console.log('-----------------------:')
                 filedNode.getChildByName(`light`).active = true
+                this.selectIdx = -1
             } else {
                 // filedNode.getChildByName(`light`).active = false
             }
-            this.selectIdx = -1
             filedNode.on(cc.Node.EventType.TOUCH_END, () => {
+                filedNode.getChildByName(`light`).active = false
+
                 if (data.mine_points[i].hold_player) {
                     if (data.mine_points[i].hold_player.id == DataManager.playData.id) {
                         if (data.mine_points[i].hold_player.group == 101) {

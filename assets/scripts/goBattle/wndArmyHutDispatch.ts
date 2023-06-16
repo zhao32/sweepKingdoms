@@ -67,7 +67,7 @@ export default class NewClass extends cc.Component {
             hero.getComponent(battleHeroRender).init(DataManager.cardsList[i])
             hero.getChildByName('btnSelect').on(cc.Node.EventType.TOUCH_END, () => {
                 // this.myHeroData = DataManager.cardsList[i]
-                this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(DataManager.cardsList[i])
+                this.node.getChildByName('heroRender').getComponent(battleHeroRender).init(DataManager.cardsList[i])
                 this.changeScrollView();
             }, this)
         }
