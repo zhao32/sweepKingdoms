@@ -143,7 +143,7 @@ export default class NewClass extends cc.Component {
                 DataManager.pageGoBattle.selectIdx = mineData[i].hold_player.idx
                 console.log(`查找第 ${mineData[i].hold_player.page} 页   第${mineData[i].hold_player.idx}个`)
                 MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, mineData[i].hold_player.page, DataManager.pageGoBattle.nation_id)
-                ViewManager.instance.hideWnd(DataManager.curWndPath,true)
+                ViewManager.instance.hideWnd(DataManager.curWndPath)
             }, this)
         }
     }
