@@ -8,8 +8,16 @@
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
+import renderFindHieght2 from "./renderFindHieght2";
 
 const { ccclass, property } = cc._decorator;
+
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -34,6 +42,14 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < data.length; i++) {
             let render = cc.instantiate(this.specialPfb)
             render.parent = this.contect
+            render.getComponent(renderFindHieght2).init(data[i].hold_player)
+
+            render.on(cc.Node.EventType.TOUCH_END, () => {
+                DataManager.pageGoBattle.selectIdx = data[i].hold_player.idx
+                console.log(`查找第 ${data[i].hold_player.page} 页   第 ${data[i].hold_player.idx}个`)
+                MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, data[i].hold_player.page, DataManager.pageGoBattle.nation_id)
+                ViewManager.instance.hideWnd(DataManager.curWndPath)
+            }, this)
         }
     }
 

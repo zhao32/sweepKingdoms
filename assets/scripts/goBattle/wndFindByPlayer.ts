@@ -35,6 +35,17 @@ export default class NewClass extends cc.Component {
 
     S2CFindMines(retObj) {
         console.log(`查找玩家矿返回：` + JSON.stringify(retObj))
+
+        let mineData = []
+        for (let i = 0; i < retObj.mine_points.length; i++) {
+            if (retObj.mine_points[i].hold_player) {
+                mineData.push(retObj.mine_points[i])
+            }
+        }
+        if (mineData.length == 0) {
+            ViewManager.instance.showToast(`未查询到当前类型的矿场`)
+            return
+        }
         // retObj.mine_points
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FINDBACK, ...[retObj.mine_points])
