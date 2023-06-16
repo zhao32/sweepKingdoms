@@ -2231,6 +2231,7 @@ var MyProtocols = {
 		}
 		return retObj;
 	},
+	/**装备安装 */
 	send_C2SCardTakeOnItem: function (senderSocket, p_cardId, p_item_uuid) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2005);
@@ -2249,6 +2250,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
+	/**装备卸载  */
 	send_C2SCardTakeOffItem: function (senderSocket, p_cardId, p_position) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2007);
@@ -2268,6 +2270,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
+	/**装备升级 */
 	send_C2SCardAddLevel: function (senderSocket, p_card_id, p_cost_cards, p_cost_items) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2009);
@@ -2302,7 +2305,7 @@ var MyProtocols = {
 		retObj.level_exp = myDecoder.readInt();
 		return retObj;
 	},
-
+	/**装备升级星 */
 	send_C2SCardAddStar: function (senderSocket, p_card_id) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2011);
@@ -2321,6 +2324,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
+	/**练兵 */
 	send_C2SCardTrain: function (senderSocket, p_card_id) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2013);
