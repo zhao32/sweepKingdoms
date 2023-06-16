@@ -191,6 +191,58 @@ export default class DataManager {
     static readonly basicList = ["居民区", "资源仓库", "神像", "英魂墓地", "城墙"];
     static readonly qualityList = ['', '上古', '传奇', '天选', '无双', '名将']
 
+    /**矿区基本信息 */
+    static mineData = {
+        101: {
+            name: "主城",
+        },
+        102: {
+            name: "重镇",
+        },
+        103: {
+            name: "名城",
+        },
+        104: {
+            name: "圣都",
+        },
+        105: {
+            name: "特殊",
+        },
+        106: {
+            name: "遗迹",
+        },
+        0: {
+            name: "",
+        },
+        1: {
+            name: "魏国矿场",
+        },
+        2: {
+            name: "燕国矿场",
+        },
+        3: {
+            name: "秦国矿场",
+        },
+        4: {
+            name: "赵国矿场",
+        },
+        5: {
+            name: "齐国矿场",
+        },
+        6: {
+            name: "韩国矿场",
+        },
+        7: {
+            name: "楚国矿场",
+        },
+        8: {
+            name: "农田",
+        },
+        9: {
+            name: "金矿",
+        },
+    }
+
 
     static myBattleFiledConfig = { card: [], soliders: [] }
 
@@ -202,10 +254,10 @@ export default class DataManager {
         return second
     }
 
-    static readonly SCROLLTIME1:number = 0.25
-    static readonly SCROLLTIME2:number = 0.2
+    static readonly SCROLLTIME1: number = 0.25
+    static readonly SCROLLTIME2: number = 0.2
 
-    static pageGoBattle:pageGoBattle
+    static pageGoBattle: pageGoBattle
 
 
 

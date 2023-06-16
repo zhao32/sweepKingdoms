@@ -46,24 +46,6 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FINDBACK, ...[retObj.mine_points])
     }
 
-    // 102: {
-    //     name: "重镇",
-    // },
-    // 103: {
-    //     name: "名城",
-    // },
-    // 104: {
-    //     name: "圣都",
-    // },
-    // 105: {
-    //     name: "特殊",
-    // },
-    // 106: {
-    //     name: "遗迹",
-    // },
-
-
-
     onFindHandler(event, data) {
         console.log('data:' + data)
         MyProtocols.send_C2SFindMines(DataManager._loginSocket, data, DataManager.pageGoBattle.nation_id, 0, 0)
@@ -72,7 +54,6 @@ export default class NewClass extends cc.Component {
     onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
     }
-
 
     // update (dt) {}
 }

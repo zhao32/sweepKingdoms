@@ -75,31 +75,35 @@ export default class NewClass extends cc.Component {
         // }else{
         //     ResManager.loadItemIcon(`goBattle/icon0`,this.icon)
         // }
-
-
     }
 
     onCloseHandler() {
-        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
     }
 
     /**调兵驻防 */
     ondispatchArmyHandler() {
-
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH)
+        console.log(`------调兵驻防--------`)
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player])
     }
 
     /**撤回主城 */
     onRevokeHandler() {
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH)
+        console.log(`------撤回主城--------`)
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player])
     }
     /**查看详情 */
-    onDetailHutHandler(){
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUT)
+    onDetailHutHandler() {
+        console.log(`------查看详情--------`)
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUT, ...[this._data.hold_player])
     }
 
-
-
+    onHarvestHandler() {
+        console.log(`---------收获----------`)
+    }
 
     // update (dt) {}
 }

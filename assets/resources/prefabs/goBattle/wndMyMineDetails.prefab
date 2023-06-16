@@ -2000,8 +2000,8 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "fa19ap6OGlDCLH9Gy0R7HCq",
-    "handler": "onSetHandler",
+    "_componentId": "5a3627MwRVO3ZSLSXUgVLru",
+    "handler": "ondispatchArmyHandler",
     "customEventData": ""
   },
   {
@@ -2349,7 +2349,7 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "87184lcoThNw6XVIVGbP049",
+    "_componentId": "5a3627MwRVO3ZSLSXUgVLru",
     "handler": "onRecruit",
     "customEventData": ""
   },
@@ -3047,8 +3047,8 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "fa19ap6OGlDCLH9Gy0R7HCq",
-    "handler": "onSetHandler",
+    "_componentId": "5a3627MwRVO3ZSLSXUgVLru",
+    "handler": "onRevokeHandler",
     "customEventData": ""
   },
   {
@@ -3396,8 +3396,8 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "fa19ap6OGlDCLH9Gy0R7HCq",
-    "handler": "onSetHandler",
+    "_componentId": "5a3627MwRVO3ZSLSXUgVLru",
+    "handler": "onDetailHutHandler",
     "customEventData": ""
   },
   {
