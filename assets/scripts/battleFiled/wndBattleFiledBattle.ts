@@ -517,4 +517,8 @@ export default class NewClass extends cc.Component {
         this.posEnemy.children[0].getComponent(sp.Skeleton).timeScale = 2
         this.posMy.children[0].getComponent(sp.Skeleton).timeScale = 2
     }
+
+    onClose() {
+
+    }
 }

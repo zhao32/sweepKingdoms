@@ -3776,7 +3776,7 @@
     },
     "component": "",
     "_componentId": "cc3f9hA2XlLtqgrlhzIdm2/",
-    "handler": "onClose",
+    "handler": "onCloseHandler",
     "customEventData": ""
   },
   {

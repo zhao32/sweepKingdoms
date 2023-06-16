@@ -107,6 +107,9 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.hideWnd(EnumManager.viewPath.WND_HOTEL, true)
     }
 
+    onClose() {
+
+    }
 
     // update (dt) {}
 }

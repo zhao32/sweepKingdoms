@@ -7600,7 +7600,7 @@
     },
     "component": "",
     "_componentId": "36573hT2iVEJJCiooGyqFYz",
-    "handler": "onClose",
+    "handler": "onCloseHandler",
     "customEventData": ""
   },
   {

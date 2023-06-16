@@ -47,5 +47,10 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
     }
 
+    onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CMineHistory, this.S2CMineHistory.bind(this))
+
+    }
+
     // update (dt) {}
 }

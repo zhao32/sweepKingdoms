@@ -54,13 +54,13 @@ export default class NewClass extends cc.Component {
         this.headPanel.active = false
         this.namePanel.active = false
 
-        this.vipLabel.string =String(DataManager.playData.vip_level) 
+        this.vipLabel.string = String(DataManager.playData.vip_level)
         this.nameLabel.string = DataManager.playData.name
-        this.fightLabel.string = String(DataManager.playData.troops) 
-        this.levelLabel.string= 'x'+ DataManager.playData.level
-        this.playerIdLabel.string=  String(DataManager.playData.id) 
+        this.fightLabel.string = String(DataManager.playData.troops)
+        this.levelLabel.string = 'x' + DataManager.playData.level
+        this.playerIdLabel.string = String(DataManager.playData.id)
         this.accountLabel.string = String(DataManager.playData.account_id)
-        this.expLabel.string = String(DataManager.playData.level_exp) 
+        this.expLabel.string = String(DataManager.playData.level_exp)
 
     }
 
@@ -76,6 +76,10 @@ export default class NewClass extends cc.Component {
 
     onBackHanlder() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
+    }
+
+    onClose() {
+
     }
 
     // update (dt) {}

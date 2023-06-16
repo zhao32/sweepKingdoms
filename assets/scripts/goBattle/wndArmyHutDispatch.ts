@@ -86,7 +86,7 @@ export default class NewClass extends cc.Component {
         }
     }
 
-    onClose() {
+    onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
         // ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_SELECT)
     }
@@ -110,6 +110,10 @@ export default class NewClass extends cc.Component {
         let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: card[0], b: card[1], c: card[2], soldier: DataManager.myBattleFiledConfig.soliders }
         console.log(JSON.stringify(data))
         MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
+    }
+
+    onClose() {
+
     }
 
     // update (dt) {}

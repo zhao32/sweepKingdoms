@@ -52,6 +52,7 @@ export default class BaseView extends cc.Component {
     //隐藏界面
     hidePanel() {
         this.node.active = false;
+        this.node.getComponent(this.node.name) && this.node.getComponent(this.node.name).onClose()
     }
 
     //打开界面显示的动画

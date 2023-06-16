@@ -137,7 +137,7 @@ export default class NewClass extends cc.Component {
         }
     }
 
-    onClose() {
+    onCloseHandler() {
         ViewManager.instance.hideWnd(EnumManager.viewPath.WND_STAGE_READY)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_SELECT)
     }
@@ -183,6 +183,10 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.hideWnd(DataManager.curWndPath)
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_BATTLE, ...[myData, otherData, this.groupIdx, this.stageIdx])
         }
+    }
+
+    onClose() {
+
     }
 
     // update (dt) {}

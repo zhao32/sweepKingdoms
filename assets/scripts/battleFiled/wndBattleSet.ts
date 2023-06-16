@@ -43,7 +43,6 @@ export default class NewClass extends cc.Component {
     // onLoad () {}
 
     start() {
-        NetEventDispatcher.addListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave.bind(this))
     }
 
     S2CBattleFormationSave(data) {
@@ -54,6 +53,8 @@ export default class NewClass extends cc.Component {
     }
 
     init() {
+        NetEventDispatcher.addListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave.bind(this))
+
         // this.selectCards = selectCards//[DataManager.cardsList[0], DataManager.cardsList[1], DataManager.cardsList[2]]
         this.heroContect.removeAllChildren()
 
@@ -170,6 +171,11 @@ export default class NewClass extends cc.Component {
     onBackHandler() {
         ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLE_TEAMSET)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_MYTEAM)
+
+    }
+
+    onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave.bind(this))
 
     }
 

@@ -73,9 +73,7 @@ export default class NewClass extends cc.Component {
             arm.parent = this.otherContect
         }
 
-        NetEventDispatcher.addListener(NetEvent.S2CRankPlayerDetail, this.S2CRankPlayerDetail.bind(this))
 
-        NetEventDispatcher.addListener(NetEvent.S2CPkEnemyFormation, this.S2CPkEnemyFormation.bind(this))
 
     }
 
@@ -92,10 +90,12 @@ export default class NewClass extends cc.Component {
         this.myData = myData
         this.eData = eData
 
+        NetEventDispatcher.addListener(NetEvent.S2CRankPlayerDetail, this.S2CRankPlayerDetail.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CPkEnemyFormation, this.S2CPkEnemyFormation.bind(this))
         MyProtocols.send_C2SRankPlayerDetail(DataManager._loginSocket, eData.rank_type, eData.playerId)
     }
 
-    onClose() {
+    onCloseHanlder() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLEFILED)
     }
@@ -215,8 +215,11 @@ export default class NewClass extends cc.Component {
         MyProtocols.send_C2SPkEnemyFormation(DataManager._loginSocket, this.enemyPlayerId)
         ViewManager.instance.hideWnd(DataManager.curWndPath)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_RESULT, ...[this.myAllData, this.eAllData])
+    }
 
-
+    onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CRankPlayerDetail, this.S2CRankPlayerDetail.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2CPkEnemyFormation, this.S2CPkEnemyFormation.bind(this))
     }
 
 

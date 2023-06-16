@@ -211,11 +211,13 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
+       
+        NetEventDispatcher.removeListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock.bind(this))
+    }
+
+    onCloseHandler(){
         ViewManager.instance.hideWnd(DataManager.curWndPath)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL_LIST)
-
-        NetEventDispatcher.removeListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock.bind(this))
-
     }
 
     // update (dt) {}

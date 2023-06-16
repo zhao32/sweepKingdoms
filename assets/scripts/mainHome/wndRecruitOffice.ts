@@ -72,5 +72,9 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.hideWnd(EnumManager.viewPath.WND_MAIN_RECRUITOFFICE, true)
     }
 
+    onClose() {
+
+    }
+
     // update (dt) {}
 }

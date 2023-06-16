@@ -120,5 +120,9 @@ export default class NewClass extends cc.Component {
         }, 200);
     }
 
+    onClose() {
+
+    }
+
     // update (dt) {}
 }

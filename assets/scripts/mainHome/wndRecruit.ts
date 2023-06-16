@@ -187,5 +187,9 @@ export default class NewClass extends cc.Component {
 
     }
 
+    onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CRecSoldiers, this.S2CRecSoldiers.bind(this))
+    }
+
     // update (dt) {}
 }

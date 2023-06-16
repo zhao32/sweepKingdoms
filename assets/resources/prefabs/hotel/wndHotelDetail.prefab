@@ -1309,7 +1309,7 @@
     },
     "component": "",
     "_componentId": "81d9cyHLZZLToPE4/f9Yaxq",
-    "handler": "onClose",
+    "handler": "onCloseHandler",
     "customEventData": ""
   },
   {

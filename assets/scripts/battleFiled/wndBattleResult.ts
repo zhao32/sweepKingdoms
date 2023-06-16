@@ -57,7 +57,6 @@ export default class NewClass extends cc.Component {
     battleInfo: string = ''
 
     start() {
-        NetEventDispatcher.addListener(NetEvent.S2CPkBattleCalculate, this.S2CPkBattleCalculate.bind(this))
     }
 
     S2CPkBattleCalculate(data) {
@@ -129,6 +128,8 @@ export default class NewClass extends cc.Component {
     }
 
     init(myData = this._myData, enemyData = this._enemyData) {
+        NetEventDispatcher.addListener(NetEvent.S2CPkBattleCalculate, this.S2CPkBattleCalculate.bind(this))
+
         this._myData = myData
         this._enemyData = enemyData
         console.log('enemyData:' + JSON.stringify(enemyData))
@@ -561,6 +562,11 @@ export default class NewClass extends cc.Component {
             plusList.push(plusData)
         }
         return plusList
+    }
+
+    onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CPkBattleCalculate, this.S2CPkBattleCalculate.bind(this))
+
     }
 
 }

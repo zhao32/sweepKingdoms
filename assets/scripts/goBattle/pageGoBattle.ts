@@ -45,8 +45,6 @@ export default class NewClass extends cc.Component {
     start() {
         // S2CMineList
         DataManager.pageGoBattle = this
-        NetEventDispatcher.addListener(NetEvent.S2CMineList, this.S2CMineList.bind(this))
-        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
 
     }
 
@@ -61,7 +59,7 @@ export default class NewClass extends cc.Component {
 
     S2CMineList(data) {
         console.log('------------------------------------')
-        console.log(`this.selectIdx:`+this.selectIdx)
+        console.log(`this.selectIdx:` + this.selectIdx)
         data.mine_points
         data.my_hold
         this.maxPage = data.pagecount
@@ -113,6 +111,10 @@ export default class NewClass extends cc.Component {
     }
 
     init() {
+        NetEventDispatcher.addListener(NetEvent.S2CMineList, this.S2CMineList.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
+
+
         this.nation_id = DataManager.playData.nation_id
         this.curPageIdx = 0
         MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
@@ -229,6 +231,11 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FIND)
 
 
+    }
+
+    onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CMineList, this.S2CMineList.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
     }
 
 

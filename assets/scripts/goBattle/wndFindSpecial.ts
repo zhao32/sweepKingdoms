@@ -32,10 +32,10 @@ export default class NewClass extends cc.Component {
     // onLoad () {}
 
     start() {
-        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
     }
 
     init() {
+        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
 
     }
 
@@ -64,6 +64,11 @@ export default class NewClass extends cc.Component {
 
     onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+    }
+
+    onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
+
     }
 
     // update (dt) {}

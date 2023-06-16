@@ -136,6 +136,9 @@ export default class NewClass extends cc.Component {
     onUpgradeHandler() {
         ViewManager.instance.hideWnd(EnumManager.viewPath.WND_MAIN_NORMAL, true)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_UPGRADE, ...[this.bulidName])
+    }
+
+    onClose() {
 
     }
 }

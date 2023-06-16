@@ -161,7 +161,6 @@ export default class NewClass extends cc.Component {
                 render.on(cc.Node.EventType.TOUCH_END, () => {
                     ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLEFILED)
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_MYTEAM, ...[retObj.items[i].card])
-                    NetEventDispatcher.removeListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))
                 }, this)
             } else {
                 render.on(cc.Node.EventType.TOUCH_END, () => {
@@ -172,7 +171,6 @@ export default class NewClass extends cc.Component {
 
                     ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLEFILED)
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_COMPARMY, ...[myData, ePlayerData])
-                    NetEventDispatcher.removeListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))
                 }, this)
             }
         }
@@ -186,10 +184,13 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))
+    }
+
+    onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
         DataManager.myBattleFiledConfig.soliders = []
         DataManager.myBattleFiledConfig.card = []
-        NetEventDispatcher.removeListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))
     }
 
     // update (dt) {}

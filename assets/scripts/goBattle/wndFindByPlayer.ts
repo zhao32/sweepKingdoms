@@ -30,7 +30,6 @@ export default class NewClass extends cc.Component {
     // onLoad () {}
 
     start() {
-        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
     }
 
     S2CFindMines(retObj) {
@@ -57,6 +56,8 @@ export default class NewClass extends cc.Component {
             this.strAccount = editBox.string
             Logger.log(editBox.string)
         }, this)
+        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
+
     }
 
 
@@ -71,6 +72,10 @@ export default class NewClass extends cc.Component {
             return
         }
         MyProtocols.send_C2SFindMines(DataManager._loginSocket, 110, DataManager.pageGoBattle.nation_id, this.strAccount, 0)
+    }
+
+    onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
 
     }
 

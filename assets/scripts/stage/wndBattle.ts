@@ -767,5 +767,11 @@ export default class NewClass extends cc.Component {
         this.posMy.children[0].getComponent(sp.Skeleton).timeScale = 2
     }
 
+    
+    onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CStageEnd, this.S2CStageEnd.bind(this))
+
+    }
+
     // update (dt) {}
 }

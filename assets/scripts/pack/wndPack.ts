@@ -70,7 +70,6 @@ export default class NewClass extends cc.Component {
         }
         MyProtocols.send_C2SBagItems(DataManager._loginSocket)
 
-        NetEventDispatcher.addListener(NetEvent.S2CBagItems, this.S2CBagItems.bind(this))
     }
 
     setPanelInfo(data) {
@@ -79,6 +78,7 @@ export default class NewClass extends cc.Component {
 
     init() {
         this.node.getChildByName('tipArea').active = false
+        NetEventDispatcher.addListener(NetEvent.S2CBagItems, this.S2CBagItems.bind(this))
 
     }
 
@@ -136,8 +136,11 @@ export default class NewClass extends cc.Component {
 
     onCloseHandler() {
         ViewManager.instance.hideWnd(EnumManager.viewPath.WND_PACK, true)
-        NetEventDispatcher.removeListener(NetEvent.S2CBagItems, this.S2CBagItems.bind(this))
+    }
 
+    
+    onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CBagItems, this.S2CBagItems.bind(this))
     }
 
     // update (dt) {}

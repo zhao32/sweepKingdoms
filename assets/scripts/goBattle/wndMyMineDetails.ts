@@ -105,5 +105,9 @@ export default class NewClass extends cc.Component {
         console.log(`---------收获----------`)
     }
 
+    onClose() {
+
+    }
+
     // update (dt) {}
 }

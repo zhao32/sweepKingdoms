@@ -71,7 +71,6 @@ export default class NewClass extends cc.Component {
 
     start() {
         this.showGroups()
-        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
     }
 
     S2CFindMines(retObj) {
@@ -154,6 +153,8 @@ export default class NewClass extends cc.Component {
 
     init() {
         // this.showGroups()
+        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
+
     }
 
     onBackHandler() {
@@ -163,6 +164,11 @@ export default class NewClass extends cc.Component {
         } else if (this.showType == 1) {
             this.showGroups()
         }
+    }
+
+    onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
+
     }
     // update (dt) {}
 }

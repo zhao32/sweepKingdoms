@@ -75,6 +75,10 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_TEAMSET)
     }
 
+    onClose() {
+
+    }
+
 
     // S2CRankPlayerDetail(retObj) {
     //     console.log('--------------------1046--------------------')

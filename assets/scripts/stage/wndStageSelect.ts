@@ -129,5 +129,9 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_READY, ...[this.curStageData, this.groupIdx, this.stageIdx])
     }
 
+    onClose(){ 
+        
+    }
+
     // update (dt) {}
 }

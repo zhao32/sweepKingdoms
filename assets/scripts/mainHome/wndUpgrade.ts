@@ -65,8 +65,7 @@ export default class NewClass extends cc.Component {
     }
 
     protected onDestroy(): void {
-        console.log(`---------关闭升级页面-----------`)
-        // NetEventDispatcher.removeListener(NetEvent.S2UPBulid, this.UPBulid.bind(this))
+       
     }
 
     private UPBulid(retObj) {
@@ -205,7 +204,6 @@ export default class NewClass extends cc.Component {
         if (this._from) {
             ViewManager.instance.showWnd(this._from)
         }
-        NetEventDispatcher.removeListener(NetEvent.S2UPBulid, this.UPBulid.bind(this))
     }
 
     onUpgrade1() {
@@ -218,7 +216,9 @@ export default class NewClass extends cc.Component {
         MyProtocols.send_C2UPBulid(DataManager._loginSocket, this.grade, this.buildType, parseInt(this.idx as any), 2)
     }
 
-
+    onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2UPBulid, this.UPBulid.bind(this))
+    }
 
     // update (dt) {}
 }

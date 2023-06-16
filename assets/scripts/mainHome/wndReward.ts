@@ -46,6 +46,8 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
     }
 
+    onClose() {
 
+    }
     // update (dt) {}
 }

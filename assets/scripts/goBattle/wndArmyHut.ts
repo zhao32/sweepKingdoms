@@ -104,6 +104,11 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail.bind(this))
+
+    }
+
+    onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
         // ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_SELECT)
     }

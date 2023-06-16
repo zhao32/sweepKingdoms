@@ -92,5 +92,9 @@ export default class NewClass extends cc.Component {
         }
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data])
     }
+
+    onClose() {
+
+    }
     // update (dt) {}
 }

@@ -87,5 +87,8 @@ export default class NewClass extends cc.Component {
     }
 
 
+    onClose() {
+
+    }
     // update (dt) {}
 }
