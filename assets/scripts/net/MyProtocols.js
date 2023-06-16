@@ -1605,6 +1605,7 @@ var MyProtocols = {
 			}
 		}
 		retObj.rand_key = myDecoder.readLong();
+		console.log(`矿场守卫信息`)
 		return retObj;
 	},
 

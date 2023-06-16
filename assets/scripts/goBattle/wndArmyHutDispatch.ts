@@ -9,6 +9,7 @@ import battleHeroRender from "../battle/battleHeroRender";
 import battleSoliderRender from "../battle/battleSoliderRender";
 import eSoliderRender from "../battle/eSoliderRender";
 import soliderRender from "../battleFiled/soliderRender";
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
@@ -40,7 +41,16 @@ export default class NewClass extends cc.Component {
 
     }
 
-    init() {
+    S2CMineEnemyDetail(data) {
+        console.log("返回矿场阵容")
+        console.log(JSON.stringify(data))
+    }
+
+    init(data) {
+
+        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx)
+        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail.bind(this))
+        
         this.myContect.removeAllChildren()
         // this.onSelectSolider = true
         for (let i = 0; i < DataManager.playData.military_data.length; i++) {
