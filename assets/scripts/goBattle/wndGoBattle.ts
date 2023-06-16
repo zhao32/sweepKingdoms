@@ -104,7 +104,7 @@ export default class NewClass extends cc.Component {
     S2CMineBattleCalculate(data) {
         console.log("矿场战斗返回")
         console.log(JSON.stringify(data))
-        // MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, DataManager.pageGoBattle.curPageIdx, DataManager.pageGoBattle.nation_id)
 
         // this.initResultPanel()
     }
