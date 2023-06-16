@@ -72,7 +72,7 @@ export default class NewClass extends cc.Component {
         this.maxPage = data.pagecount
         this.myContect.removeAllChildren()
         this.nation_id = data.contry
-        this.node.getChildByName(`toggleContainer`).children[this.nation_id -1].getComponent(cc.Toggle).isChecked = true
+        this.node.getChildByName(`toggleContainer`).children[this.nation_id - 1].getComponent(cc.Toggle).isChecked = true
         for (let i = 0; i < data.my_points.length; i++) {
             if (data.my_points[i].hold_player) {
                 let myNode = cc.instantiate(this.myItemPfb)
@@ -96,7 +96,7 @@ export default class NewClass extends cc.Component {
             if (this.selectIdx == i) {
                 console.log('-----------------------')
                 filedNode.getChildByName(`light`).active = true
-            }else{
+            } else {
                 // filedNode.getChildByName(`light`).active = false
             }
             this.selectIdx = -1
