@@ -6,6 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import { NetEvent } from "../net/NetEvent";
+import packManager from "../pack/packManager";
 import DataManager from "../utils/Manager/DataManager";
 import ResManager from "../utils/Manager/ResManager";
 
@@ -52,6 +53,7 @@ export default class NewClass extends cc.Component {
         this._state = state
         this._heroid = heroid
         this._idx = idx
+        console.log(`state:` + state)
         // ResManager.loadItemIcon(`hero/runePot${state}`, this.node.getChildByName('rune'))
         this.node.getChildByName('rune').getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[state]
         if (state == 0) {
@@ -60,8 +62,15 @@ export default class NewClass extends cc.Component {
         } else if (state == 1) {
             this.btnLabel.string = '升级'
             this.tipDisplay0.string = `已开启`
-
         }
+
+        this.node.getChildByName('rune').on(cc.Node.EventType.TOUCH_END, () => {
+            if (state == 1) {
+                console.log(`获取符石列表`)
+                console.log('RuneList:' + JSON.stringify(packManager.getInstance().RuneList))
+            }
+
+        }, this)
 
     }
 
@@ -70,7 +79,7 @@ export default class NewClass extends cc.Component {
             console.log(`请求开启石槽：` + this._heroid + '   ' + this._idx)
             MyProtocols.send_C2SOpenRuneSlot(DataManager._loginSocket, this._heroid, this._idx)
         } else if (this._state == 1) {
-
+           
         }
 
     }

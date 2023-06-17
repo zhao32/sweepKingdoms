@@ -79,7 +79,6 @@ export default class NewClass extends cc.Component {
     init() {
         this.node.getChildByName('tipArea').active = false
         NetEventDispatcher.addListener(NetEvent.S2CBagItems, this.S2CBagItems.bind(this))
-
     }
 
     list1 = []
@@ -135,7 +134,7 @@ export default class NewClass extends cc.Component {
     }
 
     onCloseHandler() {
-        ViewManager.instance.hideWnd(EnumManager.viewPath.WND_PACK, true)
+        ViewManager.instance.hideWnd(EnumManager.viewPath.WND_PACK)
     }
 
     

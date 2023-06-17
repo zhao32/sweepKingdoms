@@ -33,6 +33,7 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     soliderPfb: cc.Prefab = null;
 
+    myHeroData 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -63,7 +64,7 @@ export default class NewClass extends cc.Component {
         }
 
         this.node.getChildByName('heroRender').getComponent(battleHeroRender).init(DataManager.cardsList[0])
-        // this.myHeroData = DataManager.cardsList[0]
+        this.myHeroData = DataManager.cardsList[0]
     }
 
     
@@ -76,7 +77,7 @@ export default class NewClass extends cc.Component {
             hero.parent = this.myContect
             hero.getComponent(battleHeroRender).init(DataManager.cardsList[i])
             hero.getChildByName('btnSelect').on(cc.Node.EventType.TOUCH_END, () => {
-                // this.myHeroData = DataManager.cardsList[i]
+                this.myHeroData = DataManager.cardsList[i]
                 this.node.getChildByName('heroRender').getComponent(battleHeroRender).init(DataManager.cardsList[i])
                 this.changeScrollView();
             }, this)
@@ -108,16 +109,15 @@ export default class NewClass extends cc.Component {
     }
 
     doSave(){
-        DataManager.myBattleFiledConfig.soliders = []
-        for (let i = 0; i < this.soliderContect.children.length; i++) {
-            let soliderItem = this.soliderContect.children[i]
-            let data = soliderItem.getComponent(soliderRender).getSelectNum()
-            if (data.count != 0) {
-                DataManager.myBattleFiledConfig.soliders.push(data)
-            }
-        }
-        let card = DataManager.myBattleFiledConfig.card
-        let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: card[0], b: card[1], c: card[2], soldier: DataManager.myBattleFiledConfig.soliders }
+        // DataManager.myBattleFiledConfig.soliders = []
+        // for (let i = 0; i < this.myContect.children.length; i++) {
+        //     let soliderItem = this.myContect.children[i]
+        //     let data = soliderItem.getComponent(soliderRender).getSelectNum()
+        //     if (data.count != 0) {
+        //         DataManager.myBattleFiledConfig.soliders.push(data)
+        //     }
+        // }
+        let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a:this.myHeroData.template_id, b: 0, c: 0, soldier: DataManager.myBattleFiledConfig.soliders }
         console.log(JSON.stringify(data))
         MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
     }

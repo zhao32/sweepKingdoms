@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "1670a12b-f8df-46df-ad84-fb0463a8cba6",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 72,
+  "height": 95,
+  "platformSettings": {},
+  "subMetas": {
+    "sy_runeicon_21": {
+      "ver": "1.0.6",
+      "uuid": "24cde9c5-128c-4560-a06e-303331155e4e",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "1670a12b-f8df-46df-ad84-fb0463a8cba6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 1,
+      "width": 71,
+      "height": 93,
+      "rawWidth": 72,
+      "rawHeight": 95,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

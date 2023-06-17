@@ -137,22 +137,27 @@ export default class NewClass extends cc.Component {
             {
                 "item": 5001,
                 "name": "暴击符石",
-                "gamemone": 75
+                "gamemone": 75,
+                icon:'sy_runeicon_00',
             },
             {
                 "item": 5002,
                 "name": "致命符石",
-                "gamemone": 75
+                "gamemone": 75,
+                icon:'sy_runeicon_10',
+
             },
             {
                 "item": 5003,
                 "name": "坚毅符石",
-                "gamemone": 75
+                "gamemone": 75,
+                icon:'sy_runeicon_20',
             },
             {
                 "item": 5004,
                 "name": "韧性符石",
-                "gamemone": 75
+                "gamemone": 75,
+                icon:'sy_runeicon_30',
             }
         ]
 
@@ -182,6 +187,7 @@ export default class NewClass extends cc.Component {
         console.log(JSON.stringify(data))
         this.getHoner = 0
         this.proBar.progress = 0
+        this.honerProLabel.string = `${Math.floor(this.getHoner)}/50000`
         this.honerLabel.string = '现有荣耀值：' + String(DataManager.playData.honor)
 
     }

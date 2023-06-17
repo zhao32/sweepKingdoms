@@ -6,6 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import DataManager from "../utils/Manager/DataManager";
+import ResManager from "../utils/Manager/ResManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -36,7 +37,7 @@ export default class NewClass extends cc.Component {
     init(data) {
         this._data = data
         this.nameLabel.string = `兑换【${data.name}】`
-
+        ResManager.loadItemIcon(`Rune/${data.icon}`, this.icon)
     }
 
     btnExchange() {
@@ -45,8 +46,8 @@ export default class NewClass extends cc.Component {
     }
 
     ExchangeRune(id, num) {
-        console.log('id:'+id)
-        console.log('num:'+num)
+        console.log('id:' + id)
+        console.log('num:' + num)
         MyProtocols.send_C2SArenaExchange(DataManager._loginSocket, id, num)
     }
 

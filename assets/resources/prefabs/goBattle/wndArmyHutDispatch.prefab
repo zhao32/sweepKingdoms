@@ -2778,7 +2778,7 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "cc3f9hA2XlLtqgrlhzIdm2/",
+    "_componentId": "440e681ZjREFrjLLjo0ZBlr",
     "handler": "changeHero",
     "customEventData": ""
   },
@@ -4361,8 +4361,8 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "cc3f9hA2XlLtqgrlhzIdm2/",
-    "handler": "changeHero",
+    "_componentId": "440e681ZjREFrjLLjo0ZBlr",
+    "handler": "doSave",
     "customEventData": ""
   },
   {

@@ -6,6 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import { NetEvent } from "../net/NetEvent";
+import packManager from "../pack/packManager";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
@@ -91,6 +92,7 @@ export default class NewClass extends cc.Component {
     }
     /**data 服务器获取的将领数据 */
     init(data) {
+        packManager.getInstance().reflishBag()
         NetEventDispatcher.addListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock.bind(this))
 
 

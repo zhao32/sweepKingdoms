@@ -1532,13 +1532,13 @@ var MyProtocols = {
 			retObj.formation.a = myDecoder.readInt();
 			retObj.formation.b = myDecoder.readInt();
 			retObj.formation.c = myDecoder.readInt();
-			retObj.formation.d = myDecoder.readInt();
-			retObj.formation.e = myDecoder.readInt();
-			retObj.formation.f = myDecoder.readInt();
-			retObj.formation.g = myDecoder.readInt();
-			retObj.formation.h = myDecoder.readInt();
-			retObj.formation.i = myDecoder.readInt();
-			retObj.formation.j = myDecoder.readInt();
+			// retObj.formation.d = myDecoder.readInt();
+			// retObj.formation.e = myDecoder.readInt();
+			// retObj.formation.f = myDecoder.readInt();
+			// retObj.formation.g = myDecoder.readInt();
+			// retObj.formation.h = myDecoder.readInt();
+			// retObj.formation.i = myDecoder.readInt();
+			// retObj.formation.j = myDecoder.readInt();
 		}
 
 		/**已经在矿里的兵 */
@@ -1608,7 +1608,6 @@ var MyProtocols = {
 		console.log(`矿场守卫信息`)
 		return retObj;
 	},
-
 	/**矿场战斗结果 */
 	send_C2SMineBattleCalculate: function (senderSocket, p_level_index, p_point_index, p_result, p_rand_key,nation) {
 		var myEncoder = WsEncoder.alloc();
