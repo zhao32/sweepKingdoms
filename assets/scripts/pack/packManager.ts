@@ -18,7 +18,7 @@ var NetEventDispatcher = require("NetEventDispatcher");
 @ccclass
 export default class packManager extends cc.Component {
 
-    private _RuneList = []
+    private _RuneList
 
     _isRefish: boolean = false
 

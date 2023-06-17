@@ -1792,7 +1792,7 @@ var MyProtocols = {
 	},
 
 	/**我的矿场防守阵型 */
-	send_C2SMineDefFormationSave: function (senderSocket, p_level_index, p_point_index, p_formation) {
+	send_C2SMineDefFormationSave: function (senderSocket, p_level_index, p_point_index, p_formation, soldier) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3113);
 		myEncoder.writeInt(p_level_index);
@@ -1815,6 +1815,14 @@ var MyProtocols = {
 			myEncoder.writeInt(p_formation.h);
 			myEncoder.writeInt(p_formation.i);
 			myEncoder.writeInt(p_formation.j);
+			// myEncoder.writeInt(soldier.length);
+			myEncoder.writeInt(p_formation.soldier.length)//派兵是数据
+
+			for (var i = 0; i < p_formation.soldier.length; i++) {
+				myEncoder.writeInt(p_formation.soldier[i].template_id);
+				myEncoder.writeInt(p_formation.soldier[i].number);
+			}
+
 		}
 		var rawContent = myEncoder.end();
 		myEncoder.free();
