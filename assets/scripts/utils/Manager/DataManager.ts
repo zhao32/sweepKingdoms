@@ -259,6 +259,8 @@ export default class DataManager {
 
     static pageGoBattle: pageGoBattle
 
+    curRuneList = []
+
 
 
 }

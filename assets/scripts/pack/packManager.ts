@@ -47,13 +47,13 @@ export default class packManager extends cc.Component {
     S2CBagItems(retObj) {
         console.log('retObj:'+ JSON.stringify(retObj))
         this._isRefish = true
-        this._RuneList = []
+        DataManager.instance.curRuneList = []
         for (let i = 0; i < retObj.item_list.length; i++) {
             if (retObj.item_list[i].template_id >= 5001 && retObj.item_list[i].template_id <= 5040) {
-                this._RuneList.push(retObj.item_list[i])
+                DataManager.instance.curRuneList.push(retObj.item_list[i])
             }
         }
-        console.log(`this.RuneList:`+JSON.stringify(this._RuneList))
+        console.log(`this.RuneList:`+JSON.stringify( DataManager.instance.curRuneList))
     }
 
     isRefish() {
@@ -61,8 +61,8 @@ export default class packManager extends cc.Component {
     }
 
 
-    getRuneList(){
-        return this._RuneList
-    }
+    // getRuneList(){
+    //     return this._RuneList
+    // }
     // update (dt) {}
 }

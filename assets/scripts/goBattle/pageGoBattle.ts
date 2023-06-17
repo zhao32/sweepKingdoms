@@ -84,7 +84,7 @@ export default class NewClass extends cc.Component {
                     console.log(`定位矿的位置`)
                     this.selectIdx = data.my_points[i].hold_player.idx
                     console.log(`this.selectIdx:` + this.selectIdx)
-                    MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, data.my_points[i].hold_player.page, data.my_points[i].hold_player.county)
+                    MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, data.my_points[i].hold_player.page, data.my_points[i].hold_player.country)
                 }, this)
             }
         }
