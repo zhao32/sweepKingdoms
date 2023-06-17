@@ -50,8 +50,14 @@ export default class NewClass extends cc.Component {
     init(idx, soliderNum) {
         this.idx = idx
         this.allNum = soliderNum
-        this.nameLabel.string = `${DataManager.GameData.Soldier[idx].name} ${DataManager.playData.military_data[idx - 1]}`
+        this.nameLabel.string = `${DataManager.GameData.Soldier[idx].name} ${soliderNum}`
         ResManager.loadItemIcon(`soliderHead/${DataManager.GameData.Soldier[idx].name}`, this.node.getChildByName(`head`))
+    }
+
+    setSelectNum(select) {
+        this.selectNum = select
+        this.slider.progress = this.selectNum / this.allNum
+        this.useLabel.string = `调动数量 ${this.selectNum}`
     }
 
     // update (dt) {}

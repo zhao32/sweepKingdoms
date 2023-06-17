@@ -1549,8 +1549,8 @@ var MyProtocols = {
 			for (var i = 0; i < bing_size; i++) {
 
 				retObj.soliderUsed[i] = {};
-				retObj.soliderUsed[i].template_id = myDecoder.readInt();
-				retObj.soliderUsed[i].num = myDecoder.readInt();
+				retObj.soliderUsed[i].arm = myDecoder.readInt();
+				retObj.soliderUsed[i].count = myDecoder.readInt();
 			}
 		}
 
@@ -1561,8 +1561,8 @@ var MyProtocols = {
 			for (var i = 0; i < solider_size; i++) {
 
 				retObj.soliderUse[i] = {};
-				retObj.soliderUse[i].template_id = myDecoder.readInt();
-				retObj.soliderUse[i].num = myDecoder.readInt();
+				retObj.soliderUse[i].arm = myDecoder.readInt();
+				retObj.soliderUse[i].count = myDecoder.readInt();
 			}
 		}
 

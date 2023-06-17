@@ -64,7 +64,8 @@ export default class NewClass extends cc.Component {
 
     init(data) {
         this._data = data
-        this.nameLabel.string = data.hold_player.lv + '级' + data.hold_player.nickname
+        this.nameLabel.string = data.hold_player.lv + '级' + DataManager.mineData[data.hold_player.group].name
+        this.lordLabel.string = `领主：${data.hold_player.nickname}`
         // this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`
 
         // : function (senderSocket, p_level_index, p_point_index) {
@@ -85,14 +86,14 @@ export default class NewClass extends cc.Component {
     ondispatchArmyHandler() {
         console.log(`------调兵驻防--------`)
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player,'in'])
     }
 
     /**撤回主城 */
     onRevokeHandler() {
         console.log(`------撤回主城--------`)
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player,'out'])
     }
     /**查看详情 */
     onDetailHutHandler() {

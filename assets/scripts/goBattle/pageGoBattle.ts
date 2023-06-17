@@ -38,6 +38,8 @@ export default class NewClass extends cc.Component {
 
     selectIdx: number = -1
 
+    myCityData
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -79,6 +81,10 @@ export default class NewClass extends cc.Component {
                 let myNode = cc.instantiate(this.myItemPfb)
                 myNode.getComponent(myItem).init(data.my_points[i].hold_player)
                 myNode.parent = this.myContect
+
+                if(data.my_points[i].hold_player.group == 101){
+                    this.myCityData = data.my_points[i].hold_player[i]
+                }
 
                 myNode.on(cc.Node.EventType.TOUCH_END, () => {
                     console.log(`定位矿的位置`)

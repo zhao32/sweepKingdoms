@@ -48,7 +48,7 @@ export default class NewClass extends cc.Component {
 
     }
 
- // {
+    // {
     // 	"hold_player": {
     // 		"id": 0,
     // 		"nickname": "",
@@ -63,9 +63,11 @@ export default class NewClass extends cc.Component {
     // }
 
     init(data) {
-        console.log('filedData:'+JSON.stringify(data))
+        console.log('filedData:' + JSON.stringify(data))
         this._data = data
-        this.nameLabel.string = data.hold_player.lv + '级' + data.hold_player.nickname
+        this.nameLabel.string = data.hold_player.lv + '级' + DataManager.mineData[data.hold_player.group].name
+        this.lordLabel.string = `领主：${data.hold_player.nickname}`
+
         // this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`
 
         // : function (senderSocket, p_level_index, p_point_index) {
