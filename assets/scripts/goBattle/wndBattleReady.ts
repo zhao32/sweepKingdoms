@@ -61,7 +61,6 @@ export default class NewClass extends cc.Component {
 
     }
 
-
     init(stageData, groupIdx, stageIdx) {
         this.groupIdx = groupIdx
         this.stageIdx = stageIdx
@@ -181,7 +180,7 @@ export default class NewClass extends cc.Component {
 
             console.log('my_template_id:' + this.my_template_id)
             ViewManager.instance.hideWnd(DataManager.curWndPath)
-            ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_BATTLE, ...[myData, otherData, this.groupIdx, this.stageIdx])
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_BATTLE, ...[myData, otherData, this.groupIdx, this.stageIdx])
         }
     }
 

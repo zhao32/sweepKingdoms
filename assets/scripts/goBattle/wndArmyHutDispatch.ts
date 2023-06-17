@@ -68,9 +68,10 @@ export default class NewClass extends cc.Component {
 
     }
 
+    eviType:number
+
 
     S2CMineEnemyDetail(data) {
-
         // exclude_cards  在其他矿里工作
         //  cards 这这里工作得将
         console.log("返回矿场阵容")
@@ -79,7 +80,6 @@ export default class NewClass extends cc.Component {
         this.soliders = []
         this.cards = []
         this.mobilizeSoliders = []
-      
 
         if (this._type == 'in') {
             // this.soliders = data.soliderUse //在主城中的兵
@@ -144,9 +144,12 @@ export default class NewClass extends cc.Component {
 
     S2CMineDefFormationSave(data) {
         console.log(`-----阵容保存返回------`)
+        console.log(JSON.stringify(data))
+        ViewManager.instance.showToast(`阵容保存成功`)
     }
 
-    init(data, type) {
+    init(data, type, eviType) {
+        this.eviType = eviType
         this.soliders = []
         this.cards = []
         this.mobilizeSoliders = []
@@ -164,10 +167,9 @@ export default class NewClass extends cc.Component {
             this.titleDisplay.string = '兵力撤回主城'
         }
         this.tipDisplay.string = ``
-
         this.myContect.removeAllChildren()
 
-        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx,data.country)
+        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx, data.country)
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail.bind(this))
         NetEventDispatcher.addListener(NetEvent.S2CMineDefFormationSave, this.S2CMineDefFormationSave.bind(this))
 
@@ -254,11 +256,16 @@ export default class NewClass extends cc.Component {
             template_id = 0
         }
         let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: template_id, b: 0, c: 0, soldier: this.mobilizeSoliders }
-        console.log(JSON.stringify(data))
+        console.log(`country:` + this.data.country)
+        console.log(JSON.stringify(this.data))
         if (this._type == 'in') {
-            MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.data.page, this.data.idx, data,this.data.country)
+            MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.data.page, this.data.idx, data, this.data.country, 1)
         } else {
-            MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, DataManager.pageGoBattle.myCityData.page, DataManager.pageGoBattle.myCityData.idx, data,DataManager.pageGoBattle.myCityData.country)
+            if(this.eviType != undefined){
+                MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.data.page, this.data.idx, data, this.data.country, 0,this.eviType)
+            }else{
+                MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.data.page, this.data.idx, data, this.data.country, 0)
+            }
         }
     }
 

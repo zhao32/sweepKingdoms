@@ -1465,6 +1465,7 @@ var MyProtocols = {
 
 					retObj.mine_points[i].hold_player.page = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.idx = myDecoder.readInt();
+					retObj.mine_points[i].hold_player.country = myDecoder.readInt();
 
 				}
 			}
@@ -1498,7 +1499,7 @@ var MyProtocols = {
 		return retObj;
 	},
 	/**请求敌方的矿场防守  */
-	send_C2SMineEnemyDetail: function (senderSocket, p_level_index, p_point_index,country) {
+	send_C2SMineEnemyDetail: function (senderSocket, p_level_index, p_point_index, country) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3103);
 		myEncoder.writeInt(p_level_index);
@@ -1611,6 +1612,132 @@ var MyProtocols = {
 		console.log(`矿场守卫信息`)
 		return retObj;
 	},
+
+
+
+
+	/**请求恶魔之门防守  */
+	send_C2SMineEviDetail: function (senderSocket, p_level_index, p_point_index, country) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(3504);
+		myEncoder.writeInt(p_level_index);
+		myEncoder.writeInt(p_point_index);
+		myEncoder.writeInt(country);
+
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_3505: function (myDecoder) {
+		var retObj = {};
+		retObj.level_index = myDecoder.readInt();
+		retObj.point_index = myDecoder.readInt();
+		let base_info_exist = myDecoder.readBool();
+		if (base_info_exist == true) {
+			retObj.base_info = {};
+			retObj.base_info.id = myDecoder.readInt();
+			retObj.base_info.nickname = myDecoder.readString();
+			retObj.base_info.level = myDecoder.readInt();
+			retObj.base_info.icon = myDecoder.readInt();
+			retObj.base_info.head_frame_id = myDecoder.readInt();
+			retObj.base_info.fight = myDecoder.readInt();
+			retObj.base_info.cd_time = myDecoder.readInt();
+		}
+		let formation_exist = myDecoder.readBool();
+		if (formation_exist == true) {
+			retObj.formation = {};
+			retObj.formation.fid = myDecoder.readInt();
+			retObj.formation.formationId = myDecoder.readInt();
+			retObj.formation.forward = myDecoder.readInt();
+			retObj.formation.flip = myDecoder.readInt();
+			retObj.formation.a = myDecoder.readInt();
+			retObj.formation.b = myDecoder.readInt();
+			retObj.formation.c = myDecoder.readInt();
+			// retObj.formation.d = myDecoder.readInt();
+			// retObj.formation.e = myDecoder.readInt();
+			// retObj.formation.f = myDecoder.readInt();
+			// retObj.formation.g = myDecoder.readInt();
+			// retObj.formation.h = myDecoder.readInt();
+			// retObj.formation.i = myDecoder.readInt();
+			// retObj.formation.j = myDecoder.readInt();
+		}
+
+		/**已经在矿里的兵 */
+		retObj.soliderUsed = []
+		let bing_size = myDecoder.readInt();
+		if (bing_size > 0) {
+			for (var i = 0; i < bing_size; i++) {
+
+				retObj.soliderUsed[i] = {};
+				retObj.soliderUsed[i].arm = myDecoder.readInt();
+				retObj.soliderUsed[i].count = myDecoder.readInt();
+			}
+		}
+
+		/**可以往矿里调的兵 */
+		retObj.soliderUse = []
+		let solider_size = myDecoder.readInt();
+		if (solider_size > 0) {
+			for (var i = 0; i < solider_size; i++) {
+
+				retObj.soliderUse[i] = {};
+				retObj.soliderUse[i].arm = myDecoder.readInt();
+				retObj.soliderUse[i].count = myDecoder.readInt();
+			}
+		}
+
+
+
+		let Att_base_info_exist = myDecoder.readBool();
+		if (Att_base_info_exist == true) {
+			retObj.att_base_info = {};
+			retObj.att_base_info.id = myDecoder.readInt();
+			retObj.att_base_info.nickname = myDecoder.readString();
+			retObj.att_base_info.level = myDecoder.readInt();
+			retObj.att_base_info.icon = myDecoder.readInt();
+			retObj.att_base_info.head_frame_id = myDecoder.readInt();
+			retObj.att_base_info.fight = myDecoder.readInt();
+			retObj.att_base_info.cd_time = myDecoder.readInt();
+		}
+		let att_formation_exist = myDecoder.readBool();
+		if (att_formation_exist == true) {
+			retObj.att_formation = {};
+			retObj.att_formation.fid = myDecoder.readInt();
+			retObj.att_formation.formationId = myDecoder.readInt();
+			retObj.att_formation.forward = myDecoder.readInt();
+			retObj.att_formation.flip = myDecoder.readInt();
+			retObj.att_formation.a = myDecoder.readInt();
+			retObj.att_formation.b = myDecoder.readInt();
+			retObj.att_formation.c = myDecoder.readInt();
+			// retObj.formation.d = myDecoder.readInt();
+			// retObj.formation.e = myDecoder.readInt();
+			// retObj.formation.f = myDecoder.readInt();
+			// retObj.formation.g = myDecoder.readInt();
+			// retObj.formation.h = myDecoder.readInt();
+			// retObj.formation.i = myDecoder.readInt();
+			// retObj.formation.j = myDecoder.readInt();
+		}
+
+		/**已经在矿里的兵 */
+		retObj.att_soliderUsed = []
+		let att_bing_size = myDecoder.readInt();
+		if (att_bing_size > 0) {
+			for (var i = 0; i < att_bing_size; i++) {
+
+				retObj.att_soliderUsed[i] = {};
+				retObj.att_soliderUsed[i].arm = myDecoder.readInt();
+				retObj.att_soliderUsed[i].count = myDecoder.readInt();
+			}
+		}
+
+
+		retObj.rand_key = myDecoder.readLong();
+		console.log(`矿场守卫信息`)
+		return retObj;
+	},
+
+
 	/**矿场战斗结果 */
 	send_C2SMineBattleCalculate: function (senderSocket, p_level_index, p_point_index, p_result, p_rand_key, nation) {
 		var myEncoder = WsEncoder.alloc();
@@ -1793,13 +1920,15 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	/**我的矿场防守阵型 */
-	send_C2SMineDefFormationSave: function (senderSocket, p_level_index, p_point_index, p_formation, country) {
+	/**我的矿场防守阵型  eviType 恶魔之门 0 防守 1进攻 */
+	send_C2SMineDefFormationSave: function (senderSocket, p_level_index, p_point_index, p_formation, country, type, eviType) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3113);
 		myEncoder.writeInt(p_level_index);
 		myEncoder.writeInt(p_point_index);
 		myEncoder.writeInt(country);
+		myEncoder.writeInt(type);
+		myEncoder.writeInt(eviType);
 
 		if (p_formation == null) {
 			myEncoder.writeBool(false);

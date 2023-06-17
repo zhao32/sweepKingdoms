@@ -136,6 +136,8 @@ export enum NetEvent {
 
     /**根据类型查找矿 */
     C2SFindMines = 3115,
+    /**恶魔之门阵容 */
+    C2SMineEviDetail = 3504,
 
     //接收
     ErrorCode = 10000,
@@ -330,6 +332,9 @@ export enum NetEvent {
     // S2COpenRuneSlot = 2026,
     /**根据类型查找矿 */
     S2CFindMines = 3116,
+
+    /**恶魔之门阵容 */
+    S2CMineEviDetail = 3505
 
 
 

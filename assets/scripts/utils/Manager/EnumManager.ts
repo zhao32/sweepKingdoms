@@ -129,6 +129,11 @@ export default class EnumManager {
         /**兵力调遣 */
         WND_GOBATTLE_ARMYHUTDISPATCH: 'prefabs/goBattle/wndArmyHutDispatch',
 
+        WND_GOBATTLE_EVIGATECLOSE: 'prefabs/goBattle/wndEviGateClose',
+
+        WND_GOBATTLE_EVIGATEOPEN: 'prefabs/goBattle/wndEviGateOpen',
+
+
 
 
         /**日志 */

@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
@@ -62,11 +63,24 @@ export default class NewClass extends cc.Component {
     // 	}
     // }
 
+    S2CMineEnemyDetail(data) {
+        console.log(`准备攻打敌方 矿场`)
+        console.log(JSON.stringify(data))
+    }
+
     init(data) {
         console.log('filedData:' + JSON.stringify(data))
         this._data = data
         this.nameLabel.string = data.hold_player.lv + '级' + DataManager.mineData[data.hold_player.group].name
         this.lordLabel.string = `领主：${data.hold_player.nickname}`
+
+        // console.log(`DataManager.pageGoBattle.myCityData.page:`+JSON.stringify())
+
+        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx, data.country)
+        // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, DataManager.pageGoBattle.myCityData.page, DataManager.pageGoBattle.myCityData.idx, DataManager.pageGoBattle.myCityData.country)
+
+
+        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail.bind(this))
 
         // this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`
 

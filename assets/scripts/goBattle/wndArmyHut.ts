@@ -48,6 +48,8 @@ export default class NewClass extends cc.Component {
 
     cards = []
 
+    _data:any
+
     // onLoad () {}
 
     start() {
@@ -57,6 +59,7 @@ export default class NewClass extends cc.Component {
     S2CMineEnemyDetail(data) {
         console.log("返回矿场阵容")
         console.log(JSON.stringify(data))
+        this._data = data
 
         this.soliders = []
         this.cards = []
@@ -138,7 +141,9 @@ export default class NewClass extends cc.Component {
 
                 let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.template_id, b: 0, c: 0, soldier: this.soliders }
                 console.log(JSON.stringify(data))
-                MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
+                
+                // MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
+                MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this._data.page, this._data.idx, data, this._data.country, 2)
             }, this)
         }
     }
