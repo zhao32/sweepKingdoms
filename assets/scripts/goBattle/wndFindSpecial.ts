@@ -54,7 +54,7 @@ export default class NewClass extends cc.Component {
         }
         // retObj.mine_points
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FINDBACK, ...[retObj.mine_points])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FINDBACK, ...[mineData])
     }
 
     onFindHandler(event, data) {
@@ -68,7 +68,6 @@ export default class NewClass extends cc.Component {
 
     onClose() {
         NetEventDispatcher.removeListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
-
     }
 
     // update (dt) {}

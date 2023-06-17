@@ -53,15 +53,23 @@ export default class NewClass extends cc.Component {
         // retObj.mine_points
 
         if (retObj.type == 111) {//肥羊
+            let mineData = []
+            for (let i = 0; i < retObj.mine_points.length; i++) {
+                if (retObj.mine_points[i].hold_player) {
+                    mineData.push(retObj.mine_points[i])
+                }
+            }
+            if (mineData.length == 0) {
+                ViewManager.instance.showToast(`未查询到当前类型的矿场`)
+                return
+            }
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FY, ...[retObj.mine_points])
         }
     }
 
     S2CMineList(data) {
-        console.log('------------------------------------')
-        console.log(`this.selectIdx:` + this.selectIdx)
-        data.mine_points
-        data.my_hold
+        console.log(`..this.selectIdx:` + this.selectIdx)
+        console.log(JSON.stringify(data))
         this.maxPage = data.pagecount
         this.myContect.removeAllChildren()
         this.nation_id = data.contry
@@ -75,6 +83,7 @@ export default class NewClass extends cc.Component {
                 myNode.on(cc.Node.EventType.TOUCH_END, () => {
                     console.log(`定位矿的位置`)
                     this.selectIdx = data.my_points[i].hold_player.idx
+                    console.log(`this.selectIdx:` + this.selectIdx)
                     MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, data.my_points[i].hold_player.page, this.nation_id)
                 }, this)
             }
@@ -86,7 +95,7 @@ export default class NewClass extends cc.Component {
             filedNode.parent = this.filedContect
             filedNode.getComponent(filedItem).init(data.mine_points[i])
             if (this.selectIdx == i) {
-                console.log('-----------------------:')
+                console.log('-----------light------------:')
                 filedNode.getChildByName(`light`).active = true
                 this.selectIdx = -1
             } else {
@@ -110,8 +119,12 @@ export default class NewClass extends cc.Component {
         }
     }
 
+    S2CMineList_fun
     init() {
-        NetEventDispatcher.addListener(NetEvent.S2CMineList, this.S2CMineList.bind(this))
+        this.S2CMineList_fun = this.S2CMineList.bind(this);
+        console.log(`this.S2CMineList:` + this.S2CMineList.bind(this))
+
+        NetEventDispatcher.addListener(NetEvent.S2CMineList, this.S2CMineList_fun)
         NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
 
 
@@ -131,38 +144,6 @@ export default class NewClass extends cc.Component {
                 }
             }, this)
         }
-
-        // this.myContect.removeAllChildren()
-        // for (let i = 0; i < 5; i++) {
-        //     let myItem = cc.instantiate(this.myItemPfb)
-        //     myItem.parent = this.myContect
-        // }
-
-        // cc.resources.loadDir("Mine/Mine_01", cc.JsonAsset, (err, filedJSON) => {
-        //     if (err) {
-        //         console.log(err)
-        //     } else {
-        //         // console.log('json:' + JSON.stringify(filedJSON))
-
-        //         //@ts-ignore
-        //         let filedList = filedJSON[0].json
-
-        //         this.filedContect.removeAllChildren()
-        //         for (let i = 0; i < filedList.length; i++) {
-        //             let filedNode = cc.instantiate(this.filedItemPfb)
-        //             filedNode.parent = this.filedContect
-        //             filedNode.getComponent(filedItem).init(filedList[i])
-        //             filedNode.on(cc.Node.EventType.TOUCH_END, () => {
-        //                 if (filedList[i].type != 0) {
-        //                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[filedList[i]])
-        //                 }
-        //             }, this)
-        //         }
-
-        //     }
-        // });
-
-
     }
 
     btnLeft() {
@@ -173,18 +154,6 @@ export default class NewClass extends cc.Component {
         } else {
             ViewManager.instance.showToast('没有更多了')
         }
-        // this.filedContect.removeAllChildren()
-
-        // for (let i = 0; i < 27; i++) {
-        //     let filedItem = cc.instantiate(this.filedItemPfb)
-        //     this.scheduleOnce(() => {
-        //         filedItem.parent = this.filedContect
-        //     }, 0.01 * i)
-
-        //     filedItem.on(cc.Node.EventType.TOUCH_END, () => {
-        //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS)
-        //     }, this)
-        // }
     }
     btnRight() {
         console.log('右刷新')
@@ -194,16 +163,6 @@ export default class NewClass extends cc.Component {
         } else {
             ViewManager.instance.showToast('没有更多了')
         }
-        // this.filedContect.removeAllChildren()
-        // for (let i = 0; i < 27; i++) {
-        //     let filedItem = cc.instantiate(this.filedItemPfb)
-        //     this.scheduleOnce(() => {
-        //         filedItem.parent = this.filedContect
-        //     }, 0.01 * i)
-        //     filedItem.on(cc.Node.EventType.TOUCH_END, () => {
-        //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS)
-        //     }, this)
-        // }
     }
 
 
@@ -215,25 +174,22 @@ export default class NewClass extends cc.Component {
     onRecordHandler() {
         console.log('------日志---------')
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_RECORD)
-
     }
 
 
     onFeiYHandler() {
         console.log('------肥羊---------')
         MyProtocols.send_C2SFindMines(DataManager._loginSocket, 111, DataManager.pageGoBattle.nation_id, 0, 0)
-
         // ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FY)
     }
 
     onFindHandler() {
         console.log('------查找---------')
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FIND)
-
-
     }
 
     onClose() {
+        console.log(`-------关闭-----------`)
         NetEventDispatcher.removeListener(NetEvent.S2CMineList, this.S2CMineList.bind(this))
         NetEventDispatcher.removeListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
     }
