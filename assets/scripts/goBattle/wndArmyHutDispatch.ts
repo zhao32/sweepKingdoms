@@ -33,8 +33,11 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     soliderPfb: cc.Prefab = null;
 
-    myHeroData 
+    myHeroData
     // LIFE-CYCLE CALLBACKS:
+
+
+    data: any
 
     // onLoad () {}
 
@@ -47,11 +50,20 @@ export default class NewClass extends cc.Component {
         console.log(JSON.stringify(data))
     }
 
+    S2CMineDefFormationSave(data) {
+        console.log(`-----阵容保存返回------`)
+    }
+
     init(data) {
+        this.data = data
+        console.log('data:' + JSON.stringify(data))
 
         MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx)
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail.bind(this))
-        
+        NetEventDispatcher.addListener(NetEvent.S2CMineDefFormationSave, this.S2CMineDefFormationSave.bind(this))
+
+
+
         this.myContect.removeAllChildren()
         // this.onSelectSolider = true
         for (let i = 0; i < DataManager.playData.military_data.length; i++) {
@@ -67,7 +79,7 @@ export default class NewClass extends cc.Component {
         this.myHeroData = DataManager.cardsList[0]
     }
 
-    
+
     changeHero() {
         // this.onSelectSolider = false
         this.myContect.removeAllChildren()
@@ -104,11 +116,11 @@ export default class NewClass extends cc.Component {
 
     enterFight() {
         // let soliderList = 
-      
-        
+
+
     }
 
-    doSave(){
+    doSave() {
         // DataManager.myBattleFiledConfig.soliders = []
         // for (let i = 0; i < this.myContect.children.length; i++) {
         //     let soliderItem = this.myContect.children[i]
@@ -117,9 +129,9 @@ export default class NewClass extends cc.Component {
         //         DataManager.myBattleFiledConfig.soliders.push(data)
         //     }
         // }
-        let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a:this.myHeroData.template_id, b: 0, c: 0, soldier: DataManager.myBattleFiledConfig.soliders }
+        let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.template_id, b: 0, c: 0, soldier: DataManager.myBattleFiledConfig.soliders }
         console.log(JSON.stringify(data))
-        MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
+        MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.data.page, this.data.idx, data)
     }
 
     onClose() {
