@@ -110,7 +110,7 @@ export default class NewClass extends cc.Component {
         this.myContect.removeAllChildren()
 
         console.log('--------data------' + JSON.stringify(data))
-        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx)
+        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx,data.country)
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail.bind(this))
 
 

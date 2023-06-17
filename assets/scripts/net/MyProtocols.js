@@ -1498,11 +1498,13 @@ var MyProtocols = {
 		return retObj;
 	},
 	/**请求敌方的矿场防守  */
-	send_C2SMineEnemyDetail: function (senderSocket, p_level_index, p_point_index) {
+	send_C2SMineEnemyDetail: function (senderSocket, p_level_index, p_point_index,country) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3103);
 		myEncoder.writeInt(p_level_index);
 		myEncoder.writeInt(p_point_index);
+		myEncoder.writeInt(country);
+
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
@@ -1792,11 +1794,13 @@ var MyProtocols = {
 	},
 
 	/**我的矿场防守阵型 */
-	send_C2SMineDefFormationSave: function (senderSocket, p_level_index, p_point_index, p_formation, soldier) {
+	send_C2SMineDefFormationSave: function (senderSocket, p_level_index, p_point_index, p_formation, country) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3113);
 		myEncoder.writeInt(p_level_index);
 		myEncoder.writeInt(p_point_index);
+		myEncoder.writeInt(country);
+
 		if (p_formation == null) {
 			myEncoder.writeBool(false);
 		} else {

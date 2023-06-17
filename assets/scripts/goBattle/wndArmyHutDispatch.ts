@@ -167,7 +167,7 @@ export default class NewClass extends cc.Component {
 
         this.myContect.removeAllChildren()
 
-        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx)
+        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx,data.country)
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail.bind(this))
         NetEventDispatcher.addListener(NetEvent.S2CMineDefFormationSave, this.S2CMineDefFormationSave.bind(this))
 
@@ -256,9 +256,9 @@ export default class NewClass extends cc.Component {
         let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: template_id, b: 0, c: 0, soldier: this.mobilizeSoliders }
         console.log(JSON.stringify(data))
         if (this._type == 'in') {
-            MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.data.page, this.data.idx, data)
+            MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.data.page, this.data.idx, data,this.data.country)
         } else {
-            MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, DataManager.pageGoBattle.myCityData.page, DataManager.pageGoBattle.myCityData.idx, data)
+            MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, DataManager.pageGoBattle.myCityData.page, DataManager.pageGoBattle.myCityData.idx, data,DataManager.pageGoBattle.myCityData.country)
         }
     }
 
