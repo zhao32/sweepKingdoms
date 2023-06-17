@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "wndHotelDetail",
+    "_name": "wndHotelQH",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -85,10 +85,13 @@
       },
       {
         "__id__": 156
+      },
+      {
+        "__id__": 157
       }
     ],
     "_prefab": {
-      "__id__": 157
+      "__id__": 158
     },
     "_opacity": 255,
     "_color": {
@@ -960,7 +963,7 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "cf5b9lP3xFJr7mVJlPSp8qj",
+    "_componentId": "b531bs8L/ZB+YI+/nq+2FCe",
     "handler": "onCloseHandler",
     "customEventData": ""
   },
@@ -5541,6 +5544,18 @@
     "isHasAnim": true,
     "view": null,
     "isHasViewAnim": false,
+    "_id": ""
+  },
+  {
+    "__type__": "b531bs8L/ZB+YI+/nq+2FCe",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "label": null,
+    "text": "hello",
     "_id": ""
   },
   {

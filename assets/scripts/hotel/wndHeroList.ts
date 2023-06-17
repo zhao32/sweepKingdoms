@@ -67,6 +67,9 @@ export default class NewClass extends cc.Component {
                 if (this._data.idx == 1) {//打开将领详情页
                     ViewManager.instance.hideWnd(EnumManager.viewPath.WND_HOTEL_LIST)
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL_DETAIL, ...[DataManager.cardsList[i]])
+                } else if(this._data.idx == 2){
+                    ViewManager.instance.hideWnd(EnumManager.viewPath.WND_HOTEL_LIST)
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL_QH, ...[DataManager.cardsList[i]])
                 }
             }, this)
 

@@ -68,6 +68,9 @@ export default class EnumManager {
         /**将领详情 */
         WND_HOTEL_DETAIL: 'prefabs/hotel/wndHotelDetail',
 
+        WND_HOTEL_QH: 'prefabs/hotel/wndHotelQH',
+
+
 
 
         /////////////////// 背包
