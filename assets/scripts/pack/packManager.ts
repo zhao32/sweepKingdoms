@@ -18,7 +18,7 @@ var NetEventDispatcher = require("NetEventDispatcher");
 @ccclass
 export default class packManager extends cc.Component {
 
-    RuneList = []
+    private _RuneList = []
 
     _isRefish: boolean = false
 
@@ -47,17 +47,22 @@ export default class packManager extends cc.Component {
     S2CBagItems(retObj) {
         console.log('retObj:'+ JSON.stringify(retObj))
         this._isRefish = true
-        this.RuneList = []
+        this._RuneList = []
         for (let i = 0; i < retObj.item_list.length; i++) {
             if (retObj.item_list[i].template_id >= 5001 && retObj.item_list[i].template_id <= 5040) {
-                this.RuneList.push(retObj.item_list[i])
+                this._RuneList.push(retObj.item_list[i])
             }
         }
+        console.log(`this.RuneList:`+JSON.stringify(this._RuneList))
     }
 
     isRefish() {
         return this._isRefish
     }
 
+
+    getRuneList(){
+        return this._RuneList
+    }
     // update (dt) {}
 }

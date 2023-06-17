@@ -67,7 +67,7 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName('rune').on(cc.Node.EventType.TOUCH_END, () => {
             if (state == 1) {
                 console.log(`获取符石列表`)
-                console.log('RuneList:' + JSON.stringify(packManager.getInstance().RuneList))
+                console.log('RuneList:' + JSON.stringify(packManager.getInstance().getRuneList()))
             }
 
         }, this)

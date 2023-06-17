@@ -1465,7 +1465,7 @@ var MyProtocols = {
 
 					retObj.mine_points[i].hold_player.page = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.idx = myDecoder.readInt();
-					
+
 				}
 			}
 		}
@@ -1489,6 +1489,7 @@ var MyProtocols = {
 
 					retObj.my_points[i].hold_player.page = myDecoder.readInt();
 					retObj.my_points[i].hold_player.idx = myDecoder.readInt();
+					retObj.my_points[i].hold_player.country = myDecoder.readInt();
 				}
 			}
 		}
@@ -1609,7 +1610,7 @@ var MyProtocols = {
 		return retObj;
 	},
 	/**矿场战斗结果 */
-	send_C2SMineBattleCalculate: function (senderSocket, p_level_index, p_point_index, p_result, p_rand_key,nation) {
+	send_C2SMineBattleCalculate: function (senderSocket, p_level_index, p_point_index, p_result, p_rand_key, nation) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3105);
 		myEncoder.writeInt(p_level_index);
