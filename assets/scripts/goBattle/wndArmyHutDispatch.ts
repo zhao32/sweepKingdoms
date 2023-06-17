@@ -40,6 +40,9 @@ export default class NewClass extends cc.Component {
     @property(cc.Label)
     tipDisplay: cc.Label = null;
 
+    @property(cc.Label)
+    cardTipDisplay: cc.Label = null;
+
     myHeroData
     // LIFE-CYCLE CALLBACKS:
 
@@ -73,17 +76,10 @@ export default class NewClass extends cc.Component {
         console.log("返回矿场阵容")
         console.log(JSON.stringify(data))
         // {"level_index":0,"point_index":22,"base_info":{"id":0,"nickname":"","level":0,"icon":0,"head_frame_id":1,"fight":0,"cd_time":0},"formation":{"fid":0,"formationId":0,"forward":0,"flip":0,"a":0,"b":0,"c":0},"soliderUsed":[],"soliderUse":[],"cards":[],"exclude_cards":[],"rand_key":0}
-
-        if (data.formation.a == 0) {
-            this.node.getChildByName(`noHeroDefine`).active = true
-            this.node.getChildByName(`heroRender`).active = false
-        } else {
-            this.node.getChildByName(`noHeroDefine`).active = false
-            let heroRender = this.node.getChildByName(`heroRender`)
-            heroRender.active = true
-            this.myHeroData = DataManager.GameData.Cards[data.formation.a]
-            heroRender.getComponent(battleHeroRender).init(DataManager.GameData.Cards[data.formation.a])
-        }
+        this.soliders = []
+        this.cards = []
+        this.mobilizeSoliders = []
+      
 
         if (this._type == 'in') {
             // this.soliders = data.soliderUse //在主城中的兵
@@ -132,6 +128,18 @@ export default class NewClass extends cc.Component {
                 solider.getComponent(battleSoliderRender).init(this.soliders[i].arm, this.soliders[i].count)
             }
         }
+
+        if (data.formation.a == 0) {
+            this.node.getChildByName(`noHeroDefine`).active = true
+            this.node.getChildByName(`heroRender`).active = false
+            this.cardTipDisplay.string = `您有${this.cards.length}名将领可供调用`
+        } else {
+            this.node.getChildByName(`noHeroDefine`).active = false
+            let heroRender = this.node.getChildByName(`heroRender`)
+            heroRender.active = true
+            this.myHeroData = DataManager.GameData.Cards[data.formation.a]
+            heroRender.getComponent(battleHeroRender).init(DataManager.GameData.Cards[data.formation.a])
+        }
     }
 
     S2CMineDefFormationSave(data) {
@@ -156,6 +164,8 @@ export default class NewClass extends cc.Component {
             this.titleDisplay.string = '兵力撤回主城'
         }
         this.tipDisplay.string = ``
+
+        this.myContect.removeAllChildren()
 
         MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx)
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail.bind(this))
