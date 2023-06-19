@@ -124,11 +124,10 @@ export default class NewClass extends cc.Component {
     onHarvestHandler() {
         console.log(`---------收获----------`)
         MyProtocols.send_C2SMineGetAward(DataManager._loginSocket, this._data.page, this._data.idx, this._data.country)
-
     }
 
     onClose() {
-
+        NetEventDispatcher.removeListener(NetEvent.S2CMineGetAward, this.S2CMineGetAward.bind(this))
     }
 
     // update (dt) {}

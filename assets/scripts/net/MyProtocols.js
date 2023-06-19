@@ -1935,9 +1935,13 @@ var MyProtocols = {
 	},
 
 	/**矿场奖励 */
-	send_C2SMineGetAward: function (senderSocket) {
+	send_C2SMineGetAward: function (senderSocket,page,idx,country) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3109);
+		myEncoder.writeInt(page);
+		myEncoder.writeInt(idx);
+		myEncoder.writeInt(country);
+
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
