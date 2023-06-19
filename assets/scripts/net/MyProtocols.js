@@ -1568,7 +1568,47 @@ var MyProtocols = {
 				retObj.soliderUse[i].count = myDecoder.readInt();
 			}
 		}
+        let Att_base_info_exist = myDecoder.readBool();
+		if (Att_base_info_exist == true) {
+			retObj.att_base_info = {};
+			retObj.att_base_info.id = myDecoder.readInt();
+			retObj.att_base_info.nickname = myDecoder.readString();
+			retObj.att_base_info.level = myDecoder.readInt();
+			retObj.att_base_info.icon = myDecoder.readInt();
+			retObj.att_base_info.head_frame_id = myDecoder.readInt();
+			retObj.att_base_info.fight = myDecoder.readInt();
+			retObj.att_base_info.cd_time = myDecoder.readInt();
+		}
+		let att_formation_exist = myDecoder.readBool();
+		if (att_formation_exist == true) {
+			retObj.att_formation = {};
+			retObj.att_formation.fid = myDecoder.readInt();
+			retObj.att_formation.formationId = myDecoder.readInt();
+			retObj.att_formation.forward = myDecoder.readInt();
+			retObj.att_formation.flip = myDecoder.readInt();
+			retObj.att_formation.a = myDecoder.readInt();
+			retObj.att_formation.b = myDecoder.readInt();
+			retObj.att_formation.c = myDecoder.readInt();
+			// retObj.formation.d = myDecoder.readInt();
+			// retObj.formation.e = myDecoder.readInt();
+			// retObj.formation.f = myDecoder.readInt();
+			// retObj.formation.g = myDecoder.readInt();
+			// retObj.formation.h = myDecoder.readInt();
+			// retObj.formation.i = myDecoder.readInt();
+			// retObj.formation.j = myDecoder.readInt();
+		}
 
+		/**已经在矿里的兵 */
+		retObj.att_soliderUsed = []
+		let att_bing_size = myDecoder.readInt();
+		if (att_bing_size > 0) {
+			for (var i = 0; i < att_bing_size; i++) {
+
+				retObj.att_soliderUsed[i] = {};
+				retObj.att_soliderUsed[i].arm = myDecoder.readInt();
+				retObj.att_soliderUsed[i].count = myDecoder.readInt();
+			}
+		}
 		retObj.cards = [];
 		let cards_size = myDecoder.readInt();
 		if (cards_size > 0) {

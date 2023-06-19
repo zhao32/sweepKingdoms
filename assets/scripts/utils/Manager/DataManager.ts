@@ -220,25 +220,25 @@ export default class DataManager {
             name: "",
         },
         1: {
-            name: "魏国矿场",
+            name: "魏国矿石",
         },
         2: {
-            name: "燕国矿场",
+            name: "燕国矿石",
         },
         3: {
-            name: "秦国矿场",
+            name: "秦国矿石",
         },
         4: {
-            name: "赵国矿场",
+            name: "赵国矿石",
         },
         5: {
-            name: "齐国矿场",
+            name: "齐国矿石",
         },
         6: {
-            name: "韩国矿场",
+            name: "韩国矿石",
         },
         7: {
-            name: "楚国矿场",
+            name: "楚国矿石",
         },
         8: {
             name: "农田",

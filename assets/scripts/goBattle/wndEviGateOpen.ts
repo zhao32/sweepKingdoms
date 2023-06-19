@@ -39,12 +39,12 @@ export default class NewClass extends cc.Component {
 
     init(data) {
         this._data = data
-        NetEventDispatcher.addListener(NetEvent.S2CMineEviDetail, this.S2CMineEviDetail.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail.bind(this))
 
 
     }
 
-    S2CMineEviDetail(data) {
+    S2CMineEnemyDetail(data) {
         console.log('恶魔之门阵容返回')
         console.log(JSON.stringify(data))
 
@@ -76,7 +76,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CMineEviDetail, this.S2CMineEviDetail.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail.bind(this))
 
     }
 

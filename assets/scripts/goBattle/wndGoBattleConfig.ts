@@ -132,8 +132,6 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(this.myHeroData)
     }
 
-
-
     init(enemyData, filedData) {
         console.log('filedData:' + JSON.stringify(filedData))
         this.enemyData = enemyData
@@ -159,7 +157,6 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(DataManager.cardsList[0])
             this.myHeroData = DataManager.cardsList[0]
         }
-
 
         this.initEnemyData(enemyData.cardId, enemyData.soliders)
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail.bind(this))

@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "c56ed60c-bd06-4835-97b6-7e840ed28185",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 91,
+  "height": 149,
+  "platformSettings": {},
+  "subMetas": {
+    "齐国矿石": {
+      "ver": "1.0.6",
+      "uuid": "a63122f7-93cb-4067-8f2a-54765f163563",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "c56ed60c-bd06-4835-97b6-7e840ed28185",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 91,
+      "height": 149,
+      "rawWidth": 91,
+      "rawHeight": 149,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
