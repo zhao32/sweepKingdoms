@@ -97,8 +97,6 @@ export default class NewClass extends cc.Component {
         MyProtocols.send_C2SMineEviDetail(DataManager._loginSocket, data.page, data.idx, data.country)
         NetEventDispatcher.addListener(NetEvent.S2CMineEviDetail, this.S2CMineEviDetail.bind(this))
 
-
-
         // NetEventDispatcher.addListener(NetEvent.S2CRankPlayerDetail, this.S2CRankPlayerDetail.bind(this))
         // NetEventDispatcher.addListener(NetEvent.S2CPkEnemyFormation, this.S2CPkEnemyFormation.bind(this))
         // MyProtocols.send_C2SRankPlayerDetail(DataManager._loginSocket, eData.rank_type, eData.playerId)

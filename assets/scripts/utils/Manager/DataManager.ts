@@ -140,7 +140,11 @@ export default class DataManager {
         /**技能 */
         packSkills: {},
         /**将魂 */
-        packGeneralPice: {}
+        packGeneralPice: {},
+        /**符石 */
+        Runes:{
+
+        }
 
     }
     /**我的将表 */
@@ -262,7 +266,7 @@ export default class DataManager {
 
     curRuneList = []
 
-    wndHotelDetail:wndHotelDetail
+    static wndHotelDetail:wndHotelDetail
 
 
 

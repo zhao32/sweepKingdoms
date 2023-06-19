@@ -70,7 +70,7 @@ export default class NewClass extends cc.Component {
                 console.log(`获取符石列表`)
                 console.log('RuneList:' + JSON.stringify(DataManager.instance.curRuneList))
 
-                this.node.getChildByName('runePutPanel').getComponent(runePutPanel).open()
+                DataManager.wndHotelDetail.node.getChildByName('runePutPanel').getComponent(runePutPanel).open()
             }
 
         }, this)
@@ -82,7 +82,7 @@ export default class NewClass extends cc.Component {
             console.log(`请求开启石槽：` + this._heroid + '   ' + this._idx)
             MyProtocols.send_C2SOpenRuneSlot(DataManager._loginSocket, this._heroid, this._idx)
         } else if (this._state == 1) {
-           
+
         }
 
     }

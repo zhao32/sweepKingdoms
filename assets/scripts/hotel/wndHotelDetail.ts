@@ -92,6 +92,8 @@ export default class NewClass extends cc.Component {
     }
     /**data 服务器获取的将领数据 */
     init(data) {
+        DataManager.wndHotelDetail = this
+        this.node.getChildByName('runePutPanel').active = false
         packManager.getInstance().reflishBag()
         NetEventDispatcher.addListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock.bind(this))
 
