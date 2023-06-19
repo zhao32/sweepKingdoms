@@ -1510,7 +1510,6 @@ var MyProtocols = {
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
 	},
-
 	get_3104: function (myDecoder) {
 		var retObj = {};
 		retObj.level_index = myDecoder.readInt();
@@ -1568,6 +1567,38 @@ var MyProtocols = {
 				retObj.soliderUse[i].count = myDecoder.readInt();
 			}
 		}
+		retObj.cards = [];
+		let cards_size = myDecoder.readInt();
+		if (cards_size > 0) {
+			for (var i = 0; i < cards_size; i++) {
+				retObj.cards[i] = {};
+				retObj.cards[i].template_id = myDecoder.readInt();
+				retObj.cards[i].level = myDecoder.readInt();
+				retObj.cards[i].exp = myDecoder.readInt();
+				retObj.cards[i].grade = myDecoder.readInt();
+				retObj.cards[i].unitLevel = myDecoder.readInt();
+				retObj.cards[i].unitGrade = myDecoder.readInt();
+				retObj.cards[i].unit_type = myDecoder.readInt();
+
+				retObj.cards[i].maxhp = myDecoder.readInt();
+				retObj.cards[i].atk = myDecoder.readInt();
+				retObj.cards[i].def = myDecoder.readInt();
+				retObj.cards[i].unitMaxhp = myDecoder.readInt();
+				retObj.cards[i].unitAtk = myDecoder.readInt();
+				retObj.cards[i].unitDef = myDecoder.readInt();
+				retObj.cards[i].unitNum = myDecoder.readInt();
+				retObj.cards[i].fight = myDecoder.readInt();
+				retObj.cards[i].extra_props = [];
+				let cardsi_extra_props_size = myDecoder.readInt();
+				if (cardsi_extra_props_size > 0) {
+					for (var extra_props_idx = 0; extra_props_idx < cardsi_extra_props_size; extra_props_idx++) {
+						retObj.cards[i].extra_props[extra_props_idx] = myDecoder.readInt();
+					}
+				}
+			}
+
+
+		}
         let Att_base_info_exist = myDecoder.readBool();
 		if (Att_base_info_exist == true) {
 			retObj.att_base_info = {};
@@ -1609,32 +1640,31 @@ var MyProtocols = {
 				retObj.att_soliderUsed[i].count = myDecoder.readInt();
 			}
 		}
-		retObj.cards = [];
-		let cards_size = myDecoder.readInt();
-		if (cards_size > 0) {
+		retObj.att_cards_size = [];
+		let att_cards_size = myDecoder.readInt();
+		if (att_cards_size > 0) {
 			for (var i = 0; i < cards_size; i++) {
-				retObj.cards[i] = {};
-				retObj.cards[i].template_id = myDecoder.readInt();
-				retObj.cards[i].level = myDecoder.readInt();
-				retObj.cards[i].exp = myDecoder.readInt();
-				retObj.cards[i].grade = myDecoder.readInt();
-				retObj.cards[i].unitLevel = myDecoder.readInt();
-				retObj.cards[i].unitGrade = myDecoder.readInt();
-				retObj.cards[i].unit_type = myDecoder.readInt();
-
-				retObj.cards[i].maxhp = myDecoder.readInt();
-				retObj.cards[i].atk = myDecoder.readInt();
-				retObj.cards[i].def = myDecoder.readInt();
-				retObj.cards[i].unitMaxhp = myDecoder.readInt();
-				retObj.cards[i].unitAtk = myDecoder.readInt();
-				retObj.cards[i].unitDef = myDecoder.readInt();
-				retObj.cards[i].unitNum = myDecoder.readInt();
-				retObj.cards[i].fight = myDecoder.readInt();
-				retObj.cards[i].extra_props = [];
-				let cardsi_extra_props_size = myDecoder.readInt();
-				if (cardsi_extra_props_size > 0) {
-					for (var extra_props_idx = 0; extra_props_idx < cardsi_extra_props_size; extra_props_idx++) {
-						retObj.cards[i].extra_props[extra_props_idx] = myDecoder.readInt();
+				retObj.att_cards[i] = {};
+				retObj.att_cards[i].template_id = myDecoder.readInt();
+				retObj.att_cards[i].level = myDecoder.readInt();
+				retObj.att_cards[i].exp = myDecoder.readInt();
+				retObj.att_cards[i].grade = myDecoder.readInt();
+				retObj.att_cards[i].unitLevel = myDecoder.readInt();
+				retObj.att_cards[i].unitGrade = myDecoder.readInt();
+				retObj.att_cards[i].unit_type = myDecoder.readInt();
+				retObj.att_cards[i].maxhp = myDecoder.readInt();
+				retObj.att_cards[i].atk = myDecoder.readInt();
+				retObj.att_cards[i].def = myDecoder.readInt();
+				retObj.att_cards[i].unitMaxhp = myDecoder.readInt();
+				retObj.att_cards[i].unitAtk = myDecoder.readInt();
+				retObj.att_cards[i].unitDef = myDecoder.readInt();
+				retObj.att_cards[i].unitNum = myDecoder.readInt();
+				retObj.att_cards[i].fight = myDecoder.readInt();
+				retObj.att_cards[i].extra_props = [];
+				let att_cardsi_extra_props_size = myDecoder.readInt();
+				if (att_cardsi_extra_props_size > 0) {
+					for (var att_extra_props_idx = 0; att_extra_props_idx < att_cardsi_extra_props_size; att_extra_props_idx++) {
+						retObj.att_cards[i].extra_props[att_extra_props_idx] = myDecoder.readInt();
 					}
 				}
 			}

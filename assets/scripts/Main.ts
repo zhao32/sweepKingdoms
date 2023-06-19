@@ -195,7 +195,7 @@ export default class NewClass extends cc.Component {
     start() {
         DataManager.Main = this
         cc.macro.ENABLE_MULTI_TOUCH = false
-        let socketUrl = "ws://8.218.9.194:7550/ws"
+        let socketUrl = "ws://192.168.1.50:7550/ws"
         DataManager._loginSocket = new LejiSocket(socketUrl);
         ViewManager.instance.showView(EnumManager.viewPath.PAGE_LOGIN)
 

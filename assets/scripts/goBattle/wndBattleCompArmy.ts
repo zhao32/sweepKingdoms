@@ -5,12 +5,12 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import compHeroRender from "../battleFiled/compHeroRender";
+import compSoliderRender from "../battleFiled/compSoliderRender";
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
-import compHeroRender from "./compHeroRender";
-import compSoliderRender from "./compSoliderRender";
 
 //@ts-ignore
 var MyProtocols = require("MyProtocols");
@@ -24,10 +24,10 @@ const { ccclass, property } = cc._decorator;
 export default class NewClass extends cc.Component {
 
     @property(cc.Node)
-    myContect: cc.Node = null;
+    attContect: cc.Node = null;
 
     @property(cc.Node)
-    otherContect: cc.Node = null;
+    definContect: cc.Node = null;
 
     @property(cc.Prefab)
     armPfb: cc.Prefab = null;
@@ -36,16 +36,22 @@ export default class NewClass extends cc.Component {
     heroPfb: cc.Prefab = null;
 
     @property(cc.Label)
-    myNameLabel: cc.Label = null;
+    attNameLabel: cc.Label = null;
 
     @property(cc.Label)
-    otherNameLabel: cc.Label = null;
+    defineNameLabel: cc.Label = null;
 
     @property(cc.Label)
-    myRankLabel: cc.Label = null;
+    attFightLabel: cc.Label = null;
 
     @property(cc.Label)
-    otherRankLabel: cc.Label = null;
+    defineFightLabel: cc.Label = null;
+
+    @property(cc.Label)
+    attSupportLabel: cc.Label = null;
+
+    @property(cc.Label)
+    defineSupportLabel: cc.Label = null;
 
 
     myData
@@ -61,17 +67,17 @@ export default class NewClass extends cc.Component {
     // onLoad () {}
 
     start() {
-        this.myContect.removeAllChildren()
-        for (let i = 0; i < 10; i++) {
-            let arm = cc.instantiate(this.armPfb)
-            arm.parent = this.myContect
-        }
+        // this.myContect.removeAllChildren()
+        // for (let i = 0; i < 10; i++) {
+        //     let arm = cc.instantiate(this.armPfb)
+        //     arm.parent = this.myContect
+        // }
 
-        this.otherContect.removeAllChildren()
-        for (let i = 0; i < 10; i++) {
-            let arm = cc.instantiate(this.armPfb)
-            arm.parent = this.otherContect
-        }
+        // this.otherContect.removeAllChildren()
+        // for (let i = 0; i < 10; i++) {
+        //     let arm = cc.instantiate(this.armPfb)
+        //     arm.parent = this.otherContect
+        // }
 
 
 
@@ -83,8 +89,103 @@ export default class NewClass extends cc.Component {
 
     }
 
-    S2CMineEnemyDetail(retObj){
+    definSoliders = []
+
+    attSoliders = []
+
+    S2CMineEnemyDetail(retObj) {
+
+        let attSoliderNum = 0
+        let definSoliderNum = 0
+
+
+        if (retObj.base_info) {
+            this.defineNameLabel.string = `攻方${retObj.base_info.nickname}`
+            this.defineFightLabel.string = `主战：${retObj.base_info.fight}`
+
+        }
+
+        if (retObj.att_base_info) {
+            this.defineNameLabel.string = `守方${retObj.att_base_info.nickname}`
+            this.defineFightLabel.string = `主战：${retObj.base_info.fight}`
+
+        }
+
         console.log(`请求恶魔之门阵容返回`)
+        console.log(JSON.stringify(retObj))
+        debugger;
+        if (retObj.formation) {
+            if (retObj.formation.a != 0) {
+                let heroItem = cc.instantiate(this.heroPfb)
+                heroItem.parent = this.definContect
+                let cardData
+                for (let i = 0; i < DataManager.cardsList.length; i++) {
+                    if (DataManager.cardsList[i].template_id == retObj.formation.a) {
+                        cardData = DataManager.cardsList[i]
+                    }
+
+                }
+                heroItem.getComponent(compHeroRender).init(cardData)
+            }
+        }
+
+        if (retObj.soliderUsed) {
+            for (let i = 0; i < retObj.soliderUse.length; i++) {
+                if (retObj.soliderUse[i].arm != 0) {
+                    this.definSoliders.push(retObj.soliderUse[i])
+                }
+            }
+        }
+
+
+        if (retObj.att_formation) {
+            if (retObj.att_formation.a != 0) {
+                let heroItem = cc.instantiate(this.heroPfb)
+                heroItem.parent = this.attContect
+                let cardData
+                for (let i = 0; i < DataManager.cardsList.length; i++) {
+                    if (DataManager.cardsList[i].template_id == retObj.formation.a) {
+                        cardData = DataManager.cardsList[i]
+                    }
+
+                }
+                heroItem.getComponent(compHeroRender).init(cardData)
+            }
+        }
+
+        if (retObj.att_soliderUsed) {
+            for (let i = 0; i < retObj.att_soliderUsed.length; i++) {
+                if (retObj.att_soliderUsed[i].arm != 0) {
+                    this.attSoliders.push(retObj.att_soliderUsed[i])
+                }
+            }
+        }
+
+        for (let i = 0; i < this.attSoliders.length; i++) {
+            let soliderItem = cc.instantiate(this.armPfb)
+            soliderItem.parent = this.attContect
+            soliderItem.getComponent(compSoliderRender).init(this.attSoliders[i])
+            attSoliderNum+=this.attSoliders[i].count
+        }
+
+        for (let i = 0; i < this.definSoliders.length; i++) {
+            let soliderItem = cc.instantiate(this.armPfb)
+            soliderItem.parent = this.definContect
+            soliderItem.getComponent(compSoliderRender).init(this.definSoliders[i])
+            definSoliderNum+=this.definSoliders[i].count
+
+        }
+
+        if (retObj.base_info) {
+            definSoliderNum -= retObj.base_info.fight
+        }
+        if (retObj.att_base_info) {
+            attSoliderNum -= retObj.att_base_info.fight
+        }
+        this.defineFightLabel.string = `援军：${definSoliderNum}`
+        this.attSupportLabel.string = `援军：${attSoliderNum}`
+
+
     }
 
     init(data) {
@@ -93,8 +194,8 @@ export default class NewClass extends cc.Component {
 
         // this.myData = myData
         // this.eData = eData
-        console.log("data:"+JSON.stringify(data))
-        MyProtocols.send_C2SMineEviDetail(DataManager._loginSocket, data.page, data.idx, data.country)
+        console.log("data:" + JSON.stringify(data))
+        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx, data.country)
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail.bind(this))
 
         // NetEventDispatcher.addListener(NetEvent.S2CRankPlayerDetail, this.S2CRankPlayerDetail.bind(this))
@@ -225,7 +326,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CRankPlayerDetail, this.S2CRankPlayerDetail.bind(this))
+        // NetEventDispatcher.removeListener(NetEvent.S2CRankPlayerDetail, this.S2CRankPlayerDetail.bind(this))
         NetEventDispatcher.removeListener(NetEvent.S2CPkEnemyFormation, this.S2CPkEnemyFormation.bind(this))
     }
 

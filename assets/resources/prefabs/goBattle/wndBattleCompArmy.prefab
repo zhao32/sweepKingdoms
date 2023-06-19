@@ -3015,10 +3015,10 @@
       "__id__": 1
     },
     "_enabled": true,
-    "myContect": {
+    "attContect": {
       "__id__": 50
     },
-    "otherContect": {
+    "definContect": {
       "__id__": 60
     },
     "armPfb": {
@@ -3027,17 +3027,23 @@
     "heroPfb": {
       "__uuid__": "59d60cb0-b6ac-4ba6-8e1c-ea8ea65e26d0"
     },
-    "myNameLabel": {
+    "attNameLabel": {
       "__id__": 22
     },
-    "otherNameLabel": {
+    "defineNameLabel": {
       "__id__": 33
     },
-    "myRankLabel": {
+    "attFightLabel": {
       "__id__": 25
     },
-    "otherRankLabel": {
+    "defineFightLabel": {
       "__id__": 36
+    },
+    "attSupportLabel": {
+      "__id__": 28
+    },
+    "defineSupportLabel": {
+      "__id__": 39
     },
     "_id": ""
   },

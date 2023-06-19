@@ -5,10 +5,17 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import ResManager from "../utils/Manager/ResManager";
+import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -19,18 +26,32 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     runePfb: cc.Prefab = null;
 
-
     @property(cc.Label)
     noteDisplay: cc.Label = null;
 
+    _cardId: number
 
+    _idx: number
 
+    _selectRuneId: number
+
+    start() {
+        NetEventDispatcher.addListener(NetEvent.S2CRunePutup, this.C2SRunePutup.bind(this))
+    }
+
+    C2SRunePutup(data) {
+        console.log(`石符安装返回`)
+        console.log(JSON.stringify(data))
+
+    }
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
     // {"uuid":"","template_id":5001,"enhance_level":0,"stars":0,"num":452,"bagId":4,"hpEx":0,"atkEx":0,"defEx":0,"attrEx":[],"unitAttr":{"id":0,"num":0},"exp":0}
-    open() {
+    open(cardId, idx) {
+        this._cardId = cardId
+        this._idx = idx
         this.node.active = true
         // this.selectName = 0
         this.noteDisplay.string = ''
@@ -60,7 +81,7 @@ export default class NewClass extends cc.Component {
                 item.getChildByName('count').color = cc.Color.YELLOW
                 item.getChildByName('level').color = cc.Color.YELLOW
                 this.noteDisplay.string = DataManager.GameData.Runes[DataManager.instance.curRuneList[i].template_id].name
-
+                this._selectRuneId = DataManager.instance.curRuneList[i].template_id
             })
         }
     }
@@ -73,12 +94,13 @@ export default class NewClass extends cc.Component {
         this.node.active = false
     }
 
+    // (senderSocket, p_card_id, p_pos_index, p_rune_id)
     onChange() {
-        // if (!this.selectName) {
-        //     ViewManager.instance.showToast(`请选择头像`)
-        //     return
-        // }
-        // MyProtocols.send_C2SChangeIcon(DataManager._loginSocket, this.selectName)
+        if (!this._selectRuneId) {
+            ViewManager.instance.showToast(`请选择要安装的石符`)
+            return
+        }
+        MyProtocols.send_C2SRunePutup(DataManager._loginSocket, this._cardId, this._idx, this._selectRuneId)
     }
 
     // update (dt) {}
