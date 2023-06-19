@@ -129,6 +129,8 @@ export default class NewClass extends cc.Component {
             }
         }
 
+        if (this.eviType == 0 || this.eviType == 1) return
+
         if (data.formation.a == 0) {
             this.node.getChildByName(`noHeroDefine`).active = true
             this.node.getChildByName(`heroRender`).active = false
@@ -165,6 +167,21 @@ export default class NewClass extends cc.Component {
         } else if (type == 'out') {
             //撤回主城
             this.titleDisplay.string = '兵力撤回主城'
+        }
+
+        if (eviType == 0) {
+            this.titleDisplay.string = '协助防守'
+            this.node.getChildByName('heroRender').active = false
+            this.node.getChildByName(`noHeroDefine`).active = false
+            this.titleDisplay.node.parent.y = 230
+        } else if (eviType == 1) {
+            this.titleDisplay.string = '协助进攻'
+            this.node.getChildByName('heroRender').active = false
+            this.node.getChildByName(`noHeroDefine`).active = false
+            this.titleDisplay.node.parent.y = 230
+        }else{
+            this.titleDisplay.node.parent.y = 330
+
         }
         this.tipDisplay.string = ``
         this.myContect.removeAllChildren()
