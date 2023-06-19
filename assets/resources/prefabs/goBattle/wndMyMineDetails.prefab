@@ -2350,7 +2350,7 @@
     },
     "component": "",
     "_componentId": "5a3627MwRVO3ZSLSXUgVLru",
-    "handler": "onRecruit",
+    "handler": "onHarvestHandler",
     "customEventData": ""
   },
   {
@@ -3481,6 +3481,9 @@
     },
     "troopsLabel": {
       "__id__": 34
+    },
+    "awardLabel": {
+      "__id__": 43
     },
     "icon": {
       "__id__": 14

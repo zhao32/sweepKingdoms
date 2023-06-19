@@ -2892,6 +2892,9 @@
     "icon": {
       "__id__": 14
     },
+    "awardLabel": {
+      "__id__": 76
+    },
     "text": "hello",
     "_id": ""
   },

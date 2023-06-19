@@ -37,6 +37,10 @@ export default class NewClass extends cc.Component {
     @property(cc.Node)
     icon: cc.Node = null;
 
+    @property(cc.Label)
+    awardLabel: cc.Label = null;
+
+
     @property
     text: string = 'hello';
 
@@ -93,6 +97,7 @@ export default class NewClass extends cc.Component {
         this._data = data
         this.nameLabel.string = data.hold_player.lv + '级' + DataManager.mineData[data.hold_player.group].name
         this.lordLabel.string = `领主：${data.hold_player.nickname}`
+        this.awardLabel.string = `已产出：${data.hold_player.award}`
 
         // console.log(`DataManager.pageGoBattle.myCityData.page:`+JSON.stringify())
 
