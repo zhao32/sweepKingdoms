@@ -179,7 +179,7 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName('heroRender').active = false
             this.node.getChildByName(`noHeroDefine`).active = false
             this.titleDisplay.node.parent.y = 230
-        }else{
+        } else {
             this.titleDisplay.node.parent.y = 330
 
         }
@@ -276,13 +276,13 @@ export default class NewClass extends cc.Component {
         console.log(`country:` + this.data.country)
         console.log(JSON.stringify(this.data))
         if (this._type == 'in') {
-            MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.data.page, this.data.idx, data, this.data.country, 1)
-        } else {
             if (this.eviType != undefined) {
-                MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.data.page, this.data.idx, data, this.data.country, 0, this.eviType)
+                MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.data.page, this.data.idx, data, this.data.country, 1, this.eviType)
             } else {
-                MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.data.page, this.data.idx, data, this.data.country, 0)
+                MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.data.page, this.data.idx, data, this.data.country, 1)
             }
+        } else {
+            MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.data.page, this.data.idx, data, this.data.country, 0)
         }
     }
 

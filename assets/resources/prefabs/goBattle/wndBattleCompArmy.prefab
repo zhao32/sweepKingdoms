@@ -906,7 +906,7 @@
       "__id__": 20
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 25
@@ -977,8 +977,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "排名：10",
-    "_N$string": "排名：10",
+    "_string": "主战：10",
+    "_N$string": "主战：10",
     "_fontSize": 32,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -1014,7 +1014,7 @@
       "__id__": 20
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 28
@@ -1033,7 +1033,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 147.59,
+      "width": 113.8,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1085,8 +1085,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "家族：asd",
-    "_N$string": "家族：asd",
+    "_string": "援军：0",
+    "_N$string": "援军：0",
     "_fontSize": 32,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -1311,7 +1311,7 @@
       "__id__": 31
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 36
@@ -1382,8 +1382,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "排名：10",
-    "_N$string": "排名：10",
+    "_string": "主战：10",
+    "_N$string": "主战：10",
     "_fontSize": 32,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -1419,7 +1419,7 @@
       "__id__": 31
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 39
@@ -1438,7 +1438,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 147.59,
+      "width": 113.8,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1490,8 +1490,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "家族：asd",
-    "_N$string": "家族：asd",
+    "_string": "援军：0",
+    "_N$string": "援军：0",
     "_fontSize": 32,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -2615,8 +2615,8 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "64ee9qvJKJGqbKJ+n4bpjVU",
-    "handler": "onClose",
+    "_componentId": "fba67nEKWlLsoRKPLCNASwM",
+    "handler": "onCloseHanlder",
     "customEventData": ""
   },
   {
@@ -3008,7 +3008,7 @@
     "_id": ""
   },
   {
-    "__type__": "64ee9qvJKJGqbKJ+n4bpjVU",
+    "__type__": "fba67nEKWlLsoRKPLCNASwM",
     "_name": "",
     "_objFlags": 0,
     "node": {

@@ -136,7 +136,8 @@ export default class EnumManager {
 
         WND_GOBATTLE_EVIGATEOPEN: 'prefabs/goBattle/wndEviGateOpen',
 
-
+        /**队伍比较 */
+        WND_GOBATTLE_COMPYARMY: 'prefabs/goBattle/wndBattleCompArmy',
 
 
         /**日志 */
