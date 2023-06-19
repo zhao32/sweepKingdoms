@@ -100,14 +100,14 @@ export default class NewClass extends cc.Component {
 
 
         if (retObj.base_info) {
-            this.defineNameLabel.string = `攻方${retObj.base_info.nickname}`
+            this.defineNameLabel.string = retObj.base_info.nickname ? `守方:${retObj.base_info.nickname}` : `守方:无`
             this.defineFightLabel.string = `主战：${retObj.base_info.fight}`
 
         }
 
         if (retObj.att_base_info) {
-            this.defineNameLabel.string = `守方${retObj.att_base_info.nickname}`
-            this.defineFightLabel.string = `主战：${retObj.base_info.fight}`
+            this.attNameLabel.string = retObj.att_base_info.nickname ? `攻方:${retObj.att_base_info.nickname}` : `攻方:无`
+            this.attFightLabel.string = `主战：${retObj.att_base_info.fight}`
 
         }
 
@@ -119,13 +119,13 @@ export default class NewClass extends cc.Component {
                 let heroItem = cc.instantiate(this.heroPfb)
                 heroItem.parent = this.definContect
                 let cardData
-                for (let i = 0; i < DataManager.cardsList.length; i++) {
-                    if (DataManager.cardsList[i].template_id == retObj.formation.a) {
-                        cardData = DataManager.cardsList[i]
-                    }
+                // for (let i = 0; i < DataManager.cardsList.length; i++) {
+                //     if (DataManager.cardsList[i].template_id == retObj.formation.a) {
+                //         cardData = DataManager.cardsList[i]
+                //     }
 
-                }
-                heroItem.getComponent(compHeroRender).init(cardData)
+                // }
+                heroItem.getComponent(compHeroRender).init(retObj.cards[0])
             }
         }
 
@@ -142,14 +142,14 @@ export default class NewClass extends cc.Component {
             if (retObj.att_formation.a != 0) {
                 let heroItem = cc.instantiate(this.heroPfb)
                 heroItem.parent = this.attContect
-                let cardData
-                for (let i = 0; i < DataManager.cardsList.length; i++) {
-                    if (DataManager.cardsList[i].template_id == retObj.formation.a) {
-                        cardData = DataManager.cardsList[i]
-                    }
+                // let cardData
+                // for (let i = 0; i < DataManager.cardsList.length; i++) {
+                //     if (DataManager.cardsList[i].template_id == retObj.formation.a) {
+                //         cardData = DataManager.cardsList[i]
+                //     }
 
-                }
-                heroItem.getComponent(compHeroRender).init(cardData)
+                // }
+                heroItem.getComponent(compHeroRender).init(retObj.att_cards[0])
             }
         }
 
@@ -165,14 +165,14 @@ export default class NewClass extends cc.Component {
             let soliderItem = cc.instantiate(this.armPfb)
             soliderItem.parent = this.attContect
             soliderItem.getComponent(compSoliderRender).init(this.attSoliders[i])
-            attSoliderNum+=this.attSoliders[i].count
+            attSoliderNum += this.attSoliders[i].count
         }
 
         for (let i = 0; i < this.definSoliders.length; i++) {
             let soliderItem = cc.instantiate(this.armPfb)
             soliderItem.parent = this.definContect
             soliderItem.getComponent(compSoliderRender).init(this.definSoliders[i])
-            definSoliderNum+=this.definSoliders[i].count
+            definSoliderNum += this.definSoliders[i].count
 
         }
 
@@ -182,7 +182,7 @@ export default class NewClass extends cc.Component {
         if (retObj.att_base_info) {
             attSoliderNum -= retObj.att_base_info.fight
         }
-        this.defineFightLabel.string = `援军：${definSoliderNum}`
+        this.defineSupportLabel.string = `援军：${definSoliderNum}`
         this.attSupportLabel.string = `援军：${attSoliderNum}`
 
 

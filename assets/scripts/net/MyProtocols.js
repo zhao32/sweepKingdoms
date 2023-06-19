@@ -1640,7 +1640,7 @@ var MyProtocols = {
 				retObj.att_soliderUsed[i].count = myDecoder.readInt();
 			}
 		}
-		retObj.att_cards_size = [];
+		retObj.att_cards = [];
 		let att_cards_size = myDecoder.readInt();
 		if (att_cards_size > 0) {
 			for (var i = 0; i < cards_size; i++) {
