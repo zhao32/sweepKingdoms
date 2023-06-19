@@ -123,7 +123,7 @@ export default class EnumManager {
         /**战斗配置 */
         WND_GOBATTLE_CONFIG: 'prefabs/goBattle/wndGoBattleConfig',
 
-        /**战斗页面 */
+        /**矿场 战斗页面 */
         WND_GOBATTLE_BATTLE: 'prefabs/goBattle/wndGoBattle',
 
         /**兵力驻扎 */

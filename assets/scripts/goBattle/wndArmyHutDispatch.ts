@@ -68,7 +68,7 @@ export default class NewClass extends cc.Component {
 
     }
 
-    eviType:number
+    eviType: number
 
 
     S2CMineEnemyDetail(data) {
@@ -261,9 +261,9 @@ export default class NewClass extends cc.Component {
         if (this._type == 'in') {
             MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.data.page, this.data.idx, data, this.data.country, 1)
         } else {
-            if(this.eviType != undefined){
-                MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.data.page, this.data.idx, data, this.data.country, 0,this.eviType)
-            }else{
+            if (this.eviType != undefined) {
+                MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.data.page, this.data.idx, data, this.data.country, 0, this.eviType)
+            } else {
                 MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.data.page, this.data.idx, data, this.data.country, 0)
             }
         }

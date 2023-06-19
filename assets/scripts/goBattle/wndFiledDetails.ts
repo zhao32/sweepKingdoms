@@ -63,9 +63,29 @@ export default class NewClass extends cc.Component {
     // 	}
     // }
 
-    S2CMineEnemyDetail(data) {
-        console.log(`准备攻打敌方 矿场`)
-        console.log(JSON.stringify(data))
+    S2CMineEnemyDetail(retObj) {
+        console.log(`---------准备攻打敌方 矿场-----------`)
+        console.log(JSON.stringify(retObj))
+        // {"level_index":0,"point_index":0,"base_info":{"id":0,"nickname":"","level":0,"icon":0,"head_frame_id":1,"fight":0,"cd_time":0},"formation":{"fid":0,"formationId":0,"forward":0,"flip":0,"a":0,"b":0,"c":0},"soliderUsed":[],"soliderUse":[{"arm":0,"count":1000},{"arm":1,"count":1000},{"arm":2,"count":1000}],"cards":[],"exclude_cards":[],"rand_key":2923001863557120}
+        let soliderData = []
+        for (let i = 0; i < retObj.soliderUse.length; i++) {
+            if (retObj.soliderUse[i].arm != 0) {
+                soliderData.push({
+                    arm: retObj.soliderUse[i].arm,
+                    count: retObj.soliderUse[i].count,
+                    fight: 0,
+                    defense: 0
+                })
+            }
+        }
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        let defineData =
+        {
+            cardId: retObj.formation.a,
+            soliders: soliderData
+        }
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data])
+
     }
 
     init(data) {
@@ -76,7 +96,6 @@ export default class NewClass extends cc.Component {
 
         // console.log(`DataManager.pageGoBattle.myCityData.page:`+JSON.stringify())
 
-        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx, data.country)
         // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, DataManager.pageGoBattle.myCityData.page, DataManager.pageGoBattle.myCityData.idx, DataManager.pageGoBattle.myCityData.country)
 
 
@@ -97,25 +116,11 @@ export default class NewClass extends cc.Component {
     }
 
     onCloseHandler() {
-        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
     }
 
     onBattleHandler() {
-        // MyProtocols.send_C2SMineBattleCalculate(DataManager._loginSocket, this._data.x, this._data.y, true, 10)
-        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
-        let defineData =
-        {
-            cardId: 0,
-            soliders: [
-                {
-                    arm: 1,
-                    count: 1000,
-                    fight: 0,
-                    defense: 0
-                }
-            ]
-        }
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data])
+        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.page, this._data.idx, this._data.country)
     }
 
     onClose() {

@@ -8,6 +8,7 @@
 import battleHeroRender from "../battle/battleHeroRender";
 import battleSoliderRender from "../battle/battleSoliderRender";
 import eSoliderRender from "../battle/eSoliderRender";
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
@@ -55,32 +56,113 @@ export default class NewClass extends cc.Component {
 
     enemyData: any
 
-    filedData:any
+    filedData: any
+
+    mySoliders = []
+
+    myCards = []
+
+
+
 
     start() {
 
     }
 
+    S2CMineEnemyDetail(retObj) {
+        console.log(`--------我的主城兵力-----------`)
+        console.log(JSON.stringify(retObj))
+        // {"level_index":0,"point_index":0,"base_info":{"id":0,"nickname":"","level":0,"icon":0,"head_frame_id":1,"fight":0,"cd_time":0},"formation":{"fid":0,"formationId":0,"forward":0,"flip":0,"a":0,"b":0,"c":0},"soliderUsed":[],"soliderUse":[{"arm":0,"count":1000},{"arm":1,"count":1000},{"arm":2,"count":1000}],"cards":[],"exclude_cards":[],"rand_key":2923001863557120}
+        // let soliderData = []
+        // for (let i = 0; i < retObj.soliderUse.length; i++) {
+        //     if (retObj.soliderUse[i].arm != 0) {
+        //         soliderData.push({
+        //             arm: retObj.soliderUse[i].arm,
+        //             count: retObj.soliderUse[i].count,
+        //             fight: 0,
+        //             defense: 0
+        //         })
+        //     }
+        // }
+        // ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        // let defineData =
+        // {
+        //     cardId: retObj.formation.a,
+        //     soliders: soliderData
+        // }
+        // ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data])
+        this.mySoliders = []
 
-    init(enemyData,filedData) {
-        console.log('filedData:'+JSON.stringify(filedData))
-        this.enemyData = enemyData
-        this.filedData = filedData
+        this.myCards = []
 
-        this.myContect.removeAllChildren()
-        this.onSelectSolider = true
-        for (let i = 0; i < DataManager.playData.military_data.length; i++) {
-            if (DataManager.playData.military_data[i] != 0) {
-                let solider = cc.instantiate(this.soliderPfb)
-                solider.x = 0
-                solider.parent = this.myContect
-                solider.getComponent(battleSoliderRender).init(i + 1, DataManager.playData.military_data[i])
+
+        for (let i = 0; i < retObj.soliderUse.length; i++) {
+            if (retObj.soliderUse[i].arm != 0) {
+                this.mySoliders.push(retObj.soliderUse[i])
             }
         }
 
-        this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(DataManager.cardsList[0])
-        this.myHeroData = DataManager.cardsList[0]
+        let workKeyList = []
+        for (let i = 0; i < retObj.exclude_cards.length; i++) {
+            workKeyList.push(retObj.exclude_cards[i].template_id)
+        }
+
+        for (let i = 0; i < retObj.cards.length; i++) {
+            workKeyList.push(retObj.cards[i].template_id)
+        }
+
+        for (let i = 0; i < DataManager.cardsList.length; i++) {
+            if (workKeyList.indexOf(DataManager.cardsList[i].template_id) == -1) {
+                this.myCards.push(DataManager.cardsList[i])
+            }
+        }
+
+        this.myHeroData = this.myCards[0]
+
+        this.myContect.removeAllChildren()
+        for (let i = 0; i < this.mySoliders.length; i++) {
+            if (this.mySoliders[i].arm != 0) {
+                let solider = cc.instantiate(this.soliderPfb)
+                solider.x = 0
+                solider.parent = this.myContect
+                solider.getComponent(battleSoliderRender).init(this.mySoliders[i].arm, this.mySoliders[i].count)
+            }
+        }
+
+        this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(this.myHeroData)
+    }
+
+
+
+    init(enemyData, filedData) {
+        console.log('filedData:' + JSON.stringify(filedData))
+        this.enemyData = enemyData
+        this.filedData = filedData
+
+        console.log(`DataManager.pageGoBattle.myCityData:` + JSON.stringify(DataManager.pageGoBattle.myCityData))
+        let cityData = DataManager.pageGoBattle.myCityData
+        this.onSelectSolider = true
+
+        if (DataManager.pageGoBattle.myCityData) {
+            MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, cityData.page, cityData.idx, cityData.country)
+        } else {
+            this.myContect.removeAllChildren()
+            for (let i = 0; i < DataManager.playData.military_data.length; i++) {
+                if (DataManager.playData.military_data[i] != 0) {
+                    let solider = cc.instantiate(this.soliderPfb)
+                    solider.x = 0
+                    solider.parent = this.myContect
+                    solider.getComponent(battleSoliderRender).init(i + 1, DataManager.playData.military_data[i])
+                }
+            }
+
+            this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(DataManager.cardsList[0])
+            this.myHeroData = DataManager.cardsList[0]
+        }
+
+
         this.initEnemyData(enemyData.cardId, enemyData.soliders)
+        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail.bind(this))
     }
 
     initEnemyData(cardId, soliders) {
@@ -110,14 +192,14 @@ export default class NewClass extends cc.Component {
     changeHero() {
         this.onSelectSolider = false
         this.myContect.removeAllChildren()
-        for (let i = 0; i < DataManager.cardsList.length; i++) {
+        for (let i = 0; i < this.myCards.length; i++) {
             let hero = cc.instantiate(this.heroPfb)
             hero.x = 0
             hero.parent = this.myContect
-            hero.getComponent(battleHeroRender).init(DataManager.cardsList[i])
+            hero.getComponent(battleHeroRender).init(this.myCards[i])
             hero.getChildByName('btnSelect').on(cc.Node.EventType.TOUCH_END, () => {
-                this.myHeroData = DataManager.cardsList[i]
-                this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(DataManager.cardsList[i])
+                this.myHeroData = this.myCards[i]
+                this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(this.myCards[i])
                 this.changeScrollView();
             }, this)
         }
@@ -126,12 +208,13 @@ export default class NewClass extends cc.Component {
     changeScrollView() {
         this.onSelectSolider = true
         this.myContect.removeAllChildren()
-        for (let i = 0; i < DataManager.playData.military_data.length; i++) {
-            if (DataManager.playData.military_data[i] != 0) {
+        for (let i = 0; i < this.mySoliders.length; i++) {
+            if (this.mySoliders[i].arm != 0) {
                 let solider = cc.instantiate(this.soliderPfb)
                 solider.x = 0
                 solider.parent = this.myContect
-                solider.getComponent(battleSoliderRender).init(i + 1, DataManager.playData.military_data[i])
+                solider.getComponent(battleSoliderRender).init(this.mySoliders[i].arm, this.mySoliders[i].count)
+              
             }
         }
     }
@@ -142,6 +225,7 @@ export default class NewClass extends cc.Component {
     }
 
     enterFight() {
+        
         // let soliderList = 
         if (!this.onSelectSolider) {
             ViewManager.instance.showToast('请选择上阵士兵')
@@ -162,8 +246,8 @@ export default class NewClass extends cc.Component {
                 let render = this.myContect.children[i]
                 let data = render.getComponent(battleSoliderRender).getSelectNum()
                 let defineData = {
-                    arm:data.arm,
-                    count:data.count,
+                    arm: data.arm,
+                    count: data.count,
                     fight: 0,
                     defense: 0
                 }
@@ -185,7 +269,7 @@ export default class NewClass extends cc.Component {
 
             console.log('my_template_id:' + this.my_template_id)
             ViewManager.instance.hideWnd(DataManager.curWndPath)
-            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_BATTLE, ...[myData, otherData,this.filedData])
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_BATTLE, ...[myData, otherData, this.filedData])
         }
     }
 

@@ -242,7 +242,7 @@ export default class NewClass extends cc.Component {
     init(myData, otherData, filedData) {
         NetEventDispatcher.addListener(NetEvent.S2CMineBattleCalculate, this.S2CMineBattleCalculate.bind(this))
 
-        console.log('filedData:' + JSON.stringify(filedData))
+        console.log('------  -------filedData:' + JSON.stringify(filedData))
         this.moveTime = 0.6
 
         this.battleInfo = ''
@@ -555,8 +555,7 @@ export default class NewClass extends cc.Component {
         console.log('战斗耗时:' + time)
         console.log(JSON.stringify(this.filedData))
         console.log(this.filedData.hold_player.page)
-        console.log(this.filedData.hold_player.page)
-
+        
         // MyProtocols.send_C2SStageEnd(DataManager._loginSocket, this.groupIdx, this.stageIdx, isWin, time.toFixed(0), 0, armList);
         MyProtocols.send_C2SMineBattleCalculate(DataManager._loginSocket, this.filedData.hold_player.page, this.filedData.hold_player.idx, isWin, 10, DataManager.pageGoBattle.nation_id)
 

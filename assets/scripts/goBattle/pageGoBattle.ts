@@ -83,7 +83,7 @@ export default class NewClass extends cc.Component {
                 myNode.parent = this.myContect
 
                 if (data.my_points[i].hold_player.group == 101) {
-                    this.myCityData = data.my_points[i].hold_player[i]
+                    this.myCityData = data.my_points[i].hold_player
                 }
 
                 myNode.on(cc.Node.EventType.TOUCH_END, () => {
@@ -120,7 +120,7 @@ export default class NewClass extends cc.Component {
                         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[data.mine_points[i]])
                         return
                     }
-                    
+
                     if (data.mine_points[i].hold_player.id == DataManager.playData.id) {
                         if (data.mine_points[i].hold_player.group == 101) {
                             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[data.mine_points[i]])
