@@ -9,6 +9,7 @@ import { NetEvent } from "../net/NetEvent";
 import packManager from "../pack/packManager";
 import DataManager from "../utils/Manager/DataManager";
 import ResManager from "../utils/Manager/ResManager";
+import runePutPanel from "./runePutPanel";
 
 const { ccclass, property } = cc._decorator;
 
@@ -68,6 +69,8 @@ export default class NewClass extends cc.Component {
             if (state == 1) {
                 console.log(`获取符石列表`)
                 console.log('RuneList:' + JSON.stringify(DataManager.instance.curRuneList))
+
+                this.node.getChildByName('runePutPanel').getComponent(runePutPanel).open()
             }
 
         }, this)

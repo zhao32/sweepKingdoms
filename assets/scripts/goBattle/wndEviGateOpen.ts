@@ -52,21 +52,21 @@ export default class NewClass extends cc.Component {
 
     /**查看战场 */
     onDetailHandler() {
-
-        MyProtocols.send_C2SMineEviDetail(DataManager._loginSocket, this._data.page, this._data.idx, this._data.country)
-
+        console.log(`------查看战场--------`)
+        // console.log(JSON.stringify(this._data.hold_player))
+        MyProtocols.send_C2SMineEviDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
     }
 
     /**协助进攻 */
     onAttackHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data, 'out', 1])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'out', 1])
 
     }
     /**协助防守 */
     onDefineHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data, 'out', 0])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'out', 0])
     }
 
     onCloseHandler() {

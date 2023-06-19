@@ -1,4 +1,5 @@
 import pageGoBattle from "../../goBattle/pageGoBattle";
+import wndHotelDetail from "../../hotel/wndHotelDetail";
 import Main from "../../Main";
 
 interface playData {
@@ -260,6 +261,8 @@ export default class DataManager {
     static pageGoBattle: pageGoBattle
 
     curRuneList = []
+
+    wndHotelDetail:wndHotelDetail
 
 
 
