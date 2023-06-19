@@ -56,7 +56,7 @@ export default class NewClass extends cc.Component {
     // onLoad () {}
 
     start() {
-    
+
 
     }
 
@@ -69,11 +69,11 @@ export default class NewClass extends cc.Component {
         this.serversNode.active = false
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_LOGIN)
 
-        NetEventDispatcher.addListener(NetEvent.S2CLogin, this.loginBack.bind(this))
-        NetEventDispatcher.addListener(NetEvent.S2CServerList, this.scSeverList.bind(this))
-        NetEventDispatcher.addListener(NetEvent.S2CSelectServer, this.selectServerBack.bind(this))
-        NetEventDispatcher.addListener(NetEvent.S2CEnterGame, this.enterGameBack.bind(this))
-        NetEventDispatcher.addListener(NetEvent.S2CQueryHasRole, this.QueryHasRoleBack.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CLogin, this.loginBack, this)
+        NetEventDispatcher.addListener(NetEvent.S2CServerList, this.scSeverList, this)
+        NetEventDispatcher.addListener(NetEvent.S2CSelectServer, this.selectServerBack, this)
+        NetEventDispatcher.addListener(NetEvent.S2CEnterGame, this.enterGameBack, this)
+        NetEventDispatcher.addListener(NetEvent.S2CQueryHasRole, this.QueryHasRoleBack, this)
     }
 
 
@@ -211,11 +211,11 @@ export default class NewClass extends cc.Component {
 
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CLogin, this.loginBack.bind(this))
-        NetEventDispatcher.removeListener(NetEvent.S2CServerList, this.scSeverList.bind(this))
-        NetEventDispatcher.removeListener(NetEvent.S2CSelectServer, this.selectServerBack.bind(this))
-        NetEventDispatcher.removeListener(NetEvent.S2CEnterGame, this.enterGameBack.bind(this))
-        NetEventDispatcher.removeListener(NetEvent.S2CQueryHasRole, this.QueryHasRoleBack.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2CLogin, this.loginBack, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CServerList, this.scSeverList, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CSelectServer, this.selectServerBack, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CEnterGame, this.enterGameBack, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CQueryHasRole, this.QueryHasRoleBack, this)
     }
 
     // update (dt) {}

@@ -3,7 +3,7 @@
 */
 var NetEventDispatcher = {
     _listenerMap: {},
-    addListener: function (event, callback) {
+    addListener: function (event, callback,self) {
         if (!callback || !event)
             return;
         var listenerList = this._listenerMap[event];
@@ -14,7 +14,7 @@ var NetEventDispatcher = {
             if (listenerList[i] == callback)
                 return;
         }
-        listenerList.push(callback);
+        listenerList.push([callback,self]);
         //cc.log("add event,size=%d",listenerList.length);
     },
 
@@ -24,7 +24,14 @@ var NetEventDispatcher = {
         var listenerList = this._listenerMap[event];
         if (listenerList) {
             for (var i = 0; i < listenerList.length; i++) {
-                if (listenerList[i] == callback) {
+                // debugger
+                console.log('listenerList' + listenerList[i].prototype)
+                console.log('callback:' + callback.prototype)
+
+                console.log(callback == listenerList[i][0])
+
+
+                if (listenerList[i][0] == callback) {
                     listenerList.splice(i, 1);
                     break;
                 }
@@ -45,7 +52,10 @@ var NetEventDispatcher = {
         if (this._listenerMap[event]) {
             var listeners = this._listenerMap[event];
             for (var i = 0; i < listeners.length; i++) {
-                listeners[i](param);
+                var arr = listeners[i];
+                let fun = arr[0];
+                let fun1 = fun.bind(arr[1])
+                fun1(param)
             }
         }
     }

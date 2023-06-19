@@ -187,8 +187,8 @@ export default class NewClass extends cc.Component {
         this.myContect.removeAllChildren()
 
         MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx, data.country)
-        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail.bind(this))
-        NetEventDispatcher.addListener(NetEvent.S2CMineDefFormationSave, this.S2CMineDefFormationSave.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail,this)
+        NetEventDispatcher.addListener(NetEvent.S2CMineDefFormationSave, this.S2CMineDefFormationSave,this)
 
         // this.node.getChildByName('heroRender').getComponent(battleHeroRender).init(DataManager.cardsList[0])
         // this.myHeroData = DataManager.cardsList[0]

@@ -27,23 +27,24 @@ export default class NewClass extends cc.Component {
 
     @property(cc.Prefab)
     shortLoadLayer: cc.Prefab = null;
-
+  
     onLoad() {
-        // EventNetManager.getInstance().addListener(10014, this.login.bind(this))
+        // EventNetManager.getInstance().addListener(10014, this.login,this)
 
-        NetEventDispatcher.addListener(NetEvent.ErrorCode, this.errCodeBack.bind(this))
+        NetEventDispatcher.addListener(NetEvent.ErrorCode, this.errCodeBack,this)
 
-        NetEventDispatcher.addListener(NetEvent.S2CUserInfoStruct, this.S2CUserInfoStruct.bind(this))
 
-        NetEventDispatcher.addListener(NetEvent.S2CCreateCharacter, this.S2CCreateCharacter.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CUserInfoStruct, this.S2CUserInfoStruct,this)
 
-        NetEventDispatcher.addListener(NetEvent.PushPropertyChange, this.PushPropertyChange.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CCreateCharacter, this.S2CCreateCharacter,this)
 
-        NetEventDispatcher.addListener(NetEvent.S2CStageList, this.S2CStageList.bind(this))
+        NetEventDispatcher.addListener(NetEvent.PushPropertyChange, this.PushPropertyChange,this)
 
-        NetEventDispatcher.addListener(NetEvent.S2CCardList, this.S2CCardList.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CStageList, this.S2CStageList,this)
 
-        NetEventDispatcher.addListener(NetEvent.PushAddCard, this.PushAddCard.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CCardList, this.S2CCardList,this)
+
+        NetEventDispatcher.addListener(NetEvent.PushAddCard, this.PushAddCard,this)
         // S2CCreateCharacter
     }
     /**获取玩家信息 */

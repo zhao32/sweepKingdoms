@@ -35,7 +35,7 @@ export default class NewClass extends cc.Component {
     // onLoad () {}
 
     start() {
-        NetEventDispatcher.addListener(NetEvent.S2CChangeIcon, this.S2CChangeIcon.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CChangeIcon, this.S2CChangeIcon,this)
 
     }
 

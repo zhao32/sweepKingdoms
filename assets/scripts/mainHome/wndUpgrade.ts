@@ -83,7 +83,7 @@ export default class NewClass extends cc.Component {
     }
 
     init(name, from: string) {
-        NetEventDispatcher.addListener(NetEvent.S2UPBulid, this.UPBulid.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2UPBulid, this.UPBulid,this)
         this.reInit(name, from)
     }
 
@@ -217,7 +217,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2UPBulid, this.UPBulid.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2UPBulid, this.UPBulid,this)
     }
 
     // update (dt) {}

@@ -29,7 +29,7 @@ export default class NewClass extends cc.Component {
     text: string = 'hello';
 
     onLoad() {
-        NetEventDispatcher.addListener(NetEvent.S2CGmCmd, this.gmcmd_auth_cb.bind(this));
+        NetEventDispatcher.addListener(NetEvent.S2CGmCmd, this.gmcmd_auth_cb,this);
     }
     gmcmd_auth_cb(retObj) {
         cc.log("消息发送成功===" + retObj.ret_code);

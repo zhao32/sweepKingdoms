@@ -78,7 +78,7 @@ export default class NewClass extends cc.Component {
 
     init() {
         this.node.getChildByName('tipArea').active = false
-        NetEventDispatcher.addListener(NetEvent.S2CBagItems, this.S2CBagItems.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CBagItems, this.S2CBagItems,this)
     }
 
     list1 = []
@@ -139,7 +139,7 @@ export default class NewClass extends cc.Component {
 
     
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CBagItems, this.S2CBagItems.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2CBagItems, this.S2CBagItems,this)
     }
 
     // update (dt) {}

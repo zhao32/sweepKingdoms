@@ -121,7 +121,7 @@ export default class NewClass extends cc.Component {
         this.soliderType = DataManager.GameData.buildUp[group][idx][grade - 1].soldier[0];
 
         ResManager.loadItemIcon(`soliderHead/${DataManager.GameData.Soldier[idx - 1].name}`, this.soldierSprite.node)
-        NetEventDispatcher.addListener(NetEvent.S2CRecSoldiers, this.S2CRecSoldiers.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CRecSoldiers, this.S2CRecSoldiers,this)
 
     }
 
@@ -188,7 +188,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CRecSoldiers, this.S2CRecSoldiers.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2CRecSoldiers, this.S2CRecSoldiers,this)
     }
 
     // update (dt) {}

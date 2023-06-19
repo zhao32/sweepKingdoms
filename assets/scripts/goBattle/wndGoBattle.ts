@@ -240,7 +240,7 @@ export default class NewClass extends cc.Component {
     // }
 
     init(myData, otherData, filedData) {
-        NetEventDispatcher.addListener(NetEvent.S2CMineBattleCalculate, this.S2CMineBattleCalculate.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CMineBattleCalculate, this.S2CMineBattleCalculate,this)
 
         console.log('------  -------filedData:' + JSON.stringify(filedData))
         this.moveTime = 0.6
@@ -710,7 +710,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CMineBattleCalculate, this.S2CMineBattleCalculate.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2CMineBattleCalculate, this.S2CMineBattleCalculate,this)
 
     }
 }

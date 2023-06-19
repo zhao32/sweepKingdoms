@@ -36,7 +36,7 @@ export default class NewClass extends cc.Component {
 
     init() {
         MyProtocols.send_C2SMineHistory(DataManager._loginSocket)
-        NetEventDispatcher.addListener(NetEvent.S2CMineHistory, this.S2CMineHistory.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CMineHistory, this.S2CMineHistory,this)
     }
 
     S2CMineHistory(data){
@@ -48,7 +48,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CMineHistory, this.S2CMineHistory.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2CMineHistory, this.S2CMineHistory,this)
 
     }
 

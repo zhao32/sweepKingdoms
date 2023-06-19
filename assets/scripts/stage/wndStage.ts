@@ -62,12 +62,12 @@ export default class NewClass extends cc.Component {
 
     start() {
         this.showGroups(DataManager.stagesData.chapters)
-        // NetEventDispatcher.addListener(NetEvent.S2CStageList, this.S2CStageList.bind(this))
+        // NetEventDispatcher.addListener(NetEvent.S2CStageList, this.S2CStageList,this)
 
     }
 
     protected onDestroy(): void {
-        // NetEventDispatcher.removeListener(NetEvent.S2CStageList, this.S2CStageList.bind(this))
+        // NetEventDispatcher.removeListener(NetEvent.S2CStageList, this.S2CStageList,this)
 
     }
 

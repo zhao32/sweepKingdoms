@@ -67,7 +67,7 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_ACTIVEY)
         }, this)
 
-        NetEventDispatcher.addListener(NetEvent.S2CListRedPoints, this.RedPointsBack.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CListRedPoints, this.RedPointsBack,this)
 
         EventManager.getInstance().registerListener(EventManager.UPDATE_MAINHOME_INFO, this, this.updateInfo.bind(this))
         EventManager.getInstance().registerListener(EventManager.UPDATE_BULID_STATE, this, this.updataBulidState.bind(this))
@@ -79,7 +79,7 @@ export default class NewClass extends cc.Component {
     }
 
     protected onDestroy(): void {
-        NetEventDispatcher.removeListener(NetEvent.S2CListRedPoints, this.RedPointsBack.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2CListRedPoints, this.RedPointsBack,this)
         EventManager.getInstance().unRegisterListener(EventManager.UPDATE_MAINHOME_INFO, this)
         EventManager.getInstance().unRegisterListener(EventManager.UPDATE_BULID_STATE, this)
 

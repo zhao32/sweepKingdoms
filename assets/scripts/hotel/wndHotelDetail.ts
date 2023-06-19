@@ -95,7 +95,7 @@ export default class NewClass extends cc.Component {
         DataManager.wndHotelDetail = this
         this.node.getChildByName('runePutPanel').active = false
         packManager.getInstance().reflishBag()
-        NetEventDispatcher.addListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock,this)
 
 
         console.log('-----data:' + JSON.stringify(data))
@@ -216,7 +216,7 @@ export default class NewClass extends cc.Component {
 
     onClose() {
        
-        NetEventDispatcher.removeListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock,this)
     }
 
     onCloseHandler(){

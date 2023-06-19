@@ -31,7 +31,7 @@ export default class NewClass extends cc.Component {
     strName: string = ''
 
     start() {
-        NetEventDispatcher.addListener(NetEvent.S2CChangeName, this.S2CChangeName.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CChangeName, this.S2CChangeName,this)
     }
 
     S2CChangeName(data) {

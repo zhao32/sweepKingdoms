@@ -35,7 +35,7 @@ export default class packManager extends cc.Component {
     // onLoad () {}
 
     start() {
-        NetEventDispatcher.addListener(NetEvent.S2CBagItems, this.S2CBagItems.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CBagItems, this.S2CBagItems,this)
     }
 
     reflishBag() {

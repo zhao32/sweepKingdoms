@@ -139,13 +139,11 @@ export default class NewClass extends cc.Component {
         }
     }
 
-    S2CMineList_fun
     init() {
-        this.S2CMineList_fun = this.S2CMineList.bind(this);
-        console.log(`this.S2CMineList:` + this.S2CMineList.bind(this))
+        console.log(`this.S2CMineList:` + this.S2CMineList,this)
 
-        NetEventDispatcher.addListener(NetEvent.S2CMineList, this.S2CMineList_fun)
-        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CMineList, this.S2CMineList,this)
+        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines,this)
 
 
         this.nation_id = DataManager.playData.nation_id
@@ -210,8 +208,8 @@ export default class NewClass extends cc.Component {
 
     onClose() {
         console.log(`-------关闭-----------`)
-        NetEventDispatcher.removeListener(NetEvent.S2CMineList, this.S2CMineList.bind(this))
-        NetEventDispatcher.removeListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2CMineList, this.S2CMineList,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CFindMines, this.S2CFindMines,this)
     }
 
 

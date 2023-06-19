@@ -137,8 +137,8 @@ export default class NewClass extends cc.Component {
 
         MyProtocols.send_C2SPubView(DataManager._loginSocket);
 
-        NetEventDispatcher.addListener(NetEvent.S2CPubView, this.S2CPubView.bind(this))
-        NetEventDispatcher.addListener(NetEvent.S2CPubBuy, this.S2CPubBuy.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CPubView, this.S2CPubView,this)
+        NetEventDispatcher.addListener(NetEvent.S2CPubBuy, this.S2CPubBuy,this)
 
     }
 
@@ -156,8 +156,8 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CPubView, this.S2CPubView.bind(this))
-        NetEventDispatcher.removeListener(NetEvent.S2CPubBuy, this.S2CPubBuy.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2CPubView, this.S2CPubView,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CPubBuy, this.S2CPubBuy,this)
     }
 
     // update (dt) {}

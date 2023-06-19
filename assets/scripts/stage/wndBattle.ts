@@ -270,7 +270,7 @@ export default class NewClass extends cc.Component {
     }
     init(myData, otherData, groupIdx, stageIdx) {
         this.battleInfo = ''
-        NetEventDispatcher.addListener(NetEvent.S2CStageEnd, this.S2CStageEnd.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CStageEnd, this.S2CStageEnd,this)
 
         this.groupIdx = groupIdx
         this.stageIdx = stageIdx
@@ -769,7 +769,7 @@ export default class NewClass extends cc.Component {
 
     
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CStageEnd, this.S2CStageEnd.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2CStageEnd, this.S2CStageEnd,this)
 
     }
 

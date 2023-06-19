@@ -35,7 +35,7 @@ export default class NewClass extends cc.Component {
     }
 
     init() {
-        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines,this)
 
     }
 
@@ -67,7 +67,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CFindMines, this.S2CFindMines.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2CFindMines, this.S2CFindMines,this)
     }
 
     // update (dt) {}

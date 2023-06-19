@@ -159,7 +159,7 @@ export default class NewClass extends cc.Component {
         }
 
         this.initEnemyData(enemyData.cardId, enemyData.soliders)
-        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail,this)
     }
 
     initEnemyData(cardId, soliders) {

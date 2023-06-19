@@ -36,7 +36,7 @@ export default class NewClass extends cc.Component {
     _selectRuneId: number
 
     start() {
-        NetEventDispatcher.addListener(NetEvent.S2CRunePutup, this.C2SRunePutup.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CRunePutup, this.C2SRunePutup,this)
     }
 
     C2SRunePutup(data) {

@@ -104,7 +104,7 @@ export default class NewClass extends cc.Component {
         // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, DataManager.pageGoBattle.myCityData.page, DataManager.pageGoBattle.myCityData.idx, DataManager.pageGoBattle.myCityData.country)
 
 
-        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail,this)
 
         // this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`
 

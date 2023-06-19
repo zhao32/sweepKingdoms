@@ -67,12 +67,12 @@ export default class NewClass extends cc.Component {
                 ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_UPGRADE, ...[this._data.name, EnumManager.viewPath.WND_MAIN_BULID])
             }
         }, this)
-        NetEventDispatcher.addListener(NetEvent.S2UPBulid, this.UPBulid.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2UPBulid, this.UPBulid,this)
     }
 
 
     protected onDestroy(): void {
-        NetEventDispatcher.removeListener(NetEvent.S2UPBulid, this.UPBulid.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2UPBulid, this.UPBulid,this)
     }
 
     UPBulid(retObj) {
