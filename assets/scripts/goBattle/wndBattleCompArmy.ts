@@ -83,15 +83,24 @@ export default class NewClass extends cc.Component {
 
     }
 
-    init(myData, eData) {
+    S2CMineEviDetail(retObj){
+        console.log(`请求恶魔之门阵容返回`)
+    }
+
+    init(data) {
         // (senderSocket, p_rank_type, p_player_id)
         // console.error('rankType:'+ rankType)
 
-        this.myData = myData
-        this.eData = eData
+        // this.myData = myData
+        // this.eData = eData
+        console.log("data:"+JSON.stringify(data))
+        MyProtocols.send_C2SMineEviDetail(DataManager._loginSocket, data.page, data.idx, data.country)
+        NetEventDispatcher.addListener(NetEvent.S2CMineEviDetail, this.S2CMineEviDetail.bind(this))
 
-        NetEventDispatcher.addListener(NetEvent.S2CRankPlayerDetail, this.S2CRankPlayerDetail.bind(this))
-        NetEventDispatcher.addListener(NetEvent.S2CPkEnemyFormation, this.S2CPkEnemyFormation.bind(this))
+
+
+        // NetEventDispatcher.addListener(NetEvent.S2CRankPlayerDetail, this.S2CRankPlayerDetail.bind(this))
+        // NetEventDispatcher.addListener(NetEvent.S2CPkEnemyFormation, this.S2CPkEnemyFormation.bind(this))
         // MyProtocols.send_C2SRankPlayerDetail(DataManager._loginSocket, eData.rank_type, eData.playerId)
     }
 

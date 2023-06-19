@@ -56,8 +56,8 @@ export default class NewClass extends cc.Component {
         // console.log(JSON.stringify(this._data.hold_player))
         ViewManager.instance.hideWnd(DataManager.curWndPath)
 
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_COMPYARMY)
-        MyProtocols.send_C2SMineEviDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_COMPYARMY,...[this._data.hold_player])
+        // MyProtocols.send_C2SMineEviDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
     }
 
     /**协助进攻 */
