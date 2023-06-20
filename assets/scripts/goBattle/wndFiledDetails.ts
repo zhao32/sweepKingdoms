@@ -125,7 +125,7 @@ export default class NewClass extends cc.Component {
     }
 
     onBattleHandler() {
-        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.page, this._data.idx, this._data.country)
+        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
     }
 
     onClose() {

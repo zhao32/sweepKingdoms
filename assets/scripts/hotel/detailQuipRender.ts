@@ -5,7 +5,10 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
-const {ccclass, property} = cc._decorator;
+import DataManager from "../utils/Manager/DataManager";
+import equipPutPanel from "./equipPutPanel";
+
+const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -20,11 +23,16 @@ export default class NewClass extends cc.Component {
 
     // onLoad () {}
 
-    start () {
+    start() {
 
     }
 
-    init(){ 
+    init(idx, data) {
+
+        this.node.getChildByName('equipBg').on(cc.Node.EventType.TOUCH_END, () => {
+            DataManager.wndHotelDetail.node.getChildByName('equipPutPanel').getComponent(equipPutPanel).open(data, idx)
+        }, this)
+
 
     }
 

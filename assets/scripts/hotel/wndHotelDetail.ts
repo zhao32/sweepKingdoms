@@ -11,6 +11,7 @@ import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
+import detailQuipRender from "./detailQuipRender";
 import detailRuneRender from "./detailRuneRender";
 import detailSkillRender from "./detailSkillRender";
 
@@ -240,6 +241,12 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < this._data.equips.length; i++) {
             let equip = cc.instantiate(this.equipPfb)
             equip.parent = this.contect
+            if (i < 4) {
+                ResManager.loadItemIcon(`UI/items/equip_${i + 1}`, equip.getChildByName('equipBg'))
+            } else {
+                ResManager.loadItemIcon(`UI/items/trea_${i + 1 - 4}`, equip.getChildByName('equipBg'))
+            }
+            equip.getComponent(detailQuipRender).init(i, this._data)
         }
 
     }
