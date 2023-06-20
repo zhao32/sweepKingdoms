@@ -35,6 +35,8 @@ export default class NewClass extends cc.Component {
 
     _selectRuneId: number
 
+    _data
+
     start() {
         NetEventDispatcher.addListener(NetEvent.S2CRunePutup, this.C2SRunePutup, this)
     }
@@ -47,8 +49,8 @@ export default class NewClass extends cc.Component {
         console.log(`石符安装返回`)
         console.log(JSON.stringify(data))
         ViewManager.instance.showToast(`安装石符成功`)
-        this.onCloseHandler()
         // {"card_id":1,"pos_index":1,"rune_id":5001,"rune_level":0,"back_items":[],"fight":2796}
+
 
         for (let i = 0; i < DataManager.instance.curRuneList.length; i++) {
             let item = this.contect.children[i]
@@ -57,14 +59,18 @@ export default class NewClass extends cc.Component {
             let lv = parseInt(DataManager.GameData.Runes[DataManager.instance.curRuneList[i].template_id].quality) + 1
             item.getChildByName('level').getComponent(cc.Label).string = 'lv:' + lv
         }
+        this._data.runePutup[this._idx] = data.rune_id
+        this.onCloseHandler()
+
     }
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
     // {"uuid":"","template_id":5001,"enhance_level":0,"stars":0,"num":452,"bagId":4,"hpEx":0,"atkEx":0,"defEx":0,"attrEx":[],"unitAttr":{"id":0,"num":0},"exp":0}
-    open(cardId, idx) {
-        this._cardId = cardId
+    open(data, idx) {
+        this._data = data
+        this._cardId = data.template_id
         this._idx = idx
         this.node.active = true
         // this.selectName = 0
@@ -101,7 +107,9 @@ export default class NewClass extends cc.Component {
     }
 
     onCloseHandler() {
+        DataManager.wndHotelDetail.updateRunes()
         this.node.active = false
+
     }
 
     onCancel() {

@@ -50,9 +50,9 @@ export default class NewClass extends cc.Component {
 
 
 
-    init(state, idx, heroid) {
+    init(state, idx, data) {
         this._state = state
-        this._heroid = heroid
+        this._heroid = data.template_id
         this._idx = idx
         console.log(`state:` + state)
         // ResManager.loadItemIcon(`hero/runePot${state}`, this.node.getChildByName('rune'))
@@ -70,10 +70,27 @@ export default class NewClass extends cc.Component {
                 console.log(`获取符石列表`)
                 console.log('RuneList:' + JSON.stringify(DataManager.instance.curRuneList))
 
-                DataManager.wndHotelDetail.node.getChildByName('runePutPanel').getComponent(runePutPanel).open(heroid, idx)
+                DataManager.wndHotelDetail.node.getChildByName('runePutPanel').getComponent(runePutPanel).open(data, idx)
             }
 
         }, this)
+
+        // if (data.runePutup[idx] < 1000) {
+        //     this.node.getChildByName('Mask').children[0].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[data.runePutup[i]]
+        // } else {
+        //     let rune = this.node.getChildByName('cao1').children[i].children[0]
+        //     rune.active = true
+        //     console.log('data.runePutup[i]:' + data.runePutup[i])
+        //     ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[data.runePutup[i]].icon}`, rune)
+        // }
+
+        if (data.runePutup[idx] > 1000) {
+            let rune = this.node.getChildByName('Mask').children[0]
+            rune.active = true
+            console.log('data.runePutup[i]:' + data.runePutup[idx])
+            ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[data.runePutup[idx]].icon}`, rune)
+            this.tipDisplay1.string = DataManager.GameData.Runes[data.runePutup[idx]].name
+        }
 
     }
 

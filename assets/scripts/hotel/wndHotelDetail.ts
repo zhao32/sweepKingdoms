@@ -86,7 +86,28 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < this._data.runePutup.length; i++) {
             let render = this.contect.children[i]
             let state = this._data.runeUnlock.indexOf(i) != -1 ? 1 : 0
-            render.getComponent(detailRuneRender).init(state, i, this._data.template_id)
+            render.getComponent(detailRuneRender).init(state, i, this._data)
+        }
+    }
+
+    updateRunes() {
+        for (let i = 0; i < this._data.runePutup.length; i++) {
+            // ResManager.loadItemIcon(`hero/runePot${data.runePutup[i]}`, this.node.getChildByName('cao').children[i])
+            if (this._data.runePutup[i] < 1000) {
+                this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[this._data.runePutup[i]]
+            } else {
+                let rune = this.node.getChildByName('cao1').children[i].children[0]
+                rune.active = true
+                console.log('data.runePutup[i]:' + this._data.runePutup[i])
+                ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[this._data.runePutup[i]].icon}`, rune)
+            }
+
+            let render = this.contect.children[i]
+            let state = 0
+            if (this._data.runeUnlock.indexOf(i) != -1) {
+                state = 1
+            }
+            render.getComponent(detailRuneRender).init(state, i, this._data)
         }
 
     }
@@ -205,7 +226,7 @@ export default class NewClass extends cc.Component {
             if (this._data.runeUnlock.indexOf(i) != -1) {
                 state = 1
             }
-            render.getComponent(detailRuneRender).init(state, i, this._data.template_id)
+            render.getComponent(detailRuneRender).init(state, i, this._data)
         }
     }
 
@@ -219,6 +240,7 @@ export default class NewClass extends cc.Component {
             let equip = cc.instantiate(this.equipPfb)
             equip.parent = this.contect
         }
+
     }
 
     onClose() {
