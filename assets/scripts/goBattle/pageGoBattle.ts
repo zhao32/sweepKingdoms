@@ -54,7 +54,7 @@ export default class NewClass extends cc.Component {
         console.log(`查找矿返回：` + JSON.stringify(retObj))
         // retObj.mine_points
 
-        if (retObj.type == 111) {//肥羊
+        if (retObj.type == 101) {//肥羊
             let mineData = []
             for (let i = 0; i < retObj.mine_points.length; i++) {
                 if (retObj.mine_points[i].hold_player) {
@@ -115,7 +115,7 @@ export default class NewClass extends cc.Component {
                         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[data.mine_points[i]])
                         return
                     }
-    
+
                     if (data.mine_points[i].hold_player.page == 0 && data.mine_points[i].hold_player.idx == 7) {
                         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[data.mine_points[i]])
                         return
@@ -132,7 +132,7 @@ export default class NewClass extends cc.Component {
                     }
                 }
 
-              
+
 
 
             }, this)
@@ -140,10 +140,10 @@ export default class NewClass extends cc.Component {
     }
 
     init() {
-        console.log(`this.S2CMineList:` + this.S2CMineList,this)
+        console.log(`this.S2CMineList:` + this.S2CMineList, this)
 
-        NetEventDispatcher.addListener(NetEvent.S2CMineList, this.S2CMineList,this)
-        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines,this)
+        NetEventDispatcher.addListener(NetEvent.S2CMineList, this.S2CMineList, this)
+        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines, this)
 
 
         this.nation_id = DataManager.playData.nation_id
@@ -197,7 +197,7 @@ export default class NewClass extends cc.Component {
 
     onFeiYHandler() {
         console.log('------肥羊---------')
-        MyProtocols.send_C2SFindMines(DataManager._loginSocket, 111, DataManager.pageGoBattle.nation_id, 0, 0)
+        MyProtocols.send_C2SFindMines(DataManager._loginSocket, 101, DataManager.pageGoBattle.nation_id, 0, 0)
         // ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FY)
     }
 
@@ -208,8 +208,8 @@ export default class NewClass extends cc.Component {
 
     onClose() {
         console.log(`-------关闭-----------`)
-        NetEventDispatcher.removeListener(NetEvent.S2CMineList, this.S2CMineList,this)
-        NetEventDispatcher.removeListener(NetEvent.S2CFindMines, this.S2CFindMines,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CMineList, this.S2CMineList, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CFindMines, this.S2CFindMines, this)
     }
 
 

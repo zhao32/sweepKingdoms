@@ -8,6 +8,7 @@
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
+import feiYangRender from "./feiYangRender";
 
 const { ccclass, property } = cc._decorator;
 
@@ -34,6 +35,7 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < data.length; i++) {
             let render = cc.instantiate(this.FYPfb)
             render.parent = this.contect
+            render.getComponent(feiYangRender).init(data[i])
         }
     }
     onCloseHandler() {

@@ -96,6 +96,7 @@ export default class NewClass extends cc.Component {
             if (this._data.runePutup[i] < 1000) {
                 this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[this._data.runePutup[i]]
             } else {
+                this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[1]
                 let rune = this.node.getChildByName('cao1').children[i].children[0]
                 rune.active = true
                 console.log('data.runePutup[i]:' + this._data.runePutup[i])
@@ -236,7 +237,7 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName('btnEquip').getComponent(cc.Sprite).spriteFrame = this.checkFrames[1]
 
         this.contect.removeAllChildren();
-        for (let i = 0; i < this._data.unitEquips.length; i++) {
+        for (let i = 0; i < this._data.equips.length; i++) {
             let equip = cc.instantiate(this.equipPfb)
             equip.parent = this.contect
         }
