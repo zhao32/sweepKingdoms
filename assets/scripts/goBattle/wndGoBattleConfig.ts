@@ -111,6 +111,8 @@ export default class NewClass extends cc.Component {
             workKeyList.push(retObj.cards[i].template_id)
         }
 
+        console.log('DataManager.cardsList:', JSON.stringify(DataManager.cardsList))
+
         for (let i = 0; i < DataManager.cardsList.length; i++) {
             if (workKeyList.indexOf(DataManager.cardsList[i].template_id) == -1) {
                 this.myCards.push(DataManager.cardsList[i])
@@ -156,6 +158,7 @@ export default class NewClass extends cc.Component {
 
             this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(DataManager.cardsList[0])
             this.myHeroData = DataManager.cardsList[0]
+            this.myCards = DataManager.cardsList
         }
 
         this.initEnemyData(enemyData.cardId, enemyData.soliders)
@@ -187,6 +190,8 @@ export default class NewClass extends cc.Component {
     }
 
     changeHero() {
+        console.log(`--------换将---------`)
+        console.log('this.myCards:'+ JSON.stringify(this.myCards))
         this.onSelectSolider = false
         this.myContect.removeAllChildren()
         for (let i = 0; i < this.myCards.length; i++) {

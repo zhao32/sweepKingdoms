@@ -76,34 +76,34 @@ export default class NewClass extends cc.Component {
         // this.selectName = 0
         this.noteDisplay.string = ''
         this.contect.removeAllChildren()
-        for (let i = 0; i < DataManager.instance.curRuneList.length; i++) {
-            let item = cc.instantiate(this.itemPfb)
-            item.parent = this.contect
-            ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[DataManager.instance.curRuneList[i].template_id].icon}`, item.getChildByName(`icon`))
-            item.getChildByName('count').getComponent(cc.Label).string = 'x' + DataManager.instance.curRuneList[i].num
-            let lv = parseInt(DataManager.GameData.Runes[DataManager.instance.curRuneList[i].template_id].quality) + 1
+        // for (let i = 0; i < DataManager.instance.curRuneList.length; i++) {
+        //     let item = cc.instantiate(this.itemPfb)
+        //     item.parent = this.contect
+        //     ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[DataManager.instance.curRuneList[i].template_id].icon}`, item.getChildByName(`icon`))
+        //     item.getChildByName('count').getComponent(cc.Label).string = 'x' + DataManager.instance.curRuneList[i].num
+        //     let lv = parseInt(DataManager.GameData.Runes[DataManager.instance.curRuneList[i].template_id].quality) + 1
 
-            item.getChildByName('level').getComponent(cc.Label).string = 'lv:' + lv
-            item.getChildByName('count').color = cc.Color.WHITE
-            item.getChildByName('level').color = cc.Color.WHITE
+        //     item.getChildByName('level').getComponent(cc.Label).string = 'lv:' + lv
+        //     item.getChildByName('count').color = cc.Color.WHITE
+        //     item.getChildByName('level').color = cc.Color.WHITE
 
-            item.getChildByName('light').active = false
+        //     item.getChildByName('light').active = false
 
-            item.on(cc.Node.EventType.TOUCH_END, () => {
-                for (let j = 0; j < this.contect.children.length; j++) {
-                    let icon = this.contect.children[j]
-                    icon.getChildByName('light').active = false
-                    icon.getChildByName('count').color = cc.Color.WHITE
-                    icon.getChildByName('level').color = cc.Color.WHITE
-                }
-                item.getChildByName('light').active = true
+        //     item.on(cc.Node.EventType.TOUCH_END, () => {
+        //         for (let j = 0; j < this.contect.children.length; j++) {
+        //             let icon = this.contect.children[j]
+        //             icon.getChildByName('light').active = false
+        //             icon.getChildByName('count').color = cc.Color.WHITE
+        //             icon.getChildByName('level').color = cc.Color.WHITE
+        //         }
+        //         item.getChildByName('light').active = true
 
-                item.getChildByName('count').color = cc.Color.YELLOW
-                item.getChildByName('level').color = cc.Color.YELLOW
-                this.noteDisplay.string = DataManager.GameData.Runes[DataManager.instance.curRuneList[i].template_id].name
-                this._selectRuneId = DataManager.instance.curRuneList[i].template_id
-            })
-        }
+        //         item.getChildByName('count').color = cc.Color.YELLOW
+        //         item.getChildByName('level').color = cc.Color.YELLOW
+        //         this.noteDisplay.string = DataManager.GameData.Runes[DataManager.instance.curRuneList[i].template_id].name
+        //         this._selectRuneId = DataManager.instance.curRuneList[i].template_id
+        //     })
+        // }
     }
 
     onCloseHandler() {
@@ -119,7 +119,7 @@ export default class NewClass extends cc.Component {
     // (senderSocket, p_card_id, p_pos_index, p_rune_id)
     onChange() {
         if (!this._selectRuneId) {
-            ViewManager.instance.showToast(`请选择要安装的石符`)
+            ViewManager.instance.showToast(`请选择要安装的装备`)
             return
         }
         MyProtocols.send_C2SRunePutup(DataManager._loginSocket, this._cardId, this._idx, this._selectRuneId)
