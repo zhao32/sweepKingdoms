@@ -146,6 +146,7 @@ export default class NewClass extends cc.Component {
         if (DataManager.pageGoBattle.myCityData) {
             MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, cityData.page, cityData.idx, cityData.country)
         } else {
+            this.mySoliders = []
             this.myContect.removeAllChildren()
             for (let i = 0; i < DataManager.playData.military_data.length; i++) {
                 if (DataManager.playData.military_data[i] != 0) {
@@ -153,6 +154,7 @@ export default class NewClass extends cc.Component {
                     solider.x = 0
                     solider.parent = this.myContect
                     solider.getComponent(battleSoliderRender).init(i + 1, DataManager.playData.military_data[i])
+                    this.mySoliders.push({ arm: i + 1, count: DataManager.playData.military_data[i] })
                 }
             }
 
@@ -162,7 +164,7 @@ export default class NewClass extends cc.Component {
         }
 
         this.initEnemyData(enemyData.cardId, enemyData.soliders)
-        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail,this)
+        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
     }
 
     initEnemyData(cardId, soliders) {
@@ -191,7 +193,7 @@ export default class NewClass extends cc.Component {
 
     changeHero() {
         console.log(`--------换将---------`)
-        console.log('this.myCards:'+ JSON.stringify(this.myCards))
+        console.log('this.myCards:' + JSON.stringify(this.myCards))
         this.onSelectSolider = false
         this.myContect.removeAllChildren()
         for (let i = 0; i < this.myCards.length; i++) {
@@ -216,7 +218,7 @@ export default class NewClass extends cc.Component {
                 solider.x = 0
                 solider.parent = this.myContect
                 solider.getComponent(battleSoliderRender).init(this.mySoliders[i].arm, this.mySoliders[i].count)
-              
+
             }
         }
     }
@@ -227,7 +229,7 @@ export default class NewClass extends cc.Component {
     }
 
     enterFight() {
-        
+
         // let soliderList = 
         if (!this.onSelectSolider) {
             ViewManager.instance.showToast('请选择上阵士兵')
@@ -276,7 +278,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
 
     }
 

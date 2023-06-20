@@ -66,6 +66,8 @@ export default class NewClass extends cc.Component {
                 return
             }
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FY, ...[retObj.mine_points])
+        } else if (retObj.type == 105) {//恶魔之门
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[retObj.mine_points])
         }
     }
 
