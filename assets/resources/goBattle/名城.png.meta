@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "795a45fc-cba7-412e-a676-b4ce6663feb7",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 139,
+  "height": 151,
+  "platformSettings": {},
+  "subMetas": {
+    "名城": {
+      "ver": "1.0.6",
+      "uuid": "fb1c78b5-f498-4343-8260-b065d2122c39",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "795a45fc-cba7-412e-a676-b4ce6663feb7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 139,
+      "height": 151,
+      "rawWidth": 139,
+      "rawHeight": 151,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

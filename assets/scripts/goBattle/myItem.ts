@@ -6,6 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import DataManager from "../utils/Manager/DataManager";
+import ResManager from "../utils/Manager/ResManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -50,8 +51,10 @@ export default class NewClass extends cc.Component {
     // }
 
     init(data) {
-        this.nameLabel.string = DataManager.mineData[data.group].name
+        let name = DataManager.mineData[data.group].name
+        this.nameLabel.string = name
         this.fightLabel.string = data.fight
+        ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
     }
 
     // update (dt) {}

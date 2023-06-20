@@ -71,9 +71,12 @@ export default class NewClass extends cc.Component {
 
     init(data) {
         this._data = data
-        this.nameLabel.string = data.hold_player.lv + '级' + DataManager.mineData[data.hold_player.group].name
+        let name =  DataManager.mineData[data.hold_player.group].name
+        this.nameLabel.string = data.hold_player.lv + '级' + name
         this.lordLabel.string = `领主：${data.hold_player.nickname}`
         this.awardLabel.string = `已产出：${data.hold_player.award}`
+
+        ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
 
         NetEventDispatcher.addListener(NetEvent.S2CMineGetAward, this.S2CMineGetAward, this)
 

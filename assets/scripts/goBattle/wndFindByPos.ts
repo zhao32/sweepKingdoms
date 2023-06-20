@@ -56,6 +56,7 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showToast('请输入完整的坐标')
             return
         }
+        DataManager.pageGoBattle.selectIdx = parseInt(this.PosY)
         MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.PosX, DataManager.pageGoBattle.nation_id)
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
 

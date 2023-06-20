@@ -64,9 +64,11 @@ export default class NewClass extends cc.Component {
 
     init(data) {
         this._data = data
-        this.nameLabel.string = data.hold_player.lv + '级' + DataManager.mineData[data.hold_player.group].name
+        let name = DataManager.mineData[data.hold_player.group].name
+        this.nameLabel.string = data.hold_player.lv + '级' + name
         this.lordLabel.string = `领主：${data.hold_player.nickname}`
         // this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`
+        ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
 
         // : function (senderSocket, p_level_index, p_point_index) {
         // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket,)

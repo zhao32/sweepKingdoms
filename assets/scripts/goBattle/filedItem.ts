@@ -61,10 +61,11 @@ export default class NewClass extends cc.Component {
             this.icon.active = true
             this.bload.active = true
 
-            if (data.hold_player.id) {
-                ResManager.loadItemIcon(`goBattle/icon1`, this.icon)
+            if (data.hold_player.id) {//有主的矿
+                ResManager.loadItemIcon(`goBattle/${filed.name}`, this.icon)
             } else {
-                ResManager.loadItemIcon(`goBattle/icon0`, this.icon)
+                ResManager.loadItemIcon(`goBattle/${filed.name}`, this.icon)
+                this.icon.color = cc.Color.GRAY
             }
 
             let str: string
