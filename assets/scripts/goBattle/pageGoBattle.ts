@@ -111,15 +111,15 @@ export default class NewClass extends cc.Component {
                 filedNode.getChildByName(`light`).active = false
 
                 if (data.mine_points[i].hold_player) {
-                    if (data.mine_points[i].hold_player.page == 0 && data.mine_points[i].hold_player.idx == 6) {
-                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[data.mine_points[i]])
-                        return
-                    }
+                    // if (data.mine_points[i].hold_player.page == 0 && data.mine_points[i].hold_player.idx == 6) {
+                    //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[data.mine_points[i]])
+                    //     return
+                    // }
 
-                    if (data.mine_points[i].hold_player.page == 0 && data.mine_points[i].hold_player.idx == 7) {
-                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[data.mine_points[i]])
-                        return
-                    }
+                    // if (data.mine_points[i].hold_player.page == 0 && data.mine_points[i].hold_player.idx == 7) {
+                    //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[data.mine_points[i]])
+                    //     return
+                    // }
 
                     if (data.mine_points[i].hold_player.id == DataManager.playData.id) {
                         if (data.mine_points[i].hold_player.group == 101) {
@@ -144,7 +144,6 @@ export default class NewClass extends cc.Component {
 
         NetEventDispatcher.addListener(NetEvent.S2CMineList, this.S2CMineList, this)
         NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines, this)
-
 
         this.nation_id = DataManager.playData.nation_id
         this.curPageIdx = 0

@@ -1604,7 +1604,7 @@ var MyProtocols = {
 
 
 		}
-        let Att_base_info_exist = myDecoder.readBool();
+		let Att_base_info_exist = myDecoder.readBool();
 		if (Att_base_info_exist == true) {
 			retObj.att_base_info = {};
 			retObj.att_base_info.id = myDecoder.readInt();
@@ -1938,7 +1938,7 @@ var MyProtocols = {
 	},
 
 	/**矿场奖励 */
-	send_C2SMineGetAward: function (senderSocket,page,idx,country) {
+	send_C2SMineGetAward: function (senderSocket, page, idx, country) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3109);
 		myEncoder.writeInt(page);
@@ -6628,11 +6628,7 @@ var MyProtocols = {
 
 	get_3116: function (myDecoder) {
 		var retObj = {};
-
 		retObj.type = myDecoder.readInt();
-		if (retObj.type == 110) {
-
-		}
 		retObj.mine_points = [];
 		let mine_points_size = myDecoder.readInt();
 		if (mine_points_size > 0) {
@@ -6650,16 +6646,14 @@ var MyProtocols = {
 					retObj.mine_points[i].hold_player.cd_time = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.group = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.lv = myDecoder.readInt();
-
 					retObj.mine_points[i].hold_player.page = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.idx = myDecoder.readInt();
+					retObj.mine_points[i].hold_player.reward = myDecoder.readInt();
 				}
 			}
 		}
 		return retObj;
 	},
-
-
 }
 
 // export default MyProtocols = MyProtocols
