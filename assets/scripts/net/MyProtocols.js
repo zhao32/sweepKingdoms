@@ -1512,6 +1512,8 @@ var MyProtocols = {
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
 	},
+
+
 	get_3104: function (myDecoder) {
 		var retObj = {};
 		retObj.level_index = myDecoder.readInt();
@@ -1590,6 +1592,7 @@ var MyProtocols = {
 				retObj.cards[i].unitDef = myDecoder.readInt();
 				retObj.cards[i].unitNum = myDecoder.readInt();
 				retObj.cards[i].fight = myDecoder.readInt();
+				retObj.cards[i].physical = myDecoder.readInt();
 				retObj.cards[i].extra_props = [];
 				let cardsi_extra_props_size = myDecoder.readInt();
 				if (cardsi_extra_props_size > 0) {
@@ -1662,6 +1665,7 @@ var MyProtocols = {
 				retObj.att_cards[i].unitDef = myDecoder.readInt();
 				retObj.att_cards[i].unitNum = myDecoder.readInt();
 				retObj.att_cards[i].fight = myDecoder.readInt();
+				retObj.att_cards[i].physical = myDecoder.readInt();
 				retObj.att_cards[i].extra_props = [];
 				let att_cardsi_extra_props_size = myDecoder.readInt();
 				if (att_cardsi_extra_props_size > 0) {
@@ -1684,7 +1688,6 @@ var MyProtocols = {
 		console.log(`矿场守卫信息`)
 		return retObj;
 	},
-
 
 
 
