@@ -35,7 +35,7 @@ export default class NewClass extends cc.Component {
     // heroList
 
     start() {
-        // NetEventDispatcher.addListener(NetEvent.S2CRankPlayerDetail, this.S2CRankPlayerDetail.bind(this))
+        // NetEventDispatcher.addListener(NetEvent.S2CRankPlayerDetail, this.S2CRankPlayerDetail,this)
 
     }
 

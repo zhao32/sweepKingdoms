@@ -53,7 +53,7 @@ export default class NewClass extends cc.Component {
     }
 
     init() {
-        NetEventDispatcher.addListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave,this)
 
         // this.selectCards = selectCards//[DataManager.cardsList[0], DataManager.cardsList[1], DataManager.cardsList[2]]
         this.heroContect.removeAllChildren()
@@ -175,7 +175,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave,this)
 
     }
 

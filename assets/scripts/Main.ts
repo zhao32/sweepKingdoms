@@ -27,25 +27,42 @@ export default class NewClass extends cc.Component {
 
     @property(cc.Prefab)
     shortLoadLayer: cc.Prefab = null;
-  
+
     onLoad() {
         // EventNetManager.getInstance().addListener(10014, this.login,this)
 
-        NetEventDispatcher.addListener(NetEvent.ErrorCode, this.errCodeBack,this)
+        NetEventDispatcher.addListener(NetEvent.ErrorCode, this.errCodeBack, this)
 
 
-        NetEventDispatcher.addListener(NetEvent.S2CUserInfoStruct, this.S2CUserInfoStruct,this)
+        NetEventDispatcher.addListener(NetEvent.S2CUserInfoStruct, this.S2CUserInfoStruct, this)
 
-        NetEventDispatcher.addListener(NetEvent.S2CCreateCharacter, this.S2CCreateCharacter,this)
+        NetEventDispatcher.addListener(NetEvent.S2CCreateCharacter, this.S2CCreateCharacter, this)
 
-        NetEventDispatcher.addListener(NetEvent.PushPropertyChange, this.PushPropertyChange,this)
+        NetEventDispatcher.addListener(NetEvent.PushPropertyChange, this.PushPropertyChange, this)
 
-        NetEventDispatcher.addListener(NetEvent.S2CStageList, this.S2CStageList,this)
+        NetEventDispatcher.addListener(NetEvent.S2CStageList, this.S2CStageList, this)
 
-        NetEventDispatcher.addListener(NetEvent.S2CCardList, this.S2CCardList,this)
+        NetEventDispatcher.addListener(NetEvent.S2CCardList, this.S2CCardList, this)
 
-        NetEventDispatcher.addListener(NetEvent.PushAddCard, this.PushAddCard,this)
+        NetEventDispatcher.addListener(NetEvent.PushAddCard, this.PushAddCard, this)
+
+        NetEventDispatcher.addListener(NetEvent.PushItemChange, this.PushItemChange, this)
+
+
         // S2CCreateCharacter
+    }
+
+    PushItemChange(retObj) {
+        // {"item_info":{"uuid":"","template_id":5001,"enhance_level":0,"stars":0,"num":300,"bagId":4,"hpEx":0,"atkEx":0,"defEx":0,"attrEx":[],"exp":0}}
+
+        for (let i = 0; i < DataManager.instance.curRuneList.length; i++) {
+            if (DataManager.instance.curRuneList[i].template_id == retObj.item_info.template_id) {
+                DataManager.instance.curRuneList[i] = retObj.item_info
+                if (retObj.item_info.num == 0) {
+                    DataManager.instance.curRuneList.splice(i, 1)
+                }
+            }
+        }
     }
     /**获取玩家信息 */
     S2CUserInfoStruct(retObj) {
@@ -175,8 +192,8 @@ export default class NewClass extends cc.Component {
     }
 
     S2CCardList(retObj) {
-        retObj.cards.sort((a, b) => 
-             a.template_id - b.template_id
+        retObj.cards.sort((a, b) =>
+            a.template_id - b.template_id
         )
         console.log('我的将表:' + JSON.stringify(retObj))
 

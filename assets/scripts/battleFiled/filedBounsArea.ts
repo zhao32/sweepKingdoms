@@ -55,8 +55,8 @@ export default class NewClass extends cc.Component {
     _data: any
 
     start() {
-        NetEventDispatcher.addListener(NetEvent.S2CRankLike, this.S2CRankLike.bind(this))
-        NetEventDispatcher.addListener(NetEvent.S2CArenaExchange, this.S2CArenaExchange.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CRankLike, this.S2CRankLike,this)
+        NetEventDispatcher.addListener(NetEvent.S2CArenaExchange, this.S2CArenaExchange,this)
 
 
         // S2CArenaExchangeList
@@ -78,7 +78,7 @@ export default class NewClass extends cc.Component {
     }
 
     init(data) {
-        NetEventDispatcher.addListener(NetEvent.S2CArenaExchangeList, this.S2CArenaExchangeList.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CArenaExchangeList, this.S2CArenaExchangeList,this)
         this.unschedule(this.schFun)
 
         this._data = data

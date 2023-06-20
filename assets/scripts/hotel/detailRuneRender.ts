@@ -70,7 +70,7 @@ export default class NewClass extends cc.Component {
                 console.log(`获取符石列表`)
                 console.log('RuneList:' + JSON.stringify(DataManager.instance.curRuneList))
 
-                DataManager.wndHotelDetail.node.getChildByName('runePutPanel').getComponent(runePutPanel).open(heroid, idx + 1)
+                DataManager.wndHotelDetail.node.getChildByName('runePutPanel').getComponent(runePutPanel).open(heroid, idx)
             }
 
         }, this)

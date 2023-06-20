@@ -287,7 +287,8 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-
+        NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CMineDefFormationSave, this.S2CMineDefFormationSave,this)
     }
 
     // update (dt) {}

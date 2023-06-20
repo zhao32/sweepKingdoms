@@ -89,7 +89,7 @@ export default class NewClass extends cc.Component {
         this.toggle0.isChecked = true
         MyProtocols.send_C2SArenaExchangeList(DataManager._loginSocket)
 
-        NetEventDispatcher.addListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CRankView, this.S2CRankView,this)
 
         if (DataManager.myBattleFiledConfig.soliders.length == 0) {
             for (let i = 0; i < 5; i++) {
@@ -184,7 +184,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CRankView, this.S2CRankView.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2CRankView, this.S2CRankView,this)
     }
 
     onCloseHandler() {

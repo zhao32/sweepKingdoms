@@ -95,7 +95,7 @@ export default class NewClass extends cc.Component {
         DataManager.wndHotelDetail = this
         this.node.getChildByName('runePutPanel').active = false
         packManager.getInstance().reflishBag()
-        NetEventDispatcher.addListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock,this)
+        NetEventDispatcher.addListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock, this)
 
 
         console.log('-----data:' + JSON.stringify(data))
@@ -145,7 +145,14 @@ export default class NewClass extends cc.Component {
 
         for (let i = 0; i < data.runePutup.length; i++) {
             // ResManager.loadItemIcon(`hero/runePot${data.runePutup[i]}`, this.node.getChildByName('cao').children[i])
-            this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[data.runePutup[i]]
+            if (data.runePutup[i] < 1000) {
+                this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[data.runePutup[i]]
+            } else {
+                let rune = this.node.getChildByName('cao1').children[i].children[0]
+                rune.active = true
+                console.log('data.runePutup[i]:' + data.runePutup[i])
+                ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[data.runePutup[i]].icon}`, rune)
+            }
         }
 
         for (let i = 0; i < data.runeUnlock.length; i++) {
@@ -215,11 +222,10 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-       
-        NetEventDispatcher.removeListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock, this)
     }
 
-    onCloseHandler(){
+    onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL_LIST)
     }

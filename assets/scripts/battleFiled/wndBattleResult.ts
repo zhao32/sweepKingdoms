@@ -128,7 +128,7 @@ export default class NewClass extends cc.Component {
     }
 
     init(myData = this._myData, enemyData = this._enemyData) {
-        NetEventDispatcher.addListener(NetEvent.S2CPkBattleCalculate, this.S2CPkBattleCalculate.bind(this))
+        NetEventDispatcher.addListener(NetEvent.S2CPkBattleCalculate, this.S2CPkBattleCalculate,this)
 
         this._myData = myData
         this._enemyData = enemyData
@@ -565,7 +565,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CPkBattleCalculate, this.S2CPkBattleCalculate.bind(this))
+        NetEventDispatcher.removeListener(NetEvent.S2CPkBattleCalculate, this.S2CPkBattleCalculate,this)
 
     }
 

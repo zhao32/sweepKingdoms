@@ -271,6 +271,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail,this)
 
     }
 

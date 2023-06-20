@@ -75,7 +75,7 @@ export default class NewClass extends cc.Component {
         this.lordLabel.string = `领主：${data.hold_player.nickname}`
         this.awardLabel.string = `已产出：${data.hold_player.award}`
 
-        NetEventDispatcher.addListener(NetEvent.S2CMineGetAward, this.S2CMineGetAward,this)
+        NetEventDispatcher.addListener(NetEvent.S2CMineGetAward, this.S2CMineGetAward, this)
 
 
 
@@ -127,7 +127,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CMineGetAward, this.S2CMineGetAward,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CMineGetAward, this.S2CMineGetAward, this)
     }
 
     // update (dt) {}
