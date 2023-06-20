@@ -2000,6 +2000,7 @@ var MyProtocols = {
 	},
 
 	/**我的矿场防守阵型  eviType 恶魔之门 0 防守 1进攻 */
+	/**我的矿场防守阵型  eviType 恶魔之门 0 防守 1进攻 */
 	send_C2SMineDefFormationSave: function (senderSocket, p_level_index, p_point_index, p_formation, country, type, eviType) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3113);
@@ -2027,12 +2028,13 @@ var MyProtocols = {
 			myEncoder.writeInt(p_formation.h);
 			myEncoder.writeInt(p_formation.i);
 			myEncoder.writeInt(p_formation.j);
+			debugger;
 			// myEncoder.writeInt(soldier.length);
 			myEncoder.writeInt(p_formation.soldier.length)//派兵是数据
 
 			for (var i = 0; i < p_formation.soldier.length; i++) {
-				myEncoder.writeInt(p_formation.soldier[i].template_id);
-				myEncoder.writeInt(p_formation.soldier[i].number);
+				myEncoder.writeInt(p_formation.soldier[i].arm);
+				myEncoder.writeInt(p_formation.soldier[i].count);
 			}
 
 		}

@@ -11,16 +11,20 @@ const {ccclass, property} = cc._decorator;
 export default class NewClass extends cc.Component {
 
     @property(cc.Label)
-    label: cc.Label = null;
+    nameLabel: cc.Label = null;
 
-    @property
-    text: string = 'hello';
+    @property(cc.Label)
+    displayLabel: cc.Label = null;
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
 
     start () {
+
+    }
+
+    init(){ 
 
     }
 

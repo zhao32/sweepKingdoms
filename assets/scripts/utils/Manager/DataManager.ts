@@ -144,7 +144,9 @@ export default class DataManager {
         /**符石 */
         Runes:{
 
-        }
+        },
+        /** */
+        Equips:{}
 
     }
     /**我的将表 */
@@ -267,6 +269,8 @@ export default class DataManager {
     curRuneList = []
 
     static wndHotelDetail:wndHotelDetail
+
+    
 
 
 
