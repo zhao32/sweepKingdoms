@@ -1513,7 +1513,6 @@ var MyProtocols = {
 		senderSocket.sendMessage(rawContent);
 	},
 
-
 	get_3104: function (myDecoder) {
 		var retObj = {};
 		retObj.level_index = myDecoder.readInt();
@@ -1674,8 +1673,6 @@ var MyProtocols = {
 					}
 				}
 			}
-
-
 		}
 		retObj.exclude_cards = [];
 		let exclude_cards_size = myDecoder.readInt();
@@ -1684,6 +1681,7 @@ var MyProtocols = {
 				retObj.exclude_cards[i] = myDecoder.readInt();
 			}
 		}
+		retObj.state = myDecoder.readInt();
 		retObj.rand_key = myDecoder.readLong();
 		console.log(`矿场守卫信息`)
 		return retObj;

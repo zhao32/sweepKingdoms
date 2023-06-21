@@ -141,11 +141,11 @@ export default class NewClass extends cc.Component {
 
 
                 if (data.mine_points[i].hold_player.id == DataManager.playData.id) {
-                    if (data.mine_points[i].hold_player.group == 101 || data.mine_points[i].hold_player.group == 105) {
+                    if (data.mine_points[i].hold_player.group == 101) {
                         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[data.mine_points[i]])
-                    }
-
-                    else {
+                    } else if (data.mine_points[i].hold_player.group == 105) {
+                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[data.mine_points[i]])
+                    } else {
                         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[data.mine_points[i]])
                     }
                 } else {
@@ -159,10 +159,6 @@ export default class NewClass extends cc.Component {
                         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[data.mine_points[i]])
                     }
                 }
-
-
-
-
             }, this)
         }
     }
