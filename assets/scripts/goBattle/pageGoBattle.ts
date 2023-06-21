@@ -190,9 +190,8 @@ export default class NewClass extends cc.Component {
         } else {
             if (hold_player.group == 105) {//恶魔之门
                 if (retObj.state == 0) {
-                    ViewManager.instance.showToast(`恶魔之门还未开启`)
+                    // ViewManager.instance.showToast(`恶魔之门还未开启`)
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[this.mineData[this.clickIdx], retObj.state])
-
                 } else if (retObj.state == 1) {
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[this.mineData[this.clickIdx], retObj.state])
                 } else if (retObj.state == 2) {
@@ -291,6 +290,8 @@ export default class NewClass extends cc.Component {
         console.log(`-------关闭-----------`)
         NetEventDispatcher.removeListener(NetEvent.S2CMineList, this.S2CMineList, this)
         NetEventDispatcher.removeListener(NetEvent.S2CFindMines, this.S2CFindMines, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+
     }
 
 
