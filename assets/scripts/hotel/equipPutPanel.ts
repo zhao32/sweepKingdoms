@@ -107,7 +107,7 @@ export default class NewClass extends cc.Component {
     }
 
     onCloseHandler() {
-        DataManager.wndHotelDetail.updateRunes()
+        // DataManager.wndHotelDetail.updateRunes()
         this.node.active = false
 
     }
