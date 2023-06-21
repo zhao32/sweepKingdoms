@@ -91,7 +91,6 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data])
 
     }
-
     init(data) {
         console.log('filedData:' + JSON.stringify(data))
         this._data = data
@@ -119,6 +118,7 @@ export default class NewClass extends cc.Component {
         // }else{
         //     ResManager.loadItemIcon(`goBattle/icon0`,this.icon)
         // }
+      
     }
 
     onCloseHandler() {

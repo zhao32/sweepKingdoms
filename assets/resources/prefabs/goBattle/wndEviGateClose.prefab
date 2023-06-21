@@ -1127,7 +1127,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "btnUp",
+    "_name": "btnAtt",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1

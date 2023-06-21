@@ -136,9 +136,9 @@ export default class NewClass extends cc.Component {
         }
 
         if (retObj.soliderUsed) {
-            for (let i = 0; i < retObj.soliderUse.length; i++) {
-                if (retObj.soliderUse[i].arm != 0) {
-                    this.definSoliders.push(retObj.soliderUse[i])
+            for (let i = 0; i < retObj.soliderUsed.length; i++) {
+                if (retObj.soliderUsed[i].arm != 0) {
+                    this.definSoliders.push(retObj.soliderUsed[i])
                 }
             }
         }

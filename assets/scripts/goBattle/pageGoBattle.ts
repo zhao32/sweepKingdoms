@@ -50,6 +50,8 @@ export default class NewClass extends cc.Component {
 
     }
 
+    mineData = []
+
     S2CFindMines(retObj) {
         console.log(`查找矿返回：` + JSON.stringify(retObj))
         // retObj.mine_points
@@ -103,6 +105,7 @@ export default class NewClass extends cc.Component {
         }
 
         this.filedContect.removeAllChildren()
+        this.mineData = data.mine_points
         for (let i = 0; i < data.mine_points.length; i++) {
             let filedNode = cc.instantiate(this.filedItemPfb)
             filedNode.parent = this.filedContect
@@ -114,57 +117,112 @@ export default class NewClass extends cc.Component {
             } else {
                 // filedNode.getChildByName(`light`).active = false
             }
-            filedNode.on(cc.Node.EventType.TOUCH_END, () => {
-                filedNode.getChildByName(`light`).active = false
+            // filedNode.on(cc.Node.EventType.TOUCH_END, () => {
+            //     filedNode.getChildByName(`light`).active = false
 
-                // if (data.mine_points[i].hold_player) {
-                //     // if (data.mine_points[i].hold_player.page == 0 && data.mine_points[i].hold_player.idx == 6) {
-                //     //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[data.mine_points[i]])
-                //     //     return
-                //     // }
+            //     // if (data.mine_points[i].hold_player) {
+            //     //     // if (data.mine_points[i].hold_player.page == 0 && data.mine_points[i].hold_player.idx == 6) {
+            //     //     //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[data.mine_points[i]])
+            //     //     //     return
+            //     //     // }
 
-                //     // if (data.mine_points[i].hold_player.page == 0 && data.mine_points[i].hold_player.idx == 7) {
-                //     //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[data.mine_points[i]])
-                //     //     return
-                //     // }
+            //     //     // if (data.mine_points[i].hold_player.page == 0 && data.mine_points[i].hold_player.idx == 7) {
+            //     //     //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[data.mine_points[i]])
+            //     //     //     return
+            //     //     // }
 
-                //     if (data.mine_points[i].hold_player.id == DataManager.playData.id) {
-                //         if (data.mine_points[i].hold_player.group == 101) {
-                //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[data.mine_points[i]])
-                //         } else {
-                //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[data.mine_points[i]])
-                //         }
-                //     } else {
-                //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[data.mine_points[i]])
-                //     }
-                // }
+            //     //     if (data.mine_points[i].hold_player.id == DataManager.playData.id) {
+            //     //         if (data.mine_points[i].hold_player.group == 101) {
+            //     //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[data.mine_points[i]])
+            //     //         } else {
+            //     //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[data.mine_points[i]])
+            //     //         }
+            //     //     } else {
+            //     //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[data.mine_points[i]])
+            //     //     }
+            //     // }
 
 
-                if (data.mine_points[i].hold_player.id == DataManager.playData.id) {
-                    if (data.mine_points[i].hold_player.group == 101) {
-                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[data.mine_points[i]])
-                    } else if (data.mine_points[i].hold_player.group == 105) {
-                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[data.mine_points[i]])
-                    } else {
-                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[data.mine_points[i]])
-                    }
-                } else {
-                    if (data.mine_points[i].hold_player.group == 105) {//恶魔之门
-                        if (data.mine_points[i].hold_player.id) {
-                            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[data.mine_points[i]])
-                        } else {
-                            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[data.mine_points[i]])
-                        }
-                    } else {
-                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[data.mine_points[i]])
-                    }
-                }
-            }, this)
+            //     if (data.mine_points[i].hold_player.id == DataManager.playData.id) {
+            //         if (data.mine_points[i].hold_player.group == 101) {
+            //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[data.mine_points[i]])
+            //         } else if (data.mine_points[i].hold_player.group == 105) {
+            //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[data.mine_points[i]])
+            //         } else {
+            //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[data.mine_points[i]])
+            //         }
+            //     } else {
+            //         if (data.mine_points[i].hold_player.group == 105) {//恶魔之门
+            //             if (data.mine_points[i].hold_player.id) {
+            //                 ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[data.mine_points[i]])
+            //             } else {
+            //                 ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[data.mine_points[i]])
+            //             }
+            //         } else {
+            //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[data.mine_points[i]])
+            //         }
+            //     }
+            // }, this)
+            if (this.mineData[i].hold_player) {
+                filedNode.on(cc.Node.EventType.TOUCH_END, () => {
+                    console.log('-------点击---------')
+                    filedNode.getChildByName(`light`).active = false
+                    MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this.mineData[i].hold_player.page, this.mineData[i].hold_player.idx, this.mineData[i].hold_player.country)
+                    this.clickIdx = i
+                }, this)
+            }
+
         }
     }
 
+    S2CMineEnemyDetail(retObj) {
+        console.log('矿场详情:', JSON.stringify(retObj))
+        let hold_player = this.mineData[this.clickIdx].hold_player
+        // retObj.state = 3
+        if (hold_player.id == DataManager.playData.id) {
+            if (hold_player.group == 101) {
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[this.mineData[this.clickIdx]])
+            } else if (hold_player.group == 105) {
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[this.mineData[this.clickIdx]])
+            } else {
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[this.mineData[this.clickIdx]])
+            }
+        } else {
+            if (hold_player.group == 105) {//恶魔之门
+                if (retObj.state == 0) {
+                    ViewManager.instance.showToast(`恶魔之门还未开启`)
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[this.mineData[this.clickIdx], retObj.state])
+
+                } else if (retObj.state == 1) {
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[this.mineData[this.clickIdx], retObj.state])
+                } else if (retObj.state == 2) {
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
+                    // ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[this.mineData])
+                } else {
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
+                }
+            } else {
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
+            }
+        }
+
+    }
+
+    clickIdx
     init() {
         console.log(`this.S2CMineList:` + this.S2CMineList, this)
+
+        // for (let i = 0; i < this.filedContect.children.length; i++) {
+        //     let filedNode = this.filedContect.children[i]
+        //     filedNode.on(cc.Node.EventType.TOUCH_END, () => {
+        //         console.log('-------点击---------')
+        //         filedNode.getChildByName(`light`).active = false
+        //         MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this.mineData[i].hold_player.page, this.mineData[i].hold_player.idx, this.mineData[i].hold_player.country)
+        //         this.clickIdx = i
+        //     }, this)
+        // }
+
+        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
 
         NetEventDispatcher.addListener(NetEvent.S2CMineList, this.S2CMineList, this)
         NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines, this)

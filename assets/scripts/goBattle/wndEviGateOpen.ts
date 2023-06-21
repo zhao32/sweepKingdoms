@@ -37,11 +37,21 @@ export default class NewClass extends cc.Component {
 
     }
 
-    init(data) {
+    init(data, state) {
         this._data = data
-        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail,this)
-
-
+        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+        if (state == 3) {
+            this.node.getChildByName('btnDefine').getComponent(cc.Button).interactable = false
+            this.node.getChildByName('btnAtt').getComponent(cc.Button).interactable = false
+        } else {
+            if (data.hold_player.country == DataManager.playData.nation_id) {
+                this.node.getChildByName('btnDefine').getComponent(cc.Button).interactable = true
+                this.node.getChildByName('btnAtt').getComponent(cc.Button).interactable = false
+            } else {
+                this.node.getChildByName('btnDefine').getComponent(cc.Button).interactable = false
+                this.node.getChildByName('btnAtt').getComponent(cc.Button).interactable = true
+            }
+        }
     }
 
     S2CMineEnemyDetail(data) {
@@ -56,7 +66,7 @@ export default class NewClass extends cc.Component {
         // console.log(JSON.stringify(this._data.hold_player))
         ViewManager.instance.hideWnd(DataManager.curWndPath)
 
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_COMPYARMY,...[this._data.hold_player])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_COMPYARMY, ...[this._data.hold_player])
         // MyProtocols.send_C2SMineEviDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
     }
 
@@ -76,7 +86,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
 
     }
 
