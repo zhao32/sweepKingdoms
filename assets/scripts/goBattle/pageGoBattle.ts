@@ -54,7 +54,7 @@ export default class NewClass extends cc.Component {
         console.log(`查找矿返回：` + JSON.stringify(retObj))
         // retObj.mine_points
 
-        if (retObj.group == 101) {//肥羊
+        if (retObj.type == 101) {//肥羊
             let mineData = []
             for (let i = 0; i < retObj.mine_points.length; i++) {
                 if (retObj.mine_points[i].hold_player) {
@@ -66,13 +66,14 @@ export default class NewClass extends cc.Component {
                 return
             }
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FY, ...[retObj.mine_points])
-        } else if (retObj.group == 105) {//恶魔之门
-            if (retObj.mine_points.id) {
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[retObj.mine_points])
-            } else {
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[retObj.mine_points])
-            }
         }
+        // else if (retObj.group == 105) {//恶魔之门
+        //     if (retObj.mine_points.id) {
+        //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[retObj.mine_points])
+        //     } else {
+        //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[retObj.mine_points])
+        //     }
+        // }
     }
 
     S2CMineList(data) {
@@ -116,22 +117,43 @@ export default class NewClass extends cc.Component {
             filedNode.on(cc.Node.EventType.TOUCH_END, () => {
                 filedNode.getChildByName(`light`).active = false
 
-                if (data.mine_points[i].hold_player) {
-                    // if (data.mine_points[i].hold_player.page == 0 && data.mine_points[i].hold_player.idx == 6) {
-                    //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[data.mine_points[i]])
-                    //     return
-                    // }
+                // if (data.mine_points[i].hold_player) {
+                //     // if (data.mine_points[i].hold_player.page == 0 && data.mine_points[i].hold_player.idx == 6) {
+                //     //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[data.mine_points[i]])
+                //     //     return
+                //     // }
 
-                    // if (data.mine_points[i].hold_player.page == 0 && data.mine_points[i].hold_player.idx == 7) {
-                    //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[data.mine_points[i]])
-                    //     return
-                    // }
+                //     // if (data.mine_points[i].hold_player.page == 0 && data.mine_points[i].hold_player.idx == 7) {
+                //     //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[data.mine_points[i]])
+                //     //     return
+                //     // }
 
-                    if (data.mine_points[i].hold_player.id == DataManager.playData.id) {
-                        if (data.mine_points[i].hold_player.group == 101) {
-                            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[data.mine_points[i]])
+                //     if (data.mine_points[i].hold_player.id == DataManager.playData.id) {
+                //         if (data.mine_points[i].hold_player.group == 101) {
+                //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[data.mine_points[i]])
+                //         } else {
+                //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[data.mine_points[i]])
+                //         }
+                //     } else {
+                //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[data.mine_points[i]])
+                //     }
+                // }
+
+
+                if (data.mine_points[i].hold_player.id == DataManager.playData.id) {
+                    if (data.mine_points[i].hold_player.group == 101 || data.mine_points[i].hold_player.group == 105) {
+                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[data.mine_points[i]])
+                    }
+
+                    else {
+                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[data.mine_points[i]])
+                    }
+                } else {
+                    if (data.mine_points[i].hold_player.group == 105) {//恶魔之门
+                        if (data.mine_points[i].hold_player.id) {
+                            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[data.mine_points[i]])
                         } else {
-                            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[data.mine_points[i]])
+                            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[data.mine_points[i]])
                         }
                     } else {
                         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[data.mine_points[i]])

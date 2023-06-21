@@ -56,7 +56,19 @@ export default class NewClass extends cc.Component {
                         render.parent = this.contect
                         for (let k = 0; k < list[j].length; k++) {
                             let item = cc.instantiate(this.itemPfb)
-                            ResManager.loadItemIcon(`UI/items/${list[j][k].template_id}`, item.getChildByName('pic'))
+                            if (list[j][k].bagId == 4) {
+                                // if (list[j][k].template_id - 4000 >= 0) {
+                                //     ResManager.loadItemIcon(`UI/UnitsEquips/${list[j][k].template_id}`, item.getChildByName('pic'))
+
+                                // } else {
+                                //     ResManager.loadItemIcon(`UI/items/${list[j][k].template_id}`, item.getChildByName('pic'))
+
+                                // }
+                                ResManager.loadItemIcon(`UI/UnitsEquips/${list[j][k].template_id}`, item.getChildByName('pic'))
+                            } else {
+                                ResManager.loadItemIcon(`UI/items/${list[j][k].template_id}`, item.getChildByName('pic'))
+                            }
+
 
                             item.parent = render
                             item.on(cc.Node.EventType.TOUCH_END, () => {

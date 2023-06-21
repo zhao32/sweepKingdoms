@@ -57,9 +57,13 @@ export default class NewClass extends cc.Component {
             defaultData = DataManager.GameData.packItems[data.template_id]
             this.btnLabel0.string = `使用`
             this.btnLabel1.string = `出售`
+            ResManager.loadItemIcon(`UI/UnitsEquips/${data.template_id}`, this.pic)
+
         } else if (data.bagId == 3) {//宝物
             defaultData = DataManager.GameData.Treasures[data.template_id]
             ResManager.loadItemIcon(`UI/items/${data.template_id}`, this.pic)
+            this.btnLabel0.string = `精炼`
+            this.btnLabel1.string = `强化`
         }
         console.log('defaultData:'+ JSON.stringify(defaultData))
 

@@ -59,7 +59,7 @@ export default class NewClass extends cc.Component {
     S2CMineEnemyDetail(data) {
         console.log("返回矿场阵容")
         console.log(JSON.stringify(data))
-        this._data = data
+        // this._data = data
 
         this.soliders = []
         this.cards = []
@@ -109,14 +109,12 @@ export default class NewClass extends cc.Component {
         this.soliders = []
         this.cards = []
         this.myHeroData = null
-
+        this._data = data
         this.myContect.removeAllChildren()
 
         console.log('--------data------' + JSON.stringify(data))
         MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx,data.country)
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail,this)
-
-
         // this.node.getChildByName('heroRender').getComponent(battleHeroRender).init(this.cards[0])
         // this.myHeroData = this.cards[0]
     }

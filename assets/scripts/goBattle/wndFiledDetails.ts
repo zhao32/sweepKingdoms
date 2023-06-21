@@ -72,11 +72,11 @@ export default class NewClass extends cc.Component {
         console.log(JSON.stringify(retObj))
         // {"level_index":0,"point_index":0,"base_info":{"id":0,"nickname":"","level":0,"icon":0,"head_frame_id":1,"fight":0,"cd_time":0},"formation":{"fid":0,"formationId":0,"forward":0,"flip":0,"a":0,"b":0,"c":0},"soliderUsed":[],"soliderUse":[{"arm":0,"count":1000},{"arm":1,"count":1000},{"arm":2,"count":1000}],"cards":[],"exclude_cards":[],"rand_key":2923001863557120}
         let soliderData = []
-        for (let i = 0; i < retObj.soliderUse.length; i++) {
-            if (retObj.soliderUse[i].arm != 0) {
+        for (let i = 0; i < retObj.soliderUsed.length; i++) {
+            if (retObj.soliderUsed[i].arm != 0) {
                 soliderData.push({
-                    arm: retObj.soliderUse[i].arm,
-                    count: retObj.soliderUse[i].count,
+                    arm: retObj.soliderUsed[i].arm,
+                    count: retObj.soliderUsed[i].count,
                     fight: 0,
                     defense: 0
                 })

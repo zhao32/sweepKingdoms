@@ -1582,7 +1582,7 @@ var MyProtocols = {
 				retObj.cards[i].grade = myDecoder.readInt();
 				retObj.cards[i].unitLevel = myDecoder.readInt();
 				retObj.cards[i].unitGrade = myDecoder.readInt();
-				retObj.cards[i].unit_type = myDecoder.readInt();
+				// retObj.cards[i].unit_type = myDecoder.readInt();
 
 				retObj.cards[i].maxhp = myDecoder.readInt();
 				retObj.cards[i].atk = myDecoder.readInt();
@@ -1656,7 +1656,7 @@ var MyProtocols = {
 				retObj.att_cards[i].grade = myDecoder.readInt();
 				retObj.att_cards[i].unitLevel = myDecoder.readInt();
 				retObj.att_cards[i].unitGrade = myDecoder.readInt();
-				retObj.att_cards[i].unit_type = myDecoder.readInt();
+				// retObj.att_cards[i].unit_type = myDecoder.readInt();
 				retObj.att_cards[i].maxhp = myDecoder.readInt();
 				retObj.att_cards[i].atk = myDecoder.readInt();
 				retObj.att_cards[i].def = myDecoder.readInt();
@@ -1688,8 +1688,6 @@ var MyProtocols = {
 		console.log(`矿场守卫信息`)
 		return retObj;
 	},
-
-
 
 	/**请求恶魔之门防守  */
 	send_C2SMineEviDetail: function (senderSocket, p_level_index, p_point_index, country) {
