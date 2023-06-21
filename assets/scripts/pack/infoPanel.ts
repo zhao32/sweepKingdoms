@@ -57,7 +57,11 @@ export default class NewClass extends cc.Component {
             defaultData = DataManager.GameData.packItems[data.template_id]
             this.btnLabel0.string = `使用`
             this.btnLabel1.string = `出售`
+        } else if (data.bagId == 3) {//宝物
+            defaultData = DataManager.GameData.Treasures[data.template_id]
+            ResManager.loadItemIcon(`UI/items/${data.template_id}`, this.pic)
         }
+        console.log('defaultData:'+ JSON.stringify(defaultData))
 
         if (!defaultData) return
 
@@ -65,11 +69,10 @@ export default class NewClass extends cc.Component {
         this.countLabel.string = 'x' + data.num
         this.richLabel.string = defaultData.des
 
-        ResManager.loadItemIcon(`pack/${defaultData.id}`, this.pic)
     }
 
     btnHandler0() {
-        if(this._data.bagId == 4){
+        if (this._data.bagId == 4) {
             ViewManager.instance.showToast(`使用道具`)
         }
 
@@ -77,7 +80,7 @@ export default class NewClass extends cc.Component {
     }
 
     btnHandler1() {
-        if(this._data.bagId == 4){
+        if (this._data.bagId == 4) {
             ViewManager.instance.showToast(`卖出道具`)
             this.node.parent.getChildByName('sellPanel').active = true
         }

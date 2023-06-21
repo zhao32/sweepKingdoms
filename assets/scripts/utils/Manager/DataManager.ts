@@ -145,9 +145,10 @@ export default class DataManager {
         Runes:{
 
         },
-        /** */
-        Equips:{}
-
+        /**装备 */
+        Equips:{},
+        /**宝物 */
+        Treasures:{},
     }
     /**我的将表 */
     static cardsList = []

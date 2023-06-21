@@ -67,7 +67,11 @@ export default class NewClass extends cc.Component {
             }
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FY, ...[retObj.mine_points])
         } else if (retObj.type == 105) {//恶魔之门
-            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[retObj.mine_points])
+            if (retObj.mine_points.id) {
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[retObj.mine_points])
+            } else {
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[retObj.mine_points])
+            }
         }
     }
 
