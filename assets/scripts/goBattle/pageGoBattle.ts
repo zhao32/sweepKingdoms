@@ -54,7 +54,7 @@ export default class NewClass extends cc.Component {
         console.log(`查找矿返回：` + JSON.stringify(retObj))
         // retObj.mine_points
 
-        if (retObj.type == 101) {//肥羊
+        if (retObj.group == 101) {//肥羊
             let mineData = []
             for (let i = 0; i < retObj.mine_points.length; i++) {
                 if (retObj.mine_points[i].hold_player) {
@@ -66,7 +66,7 @@ export default class NewClass extends cc.Component {
                 return
             }
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_FY, ...[retObj.mine_points])
-        } else if (retObj.type == 105) {//恶魔之门
+        } else if (retObj.group == 105) {//恶魔之门
             if (retObj.mine_points.id) {
                 ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[retObj.mine_points])
             } else {
