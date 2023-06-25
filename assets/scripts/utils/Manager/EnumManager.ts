@@ -70,6 +70,8 @@ export default class EnumManager {
 
         WND_HOTEL_QH: 'prefabs/hotel/wndHotelQH',
 
+        WND_HOTEL_SJ:'prefabs/hotel/wndHotelEat',
+
 
 
 

@@ -40,6 +40,13 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Label, displayName: '星级' })
     starDisplay: cc.Label = null;
 
+    @property({ type: cc.SpriteFrame, displayName: '' })
+    checkFrames: cc.SpriteFrame[] = [];
+
+
+    selected = false
+
+
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -51,7 +58,7 @@ export default class NewClass extends cc.Component {
     }
 
     init(data) {
-
+        this.selected = false
         let defaultData = DataManager.GameData.Cards[data.template_id]
         this.nameDisplay.string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
         ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.head)
