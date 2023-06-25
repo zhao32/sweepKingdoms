@@ -48,7 +48,7 @@ export default class NewClass extends cc.Component {
 
     cards = []
 
-    _data:any
+    _data: any
 
     // onLoad () {}
 
@@ -74,7 +74,25 @@ export default class NewClass extends cc.Component {
                 this.soliders.push(data.soliderUsed[i])
             }
         }
-        this.cards = data.cards
+        if (this._data.hold_player.group == 101) {
+
+            let workKeyList = []
+            for (let i = 0; i < data.exclude_cards.length; i++) {
+                workKeyList.push(data.exclude_cards[i].template_id)
+            }
+
+            // for (let i = 0; i < data.cards.length; i++) {
+            //     workKeyList.push(data.cards[i].template_id)
+            // }
+
+            for (let i = 0; i < DataManager.cardsList.length; i++) {
+                if (workKeyList.indexOf(DataManager.cardsList[i].template_id) == -1) {
+                    this.cards.push(DataManager.cardsList[i])
+                }
+            }
+        } else {
+            this.cards = data.cards
+        }
 
         console.log(`this.soliders:` + JSON.stringify(this.soliders))
         if (this.soliders.length == 0) {
@@ -113,8 +131,8 @@ export default class NewClass extends cc.Component {
         this.myContect.removeAllChildren()
 
         console.log('--------data------' + JSON.stringify(data))
-        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx,data.country)
-        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail,this)
+        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx, data.country)
+        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
         // this.node.getChildByName('heroRender').getComponent(battleHeroRender).init(this.cards[0])
         // this.myHeroData = this.cards[0]
     }
@@ -139,7 +157,7 @@ export default class NewClass extends cc.Component {
 
                 let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.template_id, b: 0, c: 0, soldier: this.soliders }
                 console.log(JSON.stringify(data))
-                console.log('this._data:'+ JSON.stringify(this._data))
+                console.log('this._data:' + JSON.stringify(this._data))
                 // MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
                 MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this._data.page, this._data.idx, data, this._data.country, 2)
             }, this)
@@ -158,7 +176,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
 
     }
 
