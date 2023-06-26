@@ -144,6 +144,15 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName("btnSove").active = false
 
         }
+
+        if(enemyData.soliders.length == 0){
+            enemyData.soliders.push({
+                arm: 1,
+                count: 100,
+                fight: 0,
+                defense: 0
+            })
+        }
         console.log('enemyData:' + JSON.stringify(enemyData))
 
         console.log('filedData:' + JSON.stringify(filedData))
@@ -279,15 +288,7 @@ export default class NewClass extends cc.Component {
                 }
                 allNum += data.count
             }
-
-            // if (otherData.soliderList.length == 0) {
-            //     otherData.soliderList.push({
-            //         arm: 1,
-            //         count: 100,
-            //         fight: 0,
-            //         defense: 0
-            //     })
-            // }
+           
 
             if (allNum == 0) {
                 ViewManager.instance.showToast('请选择上阵士兵')
