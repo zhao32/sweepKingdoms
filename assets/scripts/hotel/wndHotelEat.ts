@@ -67,7 +67,7 @@ export default class NewClass extends cc.Component {
     init(data) {
         NetEventDispatcher.addListener(NetEvent.S2CCardAddLevel, this.S2CCardAddLevel, this)
 
-        this.myId = data.id
+        this.myId = data.template_id
         this.selectIdList = []
 
         let defaultData = DataManager.GameData.Cards[data.template_id]
@@ -107,7 +107,7 @@ export default class NewClass extends cc.Component {
 
         let cards = []
         for (let i = 0; i < DataManager.cardsList.length; i++) {
-            if (DataManager.cardsList[i].id != data.id) {
+            if (DataManager.cardsList[i].template_id != data.template_id) {
                 cards.push(DataManager.cardsList[i])
             }
         }
@@ -119,36 +119,35 @@ export default class NewClass extends cc.Component {
             pfb.getComponent(hotelSJRender).init(cards[i])
 
             pfb.getChildByName(`check`).on(cc.Node.EventType.TOUCH_END, () => {
-                if (this.selectIdList.indexOf(cards[i].id) == -1) {
-                    if (this.selectIdList.length < 9) {
-                        if (pfb.getComponent(hotelSJRender).selected == false) {
-                            this.selectIdList.push(cards[i].id)
-                            pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[1]
-                            pfb.getComponent(hotelSJRender).selected = true
-                        } else {
-                            pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[0]
-                            for (let j = 0; j < this.selectIdList.length; j++) {
-                                if (this.selectIdList[j] == cards[i].id) {
-                                    this.selectIdList.splice(j, 1)
-                                }
-                            }
-                            pfb.getComponent(hotelSJRender).selected = false
-
-                        }
+                // if (this.selectIdList.indexOf(cards[i].id) == -1) {
+                if (this.selectIdList.length < 9) {
+                    if (pfb.getComponent(hotelSJRender).selected == false) {
+                        this.selectIdList.push(cards[i].template_id)
+                        pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[1]
+                        pfb.getComponent(hotelSJRender).selected = true
                     } else {
-                        if (pfb.getComponent(hotelSJRender).selected == false) {
-                            ViewManager.instance.showToast(`每次最高吞噬九个将领`)
-                        } else {
-                            pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[0]
-                            for (let j = 0; j < this.selectIdList.length; j++) {
-                                if (this.selectIdList[j] == cards[i].id) {
-                                    this.selectIdList.splice(j, 1)
-                                }
+                        pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[0]
+                        for (let j = 0; j < this.selectIdList.length; j++) {
+                            if (this.selectIdList[j] == cards[i].template_id) {
+                                this.selectIdList.splice(j, 1)
                             }
-                            pfb.getComponent(hotelSJRender).selected = false
                         }
+                        pfb.getComponent(hotelSJRender).selected = false
+                    }
+                } else {
+                    if (pfb.getComponent(hotelSJRender).selected == false) {
+                        ViewManager.instance.showToast(`每次最高吞噬九个将领`)
+                    } else {
+                        pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[0]
+                        for (let j = 0; j < this.selectIdList.length; j++) {
+                            if (this.selectIdList[j] == cards[i].template_id) {
+                                this.selectIdList.splice(j, 1)
+                            }
+                        }
+                        pfb.getComponent(hotelSJRender).selected = false
                     }
                 }
+                // }
                 this.reflashHeads()
             }, this)
 
@@ -173,7 +172,7 @@ export default class NewClass extends cc.Component {
         let cards = []
         for (let i = 0; i < this.selectIdList.length; i++) {
             for (let j = 0; j < DataManager.cardsList.length; j++) {
-                if (this.selectIdList[i] == DataManager.cardsList[j].id) {
+                if (this.selectIdList[i] == DataManager.cardsList[j].template_id) {
                     cards.push(DataManager.cardsList[j])
                 }
             }
@@ -202,7 +201,7 @@ export default class NewClass extends cc.Component {
 
     }
 
-    S2CCardAddLevel(data){
+    S2CCardAddLevel(data) {
         console.log(`升级返回`)
         console.log(JSON.stringify(data))
     }
