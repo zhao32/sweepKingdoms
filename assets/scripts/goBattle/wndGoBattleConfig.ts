@@ -135,10 +135,10 @@ export default class NewClass extends cc.Component {
     }
 
     init(enemyData, filedData, closeFlight) {
-        if (closeFlight){
+        if (closeFlight) {
             this.node.getChildByName("fightBtn").active = false
             this.node.getChildByName("btnSove").active = true
-        } 
+        }
         else {
             this.node.getChildByName("fightBtn").active = true
             this.node.getChildByName("btnSove").active = false
@@ -176,7 +176,7 @@ export default class NewClass extends cc.Component {
 
         this.initEnemyData(enemyData.cardId, enemyData.soliders)
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
-        NetEventDispatcher.addListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave,this)
+        NetEventDispatcher.addListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave, this)
 
     }
 
@@ -280,6 +280,14 @@ export default class NewClass extends cc.Component {
                 allNum += data.count
             }
 
+            // if (otherData.soliderList.length == 0) {
+            //     otherData.soliderList.push({
+            //         arm: 1,
+            //         count: 100,
+            //         fight: 0,
+            //         defense: 0
+            //     })
+            // }
 
             if (allNum == 0) {
                 ViewManager.instance.showToast('请选择上阵士兵')
@@ -296,7 +304,7 @@ export default class NewClass extends cc.Component {
         }
     }
 
-    doSove(){
+    doSove() {
         if (!this.onSelectSolider) {
             ViewManager.instance.showToast('请选择上阵士兵')
         } else {
@@ -337,12 +345,12 @@ export default class NewClass extends cc.Component {
             console.log(JSON.stringify(data))
             MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
         }
-        
+
     }
 
     onClose() {
         NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
-        NetEventDispatcher.removeListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave, this)
 
     }
 

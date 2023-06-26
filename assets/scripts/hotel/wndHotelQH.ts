@@ -5,11 +5,18 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -49,12 +56,14 @@ export default class NewClass extends cc.Component {
 
     // onLoad () {}
 
+    _data
+
     start() {
 
     }
 
     init(data) {
-
+        this._data = data
         let defaultData = DataManager.GameData.Cards[data.template_id]
         this.nameDisplay.string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
         ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.head)
@@ -65,7 +74,7 @@ export default class NewClass extends cc.Component {
         this.gradeDisplay.string = 'LV ' + data.level
 
 
-         this.proBar.progress = data.physical / 200
+        this.proBar.progress = data.physical / 200
         this.proTxt.string = `${data.physical}/${200}`
 
         let maxExp = DataManager.GameData.CardLevels[defaultData.potential][data.level - 1][0]
@@ -83,20 +92,29 @@ export default class NewClass extends cc.Component {
             node.getChildByName('label1').getComponent(cc.Label).string = `成长潜质` //DataManager.armList[defaultData.talents[i]] + `兵熟练度：`
             node.getChildByName('label2').getComponent(cc.Label).string = `${data.aptitude[i]}/${999}`
         }
+
+        NetEventDispatcher.addListener(NetEvent.S2CIdentify, this.S2CIdentify, this)
+
     }
 
-    
+    S2CIdentify(data) {
+        console.log(`鉴定返回：` + JSON.stringify(data))
+    }
 
     onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
     }
 
     onClose() {
-
+        NetEventDispatcher.removeListener(NetEvent.S2CIdentify, this.S2CIdentify, this)
     }
 
     onQHHandler(target, data) {
+        MyProtocols.send_C2SCardAddLevel(DataManager._loginSocket, this._data.template_id, null, null, data)
+    }
 
+    onJianDHandler() {
+        MyProtocols.send_C2SIdentify(DataManager._loginSocket, this._data.template_id)
     }
 
 

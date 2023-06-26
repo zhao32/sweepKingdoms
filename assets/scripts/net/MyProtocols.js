@@ -2503,7 +2503,7 @@ var MyProtocols = {
 	},
 
 	/**装备升级 */
-	send_C2SCardAddLevel: function (senderSocket, p_card_id, p_cost_cards, p_cost_items) {
+	send_C2SCardAddLevel: function (senderSocket, p_card_id, p_cost_cards, p_cost_items, type) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2009);
 		myEncoder.writeInt(p_card_id);
@@ -2525,6 +2525,7 @@ var MyProtocols = {
 				myEncoder.writeInt(p_cost_items_v.count);
 			});
 		}
+		myEncoder.writeInt(type);
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
@@ -6646,6 +6647,32 @@ var MyProtocols = {
 					retObj.mine_points[i].hold_player.idx = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.reward = myDecoder.readInt();
 				}
+			}
+		}
+		return retObj;
+	},
+
+
+	send_C2SIdentify: function (senderSocket, p_card_id) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(2050);
+		myEncoder.writeInt(p_card_id);
+		
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_2051: function (myDecoder) {
+		var retObj = {};
+		retObj.card_id = myDecoder.readInt();
+		retObj.aptitude = [];
+
+
+		let aptitude_size = myDecoder.readInt();
+		if (aptitude_size > 0) {
+			for (var i = 0; i < aptitude_size; i++) {
+				retObj.aptitude[i] = myDecoder.readInt();;
 			}
 		}
 		return retObj;

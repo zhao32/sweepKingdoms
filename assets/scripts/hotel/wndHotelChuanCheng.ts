@@ -196,7 +196,7 @@ export default class NewClass extends cc.Component {
 
     doEatHandler() {
         if (this.selectIdList.length > 0) {
-            MyProtocols.send_C2SCardAddLevel(DataManager._loginSocket, this.myId, this.selectIdList)
+            MyProtocols.send_C2SCardAddLevel(DataManager._loginSocket, this.myId, this.selectIdList, null, 1)
         } else {
             ViewManager.instance.showToast(`请选择吞噬将领`)
         }
@@ -213,7 +213,8 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL_LIST)
     }
 
-    onClose(){ 
+    onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CCardAddLevel, this.S2CCardAddLevel, this)
 
     }
 

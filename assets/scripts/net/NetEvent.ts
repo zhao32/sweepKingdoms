@@ -334,8 +334,12 @@ export enum NetEvent {
     S2CFindMines = 3116,
 
     /**恶魔之门阵容 */
-    S2CMineEviDetail = 3505
+    S2CMineEviDetail = 3505,
 
+    /**鉴定 */
+    C2SIdentify=2050,
+
+    S2CIdentify=2051
 
 
 }
