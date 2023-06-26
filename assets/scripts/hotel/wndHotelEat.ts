@@ -77,32 +77,8 @@ export default class NewClass extends cc.Component {
         ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.headBg)
         ResManager.loadItemIcon(`hero/heroNameBg${defaultData.quality - 1}`, this.heroNameBg)
 
-        // for (let i = 1; i < 6; i++) {
-        //     this.node.getChildByName(`soldierType${i}`).active = false
-        // }
-
-        // for (let i = 0; i < defaultData.talents.length; i++) {
-        //     let node = this.node.getChildByName(`soldierType${i + 1}`)
-        //     node.active = true
-        //     ResManager.loadItemIcon(`hero/soldierType${defaultData.talents[i]}`, node)
-        // }
-
         this.starDisplay.string = `x${data.unitGrade}`
         this.gradeDisplay.string = 'LV ' + data.level
-
-        // this.proBar.progress = data.physical / 200
-        // this.proTxt.string = `${data.physical}/${200}`
-
-
-
-        // for (let i = 1; i <= 3; i++) {
-        //     this.node.getChildByName(`starGet${i}`).active = false
-        // }
-
-        // // console.log('data.unitGrade:' + data.unitGrade)
-        // for (let i = 1; i <= data.unitGrade; i++) {
-        //     this.node.getChildByName(`starGet${i}`).active = true
-        // }
 
         this.contect.removeAllChildren()
 
@@ -112,8 +88,6 @@ export default class NewClass extends cc.Component {
                 cards.push(DataManager.cardsList[i])
             }
         }
-
-
         for (let i = 0; i < cards.length; i++) {
             let pfb = cc.instantiate(this.renderfb)
             pfb.parent = this.contect
@@ -196,7 +170,6 @@ export default class NewClass extends cc.Component {
     doEatHandler() {
         // console.log(`this.selectIdList:`+this.selectIdList)
         // console.log(`this.myId:`+this.myId)
-
         let objList = []
         for (let i = 0; i <  this.selectIdList.length; i++) {
             let item = {
@@ -217,7 +190,57 @@ export default class NewClass extends cc.Component {
 
     S2CCardAddLevel(data) {
         console.log(`升级返回`)
+        // "card id";1,"level"4,"level exp":2508
         console.log(JSON.stringify(data))
+        this.gradeDisplay.string = 'LV ' + data.level
+
+        this.selectIdList = []
+        this.reflashHeads()
+        this.contect.removeAllChildren()
+        let cards = []
+        for (let i = 0; i < DataManager.cardsList.length; i++) {
+            if (DataManager.cardsList[i].template_id != data.template_id) {
+                cards.push(DataManager.cardsList[i])
+            }
+        }
+        for (let i = 0; i < cards.length; i++) {
+            let pfb = cc.instantiate(this.renderfb)
+            pfb.parent = this.contect
+            pfb.getComponent(hotelSJRender).init(cards[i])
+
+            pfb.getChildByName(`check`).on(cc.Node.EventType.TOUCH_END, () => {
+                // if (this.selectIdList.indexOf(cards[i].id) == -1) {
+                if (this.selectIdList.length < 9) {
+                    if (pfb.getComponent(hotelSJRender).selected == false) {
+                        this.selectIdList.push(cards[i].template_id)
+                        pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[1]
+                        pfb.getComponent(hotelSJRender).selected = true
+                    } else {
+                        pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[0]
+                        for (let j = 0; j < this.selectIdList.length; j++) {
+                            if (this.selectIdList[j] == cards[i].template_id) {
+                                this.selectIdList.splice(j, 1)
+                            }
+                        }
+                        pfb.getComponent(hotelSJRender).selected = false
+                    }
+                } else {
+                    if (pfb.getComponent(hotelSJRender).selected == false) {
+                        ViewManager.instance.showToast(`每次最高吞噬九个将领`)
+                    } else {
+                        pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[0]
+                        for (let j = 0; j < this.selectIdList.length; j++) {
+                            if (this.selectIdList[j] == cards[i].template_id) {
+                                this.selectIdList.splice(j, 1)
+                            }
+                        }
+                        pfb.getComponent(hotelSJRender).selected = false
+                    }
+                }
+                // }
+                this.reflashHeads()
+            }, this)
+        }
     }
 
 
