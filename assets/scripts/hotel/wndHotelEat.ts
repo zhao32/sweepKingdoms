@@ -194,11 +194,21 @@ export default class NewClass extends cc.Component {
     }
 
     doEatHandler() {
-        console.log(`this.selectIdList:`+this.selectIdList)
-        console.log(`this.myId:`+this.myId)
+        // console.log(`this.selectIdList:`+this.selectIdList)
+        // console.log(`this.myId:`+this.myId)
+
+        let objList = []
+        for (let i = 0; i <  this.selectIdList.length; i++) {
+            let item = {
+                template_id:this.selectIdList[i],
+                count:1
+            }
+            objList.push(item)
+        }
+        console.log(`objList:`+JSON.stringify(objList) )
 
         if (this.selectIdList.length > 0) {
-            MyProtocols.send_C2SCardAddLevel(DataManager._loginSocket, this.myId, this.selectIdList)
+            MyProtocols.send_C2SCardAddLevel(DataManager._loginSocket, this.myId, objList)
         } else {
             ViewManager.instance.showToast(`请选择吞噬将领`)
         }
