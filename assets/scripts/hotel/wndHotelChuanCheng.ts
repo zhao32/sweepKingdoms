@@ -10,8 +10,9 @@ import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
-import hotelJinhuaRender from "./hotelJinhuaRender";
 import hotelSJRender from "./hotelSJRender";
+
+const { ccclass, property } = cc._decorator;
 
 //@ts-ignore
 var MyProtocols = require("MyProtocols");
@@ -19,8 +20,6 @@ var MyProtocols = require("MyProtocols");
 //@ts-ignore
 var NetEventDispatcher = require("NetEventDispatcher");
 
-const { ccclass, property } = cc._decorator;
-////////////////升级
 @ccclass
 export default class NewClass extends cc.Component {
 
@@ -105,10 +104,12 @@ export default class NewClass extends cc.Component {
         // }
 
         this.contect.removeAllChildren()
-
+        //吞噬天选和传奇
         let cards = []
         for (let i = 0; i < DataManager.cardsList.length; i++) {
-            if (DataManager.cardsList[i].template_id != data.template_id) {
+            let defaultData = DataManager.GameData.Cards[DataManager.cardsList[i].template_id]
+
+            if (DataManager.cardsList[i].template_id != data.template_id && defaultData.quality == 2 || defaultData.quality == 3) {
                 cards.push(DataManager.cardsList[i])
             }
         }
@@ -121,7 +122,7 @@ export default class NewClass extends cc.Component {
 
             pfb.getChildByName(`check`).on(cc.Node.EventType.TOUCH_END, () => {
                 // if (this.selectIdList.indexOf(cards[i].id) == -1) {
-                if (this.selectIdList.length < 9) {
+                if (this.selectIdList.length < 4) {
                     if (pfb.getComponent(hotelSJRender).selected == false) {
                         this.selectIdList.push(cards[i].template_id)
                         pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[1]
@@ -194,9 +195,6 @@ export default class NewClass extends cc.Component {
     }
 
     doEatHandler() {
-        console.log(`this.selectIdList:`+this.selectIdList)
-        console.log(`this.myId:`+this.myId)
-
         if (this.selectIdList.length > 0) {
             MyProtocols.send_C2SCardAddLevel(DataManager._loginSocket, this.myId, this.selectIdList)
         } else {
@@ -210,13 +208,14 @@ export default class NewClass extends cc.Component {
         console.log(JSON.stringify(data))
     }
 
-
     onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL_LIST)
     }
 
-    onClose() {
+    onClose(){ 
 
     }
+
+    // update (dt) {}
 }

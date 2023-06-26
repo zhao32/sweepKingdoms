@@ -71,8 +71,10 @@ export default class EnumManager {
         WND_HOTEL_QH: 'prefabs/hotel/wndHotelQH',
 
         WND_HOTEL_SJ:'prefabs/hotel/wndHotelEat',
-
-
+        /**升星 */
+        WND_HOTEL_STAR:'prefabs/hotel/wndHotelStar',
+        /**传承 */
+        WND_HOTEL_CC:'prefabs/hotel/wndHotelChuanCheng',
 
 
         /////////////////// 背包
