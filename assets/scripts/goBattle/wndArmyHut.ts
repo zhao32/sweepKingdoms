@@ -74,7 +74,7 @@ export default class NewClass extends cc.Component {
                 this.soliders.push(data.soliderUsed[i])
             }
         }
-        if (this._data.hold_player.group == 101) {
+        if (this._data.group == 101) {
 
             let workKeyList = []
             for (let i = 0; i < data.exclude_cards.length; i++) {

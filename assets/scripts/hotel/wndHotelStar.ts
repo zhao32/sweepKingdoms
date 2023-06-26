@@ -32,11 +32,6 @@ export default class NewClass extends cc.Component {
     @property(cc.Node)
     heroNameBg: cc.Node = null;
 
-    @property({ type: cc.ProgressBar, displayName: '体力条' })
-    proBar: cc.ProgressBar = null;
-
-    @property({ type: cc.Label, displayName: '进度条label' })
-    proTxt: cc.Label = null;
 
     @property({ type: cc.ProgressBar, displayName: '经验条' })
     expProBar: cc.ProgressBar = null;
@@ -65,8 +60,8 @@ export default class NewClass extends cc.Component {
         this.gradeDisplay.string = 'LV ' + data.level
 
 
-         this.proBar.progress = data.physical / 200
-        this.proTxt.string = `${data.physical}/${200}`
+        //  this.proBar.progress = data.physical / 200
+        // this.proTxt.string = `${data.physical}/${200}`
 
         let maxExp = DataManager.GameData.CardLevels[defaultData.potential][data.level - 1][0]
         this.expProTxt.string = `${data.exp}/${maxExp}`
