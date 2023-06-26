@@ -134,7 +134,18 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(this.myHeroData)
     }
 
-    init(enemyData, filedData) {
+    init(enemyData, filedData, closeFlight) {
+        if (closeFlight){
+            this.node.getChildByName("fightBtn").active = false
+            this.node.getChildByName("btnSove").active = true
+        } 
+        else {
+            this.node.getChildByName("fightBtn").active = true
+            this.node.getChildByName("btnSove").active = false
+
+        }
+        console.log('enemyData:' + JSON.stringify(enemyData))
+
         console.log('filedData:' + JSON.stringify(filedData))
         this.enemyData = enemyData
         this.filedData = filedData
@@ -165,7 +176,15 @@ export default class NewClass extends cc.Component {
 
         this.initEnemyData(enemyData.cardId, enemyData.soliders)
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+        NetEventDispatcher.addListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave,this)
+
     }
+
+    S2CBattleFormationSave(data) {
+        console.log('军队配置返回' + JSON.stringify(data))
+        ViewManager.instance.showToast(`战队配置保存成功`)
+    }
+
 
     initEnemyData(cardId, soliders) {
         console.log(`soliders:` + JSON.stringify(soliders))
@@ -277,8 +296,53 @@ export default class NewClass extends cc.Component {
         }
     }
 
+    doSove(){
+        if (!this.onSelectSolider) {
+            ViewManager.instance.showToast('请选择上阵士兵')
+        } else {
+            let myData = {
+                heroData: this.myHeroData,
+                soliderList: []
+            }
+
+            let otherData = {
+                heroData: DataManager.GameData.Cards[this.enemyData.cardId],
+                soliderList: this.enemyData.soliders
+            }
+
+            let allNum = 0
+
+            for (let i = 0; i < this.myContect.children.length; i++) {
+                let render = this.myContect.children[i]
+                let data = render.getComponent(battleSoliderRender).getSelectNum()
+                let defineData = {
+                    arm: data.arm,
+                    count: data.count,
+                    fight: 0,
+                    defense: 0
+                }
+                if (data.count > 0) {
+                    myData.soliderList.push(defineData)
+                }
+                allNum += data.count
+            }
+
+
+            if (allNum == 0) {
+                ViewManager.instance.showToast('请选择上阵士兵')
+                return
+            }
+
+            let data = { fid: 1, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.template_id, b: 0, c: 0, soldier: myData.soliderList }
+            console.log(JSON.stringify(data))
+            MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
+        }
+        
+    }
+
     onClose() {
         NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave,this)
 
     }
 
