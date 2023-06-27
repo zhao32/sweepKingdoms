@@ -4130,10 +4130,15 @@ var MyProtocols = {
 				retObj.cardlist[i].fight = myDecoder.readInt();
 				// debugger;
 				retObj.cardlist[i].proficiency = [];
+				retObj.cardlist[i].talents = [];
+
+				
 				let proficiency_size = myDecoder.readInt();
 				if (proficiency_size > 0) {
 					for (var proficiency_idx = 0; proficiency_idx < proficiency_size; proficiency_idx++) {
 						retObj.cardlist[i].proficiency[proficiency_idx] = myDecoder.readInt();
+						retObj.cardlist[i].talents[proficiency_idx] = myDecoder.readInt();
+
 					}
 				}
 
