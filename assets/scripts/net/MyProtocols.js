@@ -2446,10 +2446,13 @@ var MyProtocols = {
 				}
 			}
 			retObj.card_info.proficiency = [];
+			retObj.card_info.talents = [];
+
 			let card_proficiency_size = myDecoder.readInt();
 			if (card_proficiency_size > 0) {
 				for (var proficiency_idx = 0; proficiency_idx < card_proficiency_size; proficiency_idx++) {
 					retObj.card_info.proficiency[proficiency_idx] = myDecoder.readInt();
+					retObj.card_info.talents[proficiency_idx] = myDecoder.readInt();
 				}
 			}
 			retObj.card_info.aptitude = [];
@@ -6657,7 +6660,7 @@ var MyProtocols = {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2050);
 		myEncoder.writeInt(p_card_id);
-		
+
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
