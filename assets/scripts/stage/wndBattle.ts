@@ -55,6 +55,8 @@ export default class NewClass extends cc.Component {
     @property(cc.Node)
     otherContect: cc.Node = null;
 
+
+
     @property(cc.Node)
     posMy: cc.Node = null;
 
@@ -63,6 +65,26 @@ export default class NewClass extends cc.Component {
 
     @property(cc.Prefab)
     soliderPfbList: cc.Prefab[] = [];
+
+    @property(cc.Node)
+    btnReward: cc.Node = null;
+
+    @property(cc.Node)
+    btnReacord: cc.Node = null;
+
+    @property(cc.SpriteFrame)
+    btnFrames: cc.SpriteFrame[] = [];
+
+    @property(cc.Node)
+    rewardContect: cc.Node = null;
+
+    @property(cc.Node)
+    recordContect: cc.Node = null;
+
+
+    @property(cc.Prefab)
+    rewardPfb: cc.Prefab = null;
+
 
     // mySolider
 
@@ -266,11 +288,22 @@ export default class NewClass extends cc.Component {
 
         // {"group_index":0,"stage_index":0,"is_win":true,"star":2,"times":4,"rewards":[{"template_id":1104,"num":500},{"template_id":2064,"num":1},{"template_id":1006,"num":1}]}
         // this.initResultPanel()
+        this.rewardContect.removeAllChildren()
+        for (let i = 0; i < retObj.rewards.length; i++) {
+            let id = retObj.rewards[i].template_id
+            if (id >= 2000 && id < 3000) {//装备
+                let item = cc.instantiate(this.rewardPfb)
+                ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[id].icon}`, item.getChildByName("pic"))
+                item.getChildByName("num").getComponent(cc.Label).string = `x` + retObj.rewards[i].num
+                item.parent = this.rewardContect
+            }
+         
+        }
 
     }
     init(myData, otherData, groupIdx, stageIdx) {
         this.battleInfo = ''
-        NetEventDispatcher.addListener(NetEvent.S2CStageEnd, this.S2CStageEnd,this)
+        NetEventDispatcher.addListener(NetEvent.S2CStageEnd, this.S2CStageEnd, this)
 
         this.groupIdx = groupIdx
         this.stageIdx = stageIdx
@@ -536,6 +569,27 @@ export default class NewClass extends cc.Component {
         let meNode = panel.getChildByName('iconMe')
         let otherNode = panel.getChildByName('iconEnemy')
 
+        this.btnReacord.getComponent(cc.Sprite).spriteFrame = this.btnFrames[1]
+        this.btnReward.getComponent(cc.Sprite).spriteFrame = this.btnFrames[0]
+
+        this.recordContect.active = true
+        this.rewardContect.active = false
+
+        this.btnReacord.on(cc.Node.EventType.TOUCH_END, () => {
+            this.btnReacord.getComponent(cc.Sprite).spriteFrame = this.btnFrames[1]
+            this.btnReward.getComponent(cc.Sprite).spriteFrame = this.btnFrames[0]
+            this.recordContect.active = true
+            this.rewardContect.active = false
+        }, this)
+
+        this.btnReward.on(cc.Node.EventType.TOUCH_END, () => {
+            this.btnReacord.getComponent(cc.Sprite).spriteFrame = this.btnFrames[0]
+            this.btnReward.getComponent(cc.Sprite).spriteFrame = this.btnFrames[1]
+            this.recordContect.active = false
+            this.rewardContect.active = true
+        }, this)
+
+
 
         let defaultData = DataManager.GameData.Cards[this.myData.heroData.template_id]
 
@@ -556,7 +610,9 @@ export default class NewClass extends cc.Component {
         otherNode.getChildByName('recover').getComponent(cc.Label).string = `0`
 
         console.log('this.battleInfo:' + this.battleInfo)
-        panel.getChildByName(`scrollView`).getComponent(cc.ScrollView).content.getComponentInChildren(cc.Label).string = this.battleInfo
+        // panel.getChildByName(`scrollView`).getComponent(cc.ScrollView).content.getComponentInChildren(cc.Label).string = this.battleInfo
+        this.recordContect.getComponentInChildren(cc.Label).string = this.battleInfo
+
 
     }
 
@@ -750,7 +806,7 @@ export default class NewClass extends cc.Component {
 
     doBack() {
         this.node.getChildByName('resultPanel').active = false
-        ViewManager.instance.hideWnd(DataManager.curWndPath,true)
+        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE)
     }
 
@@ -767,9 +823,9 @@ export default class NewClass extends cc.Component {
         this.posMy.children[0].getComponent(sp.Skeleton).timeScale = 2
     }
 
-    
+
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CStageEnd, this.S2CStageEnd,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CStageEnd, this.S2CStageEnd, this)
 
     }
 
