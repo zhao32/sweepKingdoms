@@ -66,7 +66,14 @@ export default class NewClass extends cc.Component {
                                 // }
                                 ResManager.loadItemIcon(`UI/UnitsEquips/${list[j][k].template_id}`, item.getChildByName('pic'))
                             } else {
-                                ResManager.loadItemIcon(`UI/items/${list[j][k].template_id}`, item.getChildByName('pic'))
+                                if(list[j][k].bagId == 1){
+                                    console.log(JSON.stringify(list[j][k]))
+                                    ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[list[j][k].template_id].icon }`, item.getChildByName('pic'))
+
+                                }else{
+                                    ResManager.loadItemIcon(`UI/items/${list[j][k].template_id}`, item.getChildByName('pic'))
+
+                                }
                             }
 
 

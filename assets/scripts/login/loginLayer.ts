@@ -66,6 +66,10 @@ export default class NewClass extends cc.Component {
     }
 
     init() {
+
+        // console.log(`进入游戏  `, this.selectSeverData.id)
+        console.log('DataManager._loginSocket:' + JSON.stringify(DataManager._loginSocket))
+
         this.serversNode.active = false
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_LOGIN)
 
@@ -140,6 +144,11 @@ export default class NewClass extends cc.Component {
     }
 
     onStart() {
+        // if (this.selectSeverData) {
+        //     let socketUrl = `ws://${this.selectSeverData.ip_addr}:${7550}/ws`
+        //     DataManager._loginSocket = new LejiSocket(socketUrl);
+        // }
+        console.log(JSON.stringify(DataManager._loginSocket))
         MyProtocols.send_C2SSelectServer(DataManager._loginSocket, this.selectSeverData.id)
 
     }
