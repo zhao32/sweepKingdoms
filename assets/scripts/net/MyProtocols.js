@@ -2367,10 +2367,13 @@ var MyProtocols = {
 					}
 				}
 				retObj.cards[i].proficiency = [];  //熟练度 最多三个 对应英雄json 里 熟练兵种
+				retObj.cards[i].talents = []; 
 				let proficiency_size = myDecoder.readInt();
 				if (proficiency_size > 0) {
 					for (var proficiency_id = 0; proficiency_id < proficiency_size; proficiency_id++) {
 						retObj.cards[i].proficiency[proficiency_id] = myDecoder.readInt();
+						retObj.cards[i].talents[proficiency_id] = myDecoder.readInt();
+
 					}
 				}
 				retObj.cards[i].aptitude = [];  //对应的 资质
