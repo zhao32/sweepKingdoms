@@ -69,6 +69,7 @@ export default class NewClass extends cc.Component {
 
         this.myId = data.id
         this.selectIdList = []
+        this.reflashHeads()
 
         let defaultData = DataManager.GameData.Cards[data.template_id]
         this.nameDisplay.string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
@@ -102,6 +103,19 @@ export default class NewClass extends cc.Component {
         // for (let i = 1; i <= data.unitGrade; i++) {
         //     this.node.getChildByName(`starGet${i}`).active = true
         // }
+
+        for (let i = 0; i < defaultData.talents.length; i++) {
+            let node = this.node.getChildByName("shuxing1").getChildByName(`soldierType${i + 1}`)
+            node.active = true
+            node.getChildByName('label0').getComponent(cc.Label).string = DataManager.armList[defaultData.talents[i]] + `兵熟练度：`
+            ResManager.loadItemIcon(`hero/soldierType${defaultData.talents[i]}`, node)
+
+            node.getChildByName('proTxt').getComponent(cc.Label).string = `${data.proficiency[i]}/${0}`
+            node.getChildByName(`progressBar`).getComponent(cc.ProgressBar).progress = 0.8
+            node.getChildByName('label1').getComponent(cc.Label).string = `成长潜质` //DataManager.armList[defaultData.talents[i]] + `兵熟练度：`
+            node.getChildByName('label2').getComponent(cc.Label).string = `${data.aptitude[i]}/${999}`
+        }
+
 
         this.contect.removeAllChildren()
         //吞噬天选和传奇

@@ -70,6 +70,7 @@ export default class NewClass extends cc.Component {
 
         this.myId = data.id
         this.selectIdList = []
+        this.reflashHeads()
 
         let defaultData = DataManager.GameData.Cards[data.template_id]
         this.nameDisplay.string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
@@ -81,6 +82,7 @@ export default class NewClass extends cc.Component {
         this.gradeDisplay.string = 'LV ' + data.level
 
         this.contect.removeAllChildren()
+
 
         let cards = []
         for (let i = 0; i < DataManager.cardsList.length; i++) {
