@@ -196,7 +196,15 @@ export default class NewClass extends cc.Component {
 
     doEatHandler() {
         if (this.selectIdList.length > 0) {
-            MyProtocols.send_C2SCardAddLevel(DataManager._loginSocket, this.myId, this.selectIdList, null, 1)
+            let objList = []
+            for (let i = 0; i <  this.selectIdList.length; i++) {
+                let item = {
+                    id:this.selectIdList[i],
+                    count:1
+                }
+                objList.push(item)
+            }
+            MyProtocols.send_C2SCardAddLevel(DataManager._loginSocket, this.myId, objList, null, 1)
         } else {
             ViewManager.instance.showToast(`请选择吞噬将领`)
         }
