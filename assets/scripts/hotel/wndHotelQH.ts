@@ -94,7 +94,14 @@ export default class NewClass extends cc.Component {
         }
 
         NetEventDispatcher.addListener(NetEvent.S2CIdentify, this.S2CIdentify, this)
+        NetEventDispatcher.addListener(NetEvent.S2CCardAddLevel, this.S2CCardAddLevel, this)
 
+
+    }
+
+    S2CCardAddLevel(data) {
+        console.log(`强化返回`)
+        console.log(JSON.stringify(data))
     }
 
     S2CIdentify(data) {
@@ -107,6 +114,8 @@ export default class NewClass extends cc.Component {
 
     onClose() {
         NetEventDispatcher.removeListener(NetEvent.S2CIdentify, this.S2CIdentify, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CCardAddLevel, this.S2CCardAddLevel, this)
+
     }
 
     onQHHandler(target, data) {
