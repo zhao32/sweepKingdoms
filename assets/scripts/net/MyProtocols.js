@@ -2363,18 +2363,33 @@ var MyProtocols = {
 				let skills_equips_size = myDecoder.readInt();
 				if (skills_equips_size > 0) {
 					for (var skills_equips_idx = 0; skills_equips_idx < skills_equips_size; skills_equips_idx++) {
-						retObj.cards[i].skills_equips[skills_equips_idx].id = myDecoder.readInt();
-						retObj.cards[i].skills_equips[skills_equips_idx].level = myDecoder.readInt();
-						retObj.cards[i].skills_equips[skills_equips_idx].type = myDecoder.readInt();
+						// retObj.cards[i].skills_equips[skills_equips_idx].id = myDecoder.readInt();
+
+
+						// retObj.cards[i].skills_equips[skills_equips_idx].level = myDecoder.readInt();
+						// retObj.cards[i].skills_equips[skills_equips_idx].type = myDecoder.readInt();
+
+						var data={
+							id:myDecoder.readInt(),
+							level: myDecoder.readInt(),
+							type: myDecoder.readInt()
+						};
+						retObj.cards[i].skills_equips[skills_equips_idx]=data
 					}
 				}
 				retObj.cards[i].proficiency = [];  //熟练度 最多三个 对应英雄json 里 熟练兵种
+				retObj.cards[i].talents = [];
 				let proficiency_size = myDecoder.readInt();
 				if (proficiency_size > 0) {
 					for (var proficiency_id = 0; proficiency_id < proficiency_size; proficiency_id++) {
 						retObj.cards[i].proficiency[proficiency_id] = myDecoder.readInt();
+						retObj.cards[i].talents[proficiency_id] = myDecoder.readInt();
 					}
 				}
+
+
+
+
 				retObj.cards[i].aptitude = [];  //对应的 资质
 				let aptitude_size = myDecoder.readInt();
 				if (aptitude_size > 0) {
@@ -2450,10 +2465,14 @@ var MyProtocols = {
 			retObj.card_info.skills_equips = [];
 			let card_skills_equips_size = myDecoder.readInt();
 			if (card_skills_equips_size > 0) {
-				for (var skills_equips_idx = 0; skills_equips_idx < skills_equips_size; skills_equips_idx++) {
-					retObj.card_info.skills_equips[skills_equips_idx].id = myDecoder.readInt();
-					retObj.card_info.skills_equips[skills_equips_idx].level = myDecoder.readInt();
-					retObj.card_info.skills_equips[skills_equips_idx].type = myDecoder.readInt();
+				for (var skills_equips_idx = 0; skills_equips_idx < card_skills_equips_size; skills_equips_idx++) {
+                    var data={
+						id:myDecoder.readInt(),
+						level: myDecoder.readInt(),
+						type: myDecoder.readInt()
+					};
+
+					retObj.card_info.skills_equips[skills_equips_idx]=data;
 				}
 			}
 
