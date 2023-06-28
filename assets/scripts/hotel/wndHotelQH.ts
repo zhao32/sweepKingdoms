@@ -110,11 +110,11 @@ export default class NewClass extends cc.Component {
     }
 
     onQHHandler(target, data) {
-        MyProtocols.send_C2SCardAddLevel(DataManager._loginSocket, this._data.template_id, null, null, data)
+        MyProtocols.send_C2SCardAddLevel(DataManager._loginSocket, this._data.id, null, null, data)
     }
 
     onJianDHandler() {
-        MyProtocols.send_C2SIdentify(DataManager._loginSocket, this._data.template_id)
+        MyProtocols.send_C2SIdentify(DataManager._loginSocket, this._data.id)
     }
 
 

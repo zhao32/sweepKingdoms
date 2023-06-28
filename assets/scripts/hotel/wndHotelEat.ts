@@ -68,7 +68,7 @@ export default class NewClass extends cc.Component {
     init(data) {
         NetEventDispatcher.addListener(NetEvent.S2CCardAddLevel, this.S2CCardAddLevel, this)
 
-        this.myId = data.template_id
+        this.myId = data.id
         this.selectIdList = []
 
         let defaultData = DataManager.GameData.Cards[data.template_id]

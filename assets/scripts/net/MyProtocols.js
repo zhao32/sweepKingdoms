@@ -2362,18 +2362,17 @@ var MyProtocols = {
 				retObj.cards[i].skills_equips = [];
 				let skills_equips_size = myDecoder.readInt();
 				if (skills_equips_size > 0) {
-					for (var skills_equips_id = 0; skills_equips_id < skills_equips_size; skills_equips_id++) {
-						retObj.cards[i].skills_equips[skills_equips_id] = myDecoder.readInt();
+					for (var skills_equips_idx = 0; skills_equips_idx < skills_equips_size; skills_equips_idx++) {
+						retObj.cards[i].skills_equips[skills_equips_id].id = myDecoder.readInt();
+						retObj.cards[i].skills_equips[skills_equips_id].level = myDecoder.readInt();
+						retObj.cards[i].skills_equips[skills_equips_id].type = myDecoder.readInt();
 					}
 				}
 				retObj.cards[i].proficiency = [];  //熟练度 最多三个 对应英雄json 里 熟练兵种
-				retObj.cards[i].talents = []; 
 				let proficiency_size = myDecoder.readInt();
 				if (proficiency_size > 0) {
 					for (var proficiency_id = 0; proficiency_id < proficiency_size; proficiency_id++) {
 						retObj.cards[i].proficiency[proficiency_id] = myDecoder.readInt();
-						retObj.cards[i].talents[proficiency_id] = myDecoder.readInt();
-
 					}
 				}
 				retObj.cards[i].aptitude = [];  //对应的 资质
@@ -2383,8 +2382,6 @@ var MyProtocols = {
 						retObj.cards[i].aptitude[aptitude_id] = myDecoder.readInt();
 					}
 				}
-
-
 			}
 		}
 		return retObj;
@@ -2441,13 +2438,26 @@ var MyProtocols = {
 					retObj.card_info.runeLevel[runeLevel_idx] = myDecoder.readInt();
 				}
 			}
+			// retObj.card_info.skills_equips = [];
+			// let card_skills_equips_size = myDecoder.readInt();
+			// if (card_skills_equips_size > 0) {
+			// 	for (var skills_equips_idx = 0; skills_equips_idx < card_skills_equips_size; skills_equips_idx++) {
+			// 		retObj.card_info.skills_equips[skills_equips_idx] = myDecoder.readInt();
+			// 	}
+			// }
+
+
 			retObj.card_info.skills_equips = [];
 			let card_skills_equips_size = myDecoder.readInt();
 			if (card_skills_equips_size > 0) {
-				for (var skills_equips_idx = 0; skills_equips_idx < card_skills_equips_size; skills_equips_idx++) {
-					retObj.card_info.skills_equips[skills_equips_idx] = myDecoder.readInt();
+				for (var skills_equips_idx = 0; skills_equips_idx < skills_equips_size; skills_equips_idx++) {
+					retObj.card_info.skills_equips[skills_equips_id].id = myDecoder.readInt();
+					retObj.card_info.skills_equips[skills_equips_id].level = myDecoder.readInt();
+					retObj.card_info.skills_equips[skills_equips_id].type = myDecoder.readInt();
 				}
 			}
+
+
 			retObj.card_info.proficiency = [];
 			retObj.card_info.talents = [];
 
@@ -4135,7 +4145,7 @@ var MyProtocols = {
 				retObj.cardlist[i].proficiency = [];
 				retObj.cardlist[i].talents = [];
 
-				
+
 				let proficiency_size = myDecoder.readInt();
 				if (proficiency_size > 0) {
 					for (var proficiency_idx = 0; proficiency_idx < proficiency_size; proficiency_idx++) {
