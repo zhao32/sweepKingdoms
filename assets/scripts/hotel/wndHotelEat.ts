@@ -84,7 +84,7 @@ export default class NewClass extends cc.Component {
 
         let cards = []
         for (let i = 0; i < DataManager.cardsList.length; i++) {
-            if (DataManager.cardsList[i].template_id != data.template_id) {
+            if (DataManager.cardsList[i].id != data.id) {
                 cards.push(DataManager.cardsList[i])
             }
         }
@@ -97,13 +97,13 @@ export default class NewClass extends cc.Component {
                 // if (this.selectIdList.indexOf(cards[i].id) == -1) {
                 if (this.selectIdList.length < 9) {
                     if (pfb.getComponent(hotelSJRender).selected == false) {
-                        this.selectIdList.push(cards[i].template_id)
+                        this.selectIdList.push(cards[i].id)
                         pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[1]
                         pfb.getComponent(hotelSJRender).selected = true
                     } else {
                         pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[0]
                         for (let j = 0; j < this.selectIdList.length; j++) {
-                            if (this.selectIdList[j] == cards[i].template_id) {
+                            if (this.selectIdList[j] == cards[i].id) {
                                 this.selectIdList.splice(j, 1)
                             }
                         }
@@ -115,7 +115,7 @@ export default class NewClass extends cc.Component {
                     } else {
                         pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[0]
                         for (let j = 0; j < this.selectIdList.length; j++) {
-                            if (this.selectIdList[j] == cards[i].template_id) {
+                            if (this.selectIdList[j] == cards[i].id) {
                                 this.selectIdList.splice(j, 1)
                             }
                         }
@@ -147,7 +147,7 @@ export default class NewClass extends cc.Component {
         let cards = []
         for (let i = 0; i < this.selectIdList.length; i++) {
             for (let j = 0; j < DataManager.cardsList.length; j++) {
-                if (this.selectIdList[i] == DataManager.cardsList[j].template_id) {
+                if (this.selectIdList[i] == DataManager.cardsList[j].id) {
                     cards.push(DataManager.cardsList[j])
                 }
             }
@@ -173,7 +173,7 @@ export default class NewClass extends cc.Component {
         let objList = []
         for (let i = 0; i <  this.selectIdList.length; i++) {
             let item = {
-                template_id:this.selectIdList[i],
+                id:this.selectIdList[i],
                 count:1
             }
             objList.push(item)
@@ -199,7 +199,7 @@ export default class NewClass extends cc.Component {
         this.contect.removeAllChildren()
         let cards = []
         for (let i = 0; i < DataManager.cardsList.length; i++) {
-            if (DataManager.cardsList[i].template_id != data.template_id) {
+            if (DataManager.cardsList[i].id != data.id) {
                 cards.push(DataManager.cardsList[i])
             }
         }
@@ -212,13 +212,13 @@ export default class NewClass extends cc.Component {
                 // if (this.selectIdList.indexOf(cards[i].id) == -1) {
                 if (this.selectIdList.length < 9) {
                     if (pfb.getComponent(hotelSJRender).selected == false) {
-                        this.selectIdList.push(cards[i].template_id)
+                        this.selectIdList.push(cards[i].id)
                         pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[1]
                         pfb.getComponent(hotelSJRender).selected = true
                     } else {
                         pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[0]
                         for (let j = 0; j < this.selectIdList.length; j++) {
-                            if (this.selectIdList[j] == cards[i].template_id) {
+                            if (this.selectIdList[j] == cards[i].id) {
                                 this.selectIdList.splice(j, 1)
                             }
                         }
@@ -230,7 +230,7 @@ export default class NewClass extends cc.Component {
                     } else {
                         pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[0]
                         for (let j = 0; j < this.selectIdList.length; j++) {
-                            if (this.selectIdList[j] == cards[i].template_id) {
+                            if (this.selectIdList[j] == cards[i].id) {
                                 this.selectIdList.splice(j, 1)
                             }
                         }

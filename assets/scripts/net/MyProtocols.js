@@ -2547,7 +2547,7 @@ var MyProtocols = {
 		} else {
 			myEncoder.writeInt(p_cost_cards.length);
 			p_cost_cards.forEach(function (p_cost_cards_v) {
-				myEncoder.writeInt(p_cost_cards_v.template_id);
+				myEncoder.writeInt(p_cost_cards_v.id);
 				myEncoder.writeInt(p_cost_cards_v.count);
 			});
 		}
@@ -2556,7 +2556,7 @@ var MyProtocols = {
 		} else {
 			myEncoder.writeInt(p_cost_items.length);
 			p_cost_items.forEach(function (p_cost_items_v) {
-				myEncoder.writeInt(p_cost_items_v.template_id);
+				myEncoder.writeInt(p_cost_items_v.id);
 				myEncoder.writeInt(p_cost_items_v.count);
 			});
 		}
