@@ -1605,11 +1605,12 @@ var MyProtocols = {
 				let aptitude_size = myDecoder.readInt();
 				if (aptitude_size > 0) {
 					for (var aptitude_idx = 0;aptitude_idx < aptitude_size; aptitude_idx++) {
-						retObj.cards[i].extra_props[aptitude_idx] = myDecoder.readInt();
+						retObj.cards[i].aptitude[aptitude_idx] = myDecoder.readInt();
 					}
 				}
 
 				
+				debugger;
 				retObj.cards[i].skills_equips = [];
 				let skills_equips_size = myDecoder.readInt();
 				if (skills_equips_size > 0) {
@@ -1617,7 +1618,7 @@ var MyProtocols = {
 						var data={
 							templateId:myDecoder.readInt(),
 							leave:myDecoder.readInt(),
-							tyoe:myDecoder.readInt(),
+							type:myDecoder.readInt(),
 						}
 						retObj.cards[i].skills_equips[skills_equips_idx] = data;
 

@@ -128,7 +128,7 @@ export default class NewClass extends cc.Component {
     }
 
     init(myData = this._myData, enemyData = this._enemyData) {
-        NetEventDispatcher.addListener(NetEvent.S2CPkBattleCalculate, this.S2CPkBattleCalculate,this)
+        NetEventDispatcher.addListener(NetEvent.S2CPkBattleCalculate, this.S2CPkBattleCalculate, this)
 
         this._myData = myData
         this._enemyData = enemyData
@@ -150,7 +150,8 @@ export default class NewClass extends cc.Component {
             this.myNode.getChildByName(`bg${i}`).active = false
         }
 
-        for (let i = 0; i < myData.cards.length; i++) {
+        let len = Math.min(myData.cards.length, 3)
+        for (let i = 0; i < len; i++) {
             this.myNode.getChildByName(`head${i}`).active = true
             this.myNode.getChildByName(`bg${i}`).active = true
 
@@ -169,7 +170,7 @@ export default class NewClass extends cc.Component {
             ResManager.loadItemIcon(`hero/head_1_1`, this.enemyNode.getChildByName("icon"))
         } else if (enemyData.player.icon == 1) {
             ResManager.loadItemIcon(`hero/head_2_1`, this.enemyNode.getChildByName("icon"))
-        }else {
+        } else {
             let defaultData = DataManager.GameData.Cards[enemyData.player.icon]
             ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.enemyNode.getChildByName("icon"))
         }
@@ -180,7 +181,8 @@ export default class NewClass extends cc.Component {
             this.enemyNode.getChildByName(`bg${i}`).active = false
         }
 
-        for (let i = 0; i < enemyData.cards.length; i++) {
+        let len1 = Math.min(enemyData.cards.length, 3)
+        for (let i = 0; i < len1; i++) {
             this.enemyNode.getChildByName(`head${i}`).active = true
             this.enemyNode.getChildByName(`bg${i}`).active = true
 
@@ -567,7 +569,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CPkBattleCalculate, this.S2CPkBattleCalculate,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CPkBattleCalculate, this.S2CPkBattleCalculate, this)
 
     }
 
