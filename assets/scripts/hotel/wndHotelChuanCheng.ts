@@ -211,10 +211,10 @@ export default class NewClass extends cc.Component {
     doEatHandler() {
         if (this.selectIdList.length > 0) {
             let objList = []
-            for (let i = 0; i <  this.selectIdList.length; i++) {
+            for (let i = 0; i < this.selectIdList.length; i++) {
                 let item = {
-                    id:this.selectIdList[i],
-                    count:1
+                    id: this.selectIdList[i],
+                    count: 1
                 }
                 objList.push(item)
             }
@@ -226,8 +226,62 @@ export default class NewClass extends cc.Component {
     }
 
     S2CCardAddLevel(data) {
-        console.log(`升级返回`)
+        console.log(`传承返回`)
         console.log(JSON.stringify(data))
+        this.selectIdList = []
+        this.reflashHeads()
+
+
+        this.contect.removeAllChildren()
+        //吞噬天选和传奇
+        let cards = []
+        for (let i = 0; i < DataManager.cardsList.length; i++) {
+            let defaultData = DataManager.GameData.Cards[DataManager.cardsList[i].template_id]
+
+            if (DataManager.cardsList[i].id != data.id && defaultData.quality == 2 || defaultData.quality == 3) {
+                cards.push(DataManager.cardsList[i])
+            }
+        }
+
+
+        for (let i = 0; i < cards.length; i++) {
+            let pfb = cc.instantiate(this.renderfb)
+            pfb.parent = this.contect
+            pfb.getComponent(hotelSJRender).init(cards[i])
+
+            pfb.getChildByName(`check`).on(cc.Node.EventType.TOUCH_END, () => {
+                // if (this.selectIdList.indexOf(cards[i].id) == -1) {
+                if (this.selectIdList.length < 4) {
+                    if (pfb.getComponent(hotelSJRender).selected == false) {
+                        this.selectIdList.push(cards[i].id)
+                        pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[1]
+                        pfb.getComponent(hotelSJRender).selected = true
+                    } else {
+                        pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[0]
+                        for (let j = 0; j < this.selectIdList.length; j++) {
+                            if (this.selectIdList[j] == cards[i].id) {
+                                this.selectIdList.splice(j, 1)
+                            }
+                        }
+                        pfb.getComponent(hotelSJRender).selected = false
+                    }
+                } else {
+                    if (pfb.getComponent(hotelSJRender).selected == false) {
+                        ViewManager.instance.showToast(`每次最高吞噬九个将领`)
+                    } else {
+                        pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[0]
+                        for (let j = 0; j < this.selectIdList.length; j++) {
+                            if (this.selectIdList[j] == cards[i].id) {
+                                this.selectIdList.splice(j, 1)
+                            }
+                        }
+                        pfb.getComponent(hotelSJRender).selected = false
+                    }
+                }
+                // }
+                this.reflashHeads()
+            }, this)
+        }
     }
 
     onCloseHandler() {
