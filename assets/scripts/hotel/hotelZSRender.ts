@@ -103,7 +103,7 @@ export default class NewClass extends cc.Component {
     }
 
     doZSHandler() {
-        MyProtocols.send_C2SCardAddStar(DataManager._loginSocket, this._data.template_id)
+        MyProtocols.send_C2SCardAddStar(DataManager._loginSocket, this._data.id)
 
     }
 
