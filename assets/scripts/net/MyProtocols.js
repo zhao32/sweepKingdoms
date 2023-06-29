@@ -1633,6 +1633,16 @@ var MyProtocols = {
 					}
 				}
 
+				retObj.cards[i].talents = [];
+				retObj.cards[i].p = [];
+				let talentssize = myDecoder.readInt();
+				if (talentssize > 0) {
+					for (var talent_idx = 0;talent_idx < talentssize;talent_idx++) {
+						retObj.cards[i].talents[talent_idx] = myDecoder.readInt();
+						retObj.cards[i].p[talent_idx]=myDecoder.readInt();
+					}
+				}
+
 			}
 
 
@@ -1683,6 +1693,7 @@ var MyProtocols = {
 		if (att_cards_size > 0) {
 			for (var i = 0; i < cards_size; i++) {
 				retObj.att_cards[i] = {};
+				retObj.att_cards[i].id = myDecoder.readInt();
 				retObj.att_cards[i].template_id = myDecoder.readInt();
 				retObj.att_cards[i].level = myDecoder.readInt();
 				retObj.att_cards[i].exp = myDecoder.readInt();
