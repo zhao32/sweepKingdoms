@@ -266,13 +266,13 @@ export default class NewClass extends cc.Component {
             }
         }
 
-        let template_id
+        let id
         if (this.myHeroData) {
-            template_id = this.myHeroData.template_id
+            id = this.myHeroData.id
         } else {
-            template_id = 0
+            id = 0
         }
-        let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: template_id, b: 0, c: 0, soldier: this.mobilizeSoliders }
+        let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: id, b: 0, c: 0, soldier: this.mobilizeSoliders }
         console.log(`country:` + this.data.country)
         console.log(JSON.stringify(this.data))
         if (this._type == 'in') {

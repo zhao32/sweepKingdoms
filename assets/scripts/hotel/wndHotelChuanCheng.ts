@@ -104,11 +104,11 @@ export default class NewClass extends cc.Component {
         //     this.node.getChildByName(`starGet${i}`).active = true
         // }
 
-        for (let i = 0; i < defaultData.talents.length; i++) {
+        for (let i = 0; i < data.talents.length; i++) {
             let node = this.node.getChildByName("shuxing1").getChildByName(`soldierType${i + 1}`)
             node.active = true
-            node.getChildByName('label0').getComponent(cc.Label).string = DataManager.armList[defaultData.talents[i]] + `兵熟练度：`
-            ResManager.loadItemIcon(`hero/soldierType${defaultData.talents[i]}`, node)
+            node.getChildByName('label0').getComponent(cc.Label).string = DataManager.armList[data.talents[i]] + `兵熟练度：`
+            ResManager.loadItemIcon(`hero/soldierType${data.talents[i]}`, node)
 
             node.getChildByName('proTxt').getComponent(cc.Label).string = `${data.proficiency[i]}/${0}`
             node.getChildByName(`progressBar`).getComponent(cc.ProgressBar).progress = 0.8

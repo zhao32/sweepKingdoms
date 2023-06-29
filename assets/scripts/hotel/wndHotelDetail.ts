@@ -136,11 +136,11 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName("shuxing").getChildByName(`soldierType${i}`).active = false
         }
 
-        for (let i = 0; i < defaultData.talents.length; i++) {
+        for (let i = 0; i < data.talents.length; i++) {
             let node = this.node.getChildByName("shuxing").getChildByName(`soldierType${i + 1}`)
             node.active = true
-            node.getChildByName('label0').getComponent(cc.Label).string = DataManager.armList[defaultData.talents[i]] + `兵熟练度：`
-            ResManager.loadItemIcon(`hero/soldierType${defaultData.talents[i]}`, node)
+            node.getChildByName('label0').getComponent(cc.Label).string = DataManager.armList[data.talents[i]] + `兵熟练度：`
+            ResManager.loadItemIcon(`hero/soldierType${data.talents[i]}`, node)
 
             node.getChildByName('proTxt').getComponent(cc.Label).string = `${data.proficiency[i]}/${0}`
             node.getChildByName(`progressBar`).getComponent(cc.ProgressBar).progress = 0.8
@@ -191,7 +191,7 @@ export default class NewClass extends cc.Component {
 
 
         this.node.getChildByName(`btnSkill`).on(cc.Node.EventType.TOUCH_END, () => {
-            this.initSkills(defaultData.skills, data.proficiency, defaultData.talents)
+            this.initSkills(defaultData.skills, data.proficiency, data.talents)
         }, this)
 
         this.node.getChildByName(`btnRune`).on(cc.Node.EventType.TOUCH_END, () => {
@@ -202,7 +202,7 @@ export default class NewClass extends cc.Component {
             this.initEquips()
         }, this)
 
-        this.initSkills(defaultData.skills, data.proficiency, defaultData.talents)
+        this.initSkills(defaultData.skills, data.proficiency, data.talents)
     }
     initSkills(skillList, proficiency, talents) {
         this.node.getChildByName('btnSkill').getComponent(cc.Sprite).spriteFrame = this.checkFrames[1]

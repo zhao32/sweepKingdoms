@@ -467,8 +467,8 @@ export default class NewClass extends cc.Component {
         let template_id = cardData.template_id
         let skills = DataManager.GameData.Cards[template_id].skills
         let proficiency = cardData.proficiency
-        // let talents = cardData.talents//DataManager.GameData.Cards[template_id].talents
-        let talents = DataManager.GameData.Cards[template_id].talents
+        let talents = cardData.talents//DataManager.GameData.Cards[template_id].talents
+        // let talents = DataManager.GameData.Cards[template_id].talents
 
         console.log('talents:' + talents)
         let plusList = []

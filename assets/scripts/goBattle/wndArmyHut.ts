@@ -155,7 +155,7 @@ export default class NewClass extends cc.Component {
                 this.node.getChildByName(`heroRender`).active = true
 
 
-                let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.template_id, b: 0, c: 0, soldier: this.soliders }
+                let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.id, b: 0, c: 0, soldier: this.soliders }
                 console.log(JSON.stringify(data))
                 console.log('this._data:' + JSON.stringify(this._data))
                 // MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)

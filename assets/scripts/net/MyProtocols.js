@@ -2369,12 +2369,12 @@ var MyProtocols = {
 						// retObj.cards[i].skills_equips[skills_equips_idx].level = myDecoder.readInt();
 						// retObj.cards[i].skills_equips[skills_equips_idx].type = myDecoder.readInt();
 
-						var data={
-							id:myDecoder.readInt(),
+						var data = {
+							id: myDecoder.readInt(),
 							level: myDecoder.readInt(),
 							type: myDecoder.readInt()
 						};
-						retObj.cards[i].skills_equips[skills_equips_idx]=data
+						retObj.cards[i].skills_equips[skills_equips_idx] = data
 					}
 				}
 				retObj.cards[i].proficiency = [];  //熟练度 最多三个 对应英雄json 里 熟练兵种
@@ -2466,13 +2466,13 @@ var MyProtocols = {
 			let card_skills_equips_size = myDecoder.readInt();
 			if (card_skills_equips_size > 0) {
 				for (var skills_equips_idx = 0; skills_equips_idx < card_skills_equips_size; skills_equips_idx++) {
-                    var data={
-						id:myDecoder.readInt(),
+					var data = {
+						id: myDecoder.readInt(),
 						level: myDecoder.readInt(),
 						type: myDecoder.readInt()
 					};
 
-					retObj.card_info.skills_equips[skills_equips_idx]=data;
+					retObj.card_info.skills_equips[skills_equips_idx] = data;
 				}
 			}
 
@@ -2570,6 +2570,14 @@ var MyProtocols = {
 		var retObj = {};
 		retObj.card_id = myDecoder.readInt();
 		retObj.level = myDecoder.readInt();
+		retObj.type = myDecoder.readInt();
+		retObj.a = []
+		if (retObj.type != 0) {
+			var size = myDecoder.readInt();
+			for (var i = 0; i < size; i++) {
+				retObj.a[i] = myDecoder.readInt();
+			}
+		}
 		retObj.level_exp = myDecoder.readInt();
 		return retObj;
 	},

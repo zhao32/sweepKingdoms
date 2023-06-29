@@ -181,7 +181,7 @@ export default class NewClass extends cc.Component {
         let template_id = this.myData.heroData.template_id
         let skills = DataManager.GameData.Cards[template_id].skills
         let proficiency = this.myData.heroData.proficiency
-        let talents = DataManager.GameData.Cards[template_id].talents
+        let talents = this.myData.heroData.talents//DataManager.GameData.Cards[template_id].talents
         let plusList = []
         for (let i = 0; i < skills.length; i++) {
             let skillData = DataManager.GameData.Skill[skills[i][0]]
@@ -208,7 +208,7 @@ export default class NewClass extends cc.Component {
 
     getEnemyPlusList() {
         let skills = this.enemyData.heroData.skills
-        let talents = this.enemyData.heroData.skills
+        let talents = this.enemyData.heroData.talents
         let proficiency = [1000, 1000, 1000]
 
         let plusList = []

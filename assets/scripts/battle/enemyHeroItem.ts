@@ -40,10 +40,10 @@ export default class enemyHeroItem extends cc.Component {
             this.node.getChildByName(`soldierType${i}`).active = false
         }
 
-        for (let i = 0; i < defaultData.talents.length; i++) {
+        for (let i = 0; i < data.talents.length; i++) {
             let node = this.node.getChildByName(`soldierType${i + 1}`)
             node.active = true
-            ResManager.loadItemIcon(`hero/soldierType${defaultData.talents[i]}`, node)
+            ResManager.loadItemIcon(`hero/soldierType${data.talents[i]}`, node)
         }
 
         // for (let i = 1; i <= 3; i++) {
