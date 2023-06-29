@@ -44,6 +44,8 @@ export default class NewClass extends cc.Component {
     @property
     text: string = 'hello';
 
+    isClick: boolean = false
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -53,22 +55,11 @@ export default class NewClass extends cc.Component {
 
     }
 
-    // {
-    // 	"hold_player": {
-    // 		"id": 0,
-    // 		"nickname": "",
-    // 		"level": 0,
-    // 		"icon": 0,
-    // 		"head_frame_id": 0,
-    // 		"fight": 0,
-    // 		"cd_time": 0,
-    // 		"group": 0,
-    // 		"lv": 0
-    // 	}
-    // }
 
     S2CMineEnemyDetail(retObj) {
-        console.log(`---------准备攻打敌方 矿场-----------`)
+        console.log(`DataManager.curWndPath:` + DataManager.curWndPath)
+        if (this.isClick == false) return
+        console.log(`------aa---准备攻打敌方 矿场-----------`)
         console.log(JSON.stringify(retObj))
         // {"level_index":0,"point_index":0,"base_info":{"id":0,"nickname":"","level":0,"icon":0,"head_frame_id":1,"fight":0,"cd_time":0},"formation":{"fid":0,"formationId":0,"forward":0,"flip":0,"a":0,"b":0,"c":0},"soliderUsed":[],"soliderUse":[{"arm":0,"count":1000},{"arm":1,"count":1000},{"arm":2,"count":1000}],"cards":[],"exclude_cards":[],"rand_key":2923001863557120}
         let soliderData = []
@@ -92,7 +83,6 @@ export default class NewClass extends cc.Component {
 
     }
     init(data) {
-        if(this.node.active == false)return
         console.log('filedData:' + JSON.stringify(data))
         this._data = data
         let name = DataManager.mineData[data.hold_player.group].name
@@ -101,36 +91,21 @@ export default class NewClass extends cc.Component {
         this.awardLabel.string = `已产出：${data.hold_player.award}`
 
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
-
-        // console.log(`DataManager.pageGoBattle.myCityData.page:`+JSON.stringify())
-
-        // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, DataManager.pageGoBattle.myCityData.page, DataManager.pageGoBattle.myCityData.idx, DataManager.pageGoBattle.myCityData.country)
-
-
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
-
-        // this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`
-
-        // : function (senderSocket, p_level_index, p_point_index) {
-        // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket,)
-
-        // if(data.hold_player.id){
-        //     ResManager.loadItemIcon(`goBattle/icon1`,this.icon)
-        // }else{
-        //     ResManager.loadItemIcon(`goBattle/icon0`,this.icon)
-        // }
-      
     }
 
     onCloseHandler() {
-        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
     }
 
     onBattleHandler() {
+        this.isClick = true
         MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
     }
 
     onClose() {
+        console.log(`----------关闭窗口-----------`)
+        this.isClick = false
         NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
     }
 
