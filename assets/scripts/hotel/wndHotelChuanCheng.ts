@@ -230,6 +230,13 @@ export default class NewClass extends cc.Component {
         console.log(JSON.stringify(data))
         this.selectIdList = []
         this.reflashHeads()
+        // {"card_id":151120,"level":11,"type":1,"a":[0,6500,0]}
+        for (let i = 0; i < data.a.length; i++) {
+            let node = this.node.getChildByName("shuxing1").getChildByName(`soldierType${i + 1}`)
+            node.getChildByName('label2').getComponent(cc.Label).string = `${data.a[i]}/${999}`      
+      
+        }
+
 
 
         this.contect.removeAllChildren()

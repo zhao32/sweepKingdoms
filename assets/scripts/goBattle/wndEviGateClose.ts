@@ -85,7 +85,7 @@ export default class NewClass extends cc.Component {
     S2CMineEnemyDetail(retObj) {
         console.log(JSON.stringify(retObj))
         console.log(retObj.formation.a)
-        debugger
+        // debugger
         if (retObj.state == 0) {
             this.node.getChildByName('btnAtt').active = false
         } else if (retObj.state == 1) {

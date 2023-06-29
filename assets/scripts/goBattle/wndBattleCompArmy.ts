@@ -119,7 +119,7 @@ export default class NewClass extends cc.Component {
 
         console.log(`请求恶魔之门阵容返回`)
         console.log(JSON.stringify(retObj))
-        debugger;
+        // debugger;
         if (retObj.formation) {
             if (retObj.formation.a != 0) {
                 let heroItem = cc.instantiate(this.heroPfb)

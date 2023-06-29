@@ -105,6 +105,12 @@ export default class NewClass extends cc.Component {
     S2CCardAddLevel(data) {
         console.log(`强化返回`)
         console.log(JSON.stringify(data))
+        // {"card_id":151120,"level":6,"type":4,"a":[1819,179,219]}
+        for (let i = 0; i < data.a.length; i++) {
+            let node = this.node.getChildByName("shuxing").getChildByName(`soldierType${i + 1}`)
+            node.getChildByName('proTxt').getComponent(cc.Label).string = `${data.a[i]}/${0}`            
+        }
+
     }
 
     S2CIdentify(data) {

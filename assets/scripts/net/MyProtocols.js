@@ -1612,7 +1612,7 @@ var MyProtocols = {
 				
 				retObj.cards[i].skills_equips = [];
 				let skills_equips_size = myDecoder.readInt();
-				if (aptitude_size > 0) {
+				if (skills_equips_size > 0) {
 					for (var skills_equips_idx = 0;skills_equips_idx < skills_equips_size; skills_equips_idx++) {
 						var data={
 							templateId:myDecoder.readInt(),
@@ -2057,7 +2057,7 @@ var MyProtocols = {
 			myEncoder.writeInt(p_formation.h);
 			myEncoder.writeInt(p_formation.i);
 			myEncoder.writeInt(p_formation.j);
-			debugger;
+			// debugger;
 			// myEncoder.writeInt(soldier.length);
 			myEncoder.writeInt(p_formation.soldier.length)//派兵是数据
 
@@ -2605,13 +2605,18 @@ var MyProtocols = {
 		retObj.level = myDecoder.readInt();
 		retObj.type = myDecoder.readInt();
 		retObj.a = []
+	
+		// debugger;
 		if (retObj.type != 0) {
-			var size = myDecoder.readInt();
-			for (var i = 0; i < size; i++) {
+			
+			for (var i = 0; i < 3; i++) {
 				retObj.a[i] = myDecoder.readInt();
 			}
 		}
-		retObj.level_exp = myDecoder.readInt();
+		else{
+			retObj.level_exp = myDecoder.readInt();
+		}
+		
 		return retObj;
 	},
 	/**装备升级星 */
