@@ -1605,7 +1605,7 @@ var MyProtocols = {
 				let aptitude_size = myDecoder.readInt();
 				if (aptitude_size > 0) {
 					for (var aptitude_idx = 0;aptitude_idx < aptitude_size; aptitude_idx++) {
-						retObj.cards[i].extra_props[aptitude] = myDecoder.readInt();
+						retObj.cards[i].extra_props[aptitude_idx] = myDecoder.readInt();
 					}
 				}
 
@@ -1625,7 +1625,7 @@ var MyProtocols = {
 				}
 
 				retObj.cards[i].rune_pack = [];
-				let rune_pack = myDecoder.readInt();
+				let rune_pack_size = myDecoder.readInt();
 				if (rune_pack_size > 0) {
 					for (var rune_pack_idx = 0;rune_pack_idx < rune_pack_size; rune_pack_idx++) {
 						retObj.cards[i].extra_props[rune_pack_idx] = myDecoder.readInt();

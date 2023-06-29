@@ -274,7 +274,7 @@ export default class NewClass extends cc.Component {
         }
         let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: id, b: 0, c: 0, soldier: this.mobilizeSoliders }
         console.log(`country:` + this.data.country)
-        console.log(JSON.stringify(this.data))
+        console.log(JSON.stringify(data))
         if (this._type == 'in') {
             if (this.eviType != undefined) {
                 MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.data.page, this.data.idx, data, this.data.country, 1, this.eviType)
