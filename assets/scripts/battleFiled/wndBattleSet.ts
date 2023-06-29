@@ -94,11 +94,20 @@ export default class NewClass extends cc.Component {
         }
 
         for (let i = 0; i < DataManager.myBattleFiledConfig.card.length; i++) {
-            if (DataManager.myBattleFiledConfig.card[i]) {
-                let defaultData = DataManager.GameData.Cards[DataManager.myBattleFiledConfig.card[i]]
-                ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.node.getChildByName('hero').getChildByName(`head${i}`))
-                ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.node.getChildByName('hero').getChildByName(`bg${i}`))
+            for (let j = 0; j < DataManager.cardsList.length; j++) {
+                if(DataManager.myBattleFiledConfig.card[i] == DataManager.cardsList[j]){
+                    let tmpId = DataManager.myBattleFiledConfig.card[i].template_id
+                    let defaultData = DataManager.GameData.Cards[tmpId]
+                    ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.node.getChildByName('hero').getChildByName(`head${i}`))
+                    ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.node.getChildByName('hero').getChildByName(`bg${i}`))
+                }
+                
             }
+            // if (DataManager.myBattleFiledConfig.card[i]) {
+            //     let defaultData = DataManager.GameData.Cards[DataManager.myBattleFiledConfig.card[i]]
+            //     ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.node.getChildByName('hero').getChildByName(`head${i}`))
+            //     ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.node.getChildByName('hero').getChildByName(`bg${i}`))
+            // }
         }
     }
 
@@ -110,14 +119,14 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName('soliderScroll').active = false
 
         let cardsList = []
-        let tempIdList = []
+        let idList = []
         for (let i = 0; i < DataManager.myBattleFiledConfig.card.length; i++) {
-            tempIdList.push(DataManager.myBattleFiledConfig.card[i])
+            idList.push(DataManager.myBattleFiledConfig.card[i])
         }
 
-        console.log(JSON.stringify(tempIdList))
+        console.log(JSON.stringify(idList))
         for (let i = 0; i < DataManager.cardsList.length; i++) {
-            if (tempIdList.indexOf(DataManager.cardsList[i].template_id) == -1) {
+            if (idList.indexOf(DataManager.cardsList[i].id) == -1) {
                 cardsList.push(DataManager.cardsList[i])
             }
         }
@@ -135,7 +144,7 @@ export default class NewClass extends cc.Component {
                 this.node.getChildByName('heroScroll').active = false
                 this.node.getChildByName('soliderScroll').active = true
 
-                DataManager.myBattleFiledConfig.card[idx] = cardsList[i].template_id
+                DataManager.myBattleFiledConfig.card[idx] = cardsList[i].id
 
                 let defaultData = DataManager.GameData.Cards[data.template_id]
                 ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.node.getChildByName('hero').getChildByName(`head${idx}`))

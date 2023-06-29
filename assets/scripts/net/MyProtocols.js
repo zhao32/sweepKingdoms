@@ -4202,6 +4202,7 @@ var MyProtocols = {
 		if (cardlist_size > 0) {
 			for (var i = 0; i < cardlist_size; i++) {
 				retObj.cardlist[i] = {};
+				retObj.cardlist[i].id = myDecoder.readInt();
 				retObj.cardlist[i].template_id = myDecoder.readInt();
 				retObj.cardlist[i].level = myDecoder.readInt();
 				retObj.cardlist[i].exp = myDecoder.readInt();

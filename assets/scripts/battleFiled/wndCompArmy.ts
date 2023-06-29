@@ -103,7 +103,7 @@ export default class NewClass extends cc.Component {
     // {"rank_type":4,"rank_player":{"playerId":9961,"nickname":"瘦弱的武都拳师","sexId":0,"icon":0,"head_frame":1,"level":46,"fight":2796,"vipLevel":0,"rank_change":0,"hero_count":0,"hero_stars":0,"win_count":0,"like_count":0},"item":[{"template_id":1,"num":2730},{"template_id":2,"num":2100},{"template_id":3,"num":0},{"template_id":4,"num":0},{"template_id":5,"num":0},{"template_id":6,"num":0},{"template_id":7,"num":0},{"template_id":8,"num":0},{"template_id":9,"num":0},{"template_id":10,"num":0},{"template_id":11,"num":0},{"template_id":12,"num":0},{"template_id":13,"num":0},{"template_id":14,"num":0},{"template_id":15,"num":0},{"template_id":16,"num":0},{"template_id":17,"num":0},{"template_id":18,"num":0},{"template_id":19,"num":0}],"cardlist":[{"template_id":1,"level":1,"exp":0,"grade":0,"unitLevel":0,"grade":0,"unit_type":0,"maxhp":0,"atk":0,"def":0,"unitMaxhp":0,"unitAtk":0,"unitDef":0,"unitNum":2796,"fight":0,"equips":[],"runes":[0,0]}],"pkWinLoose":[]}
     S2CRankPlayerDetail(retObj) {
         console.log('--------------------1046--------------------')
-        // console.log(JSON.stringify(retObj))
+        console.log(JSON.stringify(retObj))
         this.myNameLabel.string = '攻方：' + DataManager.playData.name
         this.otherNameLabel.string = '守方：' + retObj.rank_player.nickname
         this.enemyPlayerId = retObj.rank_player.playerId
@@ -146,7 +146,7 @@ export default class NewClass extends cc.Component {
 
         let myCards = []
         for (let i = 0; i < DataManager.cardsList.length; i++) {
-            if (DataManager.myBattleFiledConfig.card.indexOf(DataManager.cardsList[i].template_id) != -1) {
+            if (DataManager.myBattleFiledConfig.card.indexOf(DataManager.cardsList[i].id) != -1) {
                 myCards.push(DataManager.cardsList[i])
             }
 
@@ -211,6 +211,10 @@ export default class NewClass extends cc.Component {
 
     doBattle() {
         //进行战斗
+        if(this.myAllData.cards.length == 0){
+            ViewManager.instance.showToast(`您还没有将领`)
+            return
+        }
         console.log(`-----------进行挑战-----------`)
         MyProtocols.send_C2SPkEnemyFormation(DataManager._loginSocket, this.enemyPlayerId)
         ViewManager.instance.hideWnd(DataManager.curWndPath)

@@ -193,6 +193,7 @@ export default class NewClass extends cc.Component {
             }
         }
 
+        console.log(`-------myData------:`+JSON.stringify(myData))
         ///////////////////////////////////////////
         let myResetData = this.resetArmyData(myData)
         let enemyResetData = this.resetArmyData(enemyData)
