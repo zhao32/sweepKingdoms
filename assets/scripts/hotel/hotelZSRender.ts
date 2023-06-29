@@ -81,7 +81,7 @@ export default class NewClass extends cc.Component {
         this.gradeDisplay.string = 'LV ' + data.level
         this.starDisplay.string = `x${data.unitGrade}`
 
-        if (data.level == 60 && data.unitGrade == 6) {
+        if (data.level >= 60 && data.unitGrade >= 6) {
             this.node.getChildByName(`btnZS`).getComponent(cc.Button).interactable = true
         } else {
             this.node.getChildByName(`btnZS`).getComponent(cc.Button).interactable = false
