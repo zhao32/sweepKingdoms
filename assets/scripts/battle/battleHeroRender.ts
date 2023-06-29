@@ -19,6 +19,9 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Label, displayName: '等级' })
     gradeDisplay: cc.Label = null;
 
+    @property({ type: cc.Label, displayName: '星级' })
+    starDisplay: cc.Label = null;
+
     @property({ type: cc.ProgressBar, displayName: '体力条' })
     proBar: cc.ProgressBar = null;
 
@@ -65,14 +68,16 @@ export default class NewClass extends cc.Component {
         this.proTxt.string = `${data.physical}/${200}`
         this.gradeDisplay.string = 'LV ' + data.level
 
-        for (let i = 1; i <= 3; i++) {
-            this.node.getChildByName(`starGet${i}`).active = false
-        }
+        // for (let i = 1; i <= 3; i++) {
+        //     this.node.getChildByName(`starGet${i}`).active = false
+        // }
 
-        // console.log('data.grade:' + data.grade)
-        for (let i = 1; i <= data.grade; i++) {
-            this.node.getChildByName(`starGet${i}`).active = true
-        }
+        // // console.log('data.grade:' + data.grade)
+        // for (let i = 1; i <= data.grade; i++) {
+        //     this.node.getChildByName(`starGet${i}`).active = true
+        // }
+
+        this.starDisplay.string = `x` + data.grade
 
     }
 }

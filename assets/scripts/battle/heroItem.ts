@@ -19,6 +19,8 @@ export default class heroItem extends cc.Component {
     @property(cc.Node)
     headBg: cc.Node = null;
 
+    @property({ type: cc.Label, displayName: '星级' })
+    starDisplay: cc.Label = null;
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -45,14 +47,15 @@ export default class heroItem extends cc.Component {
             ResManager.loadItemIcon(`hero/soldierType${defaultData.talents[i]}`, node)
         }
 
-        for (let i = 1; i <= 3; i++) {
-            this.node.getChildByName(`starGet${i}`).active = false
-        }
+        // for (let i = 1; i <= 3; i++) {
+        //     this.node.getChildByName(`starGet${i}`).active = false
+        // }
 
-        // console.log('data.grade:' + data.grade)
-        for (let i = 1; i <= data.grade; i++) {
-            this.node.getChildByName(`starGet${i}`).active = true
-        }
+        // // console.log('data.grade:' + data.grade)
+        // for (let i = 1; i <= data.grade; i++) {
+        //     this.node.getChildByName(`starGet${i}`).active = true
+        // }
+        this.starDisplay.string = `x` + data.grade
     }
 
     // update (dt) {}

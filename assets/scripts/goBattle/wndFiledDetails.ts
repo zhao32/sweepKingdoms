@@ -92,6 +92,7 @@ export default class NewClass extends cc.Component {
 
     }
     init(data) {
+        if(this.node.active == false)return
         console.log('filedData:' + JSON.stringify(data))
         this._data = data
         let name = DataManager.mineData[data.hold_player.group].name

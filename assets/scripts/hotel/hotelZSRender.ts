@@ -89,7 +89,7 @@ export default class NewClass extends cc.Component {
 
 
         // for (let i = 1; i <= 3; i++) {
-        //     this.node.getChildByName(`starGet${i}`).active = false
+        //     this.node.getChildByName(`starGet${i}`).active = false       
         // }
 
         // // console.log('data.grade:' + data.grade)
@@ -116,7 +116,6 @@ export default class NewClass extends cc.Component {
     S2CCardAddStar(data) {
         console.log(`转生返回`)
         console.log(JSON.stringify(data))
-
     }
 
 
