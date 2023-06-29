@@ -130,8 +130,11 @@ export default class NewClass extends cc.Component {
                 solider.getComponent(battleSoliderRender).init(this.mySoliders[i].arm, this.mySoliders[i].count)
             }
         }
-
-        this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(this.myHeroData)
+        if (this.myHeroData) {
+            this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(this.myHeroData)
+        } else {
+            this.node.getChildByName('stageHeroRender').active = false
+        }
     }
 
     init(enemyData, filedData, closeFlight) {
@@ -145,7 +148,7 @@ export default class NewClass extends cc.Component {
 
         }
 
-        if(enemyData.soliders.length == 0){
+        if (enemyData.soliders.length == 0) {
             enemyData.soliders.push({
                 arm: 1,
                 count: 100,
@@ -177,8 +180,11 @@ export default class NewClass extends cc.Component {
                     this.mySoliders.push({ arm: i + 1, count: DataManager.playData.military_data[i] })
                 }
             }
-
-            this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(DataManager.cardsList[0])
+            if (DataManager.cardsList[0]) {
+                this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(DataManager.cardsList[0])
+            } else {
+                this.node.getChildByName('stageHeroRender').active = false
+            }
             this.myHeroData = DataManager.cardsList[0]
             this.myCards = DataManager.cardsList
         }
@@ -288,14 +294,14 @@ export default class NewClass extends cc.Component {
                 }
                 allNum += data.count
             }
-           
+
 
             if (allNum == 0) {
                 ViewManager.instance.showToast('请选择上阵士兵')
                 return
             }
 
-            let data = { fid: 1, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.template_id, b: 0, c: 0, soldier: myData.soliderList }
+            let data = { fid: 1, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.id, b: 0, c: 0, soldier: myData.soliderList }
             console.log(JSON.stringify(data))
             MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
 
@@ -342,7 +348,7 @@ export default class NewClass extends cc.Component {
                 return
             }
 
-            let data = { fid: 1, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.template_id, b: 0, c: 0, soldier: myData.soliderList }
+            let data = { fid: 1, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.id, b: 0, c: 0, soldier: myData.soliderList }
             console.log(JSON.stringify(data))
             MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
         }

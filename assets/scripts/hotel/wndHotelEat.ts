@@ -201,8 +201,10 @@ export default class NewClass extends cc.Component {
         this.contect.removeAllChildren()
         let cards = []
         for (let i = 0; i < DataManager.cardsList.length; i++) {
-            if (DataManager.cardsList[i].id != data.id) {
+            if (DataManager.cardsList[i].id != data.card_id) {
                 cards.push(DataManager.cardsList[i])
+            }else{
+                DataManager.cardsList[i].level = data.level
             }
         }
         for (let i = 0; i < cards.length; i++) {

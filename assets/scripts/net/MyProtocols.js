@@ -1575,6 +1575,7 @@ var MyProtocols = {
 		if (cards_size > 0) {
 			for (var i = 0; i < cards_size; i++) {
 				retObj.cards[i] = {};
+				retObj.cards[i].id = myDecoder.readInt();
 				retObj.cards[i].template_id = myDecoder.readInt();
 				retObj.cards[i].level = myDecoder.readInt();
 				retObj.cards[i].exp = myDecoder.readInt();
@@ -1599,6 +1600,38 @@ var MyProtocols = {
 						retObj.cards[i].extra_props[extra_props_idx] = myDecoder.readInt();
 					}
 				}
+
+				retObj.cards[i].aptitude = [];
+				let aptitude_size = myDecoder.readInt();
+				if (aptitude_size > 0) {
+					for (var aptitude_idx = 0;aptitude_idx < aptitude_size; aptitude_idx++) {
+						retObj.cards[i].extra_props[aptitude] = myDecoder.readInt();
+					}
+				}
+
+				
+				retObj.cards[i].skills_equips = [];
+				let skills_equips_size = myDecoder.readInt();
+				if (aptitude_size > 0) {
+					for (var skills_equips_idx = 0;skills_equips_idx < skills_equips_size; skills_equips_idx++) {
+						var data={
+							templateId:myDecoder.readInt(),
+							leave:myDecoder.readInt(),
+							tyoe:myDecoder.readInt(),
+						}
+						retObj.cards[i].skills_equips[skills_equips_idx] = data;
+
+					}
+				}
+
+				retObj.cards[i].rune_pack = [];
+				let rune_pack = myDecoder.readInt();
+				if (rune_pack_size > 0) {
+					for (var rune_pack_idx = 0;rune_pack_idx < rune_pack_size; rune_pack_idx++) {
+						retObj.cards[i].extra_props[rune_pack_idx] = myDecoder.readInt();
+					}
+				}
+
 			}
 
 

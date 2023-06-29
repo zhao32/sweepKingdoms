@@ -47,6 +47,7 @@ export default class NewClass extends cc.Component {
     }
 
     init(data) {
+        console.log('data:'+ JSON.stringify(data))
 
         let defaultData = DataManager.GameData.Cards[data.template_id]
         this.nameDisplay.string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name

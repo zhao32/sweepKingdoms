@@ -47,7 +47,7 @@ export default class NewClass extends cc.Component {
 
     onSelectSolider: boolean = false
 
-    my_template_id: number
+    // my_template_id: number
 
     myHeroData: any
 
@@ -175,11 +175,11 @@ export default class NewClass extends cc.Component {
                 return
             }
 
-            let data = { fid: 1, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.template_id, b: 0, c: 0, soldier: myData.soliderList }
+            let data = { fid: 1, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.id, b: 0, c: 0, soldier: myData.soliderList }
             console.log(JSON.stringify(data))
             MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
 
-            console.log('my_template_id:' + this.my_template_id)
+            // console.log('my_template_id:' + this.my_template_id)
             ViewManager.instance.hideWnd(DataManager.curWndPath)
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_BATTLE, ...[myData, otherData, this.groupIdx, this.stageIdx])
         }
