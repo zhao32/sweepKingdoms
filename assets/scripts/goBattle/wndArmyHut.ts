@@ -118,8 +118,19 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName(`noHeroDefine`).active = false
             let heroRender = this.node.getChildByName(`heroRender`)
             heroRender.active = true
-            this.myHeroData = DataManager.GameData.Cards[data.formation.a]
-            heroRender.getComponent(battleHeroRender).init(DataManager.GameData.Cards[data.formation.a])
+            let card
+            for (let i = 0; i < DataManager.cardsList.length; i++) {
+                if(DataManager.cardsList[i].id == data.formation.a){
+                    card = DataManager.cardsList[i]
+                }
+                
+            }
+            // this.myHeroData = DataManager.GameData.Cards[data.formation.a]
+            // heroRender.getComponent(battleHeroRender).init(DataManager.GameData.Cards[data.formation.a])
+
+            this.myHeroData = card//DataManager.GameData.Cards[card.template_id]
+            // heroRender.getComponent(battleHeroRender).init(DataManager.GameData.Cards[card.template_id])
+            heroRender.getComponent(battleHeroRender).init(card)
         }
     }
 

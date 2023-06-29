@@ -148,7 +148,7 @@ export default class NewClass extends cc.Component {
 
 
                 this.awardContect.removeAllChildren()
-                if (stateData.stages[i].is_get_award == false) {
+                if (stateData.stages[i] && stateData.stages[i].is_get_award == false) {
                     for (let j = 0; j < data.stage[i].first_drops.length; j++) {
                         let id = data.stage[i].first_drops[j].items[0][0]
                         console.log('----------------id---------', id)
@@ -157,7 +157,7 @@ export default class NewClass extends cc.Component {
                             item.parent = this.awardContect
                             ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[id].icon}`, item)
                         }
-        
+
                     }
                 } else {
                     for (let j = 0; j < data.stage[i].drops.length; j++) {
