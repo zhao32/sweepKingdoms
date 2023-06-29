@@ -114,7 +114,7 @@ export default class NewClass extends cc.Component {
 
     
     S2CCardAddStar(data) {
-        console.log(`升星返回`)
+        console.log(`转生返回`)
         console.log(JSON.stringify(data))
 
     }
