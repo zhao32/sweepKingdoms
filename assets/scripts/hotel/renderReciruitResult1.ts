@@ -16,6 +16,9 @@ export default class NewClass extends cc.Component {
     @property(cc.Label)
     nameLabel: cc.Label = null;
 
+    @property(cc.Label)
+    starLabel: cc.Label = null;
+
     @property(cc.Node)
     head: cc.Node = null;
 
@@ -53,14 +56,15 @@ export default class NewClass extends cc.Component {
             ResManager.loadItemIcon(`hero/soldierType${defaultData.talents[i]}`, node)
         }
 
-        for (let i = 1; i <= 3; i++) {
-            this.node.getChildByName(`starGet${i}`).active = false            
-        }
+        // for (let i = 1; i <= 3; i++) {
+        //     this.node.getChildByName(`starGet${i}`).active = false            
+        // }
 
-        for (let i = 1; i <= data.grade; i++) {
-            this.node.getChildByName(`starGet${i}`).active = true            
-        }
+        // for (let i = 1; i <= data.grade; i++) {
+        //     this.node.getChildByName(`starGet${i}`).active = true            
+        // }
 
+        this.starLabel.string = data.grade
         
     }
 

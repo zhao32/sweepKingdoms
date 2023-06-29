@@ -70,6 +70,10 @@ export default class NewClass extends cc.Component {
     runePotsFrame: cc.SpriteFrame[] = [];
 
 
+    @property({ type: cc.Label, displayName: '星级' })
+    starDisplay: cc.Label = null;
+
+
     // LIFE-CYCLE CALLBACKS:
 
     _data
@@ -150,13 +154,15 @@ export default class NewClass extends cc.Component {
 
         this.nameLabel.string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
 
-        for (let i = 1; i <= 3; i++) {
-            this.node.getChildByName(`starGet${i}`).active = false
-        }
+        // for (let i = 1; i <= 3; i++) {
+        //     this.node.getChildByName(`starGet${i}`).active = false
+        // }
 
-        for (let i = 1; i <= data.grade; i++) {
-            this.node.getChildByName(`starGet${i}`).active = true
-        }
+        // for (let i = 1; i <= data.grade; i++) {
+        //     this.node.getChildByName(`starGet${i}`).active = true
+        // }
+
+        this.starDisplay.string = `x` + data.grade
 
         let maxExp = DataManager.GameData.CardLevels[defaultData.potential][data.level - 1][0]
         this.expProTxt.string = `${data.exp}/${maxExp}`
