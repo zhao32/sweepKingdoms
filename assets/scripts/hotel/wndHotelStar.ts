@@ -74,7 +74,7 @@ export default class NewClass extends cc.Component {
         ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.debris)
         ResManager.loadItemIcon(`hero/debrisBg${defaultData.quality - 1}`, this.debrisBg)
 
-        this.starDisplay.string = `x${data.unitGrade}`
+        this.starDisplay.string = `x${data.grade}`
         this.gradeDisplay.string = 'LV ' + data.level
 
 

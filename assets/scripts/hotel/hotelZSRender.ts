@@ -79,13 +79,12 @@ export default class NewClass extends cc.Component {
         this.proBar.progress = data.physical / 200
         this.proTxt.string = `${data.physical}/${200}`
         this.gradeDisplay.string = 'LV ' + data.level
-        this.starDisplay.string = `x${data.unitGrade}`
+        this.starDisplay.string = `x${data.grade}`
 
-        if (data.level >= 60 && data.unitGrade >= 6) {
+        if (data.level >= 60 && data.grade >= 6) {
             this.node.getChildByName(`btnZS`).getComponent(cc.Button).interactable = true
         } else {
             this.node.getChildByName(`btnZS`).getComponent(cc.Button).interactable = false
-
         }
 
 
@@ -93,8 +92,8 @@ export default class NewClass extends cc.Component {
         //     this.node.getChildByName(`starGet${i}`).active = false
         // }
 
-        // // console.log('data.unitGrade:' + data.unitGrade)
-        // for (let i = 1; i <= data.unitGrade; i++) {
+        // // console.log('data.grade:' + data.grade)
+        // for (let i = 1; i <= data.grade; i++) {
         //     this.node.getChildByName(`starGet${i}`).active = true
         // }
 

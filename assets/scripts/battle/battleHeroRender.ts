@@ -69,8 +69,8 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName(`starGet${i}`).active = false
         }
 
-        // console.log('data.unitGrade:' + data.unitGrade)
-        for (let i = 1; i <= data.unitGrade; i++) {
+        // console.log('data.grade:' + data.grade)
+        for (let i = 1; i <= data.grade; i++) {
             this.node.getChildByName(`starGet${i}`).active = true
         }
 

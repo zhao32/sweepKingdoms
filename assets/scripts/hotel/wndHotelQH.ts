@@ -70,7 +70,7 @@ export default class NewClass extends cc.Component {
         ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.headBg)
         ResManager.loadItemIcon(`hero/heroNameBg${defaultData.quality - 1}`, this.heroNameBg)
 
-        this.starDisplay.string = `x${data.unitGrade}`
+        this.starDisplay.string = `x${data.grade}`
         this.gradeDisplay.string = 'LV ' + data.level
 
 

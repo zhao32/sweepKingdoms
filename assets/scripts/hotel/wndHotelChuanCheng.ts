@@ -87,7 +87,7 @@ export default class NewClass extends cc.Component {
         //     ResManager.loadItemIcon(`hero/soldierType${defaultData.talents[i]}`, node)
         // }
 
-        this.starDisplay.string = `x${data.unitGrade}`
+        this.starDisplay.string = `x${data.grade}`
         this.gradeDisplay.string = 'LV ' + data.level
 
         // this.proBar.progress = data.physical / 200
@@ -99,8 +99,8 @@ export default class NewClass extends cc.Component {
         //     this.node.getChildByName(`starGet${i}`).active = false
         // }
 
-        // // console.log('data.unitGrade:' + data.unitGrade)
-        // for (let i = 1; i <= data.unitGrade; i++) {
+        // // console.log('data.grade:' + data.grade)
+        // for (let i = 1; i <= data.grade; i++) {
         //     this.node.getChildByName(`starGet${i}`).active = true
         // }
 

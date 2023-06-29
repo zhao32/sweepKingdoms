@@ -257,7 +257,7 @@ export default class NewClass extends cc.Component {
         console.log('敌方将领加成：' + JSON.stringify(plusList))
         return plusList
     }
-    // myData:{"heroData":{"id":"150717","template_id":19,"level":1,"num":1,"exp":0,"grade":0,"unit_level":1,"unitGrade":1,"unit_type":3,"fight":3201,"physical":200,"equips":["0","0","0","0","0","0"],"unitEquips":[0,0,0,0,0],"runeUnlock":[0,1,2,4,5,3],"runePutup":[0,0,0,0,0,0,0,0],"runeLevel":[0,0,0,0,0,0,0,0],"skills_equips":[0],"proficiency":[1430,115,198],"aptitude":[481,373,213]},"soliderList":[{"arm":1,"count":106},{"arm":2,"count":0},{"arm":3,"count":0}]}
+    // myData:{"heroData":{"id":"150717","template_id":19,"level":1,"num":1,"exp":0,"grade":0,"unit_level":1,"grade":1,"unit_type":3,"fight":3201,"physical":200,"equips":["0","0","0","0","0","0"],"unitEquips":[0,0,0,0,0],"runeUnlock":[0,1,2,4,5,3],"runePutup":[0,0,0,0,0,0,0,0],"runeLevel":[0,0,0,0,0,0,0,0],"skills_equips":[0],"proficiency":[1430,115,198],"aptitude":[481,373,213]},"soliderList":[{"arm":1,"count":106},{"arm":2,"count":0},{"arm":3,"count":0}]}
 
     S2CStageEnd(retObj) {
         console.log('S2CStageEnd:' + JSON.stringify(retObj))
