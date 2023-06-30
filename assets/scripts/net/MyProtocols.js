@@ -4202,7 +4202,6 @@ var MyProtocols = {
 		if (cardlist_size > 0) {
 			for (var i = 0; i < cardlist_size; i++) {
 				retObj.cardlist[i] = {};
-				retObj.cardlist[i].id = myDecoder.readInt();
 				retObj.cardlist[i].template_id = myDecoder.readInt();
 				retObj.cardlist[i].level = myDecoder.readInt();
 				retObj.cardlist[i].exp = myDecoder.readInt();
@@ -4249,6 +4248,70 @@ var MyProtocols = {
 				}
 			}
 		}
+
+		retObj.mycardlist = [];
+		let mycardlist_size = myDecoder.readInt();
+		if (mycardlist_size > 0) {
+			for (var i = 0; i < mycardlist_size; i++) {
+				retObj.mycardlist[i] = {};
+				retObj.mycardlist[i].template_id = myDecoder.readInt();
+				retObj.mycardlist[i].level = myDecoder.readInt();
+				retObj.mycardlist[i].exp = myDecoder.readInt();
+				retObj.mycardlist[i].grade = myDecoder.readInt();
+				retObj.mycardlist[i].unitLevel = myDecoder.readInt();
+				retObj.mycardlist[i].unitGrade = myDecoder.readInt();
+				//retObj.cardlist[i].unit_type = myDecoder.readInt();
+
+				retObj.mycardlist[i].maxhp = myDecoder.readInt();
+				retObj.mycardlist[i].atk = myDecoder.readInt();
+				retObj.mycardlist[i].def = myDecoder.readInt();
+				retObj.mycardlist[i].unitMaxhp = myDecoder.readInt();
+				retObj.mycardlist[i].unitAtk = myDecoder.readInt();
+				retObj.mycardlist[i].unitDef = myDecoder.readInt();
+				retObj.mycardlist[i].unitNum = myDecoder.readInt();
+				retObj.mycardlist[i].fight = myDecoder.readInt();
+				// debugger;
+				retObj.mycardlist[i].proficiency = [];
+				retObj.mycardlist[i].talents = [];
+
+
+				let proficiency_size = myDecoder.readInt();
+				if (proficiency_size > 0) {
+					for (var proficiency_idx = 0; proficiency_idx < proficiency_size; proficiency_idx++) {
+						retObj.mycardlist[i].proficiency[proficiency_idx] = myDecoder.readInt();
+						retObj.mycardlist[i].talents[proficiency_idx] = myDecoder.readInt();
+
+					}
+				}
+
+				retObj.mycardlist[i].equips = [];
+				let cardlisti_equips_size = myDecoder.readInt();
+				if (cardlisti_equips_size > 0) {
+					for (var equips_idx = 0; equips_idx < cardlisti_equips_size; equips_idx++) {
+						retObj.mycardlist[i].equips[equips_idx] = myDecoder.readInt();
+					}
+				}
+				retObj.mycardlist[i].runes = [];
+				let cardlisti_runes_size = myDecoder.readInt();
+				if (cardlisti_runes_size > 0) {
+					for (var runes_idx = 0; runes_idx < cardlisti_runes_size; runes_idx++) {
+						retObj.mycardlist[i].runes[runes_idx] = myDecoder.readInt();
+					}
+				}
+			}
+		}
+
+		retObj.myitem = []
+		let mybing_size = myDecoder.readInt();
+		if (mybing_size > 0) {
+			for (var i = 0; i < mybing_size; i++) {
+
+				retObj.myitem[i] = {};
+				retObj.myitem[i].template_id = myDecoder.readInt();
+				retObj.myitem[i].num = myDecoder.readInt();
+			}
+		}
+
 		retObj.pkWinLoose = [];
 		let pkWinLoose_size = myDecoder.readInt();
 		if (pkWinLoose_size > 0) {
@@ -4258,7 +4321,6 @@ var MyProtocols = {
 		}
 		return retObj;
 	},
-
 
 	send_C2SZMPayCheck: function (senderSocket, p_fee_id, p_goodsName) {
 		var myEncoder = WsEncoder.alloc();

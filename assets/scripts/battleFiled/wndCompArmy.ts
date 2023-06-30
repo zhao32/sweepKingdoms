@@ -146,7 +146,7 @@ export default class NewClass extends cc.Component {
 
         let myCards = []
         for (let i = 0; i < DataManager.cardsList.length; i++) {
-            if (DataManager.myBattleFiledConfig.card.indexOf(DataManager.cardsList[i].id) != -1) {
+            if (DataManager.myBattleFiledConfig.card.indexOf(DataManager.cardsList[i].template_id) != -1) {
                 myCards.push(DataManager.cardsList[i])
             }
 

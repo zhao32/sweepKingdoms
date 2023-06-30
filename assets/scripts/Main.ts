@@ -202,20 +202,20 @@ export default class NewClass extends cc.Component {
 
     PushAddCard(retObj) {
         console.log('将表增加:' + JSON.stringify(retObj))
-        if(retObj.card_info.num == 0){
+        if (retObj.card_info.num == 0) {
             for (let i = 0; i < DataManager.cardsList.length; i++) {
-                if(DataManager.cardsList[i].template_id == retObj.card_info.template_id){
-                    DataManager.cardsList.splice(i,1)
+                if (DataManager.cardsList[i].template_id == retObj.card_info.template_id) {
+                    DataManager.cardsList.splice(i, 1)
                 }
             }
-        }else{
+        } else {
             let has = false
             for (let i = 0; i < DataManager.cardsList.length; i++) {
-                if(DataManager.cardsList[i].template_id == retObj.card_info.template_id){
+                if (DataManager.cardsList[i].template_id == retObj.card_info.template_id) {
                     has = true
                 }
             }
-           if(!has) DataManager.cardsList.push(...[retObj.card_info])
+            if (!has) DataManager.cardsList.push(...[retObj.card_info])
         }
     }
     errCodeBack(retObj) {
