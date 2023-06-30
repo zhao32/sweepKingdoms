@@ -95,7 +95,7 @@ export default class NewClass extends cc.Component {
         this.awardCoinLabel.string = 'x' + data.stage[0].gamemoney
         this.energyLabel.string = 'x' + data.stage[0].energy_cost
         this.awardContect.removeAllChildren()
-        if (stateData.stages[0].is_get_award == false) {
+        if (stateData.stages[0] && stateData.stages[0].is_get_award == false) {
             for (let j = 0; j < data.stage[0].first_drops.length; j++) {
                 let id = data.stage[0].first_drops[j].items[0][0]
                 console.log('----------------id---------', id)
