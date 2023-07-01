@@ -1609,8 +1609,7 @@ var MyProtocols = {
 					}
 				}
 
-				
-				debugger;
+
 				retObj.cards[i].skills_equips = [];
 				let skills_equips_size = myDecoder.readInt();
 				if (skills_equips_size > 0) {
@@ -2356,8 +2355,9 @@ var MyProtocols = {
 		let cards_size = myDecoder.readInt();
 		if (cards_size > 0) {
 			for (var i = 0; i < cards_size; i++) {
+		
 				retObj.cards[i] = {};
-				retObj.cards[i].id = myDecoder.readString();
+				retObj.cards[i].id = myDecoder.readInt();
 				retObj.cards[i].template_id = myDecoder.readInt();//魔板ID
 				retObj.cards[i].level = myDecoder.readInt();//
 				retObj.cards[i].num = myDecoder.readInt();
@@ -2453,7 +2453,7 @@ var MyProtocols = {
 		if (card_info_exist == true) {
 			// debugger;
 			retObj.card_info = {};
-			retObj.card_info.id = myDecoder.readString();
+			retObj.card_info.id = myDecoder.readInt();
 			retObj.card_info.template_id = myDecoder.readInt();
 			retObj.card_info.level = myDecoder.readInt();
 			retObj.card_info.num = myDecoder.readInt();
@@ -2462,7 +2462,8 @@ var MyProtocols = {
 			retObj.card_info.unit_level = myDecoder.readInt();
 			retObj.card_info.unitGrade = myDecoder.readInt();
 			retObj.card_info.equips = [];
-			card_info_equips_size = 6
+			
+			card_info_equips_size = myDecoder.readInt();
 			if (card_info_equips_size > 0) {
 				for (var equips_idx = 0; equips_idx < card_info_equips_size; equips_idx++) {
 					retObj.card_info.equips[equips_idx] = myDecoder.readString();
@@ -2505,7 +2506,6 @@ var MyProtocols = {
 			// 		retObj.card_info.skills_equips[skills_equips_idx] = myDecoder.readInt();
 			// 	}
 			// }
-
 
 			retObj.card_info.skills_equips = [];
 			let card_skills_equips_size = myDecoder.readInt();
@@ -4169,6 +4169,7 @@ var MyProtocols = {
 
 	get_10146: function (myDecoder) {
 		var retObj = {};
+		debugger;
 		retObj.rank_type = myDecoder.readInt();
 		let rank_player_exist = myDecoder.readBool();
 		if (rank_player_exist == true) {
@@ -4202,6 +4203,7 @@ var MyProtocols = {
 		if (cardlist_size > 0) {
 			for (var i = 0; i < cardlist_size; i++) {
 				retObj.cardlist[i] = {};
+				retObj.cardlist[i].id = myDecoder.readInt();
 				retObj.cardlist[i].template_id = myDecoder.readInt();
 				retObj.cardlist[i].level = myDecoder.readInt();
 				retObj.cardlist[i].exp = myDecoder.readInt();
@@ -4254,6 +4256,7 @@ var MyProtocols = {
 		if (mycardlist_size > 0) {
 			for (var i = 0; i < mycardlist_size; i++) {
 				retObj.mycardlist[i] = {};
+				retObj.mycardlist[i].id = myDecoder.readInt();
 				retObj.mycardlist[i].template_id = myDecoder.readInt();
 				retObj.mycardlist[i].level = myDecoder.readInt();
 				retObj.mycardlist[i].exp = myDecoder.readInt();

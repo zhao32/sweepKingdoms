@@ -8,6 +8,7 @@
 import battleHeroRender from "../battle/battleHeroRender";
 import battleSoliderRender from "../battle/battleSoliderRender";
 import eSoliderRender from "../battle/eSoliderRender";
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
@@ -83,6 +84,10 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(DataManager.cardsList[0])
         this.myHeroData = DataManager.cardsList[0]
         this.initEnemyData(stageData.cardId, stageData.soliders)
+
+
+        NetEventDispatcher.addListener(NetEvent.S2CStageList, this.S2CPkEnemyFormation, this)
+
     }
 
     initEnemyData(cardId, soliders) {
@@ -142,6 +147,10 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_SELECT)
     }
 
+    _myData
+
+    _otherData
+
     enterFight() {
         // let soliderList = 
         if (!this.onSelectSolider) {
@@ -179,13 +188,22 @@ export default class NewClass extends cc.Component {
             console.log(JSON.stringify(data))
             MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
 
+            this._myData = myData
+            this._otherData = otherData
+
             // console.log('my_template_id:' + this.my_template_id)
-            ViewManager.instance.hideWnd(DataManager.curWndPath)
-            ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_BATTLE, ...[myData, otherData, this.groupIdx, this.stageIdx])
+          
         }
     }
 
     onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CStageList, this.S2CPkEnemyFormation, this)
+    }
+
+    S2CPkEnemyFormation(data) {
+        console.log(`pk准备 返回` + JSON.stringify(data))
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_BATTLE, ...[this._myData, this._otherData, this.groupIdx, this.stageIdx])
 
     }
 

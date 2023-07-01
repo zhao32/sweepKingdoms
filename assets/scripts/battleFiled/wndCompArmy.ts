@@ -80,6 +80,8 @@ export default class NewClass extends cc.Component {
     S2CPkEnemyFormation(retObj) {
         console.log('------返回是否可以PK的信息---------')
         // console.log(JSON.stringify(retObj))
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_RESULT, ...[this.myAllData, this.eAllData])
 
     }
 
@@ -217,8 +219,7 @@ export default class NewClass extends cc.Component {
         }
         console.log(`-----------进行挑战-----------`)
         MyProtocols.send_C2SPkEnemyFormation(DataManager._loginSocket, this.enemyPlayerId)
-        ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_RESULT, ...[this.myAllData, this.eAllData])
+     
     }
 
     onClose() {
