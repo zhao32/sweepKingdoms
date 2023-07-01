@@ -2463,7 +2463,7 @@ var MyProtocols = {
 			retObj.card_info.unitGrade = myDecoder.readInt();
 			retObj.card_info.equips = [];
 			
-			card_info_equips_size = myDecoder.readInt();
+			var card_info_equips_size = myDecoder.readInt();
 			if (card_info_equips_size > 0) {
 				for (var equips_idx = 0; equips_idx < card_info_equips_size; equips_idx++) {
 					retObj.card_info.equips[equips_idx] = myDecoder.readString();
