@@ -86,7 +86,7 @@ export default class NewClass extends cc.Component {
         this.initEnemyData(stageData.cardId, stageData.soliders)
 
 
-        NetEventDispatcher.addListener(NetEvent.S2CStageList, this.S2CPkEnemyFormation, this)
+        // NetEventDispatcher.addListener(NetEvent.S2CStageList, this.S2CPkEnemyFormation, this)
 
     }
 
@@ -192,20 +192,22 @@ export default class NewClass extends cc.Component {
             this._otherData = otherData
 
             // console.log('my_template_id:' + this.my_template_id)
+
+            ViewManager.instance.hideWnd(DataManager.curWndPath)
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_BATTLE, ...[this._myData, this._otherData, this.groupIdx, this.stageIdx])
+    
           
         }
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CStageList, this.S2CPkEnemyFormation, this)
+        // NetEventDispatcher.removeListener(NetEvent.S2CStageList, this.S2CPkEnemyFormation, this)
     }
 
-    S2CPkEnemyFormation(data) {
-        console.log(`pk准备 返回` + JSON.stringify(data))
-        ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_BATTLE, ...[this._myData, this._otherData, this.groupIdx, this.stageIdx])
-
-    }
+    // S2CPkEnemyFormation(data) {
+    //     // console.log(`pk准备 返回` + JSON.stringify(data))
+       
+    // }
 
     // update (dt) {}
 }
