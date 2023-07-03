@@ -1604,7 +1604,7 @@ var MyProtocols = {
 				retObj.cards[i].aptitude = [];
 				let aptitude_size = myDecoder.readInt();
 				if (aptitude_size > 0) {
-					for (var aptitude_idx = 0;aptitude_idx < aptitude_size; aptitude_idx++) {
+					for (var aptitude_idx = 0; aptitude_idx < aptitude_size; aptitude_idx++) {
 						retObj.cards[i].aptitude[aptitude_idx] = myDecoder.readInt();
 					}
 				}
@@ -1613,11 +1613,11 @@ var MyProtocols = {
 				retObj.cards[i].skills_equips = [];
 				let skills_equips_size = myDecoder.readInt();
 				if (skills_equips_size > 0) {
-					for (var skills_equips_idx = 0;skills_equips_idx < skills_equips_size; skills_equips_idx++) {
-						var data={
-							templateId:myDecoder.readInt(),
-							leave:myDecoder.readInt(),
-							type:myDecoder.readInt(),
+					for (var skills_equips_idx = 0; skills_equips_idx < skills_equips_size; skills_equips_idx++) {
+						var data = {
+							templateId: myDecoder.readInt(),
+							leave: myDecoder.readInt(),
+							type: myDecoder.readInt(),
 						}
 						retObj.cards[i].skills_equips[skills_equips_idx] = data;
 
@@ -1627,7 +1627,7 @@ var MyProtocols = {
 				retObj.cards[i].rune_pack = [];
 				let rune_pack_size = myDecoder.readInt();
 				if (rune_pack_size > 0) {
-					for (var rune_pack_idx = 0;rune_pack_idx < rune_pack_size; rune_pack_idx++) {
+					for (var rune_pack_idx = 0; rune_pack_idx < rune_pack_size; rune_pack_idx++) {
 						retObj.cards[i].extra_props[rune_pack_idx] = myDecoder.readInt();
 					}
 				}
@@ -1636,9 +1636,9 @@ var MyProtocols = {
 				retObj.cards[i].p = [];
 				let talentssize = myDecoder.readInt();
 				if (talentssize > 0) {
-					for (var talent_idx = 0;talent_idx < talentssize;talent_idx++) {
+					for (var talent_idx = 0; talent_idx < talentssize; talent_idx++) {
 						retObj.cards[i].talents[talent_idx] = myDecoder.readInt();
-						retObj.cards[i].p[talent_idx]=myDecoder.readInt();
+						retObj.cards[i].p[talent_idx] = myDecoder.readInt();
 					}
 				}
 
@@ -1854,7 +1854,7 @@ var MyProtocols = {
 
 
 	/**矿场战斗结果 type  0 是占领   1 掠夺   2  单挑  3 屠城 */
-	send_C2SMineBattleCalculate: function (senderSocket, p_level_index, p_point_index, p_result, p_rand_key, nation,type) {
+	send_C2SMineBattleCalculate: function (senderSocket, p_level_index, p_point_index, p_result, p_rand_key, nation, type) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3105);
 		myEncoder.writeInt(p_level_index);
@@ -2357,7 +2357,7 @@ var MyProtocols = {
 		let cards_size = myDecoder.readInt();
 		if (cards_size > 0) {
 			for (var i = 0; i < cards_size; i++) {
-		
+
 				retObj.cards[i] = {};
 				retObj.cards[i].id = myDecoder.readInt();
 				retObj.cards[i].template_id = myDecoder.readInt();//魔板ID
@@ -2464,7 +2464,7 @@ var MyProtocols = {
 			retObj.card_info.unit_level = myDecoder.readInt();
 			retObj.card_info.unitGrade = myDecoder.readInt();
 			retObj.card_info.equips = [];
-			
+
 			var card_info_equips_size = myDecoder.readInt();
 			if (card_info_equips_size > 0) {
 				for (var equips_idx = 0; equips_idx < card_info_equips_size; equips_idx++) {
@@ -2619,18 +2619,18 @@ var MyProtocols = {
 		retObj.level = myDecoder.readInt();
 		retObj.type = myDecoder.readInt();
 		retObj.a = []
-	
+
 		// debugger;
 		if (retObj.type != 0) {
-			
+
 			for (var i = 0; i < 3; i++) {
 				retObj.a[i] = myDecoder.readInt();
 			}
 		}
-		else{
+		else {
 			retObj.level_exp = myDecoder.readInt();
 		}
-		
+
 		return retObj;
 	},
 	/**装备升级星 */
@@ -6843,6 +6843,29 @@ var MyProtocols = {
 		}
 		return retObj;
 	},
+
+	send_C2SMineConstructionUp: function (senderSocket, x, y, county, lv) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(3117);
+		myEncoder.writeInt(x);
+		myEncoder.writeInt(y);
+		myEncoder.writeInt(county);
+		myEncoder.writeInt(lv);
+
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+	get_3118: function (myDecoder) {
+		var retObj = {};
+		retObj.x = myDecoder.readInt();
+		retObj.y = myDecoder.readInt();
+		retObj.c = myDecoder.readInt();
+		retObj.lv = myDecoder.readInt();
+		// console.log(`升级返回：`+ JSON.stringify(retObj))
+		return retObj;
+	},
+
 }
 
 // export default MyProtocols = MyProtocols

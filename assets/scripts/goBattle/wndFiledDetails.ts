@@ -100,6 +100,12 @@ export default class NewClass extends cc.Component {
         } else if (data.hold_player.group < 100) {
             this.node.getChildByName(`cityArea`).active = false
             this.node.getChildByName(`filedArea`).active = true
+
+            if (data.hold_player.lv == 0) {
+                this.node.getChildByName(`filedArea`).getChildByName('btnRob').getComponent(cc.Button).interactable = false
+            } else {
+                this.node.getChildByName(`filedArea`).getChildByName('btnRob').getComponent(cc.Button).interactable = true
+            }
         }
     }
 

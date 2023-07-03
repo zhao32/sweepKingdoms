@@ -71,7 +71,7 @@ export default class NewClass extends cc.Component {
 
     init(data) {
         this._data = data
-        let name =  DataManager.mineData[data.hold_player.group].name
+        let name = DataManager.mineData[data.hold_player.group].name
         this.nameLabel.string = data.hold_player.lv + '级' + name
         this.lordLabel.string = `领主：${data.hold_player.nickname}`
         this.awardLabel.string = `已产出：${data.hold_player.award}`
@@ -80,7 +80,18 @@ export default class NewClass extends cc.Component {
 
         NetEventDispatcher.addListener(NetEvent.S2CMineGetAward, this.S2CMineGetAward, this)
 
+        NetEventDispatcher.addListener(NetEvent.S2CMineConstructionUp, this.S2CMineConstructionUp, this)
 
+        if (data.hold_player.lv == 0) {
+            this.node.getChildByName('btnBulid').active = true
+            this.node.getChildByName('btnUpLevel').active = false
+            this.node.getChildByName('btnRecruit').getComponent(cc.Button).interactable = false
+            
+        } else {
+            this.node.getChildByName('btnBulid').active = false
+            this.node.getChildByName('btnUpLevel').active = true
+            this.node.getChildByName('btnRecruit').getComponent(cc.Button).interactable = true
+        }
 
         // this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`
 
@@ -97,6 +108,16 @@ export default class NewClass extends cc.Component {
     S2CMineGetAward(data) {
         console.log(`领奖返回`)
         console.log(JSON.stringify(data))
+    }
+
+    /**升级返回 */
+    S2CMineConstructionUp(data) {
+        console.log(`升级建造返回`)
+        console.log(JSON.stringify(data))
+        this._data.hold_player.lv = data.lv
+        
+        let name = DataManager.mineData[this._data.hold_player.group].name
+        this.nameLabel.string = this._data.hold_player.lv + '级' + name
 
     }
 
@@ -131,6 +152,11 @@ export default class NewClass extends cc.Component {
 
     onClose() {
         NetEventDispatcher.removeListener(NetEvent.S2CMineGetAward, this.S2CMineGetAward, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CMineConstructionUp, this.S2CMineConstructionUp, this)
+    }
+
+    onBulidORUpHandler() {
+        MyProtocols.send_C2SMineConstructionUp(DataManager._loginSocket, this._data.page, this._data.idx, this._data.country, this._data.hold_player.lv)
     }
 
     // update (dt) {}

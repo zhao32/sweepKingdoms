@@ -337,9 +337,15 @@ export enum NetEvent {
     S2CMineEviDetail = 3505,
 
     /**鉴定 */
-    C2SIdentify=2050,
+    C2SIdentify = 2050,
 
-    S2CIdentify=2051
+    S2CIdentify = 2051,
+
+    /**矿场建筑建造升级 */
+    C2SMineConstructionUp = 3117,
+
+    /**矿场建筑建造升级 */
+    S2CMineConstructionUp = 3118
 
 
 }
