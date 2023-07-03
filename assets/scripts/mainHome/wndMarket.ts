@@ -64,16 +64,12 @@ export default class NewClass extends cc.Component {
         console.log(`商场数据返回`)
         console.log(JSON.stringify(data))
         this.contect.removeAllChildren()
+        //{"items":[],"packs":[]}
+        for (let i = 0; i < data.items.length; i++) {
+            let item = cc.instantiate(this.itemPfb)
+            item.parent = this.contect            
+        }
     }
-
-
-    list0 = []
-    list1 = []
-    list2 = []
-    list3 = []
-    list4 = []
-
-    
 
     onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
