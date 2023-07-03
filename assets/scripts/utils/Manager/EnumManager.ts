@@ -56,6 +56,9 @@ export default class EnumManager {
 
         WND_MAIN_USERINFO: 'prefabs/main/wndUserInfo',
 
+        WND_MAIN_MARKET: 'prefabs/main/wndMarket',
+
+
 
         ///////////////////// 酒馆
         /**酒馆 */

@@ -60,14 +60,15 @@ export default class NewClass extends cc.Component {
 
     start() {
         this.btnBeginner.on(cc.Node.EventType.TOUCH_END, () => {
-            ViewManager.instance.showToast('新手保护')
+            // ViewManager.instance.showToast('新手保护')
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_MARKET)
         }, this)
 
         this.btnActive.on(cc.Node.EventType.TOUCH_END, () => {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_ACTIVEY)
         }, this)
 
-        NetEventDispatcher.addListener(NetEvent.S2CListRedPoints, this.RedPointsBack,this)
+        NetEventDispatcher.addListener(NetEvent.S2CListRedPoints, this.RedPointsBack, this)
 
         EventManager.getInstance().registerListener(EventManager.UPDATE_MAINHOME_INFO, this, this.updateInfo.bind(this))
         EventManager.getInstance().registerListener(EventManager.UPDATE_BULID_STATE, this, this.updataBulidState.bind(this))
@@ -79,7 +80,7 @@ export default class NewClass extends cc.Component {
     }
 
     protected onDestroy(): void {
-        NetEventDispatcher.removeListener(NetEvent.S2CListRedPoints, this.RedPointsBack,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CListRedPoints, this.RedPointsBack, this)
         EventManager.getInstance().unRegisterListener(EventManager.UPDATE_MAINHOME_INFO, this)
         EventManager.getInstance().unRegisterListener(EventManager.UPDATE_BULID_STATE, this)
 
