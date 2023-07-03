@@ -200,11 +200,17 @@ export default class NewClass extends cc.Component {
                 } else {
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
                 }
+            } else if (hold_player.group == 101) {
+                if (retObj.state == 0) {
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
+                } else {
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
+                }
+
             } else {
                 ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
             }
         }
-
     }
 
     clickIdx

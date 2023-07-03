@@ -272,7 +272,7 @@ export default class DataManager {
     static wndHotelDetail:wndHotelDetail
 
     
-
+    static fightType:number = 0
 
 
 }

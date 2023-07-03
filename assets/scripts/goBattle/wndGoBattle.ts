@@ -561,7 +561,7 @@ export default class NewClass extends cc.Component {
         console.log(this.filedData.hold_player.page)
 
         // MyProtocols.send_C2SStageEnd(DataManager._loginSocket, this.groupIdx, this.stageIdx, isWin, time.toFixed(0), 0, armList);
-        MyProtocols.send_C2SMineBattleCalculate(DataManager._loginSocket, this.filedData.hold_player.page, this.filedData.hold_player.idx, isWin, 10, DataManager.pageGoBattle.nation_id)
+        MyProtocols.send_C2SMineBattleCalculate(DataManager._loginSocket, this.filedData.hold_player.page, this.filedData.hold_player.idx, isWin, 10, DataManager.pageGoBattle.nation_id, DataManager.fightType)
 
     }
 

@@ -1853,8 +1853,8 @@ var MyProtocols = {
 	},
 
 
-	/**矿场战斗结果 */
-	send_C2SMineBattleCalculate: function (senderSocket, p_level_index, p_point_index, p_result, p_rand_key, nation) {
+	/**矿场战斗结果 type  0 是占领   1 掠夺   2  单挑  3 屠城 */
+	send_C2SMineBattleCalculate: function (senderSocket, p_level_index, p_point_index, p_result, p_rand_key, nation,type) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3105);
 		myEncoder.writeInt(p_level_index);
@@ -1862,6 +1862,8 @@ var MyProtocols = {
 		myEncoder.writeInt(p_result);
 		myEncoder.writeLong(p_rand_key);
 		myEncoder.writeInt(nation);
+		myEncoder.writeInt(type);
+
 
 		var rawContent = myEncoder.end();
 		myEncoder.free();

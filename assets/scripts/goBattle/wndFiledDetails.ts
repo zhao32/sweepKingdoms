@@ -80,9 +80,10 @@ export default class NewClass extends cc.Component {
             soliders: soliderData
         }
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data])
-
     }
+
     init(data) {
+        DataManager.fightType = 0
         console.log('filedData:' + JSON.stringify(data))
         this._data = data
         let name = DataManager.mineData[data.hold_player.group].name
@@ -92,14 +93,23 @@ export default class NewClass extends cc.Component {
 
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+
+        if (data.hold_player.group == 101) {
+            this.node.getChildByName(`cityArea`).active = true
+            this.node.getChildByName(`filedArea`).active = false
+        } else if (data.hold_player.group < 100) {
+            this.node.getChildByName(`cityArea`).active = false
+            this.node.getChildByName(`filedArea`).active = true
+        }
     }
 
     onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
     }
 
-    onBattleHandler() {
+    onBattleHandler(target, data) {
         this.isClick = true
+        DataManager.fightType = data
         MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
     }
 
