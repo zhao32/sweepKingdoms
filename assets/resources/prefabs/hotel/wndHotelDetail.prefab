@@ -17923,6 +17923,9 @@
     "pfb": {
       "__uuid__": "91f156a5-6df5-45cd-b1d3-6c3154af07df"
     },
+    "stSkillfb": {
+      "__uuid__": "4208fe30-fd4c-4373-af31-39f5ba0dc046"
+    },
     "runPfb": {
       "__uuid__": "f8ccc9f2-0700-41bd-b899-db8064be6a15"
     },

@@ -278,8 +278,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "麒麟吼",
-    "_N$string": "麒麟吼",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 32,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -335,7 +335,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 540,
-      "height": 91.28
+      "height": 35.28
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -381,7 +381,7 @@
     "_enabled": true,
     "_fontFamily": "Arial",
     "_isSystemFontUsed": true,
-    "_N$string": "<color=#00ff00>Rich</c><color=#0fffff>Text</color><color=#00ff00>Rich</c><color=#0fffff>Text</color><color=#00ff00>Rich</c><color=#0fffff>Text</color><color=#00ff00>Rich</c><color=#0fffff>Text</color><color=#00ff00>Rich</c><color=#0fffff>Text</color><color=#00ff00>Rich</c><color=#0fffff>Text</color><color=#00ff00>Rich</c><color=#0fffff>Text</color><color=#00ff00>Rich</c><color=#0fffff>Text</color><color=#00ff00>Rich</c><color=#0fffff>Text</color><color=#00ff00>Rich</c><color=#0fffff>Text</color><color=#00ff00>Rich</c><color=#0fffff>Text</color><color=#00ff00>Rich</c><color=#0fffff>Text</color>\n<color=#00ff00>Rich</c><color=#0fffff>Text</color>",
+    "_N$string": "",
     "_N$horizontalAlign": 0,
     "_N$fontSize": 20,
     "_N$font": null,
@@ -482,9 +482,7 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "ab546383-1d40-4231-968c-92d3b66a5c43"
-    },
+    "_spriteFrame": null,
     "_type": 0,
     "_sizeMode": 1,
     "_fillType": 0,

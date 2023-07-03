@@ -60,6 +60,9 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Prefab, displayName: '技能预制体' })
     pfb: cc.Prefab = null;
 
+    @property({ type: cc.Prefab, displayName: '技能预制体' })
+    stSkillfb: cc.Prefab = null;
+
     @property({ type: cc.Prefab, displayName: '石槽预制体' })
     runPfb: cc.Prefab = null;
 
@@ -192,6 +195,7 @@ export default class NewClass extends cc.Component {
 
         this.node.getChildByName(`btnSkill`).on(cc.Node.EventType.TOUCH_END, () => {
             this.initSkills(defaultData.skills, data.proficiency, data.talents)
+            this.initStSkill(data.skills_equips)
         }, this)
 
         this.node.getChildByName(`btnRune`).on(cc.Node.EventType.TOUCH_END, () => {
@@ -203,6 +207,16 @@ export default class NewClass extends cc.Component {
         }, this)
 
         this.initSkills(defaultData.skills, data.proficiency, data.talents)
+        this.initStSkill(data.skills_equips)
+    }
+
+    initStSkill(stData) {
+        console.log(`init 额外技能`)
+        for (let i = 0; i < stData.length; i++) {
+            let render = cc.instantiate(this.stSkillfb)
+            render.parent = this.contect
+        }
+
     }
     initSkills(skillList, proficiency, talents) {
         this.node.getChildByName('btnSkill').getComponent(cc.Sprite).spriteFrame = this.checkFrames[1]
