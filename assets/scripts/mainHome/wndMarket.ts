@@ -45,7 +45,7 @@ export default class NewClass extends cc.Component {
                 if (event.isChecked == true) {
                     console.log('选中' + i)
                     this.contect.removeAllChildren()
-                 
+
                 }
             }, this)
         }
@@ -60,14 +60,18 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.addListener(NetEvent.S2CMallList, this.S2CMallList, this)
     }
 
-    S2CMallList(data){
+    S2CMallList(data) {
         console.log(`商场数据返回`)
         console.log(JSON.stringify(data))
         this.contect.removeAllChildren()
         //{"items":[],"packs":[]}
         for (let i = 0; i < data.items.length; i++) {
             let item = cc.instantiate(this.itemPfb)
-            item.parent = this.contect            
+            item.parent = this.contect
+
+            item.on(cc.Node.EventType.TOUCH_END, () => {
+
+            }, this)
         }
     }
 
