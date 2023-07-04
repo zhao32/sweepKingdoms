@@ -69,12 +69,13 @@ export default class NewClass extends cc.Component {
 
 
 
-        for (let i = 0; i < data.soliderUsed.length; i++) {
-            if (data.soliderUsed[i].arm != 0) {
-                this.soliders.push(data.soliderUsed[i])
-            }
-        }
+       
         if (this._data.hold_player.group == 101) {
+            for (let i = 0; i < data.soliderUse.length; i++) {
+                if (data.soliderUse[i].arm != 0) {
+                    this.soliders.push(data.soliderUse[i])
+                }
+            }
 
             let workKeyList = []
             for (let i = 0; i < data.exclude_cards.length; i++) {
@@ -92,6 +93,12 @@ export default class NewClass extends cc.Component {
             }
         } else {
             this.cards = data.cards
+
+            for (let i = 0; i < data.soliderUsed.length; i++) {
+                if (data.soliderUsed[i].arm != 0) {
+                    this.soliders.push(data.soliderUsed[i])
+                }
+            }
         }
 
         console.log(`this.soliders:` + JSON.stringify(this.soliders))
