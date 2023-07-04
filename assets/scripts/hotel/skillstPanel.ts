@@ -5,6 +5,8 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import DataManager from "../utils/Manager/DataManager";
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -27,14 +29,22 @@ export default class NewClass extends cc.Component {
 
     init() {
         this.contect.removeAllChildren()
+
+        for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+            let item = DataManager.instance.itemsList[i]
+            if (item.bagId == 3 ) {
+
+            }
+
+        }
     }
 
     onCloseHandler() {
         this.node.active = false
     }
 
-    onTeachHandler(){ 
-        
+    onTeachHandler() {
+
     }
 
     // update (dt) {}

@@ -66,6 +66,7 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.addListener(NetEvent.S2CMallList, this.S2CMallList, this)
         this.labelCoin.string = String(DataManager.playData.coinMoney)
         this.labelGold.string = String(DataManager.playData.goldMoney)
+        this.node.getChildByName(`buyPanel`).active = false
     }
 
     S2CMallList(data) {
