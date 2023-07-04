@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import DataManager from "../utils/Manager/DataManager";
 import ResManager from "../utils/Manager/ResManager";
 
 const { ccclass, property } = cc._decorator;
@@ -33,7 +34,7 @@ export default class NewClass extends cc.Component {
 
     }
 
-    init(data) {
+    init(data, idx) {
         // "skills_equips":[{"id":0,"level":0,"type":2},{"id":0,"level":0,"type":1},{"id":0,"level":0,"type":2}]
         // this.nameLabel.string = data.name
         // this.richLabel.string = data.des
@@ -45,6 +46,14 @@ export default class NewClass extends cc.Component {
         } else if (data.type == 2) {
             ResManager.loadItemIcon(`skillats/蓝`, this.bg)
         }
+
+        this.node.getChildByName(`btnTeach`).active = data.id == 0
+    }
+
+    onTeachHandler() {
+        DataManager.wndHotelDetail.openSkillstPanel()
+
+
     }
 
     // update (dt) {}

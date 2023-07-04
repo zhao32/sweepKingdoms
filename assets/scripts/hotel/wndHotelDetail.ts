@@ -125,6 +125,8 @@ export default class NewClass extends cc.Component {
     init(data) {
         DataManager.wndHotelDetail = this
         this.node.getChildByName('runePutPanel').active = false
+        this.node.getChildByName('skillstPanel').active = false
+        
         packManager.getInstance().reflishBag()
         NetEventDispatcher.addListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock, this)
 
@@ -211,14 +213,18 @@ export default class NewClass extends cc.Component {
         this.initStSkill(data.skills_equips)
     }
 
+    openSkillstPanel(){
+        this.node.getChildByName('skillstPanel').active = true
+
+    }
+
     initStSkill(stData) {
         console.log(`init 额外技能`)
         for (let i = 0; i < stData.length; i++) {
             let render = cc.instantiate(this.stSkillfb)
             render.parent = this.contect
-            render.getComponent(detailSkillStRender).init(stData[i])    
+            render.getComponent(detailSkillStRender).init(stData[i], i)
         }
-
     }
     initSkills(skillList, proficiency, talents) {
         this.node.getChildByName('btnSkill').getComponent(cc.Sprite).spriteFrame = this.checkFrames[1]
@@ -233,7 +239,6 @@ export default class NewClass extends cc.Component {
             render.parent = this.contect
             render.getComponent(detailSkillRender).init(skillData, proficiency, talents)
         }
-
     }
 
     initRunes() {
