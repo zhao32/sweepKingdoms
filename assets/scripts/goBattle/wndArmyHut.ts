@@ -120,10 +120,10 @@ export default class NewClass extends cc.Component {
             heroRender.active = true
             let card
             for (let i = 0; i < DataManager.cardsList.length; i++) {
-                if(DataManager.cardsList[i].id == data.formation.a){
+                if (DataManager.cardsList[i].id == data.formation.a) {
                     card = DataManager.cardsList[i]
                 }
-                
+
             }
             // this.myHeroData = DataManager.GameData.Cards[data.formation.a]
             // heroRender.getComponent(battleHeroRender).init(DataManager.GameData.Cards[data.formation.a])
@@ -142,7 +142,7 @@ export default class NewClass extends cc.Component {
         this.myContect.removeAllChildren()
 
         console.log('--------data------' + JSON.stringify(data))
-        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx, data.country)
+        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.hold_player.page, data.hold_player.idx, data.hold_player.country)
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
         // this.node.getChildByName('heroRender').getComponent(battleHeroRender).init(this.cards[0])
         // this.myHeroData = this.cards[0]
