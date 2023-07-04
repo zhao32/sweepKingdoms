@@ -64,7 +64,6 @@ export default class NewClass extends cc.Component {
 
     init() {
         NetEventDispatcher.addListener(NetEvent.S2CMallList, this.S2CMallList, this)
-
         this.labelCoin.string = String(DataManager.playData.coinMoney)
         this.labelGold.string = String(DataManager.playData.goldMoney)
     }
@@ -74,7 +73,7 @@ export default class NewClass extends cc.Component {
         console.log(JSON.stringify(data))
         this.contect.removeAllChildren()
         //{"items":[],"packs":[]}
-        for (let i = 0; i < data.items.length; i++) {
+        for (let i = 0; i < data.packs.length; i++) {
             let item = cc.instantiate(this.itemPfb)
             item.parent = this.contect
 

@@ -5,7 +5,16 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { NetEvent } from "../net/NetEvent";
+import DataManager from "../utils/Manager/DataManager";
+
 const { ccclass, property } = cc._decorator;
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -25,13 +34,10 @@ export default class NewClass extends cc.Component {
     @property(cc.Label)
     moneyLabel: cc.Label = null;
 
-
-
     @property(cc.Node)
     pic: cc.Node = null;
 
     num: number = 0
-
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -39,19 +45,26 @@ export default class NewClass extends cc.Component {
 
     start() {
 
+        NetEventDispatcher.addListener(NetEvent.S2CMallBuy, this.S2CMallBuy, this)
+
     }
+
+    S2CMallBuy(data) {
+        console.log('道具购买返回' + JSON.stringify(data))
+    }
+
     init() {
-
+        this.numLabel.string = "0"
     }
 
-    onPlusOne() {
+    onReduceOne() {
         if (this.num > 0) {
             this.num--
         }
         this.numLabel.string = `x${this.num}`
     }
 
-    onReduceOne() {
+    onPlusOne() {
         this.num++
         this.numLabel.string = `x${this.num}`
     }
@@ -71,6 +84,14 @@ export default class NewClass extends cc.Component {
         this.numLabel.string = `x${this.num}`
     }
 
+    onBuyHandler() {
+        MyProtocols.send_C2SMallBuy(DataManager._loginSocket, 0, this.num)
+    }
+
+    onHideHandler() {
+        this.node.active = false
+
+    }
 
 
     // update (dt) {}
