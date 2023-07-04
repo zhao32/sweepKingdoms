@@ -37,9 +37,6 @@ export default class NewClass extends cc.Component {
     @property(cc.Label)
     awardLabel: cc.Label = null;
 
-
-
-
     @property(cc.Node)
     icon: cc.Node = null;
 
@@ -50,6 +47,8 @@ export default class NewClass extends cc.Component {
 
     // onLoad () {}
     _data
+
+    _detailData
 
     start() {
 
@@ -69,8 +68,10 @@ export default class NewClass extends cc.Component {
     // 	}
     // }
 
-    init(data) {
+    /**列表数据 阵容详情数据*/
+    init(data, detailData) {
         this._data = data
+        this._detailData = detailData
         let name = DataManager.mineData[data.hold_player.group].name
         this.nameLabel.string = data.hold_player.lv + '级' + name
         this.lordLabel.string = `领主：${data.hold_player.nickname}`
@@ -86,7 +87,7 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName('btnBulid').active = true
             this.node.getChildByName('btnUpLevel').active = false
             this.node.getChildByName('btnRecruit').getComponent(cc.Button).interactable = false
-            
+
         } else {
             this.node.getChildByName('btnBulid').active = false
             this.node.getChildByName('btnUpLevel').active = true
@@ -115,7 +116,7 @@ export default class NewClass extends cc.Component {
         console.log(`升级建造返回`)
         console.log(JSON.stringify(data))
         this._data.hold_player.lv = data.lv
-        
+
         let name = DataManager.mineData[this._data.hold_player.group].name
         this.nameLabel.string = this._data.hold_player.lv + '级' + name
 
@@ -142,7 +143,7 @@ export default class NewClass extends cc.Component {
     onDetailHutHandler() {
         console.log(`------查看详情--------`)
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUT, ...[this._data.hold_player])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUT, ...[this._data, this._detailData])
     }
 
     onHarvestHandler() {
@@ -156,7 +157,7 @@ export default class NewClass extends cc.Component {
     }
 
     onBulidORUpHandler() {
-        console.log(`this._data:`+JSON.stringify(this._data))
+        console.log(`this._data:` + JSON.stringify(this._data))
         MyProtocols.send_C2SMineConstructionUp(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country, this._data.hold_player.lv)
     }
 

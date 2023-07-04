@@ -31,7 +31,7 @@ export default class NewClass extends cc.Component {
     }
 
     init(data) {
-        console.log(`data:`+JSON.stringify(data))
+        // console.log(`data:`+JSON.stringify(data))
         let name =DataManager.mineData[data.group].name
         this.nameLabel.string = data.lv + '级' + name
         this.lordLabel.string = data.nickname ? `领主：${data.nickname}` : '领主：无'

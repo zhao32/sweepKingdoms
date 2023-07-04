@@ -62,6 +62,7 @@ export default class NewClass extends cc.Component {
     // 	}
     // }
 
+    /**列表数据 阵容详情数据*/
     init(data) {
         this._data = data
         let name = DataManager.mineData[data.hold_player.group].name

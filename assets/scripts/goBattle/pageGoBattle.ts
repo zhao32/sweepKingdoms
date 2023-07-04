@@ -180,6 +180,7 @@ export default class NewClass extends cc.Component {
 
     S2CMineEnemyDetail(retObj) {
         console.log('矿场详情:', JSON.stringify(retObj))
+        DataManager.curMineDetailData = retObj
         let hold_player = this.mineData[this.clickIdx].hold_player
         // retObj.state = 3
         if (hold_player.id == DataManager.playData.id) {

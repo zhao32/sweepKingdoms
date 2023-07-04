@@ -56,8 +56,9 @@ export default class NewClass extends cc.Component {
 
     }
 
-    S2CMineEnemyDetail(data) {
-        console.log("返回矿场阵容")
+
+    initDetailData(data) {
+        console.log("矿场阵容数据")
         console.log(JSON.stringify(data))
         // this._data = data
 
@@ -67,9 +68,6 @@ export default class NewClass extends cc.Component {
 
         // {"level_index":0,"point_index":22,"base_info":{"id":0,"nickname":"","level":0,"icon":0,"head_frame_id":1,"fight":0,"cd_time":0},"formation":{"fid":0,"formationId":0,"forward":0,"flip":0,"a":0,"b":0,"c":0},"soliderUsed":[],"soliderUse":[],"cards":[],"exclude_cards":[],"rand_key":0}
 
-
-
-       
         if (this._data.hold_player.group == 101) {
             for (let i = 0; i < data.soliderUse.length; i++) {
                 if (data.soliderUse[i].arm != 0) {
@@ -141,6 +139,7 @@ export default class NewClass extends cc.Component {
         }
     }
 
+    /**列表数据 阵容详情数据*/
     init(data) {
         this.soliders = []
         this.cards = []
@@ -149,8 +148,11 @@ export default class NewClass extends cc.Component {
         this.myContect.removeAllChildren()
 
         console.log('--------data------' + JSON.stringify(data))
-        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.hold_player.page, data.hold_player.idx, data.hold_player.country)
-        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+        // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.hold_player.page, data.hold_player.idx, data.hold_player.country)
+        // NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+        this.initDetailData(DataManager.curMineDetailData)
+
+
         // this.node.getChildByName('heroRender').getComponent(battleHeroRender).init(this.cards[0])
         // this.myHeroData = this.cards[0]
     }
@@ -194,7 +196,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+        // NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
 
     }
 

@@ -90,11 +90,9 @@ export default class NewClass extends cc.Component {
     }
 
     definSoliders = []
-
     attSoliders = []
 
-    S2CMineEnemyDetail(retObj) {
-
+    initDetailData(retObj) {
         let attSoliderNum = 0
         let definSoliderNum = 0
 
@@ -201,8 +199,10 @@ export default class NewClass extends cc.Component {
         // this.myData = myData
         // this.eData = eData
         console.log("data:" + JSON.stringify(data))
-        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx, data.country)
-        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+        this.initDetailData(DataManager.curMineDetailData)
+
+        // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx, data.country)
+        // NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
 
         // NetEventDispatcher.addListener(NetEvent.S2CRankPlayerDetail, this.S2CRankPlayerDetail,this)
         // NetEventDispatcher.addListener(NetEvent.S2CPkEnemyFormation, this.S2CPkEnemyFormation,this)
@@ -334,7 +334,7 @@ export default class NewClass extends cc.Component {
     onClose() {
         // NetEventDispatcher.removeListener(NetEvent.S2CRankPlayerDetail, this.S2CRankPlayerDetail,this)
         NetEventDispatcher.removeListener(NetEvent.S2CPkEnemyFormation, this.S2CPkEnemyFormation, this)
-        NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+        // NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
     }
 
 

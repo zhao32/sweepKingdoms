@@ -274,5 +274,8 @@ export default class DataManager {
 
     static wndHotelDetail:wndHotelDetail
 
+    /**当前矿的守卫详情信息 */
+    static curMineDetailData = null
+
     static fightType:number = 0
 }

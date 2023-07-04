@@ -73,20 +73,20 @@ export default class NewClass extends cc.Component {
     // 	}
     // }
 
-    init(data, state) {
+    init(data, state = DataManager.curMineDetailData.state) {
         console.log('filedData:' + JSON.stringify(data))
         this._data = data
         this.nameLabel.string = data.hold_player.lv + '级' + data.hold_player.nickname
         // this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`
 
         this.node.getChildByName('btnAtt').active = (state == 0) ? false : true
-        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
-        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
-
+        // NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+        // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
+        this.initDetailData(DataManager.curMineDetailData)
         this.titleLabel.string = DataManager.mineData[data.hold_player.group].name
     }
 
-    S2CMineEnemyDetail(retObj) {
+    initDetailData(retObj) {
         console.log(JSON.stringify(retObj))
         console.log(retObj.formation.a)
         // debugger
@@ -111,8 +111,8 @@ export default class NewClass extends cc.Component {
                 cardId: retObj.formation.a,
                 soliders: soliderData
             }
-            console.log('this._data:' +JSON.stringify(this._data))
-            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data,true])
+            console.log('this._data:' + JSON.stringify(this._data))
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data, true])
 
         } else if (retObj.state == 2) {
             ViewManager.instance.hideWnd(DataManager.curWndPath)
@@ -133,7 +133,7 @@ export default class NewClass extends cc.Component {
                     cardId: retObj.formation.a,
                     soliders: soliderData
                 }
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data,true])
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data, true])
 
             } else if (DataManager.playData.account_id == retObj.base_info.id) {
                 let soliderData = []
@@ -152,13 +152,13 @@ export default class NewClass extends cc.Component {
                     cardId: retObj.att_formation.a,
                     soliders: soliderData
                 }
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[attData, this._data,true])
-            } 
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[attData, this._data, true])
+            }
 
-        }else if (retObj.state == 3) {
+        } else if (retObj.state == 3) {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this._data, retObj.state])
         }
-        
+
         // else {
         //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this._data, retObj.state])
         // }
@@ -170,7 +170,8 @@ export default class NewClass extends cc.Component {
     }
 
     onBattleHandler() {
-        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
+        this.initDetailData(DataManager.curMineDetailData)
+        // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
         // ViewManager.instance.hideWnd(DataManager.curWndPath, true)
         // let defineData =
         // {
@@ -188,7 +189,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+        // NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
 
     }
     // update (dt) {}

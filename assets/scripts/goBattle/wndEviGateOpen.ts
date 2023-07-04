@@ -40,9 +40,9 @@ export default class NewClass extends cc.Component {
 
     }
 
-    init(data, state) {
+    init(data, state = DataManager.curMineDetailData.state) {
         this._data = data
-        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+        // NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
         if (state == 3) {
             this.node.getChildByName('btnDefine').getComponent(cc.Button).interactable = false
             this.node.getChildByName('btnAtt').getComponent(cc.Button).interactable = false
@@ -60,11 +60,11 @@ export default class NewClass extends cc.Component {
 
     }
 
-    S2CMineEnemyDetail(data) {
-        console.log('恶魔之门阵容返回')
-        console.log(JSON.stringify(data))
+    // S2CMineEnemyDetail(data) {
+    //     console.log('恶魔之门阵容返回')
+    //     console.log(JSON.stringify(data))
 
-    }
+    // }
 
     /**查看战场 */
     onDetailHandler() {
@@ -92,7 +92,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+        // NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
 
     }
 

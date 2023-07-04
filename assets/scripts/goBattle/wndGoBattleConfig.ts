@@ -69,7 +69,7 @@ export default class NewClass extends cc.Component {
 
     }
 
-    S2CMineEnemyDetail(retObj) {
+    initDetailData(retObj) {
         console.log(`--------我的主城兵力-----------`)
         console.log(JSON.stringify(retObj))
         // {"level_index":0,"point_index":0,"base_info":{"id":0,"nickname":"","level":0,"icon":0,"head_frame_id":1,"fight":0,"cd_time":0},"formation":{"fid":0,"formationId":0,"forward":0,"flip":0,"a":0,"b":0,"c":0},"soliderUsed":[],"soliderUse":[{"arm":0,"count":1000},{"arm":1,"count":1000},{"arm":2,"count":1000}],"cards":[],"exclude_cards":[],"rand_key":2923001863557120}
@@ -173,7 +173,9 @@ export default class NewClass extends cc.Component {
         this.onSelectSolider = true
 
         if (DataManager.pageGoBattle.myCityData) {
-            MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, cityData.page, cityData.idx, cityData.country)
+            this.initDetailData(DataManager.curMineDetailData)
+
+            // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, cityData.page, cityData.idx, cityData.country)
         } else {
             this.mySoliders = []
             this.myContect.removeAllChildren()
@@ -196,7 +198,7 @@ export default class NewClass extends cc.Component {
         }
 
         this.initEnemyData(enemyData.cardId, enemyData.soliders)
-        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+        // NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
         NetEventDispatcher.addListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave, this)
 
     }
@@ -233,7 +235,7 @@ export default class NewClass extends cc.Component {
 
     changeHero() {
         console.log(`--------换将---------`)
-        console.log('this.myCards:' + JSON.stringify(this.myCards))
+        // console.log('this.myCards:' + JSON.stringify(this.myCards))
         this.onSelectSolider = false
         this.myContect.removeAllChildren()
         for (let i = 0; i < this.myCards.length; i++) {
@@ -363,7 +365,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+        // NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
         NetEventDispatcher.removeListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave, this)
 
     }

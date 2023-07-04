@@ -71,7 +71,7 @@ export default class NewClass extends cc.Component {
     eviType: number
 
 
-    S2CMineEnemyDetail(data) {
+    initDetailData(data) {
         // exclude_cards  在其他矿里工作
         //  cards 这这里工作得将
         console.log("返回矿场阵容")
@@ -144,12 +144,12 @@ export default class NewClass extends cc.Component {
             let tempId
             let card
             for (let i = 0; i < DataManager.cardsList.length; i++) {
-                if(DataManager.cardsList[i].id ==data.formation.a ){
+                if (DataManager.cardsList[i].id == data.formation.a) {
                     tempId = DataManager.cardsList[i].template_id
                     card = DataManager.cardsList[i]
-                }  
+                }
             }
-            console.log(`tempId:`+tempId)
+            console.log(`tempId:` + tempId)
             heroRender.getComponent(battleHeroRender).init(card)
 
             // heroRender.getComponent(battleHeroRender).init(DataManager.GameData.Cards[tempId])
@@ -200,9 +200,10 @@ export default class NewClass extends cc.Component {
         this.tipDisplay.string = ``
         this.myContect.removeAllChildren()
 
-        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx, data.country)
-        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail,this)
-        NetEventDispatcher.addListener(NetEvent.S2CMineDefFormationSave, this.S2CMineDefFormationSave,this)
+        // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx, data.country)
+        this.initDetailData(DataManager.curMineDetailData)
+        // NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail,this)
+        NetEventDispatcher.addListener(NetEvent.S2CMineDefFormationSave, this.S2CMineDefFormationSave, this)
 
         // this.node.getChildByName('heroRender').getComponent(battleHeroRender).init(DataManager.cardsList[0])
         // this.myHeroData = DataManager.cardsList[0]
@@ -227,7 +228,7 @@ export default class NewClass extends cc.Component {
         }
 
         this.onSelectSolider = false
-        console.log('this.cards:'+ JSON.stringify(this.cards))
+        console.log('this.cards:' + JSON.stringify(this.cards))
 
         this.myContect.removeAllChildren()
         for (let i = 0; i < this.cards.length; i++) {
@@ -302,8 +303,8 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail,this)
-        NetEventDispatcher.removeListener(NetEvent.S2CMineDefFormationSave, this.S2CMineDefFormationSave,this)
+        // NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CMineDefFormationSave, this.S2CMineDefFormationSave, this)
     }
 
     // update (dt) {}

@@ -30,7 +30,7 @@ export default class NewClass extends cc.Component {
     }
 
     init(data) {
-        console.log('data:'+ JSON.stringify(data))
+        // console.log('data:'+ JSON.stringify(data))
         // debugger
         this.label0.string = DataManager.GameData.Soldier[data.arm].name
         this.label1.string = 'x' + data.count

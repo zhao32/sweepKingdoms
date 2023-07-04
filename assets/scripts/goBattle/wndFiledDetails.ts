@@ -58,7 +58,7 @@ export default class NewClass extends cc.Component {
     }
 
 
-    S2CMineEnemyDetail(retObj) {
+    initDetailData(retObj) {
         console.log(`DataManager.curWndPath:` + DataManager.curWndPath)
         if (this.isClick == false) return
         console.log(`------aa---准备攻打敌方 矿场-----------`)
@@ -97,7 +97,7 @@ export default class NewClass extends cc.Component {
 
 
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
-        NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+        // NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
         let cityArea = this.node.getChildByName(`cityArea`)
         let filedArea = this.node.getChildByName(`filedArea`)
         cityArea.children[0].active = cityArea.children[0].getComponent(cc.Button).interactable = true
@@ -142,13 +142,15 @@ export default class NewClass extends cc.Component {
     onBattleHandler(target, data) {
         this.isClick = true
         DataManager.fightType = data
-        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
+        this.initDetailData(DataManager.curMineDetailData)
+
+        // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
     }
 
     onClose() {
         console.log(`----------关闭窗口-----------`)
         this.isClick = false
-        NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+        // NetEventDispatcher.removeListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
     }
 
 
