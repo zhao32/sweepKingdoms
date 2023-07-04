@@ -14,6 +14,7 @@ import ViewManager from "../utils/Manager/ViewManager";
 import detailQuipRender from "./detailQuipRender";
 import detailRuneRender from "./detailRuneRender";
 import detailSkillRender from "./detailSkillRender";
+import detailSkillStRender from "./detailSkillStRender";
 
 const { ccclass, property } = cc._decorator;
 
@@ -215,6 +216,7 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < stData.length; i++) {
             let render = cc.instantiate(this.stSkillfb)
             render.parent = this.contect
+            render.getComponent(detailSkillStRender).init(stData[i])    
         }
 
     }

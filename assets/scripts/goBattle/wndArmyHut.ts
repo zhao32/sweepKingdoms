@@ -74,11 +74,11 @@ export default class NewClass extends cc.Component {
                 this.soliders.push(data.soliderUsed[i])
             }
         }
-        if (this._data.group == 101) {
+        if (this._data.hold_player.group == 101) {
 
             let workKeyList = []
             for (let i = 0; i < data.exclude_cards.length; i++) {
-                workKeyList.push(data.exclude_cards[i].template_id)
+                workKeyList.push(data.exclude_cards[i].id)
             }
 
             // for (let i = 0; i < data.cards.length; i++) {
@@ -86,7 +86,7 @@ export default class NewClass extends cc.Component {
             // }
 
             for (let i = 0; i < DataManager.cardsList.length; i++) {
-                if (workKeyList.indexOf(DataManager.cardsList[i].template_id) == -1) {
+                if (workKeyList.indexOf(DataManager.cardsList[i].id) == -1) {
                     this.cards.push(DataManager.cardsList[i])
                 }
             }
@@ -96,7 +96,7 @@ export default class NewClass extends cc.Component {
 
         console.log(`this.soliders:` + JSON.stringify(this.soliders))
         if (this.soliders.length == 0) {
-            this.tipDisplay.string = `暂无遣兵力`
+            this.tipDisplay.string = `暂无派遣兵力`
         } else {
             this.tipDisplay.string = ``
             this.myContect.removeAllChildren()
