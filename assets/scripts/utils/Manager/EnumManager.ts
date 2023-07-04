@@ -146,6 +146,11 @@ export default class EnumManager {
         /** */
         WND_GOBATTLE_MYEVI: 'prefabs/goBattle/wndMyEviDetails',
 
+        WND_GOBATTLE_EVI: 'prefabs/goBattle/wndEviDetails',
+
+
+        
+
 
         /**队伍比较 */
         WND_GOBATTLE_COMPYARMY: 'prefabs/goBattle/wndBattleCompArmy',

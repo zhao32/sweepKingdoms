@@ -6866,6 +6866,26 @@ var MyProtocols = {
 		return retObj;
 	},
 
+	send_C2SEviGate: function (senderSocket, x, y, county) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(3117);
+		myEncoder.writeInt(x);
+		myEncoder.writeInt(y);
+		myEncoder.writeInt(county);
+
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_3120: function (myDecoder) {
+		var retObj = {};
+		retObj.x = myDecoder.readInt();
+		retObj.y = myDecoder.readInt();
+		retObj.county = myDecoder.readInt();
+		return retObj;
+	},
+
 }
 
 // export default MyProtocols = MyProtocols

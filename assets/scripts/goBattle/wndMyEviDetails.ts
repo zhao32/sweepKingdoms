@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
@@ -83,6 +84,7 @@ export default class NewClass extends cc.Component {
         // }else{
         //     ResManager.loadItemIcon(`goBattle/icon0`,this.icon)
         // }
+        NetEventDispatcher.addListener(NetEvent.S2CEviGate, this.S2CEviGate, this)
 
 
     }
@@ -95,26 +97,27 @@ export default class NewClass extends cc.Component {
         console.log(`我的驻扎`)
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUT, ...[this._data])
+    }
 
-        // MyProtocols.send_C2SMineBattleCalculate(DataManager._loginSocket, this._data.x, this._data.y, true, 10)
-        // ViewManager.instance.hideWnd(DataManager.curWndPath, true)
-        // let defineData =
-        // {
-        //     cardId: 0,
-        //     soliders: [
-        //         {
-        //             arm: 1,
-        //             count: 1000,
-        //             fight: 0,
-        //             defense: 0
-        //         }
-        //     ]
-        // }
-        // ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data])
+    onOpenHandler() {
+        this.node.getChildByName(`openPanel`).active = true
+    }
+
+    onCloseOpHandler() {
+        this.node.getChildByName(`openPanel`).active = false
+    }
+
+    onOpenEviHandler() {
+        MyProtocols.send_C2SEviGate(DataManager._loginSocket._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
     }
 
     onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CEviGate, this.S2CEviGate, this)
 
+    }
+
+    S2CEviGate(data) {
+        console.log(JSON.stringify(`开启恶魔之门返回` + JSON.stringify(data)))
     }
 
 

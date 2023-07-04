@@ -203,11 +203,11 @@ export default class NewClass extends cc.Component {
                         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYEVI, ...[this.mineData[this.clickIdx], retObj.state])
                     } else {//别人占领了
                         if (retObj.state == 0) {
-
+                            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVI, ...[this.mineData[this.clickIdx], retObj.state])
                         } else if (retObj.state == 1) {
                             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
                         } else if (retObj.state == 2) {//支援结束
-
+                            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
                         }
 
                     }

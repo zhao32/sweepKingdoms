@@ -345,7 +345,13 @@ export enum NetEvent {
     C2SMineConstructionUp = 3117,
 
     /**矿场建筑建造升级 */
-    S2CMineConstructionUp = 3118
+    S2CMineConstructionUp = 3118,
+
+    /**开启恶魔之门 */
+    C2SEviGate = 3119,
+
+    /**开启恶魔之门返回 */
+    S2CEviGate = 3120
 
 
 }
