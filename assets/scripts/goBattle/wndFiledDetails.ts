@@ -98,7 +98,6 @@ export default class NewClass extends cc.Component {
 
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
-
         let cityArea = this.node.getChildByName(`cityArea`)
         let filedArea = this.node.getChildByName(`filedArea`)
         cityArea.children[0].active = cityArea.children[0].getComponent(cc.Button).interactable = true

@@ -99,52 +99,52 @@ export default class NewClass extends cc.Component {
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
 
-        let cityArea = this.node.getChildByName(`cityArea`)
-        let filedArea = this.node.getChildByName(`filedArea`)
-        cityArea.children[0].active = cityArea.children[0].getComponent(cc.Button).interactable = true
-        cityArea.children[1].active = cityArea.children[1].getComponent(cc.Button).interactable = true
-        cityArea.children[2].active = cityArea.children[2].getComponent(cc.Button).interactable = true
-        cityArea.children[3].active = cityArea.children[3].getComponent(cc.Button).interactable = true
+        // let cityArea = this.node.getChildByName(`cityArea`)
+        // let filedArea = this.node.getChildByName(`filedArea`)
+        // cityArea.children[0].active = cityArea.children[0].getComponent(cc.Button).interactable = true
+        // cityArea.children[1].active = cityArea.children[1].getComponent(cc.Button).interactable = true
+        // cityArea.children[2].active = cityArea.children[2].getComponent(cc.Button).interactable = true
+        // cityArea.children[3].active = cityArea.children[3].getComponent(cc.Button).interactable = true
 
-        if (data.hold_player.group == 101) {
-            cityArea.active = true
-            filedArea.active = false
-            if (data.hold_player.id == 0) {
-                if (DataManager.pageGoBattle.myCityData) {
-                    cityArea.children[0].active = true
-                    cityArea.children[1].active = true
-                    cityArea.children[2].active = true
-                    cityArea.children[0].getComponent(cc.Button).interactable = false
-                    cityArea.children[1].getComponent(cc.Button).interactable = false
-                    cityArea.children[2].getComponent(cc.Button).interactable = false
-                    cityArea.children[3].active = false
-                } else {
-                    cityArea.children[0].active = false
-                    cityArea.children[1].active = false
-                    cityArea.children[2].active = false
-                    cityArea.children[3].active = true
-                }
-            }
-        } else if (data.hold_player.group < 100) {
-            cityArea.active = false
-            filedArea.active = true
-            if (data.hold_player.lv == 0 || data.hold_player.id == 0) {
-                filedArea.getChildByName('btnRob').getComponent(cc.Button).interactable = false
-            } else {
-                filedArea.getChildByName('btnRob').getComponent(cc.Button).interactable = true
-            }
-        }
+        // if (data.hold_player.group == 101) {
+        //     cityArea.active = true
+        //     filedArea.active = false
+        //     if (data.hold_player.id == 0) {
+        //         if (DataManager.pageGoBattle.myCityData) {
+        //             cityArea.children[0].active = true
+        //             cityArea.children[1].active = true
+        //             cityArea.children[2].active = true
+        //             cityArea.children[0].getComponent(cc.Button).interactable = false
+        //             cityArea.children[1].getComponent(cc.Button).interactable = false
+        //             cityArea.children[2].getComponent(cc.Button).interactable = false
+        //             cityArea.children[3].active = false
+        //         } else {
+        //             cityArea.children[0].active = false
+        //             cityArea.children[1].active = false
+        //             cityArea.children[2].active = false
+        //             cityArea.children[3].active = true
+        //         }
+        //     }
+        // } else if (data.hold_player.group < 100) {
+        //     cityArea.active = false
+        //     filedArea.active = true
+        //     if (data.hold_player.lv == 0 || data.hold_player.id == 0) {
+        //         filedArea.getChildByName('btnRob').getComponent(cc.Button).interactable = false
+        //     } else {
+        //         filedArea.getChildByName('btnRob').getComponent(cc.Button).interactable = true
+        //     }
+        // }
     }
 
     onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
     }
 
-    onBattleHandler(target, data) {
-        this.isClick = true
-        DataManager.fightType = data
-        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
-    }
+    // onBattleHandler(target, data) {
+    //     this.isClick = true
+    //     DataManager.fightType = data
+    //     MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
+    // }
 
     onClose() {
         console.log(`----------关闭窗口-----------`)
