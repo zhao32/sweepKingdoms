@@ -213,7 +213,7 @@
       "__id__": 2
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 4
@@ -342,7 +342,7 @@
       "__id__": 2
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 8
@@ -1292,7 +1292,7 @@
       "ctor": "Float64Array",
       "array": [
         -55,
-        27,
+        -5,
         0,
         0,
         0,
@@ -1778,7 +1778,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 50
@@ -1885,7 +1885,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 53
@@ -1992,7 +1992,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 56
@@ -2099,7 +2099,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 59
@@ -2206,7 +2206,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 62
@@ -2455,6 +2455,9 @@
     "_enabled": true,
     "nameLabel": {
       "__id__": 32
+    },
+    "skillLabel": {
+      "__id__": 35
     },
     "starLabel": {
       "__id__": 65

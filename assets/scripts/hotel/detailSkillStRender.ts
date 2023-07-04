@@ -32,7 +32,7 @@ export default class NewClass extends cc.Component {
     }
 
     init(data) {
-
+        // "skills_equips":[{"id":0,"level":0,"type":2},{"id":0,"level":0,"type":1},{"id":0,"level":0,"type":2}]
         this.nameLabel.string = data.name
         this.richLabel.string = data.des
 

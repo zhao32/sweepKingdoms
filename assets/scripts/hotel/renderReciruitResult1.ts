@@ -17,6 +17,9 @@ export default class NewClass extends cc.Component {
     nameLabel: cc.Label = null;
 
     @property(cc.Label)
+    skillLabel: cc.Label = null;
+
+    @property(cc.Label)
     starLabel: cc.Label = null;
 
     @property(cc.Node)
@@ -50,11 +53,22 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName(`soldierType${i}`).active = false
         }
 
-        for (let i = 0; i < defaultData.talents.length; i++) {
-            let node = this.node.getChildByName(`soldierType${i + 1}`)
-            node.active = true
-            ResManager.loadItemIcon(`hero/soldierType${defaultData.talents[i]}`, node)
+        let skillList = defaultData.skills
+
+        let str = ''
+        for (let i = 0; i < skillList.length; i++) {
+            let skillData = DataManager.GameData.Skill[skillList[i][0]]
+            skillData.name
+            str += skillData.name
+            str += ' '
         }
+        this.skillLabel.string = `专有技能：` + str
+
+        // for (let i = 0; i < defaultData.talents.length; i++) {
+        //     let node = this.node.getChildByName(`soldierType${i + 1}`)
+        //     node.active = true
+        //     ResManager.loadItemIcon(`hero/soldierType${defaultData.talents[i]}`, node)
+        // }
 
         // for (let i = 1; i <= 3; i++) {
         //     this.node.getChildByName(`starGet${i}`).active = false            
@@ -65,7 +79,7 @@ export default class NewClass extends cc.Component {
         // }
 
         this.starLabel.string = data.grade
-        
+
     }
 
     // update (dt) {}

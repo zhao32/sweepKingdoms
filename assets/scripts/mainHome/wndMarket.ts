@@ -32,6 +32,12 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Prefab })
     itemPfb: cc.Prefab = null;
 
+    @property({ type: cc.Label, displayName: '金币' })
+    labelCoin: cc.Label = null;
+
+    @property({ type: cc.Label, displayName: '元宝' })
+    labelGold: cc.Label = null;
+
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -58,6 +64,9 @@ export default class NewClass extends cc.Component {
 
     init() {
         NetEventDispatcher.addListener(NetEvent.S2CMallList, this.S2CMallList, this)
+
+        this.labelCoin.string = String(DataManager.playData.coinMoney)
+        this.labelGold.string = String(DataManager.playData.goldMoney)
     }
 
     S2CMallList(data) {
