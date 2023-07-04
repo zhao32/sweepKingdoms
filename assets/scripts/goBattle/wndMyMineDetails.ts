@@ -156,7 +156,8 @@ export default class NewClass extends cc.Component {
     }
 
     onBulidORUpHandler() {
-        MyProtocols.send_C2SMineConstructionUp(DataManager._loginSocket, this._data.page, this._data.idx, this._data.country, this._data.hold_player.lv)
+        console.log(`this._data:`+JSON.stringify(this._data))
+        MyProtocols.send_C2SMineConstructionUp(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country, this._data.hold_player.lv)
     }
 
     // update (dt) {}
