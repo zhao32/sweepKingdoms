@@ -100,6 +100,7 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
 
         let cityArea = this.node.getChildByName(`cityArea`)
+        let filedArea = this.node.getChildByName(`filedArea`)
         cityArea.children[0].active = cityArea.children[0].getComponent(cc.Button).interactable = true
         cityArea.children[1].active = cityArea.children[1].getComponent(cc.Button).interactable = true
         cityArea.children[2].active = cityArea.children[2].getComponent(cc.Button).interactable = true
@@ -107,7 +108,7 @@ export default class NewClass extends cc.Component {
 
         if (data.hold_player.group == 101) {
             cityArea.active = true
-            this.node.getChildByName(`filedArea`).active = false
+            filedArea.active = false
             if (data.hold_player.id == 0) {
                 if (DataManager.pageGoBattle.myCityData) {
                     cityArea.children[0].active = true
@@ -126,11 +127,11 @@ export default class NewClass extends cc.Component {
             }
         } else if (data.hold_player.group < 100) {
             cityArea.active = false
-            this.node.getChildByName(`filedArea`).active = true
+            filedArea.active = true
             if (data.hold_player.lv == 0 || data.hold_player.id == 0) {
-                this.node.getChildByName(`filedArea`).getChildByName('btnRob').getComponent(cc.Button).interactable = false
+                filedArea.getChildByName('btnRob').getComponent(cc.Button).interactable = false
             } else {
-                this.node.getChildByName(`filedArea`).getChildByName('btnRob').getComponent(cc.Button).interactable = true
+                filedArea.getChildByName('btnRob').getComponent(cc.Button).interactable = true
             }
         }
     }
