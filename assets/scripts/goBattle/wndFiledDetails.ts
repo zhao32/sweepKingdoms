@@ -40,6 +40,8 @@ export default class NewClass extends cc.Component {
     @property(cc.Label)
     awardLabel: cc.Label = null;
 
+    @property(cc.Label)
+    titleLabel: cc.Label = null;
 
     @property
     text: string = 'hello';
@@ -91,16 +93,41 @@ export default class NewClass extends cc.Component {
         this.lordLabel.string = data.hold_player.nickname ? `领主：${data.hold_player.nickname}` : `领主：无`
         this.awardLabel.string = `已产出：${data.hold_player.award}`
 
+        this.titleLabel.string = DataManager.mineData[data.hold_player.group].name
+
+
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
 
+        let cityArea = this.node.getChildByName(`cityArea`)
+        cityArea.children[0].active = cityArea.children[0].getComponent(cc.Button).interactable = true
+        cityArea.children[1].active = cityArea.children[1].getComponent(cc.Button).interactable = true
+        cityArea.children[2].active = cityArea.children[2].getComponent(cc.Button).interactable = true
+        cityArea.children[3].active = cityArea.children[3].getComponent(cc.Button).interactable = true
+
         if (data.hold_player.group == 101) {
-            this.node.getChildByName(`cityArea`).active = true
+            cityArea.active = true
             this.node.getChildByName(`filedArea`).active = false
+            if (data.hold_player.id == 0) {
+                if (DataManager.pageGoBattle.myCityData) {
+                    cityArea.children[0].active = true
+                    cityArea.children[1].active = true
+                    cityArea.children[2].active = true
+                    cityArea.children[0].getComponent(cc.Button).interactable = false
+                    cityArea.children[1].getComponent(cc.Button).interactable = false
+                    cityArea.children[2].getComponent(cc.Button).interactable = false
+                    cityArea.children[3].active = false
+                } else {
+                    cityArea.children[0].active = false
+                    cityArea.children[1].active = false
+                    cityArea.children[2].active = false
+                    cityArea.children[3].active = true
+                }
+            }
         } else if (data.hold_player.group < 100) {
-            this.node.getChildByName(`cityArea`).active = false
+            cityArea.active = false
             this.node.getChildByName(`filedArea`).active = true
-            if (data.hold_player.lv == 0) {
+            if (data.hold_player.lv == 0 || data.hold_player.id == 0) {
                 this.node.getChildByName(`filedArea`).getChildByName('btnRob').getComponent(cc.Button).interactable = false
             } else {
                 this.node.getChildByName(`filedArea`).getChildByName('btnRob').getComponent(cc.Button).interactable = true

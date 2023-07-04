@@ -29,6 +29,9 @@ export default class NewClass extends cc.Component {
 
     _data: any
 
+    @property(cc.Label)
+    titleLabel: cc.Label = null;
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -52,6 +55,9 @@ export default class NewClass extends cc.Component {
                 this.node.getChildByName('btnAtt').getComponent(cc.Button).interactable = true
             }
         }
+
+        this.titleLabel.string = DataManager.mineData[data.hold_player.group].name
+
     }
 
     S2CMineEnemyDetail(data) {

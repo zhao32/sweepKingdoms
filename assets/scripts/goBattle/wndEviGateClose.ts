@@ -43,6 +43,9 @@ export default class NewClass extends cc.Component {
     @property(cc.Label)
     troopsLabel: cc.Label = null;
 
+    @property(cc.Label)
+    titleLabel: cc.Label = null;
+
     @property(cc.Node)
     icon: cc.Node = null;
 
@@ -80,6 +83,7 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
         MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
 
+        this.titleLabel.string = DataManager.mineData[data.hold_player.group].name
     }
 
     S2CMineEnemyDetail(retObj) {
