@@ -48,10 +48,17 @@ export default class NewClass extends cc.Component {
 
         NetEventDispatcher.addListener(NetEvent.PushItemChange, this.PushItemChange, this)
 
+        NetEventDispatcher.addListener(NetEvent.S2CBagItems, this.S2CBagItems, this)
 
         // S2CCreateCharacter
     }
 
+    S2CBagItems(retObj) {
+        console.log(`请求背包信息返回`)
+        console.log('retObj:'+ JSON.stringify(retObj))
+        DataManager.instance.itemsList = retObj.item_list
+
+    }
     PushItemChange(retObj) {
         // {"item_info":{"uuid":"","template_id":5001,"enhance_level":0,"stars":0,"num":300,"bagId":4,"hpEx":0,"atkEx":0,"defEx":0,"attrEx":[],"exp":0}}
 
@@ -60,6 +67,15 @@ export default class NewClass extends cc.Component {
                 DataManager.instance.curRuneList[i] = retObj.item_info
                 if (retObj.item_info.num == 0) {
                     DataManager.instance.curRuneList.splice(i, 1)
+                }
+            }
+        }
+
+        for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+            if (DataManager.instance.itemsList[i].template_id == retObj.item_info.template_id) {
+                DataManager.instance.itemsList[i] = retObj.item_info
+                if (retObj.item_info.num == 0) {
+                    DataManager.instance.itemsList.splice(i, 1)
                 }
             }
         }
@@ -122,6 +138,9 @@ export default class NewClass extends cc.Component {
         EventManager.getInstance().sendListener(EventManager.UPDATE_BULID_STATE)
 
         MyProtocols.send_C2SStageList(DataManager._loginSocket)
+
+        MyProtocols.send_C2SBagItems(DataManager._loginSocket)
+
 
     }
 
@@ -196,7 +215,6 @@ export default class NewClass extends cc.Component {
             a.template_id - b.template_id
         )
         console.log('我的将表:' + JSON.stringify(retObj))
-
         DataManager.cardsList = retObj.cards
     }
 

@@ -269,10 +269,10 @@ export default class DataManager {
 
     curRuneList = []
 
+    /**存储背包里所有道具 */
+    itemsList = []
+
     static wndHotelDetail:wndHotelDetail
 
-    
     static fightType:number = 0
-
-
 }

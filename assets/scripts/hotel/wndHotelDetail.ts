@@ -6,7 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import { NetEvent } from "../net/NetEvent";
-import packManager from "../pack/packManager";
+// import packManager from "../pack/packManager";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
@@ -127,7 +127,7 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName('runePutPanel').active = false
         this.node.getChildByName('skillstPanel').active = false
         
-        packManager.getInstance().reflishBag()
+        // packManager.getInstance().reflishBag()
         NetEventDispatcher.addListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock, this)
 
 

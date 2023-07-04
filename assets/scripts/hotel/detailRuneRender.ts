@@ -6,7 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import { NetEvent } from "../net/NetEvent";
-import packManager from "../pack/packManager";
+// import packManager from "../pack/packManager";
 import DataManager from "../utils/Manager/DataManager";
 import ResManager from "../utils/Manager/ResManager";
 import runePutPanel from "./runePutPanel";
@@ -52,7 +52,7 @@ export default class NewClass extends cc.Component {
 
     init(state, idx, data) {
         this._state = state
-        this._heroid = data.template_id
+        this._heroid = data.id
         this._idx = idx
         console.log(`state:` + state)
         // ResManager.loadItemIcon(`hero/runePot${state}`, this.node.getChildByName('rune'))

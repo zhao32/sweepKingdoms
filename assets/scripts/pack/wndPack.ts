@@ -75,8 +75,6 @@ export default class NewClass extends cc.Component {
 
                                 }
                             }
-
-
                             item.parent = render
                             item.on(cc.Node.EventType.TOUCH_END, () => {
                                 this.node.getChildByName('tipArea').active = true
@@ -87,7 +85,8 @@ export default class NewClass extends cc.Component {
                 }
             }, this)
         }
-        MyProtocols.send_C2SBagItems(DataManager._loginSocket)
+        // MyProtocols.send_C2SBagItems(DataManager._loginSocket)
+        this.initBagItems()
 
     }
 
@@ -97,7 +96,7 @@ export default class NewClass extends cc.Component {
 
     init() {
         this.node.getChildByName('tipArea').active = false
-        NetEventDispatcher.addListener(NetEvent.S2CBagItems, this.S2CBagItems, this)
+        // NetEventDispatcher.addListener(NetEvent.S2CBagItems, this.S2CBagItems, this)
     }
     list0 = []
     list1 = []
@@ -105,33 +104,33 @@ export default class NewClass extends cc.Component {
     list3 = []
     list4 = []
 
-    S2CBagItems(retObj) {
-        console.log(JSON.stringify(retObj))
-
+    initBagItems() {
+        // console.log(JSON.stringify(retObj))
+        let itemsList = DataManager.instance.itemsList
         this.contect.removeAllChildren()
         let keyGiftList = Object.keys(DataManager.GameData.packGift)
         let keyItemList = Object.keys(DataManager.GameData.packItems)
         let keySkillList = Object.keys(DataManager.GameData.packSkills)
 
         console.log('keyItemList:' + JSON.stringify(keyItemList))
-        for (let i = 0; i < retObj.item_list.length; i++) {
-            if (retObj.item_list[i].bagId == 0) {//消耗品
-                if (keyGiftList.indexOf(retObj.item_list[i].template_id.toString()) != -1) {
-                    this.list0.push(retObj.item_list[i])
+        for (let i = 0; i < itemsList.length; i++) {
+            if (itemsList[i].bagId == 0) {//消耗品
+                if (keyGiftList.indexOf(itemsList[i].template_id.toString()) != -1) {
+                    this.list0.push(itemsList[i])
                 }
-            } else if (retObj.item_list[i].bagId == 1) {//装备
-                console.log('template_id:' + retObj.item_list[i].template_id)
-                if (keyItemList.indexOf(retObj.item_list[i].template_id.toString()) != -1) {
-                    this.list1.push(retObj.item_list[i])
+            } else if (itemsList[i].bagId == 1) {//装备
+                console.log('template_id:' + itemsList[i].template_id)
+                if (keyItemList.indexOf(itemsList[i].template_id.toString()) != -1) {
+                    this.list1.push(itemsList[i])
                 }
-            } else if (retObj.item_list[i].bagId == 2) {//碎片
-                if (keySkillList.indexOf(retObj.item_list[i].template_id.toString()) != -1) {
-                    this.list2.push(retObj.item_list[i])
+            } else if (itemsList[i].bagId == 2) {//碎片
+                if (keySkillList.indexOf(itemsList[i].template_id.toString()) != -1) {
+                    this.list2.push(itemsList[i])
                 }
-            } else if (retObj.item_list[i].bagId == 3) {//宝物
-                this.list3.push(retObj.item_list[i])
-            } else if (retObj.item_list[i].bagId == 4) {//道具
-                this.list4.push(retObj.item_list[i])
+            } else if (itemsList[i].bagId == 3) {//宝物
+                this.list3.push(itemsList[i])
+            } else if (itemsList[i].bagId == 4) {//道具
+                this.list4.push(itemsList[i])
             }
         }
 
@@ -160,7 +159,7 @@ export default class NewClass extends cc.Component {
 
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CBagItems, this.S2CBagItems, this)
+        // NetEventDispatcher.removeListener(NetEvent.S2CBagItems, this.S2CBagItems, this)
     }
 
     // update (dt) {}

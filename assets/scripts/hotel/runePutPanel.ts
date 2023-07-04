@@ -70,11 +70,20 @@ export default class NewClass extends cc.Component {
     // {"uuid":"","template_id":5001,"enhance_level":0,"stars":0,"num":452,"bagId":4,"hpEx":0,"atkEx":0,"defEx":0,"attrEx":[],"unitAttr":{"id":0,"num":0},"exp":0}
     open(data, idx) {
         this._data = data
-        this._cardId = data.template_id
+        this._cardId = data.id
         this._idx = idx
         this.node.active = true
         // this.selectName = 0
         this.noteDisplay.string = ''
+
+
+        DataManager.instance.curRuneList = []
+        for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+            if (DataManager.instance.itemsList[i].template_id >= 5001 && DataManager.instance.itemsList[i].template_id <= 5040) {
+                DataManager.instance.curRuneList.push(DataManager.instance.itemsList[i])
+            }
+        }
+
         this.contect.removeAllChildren()
         for (let i = 0; i < DataManager.instance.curRuneList.length; i++) {
             let item = cc.instantiate(this.runePfb)
