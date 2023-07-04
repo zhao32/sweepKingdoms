@@ -170,7 +170,7 @@ export default class NewClass extends cc.Component {
                 console.log(JSON.stringify(data))
                 console.log('this._data:' + JSON.stringify(this._data))
                 // MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
-                MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this._data.page, this._data.idx, data, this._data.country, 2)
+                MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, data, this._data.hold_player.country, 2)
             }, this)
         }
     }
