@@ -10,6 +10,12 @@ import ResManager from "../utils/Manager/ResManager";
 
 const { ccclass, property } = cc._decorator;
 
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
+
 @ccclass
 export default class NewClass extends cc.Component {
 
@@ -54,6 +60,14 @@ export default class NewClass extends cc.Component {
         }
 
         this.node.getChildByName(`btnTeach`).active = data.id == 0
+        if (data.id != 0) {
+            let skillSt = DataManager.GameData.SkillStudy[data.id]
+            ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.icon)
+        }
+
+        this.icon.on(cc.Node.EventType.TOUCH_END, () => {
+            MyProtocols.send_C2SSKillTeach(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this._idx, this._data.type, this._data.level + 1)
+        }, this)
     }
 
     onTeachHandler() {

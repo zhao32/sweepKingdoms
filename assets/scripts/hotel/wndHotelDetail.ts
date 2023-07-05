@@ -128,6 +128,11 @@ export default class NewClass extends cc.Component {
         console.log("学习技能返回:" + JSON.stringify(data))
 
     }
+
+    S2CSKillStUp(data) {
+        console.log("学习技能升级返回:" + JSON.stringify(data))
+
+    }
     /**data 服务器获取的将领数据 */
     init(data) {
         DataManager.wndHotelDetail = this
@@ -137,6 +142,9 @@ export default class NewClass extends cc.Component {
         // packManager.getInstance().reflishBag()
         NetEventDispatcher.addListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock, this)
         NetEventDispatcher.addListener(NetEvent.S2CSKillTeach, this.S2CSKillTeach, this)
+
+        NetEventDispatcher.addListener(NetEvent.S2CSKillStUp, this.S2CSKillStUp, this)
+
 
 
         console.log('-----data:' + JSON.stringify(data))
@@ -290,6 +298,8 @@ export default class NewClass extends cc.Component {
     onClose() {
         NetEventDispatcher.removeListener(NetEvent.S2CSKillTeach, this.S2CSKillTeach, this)
         NetEventDispatcher.removeListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CSKillStUp, this.S2CSKillStUp, this)
+
     }
 
     onCloseHandler() {
