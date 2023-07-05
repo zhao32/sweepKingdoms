@@ -183,80 +183,117 @@ export default class NewClass extends cc.Component {
         DataManager.curMineDetailData = retObj
         let hold_player = this.mineData[this.clickIdx].hold_player
         // retObj.state = 3
-        if (hold_player.id == DataManager.playData.id) {
-            if (hold_player.group == 101) {
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[this.mineData[this.clickIdx]])
-            } else if (hold_player.group > 101) {
-                //增加打开恶魔之门按钮
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[this.mineData[this.clickIdx]])
+        
+        if (hold_player.group > 101) {//恶魔之门
+            if (hold_player.id == 0)//未被占领
+            {
+                //只能出兵占领
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[this.mineData[this.clickIdx], retObj.state])
             } else {
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[this.mineData[this.clickIdx]])
-            }
-        } else {
-            if (hold_player.group > 101) {//恶魔之门
-
-                if (hold_player.id == 0)//未被占领
-                {
-                    //只能出兵占领
-                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[this.mineData[this.clickIdx], retObj.state])
-                } else {
-                    if (hold_player.id == DataManager.playData.id) {//我占领了
-                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYEVI, ...[this.mineData[this.clickIdx], retObj.state])
-                    } else {//别人占领了
-                        if (retObj.state == 0) {
-                            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVI, ...[this.mineData[this.clickIdx], retObj.state])
-                        } else if (retObj.state == 1) {
-                            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
-                        } else if (retObj.state == 2) {//支援结束
-                            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
-                        }
-
+                if (hold_player.id == DataManager.playData.id) {//我占领了
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYEVI, ...[this.mineData[this.clickIdx], retObj.state])
+                } else {//别人占领了
+                    if (retObj.state == 0) {
+                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVI, ...[this.mineData[this.clickIdx], retObj.state])
+                    } else if (retObj.state == 1) {
+                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
+                    } else if (retObj.state == 2) {//支援结束
+                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
                     }
-
-                    // if (retObj.state == 0) {
-                    //     // ViewManager.instance.showToast(`恶魔之门还未开启`)  
-                    //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[this.mineData[this.clickIdx], retObj.state])
-                    // } else if (retObj.state == 1) {
-                    //     //进入倒计时阶段30分钟装变为1
-                    //     // ViewManager.instance.showToast(`恶魔之门打开`)
-                    //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[this.mineData[this.clickIdx], retObj.state])
-                    // } else if (retObj.state == 2) {
-                    //     //进入倒计时阶段5分钟后状态变为0 关闭恶魔之门
-                    //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
-                    //     // ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[this.mineData])
-                    // } else {
-                    //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
-                    // }
                 }
-            } else if (hold_player.group == 101) {
-                //
-                if (hold_player.id == 0) {
-                    //出兵占领
-                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
-                }
-                else if (hold_player.id != 0 && retObj.state == 0) //进攻
+            }
+        } else if (hold_player.group == 101) {
+            //
+            if (hold_player.id == 0) {
+                //出兵占领
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
+            } else if (hold_player.id != DataManager.playData.id) {
+                if (retObj.state == 0) //进攻
                 {
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
-                }
-                else if (hold_player.id != 0 && retObj.state == 1) {
+                } else if (retObj.state == 1) {
                     //支援
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
                 }
-
-            } else {
-                if (hold_player.id == 0) {
-                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
-                }
-                else if (hold_player.id != 0 && this.curFiledData.lv == 0) {
+            } else if (hold_player.id == DataManager.playData.id) {
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[this.mineData[this.clickIdx]])
+            }
+        } else {
+            if (hold_player.id == 0) {
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
+            } else if (hold_player.id != DataManager.playData.id) {
+                if (this.curFiledData.lv == 0) {
                     //可以进攻 不可以掠夺
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
-                }
-                else if (hold_player.id != 0 && this.curFiledData.lv > 0) {
+                } else if (this.curFiledData.lv > 0) {
                     //掠夺
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
                 }
+            } else if (hold_player.id == DataManager.playData.id) {
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[this.mineData[this.clickIdx]])
             }
         }
+
+
+
+
+
+
+
+        // if (hold_player.id == DataManager.playData.id) {
+        //     if (hold_player.group == 101) {
+        //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[this.mineData[this.clickIdx]])
+        //     } else if (hold_player.group > 101) {
+        //         //增加打开恶魔之门按钮
+        //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[this.mineData[this.clickIdx]])
+        //     } else {
+        //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[this.mineData[this.clickIdx]])
+        //     }
+        // } else {
+        //     if (hold_player.group > 101) {//恶魔之门
+        //         if (hold_player.id == 0)//未被占领
+        //         {
+        //             //只能出兵占领
+        //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[this.mineData[this.clickIdx], retObj.state])
+        //         } else {
+        //             if (hold_player.id == DataManager.playData.id) {//我占领了
+        //                 ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYEVI, ...[this.mineData[this.clickIdx], retObj.state])
+        //             } else {//别人占领了
+        //                 if (retObj.state == 0) {
+        //                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVI, ...[this.mineData[this.clickIdx], retObj.state])
+        //                 } else if (retObj.state == 1) {
+        //                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
+        //                 } else if (retObj.state == 2) {//支援结束
+        //                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
+        //                 }
+        //             }
+        //         }
+        //     } else if (hold_player.group == 101) {
+        //         //
+        //         if (hold_player.id == 0) {
+        //             //出兵占领
+        //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
+        //         }
+        //         else if (hold_player.id != 0 && retObj.state == 0) //进攻
+        //         {
+        //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
+        //         }
+        //         else if (hold_player.id != 0 && retObj.state == 1) {
+        //             //支援
+        //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
+        //         }
+        //     } else {
+        //         if (hold_player.id == 0) {
+        //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
+        //         } else if (hold_player.id != 0 && this.curFiledData.lv == 0) {
+        //             //可以进攻 不可以掠夺
+        //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
+        //         } else if (hold_player.id != 0 && this.curFiledData.lv > 0) {
+        //             //掠夺
+        //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
+        //         }
+        //     }
+        // }
     }
 
 
