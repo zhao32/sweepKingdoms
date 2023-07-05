@@ -55,7 +55,7 @@ export default class NewClass extends cc.Component {
 
     S2CBagItems(retObj) {
         console.log(`请求背包信息返回`)
-        console.log('retObj:'+ JSON.stringify(retObj))
+        console.log('retObj:' + JSON.stringify(retObj))
         DataManager.instance.itemsList = retObj.item_list
 
     }
@@ -71,13 +71,20 @@ export default class NewClass extends cc.Component {
             }
         }
 
+        let hasItem = false
         for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
             if (DataManager.instance.itemsList[i].template_id == retObj.item_info.template_id) {
+                hasItem = true
                 DataManager.instance.itemsList[i] = retObj.item_info
                 if (retObj.item_info.num == 0) {
                     DataManager.instance.itemsList.splice(i, 1)
                 }
             }
+        }
+
+        console.log('hasItem:'+hasItem)
+        if (hasItem == false) {
+            DataManager.instance.itemsList.push(retObj.item_info)
         }
     }
     /**获取玩家信息 */

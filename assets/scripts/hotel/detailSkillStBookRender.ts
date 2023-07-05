@@ -10,6 +10,12 @@ import ResManager from "../utils/Manager/ResManager";
 
 const { ccclass, property } = cc._decorator;
 
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
+
 @ccclass
 export default class NewClass extends cc.Component {
 
@@ -25,10 +31,9 @@ export default class NewClass extends cc.Component {
     @property(cc.Node)
     bg: cc.Node = null;
 
-    _data;
-    _idx;
 
-
+    data;
+    pos;
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -38,12 +43,11 @@ export default class NewClass extends cc.Component {
 
     }
 
-    init(data, idx) {
-        // "skills_equips":[{"id":0,"level":0,"type":2},{"id":0,"level":0,"type":1},{"id":0,"level":0,"type":2}]
-        // this.nameLabel.string = data.name
-        // this.richLabel.string = data.des
-        this._data = data
-        this._idx = idx
+    init(data, pos) {
+        this.data = data
+        this.pos = pos
+        this.nameLabel.string = data.name
+        this.richLabel.string = data.des
 
         if (data.type == 0) {
             ResManager.loadItemIcon(`skillats/红`, this.bg)
@@ -52,12 +56,11 @@ export default class NewClass extends cc.Component {
         } else if (data.type == 2) {
             ResManager.loadItemIcon(`skillats/蓝`, this.bg)
         }
-
-        this.node.getChildByName(`btnTeach`).active = data.id == 0
+        ResManager.loadItemIcon(`skillats/${data.name}`, this.icon)
     }
 
     onTeachHandler() {
-        DataManager.wndHotelDetail.openSkillstPanel(this._data, this._idx)
+        MyProtocols.send_C2SSKillTeach(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this.pos, this.data.type)
     }
 
     // update (dt) {}

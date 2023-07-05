@@ -5933,7 +5933,7 @@ var MyProtocols = {
 						retObj.cards[i].unitEquips[unitEquips_idx] = myDecoder.readInt();
 					}
 				}
-			}	
+			}
 		}
 		return retObj;
 	},
@@ -6885,6 +6885,48 @@ var MyProtocols = {
 		retObj.county = myDecoder.readInt();
 		return retObj;
 	},
+
+	send_C2SSKillTeach(senderSocket, cardid, idx, skillid) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(2035);
+		myEncoder.writeInt(cardid);
+		myEncoder.writeInt(idx);
+		myEncoder.writeInt(skillid);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_2036: function (myDecoder) {
+		var retObj = {};
+		retObj.cardid = myDecoder.readInt();
+		retObj.idx = myDecoder.readInt();
+		retObj.skillid = myDecoder.readInt();
+		return retObj;
+	},
+
+	send_C2SSKillStUp(senderSocket, cardid, idx, skillid,lv) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(2037);
+		myEncoder.writeInt(cardid);
+		myEncoder.writeInt(idx);
+		myEncoder.writeInt(skillid);
+		myEncoder.writeInt(lv);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_2038: function (myDecoder) {
+		var retObj = {};
+		retObj.cardid = myDecoder.readInt();
+		retObj.idx = myDecoder.readInt();
+		retObj.skillid = myDecoder.readInt();
+		retObj.lv = myDecoder.readInt();
+
+		return retObj;
+	},
+
 
 }
 

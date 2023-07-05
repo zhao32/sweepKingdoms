@@ -351,7 +351,19 @@ export enum NetEvent {
     C2SEviGate = 3119,
 
     /**开启恶魔之门返回 */
-    S2CEviGate = 3120
+    S2CEviGate = 3120,
+
+    /**技能学习 */
+    C2SSKillTeach = 2035,
+
+    /**技能学习返回 */
+    S2CSKillTeach = 2036,
+
+
+    /**学习技能升级 */
+    C2SSKillStUp = 2037,
+
+    S2CSKillStUp = 2038,
 
 
 }

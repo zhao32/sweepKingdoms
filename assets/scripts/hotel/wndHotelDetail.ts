@@ -15,6 +15,7 @@ import detailQuipRender from "./detailQuipRender";
 import detailRuneRender from "./detailRuneRender";
 import detailSkillRender from "./detailSkillRender";
 import detailSkillStRender from "./detailSkillStRender";
+import skillstPanel from "./skillstPanel";
 
 const { ccclass, property } = cc._decorator;
 
@@ -82,6 +83,7 @@ export default class NewClass extends cc.Component {
 
     _data
 
+
     // onLoad () {}
 
     start() {
@@ -121,14 +123,20 @@ export default class NewClass extends cc.Component {
         }
 
     }
+
+    S2CSKillTeach(data) {
+        console.log("学习技能返回:" + JSON.stringify(data))
+
+    }
     /**data 服务器获取的将领数据 */
     init(data) {
         DataManager.wndHotelDetail = this
         this.node.getChildByName('runePutPanel').active = false
         this.node.getChildByName('skillstPanel').active = false
-        
+
         // packManager.getInstance().reflishBag()
         NetEventDispatcher.addListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock, this)
+        NetEventDispatcher.addListener(NetEvent.S2CSKillTeach, this.S2CSKillTeach, this)
 
 
         console.log('-----data:' + JSON.stringify(data))
@@ -213,8 +221,9 @@ export default class NewClass extends cc.Component {
         this.initStSkill(data.skills_equips)
     }
 
-    openSkillstPanel(){
+    openSkillstPanel(data, idx) {
         this.node.getChildByName('skillstPanel').active = true
+        this.node.getChildByName('skillstPanel').getComponent(skillstPanel).init(data, idx)
 
     }
 
@@ -279,6 +288,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CSKillTeach, this.S2CSKillTeach, this)
         NetEventDispatcher.removeListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock, this)
     }
 

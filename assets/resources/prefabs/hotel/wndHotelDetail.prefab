@@ -18289,8 +18289,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "学习",
-    "_N$string": "学习",
+    "_string": "关闭",
+    "_N$string": "关闭",
     "_fontSize": 24,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -18458,7 +18458,7 @@
     },
     "component": "",
     "_componentId": "7e751sXmRNJSILbWDE/xw+t",
-    "handler": "onTeachHandler",
+    "handler": "onCloseHandler",
     "customEventData": ""
   },
   {
@@ -18614,7 +18614,7 @@
       "__id__": 500
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 521
@@ -19629,8 +19629,15 @@
       "__id__": 500
     },
     "_enabled": true,
-    "contect": null,
-    "runePfb": null,
+    "contect": {
+      "__id__": 532
+    },
+    "skBookPfb": {
+      "__uuid__": "a7b27870-29b2-439b-a728-6cabaeb3ff19"
+    },
+    "tipLabel": {
+      "__id__": 546
+    },
     "_id": ""
   },
   {
