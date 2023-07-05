@@ -149,6 +149,8 @@ export default class DataManager {
         Equips:{},
         /**宝物 */
         Treasures:{},
+        /**商店 */
+        Consumes:{}
     }
     /**我的将表 */
     static cardsList = []

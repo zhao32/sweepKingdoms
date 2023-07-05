@@ -889,8 +889,15 @@
       "__id__": 1
     },
     "_enabled": true,
-    "nameLabel": null,
-    "moneyLabel": null,
+    "nameLabel": {
+      "__id__": 12
+    },
+    "moneyLabel": {
+      "__id__": 18
+    },
+    "icon": {
+      "__id__": 20
+    },
     "_id": ""
   },
   {

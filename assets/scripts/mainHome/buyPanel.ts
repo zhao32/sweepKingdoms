@@ -7,6 +7,8 @@
 
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
+import ResManager from "../utils/Manager/ResManager";
+import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -44,17 +46,27 @@ export default class NewClass extends cc.Component {
     // onLoad () {}
 
     start() {
-
         NetEventDispatcher.addListener(NetEvent.S2CMallBuy, this.S2CMallBuy, this)
-
     }
 
     S2CMallBuy(data) {
         console.log('道具购买返回' + JSON.stringify(data))
+        ViewManager.instance.showToast(`购买成功`)
     }
 
-    init() {
+    // {"name":"人参","mods":{"stamina":10},"quality":3,"icon":"1019.png","des":"你发虚的身体迎风打了个哆嗦，又能挺枪再战5个回合。使用后增加10点耐力，竞技场挑战消耗耐力"}
+    _idx
+    init(data, idx) {
+        this._idx = idx
+        this.num = 0
+        console.log(JSON.stringify(data))
         this.numLabel.string = "0"
+        this.nameLabel1.string = this.nameLabel2.string = data.name
+        this.decLabel.string = data.des
+        this.moneyLabel.string = 'x' + data.price
+        ResManager.loadItemIcon(`UI/items/${data.icon}`, this.pic)
+
+        // this.moneyLabel = 
     }
 
     onReduceOne() {
@@ -85,7 +97,12 @@ export default class NewClass extends cc.Component {
     }
 
     onBuyHandler() {
-        MyProtocols.send_C2SMallBuy(DataManager._loginSocket, 0, this.num)
+        if (this.num == 0) {
+            ViewManager.instance.showToast(`请选择购买数量`)
+            return
+        }
+        console.log(`this._idx:` + this._idx)
+        MyProtocols.send_C2SMallBuy(DataManager._loginSocket, this._idx, this.num)
     }
 
     onHideHandler() {

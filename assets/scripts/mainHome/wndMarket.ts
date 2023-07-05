@@ -11,6 +11,8 @@ import EnumManager from "../utils/Manager/EnumManager";
 import { Logger } from "../utils/Manager/Logger";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
+import buyPanel from "./buyPanel";
+import marketItem from "./marketItem";
 
 const { ccclass, property } = cc._decorator;
 
@@ -74,12 +76,23 @@ export default class NewClass extends cc.Component {
         console.log(JSON.stringify(data))
         this.contect.removeAllChildren()
         //{"items":[],"packs":[]}
-        for (let i = 0; i < data.packs.length; i++) {
+        // for (let i = 0; i < data.packs.length; i++) {
+        //     let item = cc.instantiate(this.itemPfb)
+        //     item.parent = this.contect
+
+        //     item.on(cc.Node.EventType.TOUCH_END, () => {
+
+        //     }, this)
+        // }
+
+        for (let i = 0; i < Object.keys(DataManager.GameData.Consumes).length; i++) {
+            let id = Object.keys(DataManager.GameData.Consumes)[i]
             let item = cc.instantiate(this.itemPfb)
             item.parent = this.contect
-
+            item.getComponent(marketItem).init(DataManager.GameData.Consumes[id])
             item.on(cc.Node.EventType.TOUCH_END, () => {
-
+                this.node.getChildByName(`buyPanel`).active = true
+                this.node.getChildByName(`buyPanel`).getComponent(buyPanel).init(DataManager.GameData.Consumes[id], i)
             }, this)
         }
     }

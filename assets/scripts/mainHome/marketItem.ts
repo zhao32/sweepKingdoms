@@ -5,6 +5,8 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import ResManager from "../utils/Manager/ResManager";
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -16,11 +18,15 @@ export default class NewClass extends cc.Component {
     @property(cc.Label)
     moneyLabel: cc.Label = null;
 
-    
+    @property(cc.Node)
+    icon: cc.Node = null;
+
+
+
     // @property(cc.Label)
     // moneyLabel: cc.Label = null;
 
-  
+
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -28,6 +34,12 @@ export default class NewClass extends cc.Component {
 
     start() {
 
+    }
+
+    init(data) {
+        this.nameLabel.string = data.name
+        this.moneyLabel.string = 'x' + data.price
+        ResManager.loadItemIcon(`UI/items/${data.icon}`, this.icon)
     }
 
     // update (dt) {}
