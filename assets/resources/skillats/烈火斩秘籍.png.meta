@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "099e2011-dcfc-4d73-b405-e446cdff2cce",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 108,
+  "height": 108,
+  "platformSettings": {},
+  "subMetas": {
+    "烈火斩秘籍": {
+      "ver": "1.0.6",
+      "uuid": "84cafd53-e00e-4f03-8e5a-43cc7fcae788",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "099e2011-dcfc-4d73-b405-e446cdff2cce",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -2,
+      "offsetY": -0.5,
+      "trimX": 14,
+      "trimY": 16,
+      "width": 76,
+      "height": 77,
+      "rawWidth": 108,
+      "rawHeight": 108,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

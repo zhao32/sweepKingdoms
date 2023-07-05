@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "9e25b3c7-a56d-4a45-adb5-4c259f7ba548",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 110,
+  "height": 110,
+  "platformSettings": {},
+  "subMetas": {
+    "火神计秘籍": {
+      "ver": "1.0.6",
+      "uuid": "e8fcad0f-9e70-43bd-8b55-e64c52c9c888",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "9e25b3c7-a56d-4a45-adb5-4c259f7ba548",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": 4.5,
+      "trimX": 23,
+      "trimY": 7,
+      "width": 65,
+      "height": 87,
+      "rawWidth": 110,
+      "rawHeight": 110,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

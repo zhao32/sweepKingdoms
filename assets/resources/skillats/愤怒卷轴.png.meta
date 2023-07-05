@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "ce83479a-3db6-40b2-954c-cb911ef33d65",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 108,
+  "height": 108,
+  "platformSettings": {},
+  "subMetas": {
+    "愤怒卷轴": {
+      "ver": "1.0.6",
+      "uuid": "f759a043-d45e-4ca2-af85-6a9f7a18daf8",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "ce83479a-3db6-40b2-954c-cb911ef33d65",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 1.5,
+      "offsetY": -6,
+      "trimX": 15,
+      "trimY": 18,
+      "width": 81,
+      "height": 84,
+      "rawWidth": 108,
+      "rawHeight": 108,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "1b432969-fd45-490a-8256-c316dd05d0e6",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 108,
+  "height": 108,
+  "platformSettings": {},
+  "subMetas": {
+    "伏击术秘籍": {
+      "ver": "1.0.6",
+      "uuid": "fb00c947-1d33-48da-ab43-3d9e620457b1",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "1b432969-fd45-490a-8256-c316dd05d0e6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1,
+      "offsetY": -2,
+      "trimX": 14,
+      "trimY": 29,
+      "width": 78,
+      "height": 54,
+      "rawWidth": 108,
+      "rawHeight": 108,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

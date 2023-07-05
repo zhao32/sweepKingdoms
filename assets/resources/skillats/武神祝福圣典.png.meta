@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "f11b582e-0d7d-4451-aa8f-138041c6f88e",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 108,
+  "height": 108,
+  "platformSettings": {},
+  "subMetas": {
+    "武神祝福圣典": {
+      "ver": "1.0.6",
+      "uuid": "da80aff3-f7f2-4867-be48-2da556bf5812",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "f11b582e-0d7d-4451-aa8f-138041c6f88e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1.5,
+      "offsetY": 2,
+      "trimX": 12,
+      "trimY": 7,
+      "width": 81,
+      "height": 90,
+      "rawWidth": 108,
+      "rawHeight": 108,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

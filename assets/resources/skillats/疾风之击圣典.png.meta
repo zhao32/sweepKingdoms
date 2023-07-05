@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "85766de5-2b42-4a0e-b967-800c0f52be4a",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 108,
+  "height": 108,
+  "platformSettings": {},
+  "subMetas": {
+    "疾风之击圣典": {
+      "ver": "1.0.6",
+      "uuid": "ba7dc998-a495-4f4c-bcb0-a74e85bc4e7e",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "85766de5-2b42-4a0e-b967-800c0f52be4a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 2,
+      "offsetY": -0.5,
+      "trimX": 9,
+      "trimY": 9,
+      "width": 94,
+      "height": 91,
+      "rawWidth": 108,
+      "rawHeight": 108,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

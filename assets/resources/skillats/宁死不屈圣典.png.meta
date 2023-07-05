@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "5061093d-88fc-43e6-8bce-a77766f2e3fd",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 108,
+  "height": 111,
+  "platformSettings": {},
+  "subMetas": {
+    "宁死不屈圣典": {
+      "ver": "1.0.6",
+      "uuid": "e2a5f5db-e295-48f5-933d-22be836e2127",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "5061093d-88fc-43e6-8bce-a77766f2e3fd",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": -6,
+      "trimX": 12,
+      "trimY": 17,
+      "width": 85,
+      "height": 89,
+      "rawWidth": 108,
+      "rawHeight": 111,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

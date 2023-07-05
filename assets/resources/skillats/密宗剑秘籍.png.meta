@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "8e38caed-b47a-4838-a407-baf97439158b",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 108,
+  "height": 108,
+  "platformSettings": {},
+  "subMetas": {
+    "密宗剑秘籍": {
+      "ver": "1.0.6",
+      "uuid": "46d697b2-bfdf-4953-a08b-e564ac864b68",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "8e38caed-b47a-4838-a407-baf97439158b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 1,
+      "trimX": 16,
+      "trimY": 19,
+      "width": 75,
+      "height": 68,
+      "rawWidth": 108,
+      "rawHeight": 108,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

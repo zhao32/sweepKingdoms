@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "489548d1-e9af-4181-ab82-66df6238c158",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 108,
+  "height": 108,
+  "platformSettings": {},
+  "subMetas": {
+    "连环扇秘籍": {
+      "ver": "1.0.6",
+      "uuid": "70067dd9-e538-4aa3-a565-af6509e46a0a",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "489548d1-e9af-4181-ab82-66df6238c158",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 1,
+      "offsetY": 0.5,
+      "trimX": 14,
+      "trimY": 20,
+      "width": 82,
+      "height": 67,
+      "rawWidth": 108,
+      "rawHeight": 108,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

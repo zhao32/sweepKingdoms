@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "c02cbf90-fd92-4576-8149-9cf167d25d0f",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 108,
+  "height": 109,
+  "platformSettings": {},
+  "subMetas": {
+    "复仇之盾圣典": {
+      "ver": "1.0.6",
+      "uuid": "7167ff80-a8f2-4fad-b632-4a29bdc1a5c5",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "c02cbf90-fd92-4576-8149-9cf167d25d0f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": -4,
+      "trimX": 7,
+      "trimY": 12,
+      "width": 94,
+      "height": 93,
+      "rawWidth": 108,
+      "rawHeight": 109,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

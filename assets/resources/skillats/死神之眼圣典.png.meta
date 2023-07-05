@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "6a7bffe5-2c53-4795-9a60-5995705d2dac",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 108,
+  "height": 108,
+  "platformSettings": {},
+  "subMetas": {
+    "死神之眼圣典": {
+      "ver": "1.0.6",
+      "uuid": "46ada7c1-88be-43c1-83cd-cd8f311f7294",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "6a7bffe5-2c53-4795-9a60-5995705d2dac",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 2,
+      "trimX": 25,
+      "trimY": 19,
+      "width": 57,
+      "height": 66,
+      "rawWidth": 108,
+      "rawHeight": 108,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

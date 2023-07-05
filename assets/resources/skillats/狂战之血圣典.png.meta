@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "e0aa72ee-3f43-4edf-89b7-f14a7ecf3fb6",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 108,
+  "height": 108,
+  "platformSettings": {},
+  "subMetas": {
+    "狂战之血圣典": {
+      "ver": "1.0.6",
+      "uuid": "d4772a91-1f60-4c70-8d56-abe3407e6b50",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "e0aa72ee-3f43-4edf-89b7-f14a7ecf3fb6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 1,
+      "trimX": 20,
+      "trimY": 14,
+      "width": 68,
+      "height": 78,
+      "rawWidth": 108,
+      "rawHeight": 108,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

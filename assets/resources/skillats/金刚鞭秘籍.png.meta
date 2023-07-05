@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "e5e11284-ffa4-40dd-887c-dd2cea772221",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 108,
+  "height": 108,
+  "platformSettings": {},
+  "subMetas": {
+    "金刚鞭秘籍": {
+      "ver": "1.0.6",
+      "uuid": "e83d49a2-5273-4ba0-ac1c-64f68c37b6f7",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "e5e11284-ffa4-40dd-887c-dd2cea772221",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 8,
+      "offsetY": 2,
+      "trimX": 30,
+      "trimY": 9,
+      "width": 64,
+      "height": 86,
+      "rawWidth": 108,
+      "rawHeight": 108,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

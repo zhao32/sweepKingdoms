@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "fffd1a82-a8b3-4ee9-831a-7b036423da2f",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 108,
+  "height": 114,
+  "platformSettings": {},
+  "subMetas": {
+    "偃月斩秘籍": {
+      "ver": "1.0.6",
+      "uuid": "1b2268b0-66ed-4ddc-ac89-22a20baa7d70",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "fffd1a82-a8b3-4ee9-831a-7b036423da2f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1.5,
+      "offsetY": -5,
+      "trimX": 5,
+      "trimY": 14,
+      "width": 95,
+      "height": 96,
+      "rawWidth": 108,
+      "rawHeight": 114,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

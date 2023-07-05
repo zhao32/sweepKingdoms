@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "6ff1a177-966b-4147-ba0b-884b8efdee6a",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 108,
+  "height": 113,
+  "platformSettings": {},
+  "subMetas": {
+    "神箭平八方神著": {
+      "ver": "1.0.6",
+      "uuid": "7c82db00-5803-4bff-afe5-07badbf11ae2",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "6ff1a177-966b-4147-ba0b-884b8efdee6a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 2,
+      "offsetY": -0.5,
+      "trimX": 11,
+      "trimY": 6,
+      "width": 90,
+      "height": 102,
+      "rawWidth": 108,
+      "rawHeight": 113,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

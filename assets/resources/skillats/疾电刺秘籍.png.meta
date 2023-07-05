@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "3d37c6c3-0315-4a65-a08d-0fcbece58483",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 108,
+  "height": 108,
+  "platformSettings": {},
+  "subMetas": {
+    "疾电刺秘籍": {
+      "ver": "1.0.6",
+      "uuid": "9bffc1dd-efeb-49b3-9db2-ea2b26f47933",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "3d37c6c3-0315-4a65-a08d-0fcbece58483",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 1,
+      "offsetY": -2.5,
+      "trimX": 10,
+      "trimY": 14,
+      "width": 90,
+      "height": 85,
+      "rawWidth": 108,
+      "rawHeight": 108,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

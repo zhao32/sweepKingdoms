@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "ee6055b1-1181-42e4-ab3c-b42726546397",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 108,
+  "height": 108,
+  "platformSettings": {},
+  "subMetas": {
+    "美人刺秘籍": {
+      "ver": "1.0.6",
+      "uuid": "3f90c81c-ede6-4f12-b35e-c775cd4bf85e",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "ee6055b1-1181-42e4-ab3c-b42726546397",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 1.5,
+      "offsetY": -3,
+      "trimX": 16,
+      "trimY": 26,
+      "width": 79,
+      "height": 62,
+      "rawWidth": 108,
+      "rawHeight": 108,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

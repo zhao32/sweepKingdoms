@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "11abd24e-fbd1-415c-a2d1-f350119b2e87",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 108,
+  "height": 108,
+  "platformSettings": {},
+  "subMetas": {
+    "金蚕醉秘籍": {
+      "ver": "1.0.6",
+      "uuid": "26ef4c6e-dfb9-4e25-b51a-fdc049beab44",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "11abd24e-fbd1-415c-a2d1-f350119b2e87",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": -3.5,
+      "trimX": 6,
+      "trimY": 13,
+      "width": 97,
+      "height": 89,
+      "rawWidth": 108,
+      "rawHeight": 108,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
