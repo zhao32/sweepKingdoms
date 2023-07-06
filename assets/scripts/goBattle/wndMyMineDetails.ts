@@ -69,9 +69,10 @@ export default class NewClass extends cc.Component {
     // }
 
     /**列表数据 阵容详情数据*/
-    init(data, detailData) {
+    init(data) {
         this._data = data
-        this._detailData = detailData
+        // this._detailData = DataManager.curMineDetailData
+        console.log('detailData:' + JSON.stringify(DataManager.curMineDetailData))
         let name = DataManager.mineData[data.hold_player.group].name
         if (data.hold_player.lv == 0) {
             this.nameLabel.string = `未建造建筑`
@@ -79,7 +80,7 @@ export default class NewClass extends cc.Component {
             this.nameLabel.string = data.hold_player.lv + '级' + name
         }
         this.lordLabel.string = `领主：${data.hold_player.nickname}`
-        this.awardLabel.string = `已产出：${detailData.gains}`
+        this.awardLabel.string = `已产出：${DataManager.curMineDetailData.gains}`
 
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
 
