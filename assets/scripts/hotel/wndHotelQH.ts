@@ -7,6 +7,7 @@
 
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
+import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
@@ -99,6 +100,10 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.addListener(NetEvent.S2CIdentify, this.S2CIdentify, this)
         NetEventDispatcher.addListener(NetEvent.S2CCardAddLevel, this.S2CCardAddLevel, this)
 
+        this.headBg.on(cc.Node.EventType.TOUCH_END,()=>{
+            let str = DataManager.getGeneralDes(data.template_id, data.id)
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES,...[str])
+        },this)
 
     }
 

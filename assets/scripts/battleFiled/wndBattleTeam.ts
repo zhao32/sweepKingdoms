@@ -47,12 +47,17 @@ export default class NewClass extends cc.Component {
             let soliderData = DataManager.myBattleFiledConfig.soliders[i]
             let solider = cc.instantiate(this.soliderPfb)
             solider.parent = this.contect
-            let name =  DataManager.GameData.Soldier[soliderData.arm].name
+            let name = DataManager.GameData.Soldier[soliderData.arm].name
             solider.getChildByName('nameLabel').getComponent(cc.Label).string = name
             solider.getChildByName('countLabel').getComponent(cc.Label).string = 'x' + soliderData.count
 
             ResManager.loadItemIcon(`soliderHead/${name}`, solider.getChildByName('iocn'))
 
+
+            let str = DataManager.getSoliderDes(DataManager.GameData.Soldier[soliderData.arm])
+            solider.getChildByName(`equipBg`).on(cc.Node.EventType.TOUCH_END, () => {
+                ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES, ...[str])
+            }, this)
         }
 
         // for (let i = 0; i < DataManager.myBattleFiledConfig.card.length; i++) {
@@ -62,16 +67,15 @@ export default class NewClass extends cc.Component {
         //         ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.node.getChildByName('hero').getChildByName(`bg${i}`))
         //     }
         // }
-
+        console.log(' DataManager.myBattleFiledConfig.card:' + JSON.stringify(DataManager.myBattleFiledConfig.card))
         for (let i = 0; i < DataManager.myBattleFiledConfig.card.length; i++) {
             for (let j = 0; j < DataManager.cardsList.length; j++) {
-                if(DataManager.myBattleFiledConfig.card[i] == DataManager.cardsList[j]){
+                if (DataManager.myBattleFiledConfig.card[i] == DataManager.cardsList[j].id) {
                     let tmpId = DataManager.cardsList[j].template_id
                     let defaultData = DataManager.GameData.Cards[tmpId]
                     ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.node.getChildByName('hero').getChildByName(`head${i}`))
                     ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.node.getChildByName('hero').getChildByName(`bg${i}`))
                 }
-                
             }
         }
 

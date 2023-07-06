@@ -6,7 +6,9 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import DataManager from "../utils/Manager/DataManager";
+import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
+import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -72,6 +74,13 @@ export default class NewClass extends cc.Component {
         this.proTxt.string = `${data.physical}/${200}`
         this.gradeDisplay.string = 'LV ' + data.level
         this.starDisplay.string = `x${data.grade}`
+
+        this.headBg.on(cc.Node.EventType.TOUCH_END,()=>{
+            let str = DataManager.getGeneralDes(data.template_id, data.id)
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES,...[str])
+        },this)
+
+     
 
 
         // for (let i = 1; i <= 3; i++) {

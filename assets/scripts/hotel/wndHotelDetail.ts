@@ -247,6 +247,12 @@ export default class NewClass extends cc.Component {
 
         this.initSkills(defaultData.skills, data.proficiency, data.talents)
         this.initStSkill(data.skills_equips)
+
+        this.headBg.on(cc.Node.EventType.TOUCH_END,()=>{
+            let str = DataManager.getGeneralDes(data.template_id, data.id)
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES,...[str])
+        },this)
+
     }
 
     openSkillstPanel(data, idx) {

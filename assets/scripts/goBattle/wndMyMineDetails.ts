@@ -79,7 +79,7 @@ export default class NewClass extends cc.Component {
             this.nameLabel.string = data.hold_player.lv + '级' + name
         }
         this.lordLabel.string = `领主：${data.hold_player.nickname}`
-        this.awardLabel.string = `已产出：${data.hold_player.award}`
+        this.awardLabel.string = `已产出：${detailData.gains}`
 
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
 

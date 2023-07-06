@@ -47,13 +47,14 @@ export default class NewClass extends cc.Component {
 
     S2CBattleFormationSave(data) {
         console.log('军队配置返回' + JSON.stringify(data))
+        console.log('card:' + JSON.stringify(DataManager.myBattleFiledConfig.card))
         ViewManager.instance.showToast(`战队配置保存成功`)
         ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLE_TEAMSET)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_MYTEAM)
     }
 
     init() {
-        NetEventDispatcher.addListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave,this)
+        NetEventDispatcher.addListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave, this)
 
         // this.selectCards = selectCards//[DataManager.cardsList[0], DataManager.cardsList[1], DataManager.cardsList[2]]
         this.heroContect.removeAllChildren()
@@ -95,13 +96,13 @@ export default class NewClass extends cc.Component {
 
         for (let i = 0; i < DataManager.myBattleFiledConfig.card.length; i++) {
             for (let j = 0; j < DataManager.cardsList.length; j++) {
-                if(DataManager.myBattleFiledConfig.card[i] == DataManager.cardsList[j]){
+                if (DataManager.myBattleFiledConfig.card[i] == DataManager.cardsList[j]) {
                     let tmpId = DataManager.myBattleFiledConfig.card[i].template_id
                     let defaultData = DataManager.GameData.Cards[tmpId]
                     ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.node.getChildByName('hero').getChildByName(`head${i}`))
                     ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.node.getChildByName('hero').getChildByName(`bg${i}`))
                 }
-                
+
             }
             // if (DataManager.myBattleFiledConfig.card[i]) {
             //     let defaultData = DataManager.GameData.Cards[DataManager.myBattleFiledConfig.card[i]]
@@ -184,7 +185,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CBattleFormationSave, this.S2CBattleFormationSave, this)
 
     }
 

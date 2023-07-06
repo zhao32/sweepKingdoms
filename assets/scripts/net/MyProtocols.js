@@ -1726,6 +1726,7 @@ var MyProtocols = {
 			}
 		}
 		retObj.state = myDecoder.readInt();
+		retObj.gains = myDecoder.readInt();
 		retObj.rand_key = myDecoder.readLong();
 		console.log(`矿场守卫信息`)
 		return retObj;
@@ -6905,7 +6906,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	send_C2SSKillStUp(senderSocket, cardid, idx, skillid,lv) {
+	send_C2SSKillStUp(senderSocket, cardid, idx, skillid, lv) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2037);
 		myEncoder.writeInt(cardid);

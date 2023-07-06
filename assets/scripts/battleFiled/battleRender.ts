@@ -6,7 +6,9 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import DataManager from "../utils/Manager/DataManager";
+import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
+import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -73,6 +75,11 @@ export default class NewClass extends cc.Component {
         } else {
             let defaultData = DataManager.GameData.Cards[data.card[0]]
             ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.generalHead0)
+
+            // this.generalHead0.on(cc.Node.EventType.TOUCH_END, () => {
+            //     let str = DataManager.getGeneralDes(data.card[0].template_id, data.card[0].id)
+            //     ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES, ...[str])
+            // }, this)
         }
 
         if (data.card[1] == 0) {
@@ -80,6 +87,11 @@ export default class NewClass extends cc.Component {
         } else {
             let defaultData = DataManager.GameData.Cards[data.card[1]]
             ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.generalHead1)
+
+            // this.generalHead1.on(cc.Node.EventType.TOUCH_END, () => {
+            //     let str = DataManager.getGeneralDes(data.card[1].template_id, data.card[1].id)
+            //     ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES, ...[str])
+            // }, this)
         }
 
         if (data.card[2] == 0) {
@@ -87,6 +99,11 @@ export default class NewClass extends cc.Component {
         } else {
             let defaultData = DataManager.GameData.Cards[data.card[2]]
             ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.generalHead2)
+
+            // this.generalHead2.on(cc.Node.EventType.TOUCH_END, () => {
+            //     let str = DataManager.getGeneralDes(data.card[2].template_id, data.card[2].id)
+            //     ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES, ...[str])
+            // }, this)
         }
 
     }

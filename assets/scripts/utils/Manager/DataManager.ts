@@ -284,7 +284,7 @@ export default class DataManager {
     static fightType: number = 0
 
     /**获取将的详情提示 */
-    static getGenerlDes(template_id, id) {
+    static getGeneralDes(template_id, id) {
         let defaultData = DataManager.GameData.Cards[template_id]
         let cardInfo;
         for (let i = 0; i < DataManager.cardsList.length; i++) {
@@ -294,17 +294,22 @@ export default class DataManager {
         }
 
         let str = defaultData.name + '\n'
-        str += `品质:${DataManager.qualityList[defaultData.quality]}`
-        str += `将领等级:${cardInfo.level}\n`
-        str += `将领星级:${cardInfo.grade}星\n`
+        str += `品质：${DataManager.qualityList[defaultData.quality]}\n`
+        str += `将领等级：${cardInfo.level}级\n`
+        str += `将领星级：${cardInfo.grade}星\n`
 
-        let solider
+        let solider = ''
         for (let i = 0; i < cardInfo.talents.length; i++) {
             solider += DataManager.armList[cardInfo.talents[i]] + '兵 '
 
         }
-        str += `熟练兵种:${solider}`
-
+        str += `熟练兵种：${solider}`
+        return str
+    }
+    /**获取兵的详情提示 */
+    static getSoliderDes(data){
+        // let data = DataManager.GameData.Soldier[key]
+        let str = `兵种名称  ${data.name}  兵种国籍  ${DataManager.countyList[data.country]}\n挥砍攻击  ${data.defense.attack_1} 穿刺攻击  ${data.defense.attack_2}\n法术攻击  ${data.defense.attack_3} 挥砍防御  ${data.defense.attack_4}\n穿刺防御  ${data.defense.attack_5} 法术防御  ${data.defense.attack_6}`
         return str
     }
 }

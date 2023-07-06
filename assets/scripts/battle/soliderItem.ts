@@ -6,7 +6,9 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import DataManager from "../utils/Manager/DataManager";
+import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
+import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -39,6 +41,11 @@ export default class NewClass extends cc.Component {
         ResManager.loadItemIcon(`hero/soldierType${data.arm}`, this.typeNode)
 
         this.arm = data.arm
+
+        let str = DataManager.getSoliderDes(soldierData)
+        this.head.on(cc.Node.EventType.TOUCH_END, () => {
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES, ...[str])
+        }, this)
     }
 
     changeState(count) {

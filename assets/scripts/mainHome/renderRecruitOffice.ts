@@ -71,7 +71,7 @@ export default class NewClass extends cc.Component {
         //     "attack_5": 90, 穿刺防御	
         //     "attack_6": 0 法术防御
         //   },
-        let str = `兵种名称  ${data.name}  兵种国籍  ${DataManager.countyList[data.country]}\n挥砍攻击  ${data.defense.attack_1} 穿刺攻击  ${data.defense.attack_2}\n法术攻击  ${data.defense.attack_3} 挥砍防御  ${data.defense.attack_4}\n穿刺防御  ${data.defense.attack_5} 法术防御  ${data.defense.attack_6}`
+        let str = DataManager.getSoliderDes(data)
         this.head.on(cc.Node.EventType.TOUCH_END, () => {
             ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES, ...[str])
         }, this)

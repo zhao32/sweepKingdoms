@@ -141,6 +141,10 @@ export default class NewClass extends cc.Component {
         }
 
 
+        this.headBg.on(cc.Node.EventType.TOUCH_END,()=>{
+            let str = DataManager.getGeneralDes(data.template_id, data.id)
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES,...[str])
+        },this)
 
         // update (dt) {}
     }
