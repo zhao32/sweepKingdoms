@@ -149,12 +149,8 @@ export default class EnumManager {
         WND_GOBATTLE_EVI: 'prefabs/goBattle/wndEviDetails',
 
 
-        
-
-
         /**队伍比较 */
         WND_GOBATTLE_COMPYARMY: 'prefabs/goBattle/wndBattleCompArmy',
-
 
         /**日志 */
         WND_GOBATTLE_RECORD: 'prefabs/goBattle/wndRecord',
@@ -176,7 +172,10 @@ export default class EnumManager {
 
         WND_GOBATTLE_FINDBACK: 'prefabs/goBattle/wndFindBack',
 
+        /**注释弹窗 */
+        NOTE_DES: 'prefabs/common/noteDes',
 
+        
 
 
     }

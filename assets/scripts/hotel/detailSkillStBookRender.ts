@@ -60,7 +60,7 @@ export default class NewClass extends cc.Component {
     }
 
     onTeachHandler() {
-        MyProtocols.send_C2SSKillTeach(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this.pos, this.data.type)
+        MyProtocols.send_C2SSKillTeach(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this.pos, this.data.id)
     }
 
     // update (dt) {}

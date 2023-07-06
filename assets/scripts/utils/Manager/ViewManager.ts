@@ -7,7 +7,6 @@ export default class ViewManager {
     //场景管理者唯一实例
     private static _instance: ViewManager = null;
     private static toastPool = []
-    private static scorePool = []
     scoreNode: cc.Node
 
     private constructor() {
@@ -15,6 +14,9 @@ export default class ViewManager {
         this.WNDRoot = cc.find("Canvas").getChildByName("wndPanel");
 
         this.GameRoot = cc.find("Canvas").getChildByName("GameUI");
+
+        this.noteRoot = cc.find("Canvas").getChildByName("notePanel");
+
 
         Logger.log('构造 ViewManager')
     }
@@ -37,6 +39,9 @@ export default class ViewManager {
 
     private GameRoot: cc.Node;
 
+    private noteRoot: cc.Node;
+
+
     //当前场景
     private _curView: BaseView = null;
     private _curViewList: Map<string, cc.Node> = new Map<string, cc.Node>();
@@ -44,6 +49,9 @@ export default class ViewManager {
     //当前场景
     private _curWnd: BaseView = null;
     private _curWndList: Map<string, cc.Node> = new Map<string, cc.Node>();
+
+    private _curNote: BaseView = null;
+    private _curNoteList: Map<string, cc.Node> = new Map<string, cc.Node>();
 
     private _curWndPath: string = null;
 
@@ -269,6 +277,77 @@ export default class ViewManager {
             if (isDestroy) {
                 // ResManager.Instance.Recovery(name,viewNode)
                 wndNode.destroy();
+                Logger.log('关闭页面：' + name)
+            }
+        }
+    }
+
+
+
+
+     /**
+     * 展示视图
+     * @param path 要展示视图的路径
+     * @param params 展示视图时传的参数
+     */
+     public showNote(path: string, ...params) {
+        let name = ResManager.Instance.getResourcesName(path);
+        let viewNode: cc.Node = this.noteRoot.getChildByName(name);
+        if (!viewNode) {
+            // cc.Canvas.instance.node.getChildByName('loadTip').active = true
+            ResManager.Instance.loadPrefab(path, (err, resource) => {
+                if (ResManager.Instance.hasNode(name)) {
+                    viewNode = ResManager.Instance.getNode(name);
+                }
+                else {
+                    viewNode = cc.instantiate(resource);
+                }
+                viewNode.setPosition(cc.Vec2.ZERO);
+                viewNode.parent = this.noteRoot;
+                let panel = viewNode.getComponent(BaseView);
+                viewNode.getComponent(viewNode.name).init(...params)
+                if (panel) {
+                    this._curNote = panel;
+                    this._curNote.init(...params);
+                    this._curNote.showPanel();
+                    this._curNoteList.set(viewNode.name, viewNode);
+                }
+                // cc.Canvas.instance.node.getChildByName('loadTip').active = false
+            });
+        }
+        else {
+            let panel = viewNode.getComponent(BaseView);
+            viewNode.getComponent(viewNode.name).init(...params)
+            if (panel) {
+                this._curNote = panel;
+                this._curNote.init(...params);
+                this._curNote.showPanel();
+                this._curNoteList.set(viewNode.name, viewNode);
+            }
+        }
+        // Logger.log(JSON.stringify(this._curViewList))
+        Logger.log('当前页:' + name)
+    }
+
+    /**
+     * 隐藏视图
+     * @param {string} path 要隐藏的视图路径
+     * @param {boolean} isDestroy 是否销毁，有些只展示一次，展示结束之后销毁节省资源
+     */
+    public hideNote(path: string, isDestroy: boolean = false) {
+        let name = ResManager.Instance.getResourcesName(path);
+        // if (!this._curViewList.get(name)) return
+        console.log('name:' + name)
+        let viewNode: cc.Node = this._curNoteList.get(name);
+        if (viewNode) {
+            this._curNoteList.delete(name);
+            let panel = viewNode.getComponent(BaseView);
+            if (panel) {
+                panel.hidePanel();
+            }
+            if (isDestroy) {
+                // ResManager.Instance.Recovery(name,viewNode)
+                viewNode.destroy();
                 Logger.log('关闭页面：' + name)
             }
         }
