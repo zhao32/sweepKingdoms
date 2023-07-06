@@ -108,7 +108,7 @@ export default class NewClass extends cc.Component {
     }
 
     onOpenEviHandler() {
-        MyProtocols.send_C2SEviGate(DataManager._loginSocket._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
+        MyProtocols.send_C2SEviGate(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
     }
 
     onClose() {

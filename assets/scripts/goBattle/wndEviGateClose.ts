@@ -114,7 +114,7 @@ export default class NewClass extends cc.Component {
                 soliders: soliderData
             }
             console.log('this._data:' + JSON.stringify(this._data))
-            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data, true])
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data, false])
 
         }
         
