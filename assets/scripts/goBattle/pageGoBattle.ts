@@ -183,18 +183,18 @@ export default class NewClass extends cc.Component {
         DataManager.curMineDetailData = retObj
         let hold_player = this.mineData[this.clickIdx].hold_player
         // retObj.state = 3
-        
+
         if (hold_player.group > 101) {//恶魔之门
             if (hold_player.id == 0)//未被占领
             {
                 //只能出兵占领
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[this.mineData[this.clickIdx], retObj.state])
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[this.mineData[this.clickIdx]])
             } else {
                 if (hold_player.id == DataManager.playData.id) {//我占领了
-                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYEVI, ...[this.mineData[this.clickIdx], retObj.state])
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYEVI, ...[this.mineData[this.clickIdx]])
                 } else {//别人占领了
                     if (retObj.state == 0) {
-                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVI, ...[this.mineData[this.clickIdx], retObj.state])
+                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVI, ...[this.mineData[this.clickIdx]])
                     } else if (retObj.state == 1) {
                         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
                     } else if (retObj.state == 2) {//支援结束
@@ -213,6 +213,8 @@ export default class NewClass extends cc.Component {
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
                 } else if (retObj.state == 1) {
                     //支援
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
+                } else if (retObj.state == 2) {//支援结束
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
                 }
             } else if (hold_player.id == DataManager.playData.id) {

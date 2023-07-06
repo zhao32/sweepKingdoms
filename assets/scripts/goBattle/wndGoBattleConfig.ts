@@ -120,7 +120,6 @@ export default class NewClass extends cc.Component {
         }
 
         this.myHeroData = this.myCards[0]
-
         this.myContect.removeAllChildren()
         for (let i = 0; i < this.mySoliders.length; i++) {
             if (this.mySoliders[i].arm != 0) {

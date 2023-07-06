@@ -43,7 +43,7 @@ export default class NewClass extends cc.Component {
     init(data, state = DataManager.curMineDetailData.state) {
         this._data = data
         // NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
-        if (state == 3) {
+        if (state == 2) {
             this.node.getChildByName('btnDefine').getComponent(cc.Button).interactable = false
             this.node.getChildByName('btnAtt').getComponent(cc.Button).interactable = false
         } else {

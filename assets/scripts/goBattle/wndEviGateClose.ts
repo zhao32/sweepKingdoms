@@ -79,7 +79,9 @@ export default class NewClass extends cc.Component {
         this.nameLabel.string = data.hold_player.lv + '级' + data.hold_player.nickname
         // this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`
 
-        this.node.getChildByName('btnAtt').active = (state == 0) ? false : true
+        // this.node.getChildByName('btnAtt').active = (state == 0) ? false : true
+
+
         // NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
         // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
         this.initDetailData(DataManager.curMineDetailData)
@@ -90,9 +92,9 @@ export default class NewClass extends cc.Component {
         console.log(JSON.stringify(retObj))
         console.log(retObj.formation.a)
         // debugger
-        if (retObj.state == 0) {
+        if (retObj.state == 1) {
             this.node.getChildByName('btnAtt').active = false
-        } else if (retObj.state == 1) {
+        } else if (retObj.state == 0) {
             this.node.getChildByName('btnAtt').active = true
             ViewManager.instance.hideWnd(DataManager.curWndPath)
             let soliderData = []
@@ -114,50 +116,53 @@ export default class NewClass extends cc.Component {
             console.log('this._data:' + JSON.stringify(this._data))
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data, true])
 
-        } else if (retObj.state == 2) {
-            ViewManager.instance.hideWnd(DataManager.curWndPath)
-            if (DataManager.playData.account_id == retObj.att_base_info.id) {
-                let soliderData = []
-                for (let i = 0; i < retObj.soliderUsed.length; i++) {
-                    if (retObj.soliderUsed[i].arm != 0) {
-                        soliderData.push({
-                            arm: retObj.soliderUsed[i].arm,
-                            count: retObj.soliderUsed[i].count,
-                            fight: 0,
-                            defense: 0
-                        })
-                    }
-                }
-                let defineData =
-                {
-                    cardId: retObj.formation.a,
-                    soliders: soliderData
-                }
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data, true])
-
-            } else if (DataManager.playData.account_id == retObj.base_info.id) {
-                let soliderData = []
-                for (let i = 0; i < retObj.att_soliderUsed.length; i++) {
-                    if (retObj.att_soliderUsed[i].arm != 0) {
-                        soliderData.push({
-                            arm: retObj.att_soliderUsed[i].arm,
-                            count: retObj.att_soliderUsed[i].count,
-                            fight: 0,
-                            defense: 0
-                        })
-                    }
-                }
-                let attData =
-                {
-                    cardId: retObj.att_formation.a,
-                    soliders: soliderData
-                }
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[attData, this._data, true])
-            }
-
-        } else if (retObj.state == 3) {
-            ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this._data, retObj.state])
         }
+        
+        
+        // else if (retObj.state == 2) {
+        //     ViewManager.instance.hideWnd(DataManager.curWndPath)
+        //     if (DataManager.playData.account_id == retObj.att_base_info.id) {
+        //         let soliderData = []
+        //         for (let i = 0; i < retObj.soliderUsed.length; i++) {
+        //             if (retObj.soliderUsed[i].arm != 0) {
+        //                 soliderData.push({
+        //                     arm: retObj.soliderUsed[i].arm,
+        //                     count: retObj.soliderUsed[i].count,
+        //                     fight: 0,
+        //                     defense: 0
+        //                 })
+        //             }
+        //         }
+        //         let defineData =
+        //         {
+        //             cardId: retObj.formation.a,
+        //             soliders: soliderData
+        //         }
+        //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data, true])
+
+        //     } else if (DataManager.playData.account_id == retObj.base_info.id) {
+        //         let soliderData = []
+        //         for (let i = 0; i < retObj.att_soliderUsed.length; i++) {
+        //             if (retObj.att_soliderUsed[i].arm != 0) {
+        //                 soliderData.push({
+        //                     arm: retObj.att_soliderUsed[i].arm,
+        //                     count: retObj.att_soliderUsed[i].count,
+        //                     fight: 0,
+        //                     defense: 0
+        //                 })
+        //             }
+        //         }
+        //         let attData =
+        //         {
+        //             cardId: retObj.att_formation.a,
+        //             soliders: soliderData
+        //         }
+        //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[attData, this._data, true])
+        //     }
+
+        // } else if (retObj.state == 3) {
+        //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this._data, retObj.state])
+        // }
 
         // else {
         //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this._data, retObj.state])

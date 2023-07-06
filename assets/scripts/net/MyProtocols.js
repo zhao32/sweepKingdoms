@@ -1462,7 +1462,7 @@ var MyProtocols = {
 					retObj.mine_points[i].hold_player.cd_time = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.group = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.lv = myDecoder.readInt();
-
+                    //  debugger;
 					retObj.mine_points[i].hold_player.page = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.idx = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.country = myDecoder.readInt();
