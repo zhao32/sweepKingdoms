@@ -282,4 +282,29 @@ export default class DataManager {
     static curMineDetailData = null
 
     static fightType: number = 0
+
+    /**获取将的详情提示 */
+    static getGenerlDes(template_id, id) {
+        let defaultData = DataManager.GameData.Cards[template_id]
+        let cardInfo;
+        for (let i = 0; i < DataManager.cardsList.length; i++) {
+            if (id == DataManager.cardsList[i].id) {
+                cardInfo = DataManager.cardsList[i]
+            }
+        }
+
+        let str = defaultData.name + '\n'
+        str += `品质:${DataManager.qualityList[defaultData.quality]}`
+        str += `将领等级:${cardInfo.level}\n`
+        str += `将领星级:${cardInfo.grade}星\n`
+
+        let solider
+        for (let i = 0; i < cardInfo.talents.length; i++) {
+            solider += DataManager.armList[cardInfo.talents[i]] + '兵 '
+
+        }
+        str += `熟练兵种:${solider}`
+
+        return str
+    }
 }

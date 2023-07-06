@@ -73,7 +73,11 @@ export default class NewClass extends cc.Component {
         this._data = data
         this._detailData = detailData
         let name = DataManager.mineData[data.hold_player.group].name
-        this.nameLabel.string = data.hold_player.lv + '级' + name
+        if (data.hold_player.lv == 0) {
+            this.nameLabel.string = `未建造建筑`
+        } else {
+            this.nameLabel.string = data.hold_player.lv + '级' + name
+        }
         this.lordLabel.string = `领主：${data.hold_player.nickname}`
         this.awardLabel.string = `已产出：${data.hold_player.award}`
 
@@ -116,6 +120,11 @@ export default class NewClass extends cc.Component {
         console.log(`升级建造返回`)
         console.log(JSON.stringify(data))
         this._data.hold_player.lv = data.lv
+        if (data.lv == 1) {
+            this.node.getChildByName('btnBulid').active = false
+            this.node.getChildByName('btnUpLevel').active = true
+            this.node.getChildByName('btnRecruit').getComponent(cc.Button).interactable = true
+        }
 
         let name = DataManager.mineData[this._data.hold_player.group].name
         this.nameLabel.string = this._data.hold_player.lv + '级' + name
@@ -148,7 +157,8 @@ export default class NewClass extends cc.Component {
 
     onHarvestHandler() {
         console.log(`---------收获----------`)
-        MyProtocols.send_C2SMineGetAward(DataManager._loginSocket, this._data.page, this._data.idx, this._data.country)
+        console.log(`this._data:` + JSON.stringify(this._data))
+        MyProtocols.send_C2SMineGetAward(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
     }
 
     onClose() {

@@ -328,6 +328,7 @@ export default class NewClass extends cc.Component {
             child.on('toggle', () => {
                 if (child.getComponent(cc.Toggle).isChecked == true) {
                     this.nation_id = i + 1
+                    this.curPageIdx = 0
                     MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
                 }
             }, this)
