@@ -113,6 +113,15 @@ export default class NewClass extends cc.Component {
 
     }
 
+    
+    /**调兵驻防 */
+    ondispatchArmyHandler() {
+        console.log(`------调兵驻防--------`)
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'in'])
+    }
+
+
 
     // update (dt) {}
 }
