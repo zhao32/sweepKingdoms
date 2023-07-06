@@ -6,7 +6,9 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import DataManager from "../utils/Manager/DataManager";
+import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
+import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -65,6 +67,7 @@ export default class NewClass extends cc.Component {
 
     onTeachHandler() {
         console.log('this.skillId:'+this.skillId)
+        DataManager.wndHotelDetail.node.getChildByName('skillstPanel').active = false
         MyProtocols.send_C2SSKillTeach(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this.pos, this.skillId)
     }
 

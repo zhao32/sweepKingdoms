@@ -63,11 +63,16 @@ export default class NewClass extends cc.Component {
         if (data.id != 0) {
             let skillSt = DataManager.GameData.SkillStudy[data.id]
             ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.icon)
+            this.nameLabel.string = `${skillSt.name} LV ${data.level}`
+            this.richLabel.string = skillSt.des
+
         }
 
         this.icon.on(cc.Node.EventType.TOUCH_END, () => {
-            MyProtocols.send_C2SSKillStUp(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this._idx, this._data.id, this._data.level + 1)
+            DataManager.wndHotelDetail.openSkillstUpPanel(data, idx)
+            // MyProtocols.send_C2SSKillStUp(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this._idx, this._data.id, this._data.level + 1)
         }, this)
+
     }
 
     onTeachHandler() {

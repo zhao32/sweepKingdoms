@@ -16,6 +16,7 @@ import detailRuneRender from "./detailRuneRender";
 import detailSkillRender from "./detailSkillRender";
 import detailSkillStRender from "./detailSkillStRender";
 import skillstPanel from "./skillstPanel";
+import skillUpPanel from "./skillUpPanel";
 
 const { ccclass, property } = cc._decorator;
 
@@ -126,11 +127,33 @@ export default class NewClass extends cc.Component {
 
     S2CSKillTeach(data) {
         console.log("学习技能返回:" + JSON.stringify(data))
+        // {"cardid":152035,"idx":0,"skillid":10009}
+        let defaultData = DataManager.GameData.Cards[this._data.template_id]
+
+        let len = defaultData.skills.length
+        console.log('this.contect.children.length:' + this.contect.children.length)
+        let render = this.contect.children[len + data.idx]
+        let stData = this._data.skills_equips[data.idx]
+        stData.id = data.skillid
+        // let stData = {"id":data.skillid,"level":0,"type":1}
+        render.getComponent(detailSkillStRender).init(stData, data.idx)
 
     }
 
     S2CSKillStUp(data) {
         console.log("学习技能升级返回:" + JSON.stringify(data))
+        // {"cardid":152038,"idx":0,"skillid":10011,"lv":2}
+        let defaultData = DataManager.GameData.Cards[this._data.template_id]
+
+        let len = defaultData.skills.length
+        console.log('this.contect.children.length:' + this.contect.children.length)
+        let render = this.contect.children[len + data.idx]
+        let stData = this._data.skills_equips[data.idx]
+        stData.id = data.skillid
+        stData.level = data.lv
+        // let stData = {"id":data.skillid,"level":0,"type":1}
+        render.getComponent(detailSkillStRender).init(stData, data.idx)
+
 
     }
     /**data 服务器获取的将领数据 */
@@ -142,10 +165,7 @@ export default class NewClass extends cc.Component {
         // packManager.getInstance().reflishBag()
         NetEventDispatcher.addListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock, this)
         NetEventDispatcher.addListener(NetEvent.S2CSKillTeach, this.S2CSKillTeach, this)
-
         NetEventDispatcher.addListener(NetEvent.S2CSKillStUp, this.S2CSKillStUp, this)
-
-
 
         console.log('-----data:' + JSON.stringify(data))
         this._data = data
@@ -235,6 +255,12 @@ export default class NewClass extends cc.Component {
 
     }
 
+    openSkillstUpPanel(data, idx) {
+        this.node.getChildByName('skillUpPanel').active = true
+        this.node.getChildByName('skillUpPanel').getComponent(skillUpPanel).init(data, idx)
+
+    }
+
     initStSkill(stData) {
         console.log(`init 额外技能`)
         for (let i = 0; i < stData.length; i++) {
@@ -256,6 +282,7 @@ export default class NewClass extends cc.Component {
             render.parent = this.contect
             render.getComponent(detailSkillRender).init(skillData, proficiency, talents)
         }
+
     }
 
     initRunes() {

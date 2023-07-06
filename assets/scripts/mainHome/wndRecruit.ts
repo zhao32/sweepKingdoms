@@ -66,6 +66,10 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Node, displayName: '已恢复兵力Node' })
     recoverdNode: cc.Node = null;
 
+    @property({ type: cc.Node, displayName: '头像' })
+    head: cc.Node = null;
+    
+
     soliderType: number = 0
 
     _idx: number = 0
@@ -122,6 +126,12 @@ export default class NewClass extends cc.Component {
 
         ResManager.loadItemIcon(`soliderHead/${DataManager.GameData.Soldier[idx - 1].name}`, this.soldierSprite.node)
         NetEventDispatcher.addListener(NetEvent.S2CRecSoldiers, this.S2CRecSoldiers,this)
+
+        let data = DataManager.GameData.Soldier[idx - 1]
+        let str = `兵种名称  ${data.name}  兵种国籍  ${DataManager.countyList[data.country]}\n挥砍攻击  ${data.defense.attack_1} 穿刺攻击  ${data.defense.attack_2}\n法术攻击  ${data.defense.attack_3} 挥砍防御  ${data.defense.attack_4}\n穿刺防御  ${data.defense.attack_5} 法术防御  ${data.defense.attack_6}`
+        this.head.on(cc.Node.EventType.TOUCH_END, () => {
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES, ...[str])
+        }, this)
 
     }
 

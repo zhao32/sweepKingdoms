@@ -190,7 +190,7 @@ export default class DataManager {
     // }
 
     /**国家类型 */
-    static readonly countyList = ['', '魏', '燕', '秦', '赵', '齐', '韩', '楚']
+    static readonly countyList = ['无', '魏', '燕', '秦', '赵', '齐', '韩', '楚']
     /**兵种类型 */
     static readonly armList = ['', '盾', '骑', '枪', '弓', '法']
 
