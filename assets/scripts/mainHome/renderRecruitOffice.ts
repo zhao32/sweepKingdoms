@@ -5,7 +5,9 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
+import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -30,6 +32,9 @@ export default class NewClass extends cc.Component {
     @property(cc.Sprite)
     soldierSprite: cc.Sprite = null;
 
+    @property({ type: cc.Node, displayName: '头像' })
+    head: cc.Node = null;
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -53,6 +58,10 @@ export default class NewClass extends cc.Component {
         }
         this.powerDisplay.string = `x${data.defense.attack_1 + data.defense.attack_2 + data.defense.attack_3}`
         ResManager.loadItemIcon(`soliderHead/${data.name}`, this.soldierSprite.node)
+
+        this.head.on(cc.Node.EventType.TOUCH_END, () => {
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES)
+        }, this)
 
     }
 

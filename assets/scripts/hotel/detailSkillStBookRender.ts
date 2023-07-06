@@ -35,6 +35,8 @@ export default class NewClass extends cc.Component {
     data;
     pos;
 
+    skillId:number
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -43,7 +45,9 @@ export default class NewClass extends cc.Component {
 
     }
 
-    init(data, pos) {
+    init(data, pos, template_id) {
+        this.skillId = template_id
+        console.log(`data:` + JSON.stringify(data))
         this.data = data
         this.pos = pos
         this.nameLabel.string = data.name
@@ -60,7 +64,8 @@ export default class NewClass extends cc.Component {
     }
 
     onTeachHandler() {
-        MyProtocols.send_C2SSKillTeach(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this.pos, this.data.id)
+        console.log('this.skillId:'+this.skillId)
+        MyProtocols.send_C2SSKillTeach(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this.pos, this.skillId)
     }
 
     // update (dt) {}

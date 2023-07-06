@@ -66,7 +66,7 @@ export default class NewClass extends cc.Component {
         }
 
         this.icon.on(cc.Node.EventType.TOUCH_END, () => {
-            MyProtocols.send_C2SSKillTeach(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this._idx, this._data.id, this._data.level + 1)
+            MyProtocols.send_C2SSKillStUp(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this._idx, this._data.id, this._data.level + 1)
         }, this)
     }
 
