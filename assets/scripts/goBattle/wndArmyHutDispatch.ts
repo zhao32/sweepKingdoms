@@ -188,11 +188,13 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName('heroRender').active = false
             this.node.getChildByName(`noHeroDefine`).active = false
             this.titleDisplay.node.parent.y = 230
+            this.onSelectSolider = true
         } else if (eviType == 1) {
             this.titleDisplay.string = '协助进攻'
             this.node.getChildByName('heroRender').active = false
             this.node.getChildByName(`noHeroDefine`).active = false
             this.titleDisplay.node.parent.y = 230
+            this.onSelectSolider = true
         } else {
             this.titleDisplay.node.parent.y = 330
 
@@ -271,16 +273,17 @@ export default class NewClass extends cc.Component {
     }
 
     doSave() {
-        // if (this.onSelectSolider) {
-        this.mobilizeSoliders = []
-        for (let i = 0; i < this.myContect.children.length; i++) {
-            let soliderItem = this.myContect.children[i]
-            let data = soliderItem.getComponent(battleSoliderRender).getSelectNum()
-            if (data.count != 0) {
-                this.mobilizeSoliders.push(data)
+        if (this.onSelectSolider) {
+            this.mobilizeSoliders = []
+            for (let i = 0; i < this.myContect.children.length; i++) {
+                let soliderItem = this.myContect.children[i]
+
+                let data = soliderItem.getComponent(battleSoliderRender).getSelectNum()
+                if (data.count != 0) {
+                    this.mobilizeSoliders.push(data)
+                }
             }
         }
-        // }
 
         let id
         if (this.myHeroData) {
