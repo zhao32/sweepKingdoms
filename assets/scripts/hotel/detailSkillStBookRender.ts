@@ -57,11 +57,11 @@ export default class NewClass extends cc.Component {
         this.nameLabel.string = skillSt.name + ' x'+ data.num
         this.richLabel.string = skillSt.des
 
-        if (skillSt.type == 0) {
+        if (skillSt.type == 1) {
             ResManager.loadItemIcon(`skillats/红`, this.bg)
-        } else if (skillSt.type == 1) {
-            ResManager.loadItemIcon(`skillats/黄`, this.bg)
         } else if (skillSt.type == 2) {
+            ResManager.loadItemIcon(`skillats/黄`, this.bg)
+        } else if (skillSt.type == 3) {
             ResManager.loadItemIcon(`skillats/蓝`, this.bg)
         }
         ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.icon)

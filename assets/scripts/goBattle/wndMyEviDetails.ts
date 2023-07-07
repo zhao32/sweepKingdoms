@@ -85,7 +85,7 @@ export default class NewClass extends cc.Component {
         //     ResManager.loadItemIcon(`goBattle/icon0`,this.icon)
         // }
         NetEventDispatcher.addListener(NetEvent.S2CEviGate, this.S2CEviGate, this)
-
+        this.node.getChildByName(`btnRecruit`).getComponent(cc.Button).interactable = DataManager.curMineDetailData.state == 0 
 
     }
 
@@ -118,6 +118,9 @@ export default class NewClass extends cc.Component {
 
     S2CEviGate(data) {
         console.log(JSON.stringify(`开启恶魔之门返回` + JSON.stringify(data)))
+        DataManager.curMineDetailData.state = data.state
+        this.node.getChildByName(`btnRecruit`).getComponent(cc.Button).interactable = false
+
     }
 
 
