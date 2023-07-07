@@ -214,12 +214,19 @@ export default class NewClass extends cc.Component {
         if (cardId == 0) {
             this.node.getChildByName("enemy").active = false
         } else {
-            let defaultData = DataManager.GameData.Cards[cardId]
+            let defaultData //= DataManager.GameData.Cards[cardId]
+            for (let i = 0; i < DataManager.cardsList.length; i++) {
+                if (cardId == DataManager.cardsList[i].id) {
+                    defaultData = DataManager.GameData.Cards[DataManager.cardsList[i].template_id]
+                }
+            }
             let enemyContect = this.node.getChildByName("enemy");
-            enemyContect.getChildByName('name').getComponent(cc.Label).string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
-            ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, enemyContect.getChildByName('head'))
-            ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, enemyContect.getChildByName('iconBg'))
-            ResManager.loadItemIcon(`hero/heroNameBg${defaultData.quality - 1}`, enemyContect.getChildByName('heroNameBg0'))
+            if (defaultData) {
+                enemyContect.getChildByName('name').getComponent(cc.Label).string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
+                ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, enemyContect.getChildByName('head'))
+                ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, enemyContect.getChildByName('iconBg'))
+                ResManager.loadItemIcon(`hero/heroNameBg${defaultData.quality - 1}`, enemyContect.getChildByName('heroNameBg0'))
+            }
         }
 
         this.otherContect.removeAllChildren()
