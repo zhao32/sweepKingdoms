@@ -65,15 +65,26 @@ export default class NewClass extends cc.Component {
 
                                 // }
                                 ResManager.loadItemIcon(`UI/UnitsEquips/${list[j][k].template_id}`, item.getChildByName('pic'))
-                            } else {
-                                if(list[j][k].bagId == 1){
-                                    console.log(JSON.stringify(list[j][k]))
-                                    ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[list[j][k].template_id].icon }`, item.getChildByName('pic'))
+                            } else if (list[j][k].bagId == 1) {
+                                console.log(JSON.stringify(list[j][k]))
+                                ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[list[j][k].template_id].icon}`, item.getChildByName('pic'))
 
-                                }else{
-                                    ResManager.loadItemIcon(`UI/items/${list[j][k].template_id}`, item.getChildByName('pic'))
+                            } else if (list[j][k].bagId == 3) {
+                                let skillSt = DataManager.GameData.SkillStudy[list[j][k].template_id]
+                                ResManager.loadItemIcon(`skillats/${skillSt.name}`, item.getChildByName('pic'))
 
+                                if (skillSt.type == 1) {
+                                    ResManager.loadItemIcon(`skillats/红`, item)
+                                } else if (skillSt.type == 2) {
+                                    ResManager.loadItemIcon(`skillats/黄`, item)
+                                } else if (skillSt.type == 3) {
+                                    ResManager.loadItemIcon(`skillats/蓝`, item)
                                 }
+
+                                // ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[list[j][k].template_id].icon }`, item.getChildByName('pic'))
+
+                            } else {
+                                ResManager.loadItemIcon(`UI/items/${list[j][k].template_id}`, item.getChildByName('pic'))
                             }
                             item.parent = render
                             item.on(cc.Node.EventType.TOUCH_END, () => {

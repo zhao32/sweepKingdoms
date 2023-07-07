@@ -271,16 +271,16 @@ export default class NewClass extends cc.Component {
     }
 
     doSave() {
-        if (this.onSelectSolider) {
-            this.mobilizeSoliders = []
-            for (let i = 0; i < this.myContect.children.length; i++) {
-                let soliderItem = this.myContect.children[i]
-                let data = soliderItem.getComponent(battleSoliderRender).getSelectNum()
-                if (data.count != 0) {
-                    this.mobilizeSoliders.push(data)
-                }
+        // if (this.onSelectSolider) {
+        this.mobilizeSoliders = []
+        for (let i = 0; i < this.myContect.children.length; i++) {
+            let soliderItem = this.myContect.children[i]
+            let data = soliderItem.getComponent(battleSoliderRender).getSelectNum()
+            if (data.count != 0) {
+                this.mobilizeSoliders.push(data)
             }
         }
+        // }
 
         let id
         if (this.myHeroData) {

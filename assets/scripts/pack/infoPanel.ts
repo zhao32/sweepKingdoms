@@ -59,20 +59,39 @@ export default class NewClass extends cc.Component {
             this.btnLabel1.string = `出售`
             ResManager.loadItemIcon(`UI/UnitsEquips/${data.template_id}`, this.pic)
 
-        } else if (data.bagId == 3) {//宝物
-            defaultData = DataManager.GameData.Treasures[data.template_id]
-            ResManager.loadItemIcon(`UI/items/${data.template_id}`, this.pic)
-            this.btnLabel0.string = `精炼`
-            this.btnLabel1.string = `强化`
+            this.nameLabel.string = defaultData.name
+            this.countLabel.string = 'x' + data.num
+            this.richLabel.string = defaultData.des
+    
+
+        } else if (data.bagId == 3) {//技能
+            // defaultData = DataManager.GameData.Treasures[data.template_id]
+            // ResManager.loadItemIcon(`UI/items/${data.template_id}`, this.pic)
+            // this.btnLabel0.string = `精炼`
+            // this.btnLabel1.string = `强化`
+
+            let skillSt = DataManager.GameData.SkillStudy[data.template_id]
+            ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.pic)
+            this.node.getChildByName(`op`).active = false
+
+            // if (skillSt.type == 1) {
+            //     ResManager.loadItemIcon(`skillats/红`, item)
+            // } else if (skillSt.type == 2) {
+            //     ResManager.loadItemIcon(`skillats/黄`, item)
+            // } else if (skillSt.type == 3) {
+            //     ResManager.loadItemIcon(`skillats/蓝`, item)
+            // }
+
+            this.nameLabel.string = skillSt.name
+            this.countLabel.string = 'x' + data.num
+            this.richLabel.string = skillSt.des
+    
         }
         console.log('defaultData:'+ JSON.stringify(defaultData))
 
         if (!defaultData) return
 
-        this.nameLabel.string = defaultData.name
-        this.countLabel.string = 'x' + data.num
-        this.richLabel.string = defaultData.des
-
+     
     }
 
     btnHandler0() {

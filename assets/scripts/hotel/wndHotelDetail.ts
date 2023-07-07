@@ -161,7 +161,9 @@ export default class NewClass extends cc.Component {
         DataManager.wndHotelDetail = this
         this.node.getChildByName('runePutPanel').active = false
         this.node.getChildByName('skillstPanel').active = false
+        this.node.getChildByName('skillUpPanel').active = false
 
+        
         // packManager.getInstance().reflishBag()
         NetEventDispatcher.addListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock, this)
         NetEventDispatcher.addListener(NetEvent.S2CSKillTeach, this.S2CSKillTeach, this)
