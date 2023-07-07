@@ -175,6 +175,9 @@ export default class EnumManager {
         /**注释弹窗 */
         NOTE_DES: 'prefabs/common/noteDes',
 
+        NOTE_SOLIDER: 'prefabs/common/noteSolider',
+
+
         
 
 

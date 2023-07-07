@@ -90,7 +90,9 @@ export default class NewClass extends cc.Component {
 
         let str = DataManager.getSoliderDes(DataManager.GameData.Soldier[idx])
         this.node.getChildByName(`head`).on(cc.Node.EventType.TOUCH_END, () => {
-            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES, ...[str])
+            // ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES, ...[str])
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_SOLIDER, ...[DataManager.GameData.Soldier[idx]])
+
         }, this)
     }
 
