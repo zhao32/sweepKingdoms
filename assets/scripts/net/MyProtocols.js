@@ -1462,7 +1462,7 @@ var MyProtocols = {
 					retObj.mine_points[i].hold_player.cd_time = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.group = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.lv = myDecoder.readInt();
-                    //  debugger;
+					//  debugger;
 					retObj.mine_points[i].hold_player.page = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.idx = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.country = myDecoder.readInt();
@@ -6884,9 +6884,10 @@ var MyProtocols = {
 		retObj.x = myDecoder.readInt();
 		retObj.y = myDecoder.readInt();
 		retObj.county = myDecoder.readInt();
+		retObj.state = myDecoder.readInt();
 		return retObj;
 	},
-
+	
 	send_C2SSKillTeach(senderSocket, cardid, idx, skillid) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2035);
