@@ -96,6 +96,16 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName(`btnOut`).active = true
         }
 
+        if (DataManager.curMineDetailData.state == 1) {
+            this.node.getChildByName(`btnFight`).active = true
+        } else {
+            this.node.getChildByName(`btnFight`).active = false
+        }
+
+    }
+
+    doFightHandler(){
+        
     }
 
     onCloseHandler() {
