@@ -42,8 +42,8 @@ export default class NewClass extends cc.Component {
             if (item.bagId == 3) {
                 let skillSt = DataManager.GameData.SkillStudy[item.template_id]
                 if (skillSt.type == data.type) {
-                    skillStList.push(skillSt)
-                    idList.push(item.template_id)
+                    skillStList.push(item)
+                    // idList.push(item.template_id)
                 }
             }
         }
@@ -55,7 +55,7 @@ export default class NewClass extends cc.Component {
             for (let i = 0; i < skillStList.length; i++) {
                 let render = cc.instantiate(this.skBookPfb)
                 render.parent = this.contect
-                render.getComponent(detailSkillStBookRender).init(skillStList[i], this.idx, idList[i])
+                render.getComponent(detailSkillStBookRender).init(skillStList[i], this.idx)
             }
         }
 

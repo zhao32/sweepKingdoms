@@ -6,6 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import DataManager from "../utils/Manager/DataManager";
+import ResManager from "../utils/Manager/ResManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -22,8 +23,8 @@ export default class NewClass extends cc.Component {
     @property(cc.Label)
     lvLablel: cc.Label = null;
 
-    @property
-    text: string = 'hello';
+    @property(cc.Node)
+    icon: cc.Node = null;
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -50,6 +51,9 @@ export default class NewClass extends cc.Component {
         this._data = data
         this._idx = idx
         this.lvLablel.string = `LV${data.level}   --->   LV${data.level + 1}`
+
+        let skillSt = DataManager.GameData.SkillStudy[data.id]
+        ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.icon)
     }
 
     // update (dt) {}

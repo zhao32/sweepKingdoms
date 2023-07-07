@@ -63,7 +63,7 @@ export default class NewClass extends cc.Component {
         if (data.id != 0) {
             let skillSt = DataManager.GameData.SkillStudy[data.id]
             ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.icon)
-            this.nameLabel.string = `${skillSt.name} LV ${data.level}`
+            this.nameLabel.string = `${skillSt.name.slice(0, -2)} LV ${data.level}`
             this.richLabel.string = skillSt.des
 
         }

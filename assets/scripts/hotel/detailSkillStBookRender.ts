@@ -34,7 +34,7 @@ export default class NewClass extends cc.Component {
     bg: cc.Node = null;
 
 
-    data;
+    // data;
     pos;
 
     skillId:number
@@ -47,22 +47,24 @@ export default class NewClass extends cc.Component {
 
     }
 
-    init(data, pos, template_id) {
-        this.skillId = template_id
-        console.log(`data:` + JSON.stringify(data))
-        this.data = data
-        this.pos = pos
-        this.nameLabel.string = data.name
-        this.richLabel.string = data.des
+    init(data, pos) {
+        let skillSt = DataManager.GameData.SkillStudy[data.template_id]
 
-        if (data.type == 0) {
+        this.skillId =data.template_id
+        console.log(`data:` + JSON.stringify(data))
+        // this.data = data
+        this.pos = pos
+        this.nameLabel.string = skillSt.name + ' x'+ data.num
+        this.richLabel.string = skillSt.des
+
+        if (skillSt.type == 0) {
             ResManager.loadItemIcon(`skillats/红`, this.bg)
-        } else if (data.type == 1) {
+        } else if (skillSt.type == 1) {
             ResManager.loadItemIcon(`skillats/黄`, this.bg)
-        } else if (data.type == 2) {
+        } else if (skillSt.type == 2) {
             ResManager.loadItemIcon(`skillats/蓝`, this.bg)
         }
-        ResManager.loadItemIcon(`skillats/${data.name}`, this.icon)
+        ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.icon)
     }
 
     onTeachHandler() {
