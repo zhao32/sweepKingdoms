@@ -6887,7 +6887,7 @@ var MyProtocols = {
 		retObj.state = myDecoder.readInt();
 		return retObj;
 	},
-	
+
 	send_C2SSKillTeach(senderSocket, cardid, idx, skillid) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2035);
@@ -6929,6 +6929,21 @@ var MyProtocols = {
 		return retObj;
 	},
 
+
+
+	send_C2SRebirth: function (senderSocket) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(1059);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_1060: function (myDecoder) {
+		var retObj = {};
+		retObj.num = myDecoder.readInt();
+		return retObj;
+	},
 
 }
 

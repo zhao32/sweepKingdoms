@@ -365,6 +365,12 @@ export enum NetEvent {
 
     S2CSKillStUp = 2038,
 
+    /**士兵复活 */
+    C2SRebirth = 1059,
+
+    S2CRebirth = 1060
+
+
 
 }
 

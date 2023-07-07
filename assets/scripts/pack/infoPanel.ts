@@ -62,7 +62,7 @@ export default class NewClass extends cc.Component {
             this.nameLabel.string = defaultData.name
             this.countLabel.string = 'x' + data.num
             this.richLabel.string = defaultData.des
-    
+
 
         } else if (data.bagId == 3) {//技能
             // defaultData = DataManager.GameData.Treasures[data.template_id]
@@ -85,13 +85,24 @@ export default class NewClass extends cc.Component {
             this.nameLabel.string = skillSt.name
             this.countLabel.string = 'x' + data.num
             this.richLabel.string = skillSt.des
-    
+
+        } else if (data.bagId == 1) {
+            defaultData = DataManager.GameData.packItems[data.template_id]
+
+            this.btnLabel0.string = `使用`
+            this.btnLabel1.string = `出售`
+            ResManager.loadItemIcon(`UI/items/${defaultData.icon}`, this.pic)
+
+            this.nameLabel.string = defaultData.name
+            this.countLabel.string = 'x' + data.num
+            this.richLabel.string = defaultData.des
+
         }
-        console.log('defaultData:'+ JSON.stringify(defaultData))
+        console.log('defaultData:' + JSON.stringify(defaultData))
 
         if (!defaultData) return
 
-     
+
     }
 
     btnHandler0() {

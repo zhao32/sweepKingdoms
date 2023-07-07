@@ -716,22 +716,50 @@
       {
         "unlocklevel": 10,
         "money": 1000,
-        "population": 10
+        "population": [
+          1,
+          5,
+          0
+        ],
+        "soldier": [
+          1
+        ]
       },
       {
         "unlocklevel": 30,
         "money": 2000,
-        "population": 20
+        "population": [
+          1,
+          5,
+          0
+        ],
+        "soldier": [
+          1
+        ]
       },
       {
         "unlocklevel": 50,
         "money": 3000,
-        "population": 30
+        "population": [
+          1,
+          5,
+          0
+        ],
+        "soldier": [
+          1
+        ]
       },
       {
         "unlocklevel": 70,
         "money": 5000,
-        "population": 40
+        "population": [
+          1,
+          5,
+          0
+        ],
+        "soldier": [
+          1
+        ]
       }
     ],
     "9": [

@@ -122,6 +122,7 @@ export default class NewClass extends cc.Component {
         this.troopsDisplay1.string = String(DataManager.playData.population)
         this.priceDisplay1.string = `x` + String(DataManager.GameData.buildUp[group][idx][grade - 1].population[1] * 0.01 * (DataManager.playData.population) * price);
 
+        console.log(`------:`+JSON.stringify(DataManager.GameData.buildUp[group][idx][grade - 1]) )
         this.soliderType = DataManager.GameData.buildUp[group][idx][grade - 1].soldier[0];
 
         ResManager.loadItemIcon(`soliderHead/${DataManager.GameData.Soldier[idx - 1].name}`, this.soldierSprite.node)

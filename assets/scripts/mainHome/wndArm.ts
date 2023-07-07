@@ -121,7 +121,7 @@ export default class NewClass extends cc.Component {
             if (idx == 1) {
                 tipStr = `提供 ${levelData.Soldier} 个士兵上限`
             } else if (idx == 8) {
-                tipStr = `可以招募特色兵种，每次招募 ${levelData.population}%主城人口`
+                tipStr = `可以招募特色兵种，每次招募 ${levelData.population[1]}%主城人口`
             } else if (idx == 9) {
                 tipStr = `可以强化士兵的属性`
             } else {

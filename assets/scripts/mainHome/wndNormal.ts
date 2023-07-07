@@ -5,12 +5,19 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -43,6 +50,12 @@ export default class NewClass extends cc.Component {
         // let barracksList = ["军营", '盾卫训练场', '骑士训练场', '枪兵训练场', '箭手训练场', '法师', '木牛工厂', '军魂祭坛', '部队强化']
         // let resourceList = ["铸币工坊", "粮草工坊", "领土中心", "技术研究所"];
         // let basicList = ["居民区", "资源仓库", "神像", "英魂墓地", "城墙"];
+
+        if (name == '英魂墓地') {
+            this.node.getChildByName(`btnReLife`).active = true
+        } else {
+            this.node.getChildByName(`btnReLife`).active = false
+        }
 
         let group = ''
         let idx = 0
@@ -127,6 +140,12 @@ export default class NewClass extends cc.Component {
         this.nameDisplay.string = name
         this.bulidName = name
         ResManager.loadItemIcon(`UI/mainHome/${name}`, this.pic)
+
+        NetEventDispatcher.addListener(NetEvent.S2CRebirth, this.S2CRebirth, this)
+    }
+
+    S2CRebirth(data) {
+        console.log('复活返回：' + JSON.stringify(data))
     }
 
     onCloseHandler() {
@@ -138,7 +157,13 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_UPGRADE, ...[this.bulidName])
     }
 
+    onRelifeHandler() {
+        ViewManager.instance.showToast(`点击复活`)
+        MyProtocols.send_C2SRebirth(DataManager._loginSocket)
+    }
+
     onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CRebirth, this.S2CRebirth, this)
 
     }
 }
