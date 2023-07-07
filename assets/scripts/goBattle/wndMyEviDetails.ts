@@ -85,7 +85,16 @@ export default class NewClass extends cc.Component {
         //     ResManager.loadItemIcon(`goBattle/icon0`,this.icon)
         // }
         NetEventDispatcher.addListener(NetEvent.S2CEviGate, this.S2CEviGate, this)
-        this.node.getChildByName(`btnRecruit`).getComponent(cc.Button).interactable = DataManager.curMineDetailData.state == 0 
+        this.node.getChildByName(`btnOpen`).active = DataManager.curMineDetailData.state == 0
+        if (DataManager.curMineDetailData.state == 0) {
+            this.node.getChildByName(`btnOpen`).active = true
+            this.node.getChildByName(`btnIn`).active = false
+            this.node.getChildByName(`btnOut`).active = false
+        } else {
+            this.node.getChildByName(`btnOpen`).active = false
+            this.node.getChildByName(`btnIn`).active = true
+            this.node.getChildByName(`btnOut`).active = true
+        }
 
     }
 
@@ -119,8 +128,25 @@ export default class NewClass extends cc.Component {
     S2CEviGate(data) {
         console.log(JSON.stringify(`开启恶魔之门返回` + JSON.stringify(data)))
         DataManager.curMineDetailData.state = data.state
-        this.node.getChildByName(`btnRecruit`).getComponent(cc.Button).interactable = false
 
+        this.node.getChildByName(`btnOpen`).active = false
+        this.node.getChildByName(`btnIn`).active = true
+        this.node.getChildByName(`btnOut`).active = true
+
+    }
+
+    /**调兵驻防 */
+    ondispatchArmyHandler() {
+        console.log(`------调兵驻防--------`)
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'in'])
+    }
+
+    /**撤回主城 */
+    onRevokeHandler() {
+        console.log(`------撤回主城--------`)
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'out'])
     }
 
 
