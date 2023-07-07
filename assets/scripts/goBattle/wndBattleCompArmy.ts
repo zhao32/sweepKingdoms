@@ -119,7 +119,7 @@ export default class NewClass extends cc.Component {
         console.log(JSON.stringify(retObj))
         // debugger;
         if (retObj.formation) {
-            if (retObj.formation.a != 0) {
+            if (retObj.formation.a != 0 && retObj.cards.length > 0) {
                 let heroItem = cc.instantiate(this.heroPfb)
                 heroItem.parent = this.definContect
                 let cardData
