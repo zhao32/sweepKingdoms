@@ -104,17 +104,17 @@ export default class NewClass extends cc.Component {
 
         let workKeyList = []
         for (let i = 0; i < retObj.exclude_cards.length; i++) {
-            workKeyList.push(retObj.exclude_cards[i].template_id)
+            workKeyList.push(retObj.exclude_cards[i].id)
         }
 
-        for (let i = 0; i < retObj.cards.length; i++) {
-            workKeyList.push(retObj.cards[i].template_id)
-        }
+        // for (let i = 0; i < retObj.cards.length; i++) {
+        //     workKeyList.push(retObj.cards[i].id)
+        // }
 
         console.log('DataManager.cardsList:', JSON.stringify(DataManager.cardsList))
 
         for (let i = 0; i < DataManager.cardsList.length; i++) {
-            if (workKeyList.indexOf(DataManager.cardsList[i].template_id) == -1) {
+            if (workKeyList.indexOf(DataManager.cardsList[i].id) == -1) {
                 this.myCards.push(DataManager.cardsList[i])
             }
         }

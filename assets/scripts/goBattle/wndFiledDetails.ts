@@ -108,6 +108,7 @@ export default class NewClass extends cc.Component {
         if (data.hold_player.group == 101) {
             cityArea.active = true
             filedArea.active = false
+
             if (data.hold_player.id == 0) {
                 if (DataManager.pageGoBattle.myCityData) {
                     cityArea.children[0].active = true
@@ -123,6 +124,15 @@ export default class NewClass extends cc.Component {
                     cityArea.children[2].active = false
                     cityArea.children[3].active = true
                 }
+            } else {
+                cityArea.children[0].active = true
+                cityArea.children[1].active = true
+                cityArea.children[2].active = true
+                cityArea.children[0].getComponent(cc.Button).interactable = true
+                cityArea.children[1].getComponent(cc.Button).interactable = true
+                // cityArea.children[2].getComponent(cc.Button).interactable = true
+                cityArea.children[3].active = false
+
             }
         } else if (data.hold_player.group < 100) {
             cityArea.active = false

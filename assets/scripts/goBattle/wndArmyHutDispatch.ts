@@ -169,7 +169,7 @@ export default class NewClass extends cc.Component {
         this.soliders = []
         this.cards = []
         this.mobilizeSoliders = []
-        this.onSelectSolider = false
+        this.onSelectSolider = true
 
 
         this._type = type

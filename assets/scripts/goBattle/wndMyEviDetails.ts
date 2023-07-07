@@ -104,8 +104,11 @@ export default class NewClass extends cc.Component {
 
     }
 
-    doFightHandler(){
-        
+    doFightHandler() {
+
+        let myHeroData = DataManager.curMineDetailData.cards[0]
+        // ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_BATTLE, ...[myData, otherData, this.filedData])
+
     }
 
     onCloseHandler() {
