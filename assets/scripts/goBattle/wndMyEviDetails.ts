@@ -90,14 +90,25 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName(`btnOpen`).active = true
             this.node.getChildByName(`btnIn`).active = false
             this.node.getChildByName(`btnOut`).active = false
+
+            this.node.getChildByName(`btnDetail`).active = false
+            this.node.getChildByName(`btnUp`).active = true
+
+            
         } else if (DataManager.curMineDetailData.state == 2) {
             this.node.getChildByName(`btnOpen`).active = false
             this.node.getChildByName(`btnIn`).active = false
             this.node.getChildByName(`btnOut`).active = false
+
+            this.node.getChildByName(`btnDetail`).active = true
+            this.node.getChildByName(`btnUp`).active = false
         } else {
             this.node.getChildByName(`btnOpen`).active = false
             this.node.getChildByName(`btnIn`).active = true
             this.node.getChildByName(`btnOut`).active = true
+
+            this.node.getChildByName(`btnDetail`).active = true
+            this.node.getChildByName(`btnUp`).active = false
         }
 
         if (DataManager.curMineDetailData.state == 1) {
@@ -106,6 +117,15 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName(`btnFight`).active = false
         }
 
+    }
+
+    onDetailHandler() {
+        console.log(`------查看战场--------`)
+        // console.log(JSON.stringify(this._data.hold_player))
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_COMPYARMY, ...[this._data.hold_player])
+        // MyProtocols.send_C2SMineEviDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
     }
 
     doFightHandler() {
