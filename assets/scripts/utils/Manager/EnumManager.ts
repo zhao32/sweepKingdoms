@@ -177,6 +177,11 @@ export default class EnumManager {
 
         NOTE_SOLIDER: 'prefabs/common/noteSolider',
 
+        NOTE_GENERAL: 'prefabs/common/noteGeneral',
+
+
+        
+
 
         
 

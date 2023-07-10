@@ -90,6 +90,10 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName(`btnOpen`).active = true
             this.node.getChildByName(`btnIn`).active = false
             this.node.getChildByName(`btnOut`).active = false
+        } else if (DataManager.curMineDetailData.state == 2) {
+            this.node.getChildByName(`btnOpen`).active = false
+            this.node.getChildByName(`btnIn`).active = false
+            this.node.getChildByName(`btnOut`).active = false
         } else {
             this.node.getChildByName(`btnOpen`).active = false
             this.node.getChildByName(`btnIn`).active = true

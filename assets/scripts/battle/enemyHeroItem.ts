@@ -49,8 +49,8 @@ export default class enemyHeroItem extends cc.Component {
         }
 
         this.headBg.on(cc.Node.EventType.TOUCH_END,()=>{
-            let str = DataManager.getGeneralDes(data.template_id, data.id)
-            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES,...[str])
+            // let str = DataManager.getGeneralDes(data.template_id, data.id)
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL,...[data.template_id, data.id])
         },this)
 
         // for (let i = 1; i <= 3; i++) {

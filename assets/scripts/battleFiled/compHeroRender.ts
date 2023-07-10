@@ -40,8 +40,8 @@ export default class NewClass extends cc.Component {
         this.label1.string = `LV ${data.level}`
 
         this.icon.on(cc.Node.EventType.TOUCH_END, () => {
-            let str = DataManager.getGeneralDes(data.template_id, data.id)
-            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES, ...[str])
+            // let str = DataManager.getGeneralDes(data.template_id, data.id)
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL,...[data.template_id, data.id])
         }, this)
     }
 

@@ -60,8 +60,8 @@ export default class heroItem extends cc.Component {
         this.starDisplay.string = `x` + data.grade
 
         this.headBg.on(cc.Node.EventType.TOUCH_END,()=>{
-            let str = DataManager.getGeneralDes(data.template_id, data.id)
-            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES,...[str])
+            // let str = DataManager.getGeneralDes(data.template_id, data.id)
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL,...[data.template_id, data.id])
         },this)
 
     }
