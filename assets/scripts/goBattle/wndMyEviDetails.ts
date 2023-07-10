@@ -105,9 +105,89 @@ export default class NewClass extends cc.Component {
     }
 
     doFightHandler() {
+        console.log('curMineDetailData:' + JSON.stringify(DataManager.curMineDetailData))
+        DataManager.fightType = 4
 
-        let myHeroData = DataManager.curMineDetailData.cards[0]
-        // ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_BATTLE, ...[myData, otherData, this.filedData])
+        let myHeroData
+        let cardid = DataManager.curMineDetailData.formation.a
+        console.log('cardid:' + cardid)
+        for (let i = 0; i < DataManager.cardsList.length; i++) {
+            if (DataManager.cardsList[i].id == cardid) {
+                myHeroData = DataManager.cardsList[i]
+            }
+        }
+
+        let mySoliders = []
+
+
+        let myData = {
+            heroData: myHeroData,
+            soliderList: []
+        }
+
+        for (let i = 0; i < DataManager.curMineDetailData.soliderUse.length; i++) {
+            if (DataManager.curMineDetailData.soliderUse[i].arm != 0) {
+                mySoliders.push(DataManager.curMineDetailData.soliderUse[i])
+            }
+        }
+
+        let allNum = 0
+        for (let i = 0; i < mySoliders.length; i++) {
+            let data = mySoliders[i]
+            let defineData = {
+                arm: data.arm,
+                count: data.count,
+                fight: 0,
+                defense: 0
+            }
+            if (data.count > 0) {
+                myData.soliderList.push(defineData)
+            }
+            allNum += data.count
+        }
+
+        if (allNum == 0) {
+            ViewManager.instance.showToast('您还没有上阵士兵')
+            return
+        }
+
+        // for (let i = 0; i < retObj.cards.length; i++) {
+        //     workKeyList.push(retObj.cards[i].id)
+        // }
+
+        // console.log('DataManager.cardsList:', JSON.stringify(DataManager.cardsList))
+
+        let soliderData = []
+        for (let i = 0; i < DataManager.curMineDetailData.att_soliderUsed.length; i++) {
+            if (DataManager.curMineDetailData.att_soliderUsed[i].arm != 0) {
+                soliderData.push({
+                    arm: DataManager.curMineDetailData.att_soliderUsed[i].arm,
+                    count: DataManager.curMineDetailData.att_soliderUsed[i].count,
+                    fight: 0,
+                    defense: 0
+                })
+            }
+        }
+        if (DataManager.curMineDetailData.att_soliderUsed.length == 0) {
+            soliderData.push({
+                arm: 1,
+                count: 100,
+                fight: 0,
+                defense: 0
+            })
+        }
+
+        let otherData =
+        {
+            heroData: null,
+            soliderList: soliderData
+        }
+
+        console.log(`this.myHeroData:` + JSON.stringify(myHeroData))
+        MyProtocols.send_C2SEviGate(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country, 1)
+
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_BATTLE, ...[myData, otherData, this._data])
 
     }
 

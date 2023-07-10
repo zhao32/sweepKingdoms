@@ -182,6 +182,15 @@ export default class NewClass extends cc.Component {
     }
 
     getMyPlusList() {
+        if (!this.myData.heroData) {
+
+            // [{"arm":3,"fight":0,"defense":334.96},{"arm":1,"fight":0,"defense":22.95},{"arm":2,"fight":0,"defense":28.810000000000002}]
+            let list = []
+            for (let i = 0; i < this.myData.soliderList.length; i++) {
+                list.push({ arm: this.myData.soliderList.arm, fight: 0, defense: 0 })
+            }
+            return list
+        }
         let template_id = this.myData.heroData.template_id
         let skills = DataManager.GameData.Cards[template_id].skills
         let proficiency = this.myData.heroData.proficiency
@@ -211,6 +220,14 @@ export default class NewClass extends cc.Component {
     }
 
     getEnemyPlusList() {
+        if (!this.enemyData) {
+            // [{"arm":3,"fight":0,"defense":334.96},{"arm":1,"fight":0,"defense":22.95},{"arm":2,"fight":0,"defense":28.810000000000002}]
+            let list = []
+            for (let i = 0; i < this.enemyData.soliderList.length; i++) {
+                list.push({ arm: this.enemyData.soliderList.arm, fight: 0, defense: 0 })
+            }
+            return list
+        }
         let skills = this.enemyData.heroData.skills
         let talents = this.enemyData.heroData.talents
         let proficiency = [1000, 1000, 1000]
@@ -324,9 +341,12 @@ export default class NewClass extends cc.Component {
         }
 
         this.myContect.removeAllChildren()
-        let item0 = cc.instantiate(this.heroPfb)
-        item0.parent = this.myContect
-        item0.getComponent(heroItem).init(myData.heroData)
+        if (myData.heroData) {
+            let item0 = cc.instantiate(this.heroPfb)
+            item0.parent = this.myContect
+            item0.getComponent(heroItem).init(myData.heroData)
+        }
+
         for (let i = 0; i < myData.soliderList.length; i++) {
             let item = cc.instantiate(this.soliderPfb)
             item.parent = this.myContect

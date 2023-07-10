@@ -1854,7 +1854,7 @@ var MyProtocols = {
 	},
 
 
-	/**矿场战斗结果 type  0 是占领   1 掠夺   2  单挑  3 屠城 */
+	/**矿场战斗结果 type  0 是占领   1 掠夺   2  单挑  3 屠城 4 恶魔之门结算*/
 	send_C2SMineBattleCalculate: function (senderSocket, p_level_index, p_point_index, p_result, p_rand_key, nation, type) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3105);
@@ -6867,12 +6867,14 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	send_C2SEviGate: function (senderSocket, x, y, county) {
+	send_C2SEviGate: function (senderSocket, x, y, county, type) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(3119);
 		myEncoder.writeInt(x);
 		myEncoder.writeInt(y);
 		myEncoder.writeInt(county);
+		if (!type) type = 0
+		myEncoder.writeInt(type);
 
 		var rawContent = myEncoder.end();
 		myEncoder.free();
