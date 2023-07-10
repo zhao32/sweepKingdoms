@@ -219,7 +219,6 @@ export default class NewClass extends cc.Component {
         this.myHeroData = null
 
         if (this.onSelectSolider) {
-            console.log(this.myContect.children)
             for (let i = 0; i < this.myContect.children.length; i++) {
                 let soliderItem = this.myContect.children[i]
                 let data = soliderItem.getComponent(battleSoliderRender).getSelectNum()
@@ -230,7 +229,7 @@ export default class NewClass extends cc.Component {
         }
 
         this.onSelectSolider = false
-        console.log('this.cards:' + JSON.stringify(this.cards))
+        // console.log('this.cards:' + JSON.stringify(this.cards))
 
         this.myContect.removeAllChildren()
         for (let i = 0; i < this.cards.length; i++) {

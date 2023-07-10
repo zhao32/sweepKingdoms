@@ -1615,8 +1615,8 @@ var MyProtocols = {
 				if (skills_equips_size > 0) {
 					for (var skills_equips_idx = 0; skills_equips_idx < skills_equips_size; skills_equips_idx++) {
 						var data = {
-							templateId: myDecoder.readInt(),
-							leave: myDecoder.readInt(),
+							id: myDecoder.readInt(),
+							level: myDecoder.readInt(),
 							type: myDecoder.readInt(),
 						}
 						retObj.cards[i].skills_equips[skills_equips_idx] = data;
@@ -1633,12 +1633,12 @@ var MyProtocols = {
 				}
 
 				retObj.cards[i].talents = [];
-				retObj.cards[i].p = [];
+				retObj.cards[i].proficiency = [];
 				let talentssize = myDecoder.readInt();
 				if (talentssize > 0) {
 					for (var talent_idx = 0; talent_idx < talentssize; talent_idx++) {
 						retObj.cards[i].talents[talent_idx] = myDecoder.readInt();
-						retObj.cards[i].p[talent_idx] = myDecoder.readInt();
+						retObj.cards[i].proficiency[talent_idx] = myDecoder.readInt();
 					}
 				}
 

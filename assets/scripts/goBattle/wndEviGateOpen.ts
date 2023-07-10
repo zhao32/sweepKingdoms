@@ -8,6 +8,7 @@
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
+import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
@@ -22,10 +23,23 @@ var NetEventDispatcher = require("NetEventDispatcher");
 export default class NewClass extends cc.Component {
 
     @property(cc.Label)
-    label: cc.Label = null;
+    nameLabel: cc.Label = null;
 
-    @property
-    text: string = 'hello';
+    @property(cc.Label)
+    posLabel: cc.Label = null;
+
+    @property(cc.Label)
+    lordLabel: cc.Label = null;
+
+    @property(cc.Label)
+    troopsLabel: cc.Label = null;
+
+    @property(cc.Node)
+    icon: cc.Node = null;
+
+    @property(cc.Label)
+    awardLabel: cc.Label = null;
+
 
     _data: any
 
@@ -57,6 +71,15 @@ export default class NewClass extends cc.Component {
         }
 
         this.titleLabel.string = DataManager.mineData[data.hold_player.group].name
+
+
+        this._data = data
+        // let name = DataManager.mineData[data.hold_player.group].name
+        // this.nameLabel.string = data.hold_player.lv + '级' + name
+        this.lordLabel.string = data.hold_player.nickname ? `领主：${data.hold_player.nickname}` : `领主：无`
+        // this.awardLabel.string = `已产出：${data.hold_player.award}`
+
+        ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
 
     }
 

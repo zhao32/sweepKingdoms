@@ -32,7 +32,7 @@ export default class enemyHeroItem extends cc.Component {
 
     init(data) {
         console.log('e hero:'+JSON.stringify(data))
-        let defaultData = data//DataManager.GameData.Cards[data.template_id]
+        let defaultData = DataManager.GameData.Cards[data.template_id]
         // this.nameDisplay.string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
         ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.head)
         ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.headBg)

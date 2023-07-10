@@ -11,6 +11,7 @@ import soliderItem from "../battle/soliderItem";
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
+import GameUtil from "../utils/Manager/GameUtil";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
@@ -112,149 +113,148 @@ export default class NewClass extends cc.Component {
         // this.initResultPanel()
     }
 
-    /**
-     * 
-     * @param data 技能数据
-     * @param proficiency 熟练度
-     * @param talents 熟练兵种
-     */
-    doCount(data, proficiency, talents) {
-        // this.nameLabel.string = data.name
-        //skillAttributeList ['', '挥砍防御', '挥砍攻击', '穿透防御', '穿透攻击', '法术攻击', '法术防御']
+    // /**
+    //  * 
+    //  * @param data 技能数据
+    //  * @param proficiency 熟练度
+    //  * @param talents 熟练兵种
+    //  */
+    // doCount(data, proficiency, talents) {
+    //     // this.nameLabel.string = data.name
+    //     //skillAttributeList ['', '挥砍防御', '挥砍攻击', '穿透防御', '穿透攻击', '法术攻击', '法术防御']
 
-        // ResManager.loadItemIcon(`skills/${data.name}`, this.icon)
-        // 三字奥义	熟练度减熟练度的10%	减去之后除以20		
-        // 四字奥义	熟练度减熟练度的10%	减去之后除以18	减去之后除以40	
-        // 五字奥义	熟练度减熟练度的10%	减去之后除以16.4	减去之后除以36	减去之后除以90
-        let plusList = []
-        for (let i = 0; i < talents.length; i++) {
-            let plusData = {
-                arm: talents[i],
-                fight: 0,
-                defense: 0
-            }
-            for (let j = 0; j < data.attribute.length; j++) {
-                let num = proficiency[i] * 0.9
-                if (data.name.length == 2) {
-                    if (j == 0) {
-                        num = num / 21
-                    }
-                } else if (data.name.length == 3) {
-                    if (j == 0) {
-                        num = num / 20
-                    }
-                } else if (data.name.length == 4) {
-                    if (j == 0) {
-                        num = num / 18
-                    } else if (j == 1) {
-                        if (num / 18 > 40) {
-                            num = num / 18 - 40
-                        } else {
-                            num = num / 18 / 2
-                        }
-                    }
-                } else if (data.name.length == 5) {
-                    if (j == 0) {
-                        num = num / 16.4
-                    } else if (j == 1) {
-                        if (num / 16.4 > 36) {
-                            num = num / 16.4 - 36
-                        } else {
-                            num = num / 16.4 / 2
-                        }
-                    } else if (j == 2) {
-                        if (num / 16.4 > 36) {
-                            num = (num / 16.4 - 36) / 90
-                        } else {
-                            num = (num / 16.4 / 2) / 90
-                        }
-                    }
-                }
-                if (data.attribute[j] == 1 || data.attribute[j] == 3 || data.attribute[j] == 6) {//防御加成
-                    plusData.defense += Math.floor(num * 100) / 100  //Number(num.toFixed(2))
-                } else {
-                    plusData.fight += Math.floor(num * 100) / 100
-                }
-            }
-            plusList.push(plusData)
-        }
-        return plusList
-    }
+    //     // ResManager.loadItemIcon(`skills/${data.name}`, this.icon)
+    //     // 三字奥义	熟练度减熟练度的10%	减去之后除以20		
+    //     // 四字奥义	熟练度减熟练度的10%	减去之后除以18	减去之后除以40	
+    //     // 五字奥义	熟练度减熟练度的10%	减去之后除以16.4	减去之后除以36	减去之后除以90
+    //     let plusList = []
+    //     for (let i = 0; i < talents.length; i++) {
+    //         let plusData = {
+    //             arm: talents[i],
+    //             fight: 0,
+    //             defense: 0
+    //         }
+    //         for (let j = 0; j < data.attribute.length; j++) {
+    //             let num = proficiency[i] * 0.9
+    //             if (data.name.length == 2) {
+    //                 if (j == 0) {
+    //                     num = num / 21
+    //                 }
+    //             } else if (data.name.length == 3) {
+    //                 if (j == 0) {
+    //                     num = num / 20
+    //                 }
+    //             } else if (data.name.length == 4) {
+    //                 if (j == 0) {
+    //                     num = num / 18
+    //                 } else if (j == 1) {
+    //                     if (num / 18 > 40) {
+    //                         num = num / 18 - 40
+    //                     } else {
+    //                         num = num / 18 / 2
+    //                     }
+    //                 }
+    //             } else if (data.name.length == 5) {
+    //                 if (j == 0) {
+    //                     num = num / 16.4
+    //                 } else if (j == 1) {
+    //                     if (num / 16.4 > 36) {
+    //                         num = num / 16.4 - 36
+    //                     } else {
+    //                         num = num / 16.4 / 2
+    //                     }
+    //                 } else if (j == 2) {
+    //                     if (num / 16.4 > 36) {
+    //                         num = (num / 16.4 - 36) / 90
+    //                     } else {
+    //                         num = (num / 16.4 / 2) / 90
+    //                     }
+    //                 }
+    //             }
+    //             if (data.attribute[j] == 1 || data.attribute[j] == 3 || data.attribute[j] == 6) {//防御加成
+    //                 plusData.defense += Math.floor(num * 100) / 100  //Number(num.toFixed(2))
+    //             } else {
+    //                 plusData.fight += Math.floor(num * 100) / 100
+    //             }
+    //         }
+    //         plusList.push(plusData)
+    //     }
+    //     return plusList
+    // }
 
-    getMyPlusList() {
-        if (!this.myData.heroData) {
+    // getPlusAttriList(data) {
+    //     if (!data.heroData) {
+    //         // [{"arm":3,"fight":0,"defense":334.96},{"arm":1,"fight":0,"defense":22.95},{"arm":2,"fight":0,"defense":28.810000000000002}]
+    //         let list = []
+    //         for (let i = 0; i < data.soliderList.length; i++) {
+    //             list.push({ arm: data.soliderList.arm, fight: 0, defense: 0 })
+    //         }
+    //         return list
+    //     }
+    //     let template_id = data.heroData.template_id
+    //     let skills = DataManager.GameData.Cards[template_id].skills
+    //     let proficiency = data.heroData.proficiency
+    //     let talents = data.heroData.talents//DataManager.GameData.Cards[template_id].talents
+    //     let plusList = []
+    //     for (let i = 0; i < skills.length; i++) {
+    //         let skillData = DataManager.GameData.Skill[skills[i][0]]
+    //         let getList = this.doCount(skillData, proficiency, talents)
 
-            // [{"arm":3,"fight":0,"defense":334.96},{"arm":1,"fight":0,"defense":22.95},{"arm":2,"fight":0,"defense":28.810000000000002}]
-            let list = []
-            for (let i = 0; i < this.myData.soliderList.length; i++) {
-                list.push({ arm: this.myData.soliderList.arm, fight: 0, defense: 0 })
-            }
-            return list
-        }
-        let template_id = this.myData.heroData.template_id
-        let skills = DataManager.GameData.Cards[template_id].skills
-        let proficiency = this.myData.heroData.proficiency
-        let talents = this.myData.heroData.talents//DataManager.GameData.Cards[template_id].talents
-        let plusList = []
-        for (let i = 0; i < skills.length; i++) {
-            let skillData = DataManager.GameData.Skill[skills[i][0]]
-            let getList = this.doCount(skillData, proficiency, talents)
+    //         for (let j = 0; j < getList.length; j++) {
+    //             let item = getList[j]
+    //             let hasItem = false
+    //             for (let k = 0; k < plusList.length; k++) {
+    //                 if (item.arm == plusList[k].arm) {
+    //                     plusList[k].fight += item.fight
+    //                     plusList[k].defense += item.defense
+    //                     hasItem = true
+    //                 }
+    //             }
+    //             if (!hasItem) {
+    //                 plusList.push(item)
+    //             }
+    //         }
+    //     }
+    //     console.log('我的将领加成：' + JSON.stringify(plusList))
+    //     return plusList
+    // }
 
-            for (let j = 0; j < getList.length; j++) {
-                let item = getList[j]
-                let hasItem = false
-                for (let k = 0; k < plusList.length; k++) {
-                    if (item.arm == plusList[k].arm) {
-                        plusList[k].fight += item.fight
-                        plusList[k].defense += item.defense
-                        hasItem = true
-                    }
-                }
-                if (!hasItem) {
-                    plusList.push(item)
-                }
-            }
-        }
-        console.log('我的将领加成：' + JSON.stringify(plusList))
-        return plusList
-    }
+    // getEnemyPlusList() {
+    //     if (!this.enemyData) {
+    //         // [{"arm":3,"fight":0,"defense":334.96},{"arm":1,"fight":0,"defense":22.95},{"arm":2,"fight":0,"defense":28.810000000000002}]
+    //         let list = []
+    //         for (let i = 0; i < this.enemyData.soliderList.length; i++) {
+    //             list.push({ arm: this.enemyData.soliderList.arm, fight: 0, defense: 0 })
+    //         }
+    //         return list
+    //     }
+    //     let skills = this.enemyData.heroData.skills
+    //     let talents = this.enemyData.heroData.talents
+    //     let proficiency = [1000, 1000, 1000]
 
-    getEnemyPlusList() {
-        if (!this.enemyData) {
-            // [{"arm":3,"fight":0,"defense":334.96},{"arm":1,"fight":0,"defense":22.95},{"arm":2,"fight":0,"defense":28.810000000000002}]
-            let list = []
-            for (let i = 0; i < this.enemyData.soliderList.length; i++) {
-                list.push({ arm: this.enemyData.soliderList.arm, fight: 0, defense: 0 })
-            }
-            return list
-        }
-        let skills = this.enemyData.heroData.skills
-        let talents = this.enemyData.heroData.talents
-        let proficiency = [1000, 1000, 1000]
+    //     let plusList = []
+    //     for (let i = 0; i < skills.length; i++) {
+    //         let skillData = DataManager.GameData.Skill[skills[i][0]]
+    //         let getList = this.doCount(skillData, proficiency, talents)
 
-        let plusList = []
-        for (let i = 0; i < skills.length; i++) {
-            let skillData = DataManager.GameData.Skill[skills[i][0]]
-            let getList = this.doCount(skillData, proficiency, talents)
-
-            for (let j = 0; j < getList.length; j++) {
-                let item = getList[j]
-                let hasItem = false
-                for (let k = 0; k < plusList.length; k++) {
-                    if (item.arm == plusList[k].arm) {
-                        plusList[k].fight += item.fight
-                        plusList[k].defense += item.defense
-                        hasItem = true
-                    }
-                }
-                if (!hasItem) {
-                    plusList.push(item)
-                }
-            }
-        }
-        console.log('敌方将领加成：' + JSON.stringify(plusList))
-        return plusList
-    }
+    //         for (let j = 0; j < getList.length; j++) {
+    //             let item = getList[j]
+    //             let hasItem = false
+    //             for (let k = 0; k < plusList.length; k++) {
+    //                 if (item.arm == plusList[k].arm) {
+    //                     plusList[k].fight += item.fight
+    //                     plusList[k].defense += item.defense
+    //                     hasItem = true
+    //                 }
+    //             }
+    //             if (!hasItem) {
+    //                 plusList.push(item)
+    //             }
+    //         }
+    //     }
+    //     console.log('敌方将领加成：' + JSON.stringify(plusList))
+    //     return plusList
+    // }
 
     // showResult() {
     //     this.initResultPanel()
@@ -291,7 +291,7 @@ export default class NewClass extends cc.Component {
         console.log('myData:' + JSON.stringify(myData))
         console.error('otherData:' + JSON.stringify(otherData))
 
-        let myPlusList = this.getMyPlusList()
+        let myPlusList = GameUtil.instance.getPlusAttriList(myData)
         for (let i = 0; i < myData.soliderList.length; i++) {
             myData.soliderList[i].fight += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_1
             myData.soliderList[i].fight += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_2
@@ -320,8 +320,7 @@ export default class NewClass extends cc.Component {
                 otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_6
             }
         } else {
-            let enemyPlusList = this.getEnemyPlusList()
-
+            let enemyPlusList = GameUtil.instance.getPlusAttriList(otherData)
             for (let i = 0; i < otherData.soliderList.length; i++) {
                 otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_1
                 otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_2

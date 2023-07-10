@@ -78,7 +78,7 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
         let defineData =
         {
-            cardId: retObj.formation.a,
+            cardId: retObj.formation.a < 1000 ? 0 : retObj.formation.a,
             soliders: soliderData
         }
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data])

@@ -210,14 +210,15 @@ export default class NewClass extends cc.Component {
 
     initEnemyData(cardId, soliders) {
         console.log(`soliders:` + JSON.stringify(soliders))
-
+        console.log('cardId:' + cardId)
         if (cardId == 0) {
             this.node.getChildByName("enemy").active = false
         } else {
             let defaultData //= DataManager.GameData.Cards[cardId]
-            for (let i = 0; i < DataManager.cardsList.length; i++) {
-                if (cardId == DataManager.cardsList[i].id) {
-                    defaultData = DataManager.GameData.Cards[DataManager.cardsList[i].template_id]
+            for (let i = 0; i < DataManager.curMineDetailData.cards.length; i++) {
+                let cardData = DataManager.curMineDetailData.cards[i]
+                if (cardId == cardData.id) {
+                    defaultData = DataManager.GameData.Cards[cardData.template_id]
                 }
             }
             let enemyContect = this.node.getChildByName("enemy");
@@ -287,8 +288,18 @@ export default class NewClass extends cc.Component {
                 soliderList: []
             }
 
+            let eHeroData
+            if (this.enemyData.cardId == 0) {
+                eHeroData = null
+            } else {
+                for (let i = 0; i < DataManager.curMineDetailData.cards.length; i++) {
+                    if (this.enemyData.cardId == DataManager.curMineDetailData.cards[i].id) {
+                        eHeroData = DataManager.curMineDetailData.cards[i]
+                    }
+                }
+            }
             let otherData = {
-                heroData: DataManager.GameData.Cards[this.enemyData.cardId],
+                heroData: eHeroData,
                 soliderList: this.enemyData.soliders
             }
 

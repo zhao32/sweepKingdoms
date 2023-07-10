@@ -3363,8 +3363,20 @@
       "__id__": 1
     },
     "_enabled": true,
-    "label": null,
-    "text": "hello",
+    "nameLabel": null,
+    "posLabel": {
+      "__id__": 78
+    },
+    "lordLabel": {
+      "__id__": 81
+    },
+    "troopsLabel": {
+      "__id__": 87
+    },
+    "icon": {
+      "__id__": 14
+    },
+    "awardLabel": null,
     "titleLabel": {
       "__id__": 71
     },

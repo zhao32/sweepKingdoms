@@ -92,7 +92,7 @@ export default class NewClass extends cc.Component {
         console.log(JSON.stringify(retObj))
         console.log(retObj.formation.a)
         // debugger
-        if (retObj.state == 1) {
+        if (retObj.state == 1 || retObj.state == 2) {
             this.node.getChildByName('btnAtt').active = false
         } else if (retObj.state == 0) {
             this.node.getChildByName('btnAtt').active = true
@@ -117,8 +117,8 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_CONFIG, ...[defineData, this._data, false])
 
         }
-        
-        
+
+
         // else if (retObj.state == 2) {
         //     ViewManager.instance.hideWnd(DataManager.curWndPath)
         //     if (DataManager.playData.account_id == retObj.att_base_info.id) {

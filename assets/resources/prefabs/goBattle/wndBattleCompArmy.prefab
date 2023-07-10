@@ -817,7 +817,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 168.89,
+      "width": 136.89,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -869,8 +869,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "攻方:风之国",
-    "_N$string": "攻方:风之国",
+    "_string": "攻方:恶魔",
+    "_N$string": "攻方:恶魔",
     "_fontSize": 32,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -925,7 +925,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 131.59,
+      "width": 113.8,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -977,8 +977,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "主战：10",
-    "_N$string": "主战：10",
+    "_string": "主战：0",
+    "_N$string": "主战：0",
     "_fontSize": 32,
     "_lineHeight": 40,
     "_enableWrapText": true,

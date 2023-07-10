@@ -245,10 +245,12 @@ export default class NewClass extends cc.Component {
     S2CEviGate(data) {
         console.log(JSON.stringify(`开启恶魔之门返回` + JSON.stringify(data)))
         DataManager.curMineDetailData.state = data.state
-
+        this.init(this._data)
         this.node.getChildByName(`btnOpen`).active = false
         this.node.getChildByName(`btnIn`).active = true
         this.node.getChildByName(`btnOut`).active = true
+        this.node.getChildByName(`openPanel`).active = false
+
 
     }
 

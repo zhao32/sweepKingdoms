@@ -139,8 +139,6 @@ export default class NewClass extends cc.Component {
 
         NetEventDispatcher.addListener(NetEvent.S2CPubView, this.S2CPubView,this)
         NetEventDispatcher.addListener(NetEvent.S2CPubBuy, this.S2CPubBuy,this)
-
-        
     }
 
     onCloseHandler() {
@@ -148,9 +146,6 @@ export default class NewClass extends cc.Component {
             console.log('关闭窗口')
             ViewManager.instance.hideWnd(DataManager.curWndPath)
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL)
-
-          
-
         } else if (this.showType == 1) {
             this.showGroups()
         }
