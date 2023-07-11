@@ -170,7 +170,6 @@ export default class NewClass extends cc.Component {
             return
         }
 
-
         let soliderData = []
         for (let i = 0; i < DataManager.curMineDetailData.soliderUsed.length; i++) {
             if (DataManager.curMineDetailData.soliderUsed[i].arm != 0) {

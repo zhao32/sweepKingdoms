@@ -94,7 +94,7 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName(`btnDetail`).active = false
             this.node.getChildByName(`btnUp`).active = true
 
-            
+
         } else if (DataManager.curMineDetailData.state == 2) {
             this.node.getChildByName(`btnOpen`).active = false
             this.node.getChildByName(`btnIn`).active = false
@@ -243,13 +243,47 @@ export default class NewClass extends cc.Component {
     }
 
     S2CEviGate(data) {
-        console.log(JSON.stringify(`开启恶魔之门返回` + JSON.stringify(data)))
+        console.log(`开启恶魔之门返回` + JSON.stringify(JSON.stringify(data)))
         DataManager.curMineDetailData.state = data.state
-        this.init(this._data)
+        // this.init(this._data)
         this.node.getChildByName(`btnOpen`).active = false
         this.node.getChildByName(`btnIn`).active = true
         this.node.getChildByName(`btnOut`).active = true
         this.node.getChildByName(`openPanel`).active = false
+
+
+
+        this.node.getChildByName(`btnOpen`).active = DataManager.curMineDetailData.state == 0
+        if (DataManager.curMineDetailData.state == 0) {
+            this.node.getChildByName(`btnOpen`).active = true
+            this.node.getChildByName(`btnIn`).active = false
+            this.node.getChildByName(`btnOut`).active = false
+
+            this.node.getChildByName(`btnDetail`).active = false
+            this.node.getChildByName(`btnUp`).active = true
+
+
+        } else if (DataManager.curMineDetailData.state == 2) {
+            this.node.getChildByName(`btnOpen`).active = false
+            this.node.getChildByName(`btnIn`).active = false
+            this.node.getChildByName(`btnOut`).active = false
+
+            this.node.getChildByName(`btnDetail`).active = true
+            this.node.getChildByName(`btnUp`).active = false
+        } else {
+            this.node.getChildByName(`btnOpen`).active = false
+            this.node.getChildByName(`btnIn`).active = true
+            this.node.getChildByName(`btnOut`).active = true
+
+            this.node.getChildByName(`btnDetail`).active = true
+            this.node.getChildByName(`btnUp`).active = false
+        }
+
+        if (DataManager.curMineDetailData.state == 1) {
+            this.node.getChildByName(`btnFight`).active = true
+        } else {
+            this.node.getChildByName(`btnFight`).active = false
+        }
 
 
     }
