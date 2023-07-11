@@ -1690,7 +1690,7 @@ var MyProtocols = {
 		retObj.att_cards = [];
 		let att_cards_size = myDecoder.readInt();
 		if (att_cards_size > 0) {
-			for (var i = 0; i < cards_size; i++) {
+			for (var i = 0; i < att_cards_size; i++) {
 				retObj.att_cards[i] = {};
 				retObj.att_cards[i].id = myDecoder.readInt();
 				retObj.att_cards[i].template_id = myDecoder.readInt();

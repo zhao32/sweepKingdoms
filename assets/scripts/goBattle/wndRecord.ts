@@ -27,6 +27,8 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     renderPfb0: cc.Prefab = null;
 
+    type = 0
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -37,6 +39,7 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName(`panel`).active = false
             this.node.getChildByName(`scrollView`).active = true
             this.contect.removeAllChildren()
+            this.type = 1
             for (let i = 0; i < this.attList.length; i++) {
                 let item = cc.instantiate(this.renderPfb0)
                 item.parent = this.contect
@@ -52,11 +55,12 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName(`panel`).active = false
             this.node.getChildByName(`scrollView`).active = true
             this.contect.removeAllChildren()
+            this.type = 1
             for (let i = 0; i < this.defineList.length; i++) {
                 let item = cc.instantiate(this.renderPfb0)
                 item.parent = this.contect
 
-                let str ='防御'+ this.defineList[i].target_player_name+ `进攻我的` + this.attList[i].mine_point + '矿'
+                let str = '防御' + this.defineList[i].target_player_name + `进攻我的` + this.attList[i].mine_point + '矿'
                 str += this.attList[i].is_success == 1 ? '胜利，获取' : "失败，损失"
                 str += this.attList[i].gain.length > 0 ? `金币${this.attList[i].gain[0]}` : "金币0"
                 item.getChildByName('str').getComponent(cc.Label).string = str
@@ -87,16 +91,20 @@ export default class NewClass extends cc.Component {
                 this.defineList.push(data.records[i])
             }
         }
-        data.records
     }
 
     onCloseHandler() {
-        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        if (this.type == 1) {
+            this.type = 0
+            this.node.getChildByName(`panel`).active = true
+            this.node.getChildByName(`scrollView`).active = false
+        } else {
+            ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        }
     }
 
     onClose() {
         NetEventDispatcher.removeListener(NetEvent.S2CMineHistory, this.S2CMineHistory, this)
-
     }
 
     // update (dt) {}

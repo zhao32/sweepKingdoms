@@ -57,17 +57,31 @@ export default class NewClass extends cc.Component {
     init(data, state = DataManager.curMineDetailData.state) {
         this._data = data
         // NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
+        console.log(`DataManager.curMineDetailData.att_base_info.id:` + DataManager.curMineDetailData.att_base_info.id)
+        console.log('state:' + state)
+        console.log(`DataManager.playData.id:` + DataManager.playData.id)
+        this.node.getChildByName('btnFight').active = false
+        this.node.getChildByName('btnDefine').active = true
+        this.node.getChildByName('btnAtt').active = true
         if (state == 2) {
             this.node.getChildByName('btnDefine').getComponent(cc.Button).interactable = false
             this.node.getChildByName('btnAtt').getComponent(cc.Button).interactable = false
         } else {
-            if (data.hold_player.country == DataManager.playData.nation_id) {
-                this.node.getChildByName('btnDefine').getComponent(cc.Button).interactable = true
-                this.node.getChildByName('btnAtt').getComponent(cc.Button).interactable = false
+            // debugger
+            if (state == 1 && DataManager.playData.id == DataManager.curMineDetailData.att_base_info.id) {
+                this.node.getChildByName('btnFight').active = true
+                this.node.getChildByName('btnDefine').active = false
+                this.node.getChildByName('btnAtt').active = false
             } else {
-                this.node.getChildByName('btnDefine').getComponent(cc.Button).interactable = false
-                this.node.getChildByName('btnAtt').getComponent(cc.Button).interactable = true
+                if (data.hold_player.country == DataManager.playData.nation_id) {
+                    this.node.getChildByName('btnDefine').getComponent(cc.Button).interactable = true
+                    this.node.getChildByName('btnAtt').getComponent(cc.Button).interactable = false
+                } else {
+                    this.node.getChildByName('btnDefine').getComponent(cc.Button).interactable = false
+                    this.node.getChildByName('btnAtt').getComponent(cc.Button).interactable = true
+                }
             }
+
         }
 
         this.titleLabel.string = DataManager.mineData[data.hold_player.group].name
@@ -112,6 +126,88 @@ export default class NewClass extends cc.Component {
 
     onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+    }
+
+
+    doFightHandler() {
+        DataManager.fightType = 3
+        // debugger
+        let myHeroData = null
+        for (let i = 0; i < DataManager.cardsList.length; i++) {
+            if (DataManager.cardsList[i].id == DataManager.curMineDetailData.att_formation.a) {
+                myHeroData = DataManager.cardsList[i]
+            }
+        }
+
+        let mySoliders = []
+        for (let i = 0; i < DataManager.curMineDetailData.att_soliderUsed.length; i++) {
+            if (DataManager.curMineDetailData.att_soliderUsed[i].arm != 0) {
+                mySoliders.push(DataManager.curMineDetailData.att_soliderUsed[i])
+            }
+        }
+        let myData = {
+            heroData: myHeroData,
+            soliderList: []
+        }
+
+        let allNum = 0
+        for (let i = 0; i < mySoliders.length; i++) {
+            let data = mySoliders[i]
+            let defineData = {
+                arm: data.arm,
+                count: data.count,
+                fight: 0,
+                defense: 0
+            }
+            if (data.count > 0) {
+                myData.soliderList.push(defineData)
+            }
+            allNum += data.count
+        }
+
+        if (allNum == 0) {
+            ViewManager.instance.showToast('您还没有上阵士兵')
+            return
+        }
+
+
+        let soliderData = []
+        for (let i = 0; i < DataManager.curMineDetailData.soliderUsed.length; i++) {
+            if (DataManager.curMineDetailData.soliderUsed[i].arm != 0) {
+                soliderData.push({
+                    arm: DataManager.curMineDetailData.soliderUsed[i].arm,
+                    count: DataManager.curMineDetailData.soliderUsed[i].count,
+                    fight: 0,
+                    defense: 0
+                })
+            }
+        }
+        if (soliderData.length == 0) {
+            soliderData.push({
+                arm: 1,
+                count: 100,
+                fight: 0,
+                defense: 0
+            })
+        }
+
+        let eHeroData = null
+        if (DataManager.curMineDetailData.formation.a != 0) {
+            for (let i = 0; i < DataManager.curMineDetailData.cards.length; i++) {
+                if (DataManager.curMineDetailData.cards[i].id == DataManager.curMineDetailData.formation.a) {
+                    eHeroData = DataManager.curMineDetailData.cards[i]
+                }
+            }
+        }
+
+        let otherData =
+        {
+            heroData: eHeroData,
+            soliderList: soliderData
+        }
+
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_BATTLE, ...[myData, otherData, this._data])
     }
 
     onClose() {
