@@ -378,8 +378,11 @@ export default class NewClass extends cc.Component {
             console.log(JSON.stringify(data))
             MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
 
-
-            MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.filedData.hold_player.page, this.filedData.hold_player.idx, data, this.filedData.hold_player.country, 2)
+            if (DataManager.fightType == 3) {
+                MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.filedData.hold_player.page, this.filedData.hold_player.idx, data, this.filedData.hold_player.country, 3)
+            } else {
+                MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.filedData.hold_player.page, this.filedData.hold_player.idx, data, this.filedData.hold_player.country, 2)
+            }
 
         }
 

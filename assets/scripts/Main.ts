@@ -55,7 +55,7 @@ export default class NewClass extends cc.Component {
 
     S2CBagItems(retObj) {
         console.log(`请求背包信息返回`)
-        // console.log('retObj:' + JSON.stringify(retObj))
+        console.log('retObj:' + JSON.stringify(retObj))
         DataManager.instance.itemsList = retObj.item_list
 
     }

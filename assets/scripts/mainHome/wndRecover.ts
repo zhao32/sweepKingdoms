@@ -51,17 +51,17 @@ export default class NewClass extends cc.Component {
             }
         }
         this.contect.removeAllChildren()
-        for (let i = 0; i < 3; i++) {
-            let render = cc.instantiate(this.renderPfb0)
-            render.parent = this.contect
-            if (i < 5) {
-                render.x = 1000
-                this.scheduleOnce(() => {
-                    render.runAction(cc.moveTo(DataManager.SCROLLTIME1, cc.v2(0, render.y)))
-                }, DataManager.SCROLLTIME2 * i)
-            }
-            // render.getComponent(renderBulid0).init(this.groupsData[i])
-        }
+        // for (let i = 0; i < 3; i++) {
+        //     let render = cc.instantiate(this.renderPfb0)
+        //     render.parent = this.contect
+        //     if (i < 5) {
+        //         render.x = 1000
+        //         this.scheduleOnce(() => {
+        //             render.runAction(cc.moveTo(DataManager.SCROLLTIME1, cc.v2(0, render.y)))
+        //         }, DataManager.SCROLLTIME2 * i)
+        //     }
+        //     // render.getComponent(renderBulid0).init(this.groupsData[i])
+        // }
 
         NetEventDispatcher.addListener(NetEvent.S2CRebirth, this.S2CRebirth, this)
 
