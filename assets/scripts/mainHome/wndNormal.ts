@@ -159,7 +159,9 @@ export default class NewClass extends cc.Component {
 
     onRelifeHandler() {
         ViewManager.instance.showToast(`点击复活`)
-        MyProtocols.send_C2SRebirth(DataManager._loginSocket)
+        // MyProtocols.send_C2SRebirth(DataManager._loginSocket)
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_RECOVER)
     }
 
     onClose() {

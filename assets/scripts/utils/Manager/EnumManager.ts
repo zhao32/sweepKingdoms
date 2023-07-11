@@ -29,7 +29,6 @@ export default class EnumManager {
 
         PAGE_ROLE: 'prefabs/login/createrRoleLayer',
 
-
         WND_LOGIN: 'prefabs/login/wndLogin',
 
 
@@ -58,7 +57,9 @@ export default class EnumManager {
 
         WND_MAIN_MARKET: 'prefabs/main/wndMarket',
 
+        WND_MAIN_RECOVER: 'prefabs/main/wndRecover',
 
+        
 
         ///////////////////// 酒馆
         /**酒馆 */

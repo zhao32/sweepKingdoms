@@ -147,7 +147,7 @@ export default class NewClass extends cc.Component {
         }
 
         if (filedData.hold_player.group == 101) {
-            if (DataManager.fightType == 1 || DataManager.fightType == 3) {
+            if (DataManager.fightType == 3) {
                 this.node.getChildByName("fightBtn").active = false
                 this.node.getChildByName("btnSove").active = true
             }
@@ -377,6 +377,10 @@ export default class NewClass extends cc.Component {
             let data = { fid: 1, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.id, b: 0, c: 0, soldier: myData.soliderList }
             console.log(JSON.stringify(data))
             MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
+
+
+            MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this.filedData.hold_player.page, this.filedData.hold_player.idx, data, this.filedData.hold_player.country, 2)
+
         }
 
     }
