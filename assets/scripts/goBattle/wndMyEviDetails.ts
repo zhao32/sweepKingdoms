@@ -88,7 +88,7 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName(`btnOpen`).active = DataManager.curMineDetailData.state == 0
         if (DataManager.curMineDetailData.state == 0) {
             this.node.getChildByName(`btnOpen`).active = true
-            this.node.getChildByName(`btnIn`).active = false
+            this.node.getChildByName(`btnIn`).active = true
             this.node.getChildByName(`btnOut`).active = false
 
             this.node.getChildByName(`btnDetail`).active = false
