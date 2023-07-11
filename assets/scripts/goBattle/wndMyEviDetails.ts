@@ -149,6 +149,11 @@ export default class NewClass extends cc.Component {
             soliderList: []
         }
 
+        if (!myHeroData) {
+            ViewManager.instance.showToast(`请选择领队将领`)
+            return
+        }
+
         for (let i = 0; i < DataManager.curMineDetailData.soliderUse.length; i++) {
             if (DataManager.curMineDetailData.soliderUse[i].arm != 0) {
                 mySoliders.push(DataManager.curMineDetailData.soliderUse[i])
