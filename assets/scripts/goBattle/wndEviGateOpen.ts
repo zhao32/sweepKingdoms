@@ -57,7 +57,7 @@ export default class NewClass extends cc.Component {
     init(data, state = DataManager.curMineDetailData.state) {
         this._data = data
         // NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
-        console.log(`DataManager.curMineDetailData.att_base_info.id:` + DataManager.curMineDetailData.att_base_info.id)
+        // console.log(`DataManager.curMineDetailData.att_base_info.id:` + DataManager.curMineDetailData.att_base_info.id)
         console.log('state:' + state)
         console.log(`DataManager.playData.id:` + DataManager.playData.id)
         this.node.getChildByName('btnFight').active = false
@@ -68,7 +68,7 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName('btnAtt').getComponent(cc.Button).interactable = false
         } else {
             // debugger
-            if (state == 1 && DataManager.playData.id == DataManager.curMineDetailData.att_base_info.id) {
+            if (state == 1 && DataManager.curMineDetailData.att_base_info && DataManager.playData.id == DataManager.curMineDetailData.att_base_info.id) {
                 this.node.getChildByName('btnFight').active = true
                 this.node.getChildByName('btnDefine').active = false
                 this.node.getChildByName('btnAtt').active = false
@@ -88,7 +88,7 @@ export default class NewClass extends cc.Component {
 
 
         this._data = data
-        // let name = DataManager.mineData[data.hold_player.group].name
+        let name = DataManager.mineData[data.hold_player.group].name
         // this.nameLabel.string = data.hold_player.lv + '级' + name
         this.lordLabel.string = data.hold_player.nickname ? `领主：${data.hold_player.nickname}` : `领主：无`
         // this.awardLabel.string = `已产出：${data.hold_player.award}`

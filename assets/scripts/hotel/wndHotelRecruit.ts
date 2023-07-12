@@ -9,6 +9,7 @@ import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
+import hotelJinhuaRender from "./hotelJinhuaRender";
 import hotelRecruitRender from "./hotelRecruitRender";
 import renderReciruitResult1 from "./renderReciruitResult1";
 
@@ -33,6 +34,10 @@ export default class NewClass extends cc.Component {
 
     @property(cc.Prefab)
     renderResultPfb1: cc.Prefab = null;
+
+    @property(cc.Prefab)
+    renderResultPfb11: cc.Prefab = null;
+
 
     @property(cc.Label)
     titleDisplay: cc.Label = null;
@@ -76,12 +81,12 @@ export default class NewClass extends cc.Component {
     ]
 
     start() {
-      
+
     }
 
     S2CPubBuy(retObj) {
         console.log('酒馆招募返回' + JSON.stringify(retObj))
-        this.showIntragroup(retObj.cards)
+        // this.showIntragroup(retObj.cards)
     }
 
 
@@ -105,6 +110,9 @@ export default class NewClass extends cc.Component {
             render.getComponent(hotelRecruitRender).init(this.recruitData[i]);
             render.on(cc.Node.EventType.TOUCH_END, () => {
                 // this.showIntragroup()
+                this.contect.removeAllChildren()
+                this.showType = 1
+
                 MyProtocols.send_C2SPubBuy(DataManager._loginSocket, i)
 
             }, this)
@@ -137,8 +145,11 @@ export default class NewClass extends cc.Component {
 
         MyProtocols.send_C2SPubView(DataManager._loginSocket);
 
-        NetEventDispatcher.addListener(NetEvent.S2CPubView, this.S2CPubView,this)
-        NetEventDispatcher.addListener(NetEvent.S2CPubBuy, this.S2CPubBuy,this)
+        NetEventDispatcher.addListener(NetEvent.S2CPubView, this.S2CPubView, this)
+        NetEventDispatcher.addListener(NetEvent.S2CPubBuy, this.S2CPubBuy, this)
+
+        NetEventDispatcher.addListener(NetEvent.PushAddCard, this.PushAddCard, this)
+
     }
 
     onCloseHandler() {
@@ -152,9 +163,25 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CPubView, this.S2CPubView,this)
-        NetEventDispatcher.removeListener(NetEvent.S2CPubBuy, this.S2CPubBuy,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CPubView, this.S2CPubView, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CPubBuy, this.S2CPubBuy, this)
+        NetEventDispatcher.removeListener(NetEvent.PushAddCard, this.PushAddCard, this)
     }
 
+    PushAddCard(retObj) {
+        console.log('将表增加:' + JSON.stringify(retObj))
+        if (retObj.card_info.num != 0 && this.showType == 1) {
+            let render = cc.instantiate(this.renderResultPfb11)
+            render.getComponent(hotelJinhuaRender).init(retObj.card_info)
+
+            render.parent = this.contect
+            if (this.contect.children.length < 5) {
+                render.x = 1000
+                this.scheduleOnce(() => {
+                    render.runAction(cc.moveTo(DataManager.SCROLLTIME1, cc.v2(0, render.y)))
+                }, DataManager.SCROLLTIME2 * this.contect.children.length)
+            }
+        }
+    }
     // update (dt) {}
 }
