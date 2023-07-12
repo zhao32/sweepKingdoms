@@ -42,6 +42,13 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Label, displayName: '星级' })
     starDisplay: cc.Label = null;
 
+    @property(cc.Node)
+    skillContect: cc.Node = null;
+
+    @property(cc.Prefab)
+    skillPfb: cc.Prefab = null;
+
+
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -75,12 +82,45 @@ export default class NewClass extends cc.Component {
         this.gradeDisplay.string = 'LV ' + data.level
         this.starDisplay.string = `x${data.grade}`
 
-        this.headBg.on(cc.Node.EventType.TOUCH_END,()=>{
+        this.headBg.on(cc.Node.EventType.TOUCH_END, () => {
             // let str = DataManager.getGeneralDes(data.template_id, data.id)
-            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL,...[data.template_id, data.id])
-        },this)
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL, ...[data.template_id, data.id])
+        }, this)
 
-     
+
+        this.skillContect.removeAllChildren();
+
+        for (let i = 0; i < defaultData.skills.length; i++) {
+            let skillData = DataManager.GameData.Skill[defaultData.skills[i][0]]
+            let render = cc.instantiate(this.skillPfb)
+            render.parent = this.skillContect
+            ResManager.loadItemIcon(`skills/${skillData.name}`, render.getChildByName('skill'))
+
+        }
+
+        for (let i = 0; i < data.skills_equips.length; i++) {
+            let render = cc.instantiate(this.skillPfb)
+            render.parent = this.skillContect
+            // render.getComponent(detailSkillStRender).init(stData[i], i)
+            let skillstData = data.skills_equips[i]
+            if (skillstData.type == 0) {
+                ResManager.loadItemIcon(`skillats/红`, render)
+            } else if (skillstData.type == 1) {
+                ResManager.loadItemIcon(`skillats/黄`, render)
+            } else if (skillstData.type == 2) {
+                ResManager.loadItemIcon(`skillats/蓝`, render)
+            }
+
+            if (skillstData.id != 0) {
+                let skillSt = DataManager.GameData.SkillStudy[skillstData.id]
+                render.getChildByName('skill').active = true
+                ResManager.loadItemIcon(`skillats/${skillSt.name}`, render.getChildByName('skill'))
+            } else {
+                render.getChildByName('skill').active = false
+            }
+        }
+
+
 
 
         // for (let i = 1; i <= 3; i++) {
