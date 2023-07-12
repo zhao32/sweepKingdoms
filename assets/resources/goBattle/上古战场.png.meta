@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "ff92e408-33aa-427e-95f3-ca73aadf66ec",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 123,
+  "height": 150,
+  "platformSettings": {},
+  "subMetas": {
+    "上古战场": {
+      "ver": "1.0.6",
+      "uuid": "42a5ed9a-22d6-426e-ab61-442a00788dfc",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "ff92e408-33aa-427e-95f3-ca73aadf66ec",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 123,
+      "height": 150,
+      "rawWidth": 123,
+      "rawHeight": 150,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

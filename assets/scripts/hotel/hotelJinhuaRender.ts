@@ -90,13 +90,12 @@ export default class NewClass extends cc.Component {
 
         this.skillContect.removeAllChildren();
 
-        for (let i = 0; i < defaultData.skills.length; i++) {
-            let skillData = DataManager.GameData.Skill[defaultData.skills[i][0]]
-            let render = cc.instantiate(this.skillPfb)
-            render.parent = this.skillContect
-            ResManager.loadItemIcon(`skills/${skillData.name}`, render.getChildByName('skill'))
-
-        }
+        // for (let i = 0; i < defaultData.skills.length; i++) {
+        //     let skillData = DataManager.GameData.Skill[defaultData.skills[i][0]]
+        //     let render = cc.instantiate(this.skillPfb)
+        //     render.parent = this.skillContect
+        //     ResManager.loadItemIcon(`skills/${skillData.name}`, render.getChildByName('skill'))
+        // }
 
         for (let i = 0; i < data.skills_equips.length; i++) {
             let render = cc.instantiate(this.skillPfb)

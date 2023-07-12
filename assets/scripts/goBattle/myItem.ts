@@ -51,7 +51,7 @@ export default class NewClass extends cc.Component {
     // }
 
     init(data) {
-        let name = DataManager.mineData[data.group].name
+        let name = DataManager.getName(data) //DataManager.mineData[data.group].name
         this.nameLabel.string = name
         this.fightLabel.string = data.fight
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)

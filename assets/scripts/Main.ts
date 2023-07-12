@@ -229,14 +229,14 @@ export default class NewClass extends cc.Component {
         console.log('将表增加:' + JSON.stringify(retObj))
         if (retObj.card_info.num == 0) {
             for (let i = 0; i < DataManager.cardsList.length; i++) {
-                if (DataManager.cardsList[i].template_id == retObj.card_info.template_id) {
+                if (DataManager.cardsList[i].id == retObj.card_info.id) {
                     DataManager.cardsList.splice(i, 1)
                 }
             }
         } else {
             let has = false
             for (let i = 0; i < DataManager.cardsList.length; i++) {
-                if (DataManager.cardsList[i].template_id == retObj.card_info.template_id) {
+                if (DataManager.cardsList[i].id == retObj.card_info.id) {
                     has = true
                 }
             }

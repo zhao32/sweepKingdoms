@@ -86,6 +86,9 @@ export default class NewClass extends cc.Component {
             }
         }
 
+        console.log(`group:`+group)
+        console.log(`idx:`+idx)
+
         let grade = DataManager.GameData.build[group][idx - 1].grade
         let levelData = DataManager.GameData.buildUp[group][idx][grade - 1]
         this.lvDisplay.string = `LV ${grade}`

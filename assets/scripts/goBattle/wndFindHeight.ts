@@ -46,10 +46,10 @@ export default class NewClass extends cc.Component {
             group: '秦国矿石',
         },
         {
-            group: '楚国矿石',
+            group: '赵国矿石',
         },
         {
-            group: '赵国矿石',
+            group: '齐国矿石',
         },
         {
             group: '韩国矿石',

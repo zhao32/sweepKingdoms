@@ -8,6 +8,7 @@
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
+import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
@@ -84,8 +85,11 @@ export default class NewClass extends cc.Component {
 
         // NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
         // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
+        let name = DataManager.getName(data.hold_player)
         this.initDetailData(DataManager.curMineDetailData)
-        this.titleLabel.string = DataManager.mineData[data.hold_player.group].name
+        this.titleLabel.string = name//DataManager.mineData[data.hold_player.group].name
+        ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
+
     }
 
     initDetailData(retObj) {

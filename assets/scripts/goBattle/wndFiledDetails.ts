@@ -88,12 +88,13 @@ export default class NewClass extends cc.Component {
         DataManager.fightType = 0
         console.log('filedData:' + JSON.stringify(data))
         this._data = data
-        let name = DataManager.mineData[data.hold_player.group].name
+        let name = DataManager.getName(data.hold_player)
+        // let name = DataManager.mineData[data.hold_player.group].name
         this.nameLabel.string = data.hold_player.lv + '级' + name
         this.lordLabel.string = data.hold_player.nickname ? `领主：${data.hold_player.nickname}` : `领主：无`
         this.awardLabel.string = `已产出：${data.hold_player.award}`
 
-        this.titleLabel.string = DataManager.mineData[data.hold_player.group].name
+        this.titleLabel.string = name
 
 
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)

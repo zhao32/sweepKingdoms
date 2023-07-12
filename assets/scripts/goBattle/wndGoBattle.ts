@@ -291,49 +291,55 @@ export default class NewClass extends cc.Component {
         console.log('myData:' + JSON.stringify(myData))
         console.error('otherData:' + JSON.stringify(otherData))
 
+        let grade = DataManager.GameData.build['basic'][3 - 1].grade
+        let levelData = DataManager.GameData.buildUp['basic'][3][grade - 1]
+        let plusHp = levelData.protect[0]
         let myPlusList = GameUtil.instance.getPlusAttriList(myData)
         for (let i = 0; i < myData.soliderList.length; i++) {
+            let hp = DataManager.GameData.Soldier[myData.soliderList[i].arm].hp + plusHp
             myData.soliderList[i].fight += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_1
             myData.soliderList[i].fight += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_2
             myData.soliderList[i].fight += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_3
 
-            myData.soliderList[i].defense += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_4
-            myData.soliderList[i].defense += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_5
-            myData.soliderList[i].defense += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_6
+            myData.soliderList[i].defense += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_4 * hp
+            myData.soliderList[i].defense += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_5 * hp
+            myData.soliderList[i].defense += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_6 * hp
 
             for (let j = 0; j < myPlusList.length; j++) {
                 if (myPlusList[j].arm == myData.soliderList[i].arm) {
                     myData.soliderList[i].fight += myPlusList[j].fight
-                    myData.soliderList[i].defense += myPlusList[j].defense
+                    myData.soliderList[i].defense += myPlusList[j].defense * hp
                 }
             }
         }
 
         if (!otherData.heroData) {
             for (let i = 0; i < otherData.soliderList.length; i++) {
+                let hp = DataManager.GameData.Soldier[otherData.soliderList[i].arm].hp
                 otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_1
                 otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_2
                 otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_3
 
-                otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_4
-                otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_5
-                otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_6
+                otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_4 * hp
+                otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_5 * hp
+                otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_6 * hp
             }
         } else {
             let enemyPlusList = GameUtil.instance.getPlusAttriList(otherData)
             for (let i = 0; i < otherData.soliderList.length; i++) {
+                let hp = DataManager.GameData.Soldier[otherData.soliderList[i].arm].hp
                 otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_1
                 otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_2
                 otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_3
 
-                otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_4
-                otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_5
-                otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_6
+                otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_4 * hp
+                otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_5 * hp
+                otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_6 * hp
 
                 for (let j = 0; j < enemyPlusList.length; j++) {
                     if (enemyPlusList[j].arm == otherData.soliderList[i].arm) {
                         otherData.soliderList[i].fight += enemyPlusList[j].fight
-                        otherData.soliderList[i].defense += enemyPlusList[j].defense
+                        otherData.soliderList[i].defense += enemyPlusList[j].defense * hp
                     }
                 }
             }

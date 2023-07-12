@@ -210,18 +210,38 @@ export default class DataManager {
         },
         102: {
             name: "重镇",
+            prize: [
+                '开启奖励: 随机两字技能*3，无双魂*1.名将魂*4，武器/战甲图纸*1，重镇之石*1；\n支援奖励: 两字技能*1，名将魂*1，重镇之石*1'
+            ]
         },
         103: {
             name: "名城",
+            prize: [
+                '开启奖励: 随机三字技能*4，天选魂*1，无双魂4，武器/战甲图纸*3，名称晶石*1，传奇卷轴*1；\n支援奖励:三字技能*1，无双魂*1，名称晶石*1'
+            ]
         },
         104: {
             name: "圣都",
+            prize: [
+                '开启奖励: 随机四字技能*6，天选魂*1/*2/*5，武器/战甲图纸*10，圣都碧玉*1 传奇卷轴*3，四字技能残叶*8；\n支援奖励:四字技能残叶*4，天选魂*1，圣都碧玉*1，传奇卷轴*1'
+            ]
         },
         105: {
             name: "特殊",
+
+
+            prize: [
+                "开启奖励: 随机四字技能残页*6，武器/衣服图纸*12，传奇卷轴*1，随机四字能*9，固定天选魂*7 (每个魂各一个) 支援奖励: 随机四字技能1，传奇卷韩*1，固定天选魂*7 (每个魂各一个)",
+                "开启奖励:单挑令*18，随机大量晶石，大量金币粮食，财神古币*15。支援奖励: 保底50w金币+50w粮食，财神古币*1"
+            ]
         },
         106: {
             name: "遗迹",
+            prize: [
+                "开启奖励: 黄金年兽蛋*3，年兽蛋*10，小年兽蛋*12，武器/衣服图纸*18，传奇卷轴*20，随机四字技能书*18，随机天选将魂*20，遗迹之心*20；\n支援奖励:奖励根据支援家的死广兵力决定奖励比例归属，每个玩家保底传奇卷轴*1，随机四字技能*1，随机天选将魂*1，遗迹之心*1",
+                "开启奖励: 喇叭*20，传奇卷轴*20，上古卷轴*8，玄女魂*4，五字碎片*15，随机四字技能*5，随机五字技能*1/*2，遗迹之心*20；\n支援奖励:奖励根据支援玩家的死亡县力决定奖励比例归属，每个玩家保底: 传奇卷轴1，喇叭*1，遗迹之心*1",
+                "开启奖励: 喇叭*12，天照之火*20，传奇卷轴*20，上古卷轴*8，随机四字技*5，随机五字技能*1/*2，皇帝魂*4，遗迹之心*20；\n支援奖励:奖励根据支援玩家的死一兵决定奖励比例归属，每个玩家保底: 传奇卷轴1，喇叭*1，遗迹之心*1",
+            ]
         },
         0: {
             name: "",
@@ -253,6 +273,33 @@ export default class DataManager {
         9: {
             name: "金矿",
         },
+    }
+
+    static getName(data) {
+        let name: string
+        if (data.group == 106) {
+            if (data.country == 1) {
+                //华夏遗迹
+                name = '华夏遗迹'
+            } else if (data.country == 4) {
+                //蓬莱遗迹
+                name = '蓬莱遗迹'
+            } else if (data.country == 6) {
+                //归墟遗迹
+                name = '归墟遗迹'
+            }
+        } else if (data.group == 105) {
+            if (data.country == 2) {
+                //上古战场
+                name = "上古战场"
+            } else if (data.country == 7) {
+                //财神庙
+                name = "财神庙"
+            }
+        } else {
+            name = DataManager.mineData[data.group].name
+        }
+        return name
     }
 
 
@@ -307,7 +354,7 @@ export default class DataManager {
         return str
     }
     /**获取兵的详情提示 */
-    static getSoliderDes(data){
+    static getSoliderDes(data) {
         // let data = DataManager.GameData.Soldier[key]
         let str = `兵种名称  ${data.name}  兵种国籍  ${DataManager.countyList[data.country]}\n挥砍攻击  ${data.defense.attack_1} 穿刺攻击  ${data.defense.attack_2}\n法术攻击  ${data.defense.attack_3} 挥砍防御  ${data.defense.attack_4}\n穿刺防御  ${data.defense.attack_5} 法术防御  ${data.defense.attack_6}`
         return str

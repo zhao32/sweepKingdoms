@@ -65,7 +65,8 @@ export default class NewClass extends cc.Component {
     /**列表数据 阵容详情数据*/
     init(data) {
         this._data = data
-        let name = DataManager.mineData[data.hold_player.group].name
+        let name = DataManager.getName(data.hold_player)
+        // let name = DataManager.mineData[data.hold_player.group].name
         this.nameLabel.string = data.hold_player.lv + '级' + name
         this.lordLabel.string = `领主：${data.hold_player.nickname}`
         // this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`

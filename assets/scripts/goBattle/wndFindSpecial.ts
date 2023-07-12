@@ -35,13 +35,12 @@ export default class NewClass extends cc.Component {
     }
 
     init() {
-        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines,this)
+        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines, this)
 
     }
 
     S2CFindMines(retObj) {
         console.log(`查找特殊矿返回：` + JSON.stringify(retObj))
-
         let mineData = []
         for (let i = 0; i < retObj.mine_points.length; i++) {
             if (retObj.mine_points[i].hold_player) {
@@ -67,7 +66,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CFindMines, this.S2CFindMines,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CFindMines, this.S2CFindMines, this)
     }
 
     // update (dt) {}

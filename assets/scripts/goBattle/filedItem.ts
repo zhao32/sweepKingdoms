@@ -55,22 +55,21 @@ export default class NewClass extends cc.Component {
             this.icon.active = false
             this.bload.active = false
             this.nameLabel.string = ''
-
         } else {
-            let filed = DataManager.mineData[data.hold_player.group]
+            let filedName = DataManager.getName(data.hold_player) //DataManager.mineData[data.hold_player.group]
             this.icon.active = true
             this.bload.active = true
 
             if (data.hold_player.id) {//有主的矿
-                ResManager.loadItemIcon(`goBattle/${filed.name}`, this.icon)
+                ResManager.loadItemIcon(`goBattle/${filedName}`, this.icon)
             } else {
-                ResManager.loadItemIcon(`goBattle/${filed.name}`, this.icon)
+                ResManager.loadItemIcon(`goBattle/${filedName}`, this.icon)
                 this.icon.color = cc.Color.GRAY
             }
 
             let str: string
             let name: string = data.hold_player.nickname
-            this.nameLabel.string = data.hold_player.lv + '级' + filed.name + name.charAt(0) + name.charAt(1) + name.charAt(2) + '...'
+            this.nameLabel.string = data.hold_player.lv + '级' + filedName + name.charAt(0) + name.charAt(1) + name.charAt(2) + '...'
         }
 
 

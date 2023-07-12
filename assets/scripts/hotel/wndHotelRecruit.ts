@@ -147,7 +147,6 @@ export default class NewClass extends cc.Component {
 
         NetEventDispatcher.addListener(NetEvent.S2CPubView, this.S2CPubView, this)
         NetEventDispatcher.addListener(NetEvent.S2CPubBuy, this.S2CPubBuy, this)
-
         NetEventDispatcher.addListener(NetEvent.PushAddCard, this.PushAddCard, this)
 
     }

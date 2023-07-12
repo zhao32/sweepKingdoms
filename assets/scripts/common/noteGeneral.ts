@@ -66,6 +66,7 @@ export default class NewClass extends cc.Component {
             }
         }
 
+        console.log('cardInfo:'+ JSON.stringify(cardInfo))
 
         this.nameDisplay.string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
         ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.head)

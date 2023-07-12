@@ -73,7 +73,8 @@ export default class NewClass extends cc.Component {
         this._data = data
         // this._detailData = DataManager.curMineDetailData
         console.log('detailData:' + JSON.stringify(DataManager.curMineDetailData))
-        let name = DataManager.mineData[data.hold_player.group].name
+        // let name = DataManager.mineData[data.hold_player.group].name
+        let name = DataManager.getName(data.hold_player)
         if (data.hold_player.lv == 0) {
             this.nameLabel.string = `未建造建筑`
         } else {
