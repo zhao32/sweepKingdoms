@@ -82,7 +82,7 @@ export default class NewClass extends cc.Component {
 
     S2CMineList(data) {
         console.log(`..this.selectIdx:` + this.selectIdx)
-        console.log(JSON.stringify(data))
+        // console.log(JSON.stringify(data))
         this.maxPage = data.pagecount
         this.myContect.removeAllChildren()
         this.nation_id = data.contry
@@ -301,7 +301,7 @@ export default class NewClass extends cc.Component {
 
     clickIdx
     init() {
-        console.log(`this.S2CMineList:` + this.S2CMineList, this)
+        // console.log(`this.S2CMineList:` + this.S2CMineList, this)
 
         // for (let i = 0; i < this.filedContect.children.length; i++) {
         //     let filedNode = this.filedContect.children[i]
