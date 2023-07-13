@@ -337,6 +337,11 @@ export default class NewClass extends cc.Component {
         }
     }
 
+    changeCountryId(country) {
+        this.nation_id = country
+        this.node.getChildByName(`toggleContainer`).children[country -1].getComponent(cc.Toggle).isChecked = true
+    }
+
     btnLeft() {
         console.log('左刷新')
         if (this.curPageIdx > 0) {

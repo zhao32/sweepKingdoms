@@ -87,6 +87,7 @@ export default class NewClass extends cc.Component {
                 render.on(cc.Node.EventType.TOUCH_END, () => {
                     DataManager.pageGoBattle.selectIdx = data[j].hold_player.idx
                     console.log(`查找第 ${data[j].hold_player.page} 页   第 ${data[j].hold_player.idx}个`)
+                    DataManager.pageGoBattle.changeCountryId(data[j].hold_player.country)
                     MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, data[j].hold_player.page, DataManager.pageGoBattle.nation_id)
                     ViewManager.instance.hideWnd(DataManager.curWndPath)
                 }, this)
@@ -134,7 +135,8 @@ export default class NewClass extends cc.Component {
                 render.on(cc.Node.EventType.TOUCH_END, () => {
                     DataManager.pageGoBattle.selectIdx = data[i].hold_player.idx
                     console.log(`查找第 ${data[i].hold_player.page} 页   第 ${data[i].hold_player.idx}个`)
-                    MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, data[i].hold_player.page, DataManager.pageGoBattle.nation_id)
+                    DataManager.pageGoBattle.changeCountryId(data[i].hold_player.country)
+                    MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, data[i].hold_player.page, data[i].hold_player.country)
                     ViewManager.instance.hideWnd(DataManager.curWndPath)
                 }, this)
             }
