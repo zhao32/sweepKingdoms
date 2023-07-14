@@ -33,10 +33,11 @@ export default class NewClass extends cc.Component {
     }
 
     init(idx, soliderNum){ 
-        ResManager.loadItemIcon(`soliderHead/${DataManager.armList[idx]}兵`,this.node.getChildByName(`head`))
-        this.nameLabel.string = `${DataManager.armList[idx]}兵`
+        // let arm = DataManager.GameData.Soldier[idx].arm
+        ResManager.loadItemIcon(`soliderHead/${ DataManager.GameData.Soldier[idx].name}`,this.node.getChildByName(`head`))
+        this.nameLabel.string = `${DataManager.GameData.Soldier[idx].name}`
 
-        this.numLabel.string = `调动数量:${soliderNum}`
+        this.numLabel.string = `数量: x${soliderNum}`
         this.describeLabel.string = DataManager.GameData.Soldier[idx].describe
 
         let data = DataManager.GameData.Soldier[idx]

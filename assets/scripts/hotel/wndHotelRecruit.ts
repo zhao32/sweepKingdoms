@@ -86,6 +86,9 @@ export default class NewClass extends cc.Component {
 
     S2CPubBuy(retObj) {
         console.log('酒馆招募返回' + JSON.stringify(retObj))
+        this.goldDisplay.string = String(DataManager.playData.goldMoney)
+        this.honorDisplay.string = String(DataManager.playData.honor)
+
         // this.showIntragroup(retObj.cards)
     }
 

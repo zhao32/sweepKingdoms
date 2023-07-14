@@ -115,7 +115,7 @@ export default class NewClass extends cc.Component {
 
         }
 
-        console.log(`请求恶魔之门阵容返回`)
+        console.log(`请求恶魔之门阵容返回`);
         console.log(JSON.stringify(retObj))
         // debugger;
         if (retObj.formation) {
@@ -157,14 +157,15 @@ export default class NewClass extends cc.Component {
             }
         }
 
-        if (retObj.att_soliderUsed) {
-            for (let i = 0; i < retObj.att_soliderUsed.length; i++) {
-                if (retObj.att_soliderUsed[i].arm != 0) {
-                    this.attSoliders.push(retObj.att_soliderUsed[i])
-                }
-            }
-        }
+        // if (retObj.att_soliderUsed) {
+        //     for (let i = 0; i < retObj.att_soliderUsed.length; i++) {
+        //         if (retObj.att_soliderUsed[i].arm != 0) {
+        //             this.attSoliders.push(retObj.att_soliderUsed[i])
+        //         }
+        //     }
+        // }
 
+        this.attSoliders = DataManager.mineData[this._data.group].soliders
         for (let i = 0; i < this.attSoliders.length; i++) {
             let soliderItem = cc.instantiate(this.armPfb)
             soliderItem.parent = this.attContect
@@ -191,14 +192,15 @@ export default class NewClass extends cc.Component {
 
 
     }
-
+    _data
     init(data) {
+        this._data = data
         // (senderSocket, p_rank_type, p_player_id)
         // console.error('rankType:'+ rankType)
 
         // this.myData = myData
         // this.eData = eData
-        console.log("data:" + JSON.stringify(data))
+        console.log(" -- data:" + JSON.stringify(data))
         this.initDetailData(DataManager.curMineDetailData)
 
         // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx, data.country)

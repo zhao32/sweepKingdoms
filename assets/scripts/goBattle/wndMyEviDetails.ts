@@ -10,6 +10,7 @@ import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
+import openEviPanel from "./openEviPanel";
 
 const { ccclass, property } = cc._decorator;
 
@@ -213,17 +214,20 @@ export default class NewClass extends cc.Component {
         // console.log('DataManager.cardsList:', JSON.stringify(DataManager.cardsList))
 
         let soliderData = []
-        for (let i = 0; i < DataManager.curMineDetailData.att_soliderUsed.length; i++) {
-            if (DataManager.curMineDetailData.att_soliderUsed[i].arm != 0) {
+        let soliders = DataManager.mineData[this._data.hold_player.group].soliders
+        // let soliders = DataManager.curMineDetailData.att_soliderUsed
+
+        for (let i = 0; i < soliders.length; i++) {
+            if (soliders[i].arm != 0) {
                 soliderData.push({
-                    arm: DataManager.curMineDetailData.att_soliderUsed[i].arm,
-                    count: DataManager.curMineDetailData.att_soliderUsed[i].count,
+                    arm: soliders[i].arm,
+                    count: soliders[i].count,
                     fight: 0,
                     defense: 0
                 })
             }
         }
-        if (DataManager.curMineDetailData.att_soliderUsed.length == 0) {
+        if (soliders.length == 0) {
             soliderData.push({
                 arm: 1,
                 count: 100,
@@ -258,30 +262,8 @@ export default class NewClass extends cc.Component {
 
     onOpenHandler() {
         this.node.getChildByName(`openPanel`).active = true
-        let str: string
-        if (this._data.hold_player.group == 106) {
-            if (this._data.hold_player.country == 1) {
-                //华夏遗迹
-                str = DataManager.mineData[this._data.hold_player.group].prize[0]
-            } else if (this._data.hold_player.country == 4) {
-                //蓬莱遗迹
-                str = DataManager.mineData[this._data.hold_player.group].prize[1]
-            } else if (this._data.hold_player.country == 6) {
-                //归墟遗迹
-                str = DataManager.mineData[this._data.hold_player.group].prize[2]
-            }
-        } else if (this._data.hold_player.group == 105) {
-            if (this._data.hold_player.country == 2) {
-                //上古战场
-                str = DataManager.mineData[this._data.hold_player.group].prize[0]
-            } else if (this._data.hold_player.country == 7) {
-                //财神庙
-                str = DataManager.mineData[this._data.hold_player.group].prize[1]
-            }
-        } else {
-            str = DataManager.mineData[this._data.hold_player.group].prize[0]
-        }
-        this.node.getChildByName(`openPanel`).getChildByName('prizeLabel').getComponent(cc.Label).string = str
+        this.node.getChildByName(`openPanel`).getComponent(openEviPanel).init(this._data)
+       
     }
 
     onCloseOpHandler() {
