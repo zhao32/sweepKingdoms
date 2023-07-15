@@ -733,7 +733,7 @@
         "isboss": true
       }
     ],
-    "name": "黄巾之乱",
+    "name": "兵出殽山",
     "chapter_id": 1,
     "require_level": 1,
     "group": 1,
@@ -2469,7 +2469,7 @@
         "isboss": true
       }
     ],
-    "name": "二败张角",
+    "name": "上党之战",
     "chapter_id": 1,
     "require_level": 3,
     "group": 2,
@@ -4209,7 +4209,7 @@
         "isboss": true
       }
     ],
-    "name": "黄巾残党",
+    "name": "六国伐秦",
     "chapter_id": 1,
     "require_level": 10,
     "group": 3,
@@ -5950,7 +5950,7 @@
         "isboss": true
       }
     ],
-    "name": "董卓之乱",
+    "name": "楚地风云",
     "chapter_id": 1,
     "require_level": 13,
     "group": 4,
@@ -7705,7 +7705,7 @@
         "isboss": true
       }
     ],
-    "name": "神鬼吕布",
+    "name": "问鼎中原",
     "chapter_id": 1,
     "require_level": 17,
     "group": 5,
