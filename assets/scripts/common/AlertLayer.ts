@@ -20,11 +20,26 @@ export default class NewClass extends cc.Component {
 
     // onLoad () {}
 
+    fun:Function
+
     start() {
 
     }
 
     onClose() {
+        this.node.destroy()
+
+    }
+
+    onDoHandler(){ 
+        this.fun()
+    }
+
+
+    init(str,fun){ 
+        this.dispa.string = str
+        this.fun= fun
+
 
     }
 

@@ -28,6 +28,9 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     shortLoadLayer: cc.Prefab = null;
 
+    @property(cc.Prefab)
+    AlertLayer: cc.Prefab = null;
+
     onLoad() {
         // EventNetManager.getInstance().addListener(10014, this.login,this)
 

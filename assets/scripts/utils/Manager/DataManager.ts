@@ -1,5 +1,6 @@
 import pageGoBattle from "../../goBattle/pageGoBattle";
 import wndHotelDetail from "../../hotel/wndHotelDetail";
+import wndMail from "../../mail/wndMail";
 import Main from "../../Main";
 
 interface playData {
@@ -152,10 +153,14 @@ export default class DataManager {
         /**商店 */
         Consumes: {},
         /**学习技能 */
-        SkillStudy: {}
+        SkillStudy: {},
+        /**邮件 */
+        Mail: {}
     }
     /**我的将表 */
     static cardsList = []
+
+    static maillist = []
 
     /**我的副本信息 */
     static stagesData: any
@@ -327,6 +332,8 @@ export default class DataManager {
     itemsList = []
 
     static wndHotelDetail: wndHotelDetail
+
+    static wndMail: wndMail
 
     /**当前矿的守卫详情信息 */
     static curMineDetailData = null

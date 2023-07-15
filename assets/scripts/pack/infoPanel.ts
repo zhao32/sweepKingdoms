@@ -52,17 +52,22 @@ export default class NewClass extends cc.Component {
     _data
     init(data) {
         let defaultData
+        this.node.getChildByName(`op`).active = true
         this._data = data
-        if (data.bagId == 4) {
+        if (data.bagId == 0) {//宝箱
+
+        } else if (data.bagId == 1) {//装备
             defaultData = DataManager.GameData.packItems[data.template_id]
+
             this.btnLabel0.string = `使用`
             this.btnLabel1.string = `出售`
-            ResManager.loadItemIcon(`UI/UnitsEquips/${data.template_id}`, this.pic)
+            ResManager.loadItemIcon(`UI/items/${defaultData.icon}`, this.pic)
 
             this.nameLabel.string = defaultData.name
             this.countLabel.string = 'x' + data.num
             this.richLabel.string = defaultData.des
 
+        } else if (data.bagId == 2) {//碎片
 
         } else if (data.bagId == 3) {//技能
             // defaultData = DataManager.GameData.Treasures[data.template_id]
@@ -86,16 +91,16 @@ export default class NewClass extends cc.Component {
             this.countLabel.string = 'x' + data.num
             this.richLabel.string = skillSt.des
 
-        } else if (data.bagId == 1) {
+        } else if (data.bagId == 4) {//道具 
             defaultData = DataManager.GameData.packItems[data.template_id]
-
             this.btnLabel0.string = `使用`
             this.btnLabel1.string = `出售`
-            ResManager.loadItemIcon(`UI/items/${defaultData.icon}`, this.pic)
+            ResManager.loadItemIcon(`UI/UnitsEquips/${data.template_id}`, this.pic)
 
             this.nameLabel.string = defaultData.name
             this.countLabel.string = 'x' + data.num
             this.richLabel.string = defaultData.des
+
 
         }
         console.log('defaultData:' + JSON.stringify(defaultData))

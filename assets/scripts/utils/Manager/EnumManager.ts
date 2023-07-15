@@ -31,6 +31,12 @@ export default class EnumManager {
 
         WND_LOGIN: 'prefabs/login/wndLogin',
 
+        /**邮箱 */
+        WND_MAIL: 'prefabs/Mail/wndMail',
+
+
+        
+
 
         /////////////////////// 主页窗口
         WND_MAIN_ACTIVEY: 'prefabs/main/wndActivity',

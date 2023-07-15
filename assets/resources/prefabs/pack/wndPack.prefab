@@ -3224,7 +3224,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 90,
+      "width": 62,
       "height": 56.4
     },
     "_anchorPoint": {
@@ -3276,8 +3276,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "消耗品",
-    "_N$string": "消耗品",
+    "_string": "宝箱",
+    "_N$string": "宝箱",
     "_fontSize": 28,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -3516,8 +3516,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "消耗品",
-    "_N$string": "消耗品",
+    "_string": "宝箱",
+    "_N$string": "宝箱",
     "_fontSize": 28,
     "_lineHeight": 40,
     "_enableWrapText": true,

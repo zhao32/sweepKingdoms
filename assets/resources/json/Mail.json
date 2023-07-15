@@ -1,0 +1,218 @@
+{
+    "1000": {
+        "id": 1000,
+        "mail_title": "竞技场每日排名奖励",
+        "mail_content": "元帅大人，您率领的大军在竞技场表现英勇，截止今天22:00，您的竞技场排名为第{0}名。\n特此表彰，奖励如下：",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "竞技场管理员 刘小备"
+    },
+    "1001": {
+        "id": 1001,
+        "mail_title": "竞技场最高排名奖励",
+        "mail_content": "元帅大人，您在竞技场中发挥出色战斗神勇，击败对手，排名上升至{0}名。\n特此表彰，奖励如下：",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "竞技场管理员 刘小备"
+    },
+    "1002": {
+        "id": 1002,
+        "mail_title": "入会通知",
+        "mail_content": "恭喜你成为{0}的一员！",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "{0}"
+    },
+    "1003": {
+        "id": 1003,
+        "mail_title": "",
+        "mail_content": "这是你参加{0}未领取的活动奖励，请去附件查收。",
+        "mail_item": "",
+        "deletetime": 5,
+        "sender": "系统邮件"
+    },
+    "1004": {
+        "id": 1004,
+        "mail_title": "公会邮件",
+        "mail_content": "很遗憾，你已被移出公会。",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1005": {
+        "id": 1005,
+        "mail_title": "公会邮件",
+        "mail_content": "很遗憾的通知你，你的公会{0}已解散，感谢你一直以来的相伴，期待来日再与你重聚！",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1006": {
+        "id": 1006,
+        "mail_title": "强行退出PVP比赛惩罚",
+        "mail_content": "由于你在上一局PVP匹配赛中强行退出比赛，在接下来一段时间内将不能进行匹配对战，同时被扣了{0}点PVP积分",
+        "mail_item": "",
+        "deletetime": 5,
+        "sender": "系统邮件"
+    },
+    "1007": {
+        "id": 1007,
+        "mail_title": "实时PVP每日奖励",
+        "mail_content": "截止今天22:10你在PVP战斗中的积分排名为 {0}。你表现的非常优秀。我们根据你在PVP战斗中的段位和积分的排名给予你以下奖励。记得领取哟！",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1008": {
+        "id": 1008,
+        "mail_title": "强行退出诸神争霸比赛惩罚",
+        "mail_content": "由于你在上一局诸神争霸匹配赛中强行退出比赛，在接下来一段时间内将不能进行匹配对战，并且受到降星的处罚",
+        "mail_item": "",
+        "deletetime": 5,
+        "sender": "系统邮件"
+    },
+    "1009": {
+        "id": 1009,
+        "mail_title": "诸神争霸每日奖励",
+        "mail_content": "截止今天22:15你在诸神争霸中的等级为{0}。表现非常优秀，获得如下奖励，记得领取哟！",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1010": {
+        "id": 1010,
+        "mail_title": "首次充值奖励",
+        "mail_content": "谢谢！亲！对我们游戏的大力支持，这里是亲首次充值的奖励，希望亲能够游戏愉快！\n（提示：请不要相信游戏内任何拉充值返利手段链接跟群号，一切活动均于官方为标准！）",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1011": {
+        "id": 1011,
+        "mail_title": "开服竞赛竞技场奖励",
+        "mail_content": "您在开服竞赛中表现优异，竞技场排名维持在{0}名，现在给与如下奖励，再接再厉！",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1012": {
+        "id": 1012,
+        "mail_title": "开服竞赛诸神争霸奖励",
+        "mail_content": "您在开服竞赛中表现优异，诸神争霸排名维持在{0}名，现在给与如下奖励，再接再厉！",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1013": {
+        "id": 1013,
+        "mail_title": "VIP超值礼包购买奖励",
+        "mail_content": "您在VIP超值礼包活动中购买了VIP{0}的礼包，获得了如下奖励：",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1014": {
+        "id": 1014,
+        "mail_title": "奇珍异宝大奖",
+        "mail_content": "您在奇珍异宝活动中人品大爆发，获得了大奖，奖励如下：",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1015": {
+        "id": 1015,
+        "mail_title": "英雄礼包物品",
+        "mail_content": "您购买了英雄礼包，如下是礼包的物品，请点击领取：",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1016": {
+        "id": 1016,
+        "mail_title": "跨服BOSS战奖励",
+        "mail_content": "您在跨服BOSS战中获得了如下奖励，请点击领取：",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1017": {
+        "id": 1017,
+        "mail_title": "充值榜活动奖励",
+        "mail_content": "您在充值榜活动期间充值{0}钻石，排名第{1}，获得如下奖励：",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1018": {
+        "id": 1018,
+        "mail_title": "消费榜活动奖励",
+        "mail_content": "您在消费榜活动期间消费{0}钻石，排名第{1}，获得如下奖励：",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1019": {
+        "id": 1019,
+        "mail_title": "青春基金物品",
+        "mail_content": "您购买了青春基金，如下是基金包含的物品，请点击领取：",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1020": {
+        "id": 1020,
+        "mail_title": "竞技场幸运排名奖励",
+        "mail_content": "元帅大人，您在竞技场中幸运的获得了额外的排名奖励，排名为第{0}名，奖励如下：",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "竞技场管理员 刘小备"
+    },
+    "1021": {
+        "id": 1021,
+        "mail_title": "冲级榜奖励",
+        "mail_content": "元帅大人，您在充级榜活动期间达到{0}级，排名第{1}，获得如下奖励：",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1022": {
+        "id": 1022,
+        "mail_title": "VIP每日物资发放",
+        "mail_content": "元帅大人，您当前的VIP等级为{0}级，获得如下物资激励：\nVIP福利每天发放，VIP越高福利越好！",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1023": {
+        "id": 1023,
+        "mail_title": "欢迎您加入游戏！",
+        "mail_content": "恭迎元帅！三国史诗征程将在元帅您的手下书写全新篇章！特地为您准备了一些军需物资，必将祝您一臂之力！",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1024": {
+        "id": 1024,
+        "mail_title": "国战每日排名奖励",
+        "mail_content": "恭喜您在国战中获得【{0}】官职，被尊称为【{1}】，祝您再接再厉，开创一番伟业！以下是福利：",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1025": {
+        "id": 1025,
+        "mail_title": "国战城池争夺每日奖励",
+        "mail_content": "恭喜您所在的国家【{0}国】在城池争夺中拿下【{1}】座城池，以下是福利：",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    },
+    "1026": {
+        "id": 1026,
+        "mail_title": "国战城池争夺通关奖励",
+        "mail_content": "恭喜您所在的国家【{0}国】将士们骁勇善战，歼灭敌国，完成了统一大业，可喜可贺，以下是您的报酬：",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
+    }
+}

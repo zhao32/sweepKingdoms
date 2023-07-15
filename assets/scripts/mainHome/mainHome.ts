@@ -68,6 +68,11 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_ACTIVEY)
         }, this)
 
+        this.btnProtect.on(cc.Node.EventType.TOUCH_END, () => {
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIL)
+        }, this)
+        
+
         NetEventDispatcher.addListener(NetEvent.S2CListRedPoints, this.RedPointsBack, this)
 
         EventManager.getInstance().registerListener(EventManager.UPDATE_MAINHOME_INFO, this, this.updateInfo.bind(this))

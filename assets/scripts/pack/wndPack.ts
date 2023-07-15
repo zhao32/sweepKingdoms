@@ -48,6 +48,7 @@ export default class NewClass extends cc.Component {
             ToggleList[i].node.on('toggle', (event: cc.Toggle) => {
                 if (event.isChecked == true) {
                     console.log('选中' + i)
+                    this.node.getChildByName('tipArea').active = false
                     this.contect.removeAllChildren()
                     let list = this[`list${i}`]
                     for (let j = 0; j < list.length; j++) {
@@ -57,13 +58,6 @@ export default class NewClass extends cc.Component {
                         for (let k = 0; k < list[j].length; k++) {
                             let item = cc.instantiate(this.itemPfb)
                             if (list[j][k].bagId == 4) {
-                                // if (list[j][k].template_id - 4000 >= 0) {
-                                //     ResManager.loadItemIcon(`UI/UnitsEquips/${list[j][k].template_id}`, item.getChildByName('pic'))
-
-                                // } else {
-                                //     ResManager.loadItemIcon(`UI/items/${list[j][k].template_id}`, item.getChildByName('pic'))
-
-                                // }
                                 ResManager.loadItemIcon(`UI/UnitsEquips/${list[j][k].template_id}`, item.getChildByName('pic'))
                             } else if (list[j][k].bagId == 1) {
                                 console.log(JSON.stringify(list[j][k]))
@@ -125,12 +119,14 @@ export default class NewClass extends cc.Component {
 
         console.log('keyItemList:' + JSON.stringify(keyItemList))
         for (let i = 0; i < itemsList.length; i++) {
-            if (itemsList[i].bagId == 0) {//消耗品
+            if (itemsList[i].bagId == 0) {//礼包
+                console.log(`------礼包：--------`)
+                console.log('template_id:' + itemsList[i].template_id)
                 if (keyGiftList.indexOf(itemsList[i].template_id.toString()) != -1) {
                     this.list0.push(itemsList[i])
                 }
             } else if (itemsList[i].bagId == 1) {//装备
-                console.log('template_id:' + itemsList[i].template_id)
+               
                 if (keyItemList.indexOf(itemsList[i].template_id.toString()) != -1) {
                     this.list1.push(itemsList[i])
                 }
@@ -138,25 +134,26 @@ export default class NewClass extends cc.Component {
                 if (keySkillList.indexOf(itemsList[i].template_id.toString()) != -1) {
                     this.list2.push(itemsList[i])
                 }
-            } else if (itemsList[i].bagId == 3) {//宝物
+            } else if (itemsList[i].bagId == 3) {//技能
                 this.list3.push(itemsList[i])
             } else if (itemsList[i].bagId == 4) {//道具
                 this.list4.push(itemsList[i])
             }
         }
 
-        console.log(JSON.stringify(this.list2))
+        console.log('list0:'+JSON.stringify(this.list0))
         this.list0 = DataManager.group(this.list0, 4)
         this.list1 = DataManager.group(this.list1, 4)
         this.list2 = DataManager.group(this.list2, 4)
         this.list3 = DataManager.group(this.list3, 4)
         this.list4 = DataManager.group(this.list4, 4)
-
-        for (let i = 0; i < this.list1.length; i++) {
+        console.log('list0:'+JSON.stringify(this.list0))
+        this.contect.removeAllChildren()
+        for (let i = 0; i < this.list0.length; i++) {
             let render = cc.instantiate(this.renderPfb)
             render.removeAllChildren()
             render.parent = this.contect
-            for (let j = 0; j < this.list1[i].length; j++) {
+            for (let j = 0; j < this.list0[i].length; j++) {
                 let item = cc.instantiate(this.itemPfb)
                 item.parent = render
             }
