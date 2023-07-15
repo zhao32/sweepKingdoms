@@ -93,7 +93,7 @@ export default class NewClass extends cc.Component {
     /**获取玩家信息 */
     S2CUserInfoStruct(retObj) {
         console.log('------------------------------')
-        console.log('retObj:' + JSON.stringify(retObj))
+        console.log('retObj:' + JSON.stringify(retObj)) 
         DataManager.playData.id = retObj.id
         DataManager.playData.account_id = retObj.account_id
         DataManager.playData.food = retObj.army

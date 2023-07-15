@@ -1,5 +1,6 @@
 {
   "1": {
+    "template_id": 1,
     "add_attrs": {
       "maxhp": 368,
       "atk": 71,
@@ -56,6 +57,7 @@
     "unit_type": 5
   },
   "2": {
+    "template_id": 2,
     "str": 70,
     "talents": [
       1,
@@ -110,6 +112,7 @@
     "co": 80
   },
   "3": {
+    "template_id": 3,
     "name": "荆轲",
     "str": 90,
     "rune": [
@@ -162,6 +165,7 @@
     "group": 4
   },
   "4": {
+    "template_id": 4,
     "str": 92,
     "name": "项燕",
     "rune": [
@@ -215,6 +219,7 @@
     "group": 4
   },
   "5": {
+    "template_id": 5,
     "str": 92,
     "rune": [
       1,
@@ -268,6 +273,7 @@
     "group": 4
   },
   "6": {
+    "template_id": 6,
     "add_attrs": {
       "maxhp": 368,
       "atk": 71,
@@ -324,6 +330,7 @@
     "unit_type": 5
   },
   "7": {
+    "template_id": 7,
     "str": 70,
     "talents": [
       1,
@@ -378,6 +385,7 @@
     "co": 80
   },
   "8": {
+    "template_id": 8,
     "name": "荆轲",
     "str": 90,
     "rune": [
@@ -429,6 +437,7 @@
     "group": 4
   },
   "9": {
+    "template_id": 9,
     "str": 92,
     "name": "项燕",
     "rune": [
@@ -480,6 +489,7 @@
     "group": 4
   },
   "10": {
+    "template_id": 10,
     "str": 92,
     "rune": [
       1,
@@ -531,6 +541,7 @@
     "group": 4
   },
   "11": {
+    "template_id": 11,
     "str": 60,
     "rune": [
       1,
@@ -587,6 +598,7 @@
     "co": 80
   },
   "12": {
+    "template_id": 12,
     "str": 75,
     "rune": [
       1,
@@ -639,6 +651,7 @@
     "co": 90
   },
   "13": {
+    "template_id": 13,
     "str": 95,
     "rune": [
       1,
@@ -690,6 +703,7 @@
     "group": 4
   },
   "14": {
+    "template_id": 14,
     "str": 96,
     "rune": [
       1,
@@ -742,6 +756,7 @@
     "group": 4
   },
   "15": {
+    "template_id": 15,
     "name": "张良",
     "str": 75,
     "rune": [
@@ -795,6 +810,7 @@
     "co": 95
   },
   "16": {
+    "template_id": 16,
     "str": 80,
     "rune": [
       1,
@@ -847,6 +863,7 @@
     "group": 4
   },
   "17": {
+    "template_id": 17,
     "str": 80,
     "rune": [
       1,
@@ -900,6 +917,7 @@
     "co": 83
   },
   "18": {
+    "template_id": 18,
     "str": 75,
     "rune": [
       1,
@@ -953,6 +971,7 @@
     "co": 90
   },
   "19": {
+    "template_id": 19,
     "str": 75,
     "rune": [
       1,
@@ -1007,6 +1026,7 @@
     "co": 94
   },
   "20": {
+    "template_id": 20,
     "str": 93,
     "rune": [
       1,
@@ -1058,6 +1078,7 @@
     "group": 2
   },
   "21": {
+    "template_id":21,
     "str": 98,
     "rune": [
       1,
@@ -1114,6 +1135,7 @@
     "group": 2
   },
   "22": {
+    "template_id":22,
     "str": 80,
     "rune": [
       1,
@@ -1166,6 +1188,7 @@
     "co": 85
   },
   "23": {
+    "template_id":23,
     "str": 90,
     "rune": [
       1,
@@ -1223,6 +1246,7 @@
     "co": 88
   },
   "24": {
+    "template_id":24,
     "str": 107,
     "rune": [
       1,
@@ -1278,6 +1302,7 @@
     "is_spine": true
   },
   "25": {
+    "template_id":25,
     "str": 80,
     "rune": [
       1,
@@ -1329,6 +1354,7 @@
     "group": 2
   },
   "26": {
+    "template_id":26,
     "str": 97,
     "rune": [
       1,
@@ -1383,6 +1409,7 @@
     "group": 2
   },
   "27": {
+    "template_id":27,
     "add_attrs": {
       "maxhp": 368,
       "atk": 71,
@@ -1439,6 +1466,7 @@
     "unit_type": 5
   },
   "28": {
+    "template_id":28,
     "str": 70,
     "talents": [
       1,
@@ -1493,6 +1521,7 @@
     "co": 80
   },
   "29": {
+    "template_id":29,
     "name": "荆轲",
     "str": 90,
     "rune": [
@@ -1544,6 +1573,7 @@
     "group": 4
   },
   "30": {
+    "template_id":30,
     "str": 92,
     "name": "项燕",
     "rune": [
@@ -1595,6 +1625,7 @@
     "group": 4
   },
   "31": {
+    "template_id":31,
     "str": 92,
     "rune": [
       1,
@@ -1646,6 +1677,7 @@
     "group": 4
   },
   "32": {
+    "template_id":32,
     "str": 60,
     "rune": [
       1,
@@ -1702,6 +1734,7 @@
     "co": 80
   },
   "33": {
+    "template_id":33,
     "str": 75,
     "rune": [
       1,
@@ -1754,6 +1787,7 @@
     "co": 90
   },
   "34": {
+    "template_id":34,
     "str": 95,
     "rune": [
       1,
@@ -1805,6 +1839,7 @@
     "group": 4
   },
   "35": {
+    "template_id":35,
     "str": 96,
     "rune": [
       1,
@@ -1857,6 +1892,7 @@
     "group": 4
   },
   "36": {
+    "template_id":36,
     "name": "张良",
     "str": 75,
     "rune": [
@@ -1910,6 +1946,7 @@
     "co": 95
   },
   "37": {
+    "template_id":37,
     "str": 80,
     "rune": [
       1,
@@ -1962,6 +1999,7 @@
     "group": 4
   },
   "38": {
+    "template_id":38,
     "str": 80,
     "rune": [
       1,
@@ -2015,6 +2053,7 @@
     "co": 83
   },
   "39": {
+    "template_id":39,
     "str": 75,
     "rune": [
       1,
@@ -2068,6 +2107,7 @@
     "co": 90
   },
   "40": {
+    "template_id":40,
     "str": 75,
     "rune": [
       1,
@@ -2122,6 +2162,7 @@
     "co": 94
   },
   "41": {
+    "template_id":41,
     "str": 93,
     "rune": [
       1,
@@ -2173,6 +2214,7 @@
     "group": 2
   },
   "42": {
+    "template_id":42,
     "str": 98,
     "rune": [
       1,
@@ -2229,6 +2271,7 @@
     "group": 2
   },
   "43": {
+    "template_id":43,
     "str": 80,
     "rune": [
       1,
@@ -2281,6 +2324,7 @@
     "co": 85
   },
   "44": {
+    "template_id":44,
     "str": 90,
     "rune": [
       1,
@@ -2338,6 +2382,7 @@
     "co": 88
   },
   "45": {
+    "template_id":45,
     "str": 107,
     "rune": [
       1,
@@ -2393,6 +2438,7 @@
     "is_spine": true
   },
   "46": {
+    "template_id":46,
     "str": 80,
     "rune": [
       1,
@@ -2444,6 +2490,7 @@
     "group": 2
   },
   "47": {
+    "template_id":47,
     "str": 97,
     "rune": [
       1,
@@ -2498,6 +2545,7 @@
     "group": 2
   },
   "48": {
+    "template_id":48,
     "str": 74,
     "rune": [
       1,
@@ -2546,6 +2594,7 @@
     "group": 2
   },
   "49": {
+    "template_id":49,
     "str": 93,
     "rune": [
       1,
@@ -2594,6 +2643,7 @@
     "group": 2
   },
   "50": {
+    "template_id":50,
     "str": 94,
     "rune": [
       1,
@@ -2642,6 +2692,7 @@
     "group": 2
   },
   "51": {
+    "template_id":51,
     "str": 70,
     "rune": [
       1,
@@ -2691,6 +2742,7 @@
     "co": 85
   },
   "52": {
+    "template_id":52,
     "str": 74,
     "rune": [
       1,
@@ -2741,6 +2793,7 @@
     "co": 88
   },
   "53": {
+    "template_id":53,
     "str": 99,
     "rune": [
       1,
@@ -2792,6 +2845,7 @@
     "group": 2
   },
   "54": {
+    "template_id":54,
     "str": 95,
     "rune": [
       1,
@@ -2842,6 +2896,7 @@
     "co": 108
   },
   "55": {
+    "template_id":55,
     "str": 90,
     "rune": [
       1,
@@ -2890,6 +2945,7 @@
     "group": 2
   },
   "56": {
+    "template_id":56,
     "str": 85,
     "rune": [
       1,
@@ -2938,6 +2994,7 @@
     "group": 1
   },
   "57": {
+    "template_id":57,
     "str": 90,
     "rune": [
       1,
@@ -2987,6 +3044,7 @@
     "group": 1
   },
   "58": {
+    "template_id":58,
     "str": 80,
     "rune": [
       1,
@@ -3036,6 +3094,7 @@
     "co": 90
   },
   "59": {
+    "template_id":59,
     "str": 98,
     "rune": [
       1,
@@ -3084,6 +3143,7 @@
     "group": 1
   },
   "60": {
+    "template_id":60,
     "str": 77,
     "rune": [
       1,
@@ -3134,6 +3194,7 @@
     "co": 95
   },
   "61": {
+    "template_id":61,
     "str": 88,
     "rune": [
       1,
@@ -3184,6 +3245,7 @@
     "co": 88
   },
   "62": {
+    "template_id":62,
     "str": 79,
     "rune": [
       1,
@@ -3235,6 +3297,7 @@
     "co": 98
   },
   "63": {
+    "template_id":63,
     "str": 102,
     "rune": [
       1,
@@ -3281,6 +3344,7 @@
     "is_spine": true
   },
   "64": {
+    "template_id":64,
     "str": 92,
     "rune": [
       1,
@@ -3326,6 +3390,7 @@
     "group": 1
   },
   "65": {
+    "template_id":65,
     "str": 98,
     "rune": [
       1,
@@ -3371,6 +3436,7 @@
     "group": 1
   },
   "66": {
+    "template_id":66,
     "str": 63,
     "rune": [
       1,
@@ -3417,6 +3483,7 @@
     "co": 80
   },
   "67": {
+    "template_id":67,
     "str": 85,
     "rune": [
       1,
@@ -3462,6 +3529,7 @@
     "group": 1
   },
   "68": {
+    "template_id":68,
     "str": 84,
     "rune": [
       1,
