@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import MarqueeBufferMgr from "./net/MarqueeBufferMgr";
 import { NetEvent } from "./net/NetEvent";
 import DataManager from "./utils/Manager/DataManager";
 import EnumManager from "./utils/Manager/EnumManager";
@@ -31,6 +32,11 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     AlertLayer: cc.Prefab = null;
 
+    @property(cc.Prefab)
+    MarqueeWidget: cc.Prefab = null;
+
+
+
     onLoad() {
         // EventNetManager.getInstance().addListener(10014, this.login,this)
 
@@ -53,7 +59,23 @@ export default class NewClass extends cc.Component {
 
         NetEventDispatcher.addListener(NetEvent.S2CBagItems, this.S2CBagItems, this)
 
+        NetEventDispatcher.addListener(NetEvent.PushMarquee, this.PushMarquee);
+
+        NetEventDispatcher.removeListener(NetEvent.PushSmallTips, this.PushSmallTips);
+
+
         // S2CCreateCharacter
+    }
+
+    PushMarquee(retObj) {
+        console.log(`跑马灯返回：` + JSON.stringify(retObj))
+        MarqueeBufferMgr.instance.insertMsgContent(retObj);
+        MarqueeBufferMgr.instance.doPlay();
+    }
+    PushSmallTips(retObj) {
+        if (MarqueeBufferMgr.instance.marqueeCanPlay) {
+            // MyUiManager.OpenSmallTipsWidget(retObj.colorType,retObj.content);
+        }
     }
 
     S2CBagItems(retObj) {
@@ -85,7 +107,7 @@ export default class NewClass extends cc.Component {
             }
         }
 
-        console.log('hasItem:'+hasItem)
+        console.log('hasItem:' + hasItem)
         if (hasItem == false) {
             DataManager.instance.itemsList.push(retObj.item_info)
         }
@@ -93,7 +115,7 @@ export default class NewClass extends cc.Component {
     /**获取玩家信息 */
     S2CUserInfoStruct(retObj) {
         console.log('------------------------------')
-        console.log('retObj:' + JSON.stringify(retObj)) 
+        console.log('retObj:' + JSON.stringify(retObj))
         DataManager.playData.id = retObj.id
         DataManager.playData.account_id = retObj.account_id
         DataManager.playData.food = retObj.army

@@ -1275,6 +1275,9 @@
     "AlertLayer": {
       "__uuid__": "2fd4464d-8da8-4db2-b1de-0726fded5681"
     },
+    "MarqueeWidget": {
+      "__uuid__": "23085ff2-37dc-45a3-8a7d-548d2e88fe18"
+    },
     "_id": "cdwUPB4sBC1rqWCHwLmF6W"
   }
 ]

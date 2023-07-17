@@ -44,7 +44,6 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.hideView(EnumManager.viewPath.LOAD, true)
             ViewManager.instance.showView(EnumManager.viewPath.GAME)
         }
-
     }
 
     init() {

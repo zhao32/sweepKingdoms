@@ -11,6 +11,7 @@ import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
 import hotelJinhuaRender from "./hotelJinhuaRender";
 import hotelRecruitRender from "./hotelRecruitRender";
+import renderHun from "./renderHun";
 import renderReciruitResult1 from "./renderReciruitResult1";
 
 //@ts-ignore
@@ -33,7 +34,7 @@ export default class NewClass extends cc.Component {
     renderResultPfb0: cc.Prefab = null;
 
     @property(cc.Prefab)
-    renderResultPfb1: cc.Prefab = null;
+    renderResultPfb10: cc.Prefab = null;
 
     @property(cc.Prefab)
     renderResultPfb11: cc.Prefab = null;
@@ -90,6 +91,30 @@ export default class NewClass extends cc.Component {
         this.honorDisplay.string = String(DataManager.playData.honor)
 
         // this.showIntragroup(retObj.cards)
+        let fragList = []
+        let keys = Object.keys(DataManager.GameData.CardFrags)
+        for (let i = 0; i < retObj.cards.length; i++) {
+            if (keys.indexOf(String(retObj.cards[i].template_id)) != -1) {
+                fragList.push(retObj.cards[i])
+            }
+        }
+
+        console.log('keys:' + JSON.stringify(keys))
+        console.log('fragList:' + JSON.stringify(fragList))
+
+        for (let i = 0; i < fragList.length; i++) {
+            let render = cc.instantiate(this.renderResultPfb10)
+            render.parent = this.contect
+            if (this.contect.children.length < 5) {
+                render.x = 1000
+                this.scheduleOnce(() => {
+                    render.runAction(cc.moveTo(DataManager.SCROLLTIME1, cc.v2(0, render.y)))
+                }, DataManager.SCROLLTIME2 * i)
+            }
+
+            render.getComponent(renderHun).init(fragList[i])
+            render.getChildByName("btnComp").active = false
+        }
     }
 
 

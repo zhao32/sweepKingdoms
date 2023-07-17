@@ -64,6 +64,7 @@ export default class NewClass extends cc.Component {
                                 ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[list[j][k].template_id].icon}`, item.getChildByName('pic'))
 
                             } else if (list[j][k].bagId == 3) {
+                                console.log('list[j][k].template_id:'+list[j][k].template_id)
                                 let skillSt = DataManager.GameData.SkillStudy[list[j][k].template_id]
                                 ResManager.loadItemIcon(`skillats/${skillSt.name}`, item.getChildByName('pic'))
 

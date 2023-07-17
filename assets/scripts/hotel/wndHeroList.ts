@@ -5,11 +5,16 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
 import hotelJinhuaRender from "./hotelJinhuaRender";
 import hotelZSRender from "./hotelZSRender";
+import renderHun from "./renderHun";
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 const { ccclass, property } = cc._decorator;
 
@@ -31,6 +36,9 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     zhuanshengPfb: cc.Prefab = null;
 
+    @property(cc.Prefab)
+    hunPfb: cc.Prefab = null;
+
     @property(cc.Label)
     heroNumDisplay: cc.Label = null;
 
@@ -49,12 +57,64 @@ export default class NewClass extends cc.Component {
 
     }
 
+    updataHun() {
+        this.contect.removeAllChildren()
+        let fragList = []
+        let keys = Object.keys(DataManager.GameData.CardFrags)
+        for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+            if (keys.indexOf(String(DataManager.instance.itemsList[i].template_id)) != -1) {
+                fragList.push(DataManager.instance.itemsList[i])
+            }
+        }
+
+        for (let i = 0; i < fragList.length; i++) {
+            let render = cc.instantiate(this.hunPfb)
+            render.parent = this.contect
+            if (this.contect.children.length < 5) {
+                render.x = 1000
+                this.scheduleOnce(() => {
+                    render.runAction(cc.moveTo(DataManager.SCROLLTIME1, cc.v2(0, render.y)))
+                }, DataManager.SCROLLTIME2 * i)
+            }
+
+            render.getComponent(renderHun).init(fragList[i])
+        }
+
+    }
+
     init(from = this._from, data = this._data) {
         this._data = data
 
         this._from = from
 
         this.contect.removeAllChildren()
+
+        this.node.getChildByName('toggleContainer').active = this._data.idx == 1
+        this.node.getChildByName('toggleContainer').children[0].getComponent(cc.Toggle).isChecked = true
+        if (this._data.idx == 1) {
+            this.node.getChildByName('toggleContainer').children[0].on(cc.Node.EventType.TOUCH_END, () => {
+                this.contect.removeAllChildren()
+                for (let i = 0; i < DataManager.cardsList.length; i++) {
+                    let pfb = cc.instantiate(this.jinhuaPfb)
+                    pfb.parent = this.contect
+
+                    if (this.contect.children.length < 5) {
+                        pfb.x = 1000
+                        this.scheduleOnce(() => {
+                            pfb.runAction(cc.moveTo(DataManager.SCROLLTIME1, cc.v2(0, pfb.y)))
+                        }, DataManager.SCROLLTIME2 * i)
+                    }
+
+
+                    pfb.getComponent(hotelJinhuaRender).init(DataManager.cardsList[i])
+                    pfb.on(cc.Node.EventType.TOUCH_END, () => {
+                        ViewManager.instance.hideWnd(EnumManager.viewPath.WND_HOTEL_LIST)
+                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL_DETAIL, ...[DataManager.cardsList[i]])
+                    }, this)
+                }
+            }, this)
+            this.node.getChildByName('toggleContainer').children[1].on(cc.Node.EventType.TOUCH_END, this.updataHun, this)
+        }
 
         this.titleDisplay.string = data.name
         // for (let i = 0; i < 10; i++) {
@@ -99,6 +159,14 @@ export default class NewClass extends cc.Component {
 
 
         this.heroNumDisplay.string = `${DataManager.cardsList.length}/${Object.keys(DataManager.GameData.Cards).length}`
+        NetEventDispatcher.addListener(NetEvent.S2CCardCompose, this.S2CCardCompose, this)
+    }
+
+    S2CCardCompose(data) {
+        // 将魂合成返回:{}
+        console.log(`将魂合成返回:` + JSON.stringify(data))
+        this.updataHun()
+        ViewManager.instance.showToast(`将魂合成武将成功`)
 
     }
 

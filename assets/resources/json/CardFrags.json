@@ -1,158 +1,507 @@
 {
   "575": {
-    "craft_num": 80,
-    "name": "王翦之魂",
+    "craft_num": 15,
+    "name": "郑十之魂",
     "bind_stages": [
       101,
       102
     ],
-    "card_id": 1,
-    "des": "收集80个就可以召唤英雄王翦。同时也是王翦升阶到+5及以上的必要材料",
+    "card_id": 68,
+    "des": "收集80个就可以召唤英雄郑十。",
     "icon": "blueMage2Purple",
-    "quality": 2
+    "quality": 5
   },
   "583": {
-    "craft_num": 80,
-    "name": "李斯之魂",
+    "craft_num": 15,
+    "name": "吴九之魂",
     "bind_stages": [
       101,
       102
     ],
-    "card_id": 2,
-    "des": "收集80个就可以召唤英雄李斯。同时也是李斯升阶到+5及以上的必要材料",
+    "card_id": 67,
+    "des": "收集80个就可以召唤英雄吴九。同时也是吴九升阶到+5及以上的必要材料",
     "icon": "blueArcher1Blue",
-    "quality": 2
+    "quality": 5
   },
   "591": {
-    "craft_num": 80,
-    "name": "荆轲之魂",
+    "craft_num": 15,
+    "name": "周八之魂",
     "bind_stages": [
       101,
       102
     ],
-    "card_id": 3,
-    "des": "收集80个就可以召唤英雄荆轲。同时也是荆轲升阶到+5及以上的必要材料",
+    "card_id": 66,
+    "des": "收集15个就可以召唤英雄周八。同时也是周八升阶到+5及以上的必要材料",
     "icon": "blueMage1Red",
-    "quality": 2
+    "quality": 5
   },
   "599": {
-    "craft_num": 80,
-    "name": "项燕之魂",
+    "craft_num": 15,
+    "name": "孙七之魂",
     "bind_stages": [
       101,
       102
     ],
-    "card_id": 4,
-    "des": "收集15个就可以召唤英雄项燕。同时也是项燕升阶到+5及以上的必要材料",
+    "card_id": 65,
+    "des": "收集15个就可以召唤英雄孙七燕。同时也是孙七升阶到+5及以上的必要材料",
     "icon": "blueInfantry1White",
-    "quality": 2
+    "quality": 5
   },
   "607": {
-    "craft_num": 80,
-    "name": "吕不韦之魂",
+    "craft_num": 15,
+    "name": "赵六之魂",
     "bind_stages": [
       101,
       102
     ],
-    "card_id": 5,
-    "des": "收集80个就可以召唤英雄吕不韦。同时也是吕不韦升阶到+5及以上的必要材料",
+    "card_id": 64,
+    "des": "收集15个就可以召唤英雄赵六。同时也是赵六升阶到+5及以上的必要材料",
     "icon": "blueMage1Red",
-    "quality": 2
+    "quality": 5
   },
   "500": {
-    "craft_num": 60,
-    "name": "李信之魂",
+    "craft_num": 15,
+    "name": "王五之魂",
     "bind_stages": [
       101,
       102
     ],
-    "card_id": 6,
-    "des": "收集30个就可以召唤英雄李信。同时也是李信升阶到+5及以上的必要材料",
+    "card_id": 63,
+    "des": "收集30个就可以召唤英雄王五。同时也是王五升阶到+5及以上的必要材料",
     "icon": "blueMage1White",
-    "quality": 2
+    "quality": 5
   },
   "504": {
-    "craft_num": 60,
-    "name": "燕丹之忠",
+    "craft_num": 15,
+    "name": "李四之忠",
     "bind_stages": [
       101,
       102
     ],
-    "card_id": 7,
-    "des": "收集30个就可以召唤英雄燕丹。同时也是燕丹升阶到+5及以上的必要材料",
+    "card_id":62,
+    "des": "收集15个就可以召唤英雄李四。同时也是李四升阶到+5及以上的必要材料",
     "icon": "huaxiong",
-    "quality": 3
+    "quality": 5
   },
   "508": {
-    "craft_num": 60,
-    "name": "扶苏之忠",
+    "craft_num": 15,
+    "name": "张三之忠",
     "bind_stages": [
       101,
       102
     ],
-    "card_id": 8,
-    "des": "收集30个就可以召唤英雄扶苏。同时也是扶苏升阶到+5及以上的必要材料",
+    "card_id": 61,
+    "des": "收集15个就可以召唤英雄张三。同时也是张三升阶到+5及以上的必要材料",
     "icon": "yanliang",
-    "quality": 3
+    "quality": 5
   },
+
   "512": {
-    "craft_num": 60,
-    "name": "高渐离之魂",
+    "craft_num": 15,
+    "name": "赵葱之魂",
     "bind_stages": [
       101,
       102
     ],
-    "card_id": 9,
-    "des": "收集30个就可以召唤英雄高渐离。同时也是高渐离升阶到+5及以上的必要材料",
+    "card_id":60,
+    "des": "收集15个就可以召唤英雄赵葱。同时也是赵葱升阶到+5及以上的必要材料",
     "icon": "diaochan",
-    "quality": 3
+    "quality": 4
   },
   "520": {
-    "craft_num": 60,
-    "name": "张良之忠",
+    "craft_num": 15,
+    "name": "尉缭之忠",
     "bind_stages": [
       101,
       102
     ],
-    "card_id": 10,
-    "des": "收集30个就可以召唤英雄张良。同时也是张良升阶到+5及以上的必要材料",
+    "card_id":59,
+    "des": "收集30个就可以召唤英雄尉缭。同时也是尉缭升阶到+5及以上的必要材料",
     "icon": "machao",
-    "quality": 3
+    "quality": 4
   },
   "528": {
-    "craft_num": 60,
-    "name": "韩非之忠",
+    "craft_num": 15,
+    "name": "齐建之忠",
     "bind_stages": [
       101,
       102
     ],
-    "card_id": 11,
-    "des": "收集30个就可以召唤英雄韩非。同时也是韩非升阶到+5及以上的必要材料",
+    "card_id": 58,
+    "des": "收集15个就可以召唤英雄韩非。同时也是韩非升阶到+5及以上的必要材料",
     "icon": "zhurong",
-    "quality": 3
+    "quality": 4
   },
   "536": {
-    "craft_num": 60,
-    "name": "郭开之魂",
+    "craft_num": 15,
+    "name": "燕喜之魂",
     "bind_stages": [
       101,
       102
     ],
-    "card_id": 12,
-    "des": "收集60个就可以召唤英雄郭开。同时也是郭开升阶到+5及以上的必要材料",
+    "card_id": 57,
+    "des": "收集15个就可以召唤英雄燕喜。同时也是燕喜升阶到+5及以上的必要材料",
     "icon": "WJ089",
     "quality": 4
   },
   "544": {
-    "craft_num": 45,
+    "craft_num": 15,
+    "name": "魏假之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 56,
+    "des": "收集15个就可以召唤英雄魏假。同时也是魏假升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 4
+  },
+  "545": {
+    "craft_num": 15,
+    "name": "韩安之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 55,
+    "des": "收集15个就可以召唤英雄韩安。同时也是韩安升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 4
+  },
+  "546": {
+    "craft_num": 15,
+    "name": "子楚之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 54,
+    "des": "收集15个就可以召唤英雄子楚。同时也是子楚升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 4
+  },
+  "547": {
+    "craft_num": 15,
+    "name": "王贲之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 53,
+    "des": "收集15个就可以召唤英雄王贲。同时也是王贲升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 4
+  },
+  "548": {
+    "craft_num": 15,
+    "name": "吴广之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 52,
+    "des": "收集15个就可以召唤英雄吴广。同时也是吴广升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 4
+  },
+  "549": {
+    "craft_num": 15,
+    "name": "秦舞阳之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 51,
+    "des": "收集15个就可以召唤英雄秦舞阳。同时也是秦舞阳升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 4
+  },
+  "550": {
+    "craft_num": 15,
+    "name": "郑国之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 50,
+    "des": "收集15个就可以召唤英雄郑国。同时也是郑国升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 4
+  },
+  "551": {
+    "craft_num": 15,
+    "name": "赵姬之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 49,
+    "des": "收集15个就可以召唤英雄赵姬。同时也是赵姬升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 4
+  },
+  "552": {
+    "craft_num": 15,
+    "name": "嫪毐之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 48,
+    "des": "收集15个就可以召唤英雄嫪毐。同时也是嫪毐升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 4
+  },
+  "553": {
+    "craft_num": 15,
+    "name": "荀子之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 47,
+    "des": "收集15个就可以召唤英雄荀子。同时也是荀子升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "554": {
+    "craft_num": 15,
+    "name": "韩信之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 46,
+    "des": "收集15个就可以召唤英雄韩信。同时也是韩信升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "555": {
+    "craft_num": 15,
+    "name": "刘邦之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 45,
+    "des": "收集15个就可以召唤英雄刘邦。同时也是刘邦升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "556": {
+    "craft_num": 15,
+    "name": "项羽之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 44,
+    "des": "收集15个就可以召唤英雄项羽。同时也是项羽升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "557": {
+    "craft_num": 15,
+    "name": "陈胜之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 43,
+    "des": "收集15个就可以召唤英雄陈胜。同时也是陈胜升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "558": {
+    "craft_num": 15,
+    "name": "蒙恬之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 42,
+    "des": "收集15个就可以召唤英雄蒙恬。同时也是蒙恬升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "559": {
+    "craft_num": 15,
+    "name": "赵高之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 41,
+    "des": "收集15个就可以召唤英雄赵高。同时也是赵高升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "560": {
+    "craft_num": 15,
+    "name": "司马尚之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 40,
+    "des": "收集15个就可以召唤英雄司马尚。同时也是司马尚升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "561": {
+    "craft_num": 15,
     "name": "魏无忌之魂",
     "bind_stages": [
       101,
       102
     ],
-    "card_id": 13,
-    "des": "收集45个就可以召唤英雄魏无忌。同时也是魏无忌升阶到+5及以上的必要材料",
+    "card_id": 39,
+    "des": "收集15个就可以召唤英雄魏无忌。同时也是魏无忌升阶到+5及以上的必要材料",
     "icon": "dingfeng",
-    "quality": 2
+    "quality": 3
+  },
+  "562": {
+    "craft_num": 15,
+    "name": "郭开之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 38,
+    "des": "收集15个就可以召唤英雄郭开。同时也是郭开升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "563": {
+    "craft_num": 15,
+    "name": "韩非之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 37,
+    "des": "收集15个就可以召唤英雄韩非。同时也是韩非升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "564": {
+    "craft_num": 15,
+    "name": "张良之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 36,
+    "des": "收集15个就可以召唤英雄张良。同时也是张良升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "565": {
+    "craft_num": 15,
+    "name": "高渐离之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 35,
+    "des": "收集15个就可以召唤英雄高渐离。同时也是高渐离升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "566": {
+    "craft_num": 15,
+    "name": "扶苏之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 34,
+    "des": "收集15个就可以召唤英雄扶苏。同时也是扶苏升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "567": {
+    "craft_num": 15,
+    "name": "燕丹之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 33,
+    "des": "收集15个就可以召唤英雄燕丹。同时也是燕丹升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "568": {
+    "craft_num": 15,
+    "name": "李信之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 32,
+    "des": "收集15个就可以召唤英雄李信。同时也是李信升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "569": {
+    "craft_num": 15,
+    "name": "吕不韦之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 31,
+    "des": "收集15个就可以召唤英雄吕不韦。同时也是吕不韦升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "570": {
+    "craft_num": 15,
+    "name": "项燕之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 30,
+    "des": "收集15个就可以召唤英雄项燕。同时也是项燕升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "571": {
+    "craft_num": 15,
+    "name": "荆轲之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 29,
+    "des": "收集15个就可以召唤英雄荆轲。同时也是荆轲升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "572": {
+    "craft_num": 15,
+    "name": "李斯之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 28,
+    "des": "收集15个就可以召唤英雄李斯。同时也是李斯升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
+  },
+  "573": {
+    "craft_num": 15,
+    "name": "王翦之魂",
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 27,
+    "des": "收集15个就可以召唤英雄王翦。同时也是王翦升阶到+5及以上的必要材料",
+    "icon": "dingfeng",
+    "quality": 3
   }
 }

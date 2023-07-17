@@ -129,6 +129,8 @@ export default class DataManager {
         Stages: [],
         /**将领数据 */
         Cards: {},
+        /**将魂 */
+        CardFrags: {},
         /**将领等级 */
         CardLevels: {},
         /**技能表 */
@@ -155,7 +157,9 @@ export default class DataManager {
         /**学习技能 */
         SkillStudy: {},
         /**邮件 */
-        Mail: {}
+        Mail: {},
+        /**跑马灯 */
+        Marquee: {}
     }
     /**我的将表 */
     static cardsList = []
