@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "48d9cd0c-2c5f-4096-81d5-e552a8557451",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 86,
+  "height": 71,
+  "platformSettings": {},
+  "subMetas": {
+    "铁血战神铜箱": {
+      "ver": "1.0.6",
+      "uuid": "584fa656-6944-4ba4-83c4-37d115567448",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "48d9cd0c-2c5f-4096-81d5-e552a8557451",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 86,
+      "height": 71,
+      "rawWidth": 86,
+      "rawHeight": 71,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

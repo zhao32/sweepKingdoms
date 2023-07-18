@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "0c91a32f-30e0-4e3d-bda7-b9f57ecb29d6",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 90,
+  "height": 85,
+  "platformSettings": {},
+  "subMetas": {
+    "1红天选玄女": {
+      "ver": "1.0.6",
+      "uuid": "99a082a0-8625-4833-8fdb-e3521d62bfdb",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "0c91a32f-30e0-4e3d-bda7-b9f57ecb29d6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 90,
+      "height": 85,
+      "rawWidth": 90,
+      "rawHeight": 85,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

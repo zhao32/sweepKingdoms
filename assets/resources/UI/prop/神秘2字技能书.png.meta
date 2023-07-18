@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "df3f2239-d5f9-4c4d-8941-6a9cd0658b0e",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 63,
+  "height": 66,
+  "platformSettings": {},
+  "subMetas": {
+    "神秘2字技能书": {
+      "ver": "1.0.6",
+      "uuid": "69fe7c44-1d5c-4ff7-8d44-6c3abe06f451",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "df3f2239-d5f9-4c4d-8941-6a9cd0658b0e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 63,
+      "height": 66,
+      "rawWidth": 63,
+      "rawHeight": 66,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

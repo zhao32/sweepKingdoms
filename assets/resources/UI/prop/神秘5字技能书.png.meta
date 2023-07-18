@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "e18f3fb5-989d-4f2d-b8bb-6d95a3ff7724",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 63,
+  "height": 66,
+  "platformSettings": {},
+  "subMetas": {
+    "神秘5字技能书": {
+      "ver": "1.0.6",
+      "uuid": "1f7c390e-d0b0-46d6-9dcc-9333af4ca78f",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "e18f3fb5-989d-4f2d-b8bb-6d95a3ff7724",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 63,
+      "height": 66,
+      "rawWidth": 63,
+      "rawHeight": 66,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

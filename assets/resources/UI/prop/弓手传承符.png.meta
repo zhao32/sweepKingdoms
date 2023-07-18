@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "524809c7-6c20-478d-a9e1-3b532267252b",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "弓手传承符": {
+      "ver": "1.0.6",
+      "uuid": "5c7e8831-e38c-4e34-b3d8-8989ed71d052",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "524809c7-6c20-478d-a9e1-3b532267252b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

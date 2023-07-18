@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "567f1f87-bedd-49b6-859a-e4586a04d152",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 59,
+  "height": 70,
+  "platformSettings": {},
+  "subMetas": {
+    "传奇卷轴": {
+      "ver": "1.0.6",
+      "uuid": "df226649-218b-4309-a8f8-a6ae8c98f67f",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "567f1f87-bedd-49b6-859a-e4586a04d152",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 59,
+      "height": 70,
+      "rawWidth": 59,
+      "rawHeight": 70,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

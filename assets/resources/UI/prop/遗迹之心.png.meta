@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "5506436d-1ecd-40cc-8001-00b7d16aceb0",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 57,
+  "height": 48,
+  "platformSettings": {},
+  "subMetas": {
+    "遗迹之心": {
+      "ver": "1.0.6",
+      "uuid": "9386fd24-de73-4ff3-ac1a-0415fb2fe5b3",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "5506436d-1ecd-40cc-8001-00b7d16aceb0",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 57,
+      "height": 48,
+      "rawWidth": 57,
+      "rawHeight": 48,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

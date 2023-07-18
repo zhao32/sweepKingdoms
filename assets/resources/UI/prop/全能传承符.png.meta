@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "26e6cb34-396b-470b-aa72-4c3b48b05267",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "全能传承符": {
+      "ver": "1.0.6",
+      "uuid": "df45c6da-512c-4ee0-a374-30c35daab7c4",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "26e6cb34-396b-470b-aa72-4c3b48b05267",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

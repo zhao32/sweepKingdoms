@@ -5,7 +5,17 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import DataManager from "../utils/Manager/DataManager";
+
 const { ccclass, property } = cc._decorator;
+
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
+
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -32,18 +42,23 @@ export default class NewClass extends cc.Component {
     proBar: cc.ProgressBar = null;
 
 
-
-
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
 
+    data
     start() {
 
     }
 
+    init(data) {
+        this.data = data
+        this.attributeDisplay.string = data.name
+    }
+
     onStrengthHandler() {
-        
+        // { idx: data.idx, type: 1, name: "挥砍攻击" }
+        MyProtocols.send_C2SSoliderStren(DataManager._loginSocket, 1, this.data.idx, this.data.type - 1)
     }
 
     onClose() {

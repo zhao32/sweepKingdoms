@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "f3059264-eb58-4280-a4b4-8f308dd3ff80",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 59,
+  "height": 69,
+  "platformSettings": {},
+  "subMetas": {
+    "初级经验丹": {
+      "ver": "1.0.6",
+      "uuid": "4c79dc55-4f0c-47c4-bf80-c816a1c3f8a2",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "f3059264-eb58-4280-a4b4-8f308dd3ff80",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 59,
+      "height": 69,
+      "rawWidth": 59,
+      "rawHeight": 69,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

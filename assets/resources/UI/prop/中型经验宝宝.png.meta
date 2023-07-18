@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "231fa4c7-5887-4d27-b3b3-03e808edf045",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 56,
+  "height": 56,
+  "platformSettings": {},
+  "subMetas": {
+    "中型经验宝宝": {
+      "ver": "1.0.6",
+      "uuid": "4c7416a7-4dfc-4466-b5e9-9516ee0c0e32",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "231fa4c7-5887-4d27-b3b3-03e808edf045",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 56,
+      "height": 56,
+      "rawWidth": 56,
+      "rawHeight": 56,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

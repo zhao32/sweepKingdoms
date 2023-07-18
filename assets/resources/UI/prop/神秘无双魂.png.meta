@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "03332177-16db-4391-bd38-54016e16a64f",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 60,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "神秘无双魂": {
+      "ver": "1.0.6",
+      "uuid": "e5f413db-293f-4382-8776-f1f9a7364a3a",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "03332177-16db-4391-bd38-54016e16a64f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 60,
+      "height": 64,
+      "rawWidth": 60,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

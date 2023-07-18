@@ -368,9 +368,13 @@ export enum NetEvent {
     /**士兵复活 */
     C2SRebirth = 1059,
 
-    S2CRebirth = 1060
+    S2CRebirth = 1060,
 
+    /**兵种强化 */
+    C2SSoliderStren = 10187,
 
+    /**兵种强化 */
+    S2CSoliderStren = 10188,
 
 }
 

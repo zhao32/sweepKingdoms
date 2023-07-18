@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "b922dd39-541b-4b86-881e-334a674ebc97",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 58,
+  "height": 61,
+  "platformSettings": {},
+  "subMetas": {
+    "上古卷轴": {
+      "ver": "1.0.6",
+      "uuid": "9a551f47-25da-4e4a-8c9b-3d31d5d6b8a5",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "b922dd39-541b-4b86-881e-334a674ebc97",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 58,
+      "height": 61,
+      "rawWidth": 58,
+      "rawHeight": 61,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

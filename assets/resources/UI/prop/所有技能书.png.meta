@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "b7087bfa-6299-4982-8151-b7fc16f6ca1f",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 80,
+  "height": 80,
+  "platformSettings": {},
+  "subMetas": {
+    "所有技能书": {
+      "ver": "1.0.6",
+      "uuid": "ba4836bd-9863-4a43-bb16-42885f4da1fb",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "b7087bfa-6299-4982-8151-b7fc16f6ca1f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": -4.5,
+      "trimX": 0,
+      "trimY": 9,
+      "width": 80,
+      "height": 71,
+      "rawWidth": 80,
+      "rawHeight": 80,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

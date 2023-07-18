@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "afe673a0-7fb4-493e-98b4-277d10842941",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 67,
+  "height": 75,
+  "platformSettings": {},
+  "subMetas": {
+    "重镇之石": {
+      "ver": "1.0.6",
+      "uuid": "daf5510b-7e7b-4ecb-b114-26018c624ea8",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "afe673a0-7fb4-493e-98b4-277d10842941",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 67,
+      "height": 75,
+      "rawWidth": 67,
+      "rawHeight": 75,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

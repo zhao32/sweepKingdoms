@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "ff39be18-6b81-48ca-9bd8-6372395146a4",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 73,
+  "height": 82,
+  "platformSettings": {},
+  "subMetas": {
+    "名城晶石": {
+      "ver": "1.0.6",
+      "uuid": "bc7b6754-032a-447b-95a9-a29d59b2a83e",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "ff39be18-6b81-48ca-9bd8-6372395146a4",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 73,
+      "height": 82,
+      "rawWidth": 73,
+      "rawHeight": 82,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

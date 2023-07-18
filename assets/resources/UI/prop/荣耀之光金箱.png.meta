@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "dfd6b61b-53b0-4435-97c0-bdbcba0be276",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 83,
+  "height": 77,
+  "platformSettings": {},
+  "subMetas": {
+    "荣耀之光金箱": {
+      "ver": "1.0.6",
+      "uuid": "38f04c20-3e48-4c64-a13d-2adbc4e3b839",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "dfd6b61b-53b0-4435-97c0-bdbcba0be276",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 83,
+      "height": 77,
+      "rawWidth": 83,
+      "rawHeight": 77,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

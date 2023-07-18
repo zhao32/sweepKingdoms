@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "a426325b-02eb-41fb-b50a-fe0c430813b3",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 49,
+  "height": 55,
+  "platformSettings": {},
+  "subMetas": {
+    "所有神兵蛋": {
+      "ver": "1.0.6",
+      "uuid": "f2965091-938e-4369-afa2-3d34b3cdd518",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "a426325b-02eb-41fb-b50a-fe0c430813b3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 49,
+      "height": 55,
+      "rawWidth": 49,
+      "rawHeight": 55,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

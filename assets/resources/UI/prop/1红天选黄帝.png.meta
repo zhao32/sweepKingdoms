@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "f78541fb-ecd5-458b-a949-f6c7e7d2fc92",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 85,
+  "height": 80,
+  "platformSettings": {},
+  "subMetas": {
+    "1红天选黄帝": {
+      "ver": "1.0.6",
+      "uuid": "ec54d1ee-b95e-4ba4-a1cd-bf62ed87df1e",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "f78541fb-ecd5-458b-a949-f6c7e7d2fc92",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 85,
+      "height": 80,
+      "rawWidth": 85,
+      "rawHeight": 80,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

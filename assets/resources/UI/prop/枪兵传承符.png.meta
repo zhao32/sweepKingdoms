@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "57d5c6f0-84d8-460a-bd14-4ee7e4ff1323",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 64,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "枪兵传承符": {
+      "ver": "1.0.6",
+      "uuid": "38f41655-7cd0-4092-85bf-552a319da298",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "57d5c6f0-84d8-460a-bd14-4ee7e4ff1323",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 64,
+      "height": 64,
+      "rawWidth": 64,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

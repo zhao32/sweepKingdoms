@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "67fadfee-d6cb-4760-ba64-ca714559fdb0",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 66,
+  "height": 67,
+  "platformSettings": {},
+  "subMetas": {
+    "圣都碧玉": {
+      "ver": "1.0.6",
+      "uuid": "18b5b346-7871-463d-989b-573d301b7f8c",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "67fadfee-d6cb-4760-ba64-ca714559fdb0",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 66,
+      "height": 67,
+      "rawWidth": 66,
+      "rawHeight": 67,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

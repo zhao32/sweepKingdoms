@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "bec251c6-9528-4ce5-a5b7-4358cc8c74e0",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 86,
+  "height": 71,
+  "platformSettings": {},
+  "subMetas": {
+    "荣耀之光铜箱": {
+      "ver": "1.0.6",
+      "uuid": "9a86d0c0-dbb1-4ea0-b472-9d2d98ed380a",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "bec251c6-9528-4ce5-a5b7-4358cc8c74e0",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 86,
+      "height": 71,
+      "rawWidth": 86,
+      "rawHeight": 71,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

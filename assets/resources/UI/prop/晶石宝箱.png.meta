@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "0a6aaa84-ffe6-4979-8ede-15f53c454ed2",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 73,
+  "height": 70,
+  "platformSettings": {},
+  "subMetas": {
+    "晶石宝箱": {
+      "ver": "1.0.6",
+      "uuid": "9421c1df-6aca-4a7e-bfca-977ccc15475a",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "0a6aaa84-ffe6-4979-8ede-15f53c454ed2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 73,
+      "height": 70,
+      "rawWidth": 73,
+      "rawHeight": 70,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -3872,6 +3872,20 @@ var MyProtocols = {
 			}
 		}
 
+		retObj.storgleave_data = new Map();
+		let storgleave_size = myDecoder.readInt();
+		if (storgleave_size > 0) {
+			for (var i = 0; i < storgleave_size; i++) {
+				var type = myDecoder.readInt();
+				var typesize = myDecoder.readInt();
+				var lv = [];
+				for (var x = 0; x < typesize; x++) {
+					lv[x] = myDecoder.readInt();
+				}
+				storgleave_data.set(type, lv);
+			}
+		}
+
 		console.log('-------------10108---------------------')
 		return retObj;
 	},
@@ -6947,6 +6961,32 @@ var MyProtocols = {
 		retObj.num = myDecoder.readInt();
 		return retObj;
 	},
+
+	/**兵种强化 idx 兵种 type 属性 1-6  挥砍-穿刺之类 */
+	send_C2SSoliderStren: function (senderSocket, lv, idx, type) {
+		console.log(lv, idx, type)
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(10187);
+
+		myEncoder.writeInt(lv);
+		myEncoder.writeInt(idx);
+		myEncoder.writeInt(type);
+		myEncoder.writeInt(0);
+
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_10188: function (myDecoder) {
+		var retObj = {};
+		retObj.lv = myDecoder.readInt();
+		retObj.idx = myDecoder.readInt();
+		retObj.type = myDecoder.readInt();
+
+		return retObj;
+	},
+
 
 }
 

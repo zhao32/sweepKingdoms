@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "8d767546-f9ac-4727-86c2-557c7e140463",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 86,
+  "height": 94,
+  "platformSettings": {},
+  "subMetas": {
+    "铁血战神银箱": {
+      "ver": "1.0.6",
+      "uuid": "80efca34-8fde-495a-8769-eafb025bb196",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "8d767546-f9ac-4727-86c2-557c7e140463",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 86,
+      "height": 94,
+      "rawWidth": 86,
+      "rawHeight": 94,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

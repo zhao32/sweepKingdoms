@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "7ca9466e-e75f-4163-8650-4bdea0157037",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 71,
+  "height": 76,
+  "platformSettings": {},
+  "subMetas": {
+    "弓手征兵令": {
+      "ver": "1.0.6",
+      "uuid": "ba246151-f9d1-4de0-9b27-640b1475be5e",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "7ca9466e-e75f-4163-8650-4bdea0157037",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 71,
+      "height": 76,
+      "rawWidth": 71,
+      "rawHeight": 76,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
