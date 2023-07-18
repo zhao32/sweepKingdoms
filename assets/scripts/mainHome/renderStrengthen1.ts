@@ -53,16 +53,22 @@ export default class NewClass extends cc.Component {
 
     init(data) {
         this.data = data
+        this.gradeDisplay.string = `LV:`+data.lv
         this.attributeDisplay.string = data.name
     }
 
     onStrengthHandler() {
         // { idx: data.idx, type: 1, name: "挥砍攻击" }
-        MyProtocols.send_C2SSoliderStren(DataManager._loginSocket, 1, this.data.idx, this.data.type - 1)
+        MyProtocols.send_C2SSoliderStren(DataManager._loginSocket, this.data.lv + 1, this.data.idx, this.data.type - 1)
     }
 
     onClose() {
 
+    }
+
+    updataLv(lv){ 
+        this.gradeDisplay.string = `LV:`+lv
+        this.data.lv = lv
     }
 
     // update (dt) {}

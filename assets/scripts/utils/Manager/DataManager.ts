@@ -37,7 +37,9 @@ interface playData {
     /**1 居民 2 资源仓库 3 战神像 4 英魂墓地 5 城墙 */
     basic_build: number[],
     /**军队数量 */
-    military_data: number[]
+    military_data: number[],
+    storgleave_data:any[]
+
 
 }
 
@@ -99,7 +101,9 @@ export default class DataManager {
         /**1 居民 2 资源仓库 3 战神像 4 英魂墓地 5 城墙 */
         basic_build: [],
         /**军队数量 */
-        military_data: []
+        military_data: [],
+        /**兵种强化数据 */
+        storgleave_data:[]
 
     }
 

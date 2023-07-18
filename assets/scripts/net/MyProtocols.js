@@ -3872,20 +3872,28 @@ var MyProtocols = {
 			}
 		}
 
-		retObj.storgleave_data = new Map();
+		
+		var storgleave_data = [];
 		let storgleave_size = myDecoder.readInt();
 		if (storgleave_size > 0) {
 			for (var i = 0; i < storgleave_size; i++) {
+				var data = {}
 				var type = myDecoder.readInt();
 				var typesize = myDecoder.readInt();
 				var lv = [];
 				for (var x = 0; x < typesize; x++) {
 					lv[x] = myDecoder.readInt();
 				}
-				storgleave_data.set(type, lv);
+				data = {
+					type: type,
+					lv: lv
+				}
+				storgleave_data.push(data)
 			}
 		}
 
+		retObj.storgleave_data = storgleave_data
+		console.log(retObj)
 		console.log('-------------10108---------------------')
 		return retObj;
 	},
