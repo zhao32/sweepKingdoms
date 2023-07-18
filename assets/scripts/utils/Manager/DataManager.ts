@@ -163,7 +163,11 @@ export default class DataManager {
         /**邮件 */
         Mail: {},
         /**跑马灯 */
-        Marquee: {}
+        Marquee: {},
+        /**兵种属性加成 */
+        soliderStren:{},
+        /**矿场矿石 */
+        MineStone:{},
     }
     /**我的将表 */
     static cardsList = []

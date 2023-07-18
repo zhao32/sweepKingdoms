@@ -83,7 +83,7 @@ export default class NewClass extends cc.Component {
         }
     }
 
-    soliderData 
+    soliderData
     /**显示士兵的属性 */
     showSoliderAttribute(data) {
         this.showType = 1
@@ -129,6 +129,14 @@ export default class NewClass extends cc.Component {
     init() {
         this.showArmy()
         NetEventDispatcher.addListener(NetEvent.S2CSoliderStren, this.S2CSoliderStren, this)
+        let keys = Object.keys(DataManager.GameData.MineStone)
+        for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+            for (let j = 0; j < keys.length; j++) {
+                if(keys[j] ==DataManager.instance.itemsList[i].template_id ){
+                    this.node.getChildByName(`pearls`).children[7 + j].getComponent(cc.Label).string = `x`+ DataManager.instance.itemsList[i].num
+                }  
+            }
+        }
 
     }
 
