@@ -39,7 +39,9 @@ export default class NewClass extends cc.Component {
     init(data) {
         this.nameLabel.string = data.name
         this.moneyLabel.string = 'x' + data.price
-        ResManager.loadItemIcon(`UI/items/${data.icon}`, this.icon)
+        // ResManager.loadItemIcon(`UI/items/${data.icon}`, this.icon)
+        ResManager.loadItemIcon(`UI/prop/${data.name}`, this.icon)
+
     }
 
     // update (dt) {}
