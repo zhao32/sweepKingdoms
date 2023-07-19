@@ -85,7 +85,7 @@ export default class NewClass extends cc.Component {
             ResManager.loadItemIcon(`UI/prop/${defaultData.name}`, this.pic)
 
         } else if (data.bagId == 1) {//装备
-            defaultData = DataManager.GameData.packItems[data.template_id]
+            defaultData = DataManager.GameData.Items[data.template_id]
 
             this.btnLabel0.string = `使用`
             this.btnLabel1.string = `出售`
@@ -119,14 +119,18 @@ export default class NewClass extends cc.Component {
             this.richLabel.string = skillSt.des
 
         } else if (data.bagId == 4) {//道具 
-            defaultData = DataManager.GameData.packItems[data.template_id]
-            this.btnLabel0.string = `使用`
-            this.btnLabel1.string = `出售`
-            ResManager.loadItemIcon(`UI/UnitsEquips/${data.template_id}`, this.pic)
-
+            defaultData = DataManager.GameData.Items[data.template_id]
             this.nameLabel.string = defaultData.name
             this.countLabel.string = 'x' + data.num
             this.richLabel.string = defaultData.des
+
+            if (keyConsList.indexOf(template_id) != -1) {
+                this.btnLabel0.string = `使用`
+                this.btnLabel1.string = `使用x${data.num}`
+            } else {
+                this.node.getChildByName(`op`).active = false
+            }
+            ResManager.loadItemIcon(`UI/prop/${defaultData.name}`, this.pic)
         }
         // console.log('defaultData:' + JSON.stringify(defaultData))
 
@@ -138,6 +142,7 @@ export default class NewClass extends cc.Component {
     btnHandler0() {
         if (this._data.bagId == 4) {
             ViewManager.instance.showToast(`使用道具`)
+            MyProtocols.send_C2SUseItem(DataManager._loginSocket, [{ template_id: this._data.template_id, count: 1 }])
         } else if (this._data.bagId == 0) {
             MyProtocols.send_C2SUseItem(DataManager._loginSocket, [{ template_id: this._data.template_id, count: 1 }])
         }
@@ -147,6 +152,7 @@ export default class NewClass extends cc.Component {
         if (this._data.bagId == 4) {
             ViewManager.instance.showToast(`卖出道具`)
             this.node.parent.getChildByName('sellPanel').active = true
+            MyProtocols.send_C2SUseItem(DataManager._loginSocket, [{ template_id: this._data.template_id, count: 1 }])
         } else if (this._data.bagId == 0) {
             MyProtocols.send_C2SUseItem(DataManager._loginSocket, [{ template_id: this._data.template_id, count: this._data.num }])
         }

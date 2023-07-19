@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "0acda962-6a88-4fd6-8a37-dd2bfd553467",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 48,
+  "height": 46,
+  "platformSettings": {},
+  "subMetas": {
+    "定国赤峰": {
+      "ver": "1.0.6",
+      "uuid": "ab726515-6a23-4a96-81b0-d81d17f5cd8e",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "0acda962-6a88-4fd6-8a37-dd2bfd553467",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 48,
+      "height": 46,
+      "rawWidth": 48,
+      "rawHeight": 46,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

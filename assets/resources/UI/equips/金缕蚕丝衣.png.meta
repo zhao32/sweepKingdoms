@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "4c36ccb1-1e4d-43f1-b265-b14aa337d482",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 28,
+  "height": 40,
+  "platformSettings": {},
+  "subMetas": {
+    "金缕蚕丝衣": {
+      "ver": "1.0.6",
+      "uuid": "8b7ee960-46a1-4741-a372-e3290613eb0e",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "4c36ccb1-1e4d-43f1-b265-b14aa337d482",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 28,
+      "height": 40,
+      "rawWidth": 28,
+      "rawHeight": 40,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

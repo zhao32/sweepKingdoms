@@ -39,7 +39,7 @@ export default class NewClass extends cc.Component {
 
     @property({ type: cc.Prefab })
     getRewardPanel_prefab: cc.Prefab = null;
-    
+
 
     list0 = []
     list1 = []
@@ -63,7 +63,7 @@ export default class NewClass extends cc.Component {
         /**消耗品 */
         let keyConsList = Object.keys(DataManager.GameData.Consumes)
 
-        let keyItemList = Object.keys(DataManager.GameData.packItems)
+        let keyItemList = Object.keys(DataManager.GameData.Items)
         let keySkillList = Object.keys(DataManager.GameData.packSkills)
 
 
@@ -79,25 +79,25 @@ export default class NewClass extends cc.Component {
                     let list = this[`list${i}`]
                     for (let j = 0; j < list.length; j++) {
                         let item = cc.instantiate(this.itemPfb)
-                        item.parent = this.contect
-                        item.on(cc.Node.EventType.TOUCH_END, () => {
-                            this.node.getChildByName('tipArea').active = true
-                            this.node.getChildByName('tipArea').getComponent(infoPanel).init(list[j])
-                            this.curData = list[j]
-                        }, this)
                         let template_id = list[j].template_id.toString()
+                        let has = false
                         if (i == 0) {
                             if (keyGiftList.indexOf(template_id) != -1) {
+                                has = true
                                 ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Boxes[template_id].name}`, item.getChildByName('pic'))
                             }
                             if (keyConsList.indexOf(template_id) != -1) {
+                                has = true
                                 ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Consumes[template_id].name}`, item.getChildByName('pic'))
                             }
                         } else if (i == 1) {
-                            ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[template_id].icon}`, item.getChildByName('pic'))
+                            has = true
+                            ResManager.loadItemIcon(`UI/items/${DataManager.GameData.Items[template_id].icon}`, item.getChildByName('pic'))
                         } else if (i == 2) {
-                            ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[template_id].icon}`, item.getChildByName('pic'))
+                            has = true
+                            ResManager.loadItemIcon(`UI/items/${DataManager.GameData.Items[template_id].icon}`, item.getChildByName('pic'))
                         } else if (i == 3) {
+                            has = true
                             let skillSt = DataManager.GameData.SkillStudy[template_id]
                             ResManager.loadItemIcon(`skillats/${skillSt.name}`, item.getChildByName('pic'))
                             if (skillSt.type == 1) {
@@ -108,8 +108,21 @@ export default class NewClass extends cc.Component {
                                 ResManager.loadItemIcon(`skillats/蓝`, item)
                             }
                         } else if (i == 4) {
-                            ResManager.loadItemIcon(`UI/UnitsEquips/${template_id}`, item.getChildByName('pic'))
+                            // ResManager.loadItemIcon(`UI/UnitsEquips/${template_id}`, item.getChildByName('pic'))
+                            if (keyItemList.indexOf(template_id) != -1) {
+                                has = true
+                                ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Items[template_id].name}`, item.getChildByName('pic'))
+                            }
                         }
+                        if (has == true) {
+                            item.parent = this.contect
+                            item.on(cc.Node.EventType.TOUCH_END, () => {
+                                this.node.getChildByName('tipArea').active = true
+                                this.node.getChildByName('tipArea').getComponent(infoPanel).init(list[j])
+                                this.curData = list[j]
+                            }, this)
+                        }
+
                     }
                 }
             }, this)
@@ -128,7 +141,7 @@ export default class NewClass extends cc.Component {
         /**消耗品 */
         let keyConsList = Object.keys(DataManager.GameData.Consumes)
 
-        let keyItemList = Object.keys(DataManager.GameData.packItems)
+        let keyItemList = Object.keys(DataManager.GameData.Items)
         let keySkillList = Object.keys(DataManager.GameData.packSkills)
 
         this.curBagId = 0
@@ -170,7 +183,7 @@ export default class NewClass extends cc.Component {
         /**消耗品 */
         let keyConsList = Object.keys(DataManager.GameData.Consumes)
 
-        let keyItemList = Object.keys(DataManager.GameData.packItems)
+        let keyItemList = Object.keys(DataManager.GameData.Items)
         let keySkillList = Object.keys(DataManager.GameData.packSkills)
 
         console.log('keyGiftList:' + JSON.stringify(keyGiftList))
@@ -230,32 +243,32 @@ export default class NewClass extends cc.Component {
         /**消耗品 */
         let keyConsList = Object.keys(DataManager.GameData.Consumes)
 
-        let keyItemList = Object.keys(DataManager.GameData.packItems)
+        let keyItemList = Object.keys(DataManager.GameData.Items)
         let keySkillList = Object.keys(DataManager.GameData.packSkills)
 
         this.contect.removeAllChildren()
         let list = this[`list${this.curBagId}`]
         for (let j = 0; j < list.length; j++) {
             let item = cc.instantiate(this.itemPfb)
-            item.parent = this.contect
-            item.on(cc.Node.EventType.TOUCH_END, () => {
-                this.node.getChildByName('tipArea').active = true
-                this.node.getChildByName('tipArea').getComponent(infoPanel).init(list[j])
-                this.curData = list[j]
-            }, this)
+            let has = false
             let template_id = list[j].template_id.toString()
             if (this.curBagId == 0) {
                 if (keyGiftList.indexOf(template_id) != -1) {
+                    has = true
                     ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Boxes[template_id].name}`, item.getChildByName('pic'))
                 }
                 if (keyConsList.indexOf(template_id) != -1) {
+                    has = true
                     ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Consumes[template_id].name}`, item.getChildByName('pic'))
                 }
             } else if (this.curBagId == 1) {
-                ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[template_id].icon}`, item.getChildByName('pic'))
+                has = true
+                ResManager.loadItemIcon(`UI/items/${DataManager.GameData.Items[template_id].icon}`, item.getChildByName('pic'))
             } else if (this.curBagId == 2) {
-                ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[template_id].icon}`, item.getChildByName('pic'))
+                has = true
+                ResManager.loadItemIcon(`UI/items/${DataManager.GameData.Items[template_id].icon}`, item.getChildByName('pic'))
             } else if (this.curBagId == 3) {
+                has = true
                 let skillSt = DataManager.GameData.SkillStudy[template_id]
                 ResManager.loadItemIcon(`skillats/${skillSt.name}`, item.getChildByName('pic'))
                 if (skillSt.type == 1) {
@@ -266,8 +279,20 @@ export default class NewClass extends cc.Component {
                     ResManager.loadItemIcon(`skillats/蓝`, item)
                 }
             } else if (this.curBagId == 4) {
-                ResManager.loadItemIcon(`UI/UnitsEquips/${template_id}`, item.getChildByName('pic'))
+                if (keyItemList.indexOf(template_id) != -1) {
+                    has = true
+                    ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Items[template_id].name}`, item.getChildByName('pic'))
+                }
             }
+            if (has) {
+                item.parent = this.contect
+                item.on(cc.Node.EventType.TOUCH_END, () => {
+                    this.node.getChildByName('tipArea').active = true
+                    this.node.getChildByName('tipArea').getComponent(infoPanel).init(list[j])
+                    this.curData = list[j]
+                }, this)
+            }
+
         }
         if (!this.curData) {
             this.node.getChildByName('tipArea').active = false

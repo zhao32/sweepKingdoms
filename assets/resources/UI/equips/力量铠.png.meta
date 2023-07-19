@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "799fabbd-fd0f-49e1-8ed6-b87ba1a14141",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 42,
+  "height": 41,
+  "platformSettings": {},
+  "subMetas": {
+    "力量铠": {
+      "ver": "1.0.6",
+      "uuid": "90c536ae-af1b-4029-a930-dcce858bb34f",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "799fabbd-fd0f-49e1-8ed6-b87ba1a14141",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 42,
+      "height": 41,
+      "rawWidth": 42,
+      "rawHeight": 41,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "f4483066-88a2-45ea-a9eb-3825aaa66e7d",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 44,
+  "height": 45,
+  "platformSettings": {},
+  "subMetas": {
+    "煞血猎": {
+      "ver": "1.0.6",
+      "uuid": "85a2128b-393c-4731-8a29-37b5e7045313",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "f4483066-88a2-45ea-a9eb-3825aaa66e7d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 44,
+      "height": 45,
+      "rawWidth": 44,
+      "rawHeight": 45,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

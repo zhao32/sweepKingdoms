@@ -144,8 +144,9 @@ export default class DataManager {
         Boxes: {},
         /** 消耗品*/
         Consumes: {},
+        
         /**道具 */
-        packItems: {},
+        Items: {},
         /**技能 */
         packSkills: {},
         /**将魂 */

@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "6483f7a4-75df-4b76-8f9d-0ba0be78de57",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 30,
+  "height": 43,
+  "platformSettings": {},
+  "subMetas": {
+    "珍妮之护": {
+      "ver": "1.0.6",
+      "uuid": "6842a0fb-b4ef-4351-ad13-9640d208c6fa",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "6483f7a4-75df-4b76-8f9d-0ba0be78de57",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 30,
+      "height": 43,
+      "rawWidth": 30,
+      "rawHeight": 43,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
