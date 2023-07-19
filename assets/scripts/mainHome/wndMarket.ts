@@ -85,14 +85,14 @@ export default class NewClass extends cc.Component {
         //     }, this)
         // }
 
-        for (let i = 0; i < Object.keys(DataManager.GameData.Consumes).length; i++) {
-            let id = Object.keys(DataManager.GameData.Consumes)[i]
+        for (let i = 0; i < Object.keys(DataManager.GameData.goods).length; i++) {
+            let id = Object.keys(DataManager.GameData.goods)[i]
             let item = cc.instantiate(this.itemPfb)
             item.parent = this.contect
-            item.getComponent(marketItem).init(DataManager.GameData.Consumes[id])
+            item.getComponent(marketItem).init(DataManager.GameData.goods[id])
             item.on(cc.Node.EventType.TOUCH_END, () => {
                 this.node.getChildByName(`buyPanel`).active = true
-                this.node.getChildByName(`buyPanel`).getComponent(buyPanel).init(DataManager.GameData.Consumes[id], i)
+                this.node.getChildByName(`buyPanel`).getComponent(buyPanel).init(DataManager.GameData.goods[id], i)
             }, this)
         }
     }

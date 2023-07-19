@@ -38,7 +38,7 @@ interface playData {
     basic_build: number[],
     /**军队数量 */
     military_data: number[],
-    storgleave_data:any[]
+    storgleave_data: any[]
 
 
 }
@@ -103,7 +103,7 @@ export default class DataManager {
         /**军队数量 */
         military_data: [],
         /**兵种强化数据 */
-        storgleave_data:[]
+        storgleave_data: []
 
     }
 
@@ -141,7 +141,9 @@ export default class DataManager {
         Skill: {},
         // Mine:[]
         /**礼包 */
-        packGift: {},
+        Boxes: {},
+        /** 消耗品*/
+        Consumes: {},
         /**道具 */
         packItems: {},
         /**技能 */
@@ -157,7 +159,7 @@ export default class DataManager {
         /**宝物 */
         Treasures: {},
         /**商店 */
-        Consumes: {},
+        goods: {},
         /**学习技能 */
         SkillStudy: {},
         /**邮件 */
@@ -165,9 +167,9 @@ export default class DataManager {
         /**跑马灯 */
         Marquee: {},
         /**兵种属性加成 */
-        soliderStren:{},
+        soliderStren: {},
         /**矿场矿石 */
-        MineStone:{},
+        MineStone: {},
     }
     /**我的将表 */
     static cardsList = []

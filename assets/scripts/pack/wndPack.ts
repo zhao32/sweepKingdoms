@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import GetRewardPanel from "../mail/GetRewardPanel";
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
@@ -36,98 +37,156 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Prefab })
     itemPfb: cc.Prefab = null;
 
+    @property({ type: cc.Prefab })
+    getRewardPanel_prefab: cc.Prefab = null;
+    
 
-    // LIFE-CYCLE CALLBACKS:
-
-    // onLoad () {}
-
-    start() {
-        let ToggleList = this.ToggleContainer.getComponentsInChildren(cc.Toggle)
-        ToggleList[0].isChecked = true
-        for (let i = 0; i < ToggleList.length; i++) {
-            ToggleList[i].node.on('toggle', (event: cc.Toggle) => {
-                if (event.isChecked == true) {
-                    console.log('选中' + i)
-                    this.node.getChildByName('tipArea').active = false
-                    this.contect.removeAllChildren()
-                    let list = this[`list${i}`]
-                    for (let j = 0; j < list.length; j++) {
-                        let render = cc.instantiate(this.renderPfb)
-                        render.removeAllChildren()
-                        render.parent = this.contect
-                        for (let k = 0; k < list[j].length; k++) {
-                            let item = cc.instantiate(this.itemPfb)
-                            if (list[j][k].bagId == 4) {
-                                ResManager.loadItemIcon(`UI/UnitsEquips/${list[j][k].template_id}`, item.getChildByName('pic'))
-                            } else if (list[j][k].bagId == 1) {
-                                console.log(JSON.stringify(list[j][k]))
-                                ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[list[j][k].template_id].icon}`, item.getChildByName('pic'))
-
-                            } else if (list[j][k].bagId == 3) {
-                                console.log('list[j][k].template_id:'+list[j][k].template_id)
-                                let skillSt = DataManager.GameData.SkillStudy[list[j][k].template_id]
-                                ResManager.loadItemIcon(`skillats/${skillSt.name}`, item.getChildByName('pic'))
-
-                                if (skillSt.type == 1) {
-                                    ResManager.loadItemIcon(`skillats/红`, item)
-                                } else if (skillSt.type == 2) {
-                                    ResManager.loadItemIcon(`skillats/黄`, item)
-                                } else if (skillSt.type == 3) {
-                                    ResManager.loadItemIcon(`skillats/蓝`, item)
-                                }
-
-                                // ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[list[j][k].template_id].icon }`, item.getChildByName('pic'))
-
-                            } else {
-                                ResManager.loadItemIcon(`UI/items/${list[j][k].template_id}`, item.getChildByName('pic'))
-                            }
-                            item.parent = render
-                            item.on(cc.Node.EventType.TOUCH_END, () => {
-                                this.node.getChildByName('tipArea').active = true
-                                this.node.getChildByName('tipArea').getComponent(infoPanel).init(list[j][k])
-                            }, this)
-                        }
-                    }
-                }
-            }, this)
-        }
-        // MyProtocols.send_C2SBagItems(DataManager._loginSocket)
-        this.initBagItems()
-
-    }
-
-    setPanelInfo(data) {
-
-    }
-
-    init() {
-        this.node.getChildByName('tipArea').active = false
-        // NetEventDispatcher.addListener(NetEvent.S2CBagItems, this.S2CBagItems, this)
-    }
     list0 = []
     list1 = []
     list2 = []
     list3 = []
     list4 = []
 
-    initBagItems() {
-        // console.log(JSON.stringify(retObj))
-        let itemsList = DataManager.instance.itemsList
-        this.contect.removeAllChildren()
-        let keyGiftList = Object.keys(DataManager.GameData.packGift)
+
+    // LIFE-CYCLE CALLBACKS:
+
+    // onLoad () {}
+
+    /**第几个分类 */
+    curBagId: number = 0
+    /**当前详情页的数据 */
+    curData
+
+    start() {
+        /**礼包 */
+        let keyGiftList = Object.keys(DataManager.GameData.Boxes)
+        /**消耗品 */
+        let keyConsList = Object.keys(DataManager.GameData.Consumes)
+
         let keyItemList = Object.keys(DataManager.GameData.packItems)
         let keySkillList = Object.keys(DataManager.GameData.packSkills)
 
-        console.log('keyItemList:' + JSON.stringify(keyItemList))
+
+        let ToggleList = this.ToggleContainer.getComponentsInChildren(cc.Toggle)
+        ToggleList[0].isChecked = true
+        for (let i = 0; i < ToggleList.length; i++) {
+            ToggleList[i].node.on('toggle', (event: cc.Toggle) => {
+                if (event.isChecked == true) {
+                    console.log('选中' + i)
+                    this.curBagId = i
+                    this.node.getChildByName('tipArea').active = false
+                    this.contect.removeAllChildren()
+                    let list = this[`list${i}`]
+                    for (let j = 0; j < list.length; j++) {
+                        let item = cc.instantiate(this.itemPfb)
+                        item.parent = this.contect
+                        item.on(cc.Node.EventType.TOUCH_END, () => {
+                            this.node.getChildByName('tipArea').active = true
+                            this.node.getChildByName('tipArea').getComponent(infoPanel).init(list[j])
+                            this.curData = list[j]
+                        }, this)
+                        let template_id = list[j].template_id.toString()
+                        if (i == 0) {
+                            if (keyGiftList.indexOf(template_id) != -1) {
+                                ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Boxes[template_id].name}`, item.getChildByName('pic'))
+                            }
+                            if (keyConsList.indexOf(template_id) != -1) {
+                                ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Consumes[template_id].name}`, item.getChildByName('pic'))
+                            }
+                        } else if (i == 1) {
+                            ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[template_id].icon}`, item.getChildByName('pic'))
+                        } else if (i == 2) {
+                            ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[template_id].icon}`, item.getChildByName('pic'))
+                        } else if (i == 3) {
+                            let skillSt = DataManager.GameData.SkillStudy[template_id]
+                            ResManager.loadItemIcon(`skillats/${skillSt.name}`, item.getChildByName('pic'))
+                            if (skillSt.type == 1) {
+                                ResManager.loadItemIcon(`skillats/红`, item)
+                            } else if (skillSt.type == 2) {
+                                ResManager.loadItemIcon(`skillats/黄`, item)
+                            } else if (skillSt.type == 3) {
+                                ResManager.loadItemIcon(`skillats/蓝`, item)
+                            }
+                        } else if (i == 4) {
+                            ResManager.loadItemIcon(`UI/UnitsEquips/${template_id}`, item.getChildByName('pic'))
+                        }
+                    }
+                }
+            }, this)
+        }
+    }
+
+
+    init() {
+        this.initBagItems()
+        this.node.getChildByName('tipArea').active = false
+        NetEventDispatcher.addListener(NetEvent.S2CUseItem, this.S2CUseItem, this)
+
+
+        /**礼包 */
+        let keyGiftList = Object.keys(DataManager.GameData.Boxes)
+        /**消耗品 */
+        let keyConsList = Object.keys(DataManager.GameData.Consumes)
+
+        let keyItemList = Object.keys(DataManager.GameData.packItems)
+        let keySkillList = Object.keys(DataManager.GameData.packSkills)
+
+        this.curBagId = 0
+        this.curData = this.list0[0]
+        console.log('list0:' + JSON.stringify(this.list0))
+        this.contect.removeAllChildren()
+        for (let i = 0; i < this.list0.length; i++) {
+            let render = cc.instantiate(this.itemPfb)
+            render.parent = this.contect
+
+            let template_id = this.list0[i].template_id.toString()
+            if (keyGiftList.indexOf(template_id) != -1) {
+                ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Boxes[template_id].name}`, render.getChildByName('pic'))
+            }
+
+            if (keyConsList.indexOf(template_id) != -1) {
+                ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Consumes[template_id].name}`, render.getChildByName('pic'))
+            }
+
+            render.on(cc.Node.EventType.TOUCH_END, () => {
+                this.node.getChildByName('tipArea').active = true
+                this.node.getChildByName('tipArea').getComponent(infoPanel).init(this.list0[i])
+            }, this)
+        }
+    }
+
+
+    initBagItems() {
+        this.list0 = []
+        this.list1 = []
+        this.list2 = []
+        this.list3 = []
+        this.list4 = []
+        // console.log(JSON.stringify(retObj))
+        let itemsList = DataManager.instance.itemsList
+        this.contect.removeAllChildren()
+        /**礼包 */
+        let keyGiftList = Object.keys(DataManager.GameData.Boxes)
+        /**消耗品 */
+        let keyConsList = Object.keys(DataManager.GameData.Consumes)
+
+        let keyItemList = Object.keys(DataManager.GameData.packItems)
+        let keySkillList = Object.keys(DataManager.GameData.packSkills)
+
+        console.log('keyGiftList:' + JSON.stringify(keyGiftList))
+        let hasCurData = false
         for (let i = 0; i < itemsList.length; i++) {
-            if (itemsList[i].bagId == 0) {//礼包
+            if (itemsList[i].bagId == 0) {//礼包 消耗品
                 console.log(`------礼包：--------`)
                 console.log('template_id:' + itemsList[i].template_id)
                 if (keyGiftList.indexOf(itemsList[i].template_id.toString()) != -1) {
                     this.list0.push(itemsList[i])
                 }
+
+                if (keyConsList.indexOf(itemsList[i].template_id.toString()) != -1) {
+                    this.list0.push(itemsList[i])
+                }
             } else if (itemsList[i].bagId == 1) {//装备
-               
                 if (keyItemList.indexOf(itemsList[i].template_id.toString()) != -1) {
                     this.list1.push(itemsList[i])
                 }
@@ -140,25 +199,16 @@ export default class NewClass extends cc.Component {
             } else if (itemsList[i].bagId == 4) {//道具
                 this.list4.push(itemsList[i])
             }
-        }
-
-        console.log('list0:'+JSON.stringify(this.list0))
-        this.list0 = DataManager.group(this.list0, 4)
-        this.list1 = DataManager.group(this.list1, 4)
-        this.list2 = DataManager.group(this.list2, 4)
-        this.list3 = DataManager.group(this.list3, 4)
-        this.list4 = DataManager.group(this.list4, 4)
-        console.log('list0:'+JSON.stringify(this.list0))
-        this.contect.removeAllChildren()
-        for (let i = 0; i < this.list0.length; i++) {
-            let render = cc.instantiate(this.renderPfb)
-            render.removeAllChildren()
-            render.parent = this.contect
-            for (let j = 0; j < this.list0[i].length; j++) {
-                let item = cc.instantiate(this.itemPfb)
-                item.parent = render
+            if (this.curData && this.curData.template_id == itemsList[i].template_id) {
+                this.curData = itemsList[i]
+                hasCurData = true
             }
+
         }
+        if (!hasCurData) this.curData = null
+
+
+        console.log('--list0-------' + JSON.stringify(this.list0))
 
     }
 
@@ -168,8 +218,72 @@ export default class NewClass extends cc.Component {
 
 
     onClose() {
-        // NetEventDispatcher.removeListener(NetEvent.S2CBagItems, this.S2CBagItems, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CUseItem, this.S2CUseItem, this)
     }
 
+    S2CUseItem(retObj) {
+        console.log(`消耗品使用后返回：` + JSON.stringify(retObj))
+        // {"reward_item":[{"template_id":2023,"bagId":1,"num":1}]}
+        this.initBagItems()
+        /**礼包 */
+        let keyGiftList = Object.keys(DataManager.GameData.Boxes)
+        /**消耗品 */
+        let keyConsList = Object.keys(DataManager.GameData.Consumes)
+
+        let keyItemList = Object.keys(DataManager.GameData.packItems)
+        let keySkillList = Object.keys(DataManager.GameData.packSkills)
+
+        this.contect.removeAllChildren()
+        let list = this[`list${this.curBagId}`]
+        for (let j = 0; j < list.length; j++) {
+            let item = cc.instantiate(this.itemPfb)
+            item.parent = this.contect
+            item.on(cc.Node.EventType.TOUCH_END, () => {
+                this.node.getChildByName('tipArea').active = true
+                this.node.getChildByName('tipArea').getComponent(infoPanel).init(list[j])
+                this.curData = list[j]
+            }, this)
+            let template_id = list[j].template_id.toString()
+            if (this.curBagId == 0) {
+                if (keyGiftList.indexOf(template_id) != -1) {
+                    ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Boxes[template_id].name}`, item.getChildByName('pic'))
+                }
+                if (keyConsList.indexOf(template_id) != -1) {
+                    ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Consumes[template_id].name}`, item.getChildByName('pic'))
+                }
+            } else if (this.curBagId == 1) {
+                ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[template_id].icon}`, item.getChildByName('pic'))
+            } else if (this.curBagId == 2) {
+                ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[template_id].icon}`, item.getChildByName('pic'))
+            } else if (this.curBagId == 3) {
+                let skillSt = DataManager.GameData.SkillStudy[template_id]
+                ResManager.loadItemIcon(`skillats/${skillSt.name}`, item.getChildByName('pic'))
+                if (skillSt.type == 1) {
+                    ResManager.loadItemIcon(`skillats/红`, item)
+                } else if (skillSt.type == 2) {
+                    ResManager.loadItemIcon(`skillats/黄`, item)
+                } else if (skillSt.type == 3) {
+                    ResManager.loadItemIcon(`skillats/蓝`, item)
+                }
+            } else if (this.curBagId == 4) {
+                ResManager.loadItemIcon(`UI/UnitsEquips/${template_id}`, item.getChildByName('pic'))
+            }
+        }
+        if (!this.curData) {
+            this.node.getChildByName('tipArea').active = false
+        } else if (this.curData.num > 0) {
+            this.node.getChildByName('tipArea').getComponent(infoPanel).init(this.curData)
+        } else {
+            this.node.getChildByName('tipArea').active = false
+        }
+
+        var rewardPanel = cc.instantiate(this.getRewardPanel_prefab);
+        cc.Canvas.instance.node.addChild(rewardPanel);
+        console.log('---' + JSON.stringify(DataManager.maillist))
+        rewardPanel.getComponent(GetRewardPanel)._itemlist = retObj.reward_item
+
+
+
+    }
     // update (dt) {}
 }

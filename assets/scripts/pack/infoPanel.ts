@@ -11,6 +11,10 @@ import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
 
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+
 @ccclass
 export default class NewClass extends cc.Component {
 
@@ -51,10 +55,34 @@ export default class NewClass extends cc.Component {
     // {"uuid":"","template_id":4100,"enhance_level":0,"stars":0,"num":148,"bagId":4,"hpEx":0,"atkEx":0,"defEx":0,"attrEx":[],"unitAttr":{"id":0,"num":0},"exp":0}
     _data
     init(data) {
+        /**礼包 */
+        let keyGiftList = Object.keys(DataManager.GameData.Boxes)
+        /**消耗品 */
+        let keyConsList = Object.keys(DataManager.GameData.Consumes)
+
+        let template_id = data.template_id.toString()
+        this.countLabel.string = 'x' + data.num
+
         let defaultData
         this.node.getChildByName(`op`).active = true
         this._data = data
         if (data.bagId == 0) {//宝箱
+            if (keyGiftList.indexOf(template_id) != -1) {
+                this.btnLabel0.string = `打开`
+                this.btnLabel1.string = `打开x${data.num}`
+                defaultData = DataManager.GameData.Boxes[data.template_id]
+            }
+
+            if (keyConsList.indexOf(template_id) != -1) {
+                this.btnLabel0.string = `使用`
+                this.btnLabel1.string = `使用x${data.num}`
+
+                defaultData = DataManager.GameData.Consumes[data.template_id]
+            }
+            this.nameLabel.string = defaultData.name
+            this.richLabel.string = defaultData.des
+
+            ResManager.loadItemIcon(`UI/prop/${defaultData.name}`, this.pic)
 
         } else if (data.bagId == 1) {//装备
             defaultData = DataManager.GameData.packItems[data.template_id]
@@ -64,7 +92,6 @@ export default class NewClass extends cc.Component {
             ResManager.loadItemIcon(`UI/items/${defaultData.icon}`, this.pic)
 
             this.nameLabel.string = defaultData.name
-            this.countLabel.string = 'x' + data.num
             this.richLabel.string = defaultData.des
 
         } else if (data.bagId == 2) {//碎片
@@ -100,8 +127,6 @@ export default class NewClass extends cc.Component {
             this.nameLabel.string = defaultData.name
             this.countLabel.string = 'x' + data.num
             this.richLabel.string = defaultData.des
-
-
         }
         console.log('defaultData:' + JSON.stringify(defaultData))
 
@@ -113,15 +138,17 @@ export default class NewClass extends cc.Component {
     btnHandler0() {
         if (this._data.bagId == 4) {
             ViewManager.instance.showToast(`使用道具`)
+        } else if (this._data.bagId == 0) {
+            MyProtocols.send_C2SUseItem(DataManager._loginSocket, [{ template_id: this._data.template_id, count: 1 }])
         }
-
-
     }
 
     btnHandler1() {
         if (this._data.bagId == 4) {
             ViewManager.instance.showToast(`卖出道具`)
             this.node.parent.getChildByName('sellPanel').active = true
+        } else if (this._data.bagId == 0) {
+            MyProtocols.send_C2SUseItem(DataManager._loginSocket, [{ template_id: this._data.template_id, count: this._data.num }])
         }
     }
 

@@ -31,9 +31,31 @@ export default class NewClass extends cc.Component {
     }
 
     init(data) {
-        let itemData = DataManager.GameData.Consumes[data.itemId]
-        if (itemData) ResManager.loadItemIcon(`UI/items/${itemData.icon}`, this.sprite.node)
-        this.countLabel.string = `x${data.cnt}`
+        if (data.cnt) {
+            let itemData = DataManager.GameData.goods[data.itemId]
+            this.countLabel.string = `x${data.cnt}`
+            if (itemData) ResManager.loadItemIcon(`UI/items/${itemData.icon}`, this.sprite.node)
+        } else if (data.num) {
+            this.countLabel.string = `x${data.num}`
+
+            let itemData
+            /**礼包 */
+            let keyGiftList = Object.keys(DataManager.GameData.Boxes)
+            /**消耗品 */
+            let keyConsList = Object.keys(DataManager.GameData.Consumes)
+
+            if (keyGiftList.indexOf(data.template_id) != -1) {
+                itemData = DataManager.GameData.Boxes[data.template_id]
+            }
+
+            if (keyConsList.indexOf(data.template_id) != -1) {
+                itemData = DataManager.GameData.Consumes[data.template_id]
+            }
+
+            if (itemData) {
+                ResManager.loadItemIcon(`UI/prop/${itemData.name}`, this.sprite.node)
+            }
+        }
     }
 
     // update (dt) {}

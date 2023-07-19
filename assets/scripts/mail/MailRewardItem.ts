@@ -39,7 +39,7 @@ export default class NewClass extends cc.Component {
     }
 
     initData(data) {
-        var itemData= DataManager.GameData.Consumes[data.itemId]//ItemsConfigMgr.processItemCfg(data.itemId);
+        var itemData= DataManager.GameData.goods[data.itemId]//ItemsConfigMgr.processItemCfg(data.itemId);
         this.count.string="x"+data.cnt;
         if(this._isNormalItem(data.itemId)){
             // var MailPanelManager = require("MailPanelManager");
