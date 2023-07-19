@@ -302,10 +302,15 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName('tipArea').active = false
         }
 
-        var rewardPanel = cc.instantiate(this.getRewardPanel_prefab);
-        cc.Canvas.instance.node.addChild(rewardPanel);
-        console.log('---' + JSON.stringify(DataManager.maillist))
-        rewardPanel.getComponent(GetRewardPanel)._itemlist = retObj.reward_item
+        if (retObj.reward_item.length > 0) {
+            var rewardPanel = cc.instantiate(this.getRewardPanel_prefab);
+            cc.Canvas.instance.node.addChild(rewardPanel);
+            console.log('---' + JSON.stringify(DataManager.maillist))
+            rewardPanel.getComponent(GetRewardPanel)._itemlist = retObj.reward_item
+        }else{
+            ViewManager.instance.showToast(`道具使用成功`)
+        }
+       
 
 
 
