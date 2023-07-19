@@ -1080,6 +1080,7 @@ var MyProtocols = {
 	},
 
 	send_C2SUseItem: function (senderSocket, p_items) {
+		console.log('p_items:' + JSON.stringify(p_items))
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(10305);
 		if (p_items == null) {
@@ -3872,7 +3873,7 @@ var MyProtocols = {
 			}
 		}
 
-		
+
 		var storgleave_data = [];
 		let storgleave_size = myDecoder.readInt();
 		if (storgleave_size > 0) {

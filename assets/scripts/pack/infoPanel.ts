@@ -128,7 +128,7 @@ export default class NewClass extends cc.Component {
             this.countLabel.string = 'x' + data.num
             this.richLabel.string = defaultData.des
         }
-        console.log('defaultData:' + JSON.stringify(defaultData))
+        // console.log('defaultData:' + JSON.stringify(defaultData))
 
         if (!defaultData) return
 
