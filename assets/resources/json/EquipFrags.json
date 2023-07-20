@@ -1,0 +1,20 @@
+{
+  "2522":{
+    "craft_num":20,
+    "name":"盔甲图纸碎片",
+    "bind_stages":[101,102],
+    "equip":2022,
+    "des":"用于合成战甲图纸",
+    "icon":"e72.png",
+    "quality":2
+  },
+  "2554":{
+    "craft_num":20,
+    "name":"武器图纸碎片",
+    "bind_stages":[101,102],
+    "equip":2054,
+    "des":"用于合成武器图纸",
+    "icon":"e74.png",
+    "quality":2
+  }
+}

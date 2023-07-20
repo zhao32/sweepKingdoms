@@ -59,6 +59,10 @@ export default class NewClass extends cc.Component {
         let keyGiftList = Object.keys(DataManager.GameData.Boxes)
         /**消耗品 */
         let keyConsList = Object.keys(DataManager.GameData.Consumes)
+        /**装备 */
+        let keyEquipList = Object.keys(DataManager.GameData.Equips)
+        let keyEquipFragsList = Object.keys(DataManager.GameData.EquipFrags)
+
 
         let template_id = data.template_id.toString()
         this.countLabel.string = 'x' + data.num
@@ -85,16 +89,34 @@ export default class NewClass extends cc.Component {
             ResManager.loadItemIcon(`UI/prop/${defaultData.name}`, this.pic)
 
         } else if (data.bagId == 1) {//装备
-            defaultData = DataManager.GameData.Items[data.template_id]
 
-            this.btnLabel0.string = `使用`
-            this.btnLabel1.string = `出售`
-            ResManager.loadItemIcon(`UI/items/${defaultData.icon}`, this.pic)
+            if(keyEquipList.indexOf(template_id) != -1){
+                defaultData = DataManager.GameData.Equips[data.template_id]
 
-            this.nameLabel.string = defaultData.name
-            this.richLabel.string = defaultData.des
+                this.btnLabel0.string = `还原`
+                // this.btnLabel1.string = `出售`
+                ResManager.loadItemIcon(`UI/equips/${defaultData.name}`, this.pic)
+    
+                this.nameLabel.string = defaultData.name
+                this.richLabel.string = defaultData.des
+
+            }
+
+          
 
         } else if (data.bagId == 2) {//碎片
+
+            if(keyEquipFragsList.indexOf(template_id) != -1){
+                defaultData = DataManager.GameData.EquipFrags[data.template_id]
+
+                this.btnLabel0.string = `升级`
+                // this.btnLabel1.string = `出售`
+                ResManager.loadItemIcon(`UI/prop/${defaultData.name}`, this.pic)
+    
+                this.nameLabel.string = defaultData.name
+                this.richLabel.string = defaultData.des
+
+            }
 
         } else if (data.bagId == 3) {//技能
             // defaultData = DataManager.GameData.Treasures[data.template_id]

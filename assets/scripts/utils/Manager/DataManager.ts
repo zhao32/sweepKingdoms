@@ -157,6 +157,8 @@ export default class DataManager {
         },
         /**装备 */
         Equips: {},
+        /**装备碎片 */
+        EquipFrags:{},
         /**宝物 */
         Treasures: {},
         /**商店 */

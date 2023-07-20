@@ -62,10 +62,14 @@ export default class NewClass extends cc.Component {
         let keyGiftList = Object.keys(DataManager.GameData.Boxes)
         /**消耗品 */
         let keyConsList = Object.keys(DataManager.GameData.Consumes)
+        /**装备 */
+        let keyEquipList = Object.keys(DataManager.GameData.Equips)
+
+        let keyEquipFragsList = Object.keys(DataManager.GameData.EquipFrags)
 
         let keyItemList = Object.keys(DataManager.GameData.Items)
         let keySkillList = Object.keys(DataManager.GameData.packSkills)
-
+        
 
         let ToggleList = this.ToggleContainer.getComponentsInChildren(cc.Toggle)
         ToggleList[0].isChecked = true
@@ -91,11 +95,15 @@ export default class NewClass extends cc.Component {
                                 ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Consumes[template_id].name}`, item.getChildByName('pic'))
                             }
                         } else if (i == 1) {
-                            has = true
-                            ResManager.loadItemIcon(`UI/items/${DataManager.GameData.Items[template_id].icon}`, item.getChildByName('pic'))
+                            if (keyEquipList.indexOf(template_id) != -1) {
+                                has = true
+                                ResManager.loadItemIcon(`UI/equips/${DataManager.GameData.Equips[template_id].name}`, item.getChildByName('pic'))
+                            }
                         } else if (i == 2) {
-                            has = true
-                            ResManager.loadItemIcon(`UI/items/${DataManager.GameData.Items[template_id].icon}`, item.getChildByName('pic'))
+                            if (keyEquipFragsList.indexOf(template_id) != -1) {
+                                has = true
+                                ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.EquipFrags[template_id].name}`, item.getChildByName('pic'))
+                            }
                         } else if (i == 3) {
                             has = true
                             let skillSt = DataManager.GameData.SkillStudy[template_id]
@@ -182,6 +190,11 @@ export default class NewClass extends cc.Component {
         let keyGiftList = Object.keys(DataManager.GameData.Boxes)
         /**消耗品 */
         let keyConsList = Object.keys(DataManager.GameData.Consumes)
+        /**装备 */
+        let keyEquipList = Object.keys(DataManager.GameData.Equips)
+
+        let keyEquipFragsList = Object.keys(DataManager.GameData.EquipFrags)
+
 
         let keyItemList = Object.keys(DataManager.GameData.Items)
         let keySkillList = Object.keys(DataManager.GameData.packSkills)
@@ -200,11 +213,11 @@ export default class NewClass extends cc.Component {
                     this.list0.push(itemsList[i])
                 }
             } else if (itemsList[i].bagId == 1) {//装备
-                if (keyItemList.indexOf(itemsList[i].template_id.toString()) != -1) {
+                if (keyEquipList.indexOf(itemsList[i].template_id.toString()) != -1) {
                     this.list1.push(itemsList[i])
                 }
             } else if (itemsList[i].bagId == 2) {//碎片
-                if (keySkillList.indexOf(itemsList[i].template_id.toString()) != -1) {
+                if (keyEquipFragsList.indexOf(itemsList[i].template_id.toString()) != -1) {
                     this.list2.push(itemsList[i])
                 }
             } else if (itemsList[i].bagId == 3) {//技能
@@ -243,8 +256,12 @@ export default class NewClass extends cc.Component {
         /**消耗品 */
         let keyConsList = Object.keys(DataManager.GameData.Consumes)
 
+        let keyEquipList = Object.keys(DataManager.GameData.Equips)
+
+
         let keyItemList = Object.keys(DataManager.GameData.Items)
         let keySkillList = Object.keys(DataManager.GameData.packSkills)
+        let keyEquipFragsList = Object.keys(DataManager.GameData.EquipFrags)
 
         this.contect.removeAllChildren()
         let list = this[`list${this.curBagId}`]
@@ -262,11 +279,15 @@ export default class NewClass extends cc.Component {
                     ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Consumes[template_id].name}`, item.getChildByName('pic'))
                 }
             } else if (this.curBagId == 1) {
-                has = true
-                ResManager.loadItemIcon(`UI/items/${DataManager.GameData.Items[template_id].icon}`, item.getChildByName('pic'))
+                if (keyEquipList.indexOf(template_id) != -1) {
+                    has = true
+                    ResManager.loadItemIcon(`UI/equips/${DataManager.GameData.Equips[template_id].name}`, item.getChildByName('pic'))
+                }
             } else if (this.curBagId == 2) {
-                has = true
-                ResManager.loadItemIcon(`UI/items/${DataManager.GameData.Items[template_id].icon}`, item.getChildByName('pic'))
+                if (keyEquipFragsList.indexOf(template_id) != -1) {
+                    has = true
+                    ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.EquipFrags[template_id].name}`, item.getChildByName('pic'))
+                }
             } else if (this.curBagId == 3) {
                 has = true
                 let skillSt = DataManager.GameData.SkillStudy[template_id]
