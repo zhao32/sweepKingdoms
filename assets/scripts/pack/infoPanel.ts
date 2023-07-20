@@ -150,8 +150,8 @@ export default class NewClass extends cc.Component {
 
     btnHandler1() {
         if (this._data.bagId == 4) {
-            ViewManager.instance.showToast(`卖出道具`)
-            this.node.parent.getChildByName('sellPanel').active = true
+            // ViewManager.instance.showToast(`卖出道具`)
+            // this.node.parent.getChildByName('sellPanel').active = true
             MyProtocols.send_C2SUseItem(DataManager._loginSocket, [{ template_id: this._data.template_id, count: 1 }])
         } else if (this._data.bagId == 0) {
             MyProtocols.send_C2SUseItem(DataManager._loginSocket, [{ template_id: this._data.template_id, count: this._data.num }])
