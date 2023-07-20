@@ -376,6 +376,18 @@ export enum NetEvent {
     /**兵种强化 */
     S2CSoliderStren = 10188,
 
+    /**胚体升级 */
+    C2SEmbryoUp = 10330,
+
+    /**胚体升级 */
+    S2CEmbryoUp = 10331,
+
+    /**武器还原 */
+    C2SEquipRestore = 10332,
+
+    /**武器还原 */
+    S2CEquipRestore = 10333
+
 }
 
 

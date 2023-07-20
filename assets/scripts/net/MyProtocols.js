@@ -2549,6 +2549,7 @@ var MyProtocols = {
 	},
 	/**装备安装 */
 	send_C2SCardTakeOnItem: function (senderSocket, p_cardId, p_item_uuid) {
+		console.log(p_cardId, p_item_uuid)
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2005);
 		myEncoder.writeInt(p_cardId);
@@ -2568,6 +2569,7 @@ var MyProtocols = {
 
 	/**装备卸载  */
 	send_C2SCardTakeOffItem: function (senderSocket, p_cardId, p_position) {
+		console.log(p_cardId, p_position)
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2007);
 		myEncoder.writeInt(p_cardId);
@@ -6995,6 +6997,42 @@ var MyProtocols = {
 
 		return retObj;
 	},
+
+	send_C2SEmbryoUp: function (senderSocket, uuid) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(10330);
+		myEncoder.writeInt(uuid);
+
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_10331: function (myDecoder) {
+		var retObj = {};
+		retObj.uuid = myDecoder.readInt();
+		retObj.lv = myDecoder.readInt();
+		return retObj;
+	},
+
+
+	send_C2SEquipRestore: function (senderSocket, uuid) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(10332);
+		myEncoder.writeInt(uuid);
+
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_10333: function (myDecoder) {
+		var retObj = {};
+		return retObj;
+	},
+	
+
+
 
 
 }

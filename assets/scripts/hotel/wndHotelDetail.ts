@@ -163,11 +163,14 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName('skillstPanel').active = false
         this.node.getChildByName('skillUpPanel').active = false
 
-        
+
         // packManager.getInstance().reflishBag()
         NetEventDispatcher.addListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock, this)
         NetEventDispatcher.addListener(NetEvent.S2CSKillTeach, this.S2CSKillTeach, this)
         NetEventDispatcher.addListener(NetEvent.S2CSKillStUp, this.S2CSKillStUp, this)
+        NetEventDispatcher.addListener(NetEvent.S2CCardTakeOnItem, this.S2CCardTakeOnItem, this)
+        NetEventDispatcher.addListener(NetEvent.S2CCardTakeOffItem, this.S2CCardTakeOffItem, this)
+
 
         console.log('-----data:' + JSON.stringify(data))
         this._data = data
@@ -252,7 +255,7 @@ export default class NewClass extends cc.Component {
 
         this.headBg.on(cc.Node.EventType.TOUCH_END, () => {
             // let str = DataManager.getGeneralDes(data.template_id, data.id)
-            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL,...[data.template_id, data.id])
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL, ...[data.template_id, data.id])
         }, this)
 
     }
@@ -317,6 +320,7 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName('btnEquip').getComponent(cc.Sprite).spriteFrame = this.checkFrames[1]
 
         this.contect.removeAllChildren();
+        this._data.equips = [this._data.equips[0], this._data.equips[1]]
         for (let i = 0; i < this._data.equips.length; i++) {
             let equip = cc.instantiate(this.equipPfb)
             equip.parent = this.contect
@@ -330,7 +334,55 @@ export default class NewClass extends cc.Component {
 
     }
 
+    S2CCardTakeOnItem(data) {
+        // 装备安装返回：{"cardId":153151,"item_uuid":"2944397251497984","fight":5972}
+
+        let pos
+        console.log(`装备安装返回：` + JSON.stringify(data))
+        for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+            if (DataManager.instance.itemsList[i].uuid == data.item_uuid) {
+                let template_id = DataManager.instance.itemsList[i].template_id
+                let defaultData = DataManager.GameData.Equips[template_id]
+                pos = defaultData.position
+                this._data.equips[pos] = data.item_uuid
+                if (defaultData.position == 0) {
+                    this.contect.children[0].getComponent(detailQuipRender).init(0, this._data)
+                } else {
+                    this.contect.children[1].getComponent(detailQuipRender).init(1, this._data)
+                }
+            }
+        }
+
+        for (let i = 0; i < DataManager.cardsList.length; i++) {
+            if (DataManager.cardsList[i].id == data.cardId) {
+                DataManager.cardsList[i].equips[pos] = data.item_uuid
+            }
+        }
+    }
+
+    S2CCardTakeOffItem(data) {
+        console.log(`装备卸载返回：` + JSON.stringify(data))
+        // {"cardId":153151,"position":1,"item_uuid":"2942814043025421","fight":5822}
+
+        for (let i = 0; i < DataManager.cardsList.length; i++) {
+            if (DataManager.cardsList[i].id == data.cardId) {
+                DataManager.cardsList[i].equips[data.position] = 0
+                this._data.equips[data.position] = data.item_uuid
+            }
+        }
+
+        for (let i = 0; i < this._data.equips.length; i++) {
+            let equip = this.contect.children[i]
+            equip.getComponent(detailQuipRender).init(i, this._data)
+        }
+
+    }
+
     onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CCardTakeOnItem, this.S2CCardTakeOnItem, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CCardTakeOffItem, this.S2CCardTakeOffItem, this)
+
+
         NetEventDispatcher.removeListener(NetEvent.S2CSKillTeach, this.S2CSKillTeach, this)
         NetEventDispatcher.removeListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock, this)
         NetEventDispatcher.removeListener(NetEvent.S2CSKillStUp, this.S2CSKillStUp, this)

@@ -69,6 +69,10 @@ export default class NewClass extends cc.Component {
 
         let defaultData
         this.node.getChildByName(`op`).active = true
+        this.node.getChildByName(`op`).children[0].active = true
+        this.node.getChildByName(`op`).children[1].active = true
+        this.node.getChildByName(`op`).children[0].x = -115
+        this.node.getChildByName(`op`).children[1].x = 115
         this._data = data
         if (data.bagId == 0) {//宝箱
             if (keyGiftList.indexOf(template_id) != -1) {
@@ -90,29 +94,33 @@ export default class NewClass extends cc.Component {
 
         } else if (data.bagId == 1) {//装备
 
-            if(keyEquipList.indexOf(template_id) != -1){
+            if (keyEquipList.indexOf(template_id) != -1) {
                 defaultData = DataManager.GameData.Equips[data.template_id]
+                this.node.getChildByName(`op`).children[0].active = true
+                this.node.getChildByName(`op`).children[1].active = false
+                this.node.getChildByName(`op`).children[0].x = 0
 
-                this.btnLabel0.string = `还原`
                 // this.btnLabel1.string = `出售`
                 ResManager.loadItemIcon(`UI/equips/${defaultData.name}`, this.pic)
-    
+
                 this.nameLabel.string = defaultData.name
                 this.richLabel.string = defaultData.des
 
+                if (defaultData.position == -1) {
+                    this.btnLabel0.string = `升级`
+                } else {
+                    this.btnLabel0.string = `还原`
+                }
             }
-
-          
-
         } else if (data.bagId == 2) {//碎片
 
-            if(keyEquipFragsList.indexOf(template_id) != -1){
+            if (keyEquipFragsList.indexOf(template_id) != -1) {
                 defaultData = DataManager.GameData.EquipFrags[data.template_id]
 
                 this.btnLabel0.string = `升级`
                 // this.btnLabel1.string = `出售`
                 ResManager.loadItemIcon(`UI/prop/${defaultData.name}`, this.pic)
-    
+
                 this.nameLabel.string = defaultData.name
                 this.richLabel.string = defaultData.des
 
@@ -157,16 +165,41 @@ export default class NewClass extends cc.Component {
         // console.log('defaultData:' + JSON.stringify(defaultData))
 
         if (!defaultData) return
-
-
     }
 
     btnHandler0() {
         if (this._data.bagId == 4) {
-            ViewManager.instance.showToast(`使用道具`)
-            MyProtocols.send_C2SUseItem(DataManager._loginSocket, [{ template_id: this._data.template_id, count: 1 }])
+            let keyConsList = Object.keys(DataManager.GameData.Consumes)
+
+            if (keyConsList.indexOf(this._data.template_id) != -1) {
+                ViewManager.instance.showToast(`使用道具`)
+                MyProtocols.send_C2SUseItem(DataManager._loginSocket, [{ template_id: this._data.template_id, count: 1 }])
+            } else {
+                this.node.getChildByName(`op`).active = false
+                // if (this._data.template_id == 1000 || this._data.template_id == 1001) {
+                //     this.btnLabel0.string = `升级`
+                //     ViewManager.instance.showToast(`升级`)
+                //     /**胚胎升级 */
+                //     // MyProtocols.C2SEquipRefreshSave(DataManager._loginSocket,)
+                // } else {
+
+                // }
+            }
+
+
         } else if (this._data.bagId == 0) {
             MyProtocols.send_C2SUseItem(DataManager._loginSocket, [{ template_id: this._data.template_id, count: 1 }])
+        } else if (this._data.bagId == 1) {
+            let defaultData = DataManager.GameData.Equips[this._data.template_id]
+            if (defaultData.position == -1) {
+                this.btnLabel0.string = `升级`
+                /**胚胎升级 */
+                MyProtocols.send_C2SEmbryoUp(DataManager._loginSocket, this._data.uuid)
+            } else {
+                this.btnLabel0.string = `还原`
+                /**武器还原 */
+                MyProtocols.send_C2SEquipRestore(DataManager._loginSocket, this._data.uuid)
+            }
         }
     }
 

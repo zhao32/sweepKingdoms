@@ -69,7 +69,7 @@ export default class NewClass extends cc.Component {
 
         let keyItemList = Object.keys(DataManager.GameData.Items)
         let keySkillList = Object.keys(DataManager.GameData.packSkills)
-        
+
 
         let ToggleList = this.ToggleContainer.getComponentsInChildren(cc.Toggle)
         ToggleList[0].isChecked = true
@@ -142,6 +142,9 @@ export default class NewClass extends cc.Component {
         this.initBagItems()
         this.node.getChildByName('tipArea').active = false
         NetEventDispatcher.addListener(NetEvent.S2CUseItem, this.S2CUseItem, this)
+        NetEventDispatcher.addListener(NetEvent.S2CEmbryoUp, this.S2CEmbryoUp, this)
+        NetEventDispatcher.addListener(NetEvent.S2CEquipRestore, this.S2CEquipRestore, this)
+
 
 
         /**礼包 */
@@ -245,6 +248,18 @@ export default class NewClass extends cc.Component {
 
     onClose() {
         NetEventDispatcher.removeListener(NetEvent.S2CUseItem, this.S2CUseItem, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CEmbryoUp, this.S2CEmbryoUp, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CEquipRestore, this.S2CEquipRestore, this)
+    }
+
+    S2CEmbryoUp(retObj) {
+        console.log(`胚体升级返回：` + JSON.stringify(retObj))
+
+    }
+
+    S2CEquipRestore(retObj) {
+        console.log(`装备还原返回：` + JSON.stringify(retObj))
+
     }
 
     S2CUseItem(retObj) {
@@ -328,10 +343,10 @@ export default class NewClass extends cc.Component {
             cc.Canvas.instance.node.addChild(rewardPanel);
             console.log('---' + JSON.stringify(DataManager.maillist))
             rewardPanel.getComponent(GetRewardPanel)._itemlist = retObj.reward_item
-        }else{
+        } else {
             ViewManager.instance.showToast(`道具使用成功`)
         }
-       
+
 
 
 
