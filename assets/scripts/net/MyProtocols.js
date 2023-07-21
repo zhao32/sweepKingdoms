@@ -2623,11 +2623,10 @@ var MyProtocols = {
 		retObj.level = myDecoder.readInt();
 		retObj.type = myDecoder.readInt();
 		retObj.a = []
-
 		// debugger;
 		if (retObj.type != 0) {
-
-			for (var i = 0; i < 3; i++) {
+			var size = myDecoder.readInt();
+			for (var i = 0; i < size; i++) {
 				retObj.a[i] = myDecoder.readInt();
 			}
 		}
