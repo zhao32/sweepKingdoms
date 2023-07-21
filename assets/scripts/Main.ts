@@ -109,7 +109,7 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
             let template_id = DataManager.instance.itemsList[i].template_id
             if (retObj.item_info.uuid == DataManager.instance.itemsList[i].uuid) {
-                if (DataManager.GameData.Equips[template_id]) {
+                if (DataManager.GameData.Equips[template_id] && retObj.item_info.uuid) {
                     hasItem = true;
                     if (retObj.item_info.num == 0) {
                         DataManager.instance.itemsList.splice(i, 1)
@@ -122,6 +122,7 @@ export default class NewClass extends cc.Component {
                     }
                 } else {
                     if (DataManager.instance.itemsList[i].template_id == retObj.item_info.template_id) {
+                        console.log(`-------------------------`)
                         hasItem = true
                         DataManager.instance.itemsList[i] = retObj.item_info
                         if (retObj.item_info.num == 0) {
