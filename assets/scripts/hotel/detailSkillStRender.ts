@@ -45,6 +45,7 @@ export default class NewClass extends cc.Component {
     }
 
     init(data, idx) {
+        console.log(JSON.stringify(data))
         // "skills_equips":[{"id":0,"level":0,"type":2},{"id":0,"level":0,"type":1},{"id":0,"level":0,"type":2}]
         // this.nameLabel.string = data.name
         // this.richLabel.string = data.des
@@ -69,14 +70,21 @@ export default class NewClass extends cc.Component {
         }
 
         this.icon.on(cc.Node.EventType.TOUCH_END, () => {
-            DataManager.wndHotelDetail.openSkillstUpPanel(data, idx)
+            if (data.id != 0) {
+                DataManager.wndHotelDetail.openSkillstUpPanel(data, idx)
+            }
             // MyProtocols.send_C2SSKillStUp(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this._idx, this._data.id, this._data.level + 1)
         }, this)
 
     }
 
     onTeachHandler() {
-        DataManager.wndHotelDetail.openSkillstPanel(this._data, this._idx)
+        if(this._data == 0){
+            DataManager.wndHotelDetail.openSkillstPanel(this._data, this._idx)
+
+        }else{
+            
+        }
     }
 
     // update (dt) {}
