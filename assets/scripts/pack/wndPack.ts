@@ -228,7 +228,7 @@ export default class NewClass extends cc.Component {
             } else if (itemsList[i].bagId == 4) {//道具
                 this.list4.push(itemsList[i])
             }
-            if (this.curData && this.curData.template_id == itemsList[i].template_id) {
+            if (this.curData && this.curData.template_id == itemsList[i].template_id && this.curData.uuid == itemsList[i].uuid) {
                 this.curData = itemsList[i]
                 hasCurData = true
             }
@@ -254,6 +254,13 @@ export default class NewClass extends cc.Component {
 
     S2CEmbryoUp(retObj) {
         console.log(`胚体升级返回：` + JSON.stringify(retObj))
+        // 胚体升级返回：{"uuid":"2945621338198016","lv":2}
+        for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+            if (retObj.uuid == DataManager.instance.itemsList[i].uuid) {
+                DataManager.instance.itemsList[i].enhance_level = retObj.lv
+            }
+        }
+
         this.reflash()
     }
 
@@ -277,7 +284,7 @@ export default class NewClass extends cc.Component {
         }
     }
 
-    reflash(){
+    reflash() {
         this.initBagItems()
         /**礼包 */
         let keyGiftList = Object.keys(DataManager.GameData.Boxes)

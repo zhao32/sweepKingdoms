@@ -7001,8 +7001,7 @@ var MyProtocols = {
 	send_C2SEmbryoUp: function (senderSocket, uuid) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(10330);
-		myEncoder.writeInt(uuid);
-
+		myEncoder.writeString(uuid);
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
@@ -7010,32 +7009,30 @@ var MyProtocols = {
 
 	get_10331: function (myDecoder) {
 		var retObj = {};
-		retObj.uuid = myDecoder.readInt();
+		retObj.uuid = myDecoder.readString();
 		retObj.lv = myDecoder.readInt();
 		return retObj;
 	},
 
 
 	send_C2SEquipRestore: function (senderSocket, uuid) {
-		console.log(`uuid:`+uuid)
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(10332);
-		myEncoder.writeInt(uuid);
-
+		myEncoder.writeString(uuid);
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
 	},
-
 	get_10333: function (myDecoder) {
 		var retObj = {};
+		retObj.uuid = myDecoder.readInt();
+		retObj.lv = myDecoder.readInt();
 		return retObj;
-	},
-	
+	}
 
 
 
-	
+
 
 }
 

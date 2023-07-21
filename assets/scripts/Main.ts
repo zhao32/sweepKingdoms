@@ -97,13 +97,35 @@ export default class NewClass extends cc.Component {
             }
         }
 
+        let uuidList = []
+        for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+            if (DataManager.instance.itemsList[i].uuid) {
+                uuidList.push(DataManager.instance.itemsList[i].uuid)
+            }
+
+        }
+        console.log('hasItem:' + uuidList)
         let hasItem = false
         for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
-            if (DataManager.instance.itemsList[i].template_id == retObj.item_info.template_id) {
-                hasItem = true
-                DataManager.instance.itemsList[i] = retObj.item_info
+            let template_id = DataManager.instance.itemsList[i].template_id
+            if (DataManager.GameData.Equips[template_id]) {
+                hasItem = true;
                 if (retObj.item_info.num == 0) {
                     DataManager.instance.itemsList.splice(i, 1)
+                } else {
+                    if (uuidList.indexOf(retObj.item_info.uuid) == -1) {
+                        hasItem = false;
+                    } else {
+                        DataManager.instance.itemsList[i] = retObj.item_info
+                    }
+                }
+            } else {
+                if (DataManager.instance.itemsList[i].template_id == retObj.item_info.template_id) {
+                    hasItem = true
+                    DataManager.instance.itemsList[i] = retObj.item_info
+                    if (retObj.item_info.num == 0) {
+                        DataManager.instance.itemsList.splice(i, 1)
+                    }
                 }
             }
         }
