@@ -285,7 +285,7 @@ export default class NewClass extends cc.Component {
             cc.Canvas.instance.node.addChild(rewardPanel);
             rewardPanel.getComponent(GetRewardPanel)._itemlist = retObj.reward_item
         } else {
-            ViewManager.instance.showToast(`胚体升级成功`)
+            ViewManager.instance.showToast(`装备还原成功`)
         }
     }
 
