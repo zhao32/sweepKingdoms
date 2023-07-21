@@ -287,8 +287,6 @@ export default class NewClass extends cc.Component {
         } else {
             ViewManager.instance.showToast(`胚体升级成功`)
         }
-
-
     }
 
     S2CUseItem(retObj) {
