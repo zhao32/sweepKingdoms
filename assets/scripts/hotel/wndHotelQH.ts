@@ -82,8 +82,13 @@ export default class NewClass extends cc.Component {
         this.expProTxt.string = `${data.exp}/${maxExp}`
         this.expProBar.progress = data.exp / maxExp
 
-        console.log('data:'+ JSON.stringify(data))
+        console.log('data:' + JSON.stringify(data))
         console.log(`aptitude:` + data.aptitude)
+
+        for (let i = 0; i < 3; i++) {
+            let node = this.node.getChildByName("shuxing").getChildByName(`soldierType${i + 1}`)
+            node.active = false
+        }
 
         for (let i = 0; i < data.talents.length; i++) {
             let node = this.node.getChildByName("shuxing").getChildByName(`soldierType${i + 1}`)
@@ -94,17 +99,28 @@ export default class NewClass extends cc.Component {
             node.getChildByName('proTxt').getComponent(cc.Label).string = `${data.proficiency[i]}/${0}`
             node.getChildByName(`progressBar`).getComponent(cc.ProgressBar).progress = 0.8
             node.getChildByName('label1').getComponent(cc.Label).string = `成长潜质` //DataManager.armList[defaultData.talents[i]] + `兵熟练度：`
-            node.getChildByName('label2').getComponent(cc.Label).string = `${data.aptitude[i]}/${999}`
+            if (data.aptitude.length == 0) {
+                node.getChildByName('label2').getComponent(cc.Label).string = `:未鉴定`
+            } else {
+                node.getChildByName('label2').getComponent(cc.Label).string = `${data.aptitude[i]}/${999}`
+            }
         }
 
         NetEventDispatcher.addListener(NetEvent.S2CIdentify, this.S2CIdentify, this)
         NetEventDispatcher.addListener(NetEvent.S2CCardAddLevel, this.S2CCardAddLevel, this)
 
-        this.headBg.on(cc.Node.EventType.TOUCH_END,()=>{
+        this.headBg.on(cc.Node.EventType.TOUCH_END, () => {
             // let str = DataManager.getGeneralDes(data.template_id, data.id)
-            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL,...[data.template_id, data.id])
-        },this)
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL, ...[data.template_id, data.id])
+        }, this)
 
+        if(data.aptitude.length == 0){
+            this.node.getChildByName('btn2').active = true
+            this.node.getChildByName(`mask`).active = true
+        }else{
+            this.node.getChildByName('btn2').active = false
+            this.node.getChildByName(`mask`).active = false
+        }
     }
 
     S2CCardAddLevel(data) {
@@ -113,13 +129,30 @@ export default class NewClass extends cc.Component {
         // {"card_id":151120,"level":6,"type":4,"a":[1819,179,219]}
         for (let i = 0; i < data.a.length; i++) {
             let node = this.node.getChildByName("shuxing").getChildByName(`soldierType${i + 1}`)
-            node.getChildByName('proTxt').getComponent(cc.Label).string = `${data.a[i]}/${0}`            
+            node.getChildByName('proTxt').getComponent(cc.Label).string = `${data.a[i]}/${0}`
         }
 
     }
 
-    S2CIdentify(data) {
-        console.log(`鉴定返回：` + JSON.stringify(data))
+    S2CIdentify(retObj) {
+        console.log(`鉴定返回：` + JSON.stringify(retObj))
+        this._data.aptitude = retObj.aptitude
+
+        for (let i = 0; i < this._data.talents.length; i++) {
+            let node = this.node.getChildByName("shuxing").getChildByName(`soldierType${i + 1}`)
+            // node.getChildByName(`progressBar`).getComponent(cc.ProgressBar).progress = 0.8
+            node.getChildByName('label1').getComponent(cc.Label).string = `成长潜质` //DataManager.armList[defaultData.talents[i]] + `兵熟练度：`
+            node.getChildByName('label2').getComponent(cc.Label).string = `${this._data.aptitude[i]}/${999}`
+        }
+
+        if(this._data.aptitude.length == 0){
+            this.node.getChildByName('btn2').active = true
+            this.node.getChildByName(`mask`).active = true
+        }else{
+            this.node.getChildByName('btn2').active = false
+            this.node.getChildByName(`mask`).active = false
+        }
+
     }
 
     onCloseHandler() {
