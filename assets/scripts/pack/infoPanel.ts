@@ -55,6 +55,7 @@ export default class NewClass extends cc.Component {
     // {"uuid":"","template_id":4100,"enhance_level":0,"stars":0,"num":148,"bagId":4,"hpEx":0,"atkEx":0,"defEx":0,"attrEx":[],"unitAttr":{"id":0,"num":0},"exp":0}
     _data
     init(data) {
+        console.log(JSON.stringify(data))
         /**礼包 */
         let keyGiftList = Object.keys(DataManager.GameData.Boxes)
         /**消耗品 */
@@ -73,6 +74,7 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName(`op`).children[1].active = true
         this.node.getChildByName(`op`).children[0].x = -115
         this.node.getChildByName(`op`).children[1].x = 115
+        this.node.getChildByName(`consume`).active = false
         this._data = data
         if (data.bagId == 0) {//宝箱
             if (keyGiftList.indexOf(template_id) != -1) {
@@ -99,17 +101,51 @@ export default class NewClass extends cc.Component {
                 this.node.getChildByName(`op`).children[0].active = true
                 this.node.getChildByName(`op`).children[1].active = false
                 this.node.getChildByName(`op`).children[0].x = 0
+                let consumeNode = this.node.getChildByName(`consume`)
+                consumeNode.active = true
 
                 // this.btnLabel1.string = `出售`
                 ResManager.loadItemIcon(`UI/equips/${defaultData.name}`, this.pic)
 
-                this.nameLabel.string = defaultData.name
                 this.richLabel.string = defaultData.des
 
                 if (defaultData.position == -1) {
-                    this.btnLabel0.string = `升级`
+                    this.nameLabel.string = defaultData.name + ` ${data.enhance_level}级`
+                    let upData = DataManager.GameData.Enhanceconfig["embryo"][data.enhance_level]
+                    console.log('upData:' + JSON.stringify(upData))
+                    if (upData) {
+                        this.btnLabel0.string = `升级`
+                        let templateid = upData.good[0]
+                        let num = upData.material
+                        console.log('name:' + DataManager.GameData.Items[templateid].name)
+                        let pic = consumeNode.getChildByName('item').getChildByName('pic')
+                        ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Items[templateid].name}`, pic)
+                        consumeNode.getChildByName('item').getChildByName('nameLabel').getComponent(cc.Label).string = DataManager.GameData.Items[templateid].name
+                        consumeNode.getChildByName('item').getChildByName('numLabel').getComponent(cc.Label).string = `x${num}`
+                        consumeNode.getChildByName(`des`).getComponent(cc.Label).string = `LV${data.enhance_level}   升级到   LV${data.enhance_level + 1}`
+                    } else {
+                        this.btnLabel0.string = `已满级`
+                    }
+
                 } else {
                     this.btnLabel0.string = `还原`
+                    this.nameLabel.string = defaultData.name
+
+                    let reduction = DataManager.GameData.Enhanceconfig["reduction"][data.enhance_level]
+                    if (reduction) {
+                        let templateid = reduction.good[0]
+                        let num = reduction.material
+                        console.log('name:' + DataManager.GameData.Items[templateid].name)
+                        let pic = consumeNode.getChildByName('item').getChildByName('pic')
+                        ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Items[templateid].name}`, pic)
+                        consumeNode.getChildByName('item').getChildByName('nameLabel').getComponent(cc.Label).string = DataManager.GameData.Items[templateid].name
+                        consumeNode.getChildByName('item').getChildByName('numLabel').getComponent(cc.Label).string = `x${num}`
+                        consumeNode.getChildByName(`des`).getComponent(cc.Label).string = '将装备还原成胚料'
+                    } else {
+                        consumeNode.active = false
+                    }
+
+
                 }
             }
         } else if (data.bagId == 2) {//碎片

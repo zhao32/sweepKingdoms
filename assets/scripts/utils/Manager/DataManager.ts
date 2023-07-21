@@ -144,7 +144,9 @@ export default class DataManager {
         Boxes: {},
         /** 消耗品*/
         Consumes: {},
-        
+        /**装备还原 胚体升级数据 */
+        Enhanceconfig: {},
+
         /**道具 */
         Items: {},
         /**技能 */
@@ -158,7 +160,7 @@ export default class DataManager {
         /**装备 */
         Equips: {},
         /**装备碎片 */
-        EquipFrags:{},
+        EquipFrags: {},
         /**宝物 */
         Treasures: {},
         /**商店 */

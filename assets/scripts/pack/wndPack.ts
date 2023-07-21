@@ -254,17 +254,30 @@ export default class NewClass extends cc.Component {
 
     S2CEmbryoUp(retObj) {
         console.log(`胚体升级返回：` + JSON.stringify(retObj))
-
+        this.reflash()
     }
 
     S2CEquipRestore(retObj) {
         console.log(`装备还原返回：` + JSON.stringify(retObj))
-
+        this.reflash()
     }
 
     S2CUseItem(retObj) {
         console.log(`消耗品使用后返回：` + JSON.stringify(retObj))
         // {"reward_item":[{"template_id":2023,"bagId":1,"num":1}]}
+        this.reflash()
+
+        if (retObj.reward_item.length > 0) {
+            var rewardPanel = cc.instantiate(this.getRewardPanel_prefab);
+            cc.Canvas.instance.node.addChild(rewardPanel);
+            console.log('---' + JSON.stringify(DataManager.maillist))
+            rewardPanel.getComponent(GetRewardPanel)._itemlist = retObj.reward_item
+        } else {
+            ViewManager.instance.showToast(`道具使用成功`)
+        }
+    }
+
+    reflash(){
         this.initBagItems()
         /**礼包 */
         let keyGiftList = Object.keys(DataManager.GameData.Boxes)
@@ -337,19 +350,6 @@ export default class NewClass extends cc.Component {
         } else {
             this.node.getChildByName('tipArea').active = false
         }
-
-        if (retObj.reward_item.length > 0) {
-            var rewardPanel = cc.instantiate(this.getRewardPanel_prefab);
-            cc.Canvas.instance.node.addChild(rewardPanel);
-            console.log('---' + JSON.stringify(DataManager.maillist))
-            rewardPanel.getComponent(GetRewardPanel)._itemlist = retObj.reward_item
-        } else {
-            ViewManager.instance.showToast(`道具使用成功`)
-        }
-
-
-
-
     }
     // update (dt) {}
 }

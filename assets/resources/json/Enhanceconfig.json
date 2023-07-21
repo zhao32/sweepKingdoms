@@ -1,0 +1,1079 @@
+{
+  "levels": [
+    {
+      "level": 1,
+      "attr_coef": 0,
+      "gamemoney_coef": 0
+    },
+    {
+      "level": 2,
+      "attr_coef": 1,
+      "gamemoney_coef": 50
+    },
+    {
+      "level": 3,
+      "attr_coef": 2,
+      "gamemoney_coef": 86
+    },
+    {
+      "level": 4,
+      "attr_coef": 3,
+      "gamemoney_coef": 146
+    },
+    {
+      "level": 5,
+      "attr_coef": 4,
+      "gamemoney_coef": 230
+    },
+    {
+      "level": 6,
+      "attr_coef": 5,
+      "gamemoney_coef": 338
+    },
+    {
+      "level": 7,
+      "attr_coef": 6,
+      "gamemoney_coef": 470
+    },
+    {
+      "level": 8,
+      "attr_coef": 7,
+      "gamemoney_coef": 626
+    },
+    {
+      "level": 9,
+      "attr_coef": 8,
+      "gamemoney_coef": 806
+    },
+    {
+      "level": 10,
+      "attr_coef": 9,
+      "gamemoney_coef": 1010
+    },
+    {
+      "level": 11,
+      "attr_coef": 10,
+      "gamemoney_coef": 1238
+    },
+    {
+      "level": 12,
+      "attr_coef": 11,
+      "gamemoney_coef": 1490
+    },
+    {
+      "level": 13,
+      "attr_coef": 12,
+      "gamemoney_coef": 1776
+    },
+    {
+      "level": 14,
+      "attr_coef": 13,
+      "gamemoney_coef": 2066
+    },
+    {
+      "level": 15,
+      "attr_coef": 14,
+      "gamemoney_coef": 2390
+    },
+    {
+      "level": 16,
+      "attr_coef": 15,
+      "gamemoney_coef": 2738
+    },
+    {
+      "level": 17,
+      "attr_coef": 16,
+      "gamemoney_coef": 3110
+    },
+    {
+      "level": 18,
+      "attr_coef": 17,
+      "gamemoney_coef": 3506
+    },
+    {
+      "level": 19,
+      "attr_coef": 18,
+      "gamemoney_coef": 3926
+    },
+    {
+      "level": 20,
+      "attr_coef": 19,
+      "gamemoney_coef": 4370
+    },
+    {
+      "level": 21,
+      "attr_coef": 20,
+      "gamemoney_coef": 4838
+    },
+    {
+      "level": 22,
+      "attr_coef": 21,
+      "gamemoney_coef": 5330
+    },
+    {
+      "level": 23,
+      "attr_coef": 22,
+      "gamemoney_coef": 5846
+    },
+    {
+      "level": 24,
+      "attr_coef": 23,
+      "gamemoney_coef": 6386
+    },
+    {
+      "level": 25,
+      "attr_coef": 24,
+      "gamemoney_coef": 6950
+    },
+    {
+      "level": 26,
+      "attr_coef": 25,
+      "gamemoney_coef": 7538
+    },
+    {
+      "level": 27,
+      "attr_coef": 26,
+      "gamemoney_coef": 8150
+    },
+    {
+      "level": 28,
+      "attr_coef": 27,
+      "gamemoney_coef": 8786
+    },
+    {
+      "level": 29,
+      "attr_coef": 28,
+      "gamemoney_coef": 9446
+    },
+    {
+      "level": 30,
+      "attr_coef": 29,
+      "gamemoney_coef": 10130
+    },
+    {
+      "level": 31,
+      "attr_coef": 30,
+      "gamemoney_coef": 10838
+    },
+    {
+      "level": 32,
+      "attr_coef": 31,
+      "gamemoney_coef": 11570
+    },
+    {
+      "level": 33,
+      "attr_coef": 32,
+      "gamemoney_coef": 12326
+    },
+    {
+      "level": 34,
+      "attr_coef": 33,
+      "gamemoney_coef": 13106
+    },
+    {
+      "level": 35,
+      "attr_coef": 34,
+      "gamemoney_coef": 13910
+    },
+    {
+      "level": 36,
+      "attr_coef": 35,
+      "gamemoney_coef": 14738
+    },
+    {
+      "level": 37,
+      "attr_coef": 36,
+      "gamemoney_coef": 15590
+    },
+    {
+      "level": 38,
+      "attr_coef": 37,
+      "gamemoney_coef": 16466
+    },
+    {
+      "level": 39,
+      "attr_coef": 38,
+      "gamemoney_coef": 17366
+    },
+    {
+      "level": 40,
+      "attr_coef": 39,
+      "gamemoney_coef": 18290
+    },
+    {
+      "level": 41,
+      "attr_coef": 40,
+      "gamemoney_coef": 19238
+    },
+    {
+      "level": 42,
+      "attr_coef": 41,
+      "gamemoney_coef": 20210
+    },
+    {
+      "level": 43,
+      "attr_coef": 42,
+      "gamemoney_coef": 21206
+    },
+    {
+      "level": 44,
+      "attr_coef": 43,
+      "gamemoney_coef": 22226
+    },
+    {
+      "level": 45,
+      "attr_coef": 44,
+      "gamemoney_coef": 23270
+    },
+    {
+      "level": 46,
+      "attr_coef": 45,
+      "gamemoney_coef": 24338
+    },
+    {
+      "level": 47,
+      "attr_coef": 46,
+      "gamemoney_coef": 25430
+    },
+    {
+      "level": 48,
+      "attr_coef": 47,
+      "gamemoney_coef": 26546
+    },
+    {
+      "level": 49,
+      "attr_coef": 48,
+      "gamemoney_coef": 27686
+    },
+    {
+      "level": 50,
+      "attr_coef": 49,
+      "gamemoney_coef": 28850
+    },
+    {
+      "level": 51,
+      "attr_coef": 50,
+      "gamemoney_coef": 30038
+    },
+    {
+      "level": 52,
+      "attr_coef": 51,
+      "gamemoney_coef": 31250
+    },
+    {
+      "level": 53,
+      "attr_coef": 52,
+      "gamemoney_coef": 32486
+    },
+    {
+      "level": 54,
+      "attr_coef": 53,
+      "gamemoney_coef": 33746
+    },
+    {
+      "level": 55,
+      "attr_coef": 54,
+      "gamemoney_coef": 35030
+    },
+    {
+      "level": 56,
+      "attr_coef": 55,
+      "gamemoney_coef": 36338
+    },
+    {
+      "level": 57,
+      "attr_coef": 56,
+      "gamemoney_coef": 37670
+    },
+    {
+      "level": 58,
+      "attr_coef": 57,
+      "gamemoney_coef": 39026
+    },
+    {
+      "level": 59,
+      "attr_coef": 58,
+      "gamemoney_coef": 40406
+    },
+    {
+      "level": 60,
+      "attr_coef": 59,
+      "gamemoney_coef": 41810
+    },
+    {
+      "level": 61,
+      "attr_coef": 60,
+      "gamemoney_coef": 43238
+    },
+    {
+      "level": 62,
+      "attr_coef": 61,
+      "gamemoney_coef": 44690
+    },
+    {
+      "level": 63,
+      "attr_coef": 62,
+      "gamemoney_coef": 46166
+    },
+    {
+      "level": 64,
+      "attr_coef": 63,
+      "gamemoney_coef": 47666
+    },
+    {
+      "level": 65,
+      "attr_coef": 64,
+      "gamemoney_coef": 49190
+    },
+    {
+      "level": 66,
+      "attr_coef": 65,
+      "gamemoney_coef": 50738
+    },
+    {
+      "level": 67,
+      "attr_coef": 66,
+      "gamemoney_coef": 52310
+    },
+    {
+      "level": 68,
+      "attr_coef": 67,
+      "gamemoney_coef": 53906
+    },
+    {
+      "level": 69,
+      "attr_coef": 68,
+      "gamemoney_coef": 55526
+    },
+    {
+      "level": 70,
+      "attr_coef": 69,
+      "gamemoney_coef": 57170
+    },
+    {
+      "level": 71,
+      "attr_coef": 70,
+      "gamemoney_coef": 58838
+    },
+    {
+      "level": 72,
+      "attr_coef": 71,
+      "gamemoney_coef": 60530
+    },
+    {
+      "level": 73,
+      "attr_coef": 72,
+      "gamemoney_coef": 62246
+    },
+    {
+      "level": 74,
+      "attr_coef": 73,
+      "gamemoney_coef": 63986
+    },
+    {
+      "level": 75,
+      "attr_coef": 74,
+      "gamemoney_coef": 65750
+    },
+    {
+      "level": 76,
+      "attr_coef": 75,
+      "gamemoney_coef": 67538
+    },
+    {
+      "level": 77,
+      "attr_coef": 76,
+      "gamemoney_coef": 69350
+    },
+    {
+      "level": 78,
+      "attr_coef": 77,
+      "gamemoney_coef": 71186
+    },
+    {
+      "level": 79,
+      "attr_coef": 78,
+      "gamemoney_coef": 73046
+    },
+    {
+      "level": 80,
+      "attr_coef": 79,
+      "gamemoney_coef": 74930
+    },
+    {
+      "level": 81,
+      "attr_coef": 80,
+      "gamemoney_coef": 76838
+    },
+    {
+      "level": 82,
+      "attr_coef": 81,
+      "gamemoney_coef": 78770
+    },
+    {
+      "level": 83,
+      "attr_coef": 82,
+      "gamemoney_coef": 80726
+    },
+    {
+      "level": 84,
+      "attr_coef": 83,
+      "gamemoney_coef": 82706
+    },
+    {
+      "level": 85,
+      "attr_coef": 84,
+      "gamemoney_coef": 84710
+    },
+    {
+      "level": 86,
+      "attr_coef": 85,
+      "gamemoney_coef": 86738
+    },
+    {
+      "level": 87,
+      "attr_coef": 86,
+      "gamemoney_coef": 88790
+    },
+    {
+      "level": 88,
+      "attr_coef": 87,
+      "gamemoney_coef": 90866
+    },
+    {
+      "level": 89,
+      "attr_coef": 88,
+      "gamemoney_coef": 92966
+    },
+    {
+      "level": 90,
+      "attr_coef": 89,
+      "gamemoney_coef": 95090
+    },
+    {
+      "level": 91,
+      "attr_coef": 90,
+      "gamemoney_coef": 97238
+    },
+    {
+      "level": 92,
+      "attr_coef": 91,
+      "gamemoney_coef": 99410
+    },
+    {
+      "level": 93,
+      "attr_coef": 92,
+      "gamemoney_coef": 101606
+    },
+    {
+      "level": 94,
+      "attr_coef": 93,
+      "gamemoney_coef": 103826
+    },
+    {
+      "level": 95,
+      "attr_coef": 94,
+      "gamemoney_coef": 106070
+    },
+    {
+      "level": 96,
+      "attr_coef": 95,
+      "gamemoney_coef": 108338
+    },
+    {
+      "level": 97,
+      "attr_coef": 96,
+      "gamemoney_coef": 110630
+    },
+    {
+      "level": 98,
+      "attr_coef": 97,
+      "gamemoney_coef": 112946
+    },
+    {
+      "level": 99,
+      "attr_coef": 98,
+      "gamemoney_coef": 115286
+    },
+    {
+      "level": 100,
+      "attr_coef": 99,
+      "gamemoney_coef": 117650
+    }
+  ],
+  "vip_crits": {
+    "good": [
+      30,
+      40,
+      30
+    ],
+    "normal": [
+      80,
+      15,
+      5
+    ],
+    "vip": {
+      "0": 15,
+      "7": 55,
+      "1": 25,
+      "2": 30,
+      "4": 40,
+      "8": 60,
+      "9": 65,
+      "5": 45,
+      "10": 70,
+      "3": 35,
+      "6": 50
+    }
+  },
+  "reduction": [
+    {
+      "level": 1,
+      "good": [
+        1019
+      ],
+      "material": 7
+    },
+    {
+      "level": 2,
+      "good": [
+        1019
+      ],
+      "material": 13
+    },
+    {
+      "level": 3,
+      "good": [
+        1019
+      ],
+      "material": 20
+    },
+    {
+      "level": 4,
+      "good": [
+        1019
+      ],
+      "material": 37
+    },
+    {
+      "level": 5,
+      "good": [
+        1019
+      ],
+      "material": 60
+    },
+    {
+      "level": 6,
+      "good": [
+        1019
+      ],
+      "material": 90
+    },
+    {
+      "level": 7,
+      "good": [
+        1019
+      ],
+      "material": 120
+    },
+    {
+      "level": 8,
+      "good": [
+        1019
+      ],
+      "material": 112
+    },
+    {
+      "level": 9,
+      "good": [
+        1019
+      ],
+      "material": 150
+    },
+    {
+      "level": 10,
+      "good": [
+        1019
+      ],
+      "material": 225
+    },
+    {
+      "level": 11,
+      "good": [
+        1019
+      ],
+      "material": 230
+    },
+    {
+      "level": 12,
+      "good": [
+        1019
+      ],
+      "material": 235
+    },
+    {
+      "level": 13,
+      "good": [
+        1019
+      ],
+      "material": 240
+    }
+  ],
+  "embryo": [
+    {
+      "level": 1,
+      "good": [
+        1003
+      ],
+      "material": 500
+    },
+    {
+      "level": 2,
+      "good": [
+        1003
+      ],
+      "material": 1000
+    },
+    {
+      "level": 3,
+      "good": [
+        1003
+      ],
+      "material": 1500
+    },
+    {
+      "level": 4,
+      "good": [
+        1003
+      ],
+      "material": 2000
+    },
+    {
+      "level": 5,
+      "good": [
+        1003
+      ],
+      "material": 2500
+    },
+    {
+      "level": 6,
+      "good": [
+        1003
+      ],
+      "material": 3000
+    },
+    {
+      "level": 7,
+      "good": [
+        1003
+      ],
+      "material": 3500
+    },
+    {
+      "level": 8,
+      "good": [
+        1003
+      ],
+      "material": 4000
+    },
+    {
+      "level": 9,
+      "good": [
+        1003
+      ],
+      "material": 4500
+    },
+    {
+      "level": 10,
+      "good": [
+        1003
+      ],
+      "material": 5000
+    },
+    {
+      "level": 11,
+      "good": [
+        1003
+      ],
+      "material": 5500
+    },
+    {
+      "level": 12,
+      "good": [
+        1003
+      ],
+      "material": 6000
+    },
+    {
+      "level": 13,
+      "good": [
+        1003
+      ],
+      "material": 6500
+    },
+    {
+      "level": 14,
+      "good": [
+        1003
+      ],
+      "material": 7000
+    },
+    {
+      "level": 15,
+      "good": [
+        1003
+      ],
+      "material": 7500
+    },
+    {
+      "level": 16,
+      "good": [
+        1003
+      ],
+      "material": 8000
+    },
+    {
+      "level": 17,
+      "good": [
+        1003
+      ],
+      "material": 9000
+    },
+    {
+      "level": 18,
+      "good": [
+        1003
+      ],
+      "material": 9500
+    },
+    {
+      "level": 19,
+      "good": [
+        1003
+      ],
+      "material": 10000
+    },
+    {
+      "level": 20,
+      "good": [
+        1003
+      ],
+      "material": 10500
+    },
+    {
+      "level": 21,
+      "good": [
+        1003
+      ],
+      "material": 11000
+    },
+    {
+      "level": 22,
+      "good": [
+        1003
+      ],
+      "material": 11500
+    },
+    {
+      "level": 23,
+      "good": [
+        1003
+      ],
+      "material": 12000
+    },
+    {
+      "level": 24,
+      "good": [
+        1003
+      ],
+      "material": 12500
+    },
+    {
+      "level": 25,
+      "good": [
+        1003
+      ],
+      "material": 13000
+    },
+    {
+      "level": 26,
+      "good": [
+        1003
+      ],
+      "material": 13500
+    },
+    {
+      "level": 27,
+      "good": [
+        1003
+      ],
+      "material": 14000
+    },
+    {
+      "level": 28,
+      "good": [
+        1003
+      ],
+      "material": 14500
+    },
+    {
+      "level": 29,
+      "good": [
+        1003
+      ],
+      "material": 15000
+    },
+    {
+      "level": 30,
+      "good": [
+        1003
+      ],
+      "material": 15500
+    },
+    {
+      "level": 31,
+      "good": [
+        1003
+      ],
+      "material": 16000
+    },
+    {
+      "level": 32,
+      "good": [
+        1003
+      ],
+      "material": 16500
+    },
+    {
+      "level": 33,
+      "good": [
+        1003
+      ],
+      "material": 17000
+    },
+    {
+      "level": 34,
+      "good": [
+        1003
+      ],
+      "material": 17500
+    },
+    {
+      "level": 35,
+      "good": [
+        1003
+      ],
+      "material": 18000
+    },
+    {
+      "level": 36,
+      "good": [
+        1003
+      ],
+      "material": 18500
+    },
+    {
+      "level": 37,
+      "good": [
+        1003
+      ],
+      "material": 19000
+    },
+    {
+      "level": 38,
+      "good": [
+        1003
+      ],
+      "material": 19500
+    },
+    {
+      "level": 39,
+      "good": [
+        1003
+      ],
+      "material": 20000
+    },
+    {
+      "level": 40,
+      "good": [
+        1003
+      ],
+      "material": 20500
+    },
+    {
+      "level": 41,
+      "good": [
+        1003
+      ],
+      "material": 21000
+    },
+    {
+      "level": 42,
+      "good": [
+        1003
+      ],
+      "material": 21500
+    },
+    {
+      "level": 43,
+      "good": [
+        1003
+      ],
+      "material": 22000
+    },
+    {
+      "level": 44,
+      "good": [
+        1003
+      ],
+      "material": 22500
+    },
+    {
+      "level": 45,
+      "good": [
+        1003
+      ],
+      "material": 23000
+    },
+    {
+      "level": 46,
+      "good": [
+        1003
+      ],
+      "material": 23500
+    },
+    {
+      "level": 47,
+      "good": [
+        1003
+      ],
+      "material": 24000
+    },
+    {
+      "level": 48,
+      "good": [
+        1003
+      ],
+      "material": 24500
+    },
+    {
+      "level": 49,
+      "good": [
+        1003
+      ],
+      "material": 25000
+    },
+    {
+      "level": 50,
+      "good": [
+        1003
+      ],
+      "material": 25500
+    },
+    {
+      "level": 51,
+      "good": [
+        1003
+      ],
+      "material": 26000
+    },
+    {
+      "level": 52,
+      "good": [
+        1003
+      ],
+      "material": 26500
+    },
+    {
+      "level": 53,
+      "good": [
+        1003
+      ],
+      "material": 27000
+    },
+    {
+      "level": 54,
+      "good": [
+        1003
+      ],
+      "material": 27500
+    },
+    {
+      "level": 55,
+      "good": [
+        1003
+      ],
+      "material": 28000
+    },
+    {
+      "level": 56,
+      "good": [
+        1003
+      ],
+      "material": 28500
+    },
+    {
+      "level": 57,
+      "good": [
+        1003
+      ],
+      "material": 29000
+    },
+    {
+      "level": 58,
+      "good": [
+        1003
+      ],
+      "material": 29500
+    },
+    {
+      "level": 59,
+      "good": [
+        1003
+      ],
+      "material": 30000
+    },
+    {
+      "level": 60,
+      "good": [
+        1003
+      ],
+      "material": 30500
+    },
+    {
+      "level": 61,
+      "good": [
+        1003
+      ],
+      "material": 31000
+    },
+    {
+      "level": 62,
+      "good": [
+        1003
+      ],
+      "material": 31500
+    },
+    {
+      "level": 63,
+      "good": [
+        1003
+      ],
+      "material": 32000
+    },
+    {
+      "level": 64,
+      "good": [
+        1003
+      ],
+      "material": 32500
+    },
+    {
+      "level": 65,
+      "good": [
+        1003
+      ],
+      "material": 33000
+    }
+  ]
+}

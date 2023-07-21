@@ -36,8 +36,9 @@ export default class NewClass extends cc.Component {
     MarqueeWidget: cc.Prefab = null;
 
 
-
     onLoad() {
+
+
         // EventNetManager.getInstance().addListener(10014, this.login,this)
 
         NetEventDispatcher.addListener(NetEvent.ErrorCode, this.errCodeBack, this)

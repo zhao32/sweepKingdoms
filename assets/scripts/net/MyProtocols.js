@@ -7017,6 +7017,7 @@ var MyProtocols = {
 
 
 	send_C2SEquipRestore: function (senderSocket, uuid) {
+		console.log(`uuid:`+uuid)
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(10332);
 		myEncoder.writeInt(uuid);
