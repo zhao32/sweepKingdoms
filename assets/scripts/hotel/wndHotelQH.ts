@@ -114,10 +114,10 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL, ...[data.template_id, data.id])
         }, this)
 
-        if(data.aptitude.length == 0){
+        if (data.aptitude.length == 0) {
             this.node.getChildByName('btn2').active = true
             this.node.getChildByName(`mask`).active = true
-        }else{
+        } else {
             this.node.getChildByName('btn2').active = false
             this.node.getChildByName(`mask`).active = false
         }
@@ -146,10 +146,10 @@ export default class NewClass extends cc.Component {
             node.getChildByName('label2').getComponent(cc.Label).string = `${this._data.aptitude[i]}/${999}`
         }
 
-        if(this._data.aptitude.length == 0){
+        if (this._data.aptitude.length == 0) {
             this.node.getChildByName('btn2').active = true
             this.node.getChildByName(`mask`).active = true
-        }else{
+        } else {
             this.node.getChildByName('btn2').active = false
             this.node.getChildByName(`mask`).active = false
         }

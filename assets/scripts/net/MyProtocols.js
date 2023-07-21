@@ -7011,6 +7011,16 @@ var MyProtocols = {
 		var retObj = {};
 		retObj.uuid = myDecoder.readString();
 		retObj.lv = myDecoder.readInt();
+		retObj.reward_item = [];
+		let reward_item_size = myDecoder.readInt();
+		if (reward_item_size > 0) {
+			for (var i = 0; i < reward_item_size; i++) {
+				retObj.reward_item[i] = {};
+				retObj.reward_item[i].template_id = myDecoder.readInt();
+				retObj.reward_item[i].bagId = myDecoder.readInt();
+				retObj.reward_item[i].num = myDecoder.readInt();
+			}
+		}
 		return retObj;
 	},
 
@@ -7027,9 +7037,18 @@ var MyProtocols = {
 		var retObj = {};
 		retObj.uuid = myDecoder.readInt();
 		retObj.lv = myDecoder.readInt();
+		retObj.reward_item = [];
+		let reward_item_size = myDecoder.readInt();
+		if (reward_item_size > 0) {
+			for (var i = 0; i < reward_item_size; i++) {
+				retObj.reward_item[i] = {};
+				retObj.reward_item[i].template_id = myDecoder.readInt();
+				retObj.reward_item[i].bagId = myDecoder.readInt();
+				retObj.reward_item[i].num = myDecoder.readInt();
+			}
+		}
 		return retObj;
 	}
-
 
 
 
