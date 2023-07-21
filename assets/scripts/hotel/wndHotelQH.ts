@@ -131,7 +131,8 @@ export default class NewClass extends cc.Component {
             let node = this.node.getChildByName("shuxing").getChildByName(`soldierType${i + 1}`)
             node.getChildByName('proTxt').getComponent(cc.Label).string = `${data.a[i]}/${0}`
         }
-
+        this._data.proficiency = data.a
+        ViewManager.instance.showToast(`强化成功`)
     }
 
     S2CIdentify(retObj) {
@@ -152,6 +153,8 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName('btn2').active = false
             this.node.getChildByName(`mask`).active = false
         }
+        ViewManager.instance.showToast(`鉴定成功`)
+
 
     }
 
