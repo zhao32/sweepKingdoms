@@ -86,8 +86,6 @@ export default class NewClass extends cc.Component {
 
     }
     PushItemChange(retObj) {
-        // {"item_info":{"uuid":"","template_id":5001,"enhance_level":0,"stars":0,"num":300,"bagId":4,"hpEx":0,"atkEx":0,"defEx":0,"attrEx":[],"exp":0}}
-
         for (let i = 0; i < DataManager.instance.curRuneList.length; i++) {
             if (DataManager.instance.curRuneList[i].template_id == retObj.item_info.template_id) {
                 DataManager.instance.curRuneList[i] = retObj.item_info
@@ -97,6 +95,8 @@ export default class NewClass extends cc.Component {
             }
         }
 
+        // {"item_info":{"uuid":"2945621338198018","template_id":1000,"enhance_level":0,"stars":0,"num":0,"bagId":0,"hpEx":0,"atkEx":0,"defEx":0,"attrEx":[],"exp":0}}
+
         let uuidList = []
         for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
             if (DataManager.instance.itemsList[i].uuid) {
@@ -104,36 +104,41 @@ export default class NewClass extends cc.Component {
             }
 
         }
-        console.log('hasItem:' + uuidList)
+        console.log('DataManager.instance.itemsList.length  1:' + DataManager.instance.itemsList.length)
         let hasItem = false
         for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
             let template_id = DataManager.instance.itemsList[i].template_id
-            if (DataManager.GameData.Equips[template_id]) {
-                hasItem = true;
-                if (retObj.item_info.num == 0) {
-                    DataManager.instance.itemsList.splice(i, 1)
-                } else {
-                    if (uuidList.indexOf(retObj.item_info.uuid) == -1) {
-                        hasItem = false;
-                    } else {
-                        DataManager.instance.itemsList[i] = retObj.item_info
-                    }
-                }
-            } else {
-                if (DataManager.instance.itemsList[i].template_id == retObj.item_info.template_id) {
-                    hasItem = true
-                    DataManager.instance.itemsList[i] = retObj.item_info
+            if (retObj.item_info.uuid == DataManager.instance.itemsList[i].uuid) {
+                if (DataManager.GameData.Equips[template_id]) {
+                    hasItem = true;
                     if (retObj.item_info.num == 0) {
                         DataManager.instance.itemsList.splice(i, 1)
+                    } else {
+                        if (uuidList.indexOf(retObj.item_info.uuid) == -1) {
+                            hasItem = false;
+                        } else {
+                            DataManager.instance.itemsList[i] = retObj.item_info
+                        }
+                    }
+                } else {
+                    if (DataManager.instance.itemsList[i].template_id == retObj.item_info.template_id) {
+                        hasItem = true
+                        DataManager.instance.itemsList[i] = retObj.item_info
+                        if (retObj.item_info.num == 0) {
+                            DataManager.instance.itemsList.splice(i, 1)
+                        }
                     }
                 }
             }
+
         }
 
         console.log('hasItem:' + hasItem)
         if (hasItem == false) {
             DataManager.instance.itemsList.push(retObj.item_info)
         }
+        console.log('DataManager.instance.itemsList.length  2:' + DataManager.instance.itemsList.length)
+
     }
     /**获取玩家信息 */
     S2CUserInfoStruct(retObj) {

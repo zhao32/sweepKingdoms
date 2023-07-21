@@ -105,16 +105,19 @@ export default class NewClass extends cc.Component {
                                 ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.EquipFrags[template_id].name}`, item.getChildByName('pic'))
                             }
                         } else if (i == 3) {
-                            has = true
                             let skillSt = DataManager.GameData.SkillStudy[template_id]
-                            ResManager.loadItemIcon(`skillats/${skillSt.name}`, item.getChildByName('pic'))
-                            if (skillSt.type == 1) {
-                                ResManager.loadItemIcon(`skillats/红`, item)
-                            } else if (skillSt.type == 2) {
-                                ResManager.loadItemIcon(`skillats/黄`, item)
-                            } else if (skillSt.type == 3) {
-                                ResManager.loadItemIcon(`skillats/蓝`, item)
+                            if (skillSt) {
+                                has = true
+                                ResManager.loadItemIcon(`skillats/${skillSt.name}`, item.getChildByName('pic'))
+                                if (skillSt.type == 1) {
+                                    ResManager.loadItemIcon(`skillats/红`, item)
+                                } else if (skillSt.type == 2) {
+                                    ResManager.loadItemIcon(`skillats/黄`, item)
+                                } else if (skillSt.type == 3) {
+                                    ResManager.loadItemIcon(`skillats/蓝`, item)
+                                }
                             }
+
                         } else if (i == 4) {
                             // ResManager.loadItemIcon(`UI/UnitsEquips/${template_id}`, item.getChildByName('pic'))
                             if (keyItemList.indexOf(template_id) != -1) {
@@ -202,7 +205,7 @@ export default class NewClass extends cc.Component {
         let keyItemList = Object.keys(DataManager.GameData.Items)
         let keySkillList = Object.keys(DataManager.GameData.packSkills)
 
-        console.log('keyGiftList:' + JSON.stringify(keyGiftList))
+        console.log('keyEquipList:' + JSON.stringify(keyEquipList))
         let hasCurData = false
         for (let i = 0; i < itemsList.length; i++) {
             if (itemsList[i].bagId == 0) {//礼包 消耗品
@@ -237,7 +240,7 @@ export default class NewClass extends cc.Component {
         if (!hasCurData) this.curData = null
 
 
-        console.log('--list0-------' + JSON.stringify(this.list0))
+        console.log('--list1-------' + this.list1.length)
 
     }
 
@@ -260,13 +263,16 @@ export default class NewClass extends cc.Component {
                 DataManager.instance.itemsList[i].enhance_level = retObj.lv
             }
         }
-
+        console.log('-------len1------------'+ this.list1.length)
         this.reflash()
+        console.log('-------len2------------'+ this.list1.length)
     }
 
     S2CEquipRestore(retObj) {
         console.log(`装备还原返回：` + JSON.stringify(retObj))
         this.reflash()
+
+
     }
 
     S2CUseItem(retObj) {
@@ -324,16 +330,19 @@ export default class NewClass extends cc.Component {
                     ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.EquipFrags[template_id].name}`, item.getChildByName('pic'))
                 }
             } else if (this.curBagId == 3) {
-                has = true
                 let skillSt = DataManager.GameData.SkillStudy[template_id]
-                ResManager.loadItemIcon(`skillats/${skillSt.name}`, item.getChildByName('pic'))
-                if (skillSt.type == 1) {
-                    ResManager.loadItemIcon(`skillats/红`, item)
-                } else if (skillSt.type == 2) {
-                    ResManager.loadItemIcon(`skillats/黄`, item)
-                } else if (skillSt.type == 3) {
-                    ResManager.loadItemIcon(`skillats/蓝`, item)
+                if (skillSt) {
+                    ResManager.loadItemIcon(`skillats/${skillSt.name}`, item.getChildByName('pic'))
+                    if (skillSt.type == 1) {
+                        ResManager.loadItemIcon(`skillats/红`, item)
+                    } else if (skillSt.type == 2) {
+                        ResManager.loadItemIcon(`skillats/黄`, item)
+                    } else if (skillSt.type == 3) {
+                        ResManager.loadItemIcon(`skillats/蓝`, item)
+                    }
+                    has = true
                 }
+
             } else if (this.curBagId == 4) {
                 if (keyItemList.indexOf(template_id) != -1) {
                     has = true
