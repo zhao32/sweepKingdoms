@@ -104,6 +104,11 @@ export default class NewClass extends cc.Component {
         //     this.node.getChildByName(`starGet${i}`).active = true
         // }
 
+        for (let i = 0; i < 3; i++) {
+            let node = this.node.getChildByName("shuxing1").getChildByName(`soldierType${i + 1}`)
+            node.active = false
+        }
+
         for (let i = 0; i < data.talents.length; i++) {
             let node = this.node.getChildByName("shuxing1").getChildByName(`soldierType${i + 1}`)
             node.active = true
