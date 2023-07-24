@@ -70,6 +70,9 @@ export default class NewClass extends cc.Component {
         let keyItemList = Object.keys(DataManager.GameData.Items)
         let keySkillList = Object.keys(DataManager.GameData.packSkills)
 
+        let keyRuneList = Object.keys(DataManager.GameData.Runes)
+
+
 
         let ToggleList = this.ToggleContainer.getComponentsInChildren(cc.Toggle)
         ToggleList[0].isChecked = true
@@ -123,6 +126,9 @@ export default class NewClass extends cc.Component {
                             if (keyItemList.indexOf(template_id) != -1) {
                                 has = true
                                 ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Items[template_id].name}`, item.getChildByName('pic'))
+                            } else if (keyRuneList.indexOf(template_id) != -1) {
+                                has = true
+                                ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[template_id].icon}`, item.getChildByName('pic'))
                             }
                         }
                         if (has == true) {
@@ -147,8 +153,9 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.addListener(NetEvent.S2CUseItem, this.S2CUseItem, this)
         NetEventDispatcher.addListener(NetEvent.S2CEmbryoUp, this.S2CEmbryoUp, this)
         NetEventDispatcher.addListener(NetEvent.S2CEquipRestore, this.S2CEquipRestore, this)
+        NetEventDispatcher.addListener(NetEvent.S2CEquipFragCompose, this.S2CEquipFragCompose, this)
 
-
+        
 
         /**礼包 */
         let keyGiftList = Object.keys(DataManager.GameData.Boxes)
@@ -253,6 +260,13 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.removeListener(NetEvent.S2CUseItem, this.S2CUseItem, this)
         NetEventDispatcher.removeListener(NetEvent.S2CEmbryoUp, this.S2CEmbryoUp, this)
         NetEventDispatcher.removeListener(NetEvent.S2CEquipRestore, this.S2CEquipRestore, this)
+        NetEventDispatcher.addListener(NetEvent.S2CEquipFragCompose, this.S2CEquipFragCompose, this)
+
+    }
+
+    S2CEquipFragCompose(retObj){
+        console.log(`符石合成返回` + JSON.stringify(retObj))
+
     }
 
     S2CEmbryoUp(retObj) {
@@ -318,6 +332,9 @@ export default class NewClass extends cc.Component {
         let keySkillList = Object.keys(DataManager.GameData.packSkills)
         let keyEquipFragsList = Object.keys(DataManager.GameData.EquipFrags)
 
+        let keyRuneList = Object.keys(DataManager.GameData.Runes)
+
+
         this.contect.removeAllChildren()
         let list = this[`list${this.curBagId}`]
         for (let j = 0; j < list.length; j++) {
@@ -361,6 +378,9 @@ export default class NewClass extends cc.Component {
                 if (keyItemList.indexOf(template_id) != -1) {
                     has = true
                     ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Items[template_id].name}`, item.getChildByName('pic'))
+                }else if (keyRuneList.indexOf(template_id) != -1) {
+                    has = true
+                    ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[template_id].icon}}`, item.getChildByName('pic'))
                 }
             }
             if (has) {

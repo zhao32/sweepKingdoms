@@ -16,5 +16,14 @@
     "des":"用于合成武器图纸",
     "icon":"e74.png",
     "quality":2
+  },
+  "5001":{
+    "craft_num":2,
+    "name":"一级暴击符石",
+    "bind_stages":[101,102],
+    "equip":5002,
+    "des":"用于合成二级暴击符石",
+    "icon":"e74.png",
+    "quality":2
   }
 }

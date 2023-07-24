@@ -64,6 +64,8 @@ export default class NewClass extends cc.Component {
         let keyEquipList = Object.keys(DataManager.GameData.Equips)
         let keyEquipFragsList = Object.keys(DataManager.GameData.EquipFrags)
 
+        let keyRuneList = Object.keys(DataManager.GameData.Runes)
+
 
         let template_id = data.template_id.toString()
         this.countLabel.string = 'x' + data.num
@@ -186,17 +188,43 @@ export default class NewClass extends cc.Component {
 
         } else if (data.bagId == 4) {//道具 
             defaultData = DataManager.GameData.Items[data.template_id]
-            this.nameLabel.string = defaultData.name
+            let runeData = DataManager.GameData.Runes[data.template_id]
+
+
             this.countLabel.string = 'x' + data.num
-            this.richLabel.string = defaultData.des
 
             if (keyConsList.indexOf(template_id) != -1) {
                 this.btnLabel0.string = `使用`
                 this.btnLabel1.string = `使用x${data.num}`
+
+                this.nameLabel.string = defaultData.name
+                this.richLabel.string = defaultData.des || ''
+                ResManager.loadItemIcon(`UI/prop/${defaultData.name}`, this.pic)
+
+            } else if (keyRuneList.indexOf(template_id) != -1) {
+                this.btnLabel0.string = `合成`
+                this.node.getChildByName(`op`).children[0].x = 0
+                this.node.getChildByName(`op`).children[1].active = false
+
+                this.nameLabel.string = runeData.name
+                this.richLabel.string = runeData.des || ''
+                ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[template_id].icon}`, this.pic)
+
+                let consumeNode = this.node.getChildByName(`consume`)
+                consumeNode.active = true
+
+
+                let pic = consumeNode.getChildByName('item').getChildByName('pic')
+                ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[template_id].icon}`, pic)
+                consumeNode.getChildByName('item').getChildByName('nameLabel').getComponent(cc.Label).string = DataManager.GameData.EquipFrags[template_id].name
+                consumeNode.getChildByName('item').getChildByName('numLabel').getComponent(cc.Label).string = `x${DataManager.GameData.EquipFrags[template_id].craft_num}`
+                consumeNode.getChildByName(`des`).getComponent(cc.Label).string = DataManager.GameData.EquipFrags[template_id].des
             } else {
+                this.nameLabel.string = defaultData.name
+                this.richLabel.string = defaultData.des || ''
                 this.node.getChildByName(`op`).active = false
+                ResManager.loadItemIcon(`UI/prop/${defaultData.name}`, this.pic)
             }
-            ResManager.loadItemIcon(`UI/prop/${defaultData.name}`, this.pic)
         }
         // console.log('defaultData:' + JSON.stringify(defaultData))
 
@@ -207,7 +235,12 @@ export default class NewClass extends cc.Component {
         if (this._data.bagId == 4) {
             let keyConsList = Object.keys(DataManager.GameData.Consumes)
 
-            if (keyConsList.indexOf(this._data.template_id) != -1) {
+            let keyRuneList = Object.keys(DataManager.GameData.Runes)
+            if (keyRuneList.indexOf(String(this._data.template_id)) != -1) {
+                console.log(`合成符石`)
+                MyProtocols.send_C2SEquipFragCompose(DataManager._loginSocket, this._data.template_id)
+
+            } else if (keyConsList.indexOf(this._data.template_id) != -1) {
                 ViewManager.instance.showToast(`使用道具`)
                 MyProtocols.send_C2SUseItem(DataManager._loginSocket, [{ template_id: this._data.template_id, count: 1 }])
             } else {
