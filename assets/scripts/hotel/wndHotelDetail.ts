@@ -192,7 +192,12 @@ export default class NewClass extends cc.Component {
             node.getChildByName('proTxt').getComponent(cc.Label).string = `${data.proficiency[i]}/${0}`
             node.getChildByName(`progressBar`).getComponent(cc.ProgressBar).progress = 0.8
             node.getChildByName('label1').getComponent(cc.Label).string = `成长潜质` //DataManager.armList[defaultData.talents[i]] + `兵熟练度：`
-            node.getChildByName('label2').getComponent(cc.Label).string = `${data.aptitude[i]}/${999}`
+            // node.getChildByName('label2').getComponent(cc.Label).string = `${data.aptitude[i]}/${999}`
+            if (data.aptitude.length == 0) {
+                node.getChildByName('label2').getComponent(cc.Label).string = `:未鉴定`
+            } else {
+                node.getChildByName('label2').getComponent(cc.Label).string = `${data.aptitude[i]}/${999}`
+            }
         }
 
         this.strenProBar.progress = data.physical / 200

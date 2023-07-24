@@ -119,6 +119,7 @@ export default class NewClass extends cc.Component {
             node.getChildByName(`progressBar`).getComponent(cc.ProgressBar).progress = 0.8
             node.getChildByName('label1').getComponent(cc.Label).string = `成长潜质` //DataManager.armList[defaultData.talents[i]] + `兵熟练度：`
             node.getChildByName('label2').getComponent(cc.Label).string = `${data.aptitude[i]}/${999}`
+            
         }
 
 

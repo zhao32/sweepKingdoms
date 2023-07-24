@@ -90,12 +90,13 @@ export default class NewClass extends cc.Component {
         if (this._data.id == 0) {
             DataManager.wndHotelDetail.openSkillstPanel(this._data, this._idx)
         } else {
+            let self = this
             var _alert_layer = cc.instantiate(DataManager.Main.AlertLayer);
             cc.Canvas.instance.node.addChild(_alert_layer);
             _alert_layer.getComponent(AlertLayer).init("是否遗忘此技能？",
                 function () {
                     // MyProtocols.send_C2SCardTakeOffItem(DataManager._loginSocket, this._data.id, this._idx);//
-                    MyProtocols.send_C2SSKillTeach(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this._idx, this._data.id, 1)
+                    MyProtocols.send_C2SSKillTeach(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, self._idx, self._data.id, 1)
                     _alert_layer.destroy();
                 });
         }

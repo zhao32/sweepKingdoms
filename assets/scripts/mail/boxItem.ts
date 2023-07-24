@@ -44,12 +44,19 @@ export default class NewClass extends cc.Component {
             /**消耗品 */
             let keyConsList = Object.keys(DataManager.GameData.Consumes)
 
+            let keyEquip = Object.keys(DataManager.GameData.Equips)
+
+
             if (keyGiftList.indexOf(data.template_id) != -1) {
                 itemData = DataManager.GameData.Boxes[data.template_id]
             }
 
             if (keyConsList.indexOf(data.template_id) != -1) {
                 itemData = DataManager.GameData.Consumes[data.template_id]
+            }
+
+            if (keyEquip.indexOf(data.template_id) != -1) {
+                itemData = DataManager.GameData.Equips[data.template_id]
             }
 
             if (itemData) {
