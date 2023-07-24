@@ -64,7 +64,7 @@ export default class NewClass extends cc.Component {
             ResManager.loadItemIcon(`skillats/蓝`, this.bg)
         }
 
-        this.node.getChildByName(`btnTeach`).active = data.id == 0
+        // this.node.getChildByName(`btnTeach`).active = data.id == 0
         if (data.id != 0) {
             let skillSt = DataManager.GameData.SkillStudy[data.id]
             ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.icon)
