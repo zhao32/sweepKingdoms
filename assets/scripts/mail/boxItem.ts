@@ -73,7 +73,9 @@ export default class NewClass extends cc.Component {
             }
 
             if (keyBonus.indexOf(template_id) != -1) {
-                itemData = DataManager.GameData.bonus[template_id]
+                let bonusData = DataManager.GameData.bonus[template_id]
+                ResManager.loadItemIcon(`UI/bonus/${bonusData.name}`, this.sprite.node)
+
             }
 
             if (keyStudy.indexOf(template_id) != -1) {

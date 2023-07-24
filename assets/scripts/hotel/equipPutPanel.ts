@@ -99,7 +99,7 @@ export default class NewClass extends cc.Component {
                     ResManager.loadItemIcon(`UI/equips/${DataManager.GameData.Equips[template_id].name}`, item.getChildByName(`icon`))
                     item.getChildByName('count').getComponent(cc.Label).string = 'x' + DataManager.instance.itemsList[i].num
                     //     let lv = parseInt(DataManager.GameData.Runes[DataManager.instance.curRuneList[i].template_id].quality) + 1
-                    //     item.getChildByName('level').getComponent(cc.Label).string = 'lv:' + lv
+                    item.getChildByName('level').getComponent(cc.Label).string = ''
                     item.getChildByName('count').color = cc.Color.WHITE
                     item.getChildByName('level').color = cc.Color.WHITE
                     item.getChildByName('light').active = false
@@ -117,7 +117,7 @@ export default class NewClass extends cc.Component {
                         item.getChildByName('level').color = cc.Color.YELLOW
                         this.noteDisplay.string = DataManager.GameData.Equips[template_id].name
                         this._selectRuneId = DataManager.instance.itemsList[i].uuid
-                        item.getChildByName('level').getComponent(cc.Label).string = ''
+                        // item.getChildByName('level').getComponent(cc.Label).string = ''
 
                     })
 
