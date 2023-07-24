@@ -36,6 +36,7 @@ export default class NewClass extends cc.Component {
             this.countLabel.string = `x${data.cnt}`
             if (itemData) ResManager.loadItemIcon(`UI/items/${itemData.icon}`, this.sprite.node)
         } else if (data.num) {
+            // {"template_id":10007,"bagId":3,"num":30}
             this.countLabel.string = `x${data.num}`
 
             let itemData
@@ -52,25 +53,26 @@ export default class NewClass extends cc.Component {
 
             let keyEquip = Object.keys(DataManager.GameData.Equips)
 
-
-            if (keyGiftList.indexOf(data.template_id) != -1) {
-                itemData = DataManager.GameData.Boxes[data.template_id]
+           let template_id =String(data.template_id) 
+           
+            if (keyGiftList.indexOf(template_id) != -1) {
+                itemData = DataManager.GameData.Boxes[template_id]
             }
 
-            if (keyConsList.indexOf(data.template_id) != -1) {
-                itemData = DataManager.GameData.Consumes[data.template_id]
+            if (keyConsList.indexOf(template_id) != -1) {
+                itemData = DataManager.GameData.Consumes[template_id]
             }
 
-            if (keyEquip.indexOf(data.template_id) != -1) {
-                itemData = DataManager.GameData.Equips[data.template_id]
+            if (keyEquip.indexOf(template_id) != -1) {
+                itemData = DataManager.GameData.Equips[template_id]
             }
 
-            if (keyStoneList.indexOf(data.template_id) != -1) {
-                itemData = DataManager.GameData.MineStone[data.template_id]
+            if (keyStoneList.indexOf(template_id) != -1) {
+                itemData = DataManager.GameData.MineStone[template_id]
             }
 
-            if (keyStudy.indexOf(data.template_id) != -1) {
-                let skillSt = DataManager.GameData.SkillStudy[data.template_id]
+            if (keyStudy.indexOf(template_id) != -1) {
+                let skillSt = DataManager.GameData.SkillStudy[template_id]
                 ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.sprite.node)
             }
 
