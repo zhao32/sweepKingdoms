@@ -6915,12 +6915,13 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	send_C2SSKillTeach(senderSocket, cardid, idx, skillid) {
+	send_C2SSKillTeach(senderSocket, cardid, idx, skillid, type) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2035);
 		myEncoder.writeInt(cardid);
 		myEncoder.writeInt(idx);
 		myEncoder.writeInt(skillid);
+		myEncoder.writeInt(type);
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);

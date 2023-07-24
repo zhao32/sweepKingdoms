@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import AlertLayer from "../common/AlertLayer";
 import DataManager from "../utils/Manager/DataManager";
 import ResManager from "../utils/Manager/ResManager";
 
@@ -21,6 +22,9 @@ export default class NewClass extends cc.Component {
 
     @property(cc.Label)
     nameLabel: cc.Label = null;
+
+    @property(cc.Label)
+    btnLabel: cc.Label = null;
 
     @property(cc.RichText)
     richLabel: cc.RichText = null;
@@ -66,12 +70,16 @@ export default class NewClass extends cc.Component {
             ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.icon)
             this.nameLabel.string = `${skillSt.name.slice(0, -2)} LV ${data.level}`
             this.richLabel.string = skillSt.des
-
+            this.btnLabel.string = `遗忘`
+        } else {
+            this.btnLabel.string = `学习`
         }
 
         this.icon.on(cc.Node.EventType.TOUCH_END, () => {
             if (data.id != 0) {
                 DataManager.wndHotelDetail.openSkillstUpPanel(data, idx)
+            } else {
+
             }
             // MyProtocols.send_C2SSKillStUp(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this._idx, this._data.id, this._data.level + 1)
         }, this)
@@ -79,11 +87,17 @@ export default class NewClass extends cc.Component {
     }
 
     onTeachHandler() {
-        if(this._data == 0){
+        if (this._data.id == 0) {
             DataManager.wndHotelDetail.openSkillstPanel(this._data, this._idx)
-
-        }else{
-            
+        } else {
+            var _alert_layer = cc.instantiate(DataManager.Main.AlertLayer);
+            cc.Canvas.instance.node.addChild(_alert_layer);
+            _alert_layer.getComponent(AlertLayer).init("是否遗忘此技能？",
+                function () {
+                    // MyProtocols.send_C2SCardTakeOffItem(DataManager._loginSocket, this._data.id, this._idx);//
+                    MyProtocols.send_C2SSKillTeach(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this._idx, this._data.id, 1)
+                    _alert_layer.destroy();
+                });
         }
     }
 
