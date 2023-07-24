@@ -41,31 +41,31 @@ export default class NewClass extends cc.Component {
     _data
 
     start() {
-        NetEventDispatcher.addListener(NetEvent.S2CRunePutup, this.C2SRunePutup, this)
+        // NetEventDispatcher.addListener(NetEvent.S2CRunePutup, this.C2SRunePutup, this)
     }
 
     protected onDestroy(): void {
-        NetEventDispatcher.removeListener(NetEvent.S2CRunePutup, this.C2SRunePutup, this)
+        // NetEventDispatcher.removeListener(NetEvent.S2CRunePutup, this.C2SRunePutup, this)
     }
 
-    C2SRunePutup(data) {
-        console.log(`石符安装返回`)
-        console.log(JSON.stringify(data))
-        ViewManager.instance.showToast(`安装石符成功`)
-        // {"card_id":1,"pos_index":1,"rune_id":5001,"rune_level":0,"back_items":[],"fight":2796}
+    // C2SRunePutup(data) {
+    //     console.log(`石符安装返回`)
+    //     console.log(JSON.stringify(data))
+    //     ViewManager.instance.showToast(`安装石符成功`)
+    //     // {"card_id":1,"pos_index":1,"rune_id":5001,"rune_level":0,"back_items":[],"fight":2796}
 
 
-        for (let i = 0; i < DataManager.instance.curRuneList.length; i++) {
-            let item = this.contect.children[i]
-            ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[DataManager.instance.curRuneList[i].template_id].icon}`, item.getChildByName(`icon`))
-            item.getChildByName('count').getComponent(cc.Label).string = 'x' + DataManager.instance.curRuneList[i].num
-            let lv = parseInt(DataManager.GameData.Runes[DataManager.instance.curRuneList[i].template_id].quality) + 1
-            item.getChildByName('level').getComponent(cc.Label).string = 'lv:' + lv
-        }
-        this._data.runePutup[this._idx] = data.rune_id
-        this.onCloseHandler()
+    //     for (let i = 0; i < DataManager.instance.curRuneList.length; i++) {
+    //         let item = this.contect.children[i]
+    //         ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[DataManager.instance.curRuneList[i].template_id].icon}`, item.getChildByName(`icon`))
+    //         item.getChildByName('count').getComponent(cc.Label).string = 'x' + DataManager.instance.curRuneList[i].num
+    //         let lv = parseInt(DataManager.GameData.Runes[DataManager.instance.curRuneList[i].template_id].quality) + 1
+    //         item.getChildByName('level').getComponent(cc.Label).string = 'lv:' + lv
+    //     }
+    //     this._data.runePutup[this._idx] = data.rune_id
+    //     this.onCloseHandler()
 
-    }
+    // }
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -117,6 +117,8 @@ export default class NewClass extends cc.Component {
                         item.getChildByName('level').color = cc.Color.YELLOW
                         this.noteDisplay.string = DataManager.GameData.Equips[template_id].name
                         this._selectRuneId = DataManager.instance.itemsList[i].uuid
+                        item.getChildByName('level').getComponent(cc.Label).string = ''
+
                     })
 
                 }

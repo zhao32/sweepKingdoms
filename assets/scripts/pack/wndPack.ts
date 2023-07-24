@@ -263,9 +263,9 @@ export default class NewClass extends cc.Component {
                 DataManager.instance.itemsList[i].enhance_level = retObj.lv
             }
         }
-        console.log('-------len1------------'+ this.list1.length)
+        console.log('-------len1------------' + this.list1.length)
         this.reflash()
-        console.log('-------len2------------'+ this.list1.length)
+        console.log('-------len2------------' + this.list1.length)
 
         if (retObj.reward_item.length > 0) {
             var rewardPanel = cc.instantiate(this.getRewardPanel_prefab);
@@ -293,6 +293,7 @@ export default class NewClass extends cc.Component {
         console.log(`消耗品使用后返回：` + JSON.stringify(retObj))
         // {"reward_item":[{"template_id":2023,"bagId":1,"num":1}]}
         this.reflash()
+
 
         if (retObj.reward_item.length > 0) {
             var rewardPanel = cc.instantiate(this.getRewardPanel_prefab);

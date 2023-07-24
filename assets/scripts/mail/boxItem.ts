@@ -49,6 +49,7 @@ export default class NewClass extends cc.Component {
 
             let keyStudy = Object.keys(DataManager.GameData.SkillStudy)
 
+            let keyBonus = Object.keys(DataManager.GameData.bonus)
 
 
             let keyEquip = Object.keys(DataManager.GameData.Equips)
@@ -69,6 +70,10 @@ export default class NewClass extends cc.Component {
 
             if (keyStoneList.indexOf(template_id) != -1) {
                 itemData = DataManager.GameData.MineStone[template_id]
+            }
+
+            if (keyBonus.indexOf(template_id) != -1) {
+                itemData = DataManager.GameData.bonus[template_id]
             }
 
             if (keyStudy.indexOf(template_id) != -1) {

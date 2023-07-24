@@ -175,6 +175,8 @@ export default class DataManager {
         soliderStren: {},
         /**矿场矿石 */
         MineStone: {},
+        /**数值奖励 */
+        bonus:{}
     }
     /**我的将表 */
     static cardsList = []
