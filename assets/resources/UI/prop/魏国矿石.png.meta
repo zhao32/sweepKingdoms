@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "398b9273-6676-47e6-aee4-a6180ad1d1f4",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 60,
+  "height": 53,
+  "platformSettings": {},
+  "subMetas": {
+    "魏国矿石": {
+      "ver": "1.0.6",
+      "uuid": "3423cb9d-709b-483e-8d99-577e522fd18b",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "398b9273-6676-47e6-aee4-a6180ad1d1f4",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 60,
+      "height": 53,
+      "rawWidth": 60,
+      "rawHeight": 53,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

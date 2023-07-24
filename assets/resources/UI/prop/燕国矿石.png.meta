@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "17283563-1281-4bd1-901e-22be127f3bba",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 60,
+  "height": 65,
+  "platformSettings": {},
+  "subMetas": {
+    "燕国矿石": {
+      "ver": "1.0.6",
+      "uuid": "919a1fd9-1738-4713-ba27-025c65c129ab",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "17283563-1281-4bd1-901e-22be127f3bba",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 60,
+      "height": 65,
+      "rawWidth": 60,
+      "rawHeight": 65,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

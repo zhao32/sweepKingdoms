@@ -23,8 +23,21 @@ export default class NewClass extends cc.Component {
     @property(cc.Label)
     lvLablel: cc.Label = null;
 
+
+    @property(cc.Label)
+    decLablel: cc.Label = null;
+
     @property(cc.Node)
     icon: cc.Node = null;
+
+    @property(cc.Label)
+    numLablel0: cc.Label = null;
+
+    @property(cc.Node)
+    icon1: cc.Node = null;
+
+    @property(cc.Label)
+    numLablel1: cc.Label = null;
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -51,9 +64,23 @@ export default class NewClass extends cc.Component {
         this._data = data
         this._idx = idx
         this.lvLablel.string = `LV${data.level}   --->   LV${data.level + 1}`
+        let precnce = [100, 80, 50, 40, 30, 20, 15, 10, 8, 5]
+        let useList = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [6, 15], [10, 20], [15, 25], [20, 30]]
 
         let skillSt = DataManager.GameData.SkillStudy[data.id]
         ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.icon)
+
+        this.decLablel.string = `升级成功概率:${precnce[data.level]}%`
+    
+        if (useList[data.level][1] == 0) {
+            this.icon1.active = false
+        } else {
+            this.icon1.active = true
+            this.numLablel1.string = `x${useList[data.level][1]}`
+            // DataManager.GameData.Items[1015].name
+            ResManager.loadItemIcon(`UI/prop/传奇卷轴`, this.icon1)
+        }
+
     }
 
     // update (dt) {}

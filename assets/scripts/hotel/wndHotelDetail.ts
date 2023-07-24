@@ -336,7 +336,6 @@ export default class NewClass extends cc.Component {
             }
             equip.getComponent(detailQuipRender).init(i, this._data)
         }
-
     }
 
     S2CCardTakeOnItem(data) {

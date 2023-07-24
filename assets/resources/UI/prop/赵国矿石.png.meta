@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "a027acf6-c9d1-4749-ba9c-94bd61f82805",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 60,
+  "height": 63,
+  "platformSettings": {},
+  "subMetas": {
+    "赵国矿石": {
+      "ver": "1.0.6",
+      "uuid": "b32d1516-60f4-4ab5-aa64-7209bb16b6e7",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "a027acf6-c9d1-4749-ba9c-94bd61f82805",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 60,
+      "height": 63,
+      "rawWidth": 60,
+      "rawHeight": 63,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

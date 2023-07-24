@@ -44,6 +44,12 @@ export default class NewClass extends cc.Component {
             /**消耗品 */
             let keyConsList = Object.keys(DataManager.GameData.Consumes)
 
+            let keyStoneList = Object.keys(DataManager.GameData.MineStone)
+
+            let keyStudy = Object.keys(DataManager.GameData.SkillStudy)
+
+
+
             let keyEquip = Object.keys(DataManager.GameData.Equips)
 
 
@@ -57,6 +63,15 @@ export default class NewClass extends cc.Component {
 
             if (keyEquip.indexOf(data.template_id) != -1) {
                 itemData = DataManager.GameData.Equips[data.template_id]
+            }
+
+            if (keyStoneList.indexOf(data.template_id) != -1) {
+                itemData = DataManager.GameData.MineStone[data.template_id]
+            }
+
+            if (keyStudy.indexOf(data.template_id) != -1) {
+                let skillSt = DataManager.GameData.SkillStudy[data.template_id]
+                ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.sprite.node)
             }
 
             if (itemData) {

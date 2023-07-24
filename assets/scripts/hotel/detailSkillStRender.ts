@@ -8,6 +8,7 @@
 import AlertLayer from "../common/AlertLayer";
 import DataManager from "../utils/Manager/DataManager";
 import ResManager from "../utils/Manager/ResManager";
+import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -77,7 +78,12 @@ export default class NewClass extends cc.Component {
 
         this.icon.on(cc.Node.EventType.TOUCH_END, () => {
             if (data.id != 0) {
-                DataManager.wndHotelDetail.openSkillstUpPanel(data, idx)
+                if(data.level < 10){
+                    DataManager.wndHotelDetail.openSkillstUpPanel(data, idx)
+
+                }else{
+                    ViewManager.instance.showToast(`该技能已达到10级最高级`)
+                }
             } else {
 
             }

@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "16a0bc43-967a-4f5f-824c-2b1c3039522c",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 60,
+  "height": 66,
+  "platformSettings": {},
+  "subMetas": {
+    "秦国矿石": {
+      "ver": "1.0.6",
+      "uuid": "91fe66c7-1579-43c1-83c2-2d45ddd4d1cd",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "16a0bc43-967a-4f5f-824c-2b1c3039522c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 60,
+      "height": 66,
+      "rawWidth": 60,
+      "rawHeight": 66,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
