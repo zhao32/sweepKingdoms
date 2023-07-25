@@ -266,6 +266,8 @@ export default class NewClass extends cc.Component {
 
     S2CEquipFragCompose(retObj){
         console.log(`符石合成返回` + JSON.stringify(retObj))
+        ViewManager.instance.showToast(`符石合成成功`)
+
         this.reflash()
     }
 

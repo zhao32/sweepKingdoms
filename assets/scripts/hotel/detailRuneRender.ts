@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import AlertLayer from "../common/AlertLayer";
 import { NetEvent } from "../net/NetEvent";
 // import packManager from "../pack/packManager";
 import DataManager from "../utils/Manager/DataManager";
@@ -44,13 +45,36 @@ export default class NewClass extends cc.Component {
 
     _idx: number
 
+    _data
+
     start() {
+        this.node.getChildByName('rune').on(cc.Node.EventType.TOUCH_END, () => {
+            if (this._state == 1) {
+                console.log(`获取符石列表`)
+                console.log('RuneList:' + JSON.stringify(DataManager.instance.curRuneList))
+                console.log('data:' + JSON.stringify(this._data))
+                if (this._data.runePutup[this._idx] == 0) {
+                    DataManager.wndHotelDetail.node.getChildByName('runePutPanel').getComponent(runePutPanel).open(this._heroid, this._idx)
+                } else {
+                    var _alert_layer = cc.instantiate(DataManager.Main.AlertLayer);
+                    cc.Canvas.instance.node.addChild(_alert_layer);
+                    _alert_layer.getComponent(AlertLayer).init("是否遗忘此装备？",
+                        function () {
+                            // MyProtocols.send_C2SCardTakeOffItem(DataManager._loginSocket, data.id, idx);//发送删除邮件数据请求
+                            _alert_layer.destroy();
+                        });
+                }
+
+            }
+
+        }, this)
 
     }
 
 
 
     init(state, idx, data) {
+        this._data = data
         this._state = state
         this._heroid = data.id
         this._idx = idx
@@ -65,15 +89,7 @@ export default class NewClass extends cc.Component {
             this.tipDisplay0.string = `已开启`
         }
 
-        this.node.getChildByName('rune').on(cc.Node.EventType.TOUCH_END, () => {
-            if (state == 1) {
-                console.log(`获取符石列表`)
-                console.log('RuneList:' + JSON.stringify(DataManager.instance.curRuneList))
 
-                DataManager.wndHotelDetail.node.getChildByName('runePutPanel').getComponent(runePutPanel).open(data, idx)
-            }
-
-        }, this)
 
         // if (data.runePutup[idx] < 1000) {
         //     this.node.getChildByName('Mask').children[0].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[data.runePutup[i]]

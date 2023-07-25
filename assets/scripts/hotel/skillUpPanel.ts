@@ -64,22 +64,29 @@ export default class NewClass extends cc.Component {
         this._data = data
         this._idx = idx
         this.lvLablel.string = `LV${data.level}   --->   LV${data.level + 1}`
-        let precnce = [100, 80, 50, 40, 30, 20, 15, 10, 8, 5]
-        let useList = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [6, 15], [10, 20], [15, 25], [20, 30]]
+        // let precnce = [100, 80, 50, 40, 30, 20, 15, 10, 8, 5]
+        // let useList = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [6, 15], [10, 20], [15, 25], [20, 30]]
+        // {
+        //     "leave":0,
+        //     "rate":100,
+        //     "good":[1015,0],
+        //     "num":1
+        //   },
+        let updata = DataManager.GameData.Enhanceconfig[`skillLeave`][data.level]
 
         let skillSt = DataManager.GameData.SkillStudy[data.id]
         ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.icon)
 
-        this.decLablel.string = `升级成功概率:${precnce[data.level]}%`
-        this.numLablel0.string = `x${useList[data.level][0]}`
+        this.decLablel.string = `升级成功概率:${updata.rata}%`
+        this.numLablel0.string = `x${updata.num}`
 
-        if (useList[data.level][1] == 0) {
+        if (updata.goods[1] == 0) {
             this.icon1.active = false
         } else {
             this.icon1.active = true
-            this.numLablel1.string = `x${useList[data.level][1]}`
-            // DataManager.GameData.Items[1015].name
-            ResManager.loadItemIcon(`UI/prop/传奇卷轴`, this.icon1)
+            this.numLablel1.string = `x${updata.goods[1]}`
+            let name = DataManager.GameData.Items[updata.goods[0]].name
+            ResManager.loadItemIcon(`UI/prop/${name}`, this.icon1)
         }
 
     }

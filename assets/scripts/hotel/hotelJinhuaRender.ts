@@ -112,8 +112,10 @@ export default class NewClass extends cc.Component {
 
             if (skillstData.id != 0) {
                 let skillSt = DataManager.GameData.SkillStudy[skillstData.id]
-                render.getChildByName('skill').active = true
-                ResManager.loadItemIcon(`skillats/${skillSt.name}`, render.getChildByName('skill'))
+                if(skillSt){ 
+                    render.getChildByName('skill').active = true
+                    ResManager.loadItemIcon(`skillats/${skillSt.name}`, render.getChildByName('skill'))
+                }
             } else {
                 render.getChildByName('skill').active = false
             }
