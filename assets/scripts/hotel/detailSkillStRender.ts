@@ -46,7 +46,18 @@ export default class NewClass extends cc.Component {
     // onLoad () {}
 
     start() {
+        this.icon.on(cc.Node.EventType.TOUCH_END, () => {
+            if (this._data.id != 0) {
+                if (this._data.level < 10) {
+                    DataManager.wndHotelDetail.openSkillstUpPanel(this._data, this._idx)
+                } else {
+                    ViewManager.instance.showToast(`该技能已达到10级最高级`)
+                }
+            } else {
 
+            }
+            // MyProtocols.send_C2SSKillStUp(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this._idx, this._data.id, this._data.level + 1)
+        }, this)
     }
 
     init(data, idx) {
@@ -80,18 +91,7 @@ export default class NewClass extends cc.Component {
             this.nameLabel.string = ''
         }
 
-        this.icon.on(cc.Node.EventType.TOUCH_END, () => {
-            if (data.id != 0) {
-                if (data.level < 10) {
-                    DataManager.wndHotelDetail.openSkillstUpPanel(data, idx)
-                } else {
-                    ViewManager.instance.showToast(`该技能已达到10级最高级`)
-                }
-            } else {
 
-            }
-            // MyProtocols.send_C2SSKillStUp(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this._idx, this._data.id, this._data.level + 1)
-        }, this)
 
     }
 
