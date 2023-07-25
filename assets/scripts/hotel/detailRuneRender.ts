@@ -76,7 +76,7 @@ export default class NewClass extends cc.Component {
 
 
     init(state, idx, data) {
-        console.log(`data:`+JSON.stringify(data))
+        console.log(`data:` + JSON.stringify(data))
         this._data = data
         this._state = state
         this._heroid = data.id
@@ -92,6 +92,11 @@ export default class NewClass extends cc.Component {
             this.tipDisplay0.string = `已开启 承载力${data.runeLevel[idx]}`
         }
 
+        if (data.runeUnlock[idx - 1] && data.runeUnlock[idx - 1] > 0) {
+            this.node.getChildByName(`btn2`).active = true
+        } else {
+            this.node.getChildByName(`btn2`).active = false
+        }
 
 
         // if (data.runePutup[idx] < 1000) {
