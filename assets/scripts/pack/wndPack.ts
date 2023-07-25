@@ -380,7 +380,7 @@ export default class NewClass extends cc.Component {
                     ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Items[template_id].name}`, item.getChildByName('pic'))
                 }else if (keyRuneList.indexOf(template_id) != -1) {
                     has = true
-                    ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[template_id].icon}}`, item.getChildByName('pic'))
+                    ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[template_id].icon}`, item.getChildByName('pic'))
                 }
             }
             if (has) {
