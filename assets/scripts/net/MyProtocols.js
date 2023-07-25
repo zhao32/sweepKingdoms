@@ -2880,19 +2880,15 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	send_C2SRuneLevelup: function (senderSocket, p_card_id, p_rune_pos_index, p_cost_runes) {
+	send_C2SRuneLevelup: function (senderSocket, p_card_id, p_rune_pos_index, type) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2033);
 		myEncoder.writeInt(p_card_id);
 		myEncoder.writeInt(p_rune_pos_index);
-		if (p_cost_runes == null) {
+		if (type == null) {
 			myEncoder.writeInt(0);
 		} else {
-			myEncoder.writeInt(p_cost_runes.length);
-			p_cost_runes.forEach(function (p_cost_runes_v) {
-				myEncoder.writeInt(p_cost_runes_v.template_id);
-				myEncoder.writeInt(p_cost_runes_v.count);
-			});
+			myEncoder.writeInt(type);
 		}
 		var rawContent = myEncoder.end();
 		myEncoder.free();

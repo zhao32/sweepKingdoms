@@ -16,6 +16,7 @@ import detailRuneRender from "./detailRuneRender";
 import detailSkillRender from "./detailSkillRender";
 import detailSkillStRender from "./detailSkillStRender";
 import runeOpenPanel from "./runeOpenPanel";
+import runeSoltUpPanel from "./runeSoltUpPanel";
 import skillstPanel from "./skillstPanel";
 import skillUpPanel from "./skillUpPanel";
 
@@ -98,7 +99,7 @@ export default class NewClass extends cc.Component {
 
         for (let i = 0; i < this._data.runePutup.length; i++) {
             let render = this.contect.children[i]
-            let state = this._data.runeUnlock.indexOf(i) != -1 ? 1 : 0
+            let state = this._data.runeUnlock[i] > 1 ? 1 : 0
             render.getComponent(detailRuneRender).init(state, i, this._data)
         }
     }
@@ -118,7 +119,7 @@ export default class NewClass extends cc.Component {
 
             let render = this.contect.children[i]
             let state = 0
-            if (this._data.runeUnlock.indexOf(i) != -1) {
+            if (this._data.runeUnlock[i] > 1) {
                 state = 1
             }
             render.getComponent(detailRuneRender).init(state, i, this._data)
@@ -177,7 +178,7 @@ export default class NewClass extends cc.Component {
             render.parent = this.contect
 
             let state = 0
-            if (this._data.runeUnlock.indexOf(i) != -1) {
+            if (this._data.runeUnlock[i] > 1) {
                 state = 1
             }
             render.getComponent(detailRuneRender).init(state, i, this._data)
@@ -201,6 +202,8 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.addListener(NetEvent.S2CSKillStUp, this.S2CSKillStUp, this)
         NetEventDispatcher.addListener(NetEvent.S2CCardTakeOnItem, this.S2CCardTakeOnItem, this)
         NetEventDispatcher.addListener(NetEvent.S2CCardTakeOffItem, this.S2CCardTakeOffItem, this)
+        NetEventDispatcher.addListener(NetEvent.S2CRuneLevelup, this.S2CRuneLevelup, this)
+
 
 
         console.log('-----data:' + JSON.stringify(data))
@@ -263,7 +266,7 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < data.runePutup.length; i++) {
             // ResManager.loadItemIcon(`hero/runePot${data.runePutup[i]}`, this.node.getChildByName('cao').children[i])
             if (data.runePutup[i] < 1000) {
-                this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[data.runePutup[i]]
+                // this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[data.runePutup[i]]
             } else {
                 let rune = this.node.getChildByName('cao1').children[i].children[0]
                 rune.active = true
@@ -271,11 +274,19 @@ export default class NewClass extends cc.Component {
                 ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[data.runePutup[i]].icon}`, rune)
             }
         }
+        for (let i = 0; i < 8; i++) {
+            // ResManager.loadItemIcon(`hero/runePot1`, this.node.getChildByName('cao').children[data.runeUnlock[i]])
+            this.node.getChildByName('cao').children[i].active = false
+        }
 
-        if (data.runeUnlock.length == 0) data.runeUnlock = [0]
         for (let i = 0; i < data.runeUnlock.length; i++) {
             // ResManager.loadItemIcon(`hero/runePot1`, this.node.getChildByName('cao').children[data.runeUnlock[i]])
-            this.node.getChildByName('cao').children[data.runeUnlock[i]].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[1]
+            this.node.getChildByName('cao').children[data.runeUnlock[i]].active = true
+            if (data.runeUnlock[i] == 0) {
+                this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[0]
+            } else {
+                this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[1]
+            }
         }
 
 
@@ -318,6 +329,11 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName('runeOpenPanel').getComponent(runeOpenPanel).init(data, idx)
     }
 
+    upRuneSoltPanel(data, idx) {
+        this.node.getChildByName('runeSoltUpPanel').active = true
+        this.node.getChildByName('runeSoltUpPanel').getComponent(runeSoltUpPanel).init(data, idx)
+    }
+
     initStSkill(stData) {
         console.log(`init 额外技能`)
         for (let i = 0; i < stData.length; i++) {
@@ -348,12 +364,12 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName('btnEquip').getComponent(cc.Sprite).spriteFrame = this.checkFrames[0]
         this.node.getChildByName('btnRune').getComponent(cc.Sprite).spriteFrame = this.checkFrames[1]
 
-        for (let i = 0; i < this._data.runePutup.length; i++) {
+        for (let i = 0; i < this._data.runeUnlock.length; i++) {
             let render = cc.instantiate(this.runPfb)
             render.parent = this.contect
 
             let state = 0
-            if (this._data.runeUnlock.indexOf(i) != -1) {
+            if (this._data.runeUnlock[i] > 1) {
                 state = 1
             }
             render.getComponent(detailRuneRender).init(state, i, this._data)
@@ -423,6 +439,12 @@ export default class NewClass extends cc.Component {
 
     }
 
+    S2CRuneLevelup(data) {
+        console.log(`石槽承载力提升：` + JSON.stringify(data))
+        this._data.runeLevel[data.p_rune_pos_index] = data.fight
+
+    }
+
     onClose() {
         NetEventDispatcher.removeListener(NetEvent.S2CCardTakeOnItem, this.S2CCardTakeOnItem, this)
         NetEventDispatcher.removeListener(NetEvent.S2CCardTakeOffItem, this.S2CCardTakeOffItem, this)
@@ -432,6 +454,7 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.removeListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock, this)
         NetEventDispatcher.removeListener(NetEvent.S2CSKillStUp, this.S2CSKillStUp, this)
         NetEventDispatcher.removeListener(NetEvent.S2CDumpRuneSlot, this.S2CDumpRuneSlot, this)
+        NetEventDispatcher.addListener(NetEvent.S2CRuneLevelup, this.S2CRuneLevelup, this)
 
     }
 

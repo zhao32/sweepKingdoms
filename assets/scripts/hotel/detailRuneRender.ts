@@ -76,6 +76,7 @@ export default class NewClass extends cc.Component {
 
 
     init(state, idx, data) {
+        console.log(`data:`+JSON.stringify(data))
         this._data = data
         this._state = state
         this._heroid = data.id
@@ -88,7 +89,7 @@ export default class NewClass extends cc.Component {
             this.tipDisplay0.string = `未开启`
         } else if (state == 1) {
             this.btnLabel.string = '升级'
-            this.tipDisplay0.string = `已开启`
+            this.tipDisplay0.string = `已开启 承载力${data.runeLevel[idx]}`
         }
 
 
@@ -118,6 +119,7 @@ export default class NewClass extends cc.Component {
             // MyProtocols.send_C2SOpenRuneSlot(DataManager._loginSocket, this._heroid, this._idx)
             DataManager.wndHotelDetail.openRuneOpenPanel(this._data, this._idx)
         } else if (this._state == 1) {
+            DataManager.wndHotelDetail.upRuneSoltPanel(this._data, this._idx)
 
         }
 
