@@ -1076,66 +1076,147 @@
       "material": 33000
     }
   ],
-  "skillLeave":[
+  "skillLeave": [
     {
-      "leave":0,
-      "rate":100,
-      "good":[1015,0],
-      "num":1
+      "leave": 0,
+      "rate": 100,
+      "good": [
+        1015,
+        0
+      ],
+      "num": 1
     },
     {
-      "leave":1,
-      "rate":80,
-      "good":[1015,0],
-      "num":2
+      "leave": 1,
+      "rate": 80,
+      "good": [
+        1015,
+        0
+      ],
+      "num": 2
     },
     {
-      "leave":2,
-      "rate":50,
-      "good":[1015,0],
-      "num":3
+      "leave": 2,
+      "rate": 50,
+      "good": [
+        1015,
+        0
+      ],
+      "num": 3
     },
     {
-      "leave":3,
-      "rate":40,
-      "good":[1015,0],
-      "num":4
+      "leave": 3,
+      "rate": 40,
+      "good": [
+        1015,
+        0
+      ],
+      "num": 4
     },
     {
-      "leave":4,
-      "rate":30,
-      "good":[1015,0],
-      "num":5
+      "leave": 4,
+      "rate": 30,
+      "good": [
+        1015,
+        0
+      ],
+      "num": 5
     },
     {
-      "leave":5,
-      "rate":20,
-      "good":[1015,0],
-      "num":6
+      "leave": 5,
+      "rate": 20,
+      "good": [
+        1015,
+        0
+      ],
+      "num": 6
     },
     {
-      "leave":6,
-      "rate":15,
-      "good":[1015,15],
-      "num":6
+      "leave": 6,
+      "rate": 15,
+      "good": [
+        1015,
+        15
+      ],
+      "num": 6
     },
     {
-      "leave":7,
-      "rate":10,
-      "good":[1015,20],
-      "num":10
+      "leave": 7,
+      "rate": 10,
+      "good": [
+        1015,
+        20
+      ],
+      "num": 10
     },
     {
-      "leave":8,
-      "rate":8,
-      "good":[1015,25],
-      "num":15
+      "leave": 8,
+      "rate": 8,
+      "good": [
+        1015,
+        25
+      ],
+      "num": 15
     },
     {
-      "leave":9,
-      "rate":5,
-      "good":[1015,30],
-      "num":20
+      "leave": 9,
+      "rate": 5,
+      "good": [
+        1015,
+        30
+      ],
+      "num": 20
+    }
+  ],
+  "runeSoltOpen": [
+    {
+      "rate": 95,
+      "good": [
+        1015,
+        2
+      ]
+    },
+    {
+      "rate": 90,
+      "good": [
+        1015,
+        3
+      ]
+    },
+    {
+      "rate": 80,
+      "good": [
+        1015,
+        4
+      ]
+    },
+    {
+      "rate": 70,
+      "good": [
+        1015,
+        4
+      ]
+    },
+    {
+      "rate": 60,
+      "good": [
+        1015,
+        4
+      ]
+    },
+    {
+      "rate": 50,
+      "good": [
+        1015,
+        4
+      ]
+    },
+    {
+      "rate": 40,
+      "good": [
+        1015,
+        4
+      ]
     }
   ]
 }

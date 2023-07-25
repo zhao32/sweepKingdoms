@@ -114,7 +114,8 @@ export default class NewClass extends cc.Component {
     doClick() {
         if (this._state == 0) {
             console.log(`请求开启石槽：` + this._heroid + '   ' + this._idx)
-            MyProtocols.send_C2SOpenRuneSlot(DataManager._loginSocket, this._heroid, this._idx)
+            // MyProtocols.send_C2SOpenRuneSlot(DataManager._loginSocket, this._heroid, this._idx)
+            DataManager.wndHotelDetail.openRuneOpenPanel(this._data, this._idx)
         } else if (this._state == 1) {
 
         }

@@ -15,6 +15,7 @@ import detailQuipRender from "./detailQuipRender";
 import detailRuneRender from "./detailRuneRender";
 import detailSkillRender from "./detailSkillRender";
 import detailSkillStRender from "./detailSkillStRender";
+import runeOpenPanel from "./runeOpenPanel";
 import skillstPanel from "./skillstPanel";
 import skillUpPanel from "./skillUpPanel";
 
@@ -193,7 +194,7 @@ export default class NewClass extends cc.Component {
 
 
         // packManager.getInstance().reflishBag()
-        
+
         NetEventDispatcher.addListener(NetEvent.S2CDumpRuneSlot, this.S2CDumpRuneSlot, this)
         NetEventDispatcher.addListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock, this)
         NetEventDispatcher.addListener(NetEvent.S2CSKillTeach, this.S2CSKillTeach, this)
@@ -271,6 +272,7 @@ export default class NewClass extends cc.Component {
             }
         }
 
+        if (data.runeUnlock.length == 0) data.runeUnlock = [0]
         for (let i = 0; i < data.runeUnlock.length; i++) {
             // ResManager.loadItemIcon(`hero/runePot1`, this.node.getChildByName('cao').children[data.runeUnlock[i]])
             this.node.getChildByName('cao').children[data.runeUnlock[i]].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[1]
@@ -309,7 +311,11 @@ export default class NewClass extends cc.Component {
     openSkillstUpPanel(data, idx) {
         this.node.getChildByName('skillUpPanel').active = true
         this.node.getChildByName('skillUpPanel').getComponent(skillUpPanel).init(data, idx)
+    }
 
+    openRuneOpenPanel(data, idx) {
+        this.node.getChildByName('runeOpenPanel').active = true
+        this.node.getChildByName('runeOpenPanel').getComponent(runeOpenPanel).init(data, idx)
     }
 
     initStSkill(stData) {
