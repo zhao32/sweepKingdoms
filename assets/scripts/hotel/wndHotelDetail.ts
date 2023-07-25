@@ -153,6 +153,34 @@ export default class NewClass extends cc.Component {
         stData.level = data.lv
         // let stData = {"id":data.skillid,"level":0,"type":1}
         render.getComponent(detailSkillStRender).init(stData, data.idx)
+    }
+
+    S2CDumpRuneSlot(data) {
+        console.log("符石卸载返回:" + JSON.stringify(data))
+        this._data.runePutup[data.p_pos_index] = 0
+
+        for (let i = 0; i < this._data.runePutup.length; i++) {
+            // ResManager.loadItemIcon(`hero/runePot${data.runePutup[i]}`, this.node.getChildByName('cao').children[i])
+            if (this._data.runePutup[i] < 1000) {
+                this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[this._data.runePutup[i]]
+            } else {
+                let rune = this.node.getChildByName('cao1').children[i].children[0]
+                rune.active = true
+                console.log('data.runePutup[i]:' + this._data.runePutup[i])
+                ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[this._data.runePutup[i]].icon}`, rune)
+            }
+        }
+
+        for (let i = 0; i < this._data.runePutup.length; i++) {
+            let render = cc.instantiate(this.runPfb)
+            render.parent = this.contect
+
+            let state = 0
+            if (this._data.runeUnlock.indexOf(i) != -1) {
+                state = 1
+            }
+            render.getComponent(detailRuneRender).init(state, i, this._data)
+        }
 
 
     }
@@ -165,6 +193,8 @@ export default class NewClass extends cc.Component {
 
 
         // packManager.getInstance().reflishBag()
+        
+        NetEventDispatcher.addListener(NetEvent.S2CDumpRuneSlot, this.S2CDumpRuneSlot, this)
         NetEventDispatcher.addListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock, this)
         NetEventDispatcher.addListener(NetEvent.S2CSKillTeach, this.S2CSKillTeach, this)
         NetEventDispatcher.addListener(NetEvent.S2CSKillStUp, this.S2CSKillStUp, this)
@@ -395,6 +425,7 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.removeListener(NetEvent.S2CSKillTeach, this.S2CSKillTeach, this)
         NetEventDispatcher.removeListener(NetEvent.S2CRuneUnlock, this.S2CRuneUnlock, this)
         NetEventDispatcher.removeListener(NetEvent.S2CSKillStUp, this.S2CSKillStUp, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CDumpRuneSlot, this.S2CDumpRuneSlot, this)
 
     }
 

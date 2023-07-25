@@ -2798,6 +2798,25 @@ var MyProtocols = {
 		return retObj;
 	},
 
+	send_C2SDumpRuneSlot: function (senderSocket, p_card_id, p_pos_index) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(2040);
+		myEncoder.writeInt(p_card_id);
+		myEncoder.writeInt(p_pos_index);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_2041: function (myDecoder) {
+		var retObj = {};
+		retObj.card_id = myDecoder.readInt();
+		retObj.pos_index = myDecoder.readInt();
+		console.log(`符石卸载返回：` + JSON.stringify(retObj))
+		return retObj;
+	},
+
+
 	send_C2SItemBuy: function (senderSocket, p_template_id, p_buy_num) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2029);

@@ -29,13 +29,12 @@ export default class NewClass extends cc.Component {
     @property(cc.Label)
     noteDisplay: cc.Label = null;
 
-    _cardId: number
 
     _idx: number
 
     _selectRuneId: number
 
-    _data
+    _cardId
 
     start() {
         NetEventDispatcher.addListener(NetEvent.S2CRunePutup, this.C2SRunePutup, this)
@@ -59,7 +58,12 @@ export default class NewClass extends cc.Component {
             let lv = parseInt(DataManager.GameData.Runes[DataManager.instance.curRuneList[i].template_id].quality) + 1
             item.getChildByName('level').getComponent(cc.Label).string = 'lv:' + lv
         }
-        this._data.runePutup[this._idx] = data.rune_id
+        // this._data.runePutup[this._idx] = data.rune_id
+        for (let i = 0; i < DataManager.cardsList.length; i++) {
+            if(DataManager.cardsList[i].id == this._cardId){
+                DataManager.cardsList[i].runePutup[this._idx] = data.rune_id
+            }
+        }
         this.onCloseHandler()
 
     }
@@ -68,13 +72,14 @@ export default class NewClass extends cc.Component {
 
     // onLoad () {}
     // {"uuid":"","template_id":5001,"enhance_level":0,"stars":0,"num":452,"bagId":4,"hpEx":0,"atkEx":0,"defEx":0,"attrEx":[],"unitAttr":{"id":0,"num":0},"exp":0}
-    open(data, idx) {
-        this._data = data
-        this._cardId = data.id
+    open(cardId, idx) {
+        this._cardId = cardId
+        // this._cardId = data.id
         this._idx = idx
         this.node.active = true
         // this.selectName = 0
         this.noteDisplay.string = ''
+        // console.log('_cardId:'+ data.id)
 
 
         DataManager.instance.curRuneList = []
@@ -131,6 +136,7 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showToast(`请选择要安装的石符`)
             return
         }
+        // console.log(`this._cardId:` + this._cardId)
         MyProtocols.send_C2SRunePutup(DataManager._loginSocket, this._cardId, this._idx, this._selectRuneId)
     }
 

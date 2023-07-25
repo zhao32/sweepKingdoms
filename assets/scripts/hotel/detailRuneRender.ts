@@ -61,6 +61,7 @@ export default class NewClass extends cc.Component {
                     _alert_layer.getComponent(AlertLayer).init("是否遗忘此装备？",
                         function () {
                             // MyProtocols.send_C2SCardTakeOffItem(DataManager._loginSocket, data.id, idx);//发送删除邮件数据请求
+                            MyProtocols.send_C2SDumpRuneSlot(DataManager._loginSocket, this._heroid, this._idx)
                             _alert_layer.destroy();
                         });
                 }

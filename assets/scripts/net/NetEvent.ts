@@ -386,7 +386,14 @@ export enum NetEvent {
     C2SEquipRestore = 10332,
 
     /**武器还原 */
-    S2CEquipRestore = 10333
+    S2CEquipRestore = 10333,
+
+    /**符石卸载 */
+    C2SDumpRuneSlot = 2040,
+
+    /**符石卸载返回 */
+    S2CDumpRuneSlot = 2041,
+
 
 }
 
