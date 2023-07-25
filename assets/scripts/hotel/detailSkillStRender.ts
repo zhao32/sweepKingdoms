@@ -67,21 +67,24 @@ export default class NewClass extends cc.Component {
 
         // this.node.getChildByName(`btnTeach`).active = data.id == 0
         if (data.id != 0) {
+            this.icon.active = true
             let skillSt = DataManager.GameData.SkillStudy[data.id]
             ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.icon)
             this.nameLabel.string = `${skillSt.name.slice(0, -2)} LV ${data.level}`
             this.richLabel.string = skillSt.des
             this.btnLabel.string = `遗忘`
         } else {
+            this.icon.active = false
             this.btnLabel.string = `学习`
+            this.richLabel.string = ''
+            this.nameLabel.string = ''
         }
 
         this.icon.on(cc.Node.EventType.TOUCH_END, () => {
             if (data.id != 0) {
-                if(data.level < 10){
+                if (data.level < 10) {
                     DataManager.wndHotelDetail.openSkillstUpPanel(data, idx)
-
-                }else{
+                } else {
                     ViewManager.instance.showToast(`该技能已达到10级最高级`)
                 }
             } else {

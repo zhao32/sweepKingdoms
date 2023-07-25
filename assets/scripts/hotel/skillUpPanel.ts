@@ -71,7 +71,8 @@ export default class NewClass extends cc.Component {
         ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.icon)
 
         this.decLablel.string = `升级成功概率:${precnce[data.level]}%`
-    
+        this.numLablel0.string = `x${useList[data.level][0]}`
+
         if (useList[data.level][1] == 0) {
             this.icon1.active = false
         } else {

@@ -338,7 +338,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 400,
-      "height": 70
+      "height": 81.5
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -384,13 +384,13 @@
     "_enabled": true,
     "_fontFamily": "Arial",
     "_isSystemFontUsed": true,
-    "_N$string": "",
+    "_N$string": "DFSADFCSADF的房产税的房产税地方挨打是的撒的撒敖德萨的撒大S的敖德萨的撒旦挨打是的撒的撒的阿斯顿",
     "_N$horizontalAlign": 0,
-    "_N$fontSize": 20,
+    "_N$fontSize": 18,
     "_N$font": null,
     "_N$cacheMode": 0,
-    "_N$maxWidth": 540,
-    "_N$lineHeight": 28,
+    "_N$maxWidth": 400,
+    "_N$lineHeight": 25,
     "_N$imageAtlas": null,
     "_N$handleTouchEvent": true,
     "_id": ""
