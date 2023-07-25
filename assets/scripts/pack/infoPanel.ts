@@ -202,23 +202,26 @@ export default class NewClass extends cc.Component {
                 ResManager.loadItemIcon(`UI/prop/${defaultData.name}`, this.pic)
 
             } else if (keyRuneList.indexOf(template_id) != -1) {
-                this.btnLabel0.string = `合成`
-                this.node.getChildByName(`op`).children[0].x = 0
-                this.node.getChildByName(`op`).children[1].active = false
-
+                this.node.getChildByName(`op`).active = false
                 this.nameLabel.string = runeData.name
                 this.richLabel.string = runeData.des || ''
                 ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[template_id].icon}`, this.pic)
 
-                let consumeNode = this.node.getChildByName(`consume`)
-                consumeNode.active = true
+                if (DataManager.GameData.EquipFrags[template_id]) {
+                    this.node.getChildByName(`op`).active = true
+                    this.btnLabel0.string = `合成`
+                    this.node.getChildByName(`op`).children[0].x = 0
+                    this.node.getChildByName(`op`).children[1].active = false
 
+                    let consumeNode = this.node.getChildByName(`consume`)
+                    consumeNode.active = true
 
-                let pic = consumeNode.getChildByName('item').getChildByName('pic')
-                ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[template_id].icon}`, pic)
-                consumeNode.getChildByName('item').getChildByName('nameLabel').getComponent(cc.Label).string = DataManager.GameData.EquipFrags[template_id].name
-                consumeNode.getChildByName('item').getChildByName('numLabel').getComponent(cc.Label).string = `x${DataManager.GameData.EquipFrags[template_id].craft_num}`
-                consumeNode.getChildByName(`des`).getComponent(cc.Label).string = DataManager.GameData.EquipFrags[template_id].des
+                    let pic = consumeNode.getChildByName('item').getChildByName('pic')
+                    ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[template_id].icon}`, pic)
+                    consumeNode.getChildByName('item').getChildByName('nameLabel').getComponent(cc.Label).string = DataManager.GameData.EquipFrags[template_id].name
+                    consumeNode.getChildByName('item').getChildByName('numLabel').getComponent(cc.Label).string = `x${DataManager.GameData.EquipFrags[template_id].craft_num}`
+                    consumeNode.getChildByName(`des`).getComponent(cc.Label).string = DataManager.GameData.EquipFrags[template_id].des
+                }
             } else {
                 this.nameLabel.string = defaultData.name
                 this.richLabel.string = defaultData.des || ''
