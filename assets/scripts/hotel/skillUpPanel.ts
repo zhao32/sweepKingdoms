@@ -77,15 +77,15 @@ export default class NewClass extends cc.Component {
         let skillSt = DataManager.GameData.SkillStudy[data.id]
         ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.icon)
 
-        this.decLablel.string = `升级成功概率:${updata.rata}%`
+        this.decLablel.string = `升级成功概率:${updata.rate}%`
         this.numLablel0.string = `x${updata.num}`
 
-        if (updata.goods[1] == 0) {
+        if (updata.good[1] == 0) {
             this.icon1.active = false
         } else {
             this.icon1.active = true
-            this.numLablel1.string = `x${updata.goods[1]}`
-            let name = DataManager.GameData.Items[updata.goods[0]].name
+            this.numLablel1.string = `x${updata.good[1]}`
+            let name = DataManager.GameData.Items[updata.good[0]].name
             ResManager.loadItemIcon(`UI/prop/${name}`, this.icon1)
         }
 
