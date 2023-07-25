@@ -57,6 +57,8 @@ export default class NewClass extends cc.Component {
         this.idx = idx
 
         this.data = data
+        this.nameLabel.string = "装备"
+        this.displayLabel.string = "加成"
         this.node.getChildByName("equip").active = false
         for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
             if (DataManager.instance.itemsList[i].uuid == data.equips[idx]) {

@@ -405,8 +405,8 @@ export default class NewClass extends cc.Component {
 
         for (let i = 0; i < DataManager.cardsList.length; i++) {
             if (DataManager.cardsList[i].id == data.cardId) {
-                DataManager.cardsList[i].equips[data.position] = 0
-                this._data.equips[data.position] = data.item_uuid
+                DataManager.cardsList[i].equips[data.position] = "0"
+                this._data.equips[data.position] = "0"
             }
         }
 
