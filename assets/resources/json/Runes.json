@@ -6,7 +6,8 @@
     "quality": 0,
     "func": 3,
     "addon_type": "1",
-    "crit_rate": 0.09
+    "crit_rate": 0.09,
+    "des": "增加暴击几率0.09%"
   },
   "5002": {
     "id": 5002,
@@ -15,7 +16,8 @@
     "quality": 0,
     "func": 1,
     "addon_type": "2",
-    "atk": 0.5
+    "atk": 0.5,
+    "des": "增加暴击伤害0.5%"
   },
   "5003": {
     "id": 5003,
@@ -24,7 +26,8 @@
     "quality": 0,
     "func": 2,
     "addon_type": "3",
-    "def": 10
+    "def": 10,
+    "des": "降低暴击伤害10%"
   },
   "5004": {
     "id": 5004,
@@ -33,7 +36,9 @@
     "quality": 0,
     "func": 1,
     "addon_type": "4",
-    "dmg_deal_static": 0.09
+    "dmg_deal_static": 0.09,
+    "des": "降低暴击几率0.09%"
+
   },
   "5005": {
     "id": 5005,
@@ -42,7 +47,8 @@
     "quality": 1,
     "func": 3,
     "addon_type": "1",
-    "crit_rate": 0.14
+    "crit_rate": 0.14,
+    "des": "增加暴击几率0.14%"
   },
   "5006": {
     "id": 5006,
@@ -51,7 +57,8 @@
     "quality": 1,
     "func": 1,
     "addon_type": "2",
-    "atk": 0.75
+    "atk": 0.75,
+    "des": "增加暴击伤害0.75%"
   },
   "5007": {
     "id": 5007,
@@ -60,7 +67,9 @@
     "quality": 1,
     "func": 2,
     "addon_type": "3",
-    "def": 14.5
+    "def": 14.5,
+    "des": "降低暴击伤害14.5%"
+
   },
   "5008": {
     "id": 5008,
@@ -69,7 +78,9 @@
     "quality": 1,
     "func": 1,
     "addon_type": "4",
-    "dmg_deal_static": 0.14
+    "dmg_deal_static": 0.14,
+    "des": "降低暴击几率0.14%"
+
   },
   "5009": {
     "id": 5009,
@@ -78,7 +89,8 @@
     "quality": 2,
     "func": 3,
     "addon_type": "1",
-    "crit_rate": 0.18
+    "crit_rate": 0.18,
+    "des": "增加暴击几率0.18%"
   },
   "5010": {
     "id": 5010,
@@ -87,7 +99,8 @@
     "quality": 2,
     "func": 1,
     "addon_type": "2",
-    "atk": 1.13
+    "atk": 1.13,
+    "des": "增加暴击伤害1.13%"
   },
   "5011": {
     "id": 5011,
@@ -96,7 +109,8 @@
     "quality": 2,
     "func": 2,
     "addon_type": "3",
-    "def": 18.78
+    "def": 18.78,
+    "des": "降低暴击伤害18.78%"
   },
   "5012": {
     "id": 5012,
@@ -105,7 +119,8 @@
     "quality": 2,
     "func": 1,
     "addon_type": "4",
-    "dmg_deal_static": 0.18
+    "dmg_deal_static": 0.18,
+    "des": "降低暴击几率0.18%"
   },
   "5013": {
     "id": 5013,
@@ -114,7 +129,8 @@
     "quality": 3,
     "func": 3,
     "addon_type": "1",
-    "crit_rate": 0.32
+    "crit_rate": 0.32,
+    "des": "增加暴击几率0.32%"
   },
   "5014": {
     "id": 5014,
@@ -123,7 +139,8 @@
     "quality": 0,
     "func": 1,
     "addon_type": "2",
-    "atk": 1.69
+    "atk": 1.69,
+    "des": "增加暴击伤害1.69%"
   },
   "5015": {
     "id": 5015,
@@ -132,7 +149,8 @@
     "quality": 3,
     "func": 2,
     "addon_type": "3",
-    "def": 22.84
+    "def": 22.84,
+    "des": "降低暴击伤害22.84%"
   },
   "5016": {
     "id": 5016,
@@ -141,7 +159,9 @@
     "quality": 3,
     "func": 1,
     "addon_type": "4",
-    "dmg_deal_static": 0.31
+    "dmg_deal_static": 0.32,
+    "des": "降低暴击率0.32%"
+
   },
   "5017": {
     "id": 5017,
@@ -150,7 +170,8 @@
     "quality": 4,
     "func": 3,
     "addon_type": "1",
-    "crit_rate": 0.5
+    "crit_rate": 0.5,
+    "des": "增加暴击几率0.5%"
   },
   "5018": {
     "id": 5018,
@@ -159,7 +180,8 @@
     "quality": 4,
     "func": 1,
     "addon_type": "2",
-    "atk": 2.53
+    "atk": 2.53,
+    "des": "增加暴击伤害2.53%"
   },
   "5019": {
     "id": 5019,
@@ -168,7 +190,9 @@
     "quality": 4,
     "func": 2,
     "addon_type": "3",
-    "def": 26.69
+    "def": 26.69,
+    "des": "降低暴击伤害26.69%"
+
   },
   "5020": {
     "id": 5020,
@@ -177,7 +201,9 @@
     "quality": 4,
     "func": 1,
     "addon_type": "4",
-    "dmg_deal_static": 0.5
+    "dmg_deal_static": 0.5,
+    "des": "降低暴击率0.5%"
+
   },
   "5021": {
     "id": 5021,
@@ -186,7 +212,8 @@
     "quality": 5,
     "func": 3,
     "addon_type": "1",
-    "crit_rate": 0.77
+    "crit_rate": 0.77,
+    "des": "增加暴击伤害0.77%"
   },
   "5022": {
     "id": 5022,
@@ -195,7 +222,8 @@
     "quality": 5,
     "func": 1,
     "addon_type": "2",
-    "atk":4.05
+    "atk": 4.05,
+    "des": "增加暴击伤害4.05%"
   },
   "5023": {
     "id": 5023,
@@ -204,7 +232,9 @@
     "quality": 5,
     "func": 2,
     "addon_type": "3",
-    "def": 30.36
+    "def": 30.36,
+    "des": "降低暴击伤害30.36%"
+
   },
   "5024": {
     "id": 5024,
@@ -213,7 +243,9 @@
     "quality": 5,
     "func": 1,
     "addon_type": "4",
-    "dmg_deal_static": 0.77
+    "dmg_deal_static": 0.77,
+    "des": "降低暴击率0.77%"
+
   },
   "5025": {
     "id": 5025,
@@ -222,7 +254,8 @@
     "quality": 6,
     "func": 3,
     "addon_type": "1",
-    "crit_rate": 1.27
+    "crit_rate": 1.27,
+    "des": "增加暴击几率1.27%"
   },
   "5026": {
     "id": 5026,
@@ -231,7 +264,8 @@
     "quality": 6,
     "func": 1,
     "addon_type": "2",
-    "atk": 6.48
+    "atk": 6.48,
+    "des": "增加暴击伤害6.48%"
   },
   "5027": {
     "id": 5027,
@@ -240,7 +274,9 @@
     "quality": 6,
     "func": 2,
     "addon_type": "3",
-    "def": 33.84
+    "def": 33.84,
+    "des": "降低暴击伤害33.84%"
+
   },
   "5028": {
     "id": 5028,
@@ -249,7 +285,9 @@
     "quality": 6,
     "func": 1,
     "addon_type": "4",
-    "dmg_deal_static":1.27
+    "dmg_deal_static": 1.27,
+    "des": "降低暴击率1.27%"
+    
   },
   "5029": {
     "id": 5029,
@@ -258,7 +296,8 @@
     "quality": 7,
     "func": 3,
     "addon_type": "1",
-    "crit_rate": 2.05
+    "crit_rate": 2.05,
+    "des": "增加暴击几率2.05%"
   },
   "5030": {
     "id": 5030,
@@ -267,7 +306,8 @@
     "quality": 7,
     "func": 1,
     "addon_type": "2",
-    "atk": 10.37
+    "atk": 10.37,
+    "des": "增加暴击伤害10.37%"
   },
   "5031": {
     "id": 5031,
@@ -276,7 +316,8 @@
     "quality": 7,
     "func": 2,
     "addon_type": "3",
-    "def": 37.15
+    "def": 37.15,
+    "des": "降低暴击伤害37.15%"
   },
   "5032": {
     "id": 5032,
@@ -285,7 +326,8 @@
     "quality": 7,
     "func": 1,
     "addon_type": "4",
-    "dmg_deal_static":2.05
+    "dmg_deal_static": 2.05,
+    "des": "降低暴击率2.05%"
   },
   "5033": {
     "id": 5033,
@@ -294,7 +336,8 @@
     "quality": 8,
     "func": 3,
     "addon_type": "1",
-    "crit_rate": 4.55
+    "crit_rate": 4.55,
+    "des": "增加暴击几率4.55%"
   },
   "5034": {
     "id": 5034,
@@ -303,7 +346,8 @@
     "quality": 8,
     "func": 1,
     "addon_type": "2",
-    "atk": 22.81
+    "atk": 22.81,
+    "des": "增加暴击伤害22.81%"
   },
   "5035": {
     "id": 5035,
@@ -312,7 +356,9 @@
     "quality": 8,
     "func": 2,
     "addon_type": "3",
-    "def": 40.29
+    "def": 40.29,
+    "des": "降低暴击伤害40.29%"
+
   },
   "5036": {
     "id": 5032,
@@ -321,7 +367,8 @@
     "quality": 8,
     "func": 1,
     "addon_type": "4",
-    "dmg_deal_static":4.55
+    "dmg_deal_static": 4.55,
+    "des": "降低暴击率4.55%"
   },
   "5037": {
     "id": 5033,
@@ -330,7 +377,8 @@
     "quality": 9,
     "func": 3,
     "addon_type": "1",
-    "crit_rate": 10
+    "crit_rate": 10,
+    "des": "增加暴击几率10%"
   },
   "5038": {
     "id": 5038,
@@ -339,7 +387,8 @@
     "quality": 9,
     "func": 1,
     "addon_type": "2",
-    "atk": 25.69
+    "atk": 25.69,
+    "des": "增加暴击伤害25.69%"
   },
   "5039": {
     "id": 5039,
@@ -348,7 +397,8 @@
     "quality": 9,
     "func": 2,
     "addon_type": "3",
-    "def":43.28
+    "def": 43.28,
+    "des": "降低暴击伤害43.28%"
   },
   "5040": {
     "id": 5040,
@@ -357,7 +407,7 @@
     "quality": 9,
     "func": 1,
     "addon_type": "4",
-    "dmg_deal_static":10
+    "dmg_deal_static": 10,
+    "des": "降低暴击率10%"
   }
-  
 }

@@ -266,7 +266,7 @@ export default class NewClass extends cc.Component {
 
     S2CEquipFragCompose(retObj){
         console.log(`符石合成返回` + JSON.stringify(retObj))
-
+        this.reflash()
     }
 
     S2CEmbryoUp(retObj) {
