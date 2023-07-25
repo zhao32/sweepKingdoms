@@ -66,7 +66,7 @@ export default class NewClass extends cc.Component {
             }
         }
 
-        console.log('cardInfo:'+ JSON.stringify(cardInfo))
+        console.log('cardInfo:' + JSON.stringify(cardInfo))
 
         this.nameDisplay.string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
         ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.head)
@@ -91,7 +91,11 @@ export default class NewClass extends cc.Component {
             node.getChildByName(`progressBar`).getComponent(cc.ProgressBar).progress = 0.8
             node.getChildByName('label1').getComponent(cc.Label).string = `成长潜质` //DataManager.armList[defaultData.talents[i]] + `兵熟练度：`
             // node.getChildByName('label2').getComponent(cc.Label).string = `${cardInfo.aptitude[i]}/${999}`
-            if (cardInfo.aptitude.length == 0) {
+            let aptitudes = 0
+            for (let j = 0; j < cardInfo.aptitude.length; j++) {
+                aptitudes += cardInfo.aptitude[j]
+            }
+            if (cardInfo.aptitude.length == 0 || aptitudes == 0) {
                 node.getChildByName('label2').getComponent(cc.Label).string = `:未鉴定`
             } else {
                 node.getChildByName('label2').getComponent(cc.Label).string = `${cardInfo.aptitude[i]}/${999}`
@@ -106,7 +110,7 @@ export default class NewClass extends cc.Component {
             console.log('cardInfo.runePutup[i]:' + cardInfo.runePutup[i])
             if (cardInfo.runePutup[i] > 1000) {
                 ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[cardInfo.runePutup[i]].icon}`, item.getChildByName("Mask").getChildByName('rune'))
-            }else{
+            } else {
                 item.getChildByName('rune').getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[cardInfo.runePutup[i]]
 
             }
@@ -139,7 +143,7 @@ export default class NewClass extends cc.Component {
                 let skillSt = DataManager.GameData.SkillStudy[data.id]
                 render.getChildByName('skill').active = true
                 ResManager.loadItemIcon(`skillats/${skillSt.name}`, render.getChildByName('skill'))
-            }else{
+            } else {
                 render.getChildByName('skill').active = false
             }
         }
