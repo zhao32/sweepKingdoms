@@ -56,12 +56,13 @@ export default class NewClass extends cc.Component {
                 if (this._data.runePutup[this._idx] == 0) {
                     DataManager.wndHotelDetail.node.getChildByName('runePutPanel').getComponent(runePutPanel).open(this._heroid, this._idx)
                 } else {
+                    let self = this
                     var _alert_layer = cc.instantiate(DataManager.Main.AlertLayer);
                     cc.Canvas.instance.node.addChild(_alert_layer);
                     _alert_layer.getComponent(AlertLayer).init("是否遗忘此装备？",
                         function () {
                             // MyProtocols.send_C2SCardTakeOffItem(DataManager._loginSocket, data.id, idx);//发送删除邮件数据请求
-                            MyProtocols.send_C2SDumpRuneSlot(DataManager._loginSocket, this._heroid, this._idx)
+                            MyProtocols.send_C2SDumpRuneSlot(DataManager._loginSocket, self._heroid, self._idx)
                             _alert_layer.destroy();
                         });
                 }

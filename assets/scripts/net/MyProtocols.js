@@ -2799,6 +2799,8 @@ var MyProtocols = {
 	},
 
 	send_C2SDumpRuneSlot: function (senderSocket, p_card_id, p_pos_index) {
+		console.log(p_card_id, p_pos_index)
+
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2040);
 		myEncoder.writeInt(p_card_id);
