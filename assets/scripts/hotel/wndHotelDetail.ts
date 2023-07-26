@@ -95,8 +95,8 @@ export default class NewClass extends cc.Component {
     S2CRuneUnlock(retObj) {
         console.log('开启石槽返回：' + JSON.stringify(retObj))
         // this._data.runeUnlock.push(retObj.pos_index)
-        this._data.runeUnlock[retObj.pos_index -1] = retObj.pos_index
-        this.node.getChildByName('cao').children[retObj.pos_index].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[1]
+        this._data.runeUnlock[retObj.pos_index - 1] = retObj.pos_index
+        this.node.getChildByName('cao').children[retObj.pos_index - 1].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[1]
 
         for (let i = 0; i < this._data.runePutup.length; i++) {
             let render = this.contect.children[i]

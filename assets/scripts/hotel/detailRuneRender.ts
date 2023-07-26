@@ -98,6 +98,11 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName(`btn2`).active = false
         }
 
+        if (idx == 0) {
+            this.node.getChildByName(`btn2`).active = true
+            this.btnLabel.string = '升级'
+        }
+
 
         // if (data.runePutup[idx] < 1000) {
         //     this.node.getChildByName('Mask').children[0].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[data.runePutup[i]]
