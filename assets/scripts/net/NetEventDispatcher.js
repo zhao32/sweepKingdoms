@@ -25,10 +25,9 @@ var NetEventDispatcher = {
         if (listenerList) {
             for (var i = 0; i < listenerList.length; i++) {
                 // debugger
-                console.log('listenerList' + listenerList[i].prototype)
-                console.log('callback:' + callback.prototype)
-
-                console.log(callback == listenerList[i][0])
+                // console.log('listenerList' + listenerList[i].prototype)
+                // console.log('callback:' + callback.prototype)
+                // console.log(callback == listenerList[i][0])
 
 
                 if (listenerList[i][0] == callback) {

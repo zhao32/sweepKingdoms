@@ -103,7 +103,7 @@ export default class NewClass extends cc.Component {
         }
 
         this.runeContect.removeAllChildren()
-        for (let i = 0; i < cardInfo.runePutup.length; i++) {
+        for (let i = 0; i < cardInfo.runeUnlock.length; i++) {
             // ResManager.loadItemIcon(`hero/runePot${data.runePutup[i]}`, this.node.getChildByName('cao').children[i])
             let item = cc.instantiate(this.runePfb)
             item.parent = this.runeContect
@@ -111,8 +111,11 @@ export default class NewClass extends cc.Component {
             if (cardInfo.runePutup[i] > 1000) {
                 ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[cardInfo.runePutup[i]].icon}`, item.getChildByName("Mask").getChildByName('rune'))
             } else {
-                item.getChildByName('rune').getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[cardInfo.runePutup[i]]
-
+                let state = 0
+                if (cardInfo.runeUnlock[i] > 0) {
+                    state = 1
+                }
+                item.getChildByName('rune').getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[state]
             }
         }
 
