@@ -37,19 +37,19 @@ export default class NewClass extends cc.Component {
     _cardId
 
     start() {
-        NetEventDispatcher.addListener(NetEvent.S2CRunePutup, this.C2SRunePutup, this)
+        NetEventDispatcher.addListener(NetEvent.S2CRunePutup, this.S2CRunePutup, this)
     }
 
     protected onDestroy(): void {
-        NetEventDispatcher.removeListener(NetEvent.S2CRunePutup, this.C2SRunePutup, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CRunePutup, this.S2CRunePutup, this)
     }
 
-    C2SRunePutup(data) {
+    S2CRunePutup(data) {
         console.log(`石符安装返回`)
         console.log(JSON.stringify(data))
         ViewManager.instance.showToast(`安装石符成功`)
         // {"card_id":1,"pos_index":1,"rune_id":5001,"rune_level":0,"back_items":[],"fight":2796}
-
+        // {"card_id":153434,"pos_index":1,"rune_id":5009,"rune_level":0,"back_items":[],"fight":1914}
 
         for (let i = 0; i < DataManager.instance.curRuneList.length; i++) {
             let item = this.contect.children[i]

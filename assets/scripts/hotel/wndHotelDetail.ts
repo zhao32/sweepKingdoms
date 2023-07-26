@@ -116,12 +116,18 @@ export default class NewClass extends cc.Component {
     }
 
     updateRunes() {
-        for (let i = 0; i < this._data.runePutup.length; i++) {
-            // ResManager.loadItemIcon(`hero/runePot${data.runePutup[i]}`, this.node.getChildByName('cao').children[i])
-            if (this._data.runePutup[i] < 1000) {
-                this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[this._data.runePutup[i]]
+
+        for (let i = 0; i < this._data.runeUnlock.length; i++) {
+            this.node.getChildByName('cao').children[i].active = true
+            if (this._data.runeUnlock[i] == 0) {
+                this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[0]
             } else {
                 this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[1]
+            }
+        }
+
+        for (let i = 0; i < this._data.runePutup.length; i++) {
+            if (this._data.runePutup[i] > 0) {
                 let rune = this.node.getChildByName('cao1').children[i].children[0]
                 rune.active = true
                 console.log('data.runePutup[i]:' + this._data.runePutup[i])
