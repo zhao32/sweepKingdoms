@@ -99,7 +99,7 @@ export default class NewClass extends cc.Component {
 
         for (let i = 0; i < this._data.runePutup.length; i++) {
             let render = this.contect.children[i]
-            let state = this._data.runeUnlock[i] > 1 ? 1 : 0
+            let state = this._data.runeUnlock[i] >= 1 ? 1 : 0
             render.getComponent(detailRuneRender).init(state, i, this._data)
         }
     }
@@ -119,7 +119,7 @@ export default class NewClass extends cc.Component {
 
             let render = this.contect.children[i]
             let state = 0
-            if (this._data.runeUnlock[i] > 1) {
+            if (this._data.runeUnlock[i] >= 1) {
                 state = 1
             }
             render.getComponent(detailRuneRender).init(state, i, this._data)
@@ -369,7 +369,7 @@ export default class NewClass extends cc.Component {
             render.parent = this.contect
 
             let state = 0
-            if (this._data.runeUnlock[i] > 1) {
+            if (this._data.runeUnlock[i] >= 1) {
                 state = 1
             }
             render.getComponent(detailRuneRender).init(state, i, this._data)
