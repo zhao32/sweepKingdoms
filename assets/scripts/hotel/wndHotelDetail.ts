@@ -94,13 +94,24 @@ export default class NewClass extends cc.Component {
 
     S2CRuneUnlock(retObj) {
         console.log('开启石槽返回：' + JSON.stringify(retObj))
-        this._data.runeUnlock.push(retObj.pos_index)
+        // this._data.runeUnlock.push(retObj.pos_index)
+        this._data.runeUnlock[retObj.pos_index -1] = retObj.pos_index
         this.node.getChildByName('cao').children[retObj.pos_index].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[1]
 
         for (let i = 0; i < this._data.runePutup.length; i++) {
             let render = this.contect.children[i]
             let state = this._data.runeUnlock[i] >= 1 ? 1 : 0
             render.getComponent(detailRuneRender).init(state, i, this._data)
+        }
+
+        for (let i = 0; i < this._data.runeUnlock.length; i++) {
+            // ResManager.loadItemIcon(`hero/runePot1`, this.node.getChildByName('cao').children[data.runeUnlock[i]])
+            this.node.getChildByName('cao').children[this._.runeUnlock[i]].active = true
+            if (this._data.runeUnlock[i] == 0) {
+                this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[0]
+            } else {
+                this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[1]
+            }
         }
     }
 

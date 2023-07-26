@@ -102,8 +102,8 @@ export default class NewClass extends cc.Component {
             if (DataManager.instance.itemsList[i].uuid) {
                 uuidList.push(DataManager.instance.itemsList[i].uuid)
             }
-
         }
+        
         console.log('DataManager.instance.itemsList.length  1:' + DataManager.instance.itemsList.length)
         let hasItem = false
         for (let i = 0; i < DataManager.instance.itemsList.length; i++) {

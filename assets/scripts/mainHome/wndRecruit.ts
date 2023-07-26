@@ -68,7 +68,7 @@ export default class NewClass extends cc.Component {
 
     @property({ type: cc.Node, displayName: '头像' })
     head: cc.Node = null;
-    
+
 
     soliderType: number = 0
 
@@ -92,8 +92,25 @@ export default class NewClass extends cc.Component {
         }
         this._idx = idx
 
-        // let barracksList = ["军营", '盾卫训练场', '骑士训练场', '枪兵训练场', '箭手训练场', '法师', '木牛工厂', '军魂祭坛', '部队强化']
+        let _index = idx > 8 ? idx - 6 : idx
         let group = 'barracks'
+        /**居民区等级 */
+        let jmqGrade = DataManager.GameData.build['basic'][0].grade
+        let maxProportion = DataManager.GameData.buildUp["basic"][1][jmqGrade - 1].proportion[2]
+
+        let grade = DataManager.GameData.build[group][_index - 1].grade
+        // console.log('兵：' + JSON.stringify(DataManager.GameData.buildUp[group][1][grade - 1]))
+        let maxSolider = DataManager.GameData.buildUp[group][1][grade - 1].Soldier
+
+        this.soldierNameDisplay.string = DataManager.GameData.Soldier[idx - 1].name
+        this.populationDisplay.string = `${DataManager.playData.population}/${maxProportion}`
+        this.troopsDisplay.string = `${DataManager.playData.troops}/${maxSolider}`
+        let price = DataManager.GameData.Soldier[idx - 1].price
+        this.soldierPriceDisplay.string = `粮草 x${price}`
+        this.troopsDisplay1.string = String(DataManager.playData.population)
+
+
+        // let barracksList = ["军营", '盾卫训练场', '骑士训练场', '枪兵训练场', '箭手训练场', '法师', '木牛工厂', '军魂祭坛', '部队强化']
         // let idx = 0
         // if (barracksList.indexOf(name) != -1) {
         //     for (let i = 0; i < barracksList.length; i++) {
@@ -102,33 +119,23 @@ export default class NewClass extends cc.Component {
         //         }
         //     }
         // }
-        let grade = DataManager.GameData.build[group][idx - 1].grade
-        // console.log('兵：' + JSON.stringify(DataManager.GameData.buildUp[group][1][grade - 1]))
-        let maxSolider = DataManager.GameData.buildUp[group][1][grade - 1].Soldier
 
-        /**居民区等级 */
-        let jmqGrade = DataManager.GameData.build['basic'][0].grade
-        let maxProportion = DataManager.GameData.buildUp["basic"][1][jmqGrade - 1].proportion[2]
 
         Logger.log('maxSolider:' + maxSolider)
         Logger.log('maxProportion:' + maxProportion)
         DataManager.GameData.buildUp['barracks']
 
-        this.soldierNameDisplay.string = DataManager.GameData.Soldier[idx - 1].name
-        this.populationDisplay.string = `${DataManager.playData.population}/${maxProportion}`
-        this.troopsDisplay.string = `${DataManager.playData.troops}/${maxSolider}`
-        let price = DataManager.GameData.Soldier[idx - 1].price
-        this.soldierPriceDisplay.string = `粮草 x${price}`
-        this.troopsDisplay1.string = String(DataManager.playData.population)
-        this.priceDisplay1.string = `x` + String(DataManager.GameData.buildUp[group][idx][grade - 1].population[1] * 0.01 * (DataManager.playData.population) * price);
 
-        console.log(`------:`+JSON.stringify(DataManager.GameData.buildUp[group][idx][grade - 1]) )
-        this.soliderType = DataManager.GameData.buildUp[group][idx][grade - 1].soldier[0];
+
+        this.priceDisplay1.string = `x` + String(DataManager.GameData.buildUp[group][_index][grade - 1].population[1] * 0.01 * (DataManager.playData.population) * price);
+
+        console.log(`------:` + JSON.stringify(DataManager.GameData.buildUp[group][_index][grade - 1]))
+        this.soliderType = DataManager.GameData.buildUp[group][_index][grade - 1].soldier[0];
 
         ResManager.loadItemIcon(`soliderHead/${DataManager.GameData.Soldier[idx - 1].name}`, this.soldierSprite.node)
-        NetEventDispatcher.addListener(NetEvent.S2CRecSoldiers, this.S2CRecSoldiers,this)
+        NetEventDispatcher.addListener(NetEvent.S2CRecSoldiers, this.S2CRecSoldiers, this)
 
-        let data = DataManager.GameData.Soldier[idx - 1]        
+        let data = DataManager.GameData.Soldier[idx - 1]
         let str = DataManager.getSoliderDes(data)
         this.head.on(cc.Node.EventType.TOUCH_END, () => {
             // ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES, ...[str])
@@ -159,7 +166,9 @@ export default class NewClass extends cc.Component {
         //         }
         //     }
         // }
-        let grade = DataManager.GameData.build[group][idx - 1].grade
+        let _index = idx > 8 ? idx - 6 : idx
+
+        let grade = DataManager.GameData.build[group][_index - 1].grade
         // console.log('兵：' + JSON.stringify(DataManager.GameData.buildUp[group][1][grade - 1]))
         let maxSolider = DataManager.GameData.buildUp[group][1][grade - 1].Soldier
 
@@ -177,11 +186,11 @@ export default class NewClass extends cc.Component {
         let price = DataManager.GameData.Soldier[idx - 1].price
         this.soldierPriceDisplay.string = `粮草 x${price}`
         this.troopsDisplay1.string = String(DataManager.playData.population)
-        let price1 = DataManager.GameData.buildUp[group][idx][grade - 1].population[1] * 0.01 * (DataManager.playData.population) * price
+        let price1 = DataManager.GameData.buildUp[group][_index][grade - 1].population[1] * 0.01 * (DataManager.playData.population) * price
         price1 = Math.floor(price1)
         this.priceDisplay1.string = `x` + String(price1);
 
-        this.soliderType = DataManager.GameData.buildUp[group][idx][grade - 1].soldier[0];
+        this.soliderType = DataManager.GameData.buildUp[group][_index][grade - 1].soldier[0];
 
     }
 
@@ -200,7 +209,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CRecSoldiers, this.S2CRecSoldiers,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CRecSoldiers, this.S2CRecSoldiers, this)
     }
 
     // update (dt) {}
