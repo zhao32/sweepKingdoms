@@ -293,7 +293,7 @@ export default class NewClass extends cc.Component {
             let id = retObj.rewards[i].template_id
             if (id >= 2000 && id < 3000) {//装备
                 let item = cc.instantiate(this.rewardPfb)
-                ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[id].icon}`, item.getChildByName("pic"))
+               if(DataManager.GameData.Items[id]) ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Items[id].name}`, item.getChildByName("pic"))
                 item.getChildByName("num").getComponent(cc.Label).string = `x` + retObj.rewards[i].num
                 item.parent = this.rewardContect
             }

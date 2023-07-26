@@ -102,7 +102,7 @@ export default class NewClass extends cc.Component {
                 if (id >= 2000 && id < 3000) {//装备
                     let item = cc.instantiate(this.awardPfb)
                     item.parent = this.awardContect
-                    ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[id].icon}`, item)
+                    if(DataManager.GameData.Items[id]) ResManager.loadItemIcon(`UI/items/${DataManager.GameData.Items[id].name}`, item)
                 }
 
             }
@@ -113,7 +113,7 @@ export default class NewClass extends cc.Component {
                 if (id >= 2000 && id < 3000) {//装备
                     let item = cc.instantiate(this.awardPfb)
                     item.parent = this.awardContect
-                    ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[id].icon}`, item)
+                   if(DataManager.GameData.Items[id]) ResManager.loadItemIcon(`UI/items/${DataManager.GameData.Items[id].name}`, item)
                 }
             }
         }
@@ -155,7 +155,7 @@ export default class NewClass extends cc.Component {
                         if (id >= 2000 && id < 3000) {//装备
                             let item = cc.instantiate(this.awardPfb)
                             item.parent = this.awardContect
-                            ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[id].icon}`, item)
+                            if(DataManager.GameData.Items[id]) ResManager.loadItemIcon(`UI/items/${DataManager.GameData.Items[id].icon}`, item)
                         }
 
                     }
@@ -166,7 +166,7 @@ export default class NewClass extends cc.Component {
                         if (id >= 2000 && id < 3000) {//装备
                             let item = cc.instantiate(this.awardPfb)
                             item.parent = this.awardContect
-                            ResManager.loadItemIcon(`UI/items/${DataManager.GameData.packItems[id].icon}`, item)
+                            if(DataManager.GameData.Items[id]) ResManager.loadItemIcon(`UI/items/${DataManager.GameData.Items[id].icon}`, item)
                         }
                     }
                 }
