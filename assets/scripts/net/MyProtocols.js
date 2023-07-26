@@ -3825,7 +3825,7 @@ var MyProtocols = {
 		/**战力 */
 		retObj.troops = myDecoder.readInt();
 		/**粮草 */
-		retObj.army = myDecoder.readInt();
+		retObj.food = myDecoder.readInt();
 		retObj.population = myDecoder.readInt();
 		retObj.formationSlots = myDecoder.readInt();
 

@@ -45,7 +45,7 @@ export default class NewClass extends cc.Component {
     }
 
     init(data) {
-        console.error(JSON.stringify(data))
+        // console.error(JSON.stringify(data))
         this.nameDisplay.string = data.name
         this.describeDisplay.string = data.describe
         if (data.state == 0) {

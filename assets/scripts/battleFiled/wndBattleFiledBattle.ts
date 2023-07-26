@@ -126,8 +126,8 @@ export default class NewClass extends cc.Component {
         this.myData = myData
         this.enemyData = otherData
 
-        console.log('myData:' + JSON.stringify(myData))
-        console.error('otherData:' + JSON.stringify(otherData))
+        // console.log('myData:' + JSON.stringify(myData))
+        // console.error('otherData:' + JSON.stringify(otherData))
 
         this.myContect.removeAllChildren()
         let item0 = cc.instantiate(this.heroPfb)

@@ -334,8 +334,8 @@ export default class NewClass extends cc.Component {
         this.myData = myData
         this.enemyData = otherData
 
-        console.log('myData:' + JSON.stringify(myData))
-        console.error('otherData:' + JSON.stringify(otherData))
+        // console.log('myData:' + JSON.stringify(myData))
+        // console.error('otherData:' + JSON.stringify(otherData))
 
         let myPlusList = this.getMyPlusList()
 

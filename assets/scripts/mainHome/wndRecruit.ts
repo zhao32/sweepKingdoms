@@ -181,7 +181,9 @@ export default class NewClass extends cc.Component {
         DataManager.GameData.buildUp['barracks']
 
         this.soldierNameDisplay.string = DataManager.GameData.Soldier[idx - 1].name
-        this.populationDisplay.string = `${Math.floor(DataManager.playData.population / maxProportion)}`
+        // this.populationDisplay.string = `${Math.floor(DataManager.playData.population / maxProportion)}`
+        this.populationDisplay.string = `${DataManager.playData.population}/${maxProportion}`
+
         this.troopsDisplay.string = `${Math.floor(DataManager.playData.troops / maxSolider)}`
         let price = DataManager.GameData.Soldier[idx - 1].price
         this.soldierPriceDisplay.string = `粮草 x${price}`

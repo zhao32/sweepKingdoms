@@ -553,7 +553,7 @@
       "__id__": 6
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 15
@@ -1245,7 +1245,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 35
@@ -3761,6 +3761,9 @@
         "__uuid__": "62dd7e51-fae1-4985-8328-1d5e13416a93"
       }
     ],
+    "populationDisplay": {
+      "__id__": 32
+    },
     "_id": ""
   },
   {

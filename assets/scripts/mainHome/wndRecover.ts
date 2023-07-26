@@ -49,7 +49,7 @@ export default class NewClass extends cc.Component {
         // this.showGroups()
         let armList = []
         for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
-            if (DataManager.instance.itemsList[i].id < 30) {
+            if (DataManager.instance.itemsList[i].template_id < 30) {
                 armList.push(DataManager.instance.itemsList[i])
             }
         }
@@ -65,11 +65,10 @@ export default class NewClass extends cc.Component {
             }
 
             let soldierData = DataManager.GameData.Soldier[armList[i].id]
-            render.getComponent(renderReover).init(soldierData,armList[i].num)  
+            render.getComponent(renderReover).init(soldierData, armList[i].num)
         }
 
         NetEventDispatcher.addListener(NetEvent.S2CRebirth, this.S2CRebirth, this)
-
     }
 
     onBackHandler() {
