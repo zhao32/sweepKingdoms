@@ -260,7 +260,7 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.removeListener(NetEvent.S2CUseItem, this.S2CUseItem, this)
         NetEventDispatcher.removeListener(NetEvent.S2CEmbryoUp, this.S2CEmbryoUp, this)
         NetEventDispatcher.removeListener(NetEvent.S2CEquipRestore, this.S2CEquipRestore, this)
-        NetEventDispatcher.addListener(NetEvent.S2CEquipFragCompose, this.S2CEquipFragCompose, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CEquipFragCompose, this.S2CEquipFragCompose, this)
 
     }
 
