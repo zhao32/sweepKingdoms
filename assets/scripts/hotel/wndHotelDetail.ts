@@ -106,7 +106,7 @@ export default class NewClass extends cc.Component {
 
         for (let i = 0; i < this._data.runeUnlock.length; i++) {
             // ResManager.loadItemIcon(`hero/runePot1`, this.node.getChildByName('cao').children[data.runeUnlock[i]])
-            this.node.getChildByName('cao').children[this._.runeUnlock[i]].active = true
+            this.node.getChildByName('cao').children[this._data.runeUnlock[i]].active = true
             if (this._data.runeUnlock[i] == 0) {
                 this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[0]
             } else {
