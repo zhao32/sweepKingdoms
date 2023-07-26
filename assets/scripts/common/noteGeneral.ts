@@ -108,7 +108,9 @@ export default class NewClass extends cc.Component {
             let item = cc.instantiate(this.runePfb)
             item.parent = this.runeContect
             console.log('cardInfo.runePutup[i]:' + cardInfo.runePutup[i])
-            if (cardInfo.runePutup[i] > 1000) {
+            item.getChildByName("Mask").getChildByName('rune').active = false
+            if (cardInfo.runePutup[i] > 0) {
+                item.getChildByName("Mask").getChildByName('rune').active = true
                 ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[cardInfo.runePutup[i]].icon}`, item.getChildByName("Mask").getChildByName('rune'))
             } else {
                 let state = 0
