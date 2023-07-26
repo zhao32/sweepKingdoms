@@ -13,6 +13,10 @@ import hotelJinhuaRender from "./hotelJinhuaRender";
 import hotelZSRender from "./hotelZSRender";
 import renderHun from "./renderHun";
 
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
 //@ts-ignore
 var NetEventDispatcher = require("NetEventDispatcher");
 
@@ -53,11 +57,32 @@ export default class NewClass extends cc.Component {
 
     _data: any
 
+    selectIdList: any[] = []
+
     start() {
+        this.node.getChildByName(`btnDeComps`).on(cc.Node.EventType.TOUCH_END, () => {
+            console.log(JSON.stringify(this.selectIdList))
+            if (this.selectIdList.length == 0) {
+                ViewManager.instance.showToast(`请选择要分解的将`)
+                return
+            }
+            let dataList = []
+            for (let i = 0; i < this.selectIdList.length; i++) {
+                let data = {
+                    cardTemplateId: this.selectIdList[i],
+                    treasure_uuid: 0,
+                    count: 0
+                }
+                dataList.push(data)
+            }
+
+            MyProtocols.send_C2SForge(DataManager._loginSocket, dataList)
+        }, this)
 
     }
 
     updataHun() {
+        this.node.getChildByName(`btnDeComps`).active = false
         this.contect.removeAllChildren()
         let fragList = []
         let keys = Object.keys(DataManager.GameData.CardFrags)
@@ -83,16 +108,21 @@ export default class NewClass extends cc.Component {
     }
 
     init(from = this._from, data = this._data) {
+        NetEventDispatcher.addListener(NetEvent.S2CForge, this.S2CForge, this)
+
         this._data = data
 
         this._from = from
 
         this.contect.removeAllChildren()
-
+        this.node.getChildByName(`btnDeComps`).active = true
         this.node.getChildByName('toggleContainer').active = this._data.idx == 1
         this.node.getChildByName('toggleContainer').children[0].getComponent(cc.Toggle).isChecked = true
         if (this._data.idx == 1) {
+
             this.node.getChildByName('toggleContainer').children[0].on(cc.Node.EventType.TOUCH_END, () => {
+                this.node.getChildByName(`btnDeComps`).active = true
+                this.selectIdList = []
                 this.contect.removeAllChildren()
                 for (let i = 0; i < DataManager.cardsList.length; i++) {
                     let pfb = cc.instantiate(this.jinhuaPfb)
@@ -110,6 +140,23 @@ export default class NewClass extends cc.Component {
                     pfb.on(cc.Node.EventType.TOUCH_END, () => {
                         ViewManager.instance.hideWnd(EnumManager.viewPath.WND_HOTEL_LIST)
                         ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL_DETAIL, ...[DataManager.cardsList[i]])
+                    }, this)
+                    pfb.getChildByName(`check`).active = true
+                    pfb.getChildByName(`check`).on(cc.Node.EventType.TOUCH_END, () => {
+                        if (pfb.getComponent(hotelJinhuaRender).selected == false) {
+                            this.selectIdList.push(DataManager.cardsList[i].id)
+                            pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelJinhuaRender).checkFrames[1]
+                            pfb.getComponent(hotelJinhuaRender).selected = true
+                        } else {
+                            pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelJinhuaRender).checkFrames[0]
+                            for (let j = 0; j < this.selectIdList.length; j++) {
+                                if (this.selectIdList[j] == DataManager.cardsList[i].id) {
+                                    this.selectIdList.splice(j, 1)
+                                }
+                            }
+                            pfb.getComponent(hotelJinhuaRender).selected = false
+                        }
+
                     }, this)
                 }
             }, this)
@@ -136,6 +183,26 @@ export default class NewClass extends cc.Component {
                 let pfb = cc.instantiate(this.jinhuaPfb)
                 pfb.parent = this.contect
                 pfb.getComponent(hotelJinhuaRender).init(DataManager.cardsList[i])
+                if (this._data.idx == 1) {
+                    pfb.getChildByName(`check`).active = true
+                    pfb.getChildByName(`check`).on(cc.Node.EventType.TOUCH_END, () => {
+                        if (pfb.getComponent(hotelJinhuaRender).selected == false) {
+                            this.selectIdList.push(DataManager.cardsList[i].id)
+                            pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelJinhuaRender).checkFrames[1]
+                            pfb.getComponent(hotelJinhuaRender).selected = true
+                        } else {
+                            pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelJinhuaRender).checkFrames[0]
+                            for (let j = 0; j < this.selectIdList.length; j++) {
+                                if (this.selectIdList[j] == DataManager.cardsList[i].id) {
+                                    this.selectIdList.splice(j, 1)
+                                }
+                            }
+                            pfb.getComponent(hotelJinhuaRender).selected = false
+                        }
+
+                    }, this)
+
+                }
                 pfb.on(cc.Node.EventType.TOUCH_END, () => {
                     if (this._data.idx == 1) {//打开将领详情页
                         ViewManager.instance.hideWnd(EnumManager.viewPath.WND_HOTEL_LIST)
@@ -175,12 +242,62 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
         if (this._from) {
             ViewManager.instance.showWnd(this._from)
-
         }
     }
 
     onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CForge, this.S2CForge, this)
+    }
 
+    S2CForge(data) {
+        console.log('将领分解返回：' + JSON.stringify(data))
+
+
+        this.contect.removeAllChildren()
+        this.selectIdList = []
+        for (let i = 0; i < DataManager.cardsList.length; i++) {
+            let pfb = cc.instantiate(this.jinhuaPfb)
+            pfb.parent = this.contect
+            pfb.getComponent(hotelJinhuaRender).init(DataManager.cardsList[i])
+            if (this._data.idx == 1) {
+                pfb.getChildByName(`check`).active = true
+                pfb.getChildByName(`check`).on(cc.Node.EventType.TOUCH_END, () => {
+                    if (pfb.getComponent(hotelJinhuaRender).selected == false) {
+                        this.selectIdList.push(DataManager.cardsList[i].id)
+                        pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelJinhuaRender).checkFrames[1]
+                        pfb.getComponent(hotelJinhuaRender).selected = true
+                    } else {
+                        pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelJinhuaRender).checkFrames[0]
+                        for (let j = 0; j < this.selectIdList.length; j++) {
+                            if (this.selectIdList[j] == DataManager.cardsList[i].id) {
+                                this.selectIdList.splice(j, 1)
+                            }
+                        }
+                        pfb.getComponent(hotelJinhuaRender).selected = false
+                    }
+
+                }, this)
+
+            }
+            pfb.on(cc.Node.EventType.TOUCH_END, () => {
+                if (this._data.idx == 1) {//打开将领详情页
+                    ViewManager.instance.hideWnd(EnumManager.viewPath.WND_HOTEL_LIST)
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL_DETAIL, ...[DataManager.cardsList[i]])
+                } else if (this._data.idx == 2) {
+                    ViewManager.instance.hideWnd(EnumManager.viewPath.WND_HOTEL_LIST)
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL_QH, ...[DataManager.cardsList[i]])
+                } else if (this._data.idx == 3) {
+                    ViewManager.instance.hideWnd(EnumManager.viewPath.WND_HOTEL_LIST)
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL_SJ, ...[DataManager.cardsList[i]])
+                } else if (this._data.idx == 4) {
+                    ViewManager.instance.hideWnd(EnumManager.viewPath.WND_HOTEL_LIST)
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL_STAR, ...[DataManager.cardsList[i]])
+                } else if (this._data.idx == 5) {
+                    ViewManager.instance.hideWnd(EnumManager.viewPath.WND_HOTEL_LIST)
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL_CC, ...[DataManager.cardsList[i]])
+                }
+            }, this)
+        }
     }
 
     // update (dt) {}

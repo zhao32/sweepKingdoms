@@ -48,7 +48,10 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     skillPfb: cc.Prefab = null;
 
+    @property({ type: cc.SpriteFrame, displayName: '' })
+    checkFrames: cc.SpriteFrame[] = [];
 
+    selected: boolean = false
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -56,6 +59,9 @@ export default class NewClass extends cc.Component {
     // onLoad () {}
 
     start() {
+        // this.node.getChildByName(`check`).on(cc.Node.EventType.TOUCH_END, () => {
+
+        // }, this)
 
     }
 
@@ -75,6 +81,9 @@ export default class NewClass extends cc.Component {
             let node = this.node.getChildByName(`soldierType${i + 1}`)
             node.active = true
             ResManager.loadItemIcon(`hero/soldierType${data.talents[i]}`, node)
+        }
+        if (defaultData.quality == 1 && this.node.getChildByName(`check`).active == true) {
+            this.node.getChildByName(`check`).active = false
         }
 
         this.proBar.progress = data.physical / 200
@@ -112,7 +121,7 @@ export default class NewClass extends cc.Component {
 
             if (skillstData.id != 0) {
                 let skillSt = DataManager.GameData.SkillStudy[skillstData.id]
-                if(skillSt){ 
+                if (skillSt) {
                     render.getChildByName('skill').active = true
                     ResManager.loadItemIcon(`skillats/${skillSt.name}`, render.getChildByName('skill'))
                 }
@@ -132,6 +141,10 @@ export default class NewClass extends cc.Component {
         // for (let i = 1; i <= data.grade; i++) {
         //     this.node.getChildByName(`starGet${i}`).active = true
         // }
+
+    }
+
+    onDeCompHandler() {
 
     }
 
