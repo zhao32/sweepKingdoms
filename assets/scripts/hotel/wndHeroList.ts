@@ -109,17 +109,17 @@ export default class NewClass extends cc.Component {
 
     init(from = this._from, data = this._data) {
         NetEventDispatcher.addListener(NetEvent.S2CForge, this.S2CForge, this)
+        this.node.getChildByName(`btnDeComps`).active = false
 
         this._data = data
 
         this._from = from
 
         this.contect.removeAllChildren()
-        this.node.getChildByName(`btnDeComps`).active = true
         this.node.getChildByName('toggleContainer').active = this._data.idx == 1
         this.node.getChildByName('toggleContainer').children[0].getComponent(cc.Toggle).isChecked = true
         if (this._data.idx == 1) {
-
+            this.node.getChildByName(`btnDeComps`).active = true
             this.node.getChildByName('toggleContainer').children[0].on(cc.Node.EventType.TOUCH_END, () => {
                 this.node.getChildByName(`btnDeComps`).active = true
                 this.selectIdList = []
