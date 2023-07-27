@@ -278,8 +278,8 @@ export default class NewClass extends cc.Component {
                     }
 
                 }, this)
-
             }
+            
             pfb.on(cc.Node.EventType.TOUCH_END, () => {
                 if (this._data.idx == 1) {//打开将领详情页
                     ViewManager.instance.hideWnd(EnumManager.viewPath.WND_HOTEL_LIST)

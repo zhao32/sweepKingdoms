@@ -7,6 +7,7 @@
 
 import DataManager from "../utils/Manager/DataManager";
 import ResManager from "../utils/Manager/ResManager";
+import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -44,11 +45,12 @@ export default class NewClass extends cc.Component {
     init(data) {
         this.data = data
         let fragData = DataManager.GameData.CardFrags[data.template_id]
-        ResManager.loadItemIcon(`hero/icon/${fragData.name.slice(0,-2)}`, this.head)
+        ResManager.loadItemIcon(`hero/icon/${fragData.name.slice(0, -2)}`, this.head)
         ResManager.loadItemIcon(`hero/debrisBg${fragData.quality - 1}`, this.headBg)
 
         this.disLabel.string = fragData.des
         this.nameLabel.string = fragData.name + ` x${data.num}`
+        this.node.getChildByName(`btnTrans`).getComponent(cc.Button).interactable = data.num >= 2
     }
 
     onCompHandler() {
@@ -56,6 +58,13 @@ export default class NewClass extends cc.Component {
 
         MyProtocols.send_C2SCardCompose(DataManager._loginSocket, this.data.template_id)
     }
+
+    onTransHandler() {
+        // let fragData = DataManager.GameData.CardFrags[this.data.template_id]
+        ViewManager.instance.showToast(`将魂转化`)
+
+    }
+
 
     // update (dt) {}
 }
