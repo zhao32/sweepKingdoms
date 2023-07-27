@@ -127,6 +127,7 @@ export default class NewClass extends cc.Component {
             let skillData = DataManager.GameData.Skill[defaultData.skills[i][0]]
             let render = cc.instantiate(this.skillPfb)
             render.parent = this.skillContect
+            ResManager.loadItemIcon(`skills/${skillData.name.length}`, render)
             ResManager.loadItemIcon(`skills/${skillData.name}`, render.getChildByName('skill'))
 
         }

@@ -22,6 +22,9 @@ export default class NewClass extends cc.Component {
     @property(cc.Node)
     icon: cc.Node = null;
 
+    @property(cc.Node)
+    bgIcon: cc.Node = null;
+
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -42,6 +45,8 @@ export default class NewClass extends cc.Component {
         //skillAttributeList ['', '挥砍防御', '挥砍攻击', '穿透防御', '穿透攻击', '法术攻击', '法术防御']
 
         ResManager.loadItemIcon(`skills/${data.name}`, this.icon)
+        ResManager.loadItemIcon(`skills/${data.name.length}`, this.bgIcon)
+
         // 三字奥义	熟练度减熟练度的10%	减去之后除以20		
         // 四字奥义	熟练度减熟练度的10%	减去之后除以18	减去之后除以40	
         // 五字奥义	熟练度减熟练度的10%	减去之后除以16.4	减去之后除以36	减去之后除以90
