@@ -43,7 +43,7 @@ export default class NewClass extends cc.Component {
             } else {
                 var _alert_layer = cc.instantiate(DataManager.Main.AlertLayer);
                 cc.Canvas.instance.node.addChild(_alert_layer);
-                _alert_layer.getComponent(AlertLayer).init("是否遗忘此装备？",
+                _alert_layer.getComponent(AlertLayer).init("是否卸载此装备？",
                     function () {
                         MyProtocols.send_C2SCardTakeOffItem(DataManager._loginSocket, data.id, idx);//发送删除邮件数据请求
                         _alert_layer.destroy();
