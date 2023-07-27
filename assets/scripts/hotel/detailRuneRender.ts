@@ -104,7 +104,7 @@ export default class NewClass extends cc.Component {
         }
 
         if (data.runeLevel[idx] == 999) {
-            this.node.getChildByName(`btn2`).active = false
+            this.node.getChildByName(`btn2`).getComponent(cc.Button).interactable = false
         }
 
 
