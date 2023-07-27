@@ -90,7 +90,16 @@ export default class NewClass extends cc.Component {
         this._data = data
         let name = DataManager.getName(data.hold_player)
         // let name = DataManager.mineData[data.hold_player.group].name
-        this.nameLabel.string = data.hold_player.lv + '级' + name
+        if (data.hold_player.group >= 101) {
+            this.nameLabel.string = name
+        } else {
+            if (data.hold_player.lv == 0) {
+                this.nameLabel.string = `未建造` + name
+            } else {
+                let lvList = ["微型", "小型", "中型", "大型", "巨型"]
+                this.nameLabel.string = lvList[data.hold_player.lv - 1] + name
+            }
+        }
         this.lordLabel.string = data.hold_player.nickname ? `领主：${data.hold_player.nickname}` : `领主：无`
         this.awardLabel.string = `已产出：${data.hold_player.award}`
 

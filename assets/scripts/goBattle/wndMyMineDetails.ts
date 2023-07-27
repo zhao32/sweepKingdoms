@@ -75,11 +75,23 @@ export default class NewClass extends cc.Component {
         console.log('detailData:' + JSON.stringify(DataManager.curMineDetailData))
         // let name = DataManager.mineData[data.hold_player.group].name
         let name = DataManager.getName(data.hold_player)
-        if (data.hold_player.lv == 0) {
-            this.nameLabel.string = `未建造建筑`
+        // if (data.hold_player.lv == 0) {
+        //     this.nameLabel.string = `未建造建筑`
+        // } else {
+        //     this.nameLabel.string = data.hold_player.lv + '级' + name
+        // }
+
+        if (data.hold_player.group >= 101) {
+            this.nameLabel.string = name
         } else {
-            this.nameLabel.string = data.hold_player.lv + '级' + name
+            if (data.hold_player.lv == 0) {
+                this.nameLabel.string = `未建造` + name
+            } else {
+                let lvList = ["微型", "小型", "中型", "大型", "巨型"]
+                this.nameLabel.string = lvList[data.hold_player.lv - 1] + name
+            }
         }
+
         this.lordLabel.string = `领主：${data.hold_player.nickname}`
         this.awardLabel.string = `已产出：${DataManager.curMineDetailData.gains}`
 

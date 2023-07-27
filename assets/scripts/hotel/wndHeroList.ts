@@ -114,7 +114,7 @@ export default class NewClass extends cc.Component {
         this._data = data
 
         this._from = from
-
+        this.selectIdList = []
         this.contect.removeAllChildren()
         this.node.getChildByName('toggleContainer').active = this._data.idx == 1
         this.node.getChildByName('toggleContainer').children[0].getComponent(cc.Toggle).isChecked = true
@@ -279,7 +279,7 @@ export default class NewClass extends cc.Component {
 
                 }, this)
             }
-            
+
             pfb.on(cc.Node.EventType.TOUCH_END, () => {
                 if (this._data.idx == 1) {//打开将领详情页
                     ViewManager.instance.hideWnd(EnumManager.viewPath.WND_HOTEL_LIST)

@@ -67,7 +67,18 @@ export default class NewClass extends cc.Component {
         this._data = data
         let name = DataManager.getName(data.hold_player)
         // let name = DataManager.mineData[data.hold_player.group].name
-        this.nameLabel.string = data.hold_player.lv + '级' + name
+        // this.nameLabel.string = data.hold_player.lv + '级' + name
+        if (data.hold_player.group >= 101) {
+            this.nameLabel.string = name
+        } else {
+            if (data.hold_player.lv == 0) {
+                this.nameLabel.string = `未建造` + name
+            } else {
+                let lvList = ["微型", "小型", "中型", "大型", "巨型"]
+                this.nameLabel.string = lvList[data.hold_player.lv - 1] + name
+            }
+        }
+
         this.lordLabel.string = `领主：${data.hold_player.nickname}`
         // this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
