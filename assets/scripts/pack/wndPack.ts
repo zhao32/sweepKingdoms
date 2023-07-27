@@ -122,6 +122,8 @@ export default class NewClass extends cc.Component {
                             }
 
                         } else if (i == 4) {
+                            // console.log('keyRuneList:'+ JSON.stringify(keyRuneList))
+                            // console.log('template_id:'+template_id)
                             // ResManager.loadItemIcon(`UI/UnitsEquips/${template_id}`, item.getChildByName('pic'))
                             if (keyItemList.indexOf(template_id) != -1) {
                                 has = true
@@ -155,7 +157,7 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.addListener(NetEvent.S2CEquipRestore, this.S2CEquipRestore, this)
         NetEventDispatcher.addListener(NetEvent.S2CEquipFragCompose, this.S2CEquipFragCompose, this)
 
-        
+
 
         /**礼包 */
         let keyGiftList = Object.keys(DataManager.GameData.Boxes)
@@ -264,7 +266,7 @@ export default class NewClass extends cc.Component {
 
     }
 
-    S2CEquipFragCompose(retObj){
+    S2CEquipFragCompose(retObj) {
         console.log(`符石合成返回` + JSON.stringify(retObj))
         ViewManager.instance.showToast(`符石合成成功`)
 
@@ -380,7 +382,7 @@ export default class NewClass extends cc.Component {
                 if (keyItemList.indexOf(template_id) != -1) {
                     has = true
                     ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Items[template_id].name}`, item.getChildByName('pic'))
-                }else if (keyRuneList.indexOf(template_id) != -1) {
+                } else if (keyRuneList.indexOf(template_id) != -1) {
                     has = true
                     ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[template_id].icon}`, item.getChildByName('pic'))
                 }

@@ -4196,6 +4196,9 @@
     "icon": {
       "__id__": 14
     },
+    "getRewardPanel_prefab": {
+      "__uuid__": "949905d5-bb87-4bca-a87d-7704e0a52a1d"
+    },
     "text": "hello",
     "_id": ""
   },

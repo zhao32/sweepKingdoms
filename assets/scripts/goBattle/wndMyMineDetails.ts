@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import GetRewardPanel from "../mail/GetRewardPanel";
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
@@ -39,6 +40,9 @@ export default class NewClass extends cc.Component {
 
     @property(cc.Node)
     icon: cc.Node = null;
+
+    @property({ type: cc.Prefab })
+    getRewardPanel_prefab: cc.Prefab = null;
 
     @property
     text: string = 'hello';
@@ -124,9 +128,18 @@ export default class NewClass extends cc.Component {
         // }
     }
 
-    S2CMineGetAward(data) {
+    S2CMineGetAward(retObj) {
         console.log(`领奖返回`)
-        console.log(JSON.stringify(data))
+        console.log(JSON.stringify(retObj))
+
+        
+        if (retObj.gain.length > 0) {
+            var rewardPanel = cc.instantiate(this.getRewardPanel_prefab);
+            cc.Canvas.instance.node.addChild(rewardPanel);
+            rewardPanel.getComponent(GetRewardPanel)._itemlist = retObj.gain
+        } else {
+            ViewManager.instance.showToast(`成功领取奖励`)
+        }
     }
 
     /**升级返回 */

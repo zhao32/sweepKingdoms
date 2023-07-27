@@ -51,6 +51,12 @@ export default class NewClass extends cc.Component {
 
             let keyBonus = Object.keys(DataManager.GameData.bonus)
 
+            let keyItem = Object.keys(DataManager.GameData.Items)
+
+            let keyCardFrag = Object.keys(DataManager.GameData.CardFrags)
+
+
+
 
             let keyEquip = Object.keys(DataManager.GameData.Equips)
 
@@ -72,10 +78,23 @@ export default class NewClass extends cc.Component {
                 itemData = DataManager.GameData.MineStone[template_id]
             }
 
+            if (keyItem.indexOf(template_id) != -1) {
+                itemData = DataManager.GameData.Items[template_id]
+            }
+
+            if (itemData) {
+                ResManager.loadItemIcon(`UI/prop/${itemData.name}`, this.sprite.node)
+            }
+
+            if (keyCardFrag.indexOf(template_id) != -1) {
+                let fragData = DataManager.GameData.CardFrags[data.template_id]
+                ResManager.loadItemIcon(`hero/icon/${fragData.name.slice(0, -2)}`, this.sprite.node)
+                // ResManager.loadItemIcon(`hero/debrisBg${fragData.quality - 1}`, this.node)
+            }
+
             if (keyBonus.indexOf(template_id) != -1) {
                 let bonusData = DataManager.GameData.bonus[template_id]
                 ResManager.loadItemIcon(`UI/bonus/${bonusData.name}`, this.sprite.node)
-
             }
 
             if (keyStudy.indexOf(template_id) != -1) {
@@ -83,9 +102,7 @@ export default class NewClass extends cc.Component {
                 ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.sprite.node)
             }
 
-            if (itemData) {
-                ResManager.loadItemIcon(`UI/prop/${itemData.name}`, this.sprite.node)
-            }
+           
         }
     }
 

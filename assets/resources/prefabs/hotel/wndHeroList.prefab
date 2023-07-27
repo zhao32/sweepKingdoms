@@ -3197,6 +3197,9 @@
       "__id__": 1
     },
     "_enabled": true,
+    "getRewardPanel_prefab": {
+      "__uuid__": "949905d5-bb87-4bca-a87d-7704e0a52a1d"
+    },
     "contect": {
       "__id__": 35
     },

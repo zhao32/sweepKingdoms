@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import GetRewardPanel from "../mail/GetRewardPanel";
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
@@ -24,6 +25,8 @@ const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class NewClass extends cc.Component {
+    @property({ type: cc.Prefab })
+    getRewardPanel_prefab: cc.Prefab = null;
 
     @property(cc.Node)
     contect: cc.Node = null;
@@ -249,10 +252,17 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.removeListener(NetEvent.S2CForge, this.S2CForge, this)
     }
 
-    S2CForge(data) {
-        console.log('将领分解返回：' + JSON.stringify(data))
-        ViewManager.instance.showToast(`成功将将领分解成将魂`)
+    S2CForge(retObj) {
+        console.log('将领分解返回：' + JSON.stringify(retObj))
+        // {"gain":[{"template_id":1104,"num":50},{"template_id":1450,"num":250000},{"template_id":1003,"num":7500}]}
 
+        if (retObj.gain.length > 0) {
+            var rewardPanel = cc.instantiate(this.getRewardPanel_prefab);
+            cc.Canvas.instance.node.addChild(rewardPanel);
+            rewardPanel.getComponent(GetRewardPanel)._itemlist = retObj.gain
+        } else {
+            ViewManager.instance.showToast(`成功将将领分解成将魂`)
+        }
 
         this.contect.removeAllChildren()
         this.selectIdList = []
