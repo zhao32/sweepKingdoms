@@ -100,6 +100,11 @@ export default class NewClass extends cc.Component {
                 this.nameLabel.string = lvList[data.hold_player.lv - 1] + name
             }
         }
+
+        if (!data.hold_player.id) {
+            this.nameLabel.string = data.hold_player.lv + '级' + name
+        }
+
         this.lordLabel.string = data.hold_player.nickname ? `领主：${data.hold_player.nickname}` : `领主：无`
         this.awardLabel.string = `已产出：${data.hold_player.award}`
 

@@ -108,6 +108,10 @@ export default class NewClass extends cc.Component {
             }
         }
 
+        if (!data.hold_player.lv) {
+            this.nameLabel.string = data.hold_player.lv + '级' + name
+        }
+
         this.lordLabel.string = `领主：${data.hold_player.nickname}`
         // this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)

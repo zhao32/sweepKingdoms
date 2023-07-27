@@ -96,6 +96,10 @@ export default class NewClass extends cc.Component {
             }
         }
 
+        if (!data.hold_player.lv) {
+            this.nameLabel.string = data.hold_player.lv + '级' + name
+        }
+
         this.lordLabel.string = `领主：${data.hold_player.nickname}`
         this.awardLabel.string = `已产出：${DataManager.curMineDetailData.gains}`
 
