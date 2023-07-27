@@ -251,6 +251,7 @@ export default class NewClass extends cc.Component {
 
     S2CForge(data) {
         console.log('将领分解返回：' + JSON.stringify(data))
+        ViewManager.instance.showToast(`成功将将领分解成将魂`)
 
 
         this.contect.removeAllChildren()
