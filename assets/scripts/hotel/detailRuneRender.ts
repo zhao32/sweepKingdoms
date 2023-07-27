@@ -59,7 +59,7 @@ export default class NewClass extends cc.Component {
                     let self = this
                     var _alert_layer = cc.instantiate(DataManager.Main.AlertLayer);
                     cc.Canvas.instance.node.addChild(_alert_layer);
-                    _alert_layer.getComponent(AlertLayer).init("是否遗忘此装备？",
+                    _alert_layer.getComponent(AlertLayer).init("是否卸载此符石？",
                         function () {
                             // MyProtocols.send_C2SCardTakeOffItem(DataManager._loginSocket, data.id, idx);//发送删除邮件数据请求
                             MyProtocols.send_C2SDumpRuneSlot(DataManager._loginSocket, self._heroid, self._idx)
@@ -101,6 +101,10 @@ export default class NewClass extends cc.Component {
         if (idx == 0) {
             this.node.getChildByName(`btn2`).active = true
             this.btnLabel.string = '升级'
+        }
+
+        if (data.runeLevel[idx] == 999) {
+            this.node.getChildByName(`btn2`).active = false
         }
 
 
