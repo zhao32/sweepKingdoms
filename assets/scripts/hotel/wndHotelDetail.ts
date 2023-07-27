@@ -127,11 +127,13 @@ export default class NewClass extends cc.Component {
         }
 
         for (let i = 0; i < this._data.runePutup.length; i++) {
+            let rune = this.node.getChildByName('cao1').children[i].children[0]
             if (this._data.runePutup[i] > 0) {
-                let rune = this.node.getChildByName('cao1').children[i].children[0]
                 rune.active = true
                 console.log('data.runePutup[i]:' + this._data.runePutup[i])
                 ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[this._data.runePutup[i]].icon}`, rune)
+            } else {
+                rune.active = false
             }
 
             let render = this.contect.children[i]
@@ -179,11 +181,12 @@ export default class NewClass extends cc.Component {
         this._data.runePutup[data.p_pos_index] = 0
 
         for (let i = 0; i < this._data.runePutup.length; i++) {
+            let rune = this.node.getChildByName('cao1').children[i].children[0]
             // ResManager.loadItemIcon(`hero/runePot${data.runePutup[i]}`, this.node.getChildByName('cao').children[i])
             if (this._data.runePutup[i] < 1000) {
+                rune.active = false
                 this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[this._data.runePutup[i]]
             } else {
-                let rune = this.node.getChildByName('cao1').children[i].children[0]
                 rune.active = true
                 console.log('data.runePutup[i]:' + this._data.runePutup[i])
                 ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[this._data.runePutup[i]].icon}`, rune)
@@ -282,10 +285,11 @@ export default class NewClass extends cc.Component {
 
         for (let i = 0; i < data.runePutup.length; i++) {
             // ResManager.loadItemIcon(`hero/runePot${data.runePutup[i]}`, this.node.getChildByName('cao').children[i])
+            let rune = this.node.getChildByName('cao1').children[i].children[0]
             if (data.runePutup[i] < 1000) {
+                rune.active = false
                 // this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[data.runePutup[i]]
             } else {
-                let rune = this.node.getChildByName('cao1').children[i].children[0]
                 rune.active = true
                 console.log('data.runePutup[i]:' + data.runePutup[i])
                 ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[data.runePutup[i]].icon}`, rune)

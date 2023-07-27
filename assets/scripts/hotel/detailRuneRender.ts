@@ -116,13 +116,14 @@ export default class NewClass extends cc.Component {
         //     console.log('data.runePutup[i]:' + data.runePutup[i])
         //     ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[data.runePutup[i]].icon}`, rune)
         // }
-
+        let rune = this.node.getChildByName('Mask').children[0]
         if (data.runePutup[idx] > 1000) {
-            let rune = this.node.getChildByName('Mask').children[0]
             rune.active = true
             console.log('data.runePutup[i]:' + data.runePutup[idx])
             ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[data.runePutup[idx]].icon}`, rune)
             this.tipDisplay1.string = DataManager.GameData.Runes[data.runePutup[idx]].name
+        } else {
+            rune.active = false
         }
 
     }
