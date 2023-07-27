@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "ccf723c5-834c-4933-a486-063571092ace",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 85,
+  "height": 84,
+  "platformSettings": {},
+  "subMetas": {
+    "腾蛇阵势": {
+      "ver": "1.0.6",
+      "uuid": "c386812b-6a2d-48c8-91f6-f1762dd8b8dc",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "ccf723c5-834c-4933-a486-063571092ace",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": -8.5,
+      "trimX": 5,
+      "trimY": 21,
+      "width": 75,
+      "height": 59,
+      "rawWidth": 85,
+      "rawHeight": 84,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

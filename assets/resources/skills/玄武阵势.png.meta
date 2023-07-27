@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "7435140c-0e17-40e9-8322-d0aa8b8e3e98",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 82,
+  "height": 81,
+  "platformSettings": {},
+  "subMetas": {
+    "玄武阵势": {
+      "ver": "1.0.6",
+      "uuid": "d57eb377-dd2e-4a0c-86b4-ac11a9031780",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "7435140c-0e17-40e9-8322-d0aa8b8e3e98",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1,
+      "offsetY": 0.5,
+      "trimX": 5,
+      "trimY": 4,
+      "width": 70,
+      "height": 72,
+      "rawWidth": 82,
+      "rawHeight": 81,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

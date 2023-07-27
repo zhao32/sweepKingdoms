@@ -74,7 +74,7 @@ export default class NewClass extends cc.Component {
                 let data = {
                     cardTemplateId: this.selectIdList[i],
                     treasure_uuid: 0,
-                    count: 0
+                    count: 1
                 }
                 dataList.push(data)
             }

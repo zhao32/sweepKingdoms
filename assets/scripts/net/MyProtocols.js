@@ -3056,6 +3056,7 @@ var MyProtocols = {
 	},
 
 	send_C2SForge: function (senderSocket, p_heros, p_treasures, p_equips) {
+		console.log('p_heros:'+JSON.stringify(p_heros))
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(4601);
 		if (p_heros == null) {
