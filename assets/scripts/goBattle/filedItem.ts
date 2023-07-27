@@ -70,18 +70,18 @@ export default class NewClass extends cc.Component {
             let str: string
             let name: string = data.hold_player.nickname
             if (data.hold_player.group >= 101) {
-                this.nameLabel.string = filedName + name.charAt(0) + name.charAt(1) + name.charAt(2) + '...'
+                this.nameLabel.string = filedName + name.charAt(0) + '...'
             } else {
                 if (data.hold_player.lv == 0) {
-                    this.nameLabel.string = `未建造` + filedName + name.charAt(0) + name.charAt(1) + name.charAt(2) + '...'
+                    this.nameLabel.string = `未建造` + filedName + name.charAt(0) + '...'
                 } else {
                     let lvList = ["微型", "小型", "中型", "大型", "巨型"]
-                    this.nameLabel.string = lvList[data.hold_player.lv - 1] + name.charAt(0) + name.charAt(1) + name.charAt(2) + '...'
+                    this.nameLabel.string = lvList[data.hold_player.lv - 1] + name.charAt(0) + '...'
                 }
             }
 
             if (!data.hold_player.id) {
-                this.nameLabel.string =  data.hold_player.lv + `级` + name.charAt(0) + name.charAt(1) + name.charAt(2) + '...'
+                this.nameLabel.string = data.hold_player.lv + `级` + filedName
             }
         }
     }
