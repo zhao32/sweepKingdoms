@@ -88,7 +88,23 @@ export default class NewClass extends cc.Component {
     }
 
     onRecoverHandler() {
-        MyProtocols.send_C2SRebirth(DataManager._loginSocket)
+        let recoverList = []
+        let num = 0
+        for (let i = 0; i < this.contect.children.length; i++) {
+            let render = this.contect.children[i]
+            let data = render.getComponent(renderReover).getSelectNum()
+            if (data.num > 0) {
+                recoverList.push(data)
+            }
+            num += data.num
+        }
+        console.log('recoverList:' + JSON.stringify(recoverList))
+        if (num == 0) {
+            ViewManager.instance.showToast(`请选择复活数量`)
+            return
+        }
+
+        MyProtocols.send_C2SRebirth(DataManager._loginSocket, recoverList)
     }
 
     S2CRebirth(data) {

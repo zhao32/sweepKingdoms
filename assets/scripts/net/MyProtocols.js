@@ -6977,9 +6977,16 @@ var MyProtocols = {
 
 
 
-	send_C2SRebirth: function (senderSocket) {
+	send_C2SRebirth: function (senderSocket, live_item) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(1059);
+		if (live_item.length > 0) {
+			for (var i = 0; i < live_item.length; i++) {
+				myEncoder.writeInt(live_item[i].template_id);
+				myEncoder.writeInt(live_item[i].num);
+			}
+		}
+
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
@@ -6999,7 +7006,7 @@ var MyProtocols = {
 		console.log(`士兵复活`)
 		return retObj;
 	},
-	
+
 	/**兵种强化 idx 兵种 type 属性 1-6  挥砍-穿刺之类 */
 	send_C2SSoliderStren: function (senderSocket, lv, idx, type) {
 		console.log(lv, idx, type)
