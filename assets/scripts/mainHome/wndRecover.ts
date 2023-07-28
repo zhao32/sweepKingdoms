@@ -51,6 +51,11 @@ export default class NewClass extends cc.Component {
 
     init() {
         // this.showGroups()
+        this.initList()
+        NetEventDispatcher.addListener(NetEvent.S2CRebirth, this.S2CRebirth, this)
+    }
+
+    initList() {
         let armList = []
         for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
             if (DataManager.instance.itemsList[i].template_id < 30) {
@@ -76,8 +81,6 @@ export default class NewClass extends cc.Component {
             let soldierData = DataManager.GameData.Soldier[armList[i].template_id]
             render.getComponent(renderReover).init(soldierData, armList[i].num)
         }
-
-        NetEventDispatcher.addListener(NetEvent.S2CRebirth, this.S2CRebirth, this)
     }
 
     onBackHandler() {
@@ -91,6 +94,11 @@ export default class NewClass extends cc.Component {
     S2CRebirth(data) {
         // this.desLabel.string = `暂无可复活士兵`
         console.log('复活返回：' + JSON.stringify(data))
+        // {"live_item":[{"template_id":2,"num":335},{"template_id":2,"num":744},{"template_id":3,"num":721},{"template_id":4,"num":214},{"template_id":5,"num":205},{"template_id":6,"num":433},{"template_id":7,"num":766},{"template_id":8,"num":103},{"template_id":9,"num":233},{"template_id":10,"num":512},{"template_id":11,"num":635},{"template_id":12,"num":159},{"template_id":13,"num":585},{"template_id":14,"num":373},{"template_id":15,"num":751},{"template_id":16,"num":764},{"template_id":17,"num":298},{"template_id":18,"num":393},{"template_id":19,"num":146}]}
+        for (let i = 0; i < data.live_item.length; i++) {
+            DataManager.playData.military_data[data.live_item[i].template_id - 1] += data.live_item[i].num
+        }
+        this.initList()
     }
 
 
