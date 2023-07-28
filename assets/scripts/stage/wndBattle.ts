@@ -376,6 +376,8 @@ export default class NewClass extends cc.Component {
                 }
             }
         }
+
+        
         // console.log('enemyData:' + JSON.stringify(otherData))
 
 

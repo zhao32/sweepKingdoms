@@ -183,5 +183,17 @@ export default class GameUtil {
         return plusList
     }
 
+    resetSoloderArr() {
+        for (let i = 0; i < DataManager.playData.storgleave_data.length; i++) {
+            let idx = DataManager.playData.storgleave_data[i].type
+            DataManager.GameData.Soldier[idx].defense.attack_1 += DataManager.playData.storgleave_data[i].lv[0]
+            DataManager.GameData.Soldier[idx].defense.attack_2 += DataManager.playData.storgleave_data[i].lv[1]
+            DataManager.GameData.Soldier[idx].defense.attack_3 += DataManager.playData.storgleave_data[i].lv[2]
+            DataManager.GameData.Soldier[idx].defense.attack_4 += DataManager.playData.storgleave_data[i].lv[3]
+            DataManager.GameData.Soldier[idx].defense.attack_5 += DataManager.playData.storgleave_data[i].lv[4]
+            DataManager.GameData.Soldier[idx].defense.attack_6 += DataManager.playData.storgleave_data[i].lv[5]
+        }
+    }
+
 }
 

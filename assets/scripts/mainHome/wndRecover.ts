@@ -64,7 +64,7 @@ export default class NewClass extends cc.Component {
                 }, DataManager.SCROLLTIME2 * i)
             }
 
-            let soldierData = DataManager.GameData.Soldier[armList[i].id]
+            let soldierData = DataManager.GameData.Soldier[armList[i].template_id]
             render.getComponent(renderReover).init(soldierData, armList[i].num)
         }
 

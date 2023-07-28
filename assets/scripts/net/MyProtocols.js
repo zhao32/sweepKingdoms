@@ -6988,6 +6988,7 @@ var MyProtocols = {
 	get_1060: function (myDecoder) {
 		var retObj = {};
 		retObj.num = myDecoder.readInt();
+		console.log(`士兵复活`)
 		return retObj;
 	},
 
