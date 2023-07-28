@@ -214,5 +214,13 @@
         "mail_item": "",
         "deletetime": 30,
         "sender": "军需官"
+    },
+    "1027": {
+        "id": 1027,
+        "mail_title": "恶魔之门胜利奖励",
+        "mail_content": "恭喜成功开启恶魔之门并胜利，可喜可贺，以下是您的报酬：",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "军需官"
     }
 }
