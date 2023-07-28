@@ -76,7 +76,7 @@ export default class NewClass extends cc.Component {
 
 
     init(state, idx, data) {
-        console.log(`data:` + JSON.stringify(data))
+        // console.log(`data:` + JSON.stringify(data))
         this._data = data
         this._state = state
         this._heroid = data.id

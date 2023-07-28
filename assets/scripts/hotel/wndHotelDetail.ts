@@ -462,7 +462,11 @@ export default class NewClass extends cc.Component {
 
     S2CRuneLevelup(data) {
         console.log(`石槽承载力提升：` + JSON.stringify(data))
-        this._data.runeLevel[data.p_rune_pos_index] = data.fight
+        // {"card_id":153486,"rune_pos_index":0,"rune_level":999,"fight":2868}
+        // {"card_id":153505,"rune_pos_index":2,"rune_level":999,"fight":2255}
+        // [999,999,0]
+        this._data.runeLevel[data.rune_pos_index] = data.rune_level
+        this.initRunes()
 
     }
 
