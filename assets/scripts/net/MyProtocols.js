@@ -3056,7 +3056,7 @@ var MyProtocols = {
 	},
 
 	send_C2SForge: function (senderSocket, p_heros, p_treasures, p_equips) {
-		console.log('p_heros:'+JSON.stringify(p_heros))
+		console.log('p_heros:' + JSON.stringify(p_heros))
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(4601);
 		if (p_heros == null) {
@@ -6987,11 +6987,17 @@ var MyProtocols = {
 
 	get_1060: function (myDecoder) {
 		var retObj = {};
-		retObj.num = myDecoder.readInt();
+		let live_item_size = myDecoder.readInt();
+		if (live_item_size > 0) {
+			for (var i = 0; i < live_item_size; i++) {
+				retObj.live_item[i] = {};
+				retObj.live_item[i].template_id = myDecoder.readInt();
+				retObj.live_item[i].num = myDecoder.readInt();
+			}
+		}
 		console.log(`士兵复活`)
 		return retObj;
 	},
-
 	/**兵种强化 idx 兵种 type 属性 1-6  挥砍-穿刺之类 */
 	send_C2SSoliderStren: function (senderSocket, lv, idx, type) {
 		console.log(lv, idx, type)

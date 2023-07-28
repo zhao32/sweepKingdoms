@@ -32,6 +32,10 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     renderPfb0: cc.Prefab = null;
 
+    @property(cc.Label)
+    desLabel: cc.Label = null;
+
+
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -52,6 +56,11 @@ export default class NewClass extends cc.Component {
             if (DataManager.instance.itemsList[i].template_id < 30) {
                 armList.push(DataManager.instance.itemsList[i])
             }
+        }
+        if (armList.length == 0) {
+            this.desLabel.string = `暂无可复活士兵`
+        } else {
+            this.desLabel.string = ``
         }
         this.contect.removeAllChildren()
         for (let i = 0; i < armList.length; i++) {
@@ -77,10 +86,10 @@ export default class NewClass extends cc.Component {
 
     onRecoverHandler() {
         MyProtocols.send_C2SRebirth(DataManager._loginSocket)
-
     }
 
     S2CRebirth(data) {
+        // this.desLabel.string = `暂无可复活士兵`
         console.log('复活返回：' + JSON.stringify(data))
     }
 

@@ -183,7 +183,7 @@ export default class GameUtil {
         return plusList
     }
 
-    resetSoloderArr() {
+    resetSoliderStren() {
         for (let i = 0; i < DataManager.playData.storgleave_data.length; i++) {
             let idx = DataManager.playData.storgleave_data[i].type
             DataManager.GameData.Soldier[idx].defense.attack_1 += DataManager.playData.storgleave_data[i].lv[0]

@@ -55,6 +55,7 @@ export default class NewClass extends cc.Component {
 
             let keyCardFrag = Object.keys(DataManager.GameData.CardFrags)
 
+            let keyRune = Object.keys(DataManager.GameData.Runes)
 
 
 
@@ -100,6 +101,11 @@ export default class NewClass extends cc.Component {
             if (keyStudy.indexOf(template_id) != -1) {
                 let skillSt = DataManager.GameData.SkillStudy[template_id]
                 ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.sprite.node)
+            }
+
+            if (keyRune.indexOf(template_id) != -1) {
+                let rune = DataManager.GameData.Runes[template_id]
+                ResManager.loadItemIcon(`Rune/${rune.icon}`, this.sprite.node)
             }
 
            

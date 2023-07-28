@@ -58,6 +58,7 @@ export default class NewClass extends cc.Component {
 
         let keyCardFrag = Object.keys(DataManager.GameData.CardFrags)
 
+        let keyRune = Object.keys(DataManager.GameData.Runes)
 
 
 
@@ -90,22 +91,24 @@ export default class NewClass extends cc.Component {
         }
 
         if (keyCardFrag.indexOf(template_id) != -1) {
-            
             let fragData = DataManager.GameData.CardFrags[data.template_id]
             ResManager.loadItemIcon(`hero/icon/${fragData.name.slice(0, -2)}`, this.pic.node)
             // ResManager.loadItemIcon(`hero/debrisBg${fragData.quality - 1}`, this.node)
         }
 
-        if (keyBonus.indexOf(template_id) != -1) {
-          
+        if (keyBonus.indexOf(template_id) != -1) { 
             let bonusData = DataManager.GameData.bonus[template_id]
             ResManager.loadItemIcon(`UI/bonus/${bonusData.name}`, this.pic.node)
         }
 
         if (keyStudy.indexOf(template_id) != -1) {
-          
             let skillSt = DataManager.GameData.SkillStudy[template_id]
             ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.pic.node)
+        }
+
+        if (keyRune.indexOf(template_id) != -1) {
+            let rune = DataManager.GameData.Runes[template_id]
+            ResManager.loadItemIcon(`Rune/${rune.icon}`, this.pic.node)
         }
 
         this.count.string = "x" + data.num;
