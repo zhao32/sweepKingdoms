@@ -114,7 +114,14 @@ export default class NewClass extends cc.Component {
             }
         }
 
-        if (data.formation.a == 0) {
+        let hasHero = false
+        for (let i = 0; i < DataManager.cardsList.length; i++) {
+            if (data.formation.a == DataManager.cardsList[i].id) {
+                hasHero = true
+            }
+        }
+
+        if (data.formation.a == 0 && hasHero) {
             this.node.getChildByName(`noHeroDefine`).active = true
             this.node.getChildByName(`heroRender`).active = false
 

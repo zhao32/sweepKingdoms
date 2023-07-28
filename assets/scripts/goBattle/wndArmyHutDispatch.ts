@@ -131,7 +131,14 @@ export default class NewClass extends cc.Component {
 
         if (this.eviType == 0 || this.eviType == 1) return
 
-        if (data.formation.a == 0) {
+        let hasHero = false
+        for (let i = 0; i < DataManager.cardsList.length; i++) {
+            if (data.formation.a == DataManager.cardsList[i].id) {
+                hasHero = true
+            }
+        }
+
+        if (data.formation.a == 0 && hasHero) {
             this.node.getChildByName(`noHeroDefine`).active = true
             this.node.getChildByName(`heroRender`).active = false
             this.cardTipDisplay.string = `您有${this.cards.length}名将领可供调用`

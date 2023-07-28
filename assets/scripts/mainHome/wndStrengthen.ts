@@ -162,7 +162,15 @@ export default class NewClass extends cc.Component {
         console.log(JSON.stringify(DataManager.playData.storgleave_data))
         ViewManager.instance.showToast(`兵种强化成功`)
 
-
+        let keys = Object.keys(DataManager.GameData.MineStone)
+        console.log(`keys:` + JSON.stringify(keys))
+        for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+            for (let j = 0; j < keys.length; j++) {
+                if (keys[j] == DataManager.instance.itemsList[i].template_id) {
+                    this.node.getChildByName(`pearls`).children[7 + j].getComponent(cc.Label).string = `x` + DataManager.instance.itemsList[i].num
+                }
+            }
+        }
 
         if (this.showType == 0) return
         let lvList = []
@@ -202,7 +210,6 @@ export default class NewClass extends cc.Component {
         } else if (this.showType == 1) {
             this.showArmy()
         }
-
     }
 
     onClose() {

@@ -117,9 +117,20 @@ export default class NewClass extends cc.Component {
 
         console.log(`请求恶魔之门阵容返回`);
         console.log(JSON.stringify(retObj))
+
+      
+
         // debugger;
         if (retObj.formation) {
-            if (retObj.formation.a != 0 && retObj.cards.length > 0) {
+
+            let hasHero = false
+            for (let i = 0; i < DataManager.cardsList.length; i++) {
+                if (retObj.formation.a == DataManager.cardsList[i].id) {
+                    hasHero = true
+                }
+            }
+            
+            if (retObj.formation.a != 0 && hasHero&& retObj.cards.length > 0) {
                 let heroItem = cc.instantiate(this.heroPfb)
                 heroItem.parent = this.definContect
                 let cardData
