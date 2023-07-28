@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "e75b5186-ea8e-4c71-a5e4-fb4e03d949a7",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 70,
+  "height": 67,
+  "platformSettings": {},
+  "subMetas": {
+    "神秘4字技能书残页": {
+      "ver": "1.0.6",
+      "uuid": "c68814ba-9520-4e81-87f6-45592f8b9632",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "e75b5186-ea8e-4c71-a5e4-fb4e03d949a7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 70,
+      "height": 67,
+      "rawWidth": 70,
+      "rawHeight": 67,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

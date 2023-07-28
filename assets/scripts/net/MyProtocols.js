@@ -5077,8 +5077,8 @@ var MyProtocols = {
 				if (mailInfoListi_attach_size > 0) {
 					for (var attach_idx = 0; attach_idx < mailInfoListi_attach_size; attach_idx++) {
 						retObj.mailInfoList[i].attach[attach_idx] = {};
-						retObj.mailInfoList[i].attach[attach_idx].itemId = myDecoder.readInt();
-						retObj.mailInfoList[i].attach[attach_idx].cnt = myDecoder.readInt();
+						retObj.mailInfoList[i].attach[attach_idx].template_id = myDecoder.readInt();
+						retObj.mailInfoList[i].attach[attach_idx].num = myDecoder.readInt();
 					}
 				}
 				retObj.mailInfoList[i].create_time = myDecoder.readInt();
@@ -5173,8 +5173,8 @@ var MyProtocols = {
 			if (mail_info_attach_size > 0) {
 				for (var attach_idx = 0; attach_idx < mail_info_attach_size; attach_idx++) {
 					retObj.mail_info.attach[attach_idx] = {};
-					retObj.mail_info.attach[attach_idx].itemId = myDecoder.readInt();
-					retObj.mail_info.attach[attach_idx].cnt = myDecoder.readInt();
+					retObj.mail_info.attach[attach_idx].template_id = myDecoder.readInt();
+					retObj.mail_info.attach[attach_idx].num = myDecoder.readInt();
 				}
 			}
 			retObj.mail_info.create_time = myDecoder.readInt();
@@ -5207,8 +5207,8 @@ var MyProtocols = {
 		if (attachs_size > 0) {
 			for (var i = 0; i < attachs_size; i++) {
 				retObj.attachs[i] = {};
-				retObj.attachs[i].itemId = myDecoder.readInt();
-				retObj.attachs[i].cnt = myDecoder.readInt();
+				retObj.attachs[i].template_id = myDecoder.readInt();
+				retObj.attachs[i].num = myDecoder.readInt();
 			}
 		}
 		return retObj;

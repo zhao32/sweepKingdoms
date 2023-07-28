@@ -346,5 +346,42 @@
     "des":"用于合成十级坚韧性符石",
     "icon":"e74.png",
     "quality":2
+  },
+  
+  "6001":{
+    "craft_num":20,
+    "name":"神秘2字技能书残页",
+    "bind_stages":[101,102],
+    "equip":6001,
+    "des":"用于合成神秘2字技能书",
+    "icon":"e74.png",
+    "quality":2
+  },
+  "6002":{
+    "craft_num":20,
+    "name":"神秘3字技能书残页",
+    "bind_stages":[101,102],
+    "equip":6002,
+    "des":"用于合成神秘3字技能书",
+    "icon":"e74.png",
+    "quality":2
+  },
+  "6003":{
+    "craft_num":20,
+    "name":"神秘4字技能书残页",
+    "bind_stages":[101,102],
+    "equip":6001,
+    "des":"用于合成神秘4字技能书",
+    "icon":"e74.png",
+    "quality":2
+  },
+  "6004":{
+    "craft_num":20,
+    "name":"神秘5字技能书残页",
+    "bind_stages":[101,102],
+    "equip":6001,
+    "des":"用于合成神秘5字技能书",
+    "icon":"e74.png",
+    "quality":2
   }
 }

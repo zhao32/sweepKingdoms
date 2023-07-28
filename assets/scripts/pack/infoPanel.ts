@@ -155,12 +155,16 @@ export default class NewClass extends cc.Component {
             if (keyEquipFragsList.indexOf(template_id) != -1) {
                 defaultData = DataManager.GameData.EquipFrags[data.template_id]
 
-                this.btnLabel0.string = `升级`
                 // this.btnLabel1.string = `出售`
                 ResManager.loadItemIcon(`UI/prop/${defaultData.name}`, this.pic)
 
                 this.nameLabel.string = defaultData.name
                 this.richLabel.string = defaultData.des
+
+                this.node.getChildByName(`op`).active = true
+                this.btnLabel0.string = `合成`
+                this.node.getChildByName(`op`).children[0].x = 0
+                this.node.getChildByName(`op`).children[1].active = false
 
             }
 
@@ -257,8 +261,6 @@ export default class NewClass extends cc.Component {
 
                 // }
             }
-
-
         } else if (this._data.bagId == 0) {
             MyProtocols.send_C2SUseItem(DataManager._loginSocket, [{ template_id: this._data.template_id, count: 1 }])
         } else if (this._data.bagId == 1) {
@@ -272,6 +274,8 @@ export default class NewClass extends cc.Component {
                 /**武器还原 */
                 MyProtocols.send_C2SEquipRestore(DataManager._loginSocket, this._data.uuid)
             }
+        } else if (this._data.bagId == 2) {//技能书碎片合成
+            MyProtocols.send_C2SEquipFragCompose(DataManager._loginSocket, this._data.template_id)
         }
     }
 

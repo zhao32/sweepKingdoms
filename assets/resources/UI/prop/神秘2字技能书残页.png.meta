@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "7896d90e-23c7-40a3-802b-f0a60c0d93fd",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 67,
+  "height": 64,
+  "platformSettings": {},
+  "subMetas": {
+    "神秘2字技能书残页": {
+      "ver": "1.0.6",
+      "uuid": "73a7eea1-7a32-4a23-8f0c-55d5b4f4ed4d",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "7896d90e-23c7-40a3-802b-f0a60c0d93fd",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 67,
+      "height": 64,
+      "rawWidth": 67,
+      "rawHeight": 64,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

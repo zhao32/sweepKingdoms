@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "dbfb7adb-c4bf-402d-a157-46a8ee730a17",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 75,
+  "height": 65,
+  "platformSettings": {},
+  "subMetas": {
+    "神秘3字技能书残页": {
+      "ver": "1.0.6",
+      "uuid": "10aa6b04-8183-4cb5-8b5d-89b3baaa9b21",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "dbfb7adb-c4bf-402d-a157-46a8ee730a17",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 1,
+      "offsetY": 0,
+      "trimX": 3,
+      "trimY": 0,
+      "width": 71,
+      "height": 65,
+      "rawWidth": 75,
+      "rawHeight": 65,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

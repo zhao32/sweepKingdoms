@@ -125,7 +125,7 @@ export default class NewClass extends cc.Component {
 
         // : function (senderSocket, p_level_index, p_point_index) {
         // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket,)
-
+ 
         // if(data.hold_player.id){
         //     ResManager.loadItemIcon(`goBattle/icon1`,this.icon)
         // }else{
