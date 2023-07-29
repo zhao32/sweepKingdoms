@@ -180,22 +180,28 @@ export default class GameUtil {
                         if (data.heroData.talents.indexOf(armType) != -1) {
                             if (soliderData.defense.attack_1 != 0) {
                                 data.soliderList[i].fight += equipData.defense.attack_1
+                                data.soliderList[i].fight += soliderData.defense.attack_1 * equipData.defense_percent.attack_1
                             }
                             if (soliderData.defense.attack_2 != 0) {
                                 data.soliderList[i].fight += equipData.defense.attack_2
+                                data.soliderList[i].fight += soliderData.defense.attack_2 * equipData.defense_percent.attack_2
                             }
                             if (soliderData.defense.attack_3 != 0) {
                                 data.soliderList[i].fight += equipData.defense.attack_3
+                                data.soliderList[i].fight += soliderData.defense.attack_3 * equipData.defense_percent.attack_3
                             }
 
                             if (soliderData.defense.attack_4 != 0) {
                                 data.soliderList[i].defense += equipData.defense.attack_4
+                                data.soliderList[i].defense += soliderData.defense.attack_4 * equipData.defense_percent.attack_4
                             }
                             if (soliderData.defense.attack_5 != 0) {
                                 data.soliderList[i].defense += equipData.defense.attack_5
+                                data.soliderList[i].defense += soliderData.defense.attack_5 * equipData.defense_percent.attack_5
                             }
                             if (soliderData.defense.attack_6 != 0) {
                                 data.soliderList[i].defense += equipData.defense.attack_6
+                                data.soliderList[i].defense += soliderData.defense.attack_6 * equipData.defense_percent.attack_6
                             }
                         }
                     }
@@ -230,12 +236,12 @@ export default class GameUtil {
     resetSoliderStren() {
         for (let i = 0; i < DataManager.playData.storgleave_data.length; i++) {
             let idx = DataManager.playData.storgleave_data[i].type
-            DataManager.GameData.Soldier[idx].defense.attack_1 += DataManager.playData.storgleave_data[i].lv[0]
-            DataManager.GameData.Soldier[idx].defense.attack_2 += DataManager.playData.storgleave_data[i].lv[1]
-            DataManager.GameData.Soldier[idx].defense.attack_3 += DataManager.playData.storgleave_data[i].lv[2]
-            DataManager.GameData.Soldier[idx].defense.attack_4 += DataManager.playData.storgleave_data[i].lv[3]
-            DataManager.GameData.Soldier[idx].defense.attack_5 += DataManager.playData.storgleave_data[i].lv[4]
-            DataManager.GameData.Soldier[idx].defense.attack_6 += DataManager.playData.storgleave_data[i].lv[5]
+            if (DataManager.GameData.Soldier[idx].defense.attack_1 > 0) DataManager.GameData.Soldier[idx].defense.attack_1 += DataManager.playData.storgleave_data[i].lv[0]
+            if (DataManager.GameData.Soldier[idx].defense.attack_2 > 0) DataManager.GameData.Soldier[idx].defense.attack_2 += DataManager.playData.storgleave_data[i].lv[1]
+            if (DataManager.GameData.Soldier[idx].defense.attack_3 > 0) DataManager.GameData.Soldier[idx].defense.attack_3 += DataManager.playData.storgleave_data[i].lv[2]
+            if (DataManager.GameData.Soldier[idx].defense.attack_4 > 0) DataManager.GameData.Soldier[idx].defense.attack_4 += DataManager.playData.storgleave_data[i].lv[3]
+            if (DataManager.GameData.Soldier[idx].defense.attack_5 > 0) DataManager.GameData.Soldier[idx].defense.attack_5 += DataManager.playData.storgleave_data[i].lv[4]
+            if (DataManager.GameData.Soldier[idx].defense.attack_6 > 0) DataManager.GameData.Soldier[idx].defense.attack_6 += DataManager.playData.storgleave_data[i].lv[5]
         }
     }
 

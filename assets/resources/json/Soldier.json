@@ -182,7 +182,7 @@
       "addition_6": 40
     },
     "defense": {
-      "attack_1": 40,
+      "attack_1": 0,
       "attack_2": 0,
       "attack_3": 0,
       "attack_4": 150,
@@ -382,7 +382,7 @@
       "addition_6": 40
     },
     "defense": {
-      "attack_1": 80,
+      "attack_1": 0,
       "attack_2": 0,
       "attack_3": 0,
       "attack_4": 300,
