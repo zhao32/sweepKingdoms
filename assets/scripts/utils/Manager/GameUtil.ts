@@ -183,6 +183,7 @@ export default class GameUtil {
         return plusList
     }
 
+    /**士兵强化加成 */
     resetSoliderStren() {
         for (let i = 0; i < DataManager.playData.storgleave_data.length; i++) {
             let idx = DataManager.playData.storgleave_data[i].type

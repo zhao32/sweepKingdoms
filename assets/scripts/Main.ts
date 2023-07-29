@@ -10,6 +10,7 @@ import { NetEvent } from "./net/NetEvent";
 import DataManager from "./utils/Manager/DataManager";
 import EnumManager from "./utils/Manager/EnumManager";
 import EventManager from "./utils/Manager/EventManager";
+import GameUtil from "./utils/Manager/GameUtil";
 import ViewManager from "./utils/Manager/ViewManager";
 
 //@ts-ignore
@@ -202,7 +203,7 @@ export default class NewClass extends cc.Component {
 
         MyProtocols.send_C2SBagItems(DataManager._loginSocket)
 
-
+        GameUtil.instance.resetSoliderStren()
 
     }
 

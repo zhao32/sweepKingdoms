@@ -135,6 +135,10 @@ export default class NewClass extends cc.Component {
         this.nameDisplay.string = name
         this.bulidName = name
         ResManager.loadItemIcon(`UI/mainHome/${name}`, this.pic)
+
+        console.log(`this._name:` + this._name)
+        console.log(`this._idx:` + this._idx)
+
     }
 
 
@@ -155,7 +159,15 @@ export default class NewClass extends cc.Component {
             return
         }
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_RCRUIT, ...[this._idx])
+        if (this._idx == 8) {//军魂祭坛
+            if (DataManager.playData.nation_id == 0) {
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_RCRUIT, ...[14])
+            } else {
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_RCRUIT, ...[DataManager.playData.nation_id + 13])
+            }
+        } else {
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_RCRUIT, ...[this._idx])
+        }
 
     }
 
