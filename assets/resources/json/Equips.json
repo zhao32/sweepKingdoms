@@ -4,7 +4,6 @@
     "quality": 3,
     "name": "盔甲胚料",
     "position": -1,
-
     "des": "碎片合成，和洗炼之火可合成盔甲。"
   },
   "1000": {
@@ -306,6 +305,22 @@
         ]
       }
     },
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 950,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 4530,
     "des2": "",
@@ -323,7 +338,7 @@
       "def": 90
     },
     "unit_attrs": [
-      { 
+      {
         "value": 1,
         "atk_rate": 10
       },
@@ -348,6 +363,22 @@
     "unit_type": 4,
     "id": 2001,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 3320,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -390,6 +421,22 @@
     "unit_type": 3,
     "id": 2002,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 12425,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -432,6 +479,22 @@
     "unit_type": 5,
     "id": 2003,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 19025,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -474,6 +537,22 @@
     "unit_type": 1,
     "id": 2004,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 22000,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 4510,
     "des2": "",
@@ -516,6 +595,22 @@
     "unit_type": 5,
     "id": 2005,
     "refresh": {},
+    "defense": {
+      "attack_1": 950,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 4509,
     "des2": "",
@@ -558,6 +653,22 @@
     "unit_type": 3,
     "id": 2006,
     "refresh": {},
+    "defense": {
+      "attack_1": 3320,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -600,6 +711,22 @@
     "unit_type": 1,
     "id": 2007,
     "refresh": {},
+    "defense": {
+      "attack_1": 12425,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -642,6 +769,22 @@
     "unit_type": 1,
     "id": 2008,
     "refresh": {},
+    "defense": {
+      "attack_1": 19025,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 4505,
     "des2": "",
@@ -684,6 +827,22 @@
     "unit_type": 5,
     "id": 2009,
     "refresh": {},
+    "defense": {
+      "attack_1": 22000,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -709,6 +868,22 @@
     "unit_type": 0,
     "id": 2010,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 950,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -734,6 +909,22 @@
     "unit_type": 0,
     "id": 2011,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 3325,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 4500,
     "des2": "",
@@ -759,6 +950,22 @@
     "unit_type": 0,
     "id": 2012,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 12425,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -784,6 +991,22 @@
     "unit_type": 0,
     "id": 2013,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 19025,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -809,6 +1032,22 @@
     "unit_type": 0,
     "id": 2014,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 22000,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -834,6 +1073,22 @@
     "unit_type": 0,
     "id": 2015,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 950,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -876,6 +1131,22 @@
     "unit_type": 3,
     "id": 2016,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 3325,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 4530,
     "des2": "",
@@ -918,6 +1189,22 @@
     "unit_type": 4,
     "id": 2017,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 12425,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -960,6 +1247,22 @@
     "unit_type": 1,
     "id": 2018,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 19025,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1002,6 +1305,22 @@
     "unit_type": 5,
     "id": 2019,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 23000,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1044,6 +1363,22 @@
     "unit_type": 1,
     "id": 2020,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 23000,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 4510,
     "des2": "",
@@ -1086,6 +1421,22 @@
     "unit_type": 5,
     "id": 2021,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 950,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 4509,
     "des2": "",
@@ -1128,6 +1479,22 @@
     "unit_type": 3,
     "id": 2022,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 3325,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1170,6 +1537,22 @@
     "unit_type": 1,
     "id": 2023,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 12425,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1212,6 +1595,22 @@
     "unit_type": 1,
     "id": 2024,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 19025,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 4505,
     "des2": "",
@@ -1254,6 +1653,22 @@
     "unit_type": 5,
     "id": 2025,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 23000,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1279,6 +1694,22 @@
     "unit_type": 0,
     "id": 2026,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 950
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1304,6 +1735,22 @@
     "unit_type": 0,
     "id": 2027,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 3325
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 4500,
     "des2": "",
@@ -1329,6 +1776,22 @@
     "unit_type": 0,
     "id": 2028,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 12425
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1354,6 +1817,22 @@
     "unit_type": 0,
     "id": 2029,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 19025
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1379,6 +1858,22 @@
     "unit_type": 0,
     "id": 2030,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 23000
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1404,6 +1899,22 @@
     "unit_type": 0,
     "id": 2031,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0.038,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1446,6 +1957,22 @@
     "unit_type": 3,
     "id": 2032,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0.136,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 4530,
     "des2": "",
@@ -1488,6 +2015,22 @@
     "unit_type": 5,
     "id": 2033,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0.5,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1530,6 +2073,22 @@
     "unit_type": 4,
     "id": 2034,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0.764,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1572,6 +2131,22 @@
     "unit_type": 5,
     "id": 2035,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0.85,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1614,6 +2189,22 @@
     "unit_type": 1,
     "id": 2036,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0.038,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 4510,
     "des2": "",
@@ -1656,6 +2247,22 @@
     "unit_type": 5,
     "id": 2037,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0.136,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 4509,
     "des2": "",
@@ -1698,6 +2305,22 @@
     "unit_type": 3,
     "id": 2038,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0.5,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1740,6 +2363,22 @@
     "unit_type": 2,
     "id": 2039,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0.764,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1782,6 +2421,22 @@
     "unit_type": 1,
     "id": 2040,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0.85,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 4505,
     "des2": "",
@@ -1824,6 +2479,22 @@
     "unit_type": 5,
     "id": 2041,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0.038,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1849,6 +2520,22 @@
     "unit_type": 0,
     "id": 2042,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0.136,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1874,6 +2561,22 @@
     "unit_type": 0,
     "id": 2043,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0.5,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 4500,
     "des2": "",
@@ -1899,6 +2602,22 @@
     "unit_type": 0,
     "id": 2044,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0.764,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1924,6 +2643,22 @@
     "unit_type": 0,
     "id": 2045,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0.85,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1949,6 +2684,22 @@
     "unit_type": 0,
     "id": 2046,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0.038,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1974,6 +2725,22 @@
     "unit_type": 0,
     "id": 2047,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0.136,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -2016,6 +2783,22 @@
     "unit_type": 3,
     "id": 2048,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0.5,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 4530,
     "des2": "",
@@ -2058,6 +2841,22 @@
     "unit_type": 4,
     "id": 2049,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0.764,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -2100,6 +2899,22 @@
     "unit_type": 2,
     "id": 2050,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0.85,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -2142,6 +2957,22 @@
     "unit_type": 5,
     "id": 2051,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0.038,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -2184,6 +3015,22 @@
     "unit_type": 1,
     "id": 2052,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0.136,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 4510,
     "des2": "",
@@ -2226,6 +3073,22 @@
     "unit_type": 5,
     "id": 2053,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0.5,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 4509,
     "des2": "",
@@ -2268,6 +3131,22 @@
     "unit_type": 2,
     "id": 2054,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0.764,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -2310,6 +3189,22 @@
     "unit_type": 4,
     "id": 2055,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0.85,
+      "attack_5": 0,
+      "attack_6": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -2352,6 +3247,22 @@
     "unit_type": 1,
     "id": 2056,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0.038
+    },
     "require_level": 1,
     "tier": 4505,
     "des2": "",
@@ -2394,6 +3305,22 @@
     "unit_type": 5,
     "id": 2057,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0.136
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -2419,6 +3346,22 @@
     "unit_type": 0,
     "id": 2058,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0.5
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -2444,6 +3387,22 @@
     "unit_type": 0,
     "id": 2059,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0.764
+    },
     "require_level": 1,
     "tier": 4500,
     "des2": "",
@@ -2469,6 +3428,22 @@
     "unit_type": 0,
     "id": 2060,
     "refresh": {},
+    "defense": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0
+    },
+    "defense_percent": {
+      "attack_1": 0,
+      "attack_2": 0,
+      "attack_3": 0,
+      "attack_4": 0,
+      "attack_5": 0,
+      "attack_6": 0.85
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",

@@ -233,8 +233,6 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.hideView(EnumManager.viewPath.PAGE_ROLE, true)
         // MyProtocols.send_C2SListRedPoints(DataManager._loginSocket)
         MyProtocols.send_C2SEnterGame(DataManager._loginSocket, DataManager.instance.session_id)
-
-
     }
 
 

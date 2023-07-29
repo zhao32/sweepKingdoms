@@ -288,7 +288,7 @@ export default class NewClass extends cc.Component {
         this.myData = myData
         this.enemyData = otherData
 
-        // console.log('myData:' + JSON.stringify(myData))
+        console.log('myData:' + JSON.stringify(myData))
         // console.error('otherData:' + JSON.stringify(otherData))
 
         let grade = DataManager.GameData.build['basic'][3 - 1].grade

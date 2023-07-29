@@ -150,7 +150,6 @@ export default class NewClass extends cc.Component {
     onUpgradeHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_UPGRADE, ...[this.bulidName])
-
     }
 
     onRecruit() {

@@ -160,6 +160,49 @@ export default class GameUtil {
         let proficiency = data.heroData.proficiency
         let talents = data.heroData.talents//DataManager.GameData.Cards[template_id].talents
         let plusList = []
+
+        //装备加成
+        let equips = data.heroData.equips
+        if (equips) {
+            for (let j = 0; j < equips.length; j++) {
+                let equipData
+                for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+                    if (DataManager.instance.itemsList[i].uuid == equips[j]) {
+                        equipData = DataManager.GameData.Equips[DataManager.instance.itemsList[i].template_id]
+                    }
+                }
+
+                if (equipData) {
+                    console.log(`---------------`)
+                    for (let i = 0; i < data.soliderList.length; i++) {
+                        let soliderData = DataManager.GameData.Soldier[data.soliderList[i].arm]
+                        let armType = soliderData.arm
+                        if (data.heroData.talents.indexOf(armType) != -1) {
+                            if (soliderData.defense.attack_1 != 0) {
+                                data.soliderList[i].fight += equipData.defense.attack_1
+                            }
+                            if (soliderData.defense.attack_2 != 0) {
+                                data.soliderList[i].fight += equipData.defense.attack_2
+                            }
+                            if (soliderData.defense.attack_3 != 0) {
+                                data.soliderList[i].fight += equipData.defense.attack_3
+                            }
+
+                            if (soliderData.defense.attack_4 != 0) {
+                                data.soliderList[i].defense += equipData.defense.attack_4
+                            }
+                            if (soliderData.defense.attack_5 != 0) {
+                                data.soliderList[i].defense += equipData.defense.attack_5
+                            }
+                            if (soliderData.defense.attack_6 != 0) {
+                                data.soliderList[i].defense += equipData.defense.attack_6
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         for (let i = 0; i < skills.length; i++) {
             let skillData = DataManager.GameData.Skill[skills[i][0]]
             let getList = this.doCount(skillData, proficiency, talents)

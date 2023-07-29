@@ -637,7 +637,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 80,
+      "width": 72,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -691,7 +691,7 @@
     "_dstBlendFactor": 771,
     "_string": "一级农庄",
     "_N$string": "一级农庄",
-    "_fontSize": 20,
+    "_fontSize": 18,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,

@@ -825,7 +825,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 96,
+      "width": 88,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -879,7 +879,7 @@
     "_dstBlendFactor": 771,
     "_string": "微型农庄",
     "_N$string": "微型农庄",
-    "_fontSize": 24,
+    "_fontSize": 22,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,
