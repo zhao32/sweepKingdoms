@@ -243,8 +243,8 @@ export default class NewClass extends cc.Component {
             node.getChildByName('label0').getComponent(cc.Label).string = DataManager.armList[data.talents[i]] + `兵熟练度：`
             ResManager.loadItemIcon(`hero/soldierType${data.talents[i]}`, node)
 
-            node.getChildByName('proTxt').getComponent(cc.Label).string = `${data.proficiency[i]}/${0}`
-            node.getChildByName(`progressBar`).getComponent(cc.ProgressBar).progress = 0.8
+            node.getChildByName('proTxt').getComponent(cc.Label).string = `${data.proficiency[i]}/${data.proficiencyMax[i]}`
+            node.getChildByName(`progressBar`).getComponent(cc.ProgressBar).progress = data.proficiency[i] / data.proficiencyMax[i]
             node.getChildByName('label1').getComponent(cc.Label).string = `成长潜质` //DataManager.armList[defaultData.talents[i]] + `兵熟练度：`
             // node.getChildByName('label2').getComponent(cc.Label).string = `${data.aptitude[i]}/${999}`
             let aptitudes = 0

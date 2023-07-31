@@ -25,6 +25,9 @@ export default class NewClass extends cc.Component {
     @property(cc.Node)
     contect: cc.Node = null;
 
+    @property(cc.Button)
+    btnRecrt: cc.Button = null;
+
     @property({ type: cc.Sprite, displayName: '士兵图片' })
     soldierSprite: cc.Sprite = null;
 
@@ -101,7 +104,9 @@ export default class NewClass extends cc.Component {
         let jmqGrade = DataManager.GameData.build['basic'][0].grade
         let maxProportion = DataManager.GameData.buildUp["basic"][1][jmqGrade - 1].proportion[2]
 
+
         let grade = DataManager.GameData.build[group][_index - 1].grade
+
         // console.log('兵：' + JSON.stringify(DataManager.GameData.buildUp[group][1][grade - 1]))
         let maxSolider = DataManager.GameData.buildUp[group][1][grade - 1].Soldier
 
@@ -146,6 +151,16 @@ export default class NewClass extends cc.Component {
             // ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES, ...[str])
             ViewManager.instance.showNote(EnumManager.viewPath.NOTE_SOLIDER, ...[data])
         }, this)
+
+        let idxq = data.idx >= 7 ?data.idx - 6 : data.idx
+        let grade1 = DataManager.GameData.build['barracks'][idxq].grade
+        console.log('this.grade1:'+ grade1)
+
+        if (this._idx > 7 && grade1 >= 5) {
+            this.btnRecrt.interactable = true
+        } else {
+            this.btnRecrt.interactable = false
+        }
 
     }
 

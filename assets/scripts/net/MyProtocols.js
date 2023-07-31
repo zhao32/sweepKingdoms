@@ -1462,13 +1462,13 @@ var MyProtocols = {
 					retObj.mine_points[i].hold_player.fight = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.cd_time = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.group = myDecoder.readInt();
+					retObj.mine_points[i].hold_player.bulidLv = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.lv = myDecoder.readInt();
 					//  debugger;
 					retObj.mine_points[i].hold_player.page = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.idx = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.country = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.award = myDecoder.readInt();
-					retObj.mine_points[i].hold_player.bulidLv = myDecoder.readInt();
 
 
 				}
@@ -1490,13 +1490,13 @@ var MyProtocols = {
 					retObj.my_points[i].hold_player.fight = myDecoder.readInt();
 					retObj.my_points[i].hold_player.cd_time = myDecoder.readInt();
 					retObj.my_points[i].hold_player.group = myDecoder.readInt();
+					retObj.my_points[i].hold_player.bulidLv = myDecoder.readInt();
 					retObj.my_points[i].hold_player.lv = myDecoder.readInt();
 
 					retObj.my_points[i].hold_player.page = myDecoder.readInt();
 					retObj.my_points[i].hold_player.idx = myDecoder.readInt();
 					retObj.my_points[i].hold_player.country = myDecoder.readInt();
 					retObj.my_points[i].hold_player.award = myDecoder.readInt();
-					retObj.my_points[i].hold_player.bulidLv = myDecoder.readInt();
 
 				}
 			}
@@ -2432,11 +2432,14 @@ var MyProtocols = {
 				}
 				retObj.cards[i].proficiency = [];  //熟练度 最多三个 对应英雄json 里 熟练兵种
 				retObj.cards[i].talents = [];
+				retObj.cards[i].proficiencyMax = [];
 				let proficiency_size = myDecoder.readInt();
 				if (proficiency_size > 0) {
 					for (var proficiency_id = 0; proficiency_id < proficiency_size; proficiency_id++) {
 						retObj.cards[i].proficiency[proficiency_id] = myDecoder.readInt();
 						retObj.cards[i].talents[proficiency_id] = myDecoder.readInt();
+						retObj.cards[i].proficiencyMax[proficiency_id] = myDecoder.readInt();
+
 					}
 				}
 
@@ -2532,12 +2535,16 @@ var MyProtocols = {
 
 			retObj.card_info.proficiency = [];
 			retObj.card_info.talents = [];
+			retObj.card_info.proficiencyMax = [];
 
+			
 			let card_proficiency_size = myDecoder.readInt();
 			if (card_proficiency_size > 0) {
 				for (var proficiency_idx = 0; proficiency_idx < card_proficiency_size; proficiency_idx++) {
 					retObj.card_info.proficiency[proficiency_idx] = myDecoder.readInt();
 					retObj.card_info.talents[proficiency_idx] = myDecoder.readInt();
+					retObj.card_info.proficiencyMax[proficiency_idx] = myDecoder.readInt();
+
 				}
 			}
 			retObj.card_info.aptitude = [];

@@ -59,7 +59,7 @@ LejiSocket.prototype.initWebSocket = function () {
 LejiSocket.prototype._decodeByteArray = function (rawByteArray) {
     var myDecoder = WsDecoder.alloc(rawByteArray);
     var msgCode = myDecoder.readInt();
-    cc.log("msgCode=%d", msgCode);
+    // cc.log("msgCode=%d", msgCode);
     if (msgCode == NetEvent.ErrorCode) {
         var errcode = myDecoder.readInt();
         // cc.error("error:%d %s",errcode, i18n.t(errcode));

@@ -71,11 +71,11 @@ export default class NewClass extends cc.Component {
         if (data.hold_player.group >= 101) {
             this.nameLabel.string = name
         } else {
-            if (data.hold_player.lv == 0) {
-                this.nameLabel.string = `未建造` + name
+            if (data.hold_player.bulidLv == 0) {
+                this.nameLabel.string = `未建造` + data.hold_player.lv + '级' + name
             } else {
                 let lvList = ["微型", "小型", "中型", "大型", "巨型"]
-                this.nameLabel.string = lvList[data.hold_player.lv - 1] + name
+                this.nameLabel.string = lvList[data.hold_player.bulidLv - 1] + name
             }
         }
 
