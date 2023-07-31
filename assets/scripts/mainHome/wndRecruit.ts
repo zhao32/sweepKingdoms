@@ -51,6 +51,9 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Label, displayName: '可招募兵力2' })
     troopsDisplay2: cc.Label = null;
 
+    @property({ type: cc.Label, displayName: '已有兵力' })
+    hasTroopsDisplay: cc.Label = null;
+
     @property({ type: cc.Label, displayName: '可招募兵总价1' })
     priceDisplay1: cc.Label = null;
 
@@ -108,6 +111,8 @@ export default class NewClass extends cc.Component {
         let price = DataManager.GameData.Soldier[idx - 1].price
         this.soldierPriceDisplay.string = `粮草 x${price}`
         this.troopsDisplay1.string = String(DataManager.playData.population)
+        this.hasTroopsDisplay.string = `已拥有：` + String(DataManager.playData.military_data[this._idx])
+
 
 
         // let barracksList = ["军营", '盾卫训练场', '骑士训练场', '枪兵训练场', '箭手训练场', '法师', '木牛工厂', '军魂祭坛', '部队强化']
@@ -152,6 +157,7 @@ export default class NewClass extends cc.Component {
         DataManager.playData.military_data[retObj.type - 1] += retObj.num
         console.log(JSON.stringify(DataManager.playData.military_data))
         ViewManager.instance.showToast('招募成功')
+        this.hasTroopsDisplay.string = `已拥有：` + String(DataManager.playData.military_data[this._idx])
 
     }
 
@@ -193,6 +199,7 @@ export default class NewClass extends cc.Component {
         this.priceDisplay1.string = `x` + String(price1);
 
         this.soliderType = DataManager.GameData.buildUp[group][_index][grade - 1].soldier[0];
+        this.hasTroopsDisplay.string = `已拥有：` + String(DataManager.playData.military_data[this._idx])
 
     }
 

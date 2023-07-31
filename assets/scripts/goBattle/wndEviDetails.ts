@@ -110,6 +110,7 @@ export default class NewClass extends cc.Component {
         this.troopsLabel.string = `兵力：${data.hold_player.fight}`
 
         this.titleLabel.string = DataManager.mineData[data.hold_player.group].name
+        this.posLabel.string = `坐标：` + DataManager.countyList[data.hold_player.country] + '国'
 
 
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)

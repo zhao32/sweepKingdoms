@@ -104,7 +104,7 @@ export default class NewClass extends cc.Component {
                 uuidList.push(DataManager.instance.itemsList[i].uuid)
             }
         }
-        
+
         console.log('DataManager.instance.itemsList.length  1:' + DataManager.instance.itemsList.length)
         let hasItem = false
         for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
@@ -296,6 +296,10 @@ export default class NewClass extends cc.Component {
             }
             if (!has) DataManager.cardsList.push(...[retObj.card_info])
         }
+
+        DataManager.cardsList.sort((a, b) =>
+            a.template_id - b.template_id
+        )
     }
     errCodeBack(retObj) {
         console.log('接口错误码：' + JSON.stringify(retObj))

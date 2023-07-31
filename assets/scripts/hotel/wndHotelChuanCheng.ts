@@ -123,12 +123,12 @@ export default class NewClass extends cc.Component {
             node.getChildByName('proTxt').getComponent(cc.Label).string = `${data.proficiency[i]}/${0}`
             node.getChildByName(`progressBar`).getComponent(cc.ProgressBar).progress = 0.8
             node.getChildByName('label1').getComponent(cc.Label).string = `成长潜质` //DataManager.armList[defaultData.talents[i]] + `兵熟练度：`
-            if(aptitudes == 0){
+            if (aptitudes == 0) {
                 node.getChildByName('label2').getComponent(cc.Label).string = `:未鉴定`
-            }else{
+            } else {
                 node.getChildByName('label2').getComponent(cc.Label).string = `${data.aptitude[i]}/${999}`
             }
-            
+
         }
 
 
@@ -192,11 +192,11 @@ export default class NewClass extends cc.Component {
             //     }
             // }, this)
 
-            this.headBg.on(cc.Node.EventType.TOUCH_END,()=>{
+            this.headBg.on(cc.Node.EventType.TOUCH_END, () => {
                 // let str = DataManager.getGeneralDes(data.template_id, data.id)
-                ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL,...[data.template_id, data.id])
-            },this)
-    
+                ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL, ...[data.template_id, data.id])
+            }, this)
+
 
         }
 
@@ -248,14 +248,14 @@ export default class NewClass extends cc.Component {
 
     S2CCardAddLevel(data) {
         console.log(`传承返回`)
+        ViewManager.instance.showToast(`传承成功`)
         console.log(JSON.stringify(data))
         this.selectIdList = []
         this.reflashHeads()
         // {"card_id":151120,"level":11,"type":1,"a":[0,6500,0]}
         for (let i = 0; i < data.a.length; i++) {
             let node = this.node.getChildByName("shuxing1").getChildByName(`soldierType${i + 1}`)
-            node.getChildByName('label2').getComponent(cc.Label).string = `${data.a[i]}/${999}`      
-      
+            node.getChildByName('label2').getComponent(cc.Label).string = `${data.a[i]}/${999}`
         }
 
 

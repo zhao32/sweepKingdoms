@@ -108,6 +108,8 @@ export default class NewClass extends cc.Component {
         this.lordLabel.string = data.hold_player.nickname ? `领主：${data.hold_player.nickname}` : `领主：无`
         this.awardLabel.string = `已产出：${data.hold_player.award}`
         this.troopsLabel.string = `兵力：${data.hold_player.fight}`
+        this.posLabel.string = DataManager.countyList[data.hold_player.country] + '国'
+        this.posLabel.string = `坐标：` + DataManager.countyList[data.hold_player.country] + '国'
 
         this.titleLabel.string = name
 

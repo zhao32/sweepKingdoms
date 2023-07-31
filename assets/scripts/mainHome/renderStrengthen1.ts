@@ -54,9 +54,11 @@ export default class NewClass extends cc.Component {
     }
 
     init(data) {
+        console.log(`data:`+JSON.stringify(data))
+        console.log(`type:`+ DataManager.GameData.soliderStren[`${data.type}`])
         this.data = data
         this.gradeDisplay.string = `LV:` + data.lv
-        this.attributeDisplay.string = data.name
+        this.attributeDisplay.string = data.name + `  +${DataManager.GameData.soliderStren[`${data.type}`].plus[`${data.lv}`]}%`
 
         this.priceDisplay.string = `x` + DataManager.GameData.soliderStren["coast"][data.lv]
         this.proBar.progress = data.lv / 30
@@ -102,6 +104,8 @@ export default class NewClass extends cc.Component {
         if (this.data.lv == 30) {
             this.node.getChildByName('btnStren').getComponent(cc.Button).interactable = false
         }
+        this.attributeDisplay.string = this.data.name + `  +${DataManager.GameData.soliderStren[`${this.data.type}`].plus[`${lv}`]}%`
+
 
     }
 

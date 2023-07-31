@@ -196,6 +196,7 @@ export default class NewClass extends cc.Component {
 
     S2CCardAddLevel(data) {
         console.log(`升级返回`)
+        ViewManager.instance.showToast(`升级成功`)
         // "card id";1,"level"4,"level exp":2508
         console.log(JSON.stringify(data))
         this.gradeDisplay.string = 'LV ' + data.level

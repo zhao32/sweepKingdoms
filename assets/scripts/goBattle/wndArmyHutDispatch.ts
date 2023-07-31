@@ -157,7 +157,12 @@ export default class NewClass extends cc.Component {
                 }
             }
             console.log(`tempId:` + tempId)
-            heroRender.getComponent(battleHeroRender).init(card)
+            if (card) {
+                heroRender.getComponent(battleHeroRender).init(card)
+            } else {
+                this.node.getChildByName(`noHeroDefine`).active = true
+                this.node.getChildByName(`heroRender`).active = false
+            }
 
             // heroRender.getComponent(battleHeroRender).init(DataManager.GameData.Cards[tempId])
 

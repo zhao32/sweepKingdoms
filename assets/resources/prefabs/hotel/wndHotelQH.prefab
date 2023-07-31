@@ -99,17 +99,17 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 331
+        "__id__": 335
       },
       {
-        "__id__": 332
+        "__id__": 336
       },
       {
-        "__id__": 333
+        "__id__": 337
       }
     ],
     "_prefab": {
-      "__id__": 334
+      "__id__": 338
     },
     "_opacity": 255,
     "_color": {
@@ -9687,8 +9687,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "小幅提升熟练度",
-    "_N$string": "小幅提升熟练度",
+    "_string": "小幅提升某一兵种熟练度",
+    "_N$string": "小幅提升某一兵种熟练度",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -10713,8 +10713,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "大幅提升熟练度",
-    "_N$string": "大幅提升熟练度",
+    "_string": "大幅提升某一兵种熟练度",
+    "_N$string": "大幅提升某一兵种熟练度",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -11574,19 +11574,22 @@
     "_children": [
       {
         "__id__": 323
+      },
+      {
+        "__id__": 327
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 327
+        "__id__": 331
       },
       {
-        "__id__": 328
+        "__id__": 332
       }
     ],
     "_prefab": {
-      "__id__": 330
+      "__id__": 334
     },
     "_opacity": 255,
     "_color": {
@@ -11770,6 +11773,140 @@
     "sync": false
   },
   {
+    "__type__": "cc.Node",
+    "_name": "New Label",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 322
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 328
+      },
+      {
+        "__id__": 329
+      }
+    ],
+    "_prefab": {
+      "__id__": 330
+    },
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 204.49,
+      "height": 25.2
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        47,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "_groupIndex": 0,
+    "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 327
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
+    "_string": "将领鉴定消耗1000元宝",
+    "_N$string": "将领鉴定消耗1000元宝",
+    "_fontSize": 20,
+    "_lineHeight": 20,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_batchAsBitmap": false,
+    "_styleFlags": 0,
+    "_underlineHeight": 0,
+    "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "Arial",
+    "_N$overflow": 0,
+    "_N$cacheMode": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.LabelShadow",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 327
+    },
+    "_enabled": true,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "_offset": {
+      "__type__": "cc.Vec2",
+      "x": 2,
+      "y": -2
+    },
+    "_blur": 2,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "2c498e1a-cfd7-4675-82d1-ec40e009689f"
+    },
+    "fileId": "ba6spoOTtLFJwKcLd/IhG8",
+    "sync": false
+  },
+  {
     "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
@@ -11819,7 +11956,7 @@
     "zoomScale": 1.2,
     "clickEvents": [
       {
-        "__id__": 329
+        "__id__": 333
       }
     ],
     "_N$interactable": true,

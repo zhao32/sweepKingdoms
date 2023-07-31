@@ -292,8 +292,9 @@ export default class NewClass extends cc.Component {
         // console.error('otherData:' + JSON.stringify(otherData))
 
         let grade = DataManager.GameData.build['basic'][3 - 1].grade
+        let plusHp = 0
         let levelData = DataManager.GameData.buildUp['basic'][3][grade - 1]
-        let plusHp = levelData.protect[0]
+        if (levelData) plusHp = levelData.protect[0]
         let myPlusList = GameUtil.instance.getPlusAttriList(myData)
         for (let i = 0; i < myData.soliderList.length; i++) {
             let hp = DataManager.GameData.Soldier[myData.soliderList[i].arm].hp + plusHp
