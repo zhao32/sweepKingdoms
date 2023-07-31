@@ -273,7 +273,7 @@ export default class NewClass extends cc.Component {
         //     this.node.getChildByName(`starGet${i}`).active = true
         // }
 
-        this.starDisplay.string = `x` + data.grade
+        this.starDisplay.string = `x` + (data.grade + 1)
 
         let maxExp = DataManager.GameData.CardLevels[defaultData.potential][data.level - 1][0]
         this.expProTxt.string = `${data.exp}/${maxExp}`

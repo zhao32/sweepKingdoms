@@ -71,7 +71,7 @@ export default class NewClass extends cc.Component {
         ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.headBg)
         ResManager.loadItemIcon(`hero/heroNameBg${defaultData.quality - 1}`, this.heroNameBg)
 
-        this.starDisplay.string = `x${data.grade}`
+        this.starDisplay.string = `x${data.grade + 1}`
         this.gradeDisplay.string = 'LV ' + data.level
 
 
@@ -124,7 +124,7 @@ export default class NewClass extends cc.Component {
         for (let index = 0; index < data.aptitude.length; index++) {
             aptitudes += data.aptitude[index]
         }
-        if ( aptitudes == 0) {
+        if (aptitudes == 0) {
             this.node.getChildByName('btn2').active = true
             this.node.getChildByName(`mask`).active = true
         } else {

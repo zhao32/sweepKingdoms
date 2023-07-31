@@ -80,12 +80,12 @@ export default class NewClass extends cc.Component {
         this.proBar.progress = data.physical / 200
         this.proTxt.string = `${data.physical}/${200}`
         this.gradeDisplay.string = 'LV ' + data.level
-        this.starDisplay.string = `x${data.grade}`
+        this.starDisplay.string = `x${data.grade + 1}`
 
-        this.headBg.on(cc.Node.EventType.TOUCH_END,()=>{
+        this.headBg.on(cc.Node.EventType.TOUCH_END, () => {
             // let str = DataManager.getGeneralDes(data.template_id, data.id)
-            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL,...[data.template_id, data.id])
-        },this)
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL, ...[data.template_id, data.id])
+        }, this)
 
         // for (let i = 1; i <= 3; i++) {
         //     this.node.getChildByName(`starGet${i}`).active = false

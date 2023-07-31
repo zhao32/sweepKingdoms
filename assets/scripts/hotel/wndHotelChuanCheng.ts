@@ -87,7 +87,7 @@ export default class NewClass extends cc.Component {
         //     ResManager.loadItemIcon(`hero/soldierType${defaultData.talents[i]}`, node)
         // }
 
-        this.starDisplay.string = `x${data.grade}`
+        this.starDisplay.string = `x${data.grade + 1}`
         this.gradeDisplay.string = 'LV ' + data.level
 
         // this.proBar.progress = data.physical / 200

@@ -61,7 +61,7 @@ export default class NewClass extends cc.Component {
     }
 
     init(data) {
-        this._data =data
+        this._data = data
         let defaultData = DataManager.GameData.Cards[data.template_id]
         this.nameDisplay.string = DataManager.qualityList[defaultData.quality] + "  " + defaultData.name
         ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.head)
@@ -81,9 +81,9 @@ export default class NewClass extends cc.Component {
         this.proBar.progress = data.physical / 200
         this.proTxt.string = `${data.physical}/${200}`
         this.gradeDisplay.string = 'LV ' + data.level
-        this.starDisplay.string = `x${data.grade}`
+        this.starDisplay.string = `x${data.grade + 1}`
 
-        if (data.level >= 60 && data.grade >= 6) {
+        if (data.level >= 60 && data.grade >= 5) {
             this.node.getChildByName(`btnZS`).getComponent(cc.Button).interactable = true
         } else {
             this.node.getChildByName(`btnZS`).getComponent(cc.Button).interactable = false
@@ -101,12 +101,10 @@ export default class NewClass extends cc.Component {
 
         NetEventDispatcher.addListener(NetEvent.S2CCardAddStar, this.S2CCardAddStar, this)
 
-        this.headBg.on(cc.Node.EventType.TOUCH_END,()=>{
+        this.headBg.on(cc.Node.EventType.TOUCH_END, () => {
             // let str = DataManager.getGeneralDes(data.template_id, data.id)
-            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL,...[data.template_id, data.id])
-        },this)
-
-
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL, ...[data.template_id, data.id])
+        }, this)
     }
 
     doZSHandler() {
@@ -116,10 +114,10 @@ export default class NewClass extends cc.Component {
 
     protected onDestroy(): void {
         NetEventDispatcher.removeListener(NetEvent.S2CCardAddStar, this.S2CCardAddStar, this)
-  
+
     }
 
-    
+
     S2CCardAddStar(data) {
         console.log(`转生返回`)
         console.log(JSON.stringify(data))

@@ -89,7 +89,7 @@ export default class NewClass extends cc.Component {
         this.proBar.progress = data.physical / 200
         this.proTxt.string = `${data.physical}/${200}`
         this.gradeDisplay.string = 'LV ' + data.level
-        this.starDisplay.string = `x${data.grade}`
+        this.starDisplay.string = `x${data.grade + 1}`
 
         this.headBg.on(cc.Node.EventType.TOUCH_END, () => {
             // let str = DataManager.getGeneralDes(data.template_id, data.id)

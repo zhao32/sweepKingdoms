@@ -57,7 +57,7 @@ export default class heroItem extends cc.Component {
         // for (let i = 1; i <= data.grade; i++) {
         //     this.node.getChildByName(`starGet${i}`).active = true
         // }
-        this.starDisplay.string = `x` + data.grade
+        this.starDisplay.string = `x` +(data.grade + 1)
 
         this.headBg.on(cc.Node.EventType.TOUCH_END,()=>{
             // let str = DataManager.getGeneralDes(data.template_id, data.id)

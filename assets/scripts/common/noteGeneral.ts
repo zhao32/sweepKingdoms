@@ -74,7 +74,7 @@ export default class NewClass extends cc.Component {
 
 
         this.gradeDisplay.string = 'LV ' + cardInfo.level
-        this.starDisplay.string = `x${cardInfo.grade}`
+        this.starDisplay.string = `x${cardInfo.grade+1}`
 
         for (let i = 0; i < 3; i++) {
             let node = this.node.getChildByName("shuxing").getChildByName(`soldierType${i + 1}`)

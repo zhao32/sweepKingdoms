@@ -75,7 +75,7 @@ export default class NewClass extends cc.Component {
         ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.debris)
         ResManager.loadItemIcon(`hero/debrisBg${defaultData.quality - 1}`, this.debrisBg)
 
-        this.starDisplay.string = `x${data.grade}`
+        this.starDisplay.string = `x${data.grade + 1}`
         this.gradeDisplay.string = 'LV ' + data.level
 
 
@@ -88,10 +88,10 @@ export default class NewClass extends cc.Component {
 
         NetEventDispatcher.addListener(NetEvent.S2CCardAddStar, this.S2CCardAddStar, this)
 
-        this.headBg.on(cc.Node.EventType.TOUCH_END,()=>{
+        this.headBg.on(cc.Node.EventType.TOUCH_END, () => {
             // let str = DataManager.getGeneralDes(data.template_id, data.id)
-            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL,...[data.template_id, data.id])
-        },this)
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL, ...[data.template_id, data.id])
+        }, this)
 
     }
 

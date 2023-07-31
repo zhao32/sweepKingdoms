@@ -78,7 +78,7 @@ export default class NewClass extends cc.Component {
         //     this.node.getChildByName(`starGet${i}`).active = true            
         // }
 
-        this.starLabel.string = data.grade
+        this.starLabel.string = data.grade + 1
 
     }
 

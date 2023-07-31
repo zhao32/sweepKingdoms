@@ -78,7 +78,7 @@ export default class NewClass extends cc.Component {
         ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.headBg)
         ResManager.loadItemIcon(`hero/heroNameBg${defaultData.quality - 1}`, this.heroNameBg)
 
-        this.starDisplay.string = `x${data.grade}`
+        this.starDisplay.string = `x${data.grade + 1}`
         this.gradeDisplay.string = 'LV ' + data.level
 
         this.contect.removeAllChildren()
@@ -141,10 +141,10 @@ export default class NewClass extends cc.Component {
         }
 
 
-        this.headBg.on(cc.Node.EventType.TOUCH_END,()=>{
+        this.headBg.on(cc.Node.EventType.TOUCH_END, () => {
             // let str = DataManager.getGeneralDes(data.template_id, data.id)
-            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL,...[data.template_id, data.id])
-        },this)
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL, ...[data.template_id, data.id])
+        }, this)
 
         // update (dt) {}
     }
@@ -177,14 +177,14 @@ export default class NewClass extends cc.Component {
         // console.log(`this.selectIdList:`+this.selectIdList)
         // console.log(`this.myId:`+this.myId)
         let objList = []
-        for (let i = 0; i <  this.selectIdList.length; i++) {
+        for (let i = 0; i < this.selectIdList.length; i++) {
             let item = {
-                id:this.selectIdList[i],
-                count:1
+                id: this.selectIdList[i],
+                count: 1
             }
             objList.push(item)
         }
-        console.log(`objList:`+JSON.stringify(objList) )
+        console.log(`objList:` + JSON.stringify(objList))
 
         if (this.selectIdList.length > 0) {
             MyProtocols.send_C2SCardAddLevel(DataManager._loginSocket, this.myId, objList)
@@ -208,7 +208,7 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < DataManager.cardsList.length; i++) {
             if (DataManager.cardsList[i].id != data.card_id) {
                 cards.push(DataManager.cardsList[i])
-            }else{
+            } else {
                 DataManager.cardsList[i].level = data.level
             }
         }
