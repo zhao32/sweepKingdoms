@@ -1468,6 +1468,8 @@ var MyProtocols = {
 					retObj.mine_points[i].hold_player.idx = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.country = myDecoder.readInt();
 					retObj.mine_points[i].hold_player.award = myDecoder.readInt();
+					retObj.mine_points[i].hold_player.bulidLv = myDecoder.readInt();
+
 
 				}
 			}
@@ -1494,6 +1496,8 @@ var MyProtocols = {
 					retObj.my_points[i].hold_player.idx = myDecoder.readInt();
 					retObj.my_points[i].hold_player.country = myDecoder.readInt();
 					retObj.my_points[i].hold_player.award = myDecoder.readInt();
+					retObj.my_points[i].hold_player.bulidLv = myDecoder.readInt();
+
 				}
 			}
 		}
