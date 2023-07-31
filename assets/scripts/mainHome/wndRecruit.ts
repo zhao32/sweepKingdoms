@@ -152,11 +152,13 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showNote(EnumManager.viewPath.NOTE_SOLIDER, ...[data])
         }, this)
 
-        let idxq = data.idx >= 7 ?data.idx - 6 : data.idx
+        let idxq = data.idx >= 7 ? data.idx - 6 : data.idx
         let grade1 = DataManager.GameData.build['barracks'][idxq].grade
-        console.log('this.grade1:'+ grade1)
+        console.log('this.grade1:' + grade1)
+        console.log('this.idx:' + this._idx)
 
-        if (this._idx > 7 && grade1 >= 5) {
+
+        if ((this._idx > 7 && grade1 >= 5) || this._idx <= 7) {
             this.btnRecrt.interactable = true
         } else {
             this.btnRecrt.interactable = false
