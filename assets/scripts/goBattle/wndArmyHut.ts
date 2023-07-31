@@ -137,12 +137,21 @@ export default class NewClass extends cc.Component {
                 }
 
             }
+
+            if (card) {
+                this.myHeroData = card//DataManager.GameData.Cards[card.template_id]
+                heroRender.getComponent(battleHeroRender).init(card)
+            } else {
+                this.node.getChildByName(`noHeroDefine`).active = true
+                this.node.getChildByName(`heroRender`).active = false
+            }
+
             // this.myHeroData = DataManager.GameData.Cards[data.formation.a]
             // heroRender.getComponent(battleHeroRender).init(DataManager.GameData.Cards[data.formation.a])
 
-            this.myHeroData = card//DataManager.GameData.Cards[card.template_id]
+           
             // heroRender.getComponent(battleHeroRender).init(DataManager.GameData.Cards[card.template_id])
-            heroRender.getComponent(battleHeroRender).init(card)
+            
         }
     }
 
