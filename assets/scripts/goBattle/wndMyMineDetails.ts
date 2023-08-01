@@ -153,11 +153,15 @@ export default class NewClass extends cc.Component {
     S2CMineConstructionUp(data) {
         console.log(`升级建造返回`)
         console.log(JSON.stringify(data))
-        this._data.hold_player.lv = data.lv
+        this._data.hold_player.bulidLv = data.lv
         if (data.lv == 1) {
+            ViewManager.instance.showToast(`建筑建造成功`)
             this.node.getChildByName('btnBulid').active = false
             this.node.getChildByName('btnUpLevel').active = true
             this.node.getChildByName('btnRecruit').getComponent(cc.Button).interactable = true
+        }else{
+            ViewManager.instance.showToast(`建筑升级成功`)
+
         }
 
         let name = DataManager.mineData[this._data.hold_player.group].name
@@ -213,7 +217,7 @@ export default class NewClass extends cc.Component {
 
     onBulidORUpHandler() {
         console.log(`this._data:` + JSON.stringify(this._data))
-        MyProtocols.send_C2SMineConstructionUp(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country, this._data.hold_player.lv)
+        MyProtocols.send_C2SMineConstructionUp(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country, this._data.hold_player.bulidLv)
     }
 
     // update (dt) {}
