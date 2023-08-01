@@ -47,14 +47,22 @@ export default class NewClass extends cc.Component {
 
     start() {
         this.icon.on(cc.Node.EventType.TOUCH_END, () => {
-            if (this._data.id != 0) {
-                if (this._data.level < 10) {
-                    DataManager.wndHotelDetail.openSkillstUpPanel(this._data, this._idx)
-                } else {
-                    ViewManager.instance.showToast(`该技能已达到10级最高级`)
-                }
-            } else {
+            let skillSt = DataManager.GameData.SkillStudy[this._data.id]
 
+            if (this._data.id != 0) {
+                if (skillSt.name.length - 2 == 0) {
+                    if (this._data.level < 10) {
+                        DataManager.wndHotelDetail.openSkillstUpPanel(this._data, this._idx)
+                    } else {
+                        ViewManager.instance.showToast(`该技能已达到10级最高级`)
+                    }
+                } else {
+                    if (this._data.level < 6) {
+                        DataManager.wndHotelDetail.openSkillstUpPanel(this._data, this._idx)
+                    } else {
+                        ViewManager.instance.showToast(`该技能已达到6级最高级`)
+                    }
+                }
             }
             // MyProtocols.send_C2SSKillStUp(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this._idx, this._data.id, this._data.level + 1)
         }, this)
