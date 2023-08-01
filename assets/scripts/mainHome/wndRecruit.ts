@@ -116,7 +116,8 @@ export default class NewClass extends cc.Component {
         let price = DataManager.GameData.Soldier[idx - 1].price
         this.soldierPriceDisplay.string = `粮草 x${price}`
         this.troopsDisplay1.string = String(DataManager.playData.population)
-        this.hasTroopsDisplay.string = `已拥有：` + String(DataManager.playData.military_data[this._idx])
+        console.log('--------------' + this._idx, DataManager.playData.military_data[this._idx - 2])
+        this.hasTroopsDisplay.string = `已拥有：` + String(DataManager.playData.military_data[this._idx - 2])
 
 
 
@@ -140,7 +141,7 @@ export default class NewClass extends cc.Component {
         this.priceDisplay1.string = `x` + String(DataManager.GameData.buildUp[group][_index][grade - 1].population[1] * 0.01 * (DataManager.playData.population) * price);
 
         console.log(`------:` + JSON.stringify(DataManager.GameData.buildUp[group][_index][grade - 1]))
-        this.soliderType = DataManager.GameData.buildUp[group][_index][grade - 1].soldier[0];
+        this.soliderType = DataManager.GameData.Soldier[idx - 1].idx//DataManager.GameData.buildUp[group][this._idx][grade - 1].soldier[0];
 
         ResManager.loadItemIcon(`soliderHead/${DataManager.GameData.Soldier[idx - 1].name}`, this.soldierSprite.node)
         NetEventDispatcher.addListener(NetEvent.S2CRecSoldiers, this.S2CRecSoldiers, this)
@@ -174,7 +175,7 @@ export default class NewClass extends cc.Component {
         DataManager.playData.military_data[retObj.type - 1] += retObj.num
         console.log(JSON.stringify(DataManager.playData.military_data))
         ViewManager.instance.showToast('招募成功')
-        this.hasTroopsDisplay.string = `已拥有：` + String(DataManager.playData.military_data[this._idx])
+        this.hasTroopsDisplay.string = `已拥有：` + String(DataManager.playData.military_data[this._idx - 2])
 
     }
 
@@ -215,8 +216,8 @@ export default class NewClass extends cc.Component {
         price1 = Math.floor(price1)
         this.priceDisplay1.string = `x` + String(price1);
 
-        this.soliderType = DataManager.GameData.buildUp[group][_index][grade - 1].soldier[0];
-        this.hasTroopsDisplay.string = `已拥有：` + String(DataManager.playData.military_data[this._idx])
+        this.soliderType = DataManager.GameData.Soldier[idx - 1].idx//DataManager.GameData.buildUp[group][this._idx][grade - 1].soldier[0];
+        this.hasTroopsDisplay.string = `已拥有：` + String(DataManager.playData.military_data[this._idx - 2])
 
     }
 

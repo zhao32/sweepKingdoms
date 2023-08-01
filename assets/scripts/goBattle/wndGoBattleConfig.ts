@@ -325,7 +325,7 @@ export default class NewClass extends cc.Component {
                 ViewManager.instance.showToast('请选择上阵士兵')
                 return
             }
-            console.log(`this.myHeroData.id:` + this.myHeroData.id)
+            // console.log(`this.myHeroData.id:` + this.myHeroData.id)
 
             let data = { fid: 1, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.id, b: 0, c: 0, soldier: myData.soliderList }
             console.log(JSON.stringify(data))

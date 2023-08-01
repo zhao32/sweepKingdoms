@@ -76,7 +76,7 @@ export default class NewClass extends cc.Component {
                     this.nameLabel.string = `未建造` + data.hold_player.lv + "级" + filedName + name.charAt(0) + '...'
                 } else {
                     let lvList = ["微型", "小型", "中型", "大型", "巨型"]
-                    this.nameLabel.string = lvList[data.hold_player.bulidLv - 1] + name.charAt(0) + '...'
+                    this.nameLabel.string = data.hold_player.lv + "级" + lvList[data.hold_player.bulidLv - 1] + name.charAt(0) + '...'
                 }
             }
 

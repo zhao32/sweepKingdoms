@@ -92,7 +92,7 @@ export default class NewClass extends cc.Component {
                 this.nameLabel.string = `未建造` + data.hold_player.lv + '级' + name
             } else {
                 let lvList = ["微型", "小型", "中型", "大型", "巨型"]
-                this.nameLabel.string = lvList[data.hold_player.bulidLv - 1] + name
+                this.nameLabel.string =data.hold_player.lv + "级" +  lvList[data.hold_player.bulidLv - 1] + name
             }
         }
 
@@ -103,6 +103,8 @@ export default class NewClass extends cc.Component {
         this.lordLabel.string = `领主：${data.hold_player.nickname}`
         this.awardLabel.string = `已产出：${DataManager.curMineDetailData.gains}`
         this.troopsLabel.string = `兵力：${data.hold_player.fight}`
+        this.posLabel.string = `坐标：` + DataManager.countyList[data.hold_player.country] + '国'
+
 
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
 
