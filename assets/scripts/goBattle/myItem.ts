@@ -55,6 +55,17 @@ export default class NewClass extends cc.Component {
         this.nameLabel.string = name
         this.fightLabel.string = data.fight
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
+
+        if (data.group >= 101) {
+            this.nameLabel.string = name
+        } else {
+            if (data.bulidLv == 0) {
+                this.nameLabel.string = `未建造` + data.lv + '级' + name
+            } else {
+                let lvList = ["微型", "小型", "中型", "大型", "巨型"]
+                this.nameLabel.string = data.lv + "级" + lvList[data.bulidLv - 1] + name
+            }
+        }
     }
 
     // update (dt) {}
