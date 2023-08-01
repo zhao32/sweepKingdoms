@@ -48,7 +48,7 @@ export default class NewClass extends cc.Component {
     start() {
         this.icon.on(cc.Node.EventType.TOUCH_END, () => {
             let skillSt = DataManager.GameData.SkillStudy[this._data.id]
-console.log(`skillSt.name.length - 2:`+(skillSt.name.length - 2))
+            // console.log(`skillSt.name.length - 2:` + (skillSt.name.length - 2))
             if (this._data.id != 0) {
                 if (skillSt.name.length - 2 == 4) {
                     if (this._data.level < 10 - 1) {
