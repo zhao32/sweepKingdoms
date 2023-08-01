@@ -917,8 +917,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "金币升级",
-    "_N$string": "金币升级",
+    "_string": "元宝升级",
+    "_N$string": "元宝升级",
     "_fontSize": 28.1,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -1254,8 +1254,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "元宝升级",
-    "_N$string": "元宝升级",
+    "_string": "金币升级",
+    "_N$string": "金币升级",
     "_fontSize": 28.1,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -2363,10 +2363,10 @@
       "__id__": 56
     },
     "coinLabel": {
-      "__id__": 22
+      "__id__": 31
     },
     "goldLabel": {
-      "__id__": 31
+      "__id__": 22
     },
     "pic": {
       "__id__": 14
