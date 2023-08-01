@@ -1551,7 +1551,7 @@ var MyProtocols = {
 			// retObj.formation.i = myDecoder.readInt();
 			// retObj.formation.j = myDecoder.readInt();
 		}
-
+		
 		/**已经在矿里的兵 */
 		retObj.soliderUsed = []
 		let bing_size = myDecoder.readInt();
@@ -1563,8 +1563,6 @@ var MyProtocols = {
 				retObj.soliderUsed[i].count = myDecoder.readInt();
 			}
 		}
-
-		/**可以往矿里调的兵 */
 		retObj.soliderUse = []
 		let solider_size = myDecoder.readInt();
 		if (solider_size > 0) {
@@ -1575,6 +1573,8 @@ var MyProtocols = {
 				retObj.soliderUse[i].count = myDecoder.readInt();
 			}
 		}
+		/**可以往矿里调的兵 */
+
 		retObj.cards = [];
 		let cards_size = myDecoder.readInt();
 		if (cards_size > 0) {

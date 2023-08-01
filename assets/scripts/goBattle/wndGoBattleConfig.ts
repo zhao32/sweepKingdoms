@@ -104,7 +104,7 @@ export default class NewClass extends cc.Component {
 
         let workKeyList = []
         for (let i = 0; i < retObj.exclude_cards.length; i++) {
-            workKeyList.push(retObj.exclude_cards[i].id)
+            workKeyList.push(retObj.exclude_cards[i])
         }
 
         // for (let i = 0; i < retObj.cards.length; i++) {

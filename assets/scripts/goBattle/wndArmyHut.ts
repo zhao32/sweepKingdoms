@@ -69,15 +69,15 @@ export default class NewClass extends cc.Component {
         // {"level_index":0,"point_index":22,"base_info":{"id":0,"nickname":"","level":0,"icon":0,"head_frame_id":1,"fight":0,"cd_time":0},"formation":{"fid":0,"formationId":0,"forward":0,"flip":0,"a":0,"b":0,"c":0},"soliderUsed":[],"soliderUse":[],"cards":[],"exclude_cards":[],"rand_key":0}
 
         if (this._data.hold_player.group == 101) {
-            for (let i = 0; i < data.soliderUsed.length; i++) {
-                if (data.soliderUsed[i].arm != 0) {
-                    this.soliders.push(data.soliderUsed[i])
+            for (let i = 0; i < data.soliderUse.length; i++) {
+                if (data.soliderUse[i].arm != 0) {
+                    this.soliders.push(data.soliderUse[i])
                 }
             }
 
             let workKeyList = []
             for (let i = 0; i < data.exclude_cards.length; i++) {
-                workKeyList.push(data.exclude_cards[i].id)
+                workKeyList.push(data.exclude_cards[i])
             }
 
             // for (let i = 0; i < data.cards.length; i++) {
@@ -191,7 +191,7 @@ export default class NewClass extends cc.Component {
                 this.node.getChildByName(`heroRender`).active = true
 
 
-                let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.id, b: 0, c: 0, soldier: this.soliders }
+                let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: this.myHeroData.id, b: 0, c: 0, soldier: [] }
                 console.log(JSON.stringify(data))
                 console.log('this._data:' + JSON.stringify(this._data))
                 // MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)

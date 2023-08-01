@@ -1,5 +1,5 @@
 {
-  "575": {
+  "501": {
     "craft_num": 15,
     "name": "郑十之魂",
     "bind_stages": [
@@ -11,7 +11,7 @@
     "icon": "blueMage2Purple",
     "quality": 5
   },
-  "583": {
+  "502": {
     "craft_num": 15,
     "name": "吴九之魂",
     "bind_stages": [
@@ -23,7 +23,7 @@
     "icon": "blueArcher1Blue",
     "quality": 5
   },
-  "591": {
+  "505": {
     "craft_num": 15,
     "name": "周八之魂",
     "bind_stages": [
@@ -35,7 +35,7 @@
     "icon": "blueMage1Red",
     "quality": 5
   },
-  "599": {
+  "503": {
     "craft_num": 15,
     "name": "孙七之魂",
     "bind_stages": [
@@ -503,5 +503,45 @@
     "des": "收集15个就可以召唤英雄王翦。同时也是王翦升阶到+5及以上的必要材料",
     "icon": "dingfeng",
     "quality": 3
+  },
+  "574": {
+    "craft_num": 15,
+    "name": "荀子之魂",
+
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 26,
+    "des": "收集15个就可以召唤英雄荀子。同时也是荀子升阶到+5及以上的必要材料",
+    "quality": 2
+  },
+  "576": {
+    "craft_num": 15,
+    
+    "name": "韩信之魂",
+
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 25,
+    "des": "收集15个就可以召唤英雄韩信。同时也是韩信升阶到+5及以上的必要材料",
+
+    "quality": 2
+  },
+  "577": {
+    "craft_num": 15,
+    
+    "name": "刘邦之魂",
+
+    "bind_stages": [
+      101,
+      102
+    ],
+    "card_id": 24,
+    "des": "收集15个就可以召唤英雄刘邦。同时也是刘邦升阶到+5及以上的必要材料",
+
+    "quality": 2
   }
 }

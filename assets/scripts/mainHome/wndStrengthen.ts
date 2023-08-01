@@ -149,7 +149,7 @@ export default class NewClass extends cc.Component {
         let hasData = false
         for (let i = 0; i < DataManager.playData.storgleave_data.length; i++) {
             if (data.idx == DataManager.playData.storgleave_data[i].type) {
-                DataManager.playData.storgleave_data[i].lv[data.type] = data.lv
+                DataManager.playData.storgleave_data[i].lv[data.type - 1] = data.lv
                 hasData = true
             }
         }
@@ -179,7 +179,7 @@ export default class NewClass extends cc.Component {
                 lvList = DataManager.playData.storgleave_data[i].lv
             }
         }
-
+        console.log(`lvList:` + JSON.stringify(lvList))
         let tranArr = []
         if (lvList.length > 0) {
             this.soliderData.defense.attack_1 > 0 ? tranArr.push({ idx: this.soliderData.idx, lv: lvList[0], type: 1, name: "挥砍攻击" }) : null

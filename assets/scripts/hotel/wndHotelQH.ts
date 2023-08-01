@@ -139,7 +139,7 @@ export default class NewClass extends cc.Component {
         // {"card_id":151120,"level":6,"type":4,"a":[1819,179,219]}
         for (let i = 0; i < data.a.length; i++) {
             let node = this.node.getChildByName("shuxing").getChildByName(`soldierType${i + 1}`)
-            node.getChildByName('proTxt').getComponent(cc.Label).string = `${data.a[i]}/${0}`
+            node.getChildByName('proTxt').getComponent(cc.Label).string = `${data.a[i]}/${this._data.proficiencyMax[i]}`
         }
         this._data.proficiency = data.a
         ViewManager.instance.showToast(`强化成功`)

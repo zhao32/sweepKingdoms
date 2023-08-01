@@ -55,7 +55,7 @@ export default class NewClass extends cc.Component {
 
     init(data) {
         console.log(`data:`+JSON.stringify(data))
-        console.log(`type:`+ DataManager.GameData.soliderStren[`${data.type}`])
+        // console.log(`type:`+ JSON.stringify(DataManager.GameData.soliderStren[`${data.type}`]) )
         this.data = data
         this.gradeDisplay.string = `LV:` + data.lv
         this.attributeDisplay.string = data.name + `  +${DataManager.GameData.soliderStren[`${data.type}`].plus[`${data.lv}`]}%`
@@ -85,7 +85,7 @@ export default class NewClass extends cc.Component {
         }
 
         // { idx: data.idx, type: 1, name: "挥砍攻击" }
-        MyProtocols.send_C2SSoliderStren(DataManager._loginSocket, this.data.lv + 1, this.data.idx, this.data.type - 1)
+        MyProtocols.send_C2SSoliderStren(DataManager._loginSocket, this.data.lv + 1, this.data.idx, this.data.type)
 
 
     }

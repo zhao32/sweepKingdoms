@@ -80,6 +80,8 @@ export default class NewClass extends cc.Component {
 
     _idx: number = 0
 
+    _index: number = 0
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -98,7 +100,8 @@ export default class NewClass extends cc.Component {
         }
         this._idx = idx
 
-        let _index = idx > 8 ? idx - 6 : idx
+        let _index = idx >= 8 ? idx - 6 : idx
+        this._index = _index
         let group = 'barracks'
         /**居民区等级 */
         let jmqGrade = DataManager.GameData.build['basic'][0].grade
@@ -138,7 +141,7 @@ export default class NewClass extends cc.Component {
 
 
 
-        this.priceDisplay1.string = `x` + String(DataManager.GameData.buildUp[group][_index][grade - 1].population[1] * 0.01 * (DataManager.playData.population) * price);
+        this.priceDisplay1.string = `x` + DataManager.playData.population * price//String(DataManager.GameData.buildUp[group][_index][grade - 1].population[1] * 0.01 * (DataManager.playData.population) * price);
 
         console.log(`------:` + JSON.stringify(DataManager.GameData.buildUp[group][_index][grade - 1]))
         this.soliderType = DataManager.GameData.Soldier[idx - 1].idx//DataManager.GameData.buildUp[group][this._idx][grade - 1].soldier[0];
@@ -163,6 +166,11 @@ export default class NewClass extends cc.Component {
             this.btnRecrt.interactable = true
         } else {
             this.btnRecrt.interactable = false
+        }
+
+
+        if (this._idx >= 14 && DataManager.playData.nation_id != 0) {
+            this.btnRecrt.interactable = true
         }
 
     }
@@ -190,7 +198,8 @@ export default class NewClass extends cc.Component {
         //         }
         //     }
         // }
-        let _index = idx > 8 ? idx - 6 : idx
+        let _index = idx >= 8 ? idx - 6 : idx
+        this._index = _index
 
         let grade = DataManager.GameData.build[group][_index - 1].grade
         // console.log('兵：' + JSON.stringify(DataManager.GameData.buildUp[group][1][grade - 1]))
@@ -214,7 +223,7 @@ export default class NewClass extends cc.Component {
         this.troopsDisplay1.string = String(DataManager.playData.population)
         let price1 = DataManager.GameData.buildUp[group][_index][grade - 1].population[1] * 0.01 * (DataManager.playData.population) * price
         price1 = Math.floor(price1)
-        this.priceDisplay1.string = `x` + String(price1);
+        this.priceDisplay1.string = `x` + DataManager.playData.population * price//String(price1);
 
         this.soliderType = DataManager.GameData.Soldier[idx - 1].idx//DataManager.GameData.buildUp[group][this._idx][grade - 1].soldier[0];
         this.hasTroopsDisplay.string = `已拥有：` + String(DataManager.playData.military_data[this._idx - 2])
@@ -222,8 +231,8 @@ export default class NewClass extends cc.Component {
     }
 
     recruitHandler(event, data) {
-        console.log('-------招募请求-------', this._idx, this.soliderType)
-        MyProtocols.send_C2SRecSoldiers(DataManager._loginSocket, this._idx, 0, this.soliderType)
+        console.log('-------招募请求-------', this._index, this.soliderType)
+        MyProtocols.send_C2SRecSoldiers(DataManager._loginSocket, this._index, 0, this.soliderType)
     }
 
     recoverHandler() {
