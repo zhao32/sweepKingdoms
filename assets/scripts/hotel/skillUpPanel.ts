@@ -65,7 +65,7 @@ export default class NewClass extends cc.Component {
         console.log(JSON.stringify(data))
         this._data = data
         this._idx = idx
-        this.lvLablel.string = `LV${data.level}   --->   LV${data.level + 1}`
+        this.lvLablel.string = `LV${data.level + 1}   --->   LV${data.level + 1 + 1}`
         // let precnce = [100, 80, 50, 40, 30, 20, 15, 10, 8, 5]
         // let useList = [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [6, 15], [10, 20], [15, 25], [20, 30]]
         // {
@@ -74,7 +74,7 @@ export default class NewClass extends cc.Component {
         //     "good":[1015,0],
         //     "num":1
         //   },
-        let updata = DataManager.GameData.Enhanceconfig[`skillLeave`][Math.max(data.level - 1, 0)]
+        let updata = DataManager.GameData.Enhanceconfig[`skillLeave`][Math.max(data.level, 0)]
 
         let skillSt = DataManager.GameData.SkillStudy[data.id]
         ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.icon)

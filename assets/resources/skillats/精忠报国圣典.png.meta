@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "55b97af2-2f1d-4ff4-a255-1439baad6121",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 109,
+  "height": 110,
+  "platformSettings": {},
+  "subMetas": {
+    "精忠报国圣典": {
+      "ver": "1.0.6",
+      "uuid": "c81fd4f9-6db7-4372-a804-8e81686d428c",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "55b97af2-2f1d-4ff4-a255-1439baad6121",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 1.5,
+      "offsetY": 3,
+      "trimX": 16,
+      "trimY": 10,
+      "width": 80,
+      "height": 84,
+      "rawWidth": 109,
+      "rawHeight": 110,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
