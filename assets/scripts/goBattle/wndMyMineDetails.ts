@@ -92,7 +92,7 @@ export default class NewClass extends cc.Component {
                 this.nameLabel.string = `未建造` + data.hold_player.lv + '级' + name
             } else {
                 let lvList = ["微型", "小型", "中型", "大型", "巨型"]
-                this.nameLabel.string =data.hold_player.lv + "级" +  lvList[data.hold_player.bulidLv - 1] + name
+                this.nameLabel.string = data.hold_player.lv + "级" + lvList[data.hold_player.bulidLv - 1] + name
             }
         }
 
@@ -127,7 +127,7 @@ export default class NewClass extends cc.Component {
 
         // : function (senderSocket, p_level_index, p_point_index) {
         // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket,)
- 
+
         // if(data.hold_player.id){
         //     ResManager.loadItemIcon(`goBattle/icon1`,this.icon)
         // }else{
@@ -139,7 +139,7 @@ export default class NewClass extends cc.Component {
         console.log(`领奖返回`)
         console.log(JSON.stringify(retObj))
 
-        
+
         if (retObj.gain.length > 0) {
             var rewardPanel = cc.instantiate(this.getRewardPanel_prefab);
             cc.Canvas.instance.node.addChild(rewardPanel);
@@ -159,22 +159,21 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName('btnBulid').active = false
             this.node.getChildByName('btnUpLevel').active = true
             this.node.getChildByName('btnRecruit').getComponent(cc.Button).interactable = true
-        }else{
+        } else {
             ViewManager.instance.showToast(`建筑升级成功`)
-
         }
 
         let name = DataManager.mineData[this._data.hold_player.group].name
         // this.nameLabel.string = this._data.hold_player.lv + '级' + name
 
-        if (data.hold_player.group >= 101) {
+        if (this._data.hold_player.group >= 101) {
             this.nameLabel.string = name
         } else {
-            if (data.hold_player.bulidLv == 0) {
-                this.nameLabel.string = `未建造` + data.hold_player.lv + '级' + name
+            if (this._data.hold_player.bulidLv == 0) {
+                this.nameLabel.string = `未建造` + this._data.hold_player.lv + '级' + name
             } else {
                 let lvList = ["微型", "小型", "中型", "大型", "巨型"]
-                this.nameLabel.string =data.hold_player.lv + "级" +  lvList[data.hold_player.bulidLv - 1] + name
+                this.nameLabel.string = this._data.hold_player.lv + "级" + lvList[this._data.hold_player.bulidLv - 1] + name
             }
         }
 
