@@ -113,6 +113,10 @@ export default class NewClass extends cc.Component {
         } else if (customData == '招募所') {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_RECRUITOFFICE)
         } else if (customData == '巅峰战场') {
+            if (DataManager.cardsList.length == 0) {
+                ViewManager.instance.showToast(`请先招募将领`)
+                return
+            }
             if (DataManager.playData.level < 30) {
                 ViewManager.instance.showToast(`30级之后解锁巅峰战场`)
                 return

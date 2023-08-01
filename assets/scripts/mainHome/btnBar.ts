@@ -61,9 +61,17 @@ export default class NewClass extends cc.Component {
                 if (i == 0) {//俸禄
 
                 } else if (i == 1) {//副本   
+                    if (DataManager.cardsList.length == 0) {
+                        ViewManager.instance.showToast(`请先招募将领`)
+                        return
+                    }
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE)
                 } else if (i == 2) {//出征
-                    if(DataManager.playData.level < 30){
+                    if (DataManager.cardsList.length == 0) {
+                        ViewManager.instance.showToast(`请先招募将领`)
+                        return
+                    }
+                    if (DataManager.playData.level < 30) {
                         ViewManager.instance.showToast(`等级达到30级时开放`)
                         return
                     }

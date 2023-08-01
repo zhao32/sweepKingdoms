@@ -164,6 +164,7 @@ export default class NewClass extends cc.Component {
     S2CSKillStUp(data) {
         console.log("学习技能升级返回:" + JSON.stringify(data))
         // {"cardid":152038,"idx":0,"skillid":10011,"lv":2}
+        ViewManager.instance.showToast(`技能升级成功`)
         let defaultData = DataManager.GameData.Cards[this._data.template_id]
 
         let len = defaultData.skills.length
