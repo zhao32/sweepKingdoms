@@ -36,6 +36,9 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Node, displayName: '头像' })
     head: cc.Node = null;
 
+    @property({ type: cc.Label, displayName: '已有兵力' })
+    hasTroopsDisplay: cc.Label = null;
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -59,6 +62,7 @@ export default class NewClass extends cc.Component {
         }
         this.powerDisplay.string = `x${data.defense.attack_1 + data.defense.attack_2 + data.defense.attack_3}`
         ResManager.loadItemIcon(`soliderHead/${data.name}`, this.soldierSprite.node)
+        this.hasTroopsDisplay.string = `已拥有：` + String(DataManager.playData.military_data[data.idx - 1])
 
 
         // {"arm":1,"country":0,"restrain":4,"icon":"","name":"盾兵","attr":{"addition_1":1,"addition_2":10,"addition_3":220,"addition_4":110,"addition_5":10,"addition_6":5},"defense":{"attack_1":60,"attack_2":0,"attack_3":0,"attack_4":50,"attack_5":90,"attack_6":0},"consume":{"battle":0.04,"garrison":0},"state":1,"price":3,"describe":"擅长使用矩阵防御技能（防御增强），克制【弓兵】"}

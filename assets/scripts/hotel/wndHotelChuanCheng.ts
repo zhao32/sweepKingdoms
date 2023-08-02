@@ -53,7 +53,7 @@ export default class NewClass extends cc.Component {
 
     selectIdList = []
 
-
+    _data
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -66,7 +66,7 @@ export default class NewClass extends cc.Component {
 
     init(data) {
         NetEventDispatcher.addListener(NetEvent.S2CCardAddLevel, this.S2CCardAddLevel, this)
-
+        this._data = data
         this.myId = data.id
         this.selectIdList = []
         this.reflashHeads()
@@ -121,7 +121,7 @@ export default class NewClass extends cc.Component {
             ResManager.loadItemIcon(`hero/soldierType${data.talents[i]}`, node)
 
             node.getChildByName('proTxt').getComponent(cc.Label).string = `${data.proficiency[i]}/${data.proficiencyMax[i]}`
-            node.getChildByName(`progressBar`).getComponent(cc.ProgressBar).progress = data.proficiency[i]/data.proficiencyMax[i]
+            node.getChildByName(`progressBar`).getComponent(cc.ProgressBar).progress = data.proficiency[i] / data.proficiencyMax[i]
             node.getChildByName('label1').getComponent(cc.Label).string = `成长潜质` //DataManager.armList[defaultData.talents[i]] + `兵熟练度：`
             if (aptitudes == 0) {
                 node.getChildByName('label2').getComponent(cc.Label).string = `:未鉴定`
@@ -230,6 +230,16 @@ export default class NewClass extends cc.Component {
     }
 
     doEatHandler() {
+
+        let aptitudes = 0
+        for (let j = 0; j < this._data.aptitude.length; j++) {
+            aptitudes += this._data.aptitude[j]
+        }
+        if (aptitudes == 0) {
+            ViewManager.instance.showToast(`未鉴定将领不可传承`)
+            return
+        }
+
         if (this.selectIdList.length > 0) {
             let objList = []
             for (let i = 0; i < this.selectIdList.length; i++) {

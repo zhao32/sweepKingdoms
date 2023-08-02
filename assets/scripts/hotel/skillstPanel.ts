@@ -31,9 +31,15 @@ export default class NewClass extends cc.Component {
 
     }
     // "skills_equips":[{"id":0,"level":0,"type":2},{"id":0,"level":0,"type":1},{"id":0,"level":0,"type":2}]
-    init(data, idx) {
+    init(data, idx, cardData) {
+        console.log(`打开技能版`)
         console.log(`--data:` + JSON.stringify(data))
         this.contect.removeAllChildren()
+        let hasSkills = []
+        for (let i = 0; i < cardData.skills_equips.length; i++) {
+            hasSkills.push(cardData.skills_equips[i].id)
+        }
+
         this.idx = idx
         let skillStList = []
         let idList = []

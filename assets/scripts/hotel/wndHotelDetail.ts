@@ -337,7 +337,7 @@ export default class NewClass extends cc.Component {
 
     openSkillstPanel(data, idx) {
         this.node.getChildByName('skillstPanel').active = true
-        this.node.getChildByName('skillstPanel').getComponent(skillstPanel).init(data, idx)
+        this.node.getChildByName('skillstPanel').getComponent(skillstPanel).init(data, idx, this._data)
 
     }
 
