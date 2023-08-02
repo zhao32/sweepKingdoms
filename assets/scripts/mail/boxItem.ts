@@ -90,6 +90,8 @@ export default class NewClass extends cc.Component {
             if (keyCardFrag.indexOf(template_id) != -1) {
                 let fragData = DataManager.GameData.CardFrags[data.template_id]
                 ResManager.loadItemIcon(`hero/icon/${fragData.name.slice(0, -2)}`, this.sprite.node)
+                ResManager.loadItemIcon(`hero/heroHeadBg${fragData.quality - 1}`, this.node)
+
                 // ResManager.loadItemIcon(`hero/debrisBg${fragData.quality - 1}`, this.node)
             }
 
