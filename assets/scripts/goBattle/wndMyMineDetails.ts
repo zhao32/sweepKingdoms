@@ -180,6 +180,7 @@ export default class NewClass extends cc.Component {
     }
 
     onCloseHandler() {
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this._data.hold_player.page, this._data.hold_player.country)
         ViewManager.instance.hideWnd(DataManager.curWndPath)
     }
 
