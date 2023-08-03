@@ -47,7 +47,7 @@ export default class NewClass extends cc.Component {
             let item = DataManager.instance.itemsList[i]
             if (item.bagId == 3) {
                 let skillSt = DataManager.GameData.SkillStudy[item.template_id]
-                if (skillSt && skillSt.type == data.type + 1) {
+                if (skillSt && skillSt.type == data.type + 1 && hasSkills.indexOf(item.template_id) == -1) {
                     skillStList.push(item)
                     // idList.push(item.template_id)
                 }

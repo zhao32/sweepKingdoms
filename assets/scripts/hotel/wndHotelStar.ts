@@ -93,17 +93,35 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showNote(EnumManager.viewPath.NOTE_GENERAL, ...[data.template_id, data.id])
         }, this)
 
-    }
+        for (let i = 0; i < data.talents.length; i++) {
+            let node = this.node.getChildByName("shuxing").getChildByName(`soldierType${i + 1}`)
+            node.active = true
+            node.getChildByName('label0').getComponent(cc.Label).string = DataManager.armList[data.talents[i]] + `兵熟练度：`
+            ResManager.loadItemIcon(`hero/soldierType${data.talents[i]}`, node)
 
+            node.getChildByName('proTxt').getComponent(cc.Label).string = `${data.proficiency[i]}/${data.proficiencyMax[i]}`
+            node.getChildByName(`progressBar`).getComponent(cc.ProgressBar).progress = data.proficiency[i]/data.proficiencyMax[i]
+            node.getChildByName('label1').getComponent(cc.Label).string = `成长潜质` //DataManager.armList[defaultData.talents[i]] + `兵熟练度：`
+
+            let aptitudes = 0
+            for (let j = 0; j < data.aptitude.length; j++) {
+                aptitudes += data.aptitude[j]
+            }
+            if (data.aptitude.length == 0 || aptitudes == 0) {
+                node.getChildByName('label2').getComponent(cc.Label).string = `:未鉴定`
+            } else {
+                node.getChildByName('label2').getComponent(cc.Label).string = `${data.aptitude[i]}/${999}`
+            }
+        }
+    }
 
     S2CCardAddStar(data) {
         console.log(`升星返回`)
         console.log(JSON.stringify(data))
-
+        ViewManager.instance.showToast(`升星成功`)
+        this.starDisplay.string = `x`+data.new_star
+        this.gradeDisplay.string = 'LV ' + 1
     }
-
-
-
 
     onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)

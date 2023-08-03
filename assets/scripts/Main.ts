@@ -344,8 +344,6 @@ export default class NewClass extends cc.Component {
                 console.log(err)
             }
         });
-
-
         // console.log(this.soldierData.json)
 
     }
