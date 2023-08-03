@@ -18,7 +18,7 @@
     "quality":2
   },
   "5001":{
-    "craft_num":1,
+    "craft_num":2,
     "name":"一级暴击符石",
     "bind_stages":[101,102],
     "equip":5005,
@@ -27,7 +27,7 @@
     "quality":2
   },
   "5002":{
-    "craft_num":1,
+    "craft_num":2,
     "name":"一级致命符石",
     "bind_stages":[101,102],
     "equip":5006,
@@ -36,7 +36,7 @@
     "quality":2
   },
   "5003":{
-    "craft_num":1,
+    "craft_num":2,
     "name":"一级坚毅符石",
     "bind_stages":[101,102],
     "equip":5007,
@@ -45,7 +45,7 @@
     "quality":2
   },
   "5004":{
-    "craft_num":1,
+    "craft_num":2,
     "name":"一级坚韧性石",
     "bind_stages":[101,102],
     "equip":5008,
@@ -90,7 +90,7 @@
     "quality":2
   },
   "5009":{
-    "craft_num":4,
+    "craft_num":2,
     "name":"三级暴击符石",
     "bind_stages":[101,102],
     "equip":5013,
@@ -99,7 +99,7 @@
     "quality":2
   },
   "5010":{
-    "craft_num":4,
+    "craft_num":2,
     "name":"三级致命符石",
     "bind_stages":[101,102],
     "equip":5014,
@@ -117,17 +117,17 @@
     "quality":2
   },
   "5012":{
-    "craft_num":4,
+    "craft_num":2,
     "name":"三级坚韧性石",
     "bind_stages":[101,102],
     "equip":5016,
     "des":"用于合成四级坚韧性符石",
     "icon":"e74.png",
     "quality":2
-  }, 
+  },
 
   "5013":{
-    "craft_num":8,
+    "craft_num":2,
     "name":"四级暴击符石",
     "bind_stages":[101,102],
     "equip":5017,
@@ -136,7 +136,7 @@
     "quality":2
   },
   "5014":{
-    "craft_num":8,
+    "craft_num":2,
     "name":"四级致命符石",
     "bind_stages":[101,102],
     "equip":5018,
@@ -145,7 +145,7 @@
     "quality":2
   },
   "5015":{
-    "craft_num":8,
+    "craft_num":2,
     "name":"四级坚毅符石",
     "bind_stages":[101,102],
     "equip":5019,
@@ -154,7 +154,7 @@
     "quality":2
   },
   "5016":{
-    "craft_num":8,
+    "craft_num":2,
     "name":"四级坚韧性石",
     "bind_stages":[101,102],
     "equip":5020,
@@ -164,7 +164,7 @@
   },
 
   "5017":{
-    "craft_num":16,
+    "craft_num":2,
     "name":"五级暴击符石",
     "bind_stages":[101,102],
     "equip":5021,
@@ -173,7 +173,7 @@
     "quality":2
   },
   "5018":{
-    "craft_num":16,
+    "craft_num":2,
     "name":"五级致命符石",
     "bind_stages":[101,102],
     "equip":5022,
@@ -182,7 +182,7 @@
     "quality":2
   },
   "5019":{
-    "craft_num":16,
+    "craft_num":2,
     "name":"五级坚毅符石",
     "bind_stages":[101,102],
     "equip":5023,
@@ -191,7 +191,7 @@
     "quality":2
   },
   "5020":{
-    "craft_num":16,
+    "craft_num":2,
     "name":"五级坚韧性石",
     "bind_stages":[101,102],
     "equip":5024,
@@ -201,7 +201,7 @@
   },
 
   "5021":{
-    "craft_num":32,
+    "craft_num":2,
     "name":"六级暴击符石",
     "bind_stages":[101,102],
     "equip":5025,
@@ -210,7 +210,7 @@
     "quality":2
   },
   "5022":{
-    "craft_num":32,
+    "craft_num":2,
     "name":"六级致命符石",
     "bind_stages":[101,102],
     "equip":5026,
@@ -219,7 +219,7 @@
     "quality":2
   },
   "5023":{
-    "craft_num":32,
+    "craft_num":2,
     "name":"六级坚毅符石",
     "bind_stages":[101,102],
     "equip":5027,
@@ -228,7 +228,7 @@
     "quality":2
   },
   "5024":{
-    "craft_num":32,
+    "craft_num":2,
     "name":"六级坚韧性石",
     "bind_stages":[101,102],
     "equip":5028,
@@ -238,7 +238,7 @@
   },
 
   "5025":{
-    "craft_num":64,
+    "craft_num":2,
     "name":"七级暴击符石",
     "bind_stages":[101,102],
     "equip":5029,
@@ -247,7 +247,7 @@
     "quality":2
   },
   "5026":{
-    "craft_num":64,
+    "craft_num":2,
     "name":"七级致命符石",
     "bind_stages":[101,102],
     "equip":5030,
@@ -256,7 +256,7 @@
     "quality":2
   },
   "5027":{
-    "craft_num":64,
+    "craft_num":2,
     "name":"七级坚毅符石",
     "bind_stages":[101,102],
     "equip":5031,
@@ -265,7 +265,7 @@
     "quality":2
   },
   "5028":{
-    "craft_num":64,
+    "craft_num":2,
     "name":"七级坚韧性石",
     "bind_stages":[101,102],
     "equip":5032,
@@ -275,7 +275,7 @@
   },
 
   "5029":{
-    "craft_num":128,
+    "craft_num":2,
     "name":"八级暴击符石",
     "bind_stages":[101,102],
     "equip":5033,
@@ -284,7 +284,7 @@
     "quality":2
   },
   "5030":{
-    "craft_num":128,
+    "craft_num":2,
     "name":"八级致命符石",
     "bind_stages":[101,102],
     "equip":5034,
@@ -293,7 +293,7 @@
     "quality":2
   },
   "5031":{
-    "craft_num":128,
+    "craft_num":2,
     "name":"八级坚毅符石",
     "bind_stages":[101,102],
     "equip":5035,
@@ -302,7 +302,7 @@
     "quality":2
   },
   "5032":{
-    "craft_num":128,
+    "craft_num":2,
     "name":"八级坚韧性石",
     "bind_stages":[101,102],
     "equip":5036,
@@ -312,7 +312,7 @@
   },
 
   "5033":{
-    "craft_num":256,
+    "craft_num":2,
     "name":"九级暴击符石",
     "bind_stages":[101,102],
     "equip":5037,
@@ -321,7 +321,7 @@
     "quality":2
   },
   "5034":{
-    "craft_num":256,
+    "craft_num":2,
     "name":"九级致命符石",
     "bind_stages":[101,102],
     "equip":5038,
@@ -330,7 +330,7 @@
     "quality":2
   },
   "5035":{
-    "craft_num":256,
+    "craft_num":2,
     "name":"九级坚毅符石",
     "bind_stages":[101,102],
     "equip":5039,
@@ -339,7 +339,7 @@
     "quality":2
   },
   "5036":{
-    "craft_num":256,
+    "craft_num":2,
     "name":"九级坚韧性石",
     "bind_stages":[101,102],
     "equip":5040,
@@ -347,7 +347,7 @@
     "icon":"e74.png",
     "quality":2
   },
-  
+
   "6001":{
     "craft_num":20,
     "name":"神秘2字技能书残页",

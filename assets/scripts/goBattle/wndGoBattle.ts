@@ -8,6 +8,7 @@
 import enemyHeroItem from "../battle/enemyHeroItem";
 import heroItem from "../battle/heroItem";
 import soliderItem from "../battle/soliderItem";
+import GetRewardPanel from "../mail/GetRewardPanel";
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
@@ -34,6 +35,10 @@ export interface solider {
 
 @ccclass
 export default class NewClass extends cc.Component {
+    
+    @property({ type: cc.Prefab })
+    getRewardPanel_prefab: cc.Prefab = null;
+    
     @property(cc.ScrollView)
     myScrollow: cc.ScrollView = null;
 
@@ -97,6 +102,8 @@ export default class NewClass extends cc.Component {
 
     isSkip: boolean = false
 
+    _resultData:any = null;
+
     start() {
 
     }
@@ -104,6 +111,7 @@ export default class NewClass extends cc.Component {
     S2CMineBattleCalculate(data) {
         console.log("矿场战斗返回")
         console.log(JSON.stringify(data))
+        this._resultData = data
         // {"level_index":0,"point_index":18,"result":0,"gain":[]}
         if (data.result == 0) {
             // ViewManager.instance.showToast('很遗憾，没有打赢')
@@ -563,6 +571,12 @@ export default class NewClass extends cc.Component {
 
         console.log('this.battleInfo:' + this.battleInfo)
         panel.getChildByName(`scrollView`).getComponent(cc.ScrollView).content.getComponentInChildren(cc.Label).string = this.battleInfo
+
+        if(this._resultData.gain.length > 0){
+            var rewardPanel = cc.instantiate(this.getRewardPanel_prefab);
+            cc.Canvas.instance.node.addChild(rewardPanel);
+            rewardPanel.getComponent(GetRewardPanel)._itemlist = this._resultData.gain
+        }
 
     }
 

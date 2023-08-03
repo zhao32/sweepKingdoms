@@ -53,6 +53,9 @@ export default class NewClass extends cc.Component {
 
             let keyItem = Object.keys(DataManager.GameData.Items)
 
+            let keyEquipFrag = Object.keys(DataManager.GameData.EquipFrags)
+
+
             let keyCardFrag = Object.keys(DataManager.GameData.CardFrags)
 
             let keyRune = Object.keys(DataManager.GameData.Runes)
@@ -74,6 +77,11 @@ export default class NewClass extends cc.Component {
             if (keyEquip.indexOf(template_id) != -1) {
                 itemData = DataManager.GameData.Equips[template_id]
             }
+
+            if (keyEquipFrag.indexOf(template_id) != -1) {
+                itemData = DataManager.GameData.EquipFrags[template_id]
+            }
+
 
             if (keyStoneList.indexOf(template_id) != -1) {
                 itemData = DataManager.GameData.MineStone[template_id]

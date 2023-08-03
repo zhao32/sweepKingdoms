@@ -1886,8 +1886,8 @@ var MyProtocols = {
 		if (gain_size > 0) {
 			for (var i = 0; i < gain_size; i++) {
 				retObj.gain[i] = {};
-				retObj.gain[i].itemId = myDecoder.readInt();
-				retObj.gain[i].cnt = myDecoder.readInt();
+				retObj.gain[i].template_id = myDecoder.readInt();
+				retObj.gain[i].num = myDecoder.readInt();
 			}
 		}
 		let mine_point_detail_exist = myDecoder.readBool();

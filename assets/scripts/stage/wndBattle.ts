@@ -291,13 +291,77 @@ export default class NewClass extends cc.Component {
         this.rewardContect.removeAllChildren()
         for (let i = 0; i < retObj.rewards.length; i++) {
             let id = retObj.rewards[i].template_id
-            if (id >= 2000 && id < 3000) {//装备
-                let item = cc.instantiate(this.rewardPfb)
-               if(DataManager.GameData.Items[id]) ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Items[id].name}`, item.getChildByName("pic"))
-                item.getChildByName("num").getComponent(cc.Label).string = `x` + retObj.rewards[i].num
-                item.parent = this.rewardContect
+            let item = cc.instantiate(this.rewardPfb)
+            // if (DataManager.GameData.Items[id]) ResManager.loadItemIcon(`UI/prop/${DataManager.GameData.Items[id].name}`, item.getChildByName("pic"))
+            item.getChildByName("num").getComponent(cc.Label).string = `x` + retObj.rewards[i].num
+            item.parent = this.rewardContect
+
+
+            let itemData
+            /**礼包 */
+            let keyGiftList = Object.keys(DataManager.GameData.Boxes)
+            /**消耗品 */
+            let keyConsList = Object.keys(DataManager.GameData.Consumes)
+            let keyStoneList = Object.keys(DataManager.GameData.MineStone)
+            let keyStudy = Object.keys(DataManager.GameData.SkillStudy)
+            let keyBonus = Object.keys(DataManager.GameData.bonus)
+            let keyItem = Object.keys(DataManager.GameData.Items)
+            let keyEquipFrag = Object.keys(DataManager.GameData.EquipFrags)
+            let keyCardFrag = Object.keys(DataManager.GameData.CardFrags)
+            let keyRune = Object.keys(DataManager.GameData.Runes)
+            let keyEquip = Object.keys(DataManager.GameData.Equips)
+            let template_id = String(retObj.rewards[i].template_id)
+
+            if (keyGiftList.indexOf(template_id) != -1) {
+                itemData = DataManager.GameData.Boxes[template_id]
             }
-         
+
+            if (keyConsList.indexOf(template_id) != -1) {
+                itemData = DataManager.GameData.Consumes[template_id]
+            }
+
+            if (keyEquip.indexOf(template_id) != -1) {
+                itemData = DataManager.GameData.Equips[template_id]
+            }
+
+            if (keyEquipFrag.indexOf(template_id) != -1) {
+                itemData = DataManager.GameData.EquipFrags[template_id]
+            }
+
+            if (keyStoneList.indexOf(template_id) != -1) {
+                itemData = DataManager.GameData.MineStone[template_id]
+            }
+
+            if (keyItem.indexOf(template_id) != -1) {
+                itemData = DataManager.GameData.Items[template_id]
+            }
+
+            if (itemData) {
+                ResManager.loadItemIcon(`UI/prop/${itemData.name}`, item.getChildByName("pic"))
+            }
+
+            if (keyCardFrag.indexOf(template_id) != -1) {
+                let fragData = DataManager.GameData.CardFrags[template_id]
+                ResManager.loadItemIcon(`hero/icon/${fragData.name.slice(0, -2)}`, item.getChildByName("pic"))
+                // ResManager.loadItemIcon(`hero/heroHeadBg${fragData.quality - 1}`, this.node)
+                // ResManager.loadItemIcon(`hero/debrisBg${fragData.quality - 1}`, this.node)
+            }
+
+            if (keyBonus.indexOf(template_id) != -1) {
+                let bonusData = DataManager.GameData.bonus[template_id]
+                ResManager.loadItemIcon(`UI/bonus/${bonusData.name}`, item.getChildByName("pic"))
+            }
+
+            if (keyStudy.indexOf(template_id) != -1) {
+                let skillSt = DataManager.GameData.SkillStudy[template_id]
+                ResManager.loadItemIcon(`skillats/${skillSt.name}`, item.getChildByName("pic"))
+            }
+
+            if (keyRune.indexOf(template_id) != -1) {
+                let rune = DataManager.GameData.Runes[template_id]
+                ResManager.loadItemIcon(`Rune/${rune.icon}`, item.getChildByName("pic"))
+            }
+
         }
 
     }
@@ -377,7 +441,7 @@ export default class NewClass extends cc.Component {
             }
         }
 
-        
+
         // console.log('enemyData:' + JSON.stringify(otherData))
 
 
