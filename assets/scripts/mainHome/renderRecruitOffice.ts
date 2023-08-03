@@ -51,15 +51,24 @@ export default class NewClass extends cc.Component {
         // console.error(JSON.stringify(data))
         this.nameDisplay.string = data.name
         this.describeDisplay.string = data.describe
-        if (data.state == 0) {
-            this.premiseDisplay.string = '招募条件'
-            this.node.getChildByName('price').active = false
+        // if (data.state == 0) {
+        //     this.premiseDisplay.string = '招募条件'
+        //     this.node.getChildByName('price').active = false
 
-        } else if (data.state == 1) {
-            this.premiseDisplay.string = ''
-            this.node.getChildByName('price').active = true
-            this.priceDisplay.string = `x${data.price}`
+        // } else if (data.state == 1) {
+        //     this.premiseDisplay.string = ''
+        //     this.node.getChildByName('price').active = true
+        //     this.priceDisplay.string = `x${data.price}`
+        // }
+        this.premiseDisplay.string = ''
+        this.node.getChildByName('price').active = true
+        this.priceDisplay.string = `x${data.price}`
+
+        if (data.idx >= 13) {
+            this.node.getChildByName('price').active = false
+            this.premiseDisplay.string = '不可在此招募'
         }
+
         this.powerDisplay.string = `x${data.defense.attack_1 + data.defense.attack_2 + data.defense.attack_3}`
         ResManager.loadItemIcon(`soliderHead/${data.name}`, this.soldierSprite.node)
         this.hasTroopsDisplay.string = `已拥有：` + String(DataManager.playData.military_data[data.idx - 1])
