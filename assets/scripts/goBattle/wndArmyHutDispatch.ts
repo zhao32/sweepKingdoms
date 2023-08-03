@@ -136,7 +136,7 @@ export default class NewClass extends cc.Component {
                         used = this.soliderUsed[j].count
                     }
                 }
-                solider.getComponent(battleSoliderRender).init(this.soliders[i].arm, this.soliders[i].count, used)
+                solider.getComponent(battleSoliderRender).init(this.soliders[i].arm, this.soliders[i].count, used,this._type)
             }
         }
 
@@ -185,7 +185,7 @@ export default class NewClass extends cc.Component {
         console.log(`-----阵容保存返回------`)
         console.log(JSON.stringify(data))
         ViewManager.instance.showToast(`阵容保存成功`)
-        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.hideWnd(DataManager.curWndPath,true)
         if (this._fromWnd) {
             ViewManager.instance.showWnd(this._fromWnd)
         }
@@ -291,7 +291,7 @@ export default class NewClass extends cc.Component {
                         used = this.soliderUsed[j].count
                     }
                 }
-                solider.getComponent(battleSoliderRender).init(this.soliders[i].arm, this.soliders[i].count, used)
+                solider.getComponent(battleSoliderRender).init(this.soliders[i].arm, this.soliders[i].count, used,this._type)
 
                 if (this.mobilizeSoliders[i]) {
                     solider.getComponent(battleSoliderRender).setSelectNum(this.mobilizeSoliders[i].count)
@@ -301,7 +301,7 @@ export default class NewClass extends cc.Component {
     }
 
     onCloseHandler() {
-        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.hideWnd(DataManager.curWndPath,true)
         if (this._fromWnd) {
             ViewManager.instance.showWnd(this._fromWnd)
         }

@@ -398,6 +398,19 @@ export default class NewClass extends cc.Component {
         this.myData = myData
         this.enemyData = otherData
 
+        
+        for (let i = 0; i < myData.soliderList.length; i++) {
+            if (myData.soliderList[i].arm == 6 || myData.soliderList[i].arm == 12) {
+                myData.soliderList.splice(i, 1)
+            }
+        }
+
+        for (let i = 0; i < otherData.soliders.length; i++) {
+            if (otherData.soliderList[i].arm == 6 || otherData.soliderList[i].arm == 12) {
+                otherData.soliderList.splice(i, 1)
+            }
+        }
+
         // console.log('myData:' + JSON.stringify(myData))
         // console.error('otherData:' + JSON.stringify(otherData))
 

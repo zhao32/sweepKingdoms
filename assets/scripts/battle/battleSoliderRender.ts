@@ -31,6 +31,8 @@ export default class NewClass extends cc.Component {
     idx: number = 0
 
     used: number
+
+    type: string
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -42,12 +44,18 @@ export default class NewClass extends cc.Component {
 
     onSlider() {
         this.selectNum = Math.floor(this.slider.progress * this.allNum)
-        // this.useLabel.string = `调动数量 ${this.selectNum}/已调数量 ${this.used}`
+        // this.useLabel.string = `调动兵力 ${this.selectNum}/已调兵力 ${this.used}`
 
         if (this.used != undefined) {
-            this.useLabel.string = `调动数量 ${this.selectNum}/已有数量 ${this.used}`
+            if (this.type == 'in') {
+                this.useLabel.string = `调动兵力 ${this.selectNum}/已有兵力 ${this.used}`
+            } else if (this.type == 'out') {
+                this.useLabel.string = `调动兵力 ${this.selectNum}/主城兵力 ${this.used}`
+            } else {
+                this.useLabel.string = `调动兵力 ${this.selectNum}/已有兵力 ${this.used}`
+            }
         } else {
-            this.useLabel.string = `调动数量 ${this.selectNum}`
+            this.useLabel.string = `调动兵力 ${this.selectNum}`
         }
     }
 
@@ -57,19 +65,31 @@ export default class NewClass extends cc.Component {
         if (this.used) {
             used = this.used
         }
-        return { arm: this.idx, count: this.selectNum + used }
+        this.nameLabel.string = `${DataManager.GameData.Soldier[this.idx].name} ${this.allNum - this.selectNum}`
+        if (this.type == 'out') {
+            return { arm: this.idx, count: this.selectNum }
+        } else {
+            return { arm: this.idx, count: this.selectNum + used }
+        }
     }
 
-    init(idx, soliderNum, used?: number) {
+    init(idx, soliderNum, used?: number, type?: string) {
+        this.type = type
         this.used = used
         this.idx = idx
         this.allNum = soliderNum
         this.nameLabel.string = `${DataManager.GameData.Soldier[idx].name} ${soliderNum}`
         ResManager.loadItemIcon(`soliderHead/${DataManager.GameData.Soldier[idx].name}`, this.node.getChildByName(`head`))
         if (used != undefined) {
-            this.useLabel.string = `调动数量 ${this.selectNum}/已有数量 ${used}`
+            if (this.type == 'in') {
+                this.useLabel.string = `调动兵力 ${this.selectNum}/已有兵力 ${used}`
+            } else if (this.type == 'out') {
+                this.useLabel.string = `调动兵力 ${this.selectNum}/主城兵力 ${used}`
+            } else {
+                this.useLabel.string = `调动兵力 ${this.selectNum}/已有兵力 ${used}`
+            }
         } else {
-            this.useLabel.string = `调动数量 ${this.selectNum}`
+            this.useLabel.string = `调动兵力 ${this.selectNum}`
         }
 
         let data = DataManager.GameData.Soldier[idx]
@@ -84,7 +104,7 @@ export default class NewClass extends cc.Component {
     setSelectNum(select) {
         this.selectNum = select
         this.slider.progress = this.selectNum / this.allNum
-        this.useLabel.string = `调动数量 ${this.selectNum}`
+        this.useLabel.string = `调动兵力 ${this.selectNum}`
     }
 
     // update (dt) {}

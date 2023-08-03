@@ -126,6 +126,19 @@ export default class NewClass extends cc.Component {
         this.myData = myData
         this.enemyData = otherData
 
+        
+        for (let i = 0; i < myData.soliders.length; i++) {
+            if (myData.soliders[i].arm == 6 || myData.soliders[i].arm == 12) {
+                myData.soliders.splice(i, 1)
+            }
+        }
+
+        for (let i = 0; i < otherData.soliders.length; i++) {
+            if (otherData.soliders[i].arm == 6 || otherData.soliders[i].arm == 12) {
+                otherData.soliders.splice(i, 1)
+            }
+        }
+
         // console.log('myData:' + JSON.stringify(myData))
         // console.error('otherData:' + JSON.stringify(otherData))
 
@@ -133,6 +146,7 @@ export default class NewClass extends cc.Component {
         let item0 = cc.instantiate(this.heroPfb)
         item0.parent = this.myContect
         item0.getComponent(heroItem).init(myData.card)
+
         for (let i = 0; i < myData.soliders.length; i++) {
             let item = cc.instantiate(this.soliderPfb)
             item.parent = this.myContect
