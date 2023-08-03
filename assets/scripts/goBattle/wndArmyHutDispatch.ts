@@ -72,6 +72,8 @@ export default class NewClass extends cc.Component {
 
     eviType: number
 
+    _fromWnd
+
 
     initDetailData(data) {
         // exclude_cards  在其他矿里工作
@@ -183,15 +185,20 @@ export default class NewClass extends cc.Component {
         console.log(`-----阵容保存返回------`)
         console.log(JSON.stringify(data))
         ViewManager.instance.showToast(`阵容保存成功`)
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        if (this._fromWnd) {
+            ViewManager.instance.showWnd(this._fromWnd)
+        }
+
     }
 
-    init(data, type, eviType) {
+    init(data, type, eviType, _fromWnd) {
         this.eviType = eviType
         this.soliders = []
         this.cards = []
         this.mobilizeSoliders = []
         this.onSelectSolider = true
-
+        this._fromWnd = _fromWnd
 
         this._type = type
         this.data = data
@@ -295,6 +302,9 @@ export default class NewClass extends cc.Component {
 
     onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
+        if (this._fromWnd) {
+            ViewManager.instance.showWnd(this._fromWnd)
+        }
         // ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_SELECT)
     }
 

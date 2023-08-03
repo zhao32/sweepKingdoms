@@ -87,6 +87,28 @@ export default class NewClass extends cc.Component {
         this.myContect.removeAllChildren()
         this.nation_id = data.contry
         this.node.getChildByName(`toggleContainer`).children[this.nation_id - 1].getComponent(cc.Toggle).isChecked = true
+
+        let my_points = []
+       
+
+        for (let i = 0; i < data.my_points.length; i++) {
+            if (data.my_points[i].hold_player) {
+                if (data.my_points[i].hold_player.group != 101) {
+                    my_points.push(data.my_points[i])
+                }
+            }
+        }
+        my_points.sort((a, b) => b.hold_player.group - a.hold_player.group)
+
+        for (let i = 0; i < data.my_points.length; i++) {
+            if (data.my_points[i].hold_player) {
+                if (data.my_points[i].hold_player.group == 101) {
+                    my_points.unshift(data.my_points[i])
+                }
+            }
+        }
+
+        data.my_points = my_points
         for (let i = 0; i < data.my_points.length; i++) {
             if (data.my_points[i].hold_player) {
                 let myNode = cc.instantiate(this.myItemPfb)
@@ -339,7 +361,7 @@ export default class NewClass extends cc.Component {
 
     changeCountryId(country) {
         this.nation_id = country
-        this.node.getChildByName(`toggleContainer`).children[country -1].getComponent(cc.Toggle).isChecked = true
+        this.node.getChildByName(`toggleContainer`).children[country - 1].getComponent(cc.Toggle).isChecked = true
     }
 
     btnLeft() {

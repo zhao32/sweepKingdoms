@@ -73,7 +73,7 @@ export default class NewClass extends cc.Component {
     // }
 
     /**列表数据 阵容详情数据*/
-    init(data) {
+    init(data = this._data) {
         this._data = data
         // this._detailData = DataManager.curMineDetailData
         console.log('detailData:' + JSON.stringify(DataManager.curMineDetailData))
@@ -186,15 +186,17 @@ export default class NewClass extends cc.Component {
     /**调兵驻防 */
     ondispatchArmyHandler() {
         console.log(`------调兵驻防--------`)
+        let _from = DataManager.curWndPath
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'in'])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'in', null, _from])
     }
 
     /**撤回主城 */
     onRevokeHandler() {
         console.log(`------撤回主城--------`)
+        let _from = DataManager.curWndPath
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'out'])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'out', null, _from])
     }
     /**查看详情 */
     onDetailHutHandler() {

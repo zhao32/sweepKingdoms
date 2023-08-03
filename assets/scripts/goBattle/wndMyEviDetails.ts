@@ -68,7 +68,7 @@ export default class NewClass extends cc.Component {
     // 	}
     // }
 
-    init(data) {
+    init(data = this._data) {
         this._data = data
         // let name = DataManager.mineData[data.hold_player.group].name
         console.log(JSON.stringify(data))
@@ -104,7 +104,7 @@ export default class NewClass extends cc.Component {
                 this.nameLabel.string = `未建造` + data.hold_player.lv + '级' + name
             } else {
                 let lvList = ["微型", "小型", "中型", "大型", "巨型"]
-                this.nameLabel.string =data.hold_player.lv + "级 " +  lvList[data.hold_player.bulidLv - 1] + name
+                this.nameLabel.string = data.hold_player.lv + "级 " + lvList[data.hold_player.bulidLv - 1] + name
             }
         }
 
@@ -278,7 +278,7 @@ export default class NewClass extends cc.Component {
     onOpenHandler() {
         this.node.getChildByName(`openPanel`).active = true
         this.node.getChildByName(`openPanel`).getComponent(openEviPanel).init(this._data)
-       
+
     }
 
     onCloseOpHandler() {
@@ -343,15 +343,17 @@ export default class NewClass extends cc.Component {
     /**调兵驻防 */
     ondispatchArmyHandler() {
         console.log(`------调兵驻防--------`)
+        let _from = DataManager.curWndPath
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'in'])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'in', null, _from])
     }
 
     /**撤回主城 */
     onRevokeHandler() {
         console.log(`------撤回主城--------`)
+        let _from = DataManager.curWndPath
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'out'])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'out', null, _from])
     }
 
 

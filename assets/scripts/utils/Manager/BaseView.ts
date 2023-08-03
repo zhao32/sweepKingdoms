@@ -47,6 +47,9 @@ export default class BaseView extends cc.Component {
     //显示界面
     showPanel() {
         this.node.active = true;
+        if (this.isHasAnim) {
+            this.showAnim();
+        }
     }
 
     //隐藏界面
