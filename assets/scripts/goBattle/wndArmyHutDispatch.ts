@@ -136,7 +136,7 @@ export default class NewClass extends cc.Component {
                         used = this.soliderUsed[j].count
                     }
                 }
-                solider.getComponent(battleSoliderRender).init(this.soliders[i].arm, this.soliders[i].count, used,this._type)
+                solider.getComponent(battleSoliderRender).init(this.soliders[i].arm, this.soliders[i].count, used, this._type)
             }
         }
 
@@ -185,10 +185,12 @@ export default class NewClass extends cc.Component {
         console.log(`-----阵容保存返回------`)
         console.log(JSON.stringify(data))
         ViewManager.instance.showToast(`阵容保存成功`)
-        ViewManager.instance.hideWnd(DataManager.curWndPath,true)
-        if (this._fromWnd) {
-            ViewManager.instance.showWnd(this._fromWnd)
-        }
+        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        // if (this._fromWnd) {
+        //     ViewManager.instance.showWnd(this._fromWnd)
+        // }
+        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this.data.page, this.data.idx, this.data.country)
+
 
     }
 
@@ -291,7 +293,7 @@ export default class NewClass extends cc.Component {
                         used = this.soliderUsed[j].count
                     }
                 }
-                solider.getComponent(battleSoliderRender).init(this.soliders[i].arm, this.soliders[i].count, used,this._type)
+                solider.getComponent(battleSoliderRender).init(this.soliders[i].arm, this.soliders[i].count, used, this._type)
 
                 if (this.mobilizeSoliders[i]) {
                     solider.getComponent(battleSoliderRender).setSelectNum(this.mobilizeSoliders[i].count)
@@ -301,7 +303,7 @@ export default class NewClass extends cc.Component {
     }
 
     onCloseHandler() {
-        ViewManager.instance.hideWnd(DataManager.curWndPath,true)
+        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
         if (this._fromWnd) {
             ViewManager.instance.showWnd(this._fromWnd)
         }
