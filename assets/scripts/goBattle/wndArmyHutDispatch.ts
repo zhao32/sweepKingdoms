@@ -55,6 +55,8 @@ export default class NewClass extends cc.Component {
 
     cards = []
 
+    soliderUsed = []
+
     // /**正在守城的将 */
     // defineCardId: number
 
@@ -103,7 +105,7 @@ export default class NewClass extends cc.Component {
                     this.cards.push(DataManager.cardsList[i])
                 }
             }
-
+            this.soliderUsed = data.soliderUsed
         } else {
             // this.soliders = data.soliderUsed//已经在矿里的兵
             for (let i = 0; i < data.soliderUsed.length; i++) {
@@ -111,6 +113,7 @@ export default class NewClass extends cc.Component {
                     this.soliders.push(data.soliderUsed[i])
                 }
             }
+            this.soliderUsed = data.soliderUse
             this.cards = data.cards
         }
 
@@ -125,7 +128,13 @@ export default class NewClass extends cc.Component {
                 let solider = cc.instantiate(this.soliderPfb)
                 solider.x = 0
                 solider.parent = this.myContect
-                solider.getComponent(battleSoliderRender).init(this.soliders[i].arm, this.soliders[i].count)
+                let used = 0
+                for (let j = 0; j < this.soliderUsed.length; j++) {
+                    if (this.soliderUsed[j].arm == this.soliders[i].arm) {
+                        used = this.soliderUsed[j].count
+                    }
+                }
+                solider.getComponent(battleSoliderRender).init(this.soliders[i].arm, this.soliders[i].count, used)
             }
         }
 
@@ -269,7 +278,13 @@ export default class NewClass extends cc.Component {
                 let solider = cc.instantiate(this.soliderPfb)
                 solider.x = 0
                 solider.parent = this.myContect
-                solider.getComponent(battleSoliderRender).init(this.soliders[i].arm, this.soliders[i].count)
+                let used = 0
+                for (let j = 0; j < this.soliderUsed.length; j++) {
+                    if (this.soliderUsed[j].arm == this.soliders[i].arm) {
+                        used = this.soliderUsed[j].count
+                    }
+                }
+                solider.getComponent(battleSoliderRender).init(this.soliders[i].arm, this.soliders[i].count, used)
 
                 if (this.mobilizeSoliders[i]) {
                     solider.getComponent(battleSoliderRender).setSelectNum(this.mobilizeSoliders[i].count)

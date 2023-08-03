@@ -134,7 +134,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -219.807,
+        -230.807,
         1.593,
         0,
         0,
@@ -241,7 +241,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -220.154,
+        -231.154,
         2.54,
         0,
         0,
@@ -355,8 +355,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        45.031,
-        -32.649,
+        10,
+        -33,
         0,
         0,
         0,
@@ -761,7 +761,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -221.847,
+        -230.847,
         2.54,
         0,
         0,
@@ -856,7 +856,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 48,
+      "width": 40,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -868,8 +868,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -115.783,
-        22.186,
+        -149,
+        22,
         0,
         0,
         0,
@@ -910,7 +910,7 @@
     "_dstBlendFactor": 771,
     "_string": "盾兵",
     "_N$string": "盾兵",
-    "_fontSize": 24,
+    "_fontSize": 20,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,
@@ -964,7 +964,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 96,
+      "width": 80,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -976,7 +976,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        64.847,
+        14.846999999999994,
         20.597,
         0,
         0,
@@ -1018,7 +1018,7 @@
     "_dstBlendFactor": 771,
     "_string": "调动数量",
     "_N$string": "调动数量",
-    "_fontSize": 24,
+    "_fontSize": 20,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,

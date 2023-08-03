@@ -6,7 +6,6 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import battleHeroRender from "../battle/battleHeroRender";
-import battleSoliderRender from "../battle/battleSoliderRender";
 import eSoliderRender from "../battle/eSoliderRender";
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";

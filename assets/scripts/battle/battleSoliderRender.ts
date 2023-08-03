@@ -30,6 +30,7 @@ export default class NewClass extends cc.Component {
 
     idx: number = 0
 
+    used: number
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -41,20 +42,36 @@ export default class NewClass extends cc.Component {
 
     onSlider() {
         this.selectNum = Math.floor(this.slider.progress * this.allNum)
-        this.useLabel.string = `调动数量 ${this.selectNum}`
+        // this.useLabel.string = `调动数量 ${this.selectNum}/已调数量 ${this.used}`
+
+        if (this.used != undefined) {
+            this.useLabel.string = `调动数量 ${this.selectNum}/已有数量 ${this.used}`
+        } else {
+            this.useLabel.string = `调动数量 ${this.selectNum}`
+        }
     }
 
     getSelectNum() {
         // return [this.idx, this.selectNum]
-        return { arm: this.idx, count: this.selectNum }
+        let used = 0
+        if (this.used) {
+            used = this.used
+        }
+        return { arm: this.idx, count: this.selectNum + used }
     }
 
-    init(idx, soliderNum) {
+    init(idx, soliderNum, used?: number) {
+        this.used = used
         this.idx = idx
         this.allNum = soliderNum
         this.nameLabel.string = `${DataManager.GameData.Soldier[idx].name} ${soliderNum}`
         ResManager.loadItemIcon(`soliderHead/${DataManager.GameData.Soldier[idx].name}`, this.node.getChildByName(`head`))
-        
+        if (used != undefined) {
+            this.useLabel.string = `调动数量 ${this.selectNum}/已有数量 ${used}`
+        } else {
+            this.useLabel.string = `调动数量 ${this.selectNum}`
+        }
+
         let data = DataManager.GameData.Soldier[idx]
         let str = DataManager.getSoliderDes(data)
         this.node.getChildByName(`head`).on(cc.Node.EventType.TOUCH_END, () => {
