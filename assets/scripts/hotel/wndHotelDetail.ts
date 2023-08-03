@@ -155,7 +155,10 @@ export default class NewClass extends cc.Component {
         console.log('this.contect.children.length:' + this.contect.children.length)
         let render = this.contect.children[len + data.idx]
         let stData = this._data.skills_equips[data.idx]
+        stData.level = 0
         stData.id = data.skillid
+        console.log("stData:"+ JSON.stringify(stData))
+
         // let stData = {"id":data.skillid,"level":0,"type":1}
         render.getComponent(detailSkillStRender).init(stData, data.idx)
 
