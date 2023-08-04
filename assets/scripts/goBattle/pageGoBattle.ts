@@ -40,6 +40,8 @@ export default class NewClass extends cc.Component {
 
     myCityData
 
+    my_points = []
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -127,6 +129,7 @@ export default class NewClass extends cc.Component {
                 }, this)
             }
         }
+        this.my_points = data.my_points
 
         this.filedContect.removeAllChildren()
         this.mineData = data.mine_points

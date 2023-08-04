@@ -66,8 +66,29 @@ export default class NewClass extends cc.Component {
                 this.nameLabel.string = data.lv + "级" + lvList[data.bulidLv - 1] + name
             }
         }
-        this.fightLabel.string = data.army
-        this.heroLabel.string = data.card
+        console.log(` DataManager.pageGoBattle.my_points:`+JSON.stringify( DataManager.pageGoBattle.my_points))
+
+        if (data.group == 101) {
+            let allArm = 0
+            for (let i = 0; i < DataManager.playData.military_data.length; i++) {
+                allArm += DataManager.playData.military_data[i]
+            }
+            let exArm = 0
+            let exCard = 0
+
+            for (let i = 0; i < DataManager.pageGoBattle.my_points.length; i++) {
+                if (DataManager.pageGoBattle.my_points[i].hold_player.group != 101) {
+                    exArm += DataManager.pageGoBattle.my_points[i].hold_player.army
+                    exCard += DataManager.pageGoBattle.my_points[i].hold_player.card
+                }
+            }
+            this.fightLabel.string = String(allArm - exArm)
+            this.heroLabel.string = String(DataManager.cardsList.length - exCard)
+        } else {
+            this.fightLabel.string = data.army
+            this.heroLabel.string = data.card
+        }
+
     }
 
     // update (dt) {}
