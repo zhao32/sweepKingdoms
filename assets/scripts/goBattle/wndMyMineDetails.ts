@@ -138,6 +138,8 @@ export default class NewClass extends cc.Component {
     S2CMineGetAward(retObj) {
         console.log(`领奖返回`)
         console.log(JSON.stringify(retObj))
+        DataManager.curMineDetailData.gains = 0
+        this.awardLabel.string = `已产出：${DataManager.curMineDetailData.gains}`
 
 
         if (retObj.gain.length > 0) {
