@@ -1496,6 +1496,8 @@ var MyProtocols = {
 					retObj.my_points[i].hold_player.page = myDecoder.readInt();
 					retObj.my_points[i].hold_player.idx = myDecoder.readInt();
 					retObj.my_points[i].hold_player.country = myDecoder.readInt();
+					retObj.my_points[i].hold_player.card = myDecoder.readInt();
+					retObj.my_points[i].hold_player.army = myDecoder.readInt();
 					retObj.my_points[i].hold_player.award = myDecoder.readInt();
 
 				}
@@ -1551,7 +1553,7 @@ var MyProtocols = {
 			// retObj.formation.i = myDecoder.readInt();
 			// retObj.formation.j = myDecoder.readInt();
 		}
-		
+
 		/**已经在矿里的兵 */
 		retObj.soliderUsed = []
 		let bing_size = myDecoder.readInt();
@@ -2537,7 +2539,7 @@ var MyProtocols = {
 			retObj.card_info.talents = [];
 			retObj.card_info.proficiencyMax = [];
 
-			
+
 			let card_proficiency_size = myDecoder.readInt();
 			if (card_proficiency_size > 0) {
 				for (var proficiency_idx = 0; proficiency_idx < card_proficiency_size; proficiency_idx++) {

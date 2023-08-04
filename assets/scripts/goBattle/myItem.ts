@@ -66,6 +66,8 @@ export default class NewClass extends cc.Component {
                 this.nameLabel.string = data.lv + "级" + lvList[data.bulidLv - 1] + name
             }
         }
+        this.fightLabel.string = data.army
+        this.heroLabel.string = data.card
     }
 
     // update (dt) {}
