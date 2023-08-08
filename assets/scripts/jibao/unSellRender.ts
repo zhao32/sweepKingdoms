@@ -7,7 +7,7 @@
 
 import DataManager from "../utils/Manager/DataManager";
 
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -37,8 +37,9 @@ export default class NewClass extends cc.Component {
         }
 
         if (itemData) {
-            this.nameLabel.string = itemData.name //+ `x${data.bussize_item}`
+            this.nameLabel.string = itemData.name + `x${data.num}`
         }
+        this.priceAllLabel.string = `x${data.num * data.price}`
 
     }
 

@@ -7117,6 +7117,8 @@ var MyProtocols = {
 				retObj.bussize_item[i].template_id = myDecoder.readInt();
 				retObj.bussize_item[i].num = myDecoder.readInt();
 				retObj.bussize_item[i].playerid = myDecoder.readInt();
+				retObj.bussize_item[i].price = myDecoder.readInt();
+
 			}
 		}
 		return retObj;
@@ -7141,6 +7143,7 @@ var MyProtocols = {
 				retObj.bussize_item[i].template_id = myDecoder.readInt();
 				retObj.bussize_item[i].num = myDecoder.readInt();
 				retObj.bussize_item[i].playerid = myDecoder.readInt();
+				retObj.bussize_item[i].price = myDecoder.readInt();
 			}
 		}
 		return retObj;
