@@ -86,6 +86,10 @@ export default class EnumManager {
         /**传承 */
         WND_HOTEL_CC:'prefabs/hotel/wndHotelChuanCheng',
 
+        /////////////////////////寄宝阁
+        WND_JIBAO:'prefabs/jibao/wndJB',
+        
+
 
         /////////////////// 背包
         WND_PACK: 'prefabs/pack/wndPack',

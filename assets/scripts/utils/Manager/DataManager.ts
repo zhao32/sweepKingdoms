@@ -1,6 +1,7 @@
 import ChatPanel from "../../ChatPanel/ChatPanel";
 import pageGoBattle from "../../goBattle/pageGoBattle";
 import wndHotelDetail from "../../hotel/wndHotelDetail";
+import wndJB from "../../jibao/wndJB";
 import wndMail from "../../mail/wndMail";
 import Main from "../../Main";
 
@@ -359,6 +360,8 @@ export default class DataManager {
     static wndMail: wndMail
 
     static ChatPanel: ChatPanel
+
+    static wndJB:wndJB
 
     /**当前矿的守卫详情信息 */
     static curMineDetailData = null

@@ -7097,7 +7097,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	
+
 
 	send_C2SBussizeList: function (senderSocket) {
 		var myEncoder = WsEncoder.alloc();
@@ -7121,7 +7121,7 @@ var MyProtocols = {
 		}
 		return retObj;
 	},
-	send_C2SBussizeListAll: function (senderSocket,page,size) {
+	send_C2SBussizeListAll: function (senderSocket, page, size) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(10053);
 		myEncoder.writeInt(page);
@@ -7146,7 +7146,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	send_C2SBussizeSave: function (senderSocket,itemid,tempid,num,price) {
+	send_C2SBussizeSave: function (senderSocket, itemid, tempid, num, price) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(10047);
 		myEncoder.writeInt(itemid);
@@ -7160,11 +7160,11 @@ var MyProtocols = {
 	get_10048: function (myDecoder) {
 		var retObj = {};
 		retObj.itemid = myDecoder.readInt();
-		retObj.tempid=myDecoder.readInt();
-		retObj.num=myDecoder.readInt();
+		retObj.tempid = myDecoder.readInt();
+		retObj.num = myDecoder.readInt();
 		return retObj;
 	},
-	send_C2SBussizeOff: function (senderSocket,itemid,tempid,num) {
+	send_C2SBussizeOff: function (senderSocket, itemid, tempid, num) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(10075);
 		myEncoder.writeInt(itemid);
@@ -7177,11 +7177,11 @@ var MyProtocols = {
 	get_10076: function (myDecoder) {
 		var retObj = {};
 		retObj.itemid = myDecoder.readInt();
-		retObj.tempid=myDecoder.readInt();
-		retObj.num=myDecoder.readInt();
+		retObj.tempid = myDecoder.readInt();
+		retObj.num = myDecoder.readInt();
 		return retObj;
 	},
-	send_C2SBussizeBuy: function (senderSocket,itemid,tempid,num,playerid) {
+	send_C2SBussizeBuy: function (senderSocket, itemid, tempid, num, playerid) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(10056);
 		myEncoder.writeInt(itemid);
@@ -7195,8 +7195,8 @@ var MyProtocols = {
 	get_10057: function (myDecoder) {
 		var retObj = {};
 		retObj.itemid = myDecoder.readInt();
-		retObj.tempid=myDecoder.readInt();
-		retObj.num=myDecoder.readInt();
+		retObj.tempid = myDecoder.readInt();
+		retObj.num = myDecoder.readInt();
 		return retObj;
 	},
 
