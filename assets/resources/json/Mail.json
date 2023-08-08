@@ -222,5 +222,13 @@
         "mail_item": "",
         "deletetime": 30,
         "sender": "军需官"
+    },
+    "1028": {
+        "id": 1028,
+        "mail_title": "商会成功寄售{0}",
+        "mail_content": "恭喜你成功寄售{0}：获得元宝{1},扣除手续费5%",
+        "mail_item": "",
+        "deletetime": 30,
+        "sender": "系统"
     }
 }

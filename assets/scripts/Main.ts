@@ -36,6 +36,9 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     MarqueeWidget: cc.Prefab = null;
 
+    @property(cc.Prefab)
+    chatPanel: cc.Prefab = null;
+
 
     onLoad() {
 
@@ -203,7 +206,7 @@ export default class NewClass extends cc.Component {
 
         MyProtocols.send_C2SBagItems(DataManager._loginSocket)
 
-        GameUtil.instance.resetSoliderStren()
+        // GameUtil.instance.resetSoliderStren()
 
     }
 

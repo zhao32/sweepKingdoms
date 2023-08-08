@@ -1,3 +1,4 @@
+import ChatPanel from "../../ChatPanel/ChatPanel";
 import pageGoBattle from "../../goBattle/pageGoBattle";
 import wndHotelDetail from "../../hotel/wndHotelDetail";
 import wndMail from "../../mail/wndMail";
@@ -49,6 +50,7 @@ export default class DataManager {
 
     //单例唯一实例
     private static _instance: DataManager = null;
+    // static playerData: any;
     public static get instance(): DataManager {
         if (!this._instance) {
             this._instance = new DataManager();
@@ -355,6 +357,8 @@ export default class DataManager {
     static wndHotelDetail: wndHotelDetail
 
     static wndMail: wndMail
+
+    static ChatPanel: ChatPanel
 
     /**当前矿的守卫详情信息 */
     static curMineDetailData = null

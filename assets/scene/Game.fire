@@ -1278,6 +1278,9 @@
     "MarqueeWidget": {
       "__uuid__": "23085ff2-37dc-45a3-8a7d-548d2e88fe18"
     },
+    "chatPanel": {
+      "__uuid__": "a739695f-23d3-4495-b20b-323bef7a1cfe"
+    },
     "_id": "cdwUPB4sBC1rqWCHwLmF6W"
   }
 ]

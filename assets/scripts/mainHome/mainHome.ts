@@ -71,7 +71,7 @@ export default class NewClass extends cc.Component {
         this.btnProtect.on(cc.Node.EventType.TOUCH_END, () => {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIL)
         }, this)
-        
+
 
         NetEventDispatcher.addListener(NetEvent.S2CListRedPoints, this.RedPointsBack, this)
 
@@ -90,6 +90,8 @@ export default class NewClass extends cc.Component {
         EventManager.getInstance().unRegisterListener(EventManager.UPDATE_BULID_STATE, this)
 
     }
+
+    chatPanel
 
     init() {
 
@@ -112,7 +114,13 @@ export default class NewClass extends cc.Component {
         }
 
 
-
+        if (!this.chatPanel) {
+            this.chatPanel = cc.instantiate(DataManager.Main.chatPanel)
+            this.chatPanel.parent = this.node
+            this.chatPanel.x = -600
+            this.chatPanel.y = 0
+            this.chatPanel.zIndex = 99
+        }
     }
 
     updataBulidState() {
