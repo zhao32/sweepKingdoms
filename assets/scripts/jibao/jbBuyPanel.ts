@@ -59,7 +59,6 @@ export default class NewClass extends cc.Component {
 
     onCloseHandler() {
         this.node.active = false
-
     }
 
 
