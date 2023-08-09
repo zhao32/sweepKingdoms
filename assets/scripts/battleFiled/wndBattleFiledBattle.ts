@@ -11,6 +11,7 @@ import soliderItem from "../battle/soliderItem";
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
+import GameUtil from "../utils/Manager/GameUtil";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
@@ -126,7 +127,7 @@ export default class NewClass extends cc.Component {
         this.myData = myData
         this.enemyData = otherData
 
-        
+
         for (let i = 0; i < myData.soliders.length; i++) {
             if (myData.soliders[i].arm == 6 || myData.soliders[i].arm == 12) {
                 myData.soliders.splice(i, 1)
@@ -190,7 +191,9 @@ export default class NewClass extends cc.Component {
             let data = {
                 myArm: mySolider.arm,
                 enemyArm: enemySolider.arm,
-                enemyNum: 0
+                enemyNum: 0,
+                skillId: GameUtil.instance.getMyTeamSkill(self.myData.heroData.skills_equips)
+
             }
 
             let info: string
@@ -389,6 +392,15 @@ export default class NewClass extends cc.Component {
         let myIdx = this.myAttackList[this.myAttIdx].myArm - 1;
         let otherIdx = this.myAttackList[this.myAttIdx].enemyArm - 1;
         let enemyCount = this.myAttackList[this.myAttIdx].enemyNum
+
+        if (this.myAttackList[this.myAttIdx].skillId > 0) {
+            let skillNode = this.node.getChildByName(`skillat`)
+            skillNode.active = true
+            skillNode.opacity = 0
+            let skillSt = DataManager.GameData.SkillStudy[this.myAttackList[this.myAttIdx].skillId]
+            ResManager.loadItemIcon(`skillats/${skillSt.name}`, skillNode)
+            skillNode.runAction(cc.sequence(cc.delayTime(0.5), cc.callFunc(() => { skillNode.opacity = 255 }), cc.blink(1, 3), cc.callFunc(() => { skillNode.active = false })))
+        }
 
         console.log("myIdx:" + myIdx)
         console.log("otherIdx:" + otherIdx)

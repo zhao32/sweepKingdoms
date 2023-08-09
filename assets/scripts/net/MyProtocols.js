@@ -7124,7 +7124,7 @@ var MyProtocols = {
 		return retObj;
 	},
 	send_C2SBussizeListAll: function (senderSocket, page, size) {
-		debugger;
+		// debugger;
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(1073);
 		myEncoder.writeInt(page);
@@ -7152,7 +7152,7 @@ var MyProtocols = {
 	},
 
 	send_C2SBussizeSave: function (senderSocket, uuid, tempid, num, price) {
-		debugger;
+		// debugger;
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(1075);
 		myEncoder.writeLong(uuid);

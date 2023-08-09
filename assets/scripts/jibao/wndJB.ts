@@ -104,13 +104,12 @@ export default class NewClass extends cc.Component {
             for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
                 let template_id = DataManager.instance.itemsList[i].template_id.toString()
                 if (DataManager.instance.itemsList[i].bagId == 1) {
-                    if (keyEquipList.indexOf(template_id.toString()) != -1) {
+                    if (keyEquipList.indexOf(template_id.toString()) != -1 && template_id != "1000" && template_id != "1001") {
                         let item = cc.instantiate(this.sellPfb)
                         item.parent = this.contect
                         item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
                     }
                 }
-
             }
         }, this)
 
@@ -139,7 +138,6 @@ export default class NewClass extends cc.Component {
             item.getComponent(marketRender).init(data.bussize_item[i])
 
         }
-
     }
 
     S2CBussizeSave(data) {
@@ -152,6 +150,18 @@ export default class NewClass extends cc.Component {
         console.log('购买成功返回：' + JSON.stringify(data))
         ViewManager.instance.showToast(`购买成功返回：`)
         this.node.getChildByName(`jbBuyPanel`).active = false
+
+        let keyEquipList = Object.keys(DataManager.GameData.Equips)
+        for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+            let template_id = DataManager.instance.itemsList[i].template_id.toString()
+            if (DataManager.instance.itemsList[i].bagId == 1) {
+                if (keyEquipList.indexOf(template_id.toString()) != -1 && template_id != "1000" && template_id != "1001") {
+                    let item = cc.instantiate(this.sellPfb)
+                    item.parent = this.contect
+                    item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
+                }
+            }
+        }
     }
 
     S2CBussizeOff(data) {

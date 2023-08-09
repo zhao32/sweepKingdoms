@@ -744,7 +744,7 @@ export default class NewClass extends cc.Component {
             skillNode.opacity = 0
             let skillSt = DataManager.GameData.SkillStudy[this.myAttackList[this.myAttIdx].skillId]
             ResManager.loadItemIcon(`skillats/${skillSt.name}`, skillNode)
-            skillNode.runAction(cc.sequence(cc.callFunc(() => { skillNode.opacity = 255 }), cc.delayTime(0.5), cc.blink(1, 3), cc.callFunc(() => { skillNode.active = false })))
+            skillNode.runAction(cc.sequence(cc.delayTime(0.5), cc.callFunc(() => { skillNode.opacity = 255 }), cc.blink(1, 3), cc.callFunc(() => { skillNode.active = false })))
         }
 
         console.log("myIdx:" + myIdx)

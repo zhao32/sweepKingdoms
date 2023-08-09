@@ -35,7 +35,7 @@ export interface solider {
 
 @ccclass
 export default class NewClass extends cc.Component {
-    
+
     @property({ type: cc.Prefab })
     getRewardPanel_prefab: cc.Prefab = null;
 
@@ -102,7 +102,7 @@ export default class NewClass extends cc.Component {
 
     isSkip: boolean = false
 
-    _resultData:any = null;
+    _resultData: any = null;
 
     start() {
 
@@ -296,7 +296,7 @@ export default class NewClass extends cc.Component {
         this.myData = myData
         this.enemyData = otherData
 
-        
+
         for (let i = 0; i < myData.soliderList.length; i++) {
             if (myData.soliderList[i].arm == 6 || myData.soliderList[i].arm == 12) {
                 myData.soliderList.splice(i, 1)
@@ -416,7 +416,8 @@ export default class NewClass extends cc.Component {
             let data = {
                 myArm: mySolider.arm,
                 enemyArm: enemySolider.arm,
-                enemyNum: 0
+                enemyNum: 0,
+                skillId: GameUtil.instance.getMyTeamSkill(self.myData.heroData.skills_equips)
             }
 
             let info: string
@@ -585,7 +586,7 @@ export default class NewClass extends cc.Component {
         console.log('this.battleInfo:' + this.battleInfo)
         panel.getChildByName(`scrollView`).getComponent(cc.ScrollView).content.getComponentInChildren(cc.Label).string = this.battleInfo
 
-        if(this._resultData.gain.length > 0){
+        if (this._resultData.gain.length > 0) {
             var rewardPanel = cc.instantiate(this.getRewardPanel_prefab);
             cc.Canvas.instance.node.addChild(rewardPanel);
             rewardPanel.getComponent(GetRewardPanel)._itemlist = this._resultData.gain
@@ -634,6 +635,15 @@ export default class NewClass extends cc.Component {
         let otherIdx = this.myAttackList[this.myAttIdx].enemyArm - 1;
         let enemyCount = this.myAttackList[this.myAttIdx].enemyNum
 
+        if (this.myAttackList[this.myAttIdx].skillId > 0) {
+            let skillNode = this.node.getChildByName(`skillat`)
+            skillNode.active = true
+            skillNode.opacity = 0
+            let skillSt = DataManager.GameData.SkillStudy[this.myAttackList[this.myAttIdx].skillId]
+            ResManager.loadItemIcon(`skillats/${skillSt.name}`, skillNode)
+            skillNode.runAction(cc.sequence(cc.delayTime(0.5), cc.callFunc(() => { skillNode.opacity = 255 }), cc.blink(1, 3), cc.callFunc(() => { skillNode.active = false })))
+        }
+
         console.log("myIdx:" + myIdx)
         console.log("otherIdx:" + otherIdx)
         console.log("enemyCount:" + enemyCount)
@@ -649,6 +659,7 @@ export default class NewClass extends cc.Component {
         let otherSolider = cc.instantiate(this.soliderPfbList[otherIdx])
         otherSolider.parent = this.posEnemy
         otherSolider.x = otherSolider.y = 0
+
 
         mySolider.getComponent(sp.Skeleton).setAnimation(0, 'move', true)
         otherSolider.getComponent(sp.Skeleton).setAnimation(0, 'stand', true)
