@@ -144,13 +144,9 @@ export default class NewClass extends cc.Component {
         console.log('上架返回返回：' + JSON.stringify(data))
         ViewManager.instance.showToast(`上架成功`)
         this.node.getChildByName(`jbSellPanel`).active = false
-    }
 
-    S2CBussizeBuy(data) {
-        console.log('购买成功返回：' + JSON.stringify(data))
-        ViewManager.instance.showToast(`购买成功返回：`)
-        this.node.getChildByName(`jbBuyPanel`).active = false
 
+        this.contect.removeAllChildren()
         let keyEquipList = Object.keys(DataManager.GameData.Equips)
         for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
             let template_id = DataManager.instance.itemsList[i].template_id.toString()
@@ -164,10 +160,21 @@ export default class NewClass extends cc.Component {
         }
     }
 
+    S2CBussizeBuy(data) {
+        console.log('购买成功返回：' + JSON.stringify(data))
+        ViewManager.instance.showToast(`购买成功`)
+        this.node.getChildByName(`jbBuyPanel`).active = false
+
+      
+    }
+
     S2CBussizeOff(data) {
         console.log('下架成功返回：' + JSON.stringify(data))
-        ViewManager.instance.showToast(`下架成功返回：`)
+        ViewManager.instance.showToast(`下架成功`)
         this.node.getChildByName(`jbUnSellPanel`).active = false
+
+        this.contect.removeAllChildren()
+        MyProtocols.send_C2SBussizeList(DataManager._loginSocket)
     }
 
     onClose() {

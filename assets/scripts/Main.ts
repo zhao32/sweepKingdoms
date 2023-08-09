@@ -206,7 +206,7 @@ export default class NewClass extends cc.Component {
 
         MyProtocols.send_C2SBagItems(DataManager._loginSocket)
 
-        GameUtil.instance.resetSoliderStren()
+        // GameUtil.instance.resetSoliderStren()
 
     }
 

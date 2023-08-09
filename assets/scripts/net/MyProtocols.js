@@ -7172,7 +7172,7 @@ var MyProtocols = {
 	},
 	send_C2SBussizeOff: function (senderSocket, itemid, tempid, num) {
 		var myEncoder = WsEncoder.alloc();
-		myEncoder.writeInt(10077);
+		myEncoder.writeInt(1077);
 		myEncoder.writeInt(itemid);
 		myEncoder.writeInt(tempid);
 		myEncoder.writeInt(num);
