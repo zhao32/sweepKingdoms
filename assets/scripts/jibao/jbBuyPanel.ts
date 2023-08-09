@@ -33,6 +33,7 @@ export default class NewClass extends cc.Component {
 
     init(data) {
         this.data = data
+        this.node.active = true
         let keyEquip = Object.keys(DataManager.GameData.Equips)
 
         let itemData
