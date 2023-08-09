@@ -42,7 +42,7 @@ export default class NewClass extends cc.Component {
         }
 
         if (itemData) {
-            this.descLabel.string = `你是否愿意花费 ${data.price}元宝 购买${itemData.name} x${data.num}` 
+            this.descLabel.string = `你是否愿意花费 ${data.price}元宝 购买${itemData.name} x${data.num}`
         }
 
     }
@@ -53,8 +53,8 @@ export default class NewClass extends cc.Component {
         // retObj.bussize_item[i].template_id = myDecoder.readInt();
         // retObj.bussize_item[i].num = myDecoder.readInt();
         // retObj.bussize_item[i].playerid = myDecoder.readInt();
-        console.log(`this.data.id:` + this.data.id + '  ' + "this.data.template_id:" + this.data.template_id + "   " + "this.data.num:" + this.data.num + "   " + "this.data.price:" + this.data.price)
-        MyProtocols.send_C2SBussizeBuy(DataManager._loginSocket, this.data.id, this.data.template_id, this.data.num, this.data.price)
+        console.log(`this.data.id:` + this.data.id + '  ' + "this.data.template_id:" + this.data.template_id + "   " + "this.data.num:" + this.data.num + "   " + "this.data.price:" + this.data.price + `  playerid:` + this.data.playerid)
+        MyProtocols.send_C2SBussizeBuy(DataManager._loginSocket, this.data.id, this.data.template_id, this.data.num, this.data.price, this.data.playerid)
     }
 
     onCloseHandler() {

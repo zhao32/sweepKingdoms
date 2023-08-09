@@ -164,8 +164,6 @@ export default class NewClass extends cc.Component {
         console.log('购买成功返回：' + JSON.stringify(data))
         ViewManager.instance.showToast(`购买成功`)
         this.node.getChildByName(`jbBuyPanel`).active = false
-
-      
     }
 
     S2CBussizeOff(data) {
