@@ -22,8 +22,6 @@ export default class EnumManager {
 
         GAME: 'prefabs/pageGame',
 
-        LOAD: 'prefabs/pageLoad',
-
         /**登录页面 */
         PAGE_LOGIN: 'prefabs/login/loginLayer',
 

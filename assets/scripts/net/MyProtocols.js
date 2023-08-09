@@ -7101,47 +7101,49 @@ var MyProtocols = {
 
 	send_C2SBussizeList: function (senderSocket) {
 		var myEncoder = WsEncoder.alloc();
-		myEncoder.writeInt(10058);
+		myEncoder.writeInt(1071);
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
 	},
-	get_10059: function (myDecoder) {
+	get_1072: function (myDecoder) {
 		var retObj = {};
 		retObj.bussize_item = [];
 		let bussize_item_size = myDecoder.readInt();
 		if (bussize_item_size > 0) {
-			for (var i = 0; i < bussize_item.size; i++) {
+			for (var i = 0; i < bussize_item_size; i++) {
 				retObj.bussize_item[i] = {};
-				retObj.bussize_item[i].itemid = myDecoder.readInt();
-				retObj.bussize_item[i].template_id = myDecoder.readInt();
+				retObj.bussize_item[i].id = myDecoder.readInt();
 				retObj.bussize_item[i].num = myDecoder.readInt();
+				retObj.bussize_item[i].template_id = myDecoder.readInt();
+				retObj.bussize_item[i].uuid = myDecoder.readLong();
 				retObj.bussize_item[i].playerid = myDecoder.readInt();
 				retObj.bussize_item[i].price = myDecoder.readInt();
-
 			}
 		}
 		return retObj;
 	},
 	send_C2SBussizeListAll: function (senderSocket, page, size) {
+		debugger;
 		var myEncoder = WsEncoder.alloc();
-		myEncoder.writeInt(10053);
+		myEncoder.writeInt(1073);
 		myEncoder.writeInt(page);
 		myEncoder.writeInt(size);
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
 	},
-	get_10054: function (myDecoder) {
+	get_1074: function (myDecoder) {
 		var retObj = {};
 		retObj.bussize_item = [];
 		let bussize_item_size = myDecoder.readInt();
 		if (bussize_item_size > 0) {
-			for (var i = 0; i < bussize_item.size; i++) {
+			for (var i = 0; i < bussize_item_size; i++) {
 				retObj.bussize_item[i] = {};
-				retObj.bussize_item[i].itemid = myDecoder.readInt();
-				retObj.bussize_item[i].template_id = myDecoder.readInt();
+				retObj.bussize_item[i].id = myDecoder.readInt();
 				retObj.bussize_item[i].num = myDecoder.readInt();
+				retObj.bussize_item[i].template_id = myDecoder.readInt();
+				retObj.bussize_item[i].uuid = myDecoder.readLong();
 				retObj.bussize_item[i].playerid = myDecoder.readInt();
 				retObj.bussize_item[i].price = myDecoder.readInt();
 			}
@@ -7149,10 +7151,11 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	send_C2SBussizeSave: function (senderSocket, itemid, tempid, num, price) {
+	send_C2SBussizeSave: function (senderSocket, uuid, tempid, num, price) {
+		debugger;
 		var myEncoder = WsEncoder.alloc();
-		myEncoder.writeInt(10047);
-		myEncoder.writeInt(itemid);
+		myEncoder.writeInt(1075);
+		myEncoder.writeLong(uuid);
 		myEncoder.writeInt(tempid);
 		myEncoder.writeInt(num);
 		myEncoder.writeInt(price)
@@ -7160,7 +7163,7 @@ var MyProtocols = {
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
 	},
-	get_10048: function (myDecoder) {
+	get_1076: function (myDecoder) {
 		var retObj = {};
 		retObj.itemid = myDecoder.readInt();
 		retObj.tempid = myDecoder.readInt();
@@ -7169,7 +7172,7 @@ var MyProtocols = {
 	},
 	send_C2SBussizeOff: function (senderSocket, itemid, tempid, num) {
 		var myEncoder = WsEncoder.alloc();
-		myEncoder.writeInt(10075);
+		myEncoder.writeInt(10077);
 		myEncoder.writeInt(itemid);
 		myEncoder.writeInt(tempid);
 		myEncoder.writeInt(num);
@@ -7177,7 +7180,7 @@ var MyProtocols = {
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
 	},
-	get_10076: function (myDecoder) {
+	get_1078: function (myDecoder) {
 		var retObj = {};
 		retObj.itemid = myDecoder.readInt();
 		retObj.tempid = myDecoder.readInt();
@@ -7186,7 +7189,7 @@ var MyProtocols = {
 	},
 	send_C2SBussizeBuy: function (senderSocket, itemid, tempid, num, playerid) {
 		var myEncoder = WsEncoder.alloc();
-		myEncoder.writeInt(10056);
+		myEncoder.writeInt(1079);
 		myEncoder.writeInt(itemid);
 		myEncoder.writeInt(tempid);
 		myEncoder.writeInt(num);
@@ -7195,14 +7198,13 @@ var MyProtocols = {
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
 	},
-	get_10057: function (myDecoder) {
+	get_1080: function (myDecoder) {
 		var retObj = {};
 		retObj.itemid = myDecoder.readInt();
 		retObj.tempid = myDecoder.readInt();
 		retObj.num = myDecoder.readInt();
 		return retObj;
 	},
-
 }
 
 // export default MyProtocols = MyProtocols

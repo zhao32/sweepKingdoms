@@ -395,27 +395,25 @@ export enum NetEvent {
     S2CDumpRuneSlot = 2041,
 
 
+    C2SBussizeList = 1071,
 
-    C2SBussizeList = 10058,
+    S2CBussizeList = 1072,
 
-    S2CBussizeList = 10059,
+    C2SBussizeListAll = 1073,
 
-    C2SBussizeListAll = 10053,
+    S2CBussizeListAll = 1074,
 
-    S2CBussizeListAll = 10054,
+    C2SBussizeSave = 1075,
 
-    C2SBussizeSave = 10047,
+    S2CBussizeSave = 1076,
 
-    S2CBussizeSave = 10048,
+    C2SBussizeOff = 1077,
 
-    C2SBussizeOff = 10075,
+    S2CBussizeOff = 1078,
 
-    S2CBussizeOff = 10076,
+    C2SBussizeBuy = 1079,
 
-    C2SBussizeBuy = 10056,
-
-    S2CBussizeBuy = 10057,
-
+    S2CBussizeBuy = 1080,
 
 }
 

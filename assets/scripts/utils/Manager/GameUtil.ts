@@ -232,6 +232,27 @@ export default class GameUtil {
         return plusList
     }
 
+    getMyTeamSkill(skills): number {
+        let canUseSkills = []
+        for (let i = 0; i < skills.length; i++) {
+            if (skills[i].id > 0) {
+                canUseSkills.push(skills[i])
+            }
+        }
+        let skill = canUseSkills[Math.floor(Math.random() * canUseSkills.length)]
+        if (!skill) {
+            return 0
+        } else {
+            let rate = Math.random() * 1
+            if (rate > 0.2) {
+                return skill.id
+            } else {
+                return 0
+            }
+        }
+    }
+
+
     /**士兵强化加成 */
     resetSoliderStren() {
         for (let i = 0; i < DataManager.playData.storgleave_data.length; i++) {
