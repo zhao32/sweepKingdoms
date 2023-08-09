@@ -7,7 +7,7 @@
 
 import DataManager from "../utils/Manager/DataManager";
 
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 //@ts-ignore
 var MyProtocols = require("MyProtocols");
@@ -27,11 +27,11 @@ export default class NewClass extends cc.Component {
 
     data
 
-    start () {
+    start() {
 
     }
 
-    init(data){ 
+    init(data) {
         this.node.active = true
         this.data = data
         let keyEquip = Object.keys(DataManager.GameData.Equips)
@@ -42,7 +42,7 @@ export default class NewClass extends cc.Component {
         }
 
         if (itemData) {
-            this.descLabel.string = `你是否要下架 ${itemData.name} x${data.num}` 
+            this.descLabel.string = `你是否要下架 ${itemData.name} x${data.num}`
         }
 
     }
@@ -53,7 +53,8 @@ export default class NewClass extends cc.Component {
         // retObj.bussize_item[i].template_id = myDecoder.readInt();
         // retObj.bussize_item[i].num = myDecoder.readInt();
         // retObj.bussize_item[i].playerid = myDecoder.readInt();
-        MyProtocols.send_C2SBussizeOff(DataManager._loginSocket, this.data.itemid, this.data.template_id, this.data.num)
+        console.log(`this.data.id:` + this.data.id + '  ' + "this.data.template_id:" + this.data.template_id + "   " + "this.data.num:" + this.data.num)
+        MyProtocols.send_C2SBussizeOff(DataManager._loginSocket, this.data.id, this.data.template_id, this.data.num)
 
     }
 

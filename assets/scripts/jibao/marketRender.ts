@@ -53,12 +53,8 @@ export default class NewClass extends cc.Component {
             this.nameLabel.string = itemData.name + `x${data.num}`
         }
 
-        this.priceLabel.string = `x${data.price}`
-        this.priceAllLabel.string = `x${data.price * data.num}`
-
-
-
-
+        this.priceLabel.string = `单价：x${data.price}`
+        this.priceAllLabel.string = `总价：x${data.price * data.num}`
     }
 
     doBuyHandler() {

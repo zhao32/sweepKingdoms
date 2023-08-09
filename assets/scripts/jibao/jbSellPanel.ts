@@ -88,7 +88,7 @@ export default class NewClass extends cc.Component {
             return
         }
 
-
+        console.log(`this.data.uuid:` + this.data.uuid + '  ' + "this.data.template_id:" + this.data.template_id + "   " + "this.num:" + this.num + "   " + "this.price:" + this.price)
         MyProtocols.send_C2SBussizeSave(DataManager._loginSocket, this.data.uuid, this.data.template_id, this.num, this.price)
     }
 

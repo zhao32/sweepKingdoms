@@ -32,14 +32,14 @@ export default class NewClass extends cc.Component {
         let keyEquip = Object.keys(DataManager.GameData.Equips)
 
         let itemData
-        if (keyEquip.indexOf(data.template_id) != -1) {
+        if (keyEquip.indexOf(String(data.template_id)) != -1) {
             itemData = DataManager.GameData.Equips[data.template_id]
         }
 
         if (itemData) {
             this.nameLabel.string = itemData.name + `x${data.num}`
         }
-        this.priceAllLabel.string = `x${data.num * data.price}`
+        this.priceAllLabel.string = `总价：x${data.num * data.price}`
 
     }
 
