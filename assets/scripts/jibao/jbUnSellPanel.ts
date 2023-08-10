@@ -35,10 +35,15 @@ export default class NewClass extends cc.Component {
         this.node.active = true
         this.data = data
         let keyEquip = Object.keys(DataManager.GameData.Equips)
+        let keySkillatList = Object.keys(DataManager.GameData.SkillStudy)
 
         let itemData
         if (keyEquip.indexOf(String(data.template_id)) != -1) {
             itemData = DataManager.GameData.Equips[data.template_id]
+        }
+
+        if (keySkillatList.indexOf(String(data.template_id)) != -1) {
+            itemData = DataManager.GameData.SkillStudy[data.template_id]
         }
 
         if (itemData) {

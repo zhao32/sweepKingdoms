@@ -52,6 +52,12 @@ export default class NewClass extends cc.Component {
     @property(cc.Toggle)
     toggle3: cc.Toggle = null;
 
+    @property(cc.Label)
+    pageLabel: cc.Label = null;
+
+
+    curPage = 1
+
 
 
 
@@ -80,7 +86,7 @@ export default class NewClass extends cc.Component {
 
     init() {
         this.contect.removeAllChildren()
-        MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, 1, 10)
+        MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage, 5)
         NetEventDispatcher.addListener(NetEvent.S2CBussizeList, this.S2CBussizeList, this)
         NetEventDispatcher.addListener(NetEvent.S2CBussizeListAll, this.S2CBussizeListAll, this)
         NetEventDispatcher.addListener(NetEvent.S2CBussizeSave, this.S2CBussizeSave, this)
@@ -90,17 +96,21 @@ export default class NewClass extends cc.Component {
 
 
         this.goldLabel.string = String(DataManager.playData.goldMoney)
-
+        this.node.getChildByName(`page`).active = true
 
         this.toggle1.node.on(`toggle`, () => {
+            this.node.getChildByName(`page`).active = true
             this.contect.removeAllChildren()
-            MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, 1, 10)
+            MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage, 5)
         }, this)
 
         this.toggle2.node.on(`toggle`, () => {
+            this.node.getChildByName(`page`).active = false
             this.contect.removeAllChildren()
             /**装备 */
             let keyEquipList = Object.keys(DataManager.GameData.Equips)
+            let keySkillatList = Object.keys(DataManager.GameData.SkillStudy)
+
             for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
                 let template_id = DataManager.instance.itemsList[i].template_id.toString()
                 if (DataManager.instance.itemsList[i].bagId == 1) {
@@ -111,26 +121,58 @@ export default class NewClass extends cc.Component {
                     }
                 }
             }
+
+            for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+                let template_id = DataManager.instance.itemsList[i].template_id.toString()
+                if (DataManager.instance.itemsList[i].bagId == 3) {
+                    if (keySkillatList.indexOf(template_id.toString()) != -1) {
+                        let item = cc.instantiate(this.sellPfb)
+                        item.parent = this.contect
+                        item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
+                    }
+                }
+            }
         }, this)
 
         this.toggle3.node.on(`toggle`, () => {
+            this.node.getChildByName(`page`).active = false
             this.contect.removeAllChildren()
             MyProtocols.send_C2SBussizeList(DataManager._loginSocket)
         }, this)
-
     }
 
+    prePage() {
+        if (this.curPage <= 1) {
+            ViewManager.instance.showToast(`已到首页`)
+            return
+        }
+        this.curPage--
+        this.pageLabel.string = `第${this.curPage}页`
+        MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage, 5)
+    }
+
+    nextPage() {
+        this.curPage++
+        this.pageLabel.string = `第${this.curPage}页`
+        MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage, 5)
+    }
     S2CBussizeList(data) {
         console.log('我的售卖列表返回：' + JSON.stringify(data))
         for (let i = 0; i < data.bussize_item.length; i++) {
             let item = cc.instantiate(this.unSellPfb)
             item.parent = this.contect
             item.getComponent(unSellRender).init(data.bussize_item[i])
-
         }
     }
 
     S2CBussizeListAll(data) {
+        if (data.bussize_item.length == 0) {
+            if (this.curPage > 1) this.curPage--
+            this.pageLabel.string = `第${this.curPage}页`
+            ViewManager.instance.showToast(`没有更多了`)
+            return
+        }
+        this.contect.removeAllChildren()
         console.log('商店列表返回：' + JSON.stringify(data))
         for (let i = 0; i < data.bussize_item.length; i++) {
             let item = cc.instantiate(this.marketPfb)
@@ -148,10 +190,23 @@ export default class NewClass extends cc.Component {
 
         this.contect.removeAllChildren()
         let keyEquipList = Object.keys(DataManager.GameData.Equips)
+        let keySkillatList = Object.keys(DataManager.GameData.SkillStudy)
+
         for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
             let template_id = DataManager.instance.itemsList[i].template_id.toString()
             if (DataManager.instance.itemsList[i].bagId == 1) {
                 if (keyEquipList.indexOf(template_id.toString()) != -1 && template_id != "1000" && template_id != "1001") {
+                    let item = cc.instantiate(this.sellPfb)
+                    item.parent = this.contect
+                    item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
+                }
+            }
+        }
+
+        for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+            let template_id = DataManager.instance.itemsList[i].template_id.toString()
+            if (DataManager.instance.itemsList[i].bagId == 3) {
+                if (keySkillatList.indexOf(template_id.toString()) != -1) {
                     let item = cc.instantiate(this.sellPfb)
                     item.parent = this.contect
                     item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
@@ -166,7 +221,7 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName(`jbBuyPanel`).active = false
 
         this.contect.removeAllChildren()
-        MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, 1, 10)
+        MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage, 5)
     }
 
     S2CBussizeOff(data) {
@@ -186,7 +241,6 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.removeListener(NetEvent.S2CBussizeBuy, this.S2CBussizeBuy, this)
         NetEventDispatcher.removeListener(NetEvent.S2CBussizeOff, this.S2CBussizeOff, this)
         EventManager.getInstance().unRegisterListener(EventManager.UPDATE_MAINHOME_INFO, this)
-
     }
 
     onCloseHandler() {

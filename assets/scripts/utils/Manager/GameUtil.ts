@@ -257,13 +257,12 @@ export default class GameUtil {
     resetSoliderStren() {
         for (let i = 0; i < DataManager.playData.storgleave_data.length; i++) {
             let idx = DataManager.playData.storgleave_data[i].type
-            console.log()
-            if (DataManager.GameData.Soldier[idx].defense.attack_1 > 0) DataManager.GameData.Soldier[idx].defense.attack_1 *= 1 + DataManager.GameData.soliderStren[idx].plus[DataManager.playData.storgleave_data[i].lv[0]] * 0.01
-            if (DataManager.GameData.Soldier[idx].defense.attack_2 > 0) DataManager.GameData.Soldier[idx].defense.attack_2 *= 1 + DataManager.GameData.soliderStren[idx].plus[DataManager.playData.storgleave_data[i].lv[1]] * 0.01
-            if (DataManager.GameData.Soldier[idx].defense.attack_3 > 0) DataManager.GameData.Soldier[idx].defense.attack_3 *= 1 + DataManager.GameData.soliderStren[idx].plus[DataManager.playData.storgleave_data[i].lv[2]] * 0.01
-            if (DataManager.GameData.Soldier[idx].defense.attack_4 > 0) DataManager.GameData.Soldier[idx].defense.attack_4 *= 1 + DataManager.GameData.soliderStren[idx].plus[DataManager.playData.storgleave_data[i].lv[3]] * 0.01
-            if (DataManager.GameData.Soldier[idx].defense.attack_5 > 0) DataManager.GameData.Soldier[idx].defense.attack_5 *= 1 + DataManager.GameData.soliderStren[idx].plus[DataManager.playData.storgleave_data[i].lv[4]] * 0.01
-            if (DataManager.GameData.Soldier[idx].defense.attack_6 > 0) DataManager.GameData.Soldier[idx].defense.attack_6 *= 1 + DataManager.GameData.soliderStren[idx].plus[DataManager.playData.storgleave_data[i].lv[5]] * 0.01
+            if (DataManager.GameData.Soldier[idx].defense.attack_1 > 0) DataManager.GameData.Soldier[idx].defense.attack_1 *= 1 + DataManager.GameData.soliderStren[1].plus[DataManager.playData.storgleave_data[i].lv[0]] * 0.01
+            if (DataManager.GameData.Soldier[idx].defense.attack_2 > 0) DataManager.GameData.Soldier[idx].defense.attack_2 *= 1 + DataManager.GameData.soliderStren[2].plus[DataManager.playData.storgleave_data[i].lv[1]] * 0.01
+            if (DataManager.GameData.Soldier[idx].defense.attack_3 > 0) DataManager.GameData.Soldier[idx].defense.attack_3 *= 1 + DataManager.GameData.soliderStren[3].plus[DataManager.playData.storgleave_data[i].lv[2]] * 0.01
+            if (DataManager.GameData.Soldier[idx].defense.attack_4 > 0) DataManager.GameData.Soldier[idx].defense.attack_4 *= 1 + DataManager.GameData.soliderStren[4].plus[DataManager.playData.storgleave_data[i].lv[3]] * 0.01
+            if (DataManager.GameData.Soldier[idx].defense.attack_5 > 0) DataManager.GameData.Soldier[idx].defense.attack_5 *= 1 + DataManager.GameData.soliderStren[5].plus[DataManager.playData.storgleave_data[i].lv[4]] * 0.01
+            if (DataManager.GameData.Soldier[idx].defense.attack_6 > 0) DataManager.GameData.Soldier[idx].defense.attack_6 *= 1 + DataManager.GameData.soliderStren[6].plus[DataManager.playData.storgleave_data[i].lv[5]] * 0.01
         }
     }
 

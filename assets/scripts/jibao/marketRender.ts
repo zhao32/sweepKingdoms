@@ -49,6 +49,12 @@ export default class NewClass extends cc.Component {
             itemData = DataManager.GameData.Equips[data.template_id]
         }
 
+        let keySkillatList = Object.keys(DataManager.GameData.SkillStudy)
+        if (keySkillatList.indexOf(String(data.template_id)) != -1) {
+            itemData = DataManager.GameData.SkillStudy[data.template_id]
+        }
+
+
         if (itemData) {
             this.nameLabel.string = itemData.name + `x${data.num}`
         }

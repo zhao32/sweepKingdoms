@@ -206,7 +206,7 @@ export default class NewClass extends cc.Component {
 
         MyProtocols.send_C2SBagItems(DataManager._loginSocket)
 
-        // GameUtil.instance.resetSoliderStren()
+        GameUtil.instance.resetSoliderStren()
 
     }
 
@@ -244,7 +244,7 @@ export default class NewClass extends cc.Component {
         // console.log('属性变化：' + JSON.stringify(retObj))
         //属性变化：{"type":4,"value":10396}
         //属性变化：{"type":11,"value":10400}
-        //1 游戏币  2元宝  3 等级  4 暂时没用 5 人口  6  经验  7 vip 等级 8 vip 经验 9 暂时没用  10 声望  11 兵力 12 战力
+        //1 游戏币  2元宝  3 等级  4 暂时没用 5 人口  6  经验  7 vip 等级 8 vip 经验 9 暂时没用  10 声望  11 兵力 12 战力 13 粮草
         if (retObj.type == 1) {
             DataManager.playData.coinMoney = retObj.value
         } else if (retObj.type == 2) {
@@ -269,6 +269,8 @@ export default class NewClass extends cc.Component {
             DataManager.playData.troops = retObj.value
         } else if (retObj.type == 12) {
 
+        }else if (retObj.type == 13) {
+            DataManager.playData.food = retObj.value
         }
 
         EventManager.getInstance().sendListener(EventManager.UPDATE_MAINHOME_INFO)
