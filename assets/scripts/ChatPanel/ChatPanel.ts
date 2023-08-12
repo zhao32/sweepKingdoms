@@ -324,6 +324,7 @@ export default class NewClass extends cc.Component {
     showListView() {
         //组件初始化
         this.content = this.mScrollView.content;
+        // console.log(`this._chatviewList:` + JSON.stringify(this._chatviewList))
         this.content.height = this._chatviewList.length * (this.itemTemplateHeight + this.spacing) + this.spacing; // get total content height
         if (this.content.children.length == 0) {
             this._spawnItems = []; // array to store spawned items

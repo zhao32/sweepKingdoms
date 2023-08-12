@@ -63,7 +63,7 @@ export default class NewClass extends cc.Component {
 
     }
     Init() {
-        console.log(`this._chatinfo:`+JSON.stringify(this._chatinfo))
+        console.log(`this._chatinfo:` + JSON.stringify(this._chatinfo))
         switch (this._chatinfo.chat_type) {
             case 1:
                 // let officeTitle = GuozhanBufferMgr.getOfficeNameByIndex(this._chatinfo.office_index);
@@ -89,12 +89,12 @@ export default class NewClass extends cc.Component {
                 }
                 break;
             case 3:
-                // officeTitle = GuozhanBufferMgr.getOfficeNameByIndex(this._chatinfo.office_index);
-                // if(this._chatinfo.sender_uid == MyPersistDataManager._playData.id){
-                //     this.m_pContent.string =officeTitle+"<color=#00ff00>我</c>:"+this._chatinfo.content;
-                // }else{
-                //     this.m_pContent.string =officeTitle+this._chatinfo.sender_name+":"+this._chatinfo.content;
-                // }
+                // let officeTitle = DataManager.countyList[DataManager.playData.account_id]//GuozhanBufferMgr.getOfficeNameByIndex(this._chatinfo.office_index);
+                if (this._chatinfo.sender_uid == DataManager.playData.id) {
+                    this.m_pContent.string = "<color=#00ff00>我</c>:" + this._chatinfo.content;
+                } else {
+                    this.m_pContent.string = this._chatinfo.sender_name + ":" + this._chatinfo.content;
+                }
                 break;
         }
         // cc.log("发送的类型"+this._chatinfo.chat_type);
@@ -117,11 +117,11 @@ export default class NewClass extends cc.Component {
         //         });
         //     }
 
-        
+
         // }
-        
+
         if (DataManager.playData.icon == 0) {
-            ResManager.loadItemIcon(`hero/head_1_1`,this.m_pIcon.node)
+            ResManager.loadItemIcon(`hero/head_1_1`, this.m_pIcon.node)
         } else if (DataManager.playData.icon == 1) {
             ResManager.loadItemIcon(`hero/head_2_1`, this.m_pIcon.node)
         } else {
