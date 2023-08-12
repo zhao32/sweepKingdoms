@@ -146,16 +146,17 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showToast(`已到首页`)
             return
         }
-        this.curPage--
-        this.pageLabel.string = `第${this.curPage}页`
-        MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage, 5)
+        // this.curPage--
+        // this.pageLabel.string = `第${this.curPage}页`
+        MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage - 1, 5)
     }
 
     nextPage() {
-        this.curPage++
-        this.pageLabel.string = `第${this.curPage}页`
-        MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage, 5)
+        // this.curPage++
+        // this.pageLabel.string = `第${this.curPage}页`
+        MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage + 1, 5)
     }
+
     S2CBussizeList(data) {
         console.log('我的售卖列表返回：' + JSON.stringify(data))
         for (let i = 0; i < data.bussize_item.length; i++) {
@@ -167,18 +168,19 @@ export default class NewClass extends cc.Component {
 
     S2CBussizeListAll(data) {
         if (data.bussize_item.length == 0) {
-            if (this.curPage > 1) this.curPage--
-            this.pageLabel.string = `第${this.curPage}页`
+            // if (this.curPage > 1) this.curPage--
+            // this.pageLabel.string = `第${this.curPage}页`
             ViewManager.instance.showToast(`没有更多了`)
             return
         }
+        this.curPage = data.page
+        this.pageLabel.string = `第${this.curPage}页`
         this.contect.removeAllChildren()
         console.log('商店列表返回：' + JSON.stringify(data))
         for (let i = 0; i < data.bussize_item.length; i++) {
             let item = cc.instantiate(this.marketPfb)
             item.parent = this.contect
             item.getComponent(marketRender).init(data.bussize_item[i])
-
         }
     }
 

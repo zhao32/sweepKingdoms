@@ -7148,6 +7148,7 @@ var MyProtocols = {
 				retObj.bussize_item[i].price = myDecoder.readInt();
 			}
 		}
+		retObj.page = myDecoder.readInt();
 		return retObj;
 	},
 
