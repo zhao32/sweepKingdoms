@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "3299274f-0864-4f22-8205-33a2ec2f512e",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 181,
+  "height": 157,
+  "platformSettings": {},
+  "subMetas": {
+    "酒馆": {
+      "ver": "1.0.6",
+      "uuid": "d11edbc5-940c-4c06-9862-06a89336d63f",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "3299274f-0864-4f22-8205-33a2ec2f512e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 181,
+      "height": 157,
+      "rawWidth": 181,
+      "rawHeight": 157,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

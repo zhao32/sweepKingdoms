@@ -1743,8 +1743,12 @@
       "__id__": 1
     },
     "_enabled": true,
-    "label": null,
-    "text": "hello",
+    "contect": {
+      "__id__": 35
+    },
+    "pfb": {
+      "__uuid__": "8a0e1d4b-2c9c-489d-a14d-58633d3a9589"
+    },
     "_id": ""
   },
   {

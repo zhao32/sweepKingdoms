@@ -14,11 +14,18 @@ const {ccclass, property} = cc._decorator;
 @ccclass
 export default class NewClass extends cc.Component {
 
-    @property(cc.Label)
-    label: cc.Label = null;
+    @property(cc.Node)
+    contect: cc.Node = null;
 
-    @property
-    text: string = 'hello';
+    @property(cc.Prefab)
+    pfb: cc.Prefab = null;
+
+    @property({type:cc.ProgressBar,displayName:"经验条"})
+    proBar: cc.Prefab = null;
+
+    @property({type:cc.Label,displayName:"经验"})
+    proBarTxt: cc.Label = null;
+
 
     // LIFE-CYCLE CALLBACKS:
 

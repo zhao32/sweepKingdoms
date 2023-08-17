@@ -65,9 +65,55 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Node })
     nodeContect: cc.Node = null;
 
+
+    @property({ type: cc.Node, displayName: '酒馆' })
+    btnHotel: cc.Node = null;
+
+    @property({ type: cc.Node, displayName: '招募所' })
+    btnRecruit: cc.Node = null;
+
+    @property({ type: cc.Node, displayName: '巅峰战场' })
+    btnBattleFiled: cc.Node = null;
+
+    @property({ type: cc.Node, displayName: '军需' })
+    btnArm: cc.Node = null;
+
+    @property({ type: cc.Node, displayName: '主城' })
+    btnMainCity: cc.Node = null;
+
     // onLoad () {}
 
     start() {
+        this.btnHotel.on(cc.Node.EventType.TOUCH_END, () => {
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL)
+        }, this)
+
+        this.btnRecruit.on(cc.Node.EventType.TOUCH_END, () => {
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_RECRUITOFFICE)
+        }, this)
+
+        this.btnBattleFiled.on(cc.Node.EventType.TOUCH_END, () => {
+            if (DataManager.cardsList.length == 0) {
+                ViewManager.instance.showToast(`请先招募将领`)
+                return
+            }
+            if (DataManager.playData.level < 30) {
+                ViewManager.instance.showToast(`30级之后解锁巅峰战场`)
+                return
+            }
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLEFILED)
+        }, this)
+
+        this.btnMainCity.on(cc.Node.EventType.TOUCH_END,()=>{
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_BULID,...[0])
+        },this)
+
+        this.btnArm.on(cc.Node.EventType.TOUCH_END,()=>{
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_BULID,...[1])
+        },this)
+
+
+
         this.btnBeginner.on(cc.Node.EventType.TOUCH_END, () => {
             // ViewManager.instance.showToast('新手保护')
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_MARKET)
@@ -85,14 +131,14 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_JIBAO)
         }, this)
 
-        this.btnFirend.on(cc.Node.EventType.TOUCH_END,()=>{
+        this.btnFirend.on(cc.Node.EventType.TOUCH_END, () => {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_FIREND_LIST)
-        },this)
+        }, this)
 
-        
-        this.btnFamily.on(cc.Node.EventType.TOUCH_END,()=>{
+
+        this.btnFamily.on(cc.Node.EventType.TOUCH_END, () => {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
-        },this)
+        }, this)
 
 
         NetEventDispatcher.addListener(NetEvent.S2CListRedPoints, this.RedPointsBack, this)

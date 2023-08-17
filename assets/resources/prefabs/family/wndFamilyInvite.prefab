@@ -2082,8 +2082,8 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "5fa5cc57HtFiofNEkaVrM/+",
-    "handler": "onSearchHandler",
+    "_componentId": "7dbe6dJwJVAsJEuB01lRvPO",
+    "handler": "onSureHandler",
     "customEventData": ""
   },
   {
@@ -2431,8 +2431,8 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "5fa5cc57HtFiofNEkaVrM/+",
-    "handler": "onCloseHandler",
+    "_componentId": "7dbe6dJwJVAsJEuB01lRvPO",
+    "handler": "onChanelHandler",
     "customEventData": ""
   },
   {
@@ -2488,14 +2488,14 @@
     "_id": ""
   },
   {
-    "__type__": "5fa5cc57HtFiofNEkaVrM/+",
+    "__type__": "7dbe6dJwJVAsJEuB01lRvPO",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "editID": {
+    "editBox1": {
       "__id__": 41
     },
     "_id": ""

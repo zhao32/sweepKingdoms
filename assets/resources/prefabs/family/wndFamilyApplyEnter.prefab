@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "wndFamilyEnter",
+    "_name": "wndFamilyApplyEnter",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -2421,14 +2421,25 @@
     "_id": ""
   },
   {
-    "__type__": "5fa5cc57HtFiofNEkaVrM/+",
+    "__type__": "04223h642hG34kIR9q71gel",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "editID": null,
+    "labelFamilyName": {
+      "__id__": 55
+    },
+    "labelFamilyID": {
+      "__id__": 58
+    },
+    "labelChief": {
+      "__id__": 61
+    },
+    "icon": {
+      "__id__": 51
+    },
     "_id": ""
   },
   {
