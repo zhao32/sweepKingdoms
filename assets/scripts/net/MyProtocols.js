@@ -7288,8 +7288,8 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	/**好友删除 */
-	send_C2SFriendRemove: function (senderSocket, friend) {
+	/**黑名单添加 */
+	send_C2SBlackFriendAdd: function (senderSocket, friend) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(12011);
 		myEncoder.writeInt(friend);

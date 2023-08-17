@@ -9,6 +9,7 @@ import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
+import friendEFindPanel from "./friendEFindPanel";
 
 const { ccclass, property } = cc._decorator;
 
@@ -63,9 +64,11 @@ export default class NewClass extends cc.Component {
         this.LabelTopBtn.string = `仇人录`
         this.LabelTitle.string = `好友录`
         this.LabelBottomBtn.string = `添加好友`
+        this.node.getChildByName(`friendEFindPanel`).active = false
         MyProtocols.send_C2SFriendList(DataManager._loginSocket)
         NetEventDispatcher.addListener(NetEvent.S2CFriendList, this.S2CFriendList, this)
         NetEventDispatcher.addListener(NetEvent.S2CFriendBlackList, this.S2CFriendBlackList, this)
+        NetEventDispatcher.addListener(NetEvent.S2CBlackFriendAdd, this.S2CBlackFriendAdd, this)
 
 
     }
@@ -90,9 +93,13 @@ export default class NewClass extends cc.Component {
         this.LabelDisplay.string = `现有仇人${retObj.friend.length}人（最多50人）`
     }
 
+    S2CBlackFriendAdd(retObj) {
+        console.log(`添加黑名单返回：` + JSON.stringify(retObj))
+
+    }
+
     onCloseHandler() {
         ViewManager.instance.hideWnd(EnumManager.viewPath.WND_FIREND_LIST, true)
-
     }
 
     onListHandler() {
@@ -112,17 +119,21 @@ export default class NewClass extends cc.Component {
     }
 
     onAddHandler() {
-        if(this.type == 0){
+        if (this.type == 0) {
             ViewManager.instance.hideWnd(EnumManager.viewPath.WND_FIREND_LIST, true)
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_FIREND_ADD)
-        }else{
-            this.node.getChildByName(`friendEFindPanel`).active = true
+        } else {
+            this.node.getChildByName(`friendEFindPanel`).getComponent(friendEFindPanel).open()
         }
-     
+
     }
 
 
     onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CFriendList, this.S2CFriendList, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CFriendBlackList, this.S2CFriendBlackList, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CBlackFriendAdd, this.S2CBlackFriendAdd, this)
+
 
     }
 

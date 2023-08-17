@@ -5,7 +5,13 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import DataManager from "../utils/Manager/DataManager";
+import ViewManager from "../utils/Manager/ViewManager";
+
 const { ccclass, property } = cc._decorator;
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -14,14 +20,21 @@ export default class NewClass extends cc.Component {
     editID: cc.EditBox = null;
     // LIFE-CYCLE CALLBACKS:
 
+    playID
+
     // onLoad () {}
 
     start() {
+        this.editID.node.on('editing-did-ended', (editBox: cc.EditBox) => {
+            this.playID = editBox.textLabel.string
+        }, this)
 
     }
 
-    init() {
-
+    open() {
+        this.node.active = true
+        this.playID = null
+        this.editID.string  = ``
     }
 
     onCloseHandler() {
@@ -30,7 +43,15 @@ export default class NewClass extends cc.Component {
     }
 
     onSearchHandler() {
-        
+        if (!this.playID) {
+            ViewManager.instance.showToast(`请输入要添加的仇人ID`)
+            return
+        }
+        console.log()
+        MyProtocols.send_C2SBlackFriendAdd(DataManager._loginSocket, this.playID)
+        this.node.active = false
+
+
     }
 
     onClose() {

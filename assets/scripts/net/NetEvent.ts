@@ -431,9 +431,9 @@ export enum NetEvent {
 
     S2CFriendBlackList = 12008,
 
-    C2SFriendRemove = 12011,
+    C2SBlackFriendAdd = 12011,
 
-    S2CFriendRemove = 12012,
+    S2CBlackFriendAdd = 12012,
 
     C2SFriendBlackRemove = 12019,
 
@@ -442,8 +442,6 @@ export enum NetEvent {
     C2SFriendsSearch = 12030,
 
     S2CFriendsSearch = 12031,
-
-
 
 }
 
