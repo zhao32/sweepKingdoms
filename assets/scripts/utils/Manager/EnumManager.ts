@@ -33,7 +33,7 @@ export default class EnumManager {
         WND_MAIL: 'prefabs/Mail/wndMail',
 
 
-        
+
 
 
         /////////////////////// 主页窗口
@@ -63,7 +63,7 @@ export default class EnumManager {
 
         WND_MAIN_RECOVER: 'prefabs/main/wndRecover',
 
-        
+
 
         ///////////////////// 酒馆
         /**酒馆 */
@@ -78,15 +78,15 @@ export default class EnumManager {
 
         WND_HOTEL_QH: 'prefabs/hotel/wndHotelQH',
 
-        WND_HOTEL_SJ:'prefabs/hotel/wndHotelEat',
+        WND_HOTEL_SJ: 'prefabs/hotel/wndHotelEat',
         /**升星 */
-        WND_HOTEL_STAR:'prefabs/hotel/wndHotelStar',
+        WND_HOTEL_STAR: 'prefabs/hotel/wndHotelStar',
         /**传承 */
-        WND_HOTEL_CC:'prefabs/hotel/wndHotelChuanCheng',
+        WND_HOTEL_CC: 'prefabs/hotel/wndHotelChuanCheng',
 
         /////////////////////////寄宝阁
-        WND_JIBAO:'prefabs/jibao/wndJB',
-        
+        WND_JIBAO: 'prefabs/jibao/wndJB',
+
 
 
         /////////////////// 背包
@@ -188,12 +188,50 @@ export default class EnumManager {
 
         NOTE_GENERAL: 'prefabs/common/noteGeneral',
 
+        /**好友系统 */
+        WND_FIREND_LIST: 'prefabs/firend/wndFirendList',
+
+        /**查询好友 */
+        WND_FIREND_FIND: 'prefabs/firend/wndFirendFFind',
+
+        /**查询敌人 */
+        WND_FIREND_FIND_ENEMY: 'prefabs/firend/wndFirendEFind',
+
+        /**添加好友 */
+        WND_FIREND_ADD: 'prefabs/firend/wndFirendAdd',
+
+        /////////////////////家族
+        /**全部家族列表 */
+        WND_FAMILYS: 'prefabs/family/wndFamilys',
+
+        /**家族任务 */
+        WND_FAMILY_TASK: 'prefabs/family/wndFamilyTask',
+
+        /**家族任务详情 */
+        WND_FAMILY_TASK_DETAIL: 'prefabs/family/wndFamilyTaskDetail',
+
+        /**家族任务详情设置 */
+        WND_FAMILY_OFFICE: 'prefabs/family/wndFamilyOffice',
+
+        /**我的家族成员列表 */
+        WND_FAMILY_MEMBER: 'prefabs/family/wndFamilyMember',
+
+        /**家族商店 */
+        WND_FAMILY_MARKET: 'prefabs/family/wndFamilyMarket',
+
+        /**家族日志 */
+        WND_FAMILY_LOG: 'prefabs/family/wndFamilyLogs',
+
+        /**家族效果 */
+        WND_FAMILY_EFFECT: 'prefabs/family/wndFamilyEffect',
+
+        /**家族详情 */
+        WND_FAMILY_DETAIL: 'prefabs/family/wndFamilyDetail',
+
+        /**家族兵营 */
+        WND_FAMILY_BARRACKS: 'prefabs/family/wndFamilyBarracks',
 
         
-
-
-        
-
 
     }
 }

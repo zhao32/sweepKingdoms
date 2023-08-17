@@ -35,6 +35,12 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Node, displayName: '寄宝阁' })
     btnJB: cc.Node = null;
 
+    @property({ type: cc.Node, displayName: '好友' })
+    btnFirend: cc.Node = null;
+
+    @property({ type: cc.Node, displayName: '家族' })
+    btnFamily: cc.Node = null;
+
     @property({ type: cc.Label, displayName: '玩家等级' })
     labelLevel: cc.Label = null;
 
@@ -78,6 +84,15 @@ export default class NewClass extends cc.Component {
         this.btnJB.on(cc.Node.EventType.TOUCH_END, () => {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_JIBAO)
         }, this)
+
+        this.btnFirend.on(cc.Node.EventType.TOUCH_END,()=>{
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_FIREND_LIST)
+        },this)
+
+        
+        this.btnFamily.on(cc.Node.EventType.TOUCH_END,()=>{
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
+        },this)
 
 
         NetEventDispatcher.addListener(NetEvent.S2CListRedPoints, this.RedPointsBack, this)

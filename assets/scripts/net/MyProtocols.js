@@ -7206,6 +7206,158 @@ var MyProtocols = {
 		retObj.num = myDecoder.readInt();
 		return retObj;
 	},
+
+
+	
+
+
+	//好友系统
+	send_C2SFriendList: function (senderSocket) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(12001);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+	get_12002: function (myDecoder) {
+		var retObj = {};
+		retObj.friend=[];
+		var friend_size=myDecoder.readInt();
+		for(var i=0;i<friend_size;i++)
+		{
+			retObj.friend[i] = {};
+			retObj.friend[i].id= myDecoder.readInt();
+			retObj.friend[i].playerId= myDecoder.readInt();
+			retObj.friend[i].fiend_id= myDecoder.readInt();
+			retObj.friend[i].fiend_name= myDecoder.readString();
+		}
+		
+		return retObj;
+	},
+
+
+	send_C2SFriendAdd: function (senderSocket, friendid) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(12003);
+		myEncoder.writeInt(friendid);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+	get_12004: function (myDecoder) {
+		var retObj = {};
+
+		return retObj;
+	},
+
+	/**好友申请列表 */
+	send_C2SFriendApplyList: function (senderSocket) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(12005);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+	get_12006: function (myDecoder) {
+		var retObj = {};
+		retObj.count = myDecoder.readInt();
+		return retObj;
+	},
+
+	/**黑名单 */
+	send_C2SFriendBlackList: function (senderSocket) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(12007);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+	get_12008: function (myDecoder) {
+		var retObj = {};
+		retObj.friend=[];
+		var friend_size=myDecoder.readInt();
+		for(var i=0;i<friend_size;i++)
+		{
+			retObj.friend[i] = {};
+			retObj.friend[i].id= myDecoder.readInt();
+			retObj.friend[i].playerId= myDecoder.readInt();
+			retObj.friend[i].fiend_id= myDecoder.readInt();
+			retObj.friend[i].fiend_name= myDecoder.readString();
+		}
+		
+		return retObj;
+	},
+
+	/**好友删除 */
+	send_C2SFriendRemove: function (senderSocket, friend) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(12011);
+		myEncoder.writeInt(friend);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+	get_12012: function (myDecoder) {
+		var retObj = {};
+		retObj.friend = myDecoder.readInt();
+		return retObj;
+	},
+
+	/**仇人删除 */
+	send_C2SFriendBlackRemove: function (senderSocket, friend) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(12019);
+		myEncoder.writeInt(friend);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+	get_12020: function (myDecoder) {
+		var retObj = {};
+		retObj.friend = myDecoder.readInt();
+		return retObj;
+	},
+
+	send_C2S_FRIEND_SEL: function (senderSocket,friend) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(12009);
+		myEncoder.writeInt(friend);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+	get_12010: function (myDecoder) {
+		var retObj = {};
+		retObj.id = myDecoder.readInt();
+		retObj.friend_id = myDecoder.readInt();
+		retObj.friend_name = myDecoder.readString();
+		return retObj;
+	},
+
+	
+	send_C2SFriendsSearch: function (senderSocket,id,name,sex,contry) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(12030);
+		myEncoder.writeInt(id);
+		myEncoder.writeInt(name);
+		myEncoder.writeInt(sex);
+		myEncoder.writeInt(contry);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+	get_12031: function (myDecoder) {
+		var retObj = {};
+		retObj.friend=[];
+		var friend_size=myDecoder.readInt();
+		for(var i=0;i<friend_size;i++)
+		{
+			retObj.friend[i] = {};
+			retObj.friend[i].playerId= myDecoder.readInt();
+			retObj.friend[i].fiend_name= myDecoder.readString();
+		}
+		return retObj;
+	}
 }
 
 // export default MyProtocols = MyProtocols

@@ -415,6 +415,36 @@ export enum NetEvent {
 
     S2CBussizeBuy = 1080,
 
+    C2SFriendList = 12001,
+
+    S2CFriendList = 12002,
+
+    C2SFriendAdd = 12003,
+
+    S2CFriendAdd = 12004,
+
+    C2SFriendApplyList = 12005,
+
+    S2CFriendApplyList = 12006,
+
+    C2SFriendBlackList = 12007,
+
+    S2CFriendBlackList = 12008,
+
+    C2SFriendRemove = 12011,
+
+    S2CFriendRemove = 12012,
+
+    C2SFriendBlackRemove = 12019,
+
+    S2CFriendBlackRemove = 12020,
+
+    C2SFriendsSearch = 12030,
+
+    S2CFriendsSearch = 12031,
+
+
+
 }
 
 
