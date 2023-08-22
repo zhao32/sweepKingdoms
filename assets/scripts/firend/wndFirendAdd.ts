@@ -10,6 +10,7 @@ import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import { Logger } from "../utils/Manager/Logger";
 import ViewManager from "../utils/Manager/ViewManager";
+import firendFindFRender from "./firendFindFRender";
 import firendSeekRender from "./firendSeekRender";
 import friendFindPanel from "./friendFindPanel";
 
@@ -78,8 +79,6 @@ export default class NewClass extends cc.Component {
                     // ViewManager.instance.showWnd(EnumManager.viewPath.WND_FIREND_FIND)
                     this.node.getChildByName(`friendFindPanel`).getComponent(friendFindPanel).open()
                 }
-
-
                 // this.showIntragroup(i)
             }, this)
         }
@@ -89,9 +88,10 @@ export default class NewClass extends cc.Component {
         console.log(`查询玩家：` + JSON.stringify(retObj))
         this.showType = 1
         this.contect.removeAllChildren()
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < retObj.friend.length; i++) {
             let render = cc.instantiate(this.pfbRender2)
             render.parent = this.contect
+            render.getComponent(firendFindFRender).init(retObj.friend[i])
             if (i < 5) {
                 render.x = 1000
                 this.scheduleOnce(() => {
@@ -104,8 +104,13 @@ export default class NewClass extends cc.Component {
     init() {
         // this.showGroups()
         this.node.getChildByName(`friendFindPanel`).active = false
-
         NetEventDispatcher.addListener(NetEvent.S2CFriendsSearch, this.S2CFriendsSearch, this)
+        NetEventDispatcher.addListener(NetEvent.S2CFriendAdd, this.S2CFriendAdd, this)
+    }
+
+    S2CFriendAdd(retObj) {
+        console.log(`朋友添加返回：` + JSON.stringify(retObj))
+        ViewManager.instance.showToast(`好友添加成功`)
     }
 
     onCloseHandler() {
@@ -118,7 +123,8 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-
+        NetEventDispatcher.removeListener(NetEvent.S2CFriendsSearch, this.S2CFriendsSearch, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CFriendAdd, this.S2CFriendAdd, this)
     }
 
     // update (dt) {}

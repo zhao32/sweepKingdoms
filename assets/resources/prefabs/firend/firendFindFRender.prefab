@@ -346,7 +346,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 56,
+      "width": 48,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -400,7 +400,7 @@
     "_dstBlendFactor": 771,
     "_string": "姓名",
     "_N$string": "姓名",
-    "_fontSize": 28,
+    "_fontSize": 24,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,
@@ -480,7 +480,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 56,
+      "width": 48,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -534,7 +534,7 @@
     "_dstBlendFactor": 771,
     "_string": "家族",
     "_N$string": "家族",
-    "_fontSize": 28,
+    "_fontSize": 24,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,
@@ -614,7 +614,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 56,
+      "width": 48,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -668,7 +668,7 @@
     "_dstBlendFactor": 771,
     "_string": "家族",
     "_N$string": "家族",
-    "_fontSize": 28,
+    "_fontSize": 24,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,
@@ -760,7 +760,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        22,
+        57,
         39,
         0,
         0,
@@ -1035,7 +1035,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        284.547,
+        293.547,
         0,
         0,
         0,
@@ -1316,10 +1316,12 @@
   },
   {
     "__type__": "cc.ClickEvent",
-    "target": null,
+    "target": {
+      "__id__": 1
+    },
     "component": "",
-    "_componentId": "b5107GOLQ5Ly7RCpm+x+fP+",
-    "handler": "onFindHandler",
+    "_componentId": "e51feKu29pHO77ecSRgLxWE",
+    "handler": "addHandler",
     "customEventData": ""
   },
   {

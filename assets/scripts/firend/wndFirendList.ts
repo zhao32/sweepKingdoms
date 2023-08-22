@@ -9,6 +9,7 @@ import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
+import firendRender from "./firendRender";
 import friendEFindPanel from "./friendEFindPanel";
 
 const { ccclass, property } = cc._decorator;
@@ -78,6 +79,7 @@ export default class NewClass extends cc.Component {
         this.contect.removeAllChildren()
         for (let i = 0; i < retObj.friend.length; i++) {
             let render = cc.instantiate(this.renderPfb)
+            render.getComponent(firendRender).init(retObj.friend[i])
             render.parent = this.contect
         }
         this.LabelDisplay.string = `现有好友${retObj.friend.length}人（最多50人）`

@@ -7428,8 +7428,43 @@ var MyProtocols = {
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
-	}
+	},
 
+	get_13014: function (myDecoder) {
+		var retObj = {};
+		retObj.playid = myDecoder.readInt();
+		retObj.familyID = myDecoder.readInt();
+		return retObj;
+	},
+
+	send_C2SQuitFamily(senderSocket) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13015);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13016: function (myDecoder) {
+		var retObj = {};
+		return retObj;
+	},
+
+	send_C2SFamilyLog(senderSocket) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13018);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13018: function (myDecoder) {
+		var retObj = {};
+		retObj.info = myDecoder.readString();
+		return retObj;
+	},
+
+	
 }
 
 // export default MyProtocols = MyProtocols
