@@ -7208,7 +7208,7 @@ var MyProtocols = {
 	},
 
 
-	
+
 
 
 	//好友系统
@@ -7221,17 +7221,16 @@ var MyProtocols = {
 	},
 	get_12002: function (myDecoder) {
 		var retObj = {};
-		retObj.friend=[];
-		var friend_size=myDecoder.readInt();
-		for(var i=0;i<friend_size;i++)
-		{
+		retObj.friend = [];
+		var friend_size = myDecoder.readInt();
+		for (var i = 0; i < friend_size; i++) {
 			retObj.friend[i] = {};
-			retObj.friend[i].id= myDecoder.readInt();
-			retObj.friend[i].playerId= myDecoder.readInt();
-			retObj.friend[i].fiend_id= myDecoder.readInt();
-			retObj.friend[i].fiend_name= myDecoder.readString();
+			retObj.friend[i].id = myDecoder.readInt();
+			retObj.friend[i].playerId = myDecoder.readInt();
+			retObj.friend[i].fiend_id = myDecoder.readInt();
+			retObj.friend[i].fiend_name = myDecoder.readString();
 		}
-		
+
 		return retObj;
 	},
 
@@ -7274,17 +7273,16 @@ var MyProtocols = {
 	},
 	get_12008: function (myDecoder) {
 		var retObj = {};
-		retObj.friend=[];
-		var friend_size=myDecoder.readInt();
-		for(var i=0;i<friend_size;i++)
-		{
+		retObj.friend = [];
+		var friend_size = myDecoder.readInt();
+		for (var i = 0; i < friend_size; i++) {
 			retObj.friend[i] = {};
-			retObj.friend[i].id= myDecoder.readInt();
-			retObj.friend[i].playerId= myDecoder.readInt();
-			retObj.friend[i].fiend_id= myDecoder.readInt();
-			retObj.friend[i].fiend_name= myDecoder.readString();
+			retObj.friend[i].id = myDecoder.readInt();
+			retObj.friend[i].playerId = myDecoder.readInt();
+			retObj.friend[i].fiend_id = myDecoder.readInt();
+			retObj.friend[i].fiend_name = myDecoder.readString();
 		}
-		
+
 		return retObj;
 	},
 
@@ -7295,11 +7293,13 @@ var MyProtocols = {
 		myEncoder.writeInt(friend);
 		var rawContent = myEncoder.end();
 		myEncoder.free();
+		console.log(`发送：` + "12011")
 		senderSocket.sendMessage(rawContent);
 	},
 	get_12012: function (myDecoder) {
 		var retObj = {};
 		retObj.friend = myDecoder.readInt();
+		console.log(`接收：` + "12011")
 		return retObj;
 	},
 
@@ -7318,7 +7318,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	send_C2S_FRIEND_SEL: function (senderSocket,friend) {
+	send_C2S_FRIEND_SEL: function (senderSocket, friend) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(12009);
 		myEncoder.writeInt(friend);
@@ -7334,8 +7334,9 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	
-	send_C2SFriendsSearch: function (senderSocket,id,name,sex,contry) {
+
+	send_C2SFriendsSearch: function (senderSocket, id, name, sex, contry) {
+		console.log(`查询好友`)
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(12030);
 		myEncoder.writeInt(id);
@@ -7346,18 +7347,89 @@ var MyProtocols = {
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
 	},
+
 	get_12031: function (myDecoder) {
+		console.log(`查询好友返回`)
 		var retObj = {};
-		retObj.friend=[];
-		var friend_size=myDecoder.readInt();
-		for(var i=0;i<friend_size;i++)
-		{
+		retObj.friend = [];
+		var friend_size = myDecoder.readInt();
+		for (var i = 0; i < friend_size; i++) {
 			retObj.friend[i] = {};
-			retObj.friend[i].playerId= myDecoder.readInt();
-			retObj.friend[i].fiend_name= myDecoder.readString();
+			retObj.friend[i].playerId = myDecoder.readInt();
+			retObj.friend[i].fiend_name = myDecoder.readString();
+			retObj.friend[i].fiend_Head = myDecoder.readInt();
+			retObj.friend[i].fiend_Contry = myDecoder.readInt();
+			retObj.friend[i].fiend_Lv = myDecoder.readInt();
+			retObj.friend[i].fiend_Guild = myDecoder.readString();
 		}
 		return retObj;
+	},
+
+	send_C2SCreaterFamily(senderSocket, name) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13005);
+		myEncoder.writeInt(name);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13006: function (myDecoder) {
+		var retObj = {};
+		retObj.name = myDecoder.readInt();
+		return retObj;
+	},
+
+	send_C2SFindFamilys(senderSocket) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13009);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13010(myDecoder) {
+		var retObj = {};
+		retObj.friends = [];
+		var friend_size = myDecoder.readInt();
+		for (var i = 0; i < friend_size; i++) {
+			retObj.friends[i] = {};
+			retObj.friends[i].familyID = myDecoder.readInt();
+			retObj.friends[i].familyName = myDecoder.readInt();
+			retObj.friends[i].familyLv = myDecoder.readInt();
+			retObj.friends[i].num = myDecoder.readString();
+		}
+		return retObj;
+	},
+
+	send_C2SFindFamily(senderSocket, familyID) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13003);
+		myEncoder.writeInt(familyID);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13004: function (myDecoder) {
+		var retObj = {};
+		retObj.familyID = myDecoder.readInt();
+		retObj.familyName = myDecoder.readInt();
+		retObj.familyLv = myDecoder.readString();
+		retObj.num = myDecoder.readString();
+		return retObj;
+	},
+
+	send_C2SApplyEnterFamily(senderSocket, playid, familyID) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13013);
+		myEncoder.writeInt(playid);
+		myEncoder.writeInt(familyID);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
 	}
+
 }
 
 // export default MyProtocols = MyProtocols

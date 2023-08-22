@@ -443,6 +443,55 @@ export enum NetEvent {
 
     S2CFriendsSearch = 12031,
 
+    //家族
+    //     13009 查看所有家族   无参数
+    // 13003 查找家族    参数：  家族ID
+    // 13011 申请家族    参数： 用户ID   工会ID
+    // 13013  审核加入   参数： 用户ID   工会ID
+    // 13015 退出家族    无参数
+    // 13018 工会日志    无参数
+    //  13005 创建家族    参数： 家族名称，图标   有需要自己加  
+
+    /**创建家族 */
+    C2SCreaterFamily = 13005,
+
+    /**创建家族 */
+    S2CCreaterFamily = 13006,
+
+    /**查看所有家族 */
+    C2SFindFamilys = 13009,
+
+    /**查看所有家族 */
+    S2CFindFamilys = 13010,
+    /**查找家族 */
+    C2SFindFamily = 13003,
+    /**查找家族 */
+    S2CFindFamily = 13004,
+
+    /**申请家族 */
+    C2SApplyEnterFamily = 13011,
+    /**申请家族 */
+    S2CApplyEnterFamily = 13012,
+
+    /**审核加入家族 */
+    C2SExamineEnterFamily = 13013,
+    /**审核加入家族 */
+    S2CExamineEnterFamily = 13014,
+
+    /**退出家族 */
+    C2SQuitFamily = 13015,
+    /**退出家族 */
+    S2CQuitFamily = 13016,
+
+    /**工会日志 */
+    C2SFamilyLog = 13018,
+    /**工会日志 */
+    S2CFamilyLog = 13019,
+
+
+
+
+
 }
 
 
