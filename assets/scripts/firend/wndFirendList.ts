@@ -89,6 +89,7 @@ export default class NewClass extends cc.Component {
         this.contect.removeAllChildren()
         for (let i = 0; i < retObj.friend.length; i++) {
             let render = cc.instantiate(this.renderPfb)
+            render.getComponent(firendRender).init(retObj.friend[i])
             render.parent = this.contect
         }
         this.LabelDisplay.string = `现有仇人${retObj.friend.length}人（最多50人）`
