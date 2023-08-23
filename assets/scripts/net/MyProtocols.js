@@ -7474,7 +7474,7 @@ var MyProtocols = {
 		retObj.info = myDecoder.readString();
 		return retObj;
 	},
-	
+
 	send_C2SFamilyNoticeChange(senderSocket, notice) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(13021);
@@ -7503,8 +7503,8 @@ var MyProtocols = {
 		var retObj = {};
 		return retObj;
 	},
-	
-	
+
+
 	send_C2SFamilyArm(senderSocket) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(13031);
@@ -7523,33 +7523,38 @@ var MyProtocols = {
 		}
 		return retObj;
 	},
-	
-	
 
 
-	send_C2SFamilyDetail(senderSocket) {
-		var myEncoder = WsEncoder.alloc();
-		myEncoder.writeInt(13047);
-		var rawContent = myEncoder.end();
-		myEncoder.free();
-		senderSocket.sendMessage(rawContent);
-	},
+
+
+	// send_C2SFamilyDetail(senderSocket) {
+	// 	var myEncoder = WsEncoder.alloc();
+	// 	myEncoder.writeInt(13047);
+	// 	var rawContent = myEncoder.end();
+	// 	myEncoder.free();
+	// 	senderSocket.sendMessage(rawContent);
+	// },
 
 	get_13048: function (myDecoder) {
 		var retObj = {};
-		retObj.familyIcon = myDecoder.readString();
+		debugger;
 		retObj.familyID = myDecoder.readInt();
-		retObj.familyName = myDecoder.readString();
-		retObj.familyNum = myDecoder.readString();
+		if (familyID != 0) {
+			retObj.familyName = myDecoder.readString();
+			retObj.familyIcon = myDecoder.readString();
+			retObj.familyID = myDecoder.readInt();
+			retObj.familyName = myDecoder.readString();
+			retObj.familyNum = myDecoder.readString();
 
-		retObj.familyLv = myDecoder.readInt();
-		retObj.familyExp = myDecoder.readInt();
-		retObj.familyKill = myDecoder.readInt();
-		retObj.familyFight = myDecoder.readInt();
-		retObj.contribution = myDecoder.readInt();
-		retObj.reputation = myDecoder.readInt();
-		retObj.aim = myDecoder.readString();
-		retObj.notice = myDecoder.readString();
+			retObj.familyLv = myDecoder.readInt();
+			retObj.familyExp = myDecoder.readInt();
+			retObj.familyKill = myDecoder.readInt();
+			retObj.familyFight = myDecoder.readInt();
+			retObj.contribution = myDecoder.readInt();
+			retObj.reputation = myDecoder.readInt();
+			retObj.aim = myDecoder.readString();
+			retObj.notice = myDecoder.readString();
+		}
 
 
 		return retObj;

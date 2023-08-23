@@ -110,6 +110,8 @@ export default class DataManager {
 
     }
 
+    static familyDetail
+
     static group(array, subGroupLength) {
         let index = 0;
         let newArray = [];

@@ -503,8 +503,8 @@ export enum NetEvent {
     /**请求家族雇佣兵 */
     S2CFamilyArm = 13032,
 
-    /**家族详情 */
-    C2SFamilyDetail = 13047,
+    // /**家族详情 */
+    // C2SFamilyDetail = 13047,
 
     S2CFamilyDetail = 13048,
 

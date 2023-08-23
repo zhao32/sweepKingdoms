@@ -139,16 +139,16 @@ export default class NewClass extends cc.Component {
             MyProtocols.send_C2SFamilyDetail(DataManager._loginSocket)
             // ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILYS)
             // if(DataManager.GameData.family)
-            // if (1 == 1) {
-            //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
-            // } else {
-            //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILYS)
-            // }
+            if (DataManager.familyDetail.familyID) {
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
+            } else {
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILYS)
+            }
         }, this)
 
 
         NetEventDispatcher.addListener(NetEvent.S2CListRedPoints, this.RedPointsBack, this)
-        NetEventDispatcher.addListener(NetEvent.C2SFamilyDetail, this.C2SFamilyDetail, this)
+        NetEventDispatcher.addListener(NetEvent.S2CFamilyDetail, this.S2CFamilyDetail, this)
 
         EventManager.getInstance().registerListener(EventManager.UPDATE_MAINHOME_INFO, this, this.updateInfo.bind(this))
         EventManager.getInstance().registerListener(EventManager.UPDATE_BULID_STATE, this, this.updataBulidState.bind(this))
@@ -160,7 +160,7 @@ export default class NewClass extends cc.Component {
 
     protected onDestroy(): void {
         NetEventDispatcher.removeListener(NetEvent.S2CListRedPoints, this.RedPointsBack, this)
-        NetEventDispatcher.removeListener(NetEvent.C2SFamilyDetail, this.C2SFamilyDetail, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CFamilyDetail, this.S2CFamilyDetail, this)
 
         EventManager.getInstance().unRegisterListener(EventManager.UPDATE_MAINHOME_INFO, this)
         EventManager.getInstance().unRegisterListener(EventManager.UPDATE_BULID_STATE, this)
@@ -307,14 +307,15 @@ export default class NewClass extends cc.Component {
         console.log(JSON.stringify(retObj))
     }
 
-    C2SFamilyDetail(retObj) {
+    S2CFamilyDetail(retObj) {
         Logger.log('----------FamilyDetail---------------')
         console.log(JSON.stringify(retObj))
-        if (retObj.familyID) {
-            ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
-        } else {
-            ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILYS)
-        }
+        DataManager.familyDetail = retObj
+        // if (retObj.familyID) {
+        //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
+        // } else {
+        //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILYS)
+        // }
     }
 
 
