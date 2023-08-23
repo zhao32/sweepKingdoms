@@ -7399,14 +7399,15 @@ var MyProtocols = {
 
 	get_13010(myDecoder) {
 		var retObj = {};
-		retObj.friends = [];
-		var friend_size = myDecoder.readInt();
-		for (var i = 0; i < friend_size; i++) {
-			retObj.friends[i] = {};
-			retObj.friends[i].familyID = myDecoder.readInt();
-			retObj.friends[i].familyName = myDecoder.readInt();
-			retObj.friends[i].familyLv = myDecoder.readInt();
-			retObj.friends[i].num = myDecoder.readString();
+		retObj.familys = [];
+		var familys_size = myDecoder.readInt();
+		for (var i = 0; i < familys_size; i++) {
+			retObj.familys[i] = {};
+			retObj.familys[i].familyIcon = myDecoder.readString();
+			retObj.familys[i].familyID = myDecoder.readInt();
+			retObj.familys[i].familyName = myDecoder.readInt();
+			retObj.familys[i].familyLv = myDecoder.readInt();
+			retObj.familys[i].num = myDecoder.readString();
 		}
 		return retObj;
 	},
@@ -7422,6 +7423,7 @@ var MyProtocols = {
 
 	get_13004: function (myDecoder) {
 		var retObj = {};
+		retObj.familyIcon = myDecoder.readString();
 		retObj.familyID = myDecoder.readInt();
 		retObj.familyName = myDecoder.readInt();
 		retObj.familyLv = myDecoder.readString();
@@ -7467,9 +7469,89 @@ var MyProtocols = {
 		senderSocket.sendMessage(rawContent);
 	},
 
-	get_13018: function (myDecoder) {
+	get_13019: function (myDecoder) {
 		var retObj = {};
 		retObj.info = myDecoder.readString();
+		return retObj;
+	},
+	
+	send_C2SFamilyNoticeChange(senderSocket, notice) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13021);
+		myEncoder.writeString(notice);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13022: function (myDecoder) {
+		var retObj = {};
+		retObj.familyNotice = myDecoder.readString();
+		return retObj;
+	},
+
+	send_C2SFamilyQuite(senderSocket, playertId) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13027);
+		myEncoder.writeInt(playertId);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13028: function (myDecoder) {
+		var retObj = {};
+		return retObj;
+	},
+	
+	
+	send_C2SFamilyArm(senderSocket) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13031);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13031: function (myDecoder) {
+		var retObj = {};
+		retObj.arms = [];
+		var arms_size = myDecoder.readInt();
+		for (var i = 0; i < arms_size; i++) {
+			retObj.arms[i] = {};
+			retObj.arms[i].armId = myDecoder.readString();
+		}
+		return retObj;
+	},
+	
+	
+
+
+	send_C2SFamilyDetail(senderSocket) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13047);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13048: function (myDecoder) {
+		var retObj = {};
+		retObj.familyIcon = myDecoder.readString();
+		retObj.familyID = myDecoder.readInt();
+		retObj.familyName = myDecoder.readString();
+		retObj.familyNum = myDecoder.readString();
+
+		retObj.familyLv = myDecoder.readInt();
+		retObj.familyExp = myDecoder.readInt();
+		retObj.familyKill = myDecoder.readInt();
+		retObj.familyFight = myDecoder.readInt();
+		retObj.contribution = myDecoder.readInt();
+		retObj.reputation = myDecoder.readInt();
+		retObj.aim = myDecoder.readString();
+		retObj.notice = myDecoder.readString();
+
+
 		return retObj;
 	},
 

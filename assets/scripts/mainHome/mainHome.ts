@@ -136,7 +136,8 @@ export default class NewClass extends cc.Component {
 
 
         this.btnFamily.on(cc.Node.EventType.TOUCH_END, () => {
-            ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILYS)
+            MyProtocols.send_C2SFamilyDetail(DataManager._loginSocket)
+            // ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILYS)
             // if(DataManager.GameData.family)
             // if (1 == 1) {
             //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
@@ -147,10 +148,10 @@ export default class NewClass extends cc.Component {
 
 
         NetEventDispatcher.addListener(NetEvent.S2CListRedPoints, this.RedPointsBack, this)
+        NetEventDispatcher.addListener(NetEvent.C2SFamilyDetail, this.C2SFamilyDetail, this)
 
         EventManager.getInstance().registerListener(EventManager.UPDATE_MAINHOME_INFO, this, this.updateInfo.bind(this))
         EventManager.getInstance().registerListener(EventManager.UPDATE_BULID_STATE, this, this.updataBulidState.bind(this))
-
     }
 
     openGM() {
@@ -159,6 +160,8 @@ export default class NewClass extends cc.Component {
 
     protected onDestroy(): void {
         NetEventDispatcher.removeListener(NetEvent.S2CListRedPoints, this.RedPointsBack, this)
+        NetEventDispatcher.removeListener(NetEvent.C2SFamilyDetail, this.C2SFamilyDetail, this)
+
         EventManager.getInstance().unRegisterListener(EventManager.UPDATE_MAINHOME_INFO, this)
         EventManager.getInstance().unRegisterListener(EventManager.UPDATE_BULID_STATE, this)
 
@@ -302,8 +305,16 @@ export default class NewClass extends cc.Component {
     RedPointsBack(retObj) {
         Logger.log('----------RedPointsBack---------------')
         console.log(JSON.stringify(retObj))
+    }
 
-
+    C2SFamilyDetail(retObj) {
+        Logger.log('----------FamilyDetail---------------')
+        console.log(JSON.stringify(retObj))
+        if (retObj.familyID) {
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
+        } else {
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILYS)
+        }
     }
 
 
