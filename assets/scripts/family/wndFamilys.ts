@@ -102,8 +102,19 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.addListener(NetEvent.S2CFindFamilys, this.S2CFindFamilys, this)
     }
 
-    S2CFindFamilys(retObj){ 
-        console.log(`家族列表：` + JSON.stringify(retObj)) 
+    S2CFindFamilys(retObj) {
+        console.log(`家族列表：` + JSON.stringify(retObj))
+        this.contect.removeAllChildren()
+        for (let i = 0; i < retObj.familys.length; i++) {
+            let render = cc.instantiate(this.pfb)
+            render.parent = this.contect
+            if (i < 5) {
+                render.x = 1000
+                this.scheduleOnce(() => {
+                    render.runAction(cc.moveTo(DataManager.SCROLLTIME1, cc.v2(0, render.y)))
+                }, DataManager.SCROLLTIME2 * i)
+            }
+        }
     }
 
     onCloseHandler() {
@@ -112,9 +123,10 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CFindFamilys, this.S2CFindFamilys, this)
     }
 
-    onCreateHandler(){ 
+    onCreateHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_CREATE)
     }

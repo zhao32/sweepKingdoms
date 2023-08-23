@@ -136,10 +136,10 @@ export default class NewClass extends cc.Component {
 
 
         this.btnFamily.on(cc.Node.EventType.TOUCH_END, () => {
-            MyProtocols.send_C2SFamilyDetail(DataManager._loginSocket)
+            // MyProtocols.send_C2SFamilyDetail(DataManager._loginSocket)
             // ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILYS)
             // if(DataManager.GameData.family)
-            if (DataManager.familyDetail.familyID) {
+            if (DataManager.familyDetail && DataManager.familyDetail.familyID) {
                 ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
             } else {
                 ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILYS)
@@ -309,7 +309,7 @@ export default class NewClass extends cc.Component {
 
     S2CFamilyDetail(retObj) {
         Logger.log('----------FamilyDetail---------------')
-        console.log(JSON.stringify(retObj))
+        console.log('FamilyDetail:'+ JSON.stringify(retObj))
         DataManager.familyDetail = retObj
         // if (retObj.familyID) {
         //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
