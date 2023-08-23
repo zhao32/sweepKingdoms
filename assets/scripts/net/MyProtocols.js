@@ -7403,9 +7403,9 @@ var MyProtocols = {
 		var familys_size = myDecoder.readInt();
 		for (var i = 0; i < familys_size; i++) {
 			retObj.familys[i] = {};
-			retObj.familys[i].familyIcon = myDecoder.readString();
+			retObj.familys[i].familyIcon = myDecoder.readInt();
 			retObj.familys[i].familyID = myDecoder.readInt();
-			retObj.familys[i].familyName = myDecoder.readInt();
+			retObj.familys[i].familyName = myDecoder.readString();
 			retObj.familys[i].familyLv = myDecoder.readInt();
 			retObj.familys[i].num = myDecoder.readString();
 		}
