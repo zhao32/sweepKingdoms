@@ -76,12 +76,17 @@ export default class NewClass extends cc.Component {
     S2CFriendList(retObj) {
         console.log(`好友列表：` + JSON.stringify(retObj))
         this.contect.removeAllChildren()
+        let count = 0
         for (let i = 0; i < retObj.friend.length; i++) {
-            let render = cc.instantiate(this.renderPfb)
-            render.getComponent(firendRender).init(retObj.friend[i])
-            render.parent = this.contect
+            if(retObj.friend[i].state != 2){
+                let render = cc.instantiate(this.renderPfb)
+                render.getComponent(firendRender).init(retObj.friend[i])
+                render.parent = this.contect
+                count++
+            }
+           
         }
-        this.LabelDisplay.string = `现有好友${retObj.friend.length}人（最多50人）`
+        this.LabelDisplay.string = `现有好友${count}人（最多50人）`
     }
 
     S2CFriendBlackList(retObj) {
