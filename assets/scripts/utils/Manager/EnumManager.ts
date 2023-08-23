@@ -231,7 +231,9 @@ export default class EnumManager {
         /**家族兵营 */
         WND_FAMILY_BARRACKS: 'prefabs/family/wndFamilyBarracks',
 
-        
+        /**家族创建 */
+        WND_FAMILY_CREATE: 'prefabs/family/wndFamilyCreate',
+
 
     }
 }

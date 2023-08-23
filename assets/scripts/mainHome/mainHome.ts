@@ -65,7 +65,6 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Node })
     nodeContect: cc.Node = null;
 
-
     @property({ type: cc.Node, displayName: '酒馆' })
     btnHotel: cc.Node = null;
 
@@ -104,13 +103,13 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLEFILED)
         }, this)
 
-        this.btnMainCity.on(cc.Node.EventType.TOUCH_END,()=>{
-            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_BULID,...[0])
-        },this)
+        this.btnMainCity.on(cc.Node.EventType.TOUCH_END, () => {
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_BULID, ...[0])
+        }, this)
 
-        this.btnArm.on(cc.Node.EventType.TOUCH_END,()=>{
-            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_BULID,...[1])
-        },this)
+        this.btnArm.on(cc.Node.EventType.TOUCH_END, () => {
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_BULID, ...[1])
+        }, this)
 
 
 
@@ -137,7 +136,13 @@ export default class NewClass extends cc.Component {
 
 
         this.btnFamily.on(cc.Node.EventType.TOUCH_END, () => {
-            ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILYS)
+            // if(DataManager.GameData.family)
+            // if (1 == 1) {
+            //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
+            // } else {
+            //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILYS)
+            // }
         }, this)
 
 

@@ -67,11 +67,10 @@ export default class NewClass extends cc.Component {
         this.LabelBottomBtn.string = `添加好友`
         this.node.getChildByName(`friendEFindPanel`).active = false
         MyProtocols.send_C2SFriendList(DataManager._loginSocket)
+        
         NetEventDispatcher.addListener(NetEvent.S2CFriendList, this.S2CFriendList, this)
         NetEventDispatcher.addListener(NetEvent.S2CFriendBlackList, this.S2CFriendBlackList, this)
         NetEventDispatcher.addListener(NetEvent.S2CBlackFriendAdd, this.S2CBlackFriendAdd, this)
-
-
     }
 
     S2CFriendList(retObj) {

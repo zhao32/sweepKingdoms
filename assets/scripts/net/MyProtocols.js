@@ -7219,6 +7219,8 @@ var MyProtocols = {
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
 	},
+
+
 	get_12002: function (myDecoder) {
 		var retObj = {};
 		retObj.friend = [];
@@ -7227,14 +7229,16 @@ var MyProtocols = {
 			retObj.friend[i] = {};
 			retObj.friend[i].id = myDecoder.readInt();
 			retObj.friend[i].playerId = myDecoder.readInt();
-			retObj.friend[i].fiend_id = myDecoder.readInt();
 			retObj.friend[i].fiend_name = myDecoder.readString();
+			retObj.friend[i].fiend_Head = myDecoder.readInt();
+			retObj.friend[i].fiend_Contry = myDecoder.readInt();
+			retObj.friend[i].fiend_Lv = myDecoder.readInt();
+			retObj.friend[i].fiend_Guild = myDecoder.readString();
+			retObj.friend[i].state = myDecoder.readInt();
 		}
 
 		return retObj;
 	},
-
-
 	send_C2SFriendAdd: function (senderSocket, friendid) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(12003);
@@ -7464,7 +7468,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	
+
 }
 
 // export default MyProtocols = MyProtocols
