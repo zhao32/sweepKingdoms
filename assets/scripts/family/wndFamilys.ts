@@ -98,6 +98,7 @@ export default class NewClass extends cc.Component {
 
 
     init() {
+        MyProtocols.send_C2SFindFamilys(DataManager._loginSocket)
         NetEventDispatcher.addListener(NetEvent.S2CFindFamilys, this.S2CFindFamilys, this)
     }
 
@@ -111,7 +112,6 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        MyProtocols.send_C2SFindFamilys(DataManager._loginSocket)
     }
 
     onCreateHandler(){ 
