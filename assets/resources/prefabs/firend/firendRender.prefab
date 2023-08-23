@@ -1316,10 +1316,12 @@
   },
   {
     "__type__": "cc.ClickEvent",
-    "target": null,
+    "target": {
+      "__id__": 1
+    },
     "component": "",
-    "_componentId": "b5107GOLQ5Ly7RCpm+x+fP+",
-    "handler": "onFindHandler",
+    "_componentId": "80945aCXKpIbKN0eCynGZqR",
+    "handler": "onBtnHandler",
     "customEventData": ""
   },
   {
@@ -1384,6 +1386,9 @@
     },
     "labelLevel": {
       "__id__": 21
+    },
+    "labelBtn": {
+      "__id__": 30
     },
     "head": {
       "__id__": 3

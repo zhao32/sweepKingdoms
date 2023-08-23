@@ -67,7 +67,7 @@ export default class NewClass extends cc.Component {
         this.LabelBottomBtn.string = `添加好友`
         this.node.getChildByName(`friendEFindPanel`).active = false
         MyProtocols.send_C2SFriendList(DataManager._loginSocket)
-        
+
         NetEventDispatcher.addListener(NetEvent.S2CFriendList, this.S2CFriendList, this)
         NetEventDispatcher.addListener(NetEvent.S2CFriendBlackList, this.S2CFriendBlackList, this)
         NetEventDispatcher.addListener(NetEvent.S2CBlackFriendAdd, this.S2CBlackFriendAdd, this)
@@ -78,13 +78,13 @@ export default class NewClass extends cc.Component {
         this.contect.removeAllChildren()
         let count = 0
         for (let i = 0; i < retObj.friend.length; i++) {
-            if(retObj.friend[i].state != 2){
+            if (retObj.friend[i].state != 2) {
                 let render = cc.instantiate(this.renderPfb)
-                render.getComponent(firendRender).init(retObj.friend[i])
+                render.getComponent(firendRender).init(retObj.friend[i], 1)
                 render.parent = this.contect
                 count++
             }
-           
+
         }
         this.LabelDisplay.string = `现有好友${count}人（最多50人）`
     }
@@ -94,7 +94,7 @@ export default class NewClass extends cc.Component {
         this.contect.removeAllChildren()
         for (let i = 0; i < retObj.friend.length; i++) {
             let render = cc.instantiate(this.renderPfb)
-            render.getComponent(firendRender).init(retObj.friend[i])
+            render.getComponent(firendRender).init(retObj.friend[i], 2)
             render.parent = this.contect
         }
         this.LabelDisplay.string = `现有仇人${retObj.friend.length}人（最多50人）`
