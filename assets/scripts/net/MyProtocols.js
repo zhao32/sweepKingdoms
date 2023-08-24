@@ -7377,7 +7377,7 @@ var MyProtocols = {
 	send_C2SCreaterFamily(senderSocket, name) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(13005);
-		myEncoder.writeInt(name);
+		myEncoder.writeString(name);
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
@@ -7385,7 +7385,7 @@ var MyProtocols = {
 
 	get_13006: function (myDecoder) {
 		var retObj = {};
-		retObj.name = myDecoder.readInt();
+		retObj.name = myDecoder.writeString();
 		return retObj;
 	},
 
@@ -7539,7 +7539,7 @@ var MyProtocols = {
 		var retObj = {};
 		debugger;
 		retObj.familyID = myDecoder.readInt();
-		if (familyID != 0) {
+		if (retObj.familyID != 0) {
 			retObj.familyName = myDecoder.readString();
 			retObj.familyIcon = myDecoder.readString();
 			retObj.familyID = myDecoder.readInt();
