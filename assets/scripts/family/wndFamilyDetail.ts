@@ -58,9 +58,19 @@ export default class NewClass extends cc.Component {
     start() {
 
     }
-
+    // {"familyID":12,"familyName":"aa","familyIcon":0,"familyNum":0,"familyLv":1,"familyExp":2,"familyKill":3,"familyFight":4,"contribution":5,"reputation":6,"aim":"家族说明","notice":"家族宗旨"}
     init() {
-
+        this.labelContribute.string = `贡献值：` + DataManager.familyDetail.contribution
+        this.labelFBoss
+        // this.labelFExp.string = 
+        this.labelFFight.string = `家族战力：` + DataManager.familyDetail.familyFight
+        this.labelFID.string = `家族ID：` + DataManager.familyDetail.familyID
+        this.labelFKillNum.string = `昨日家族击杀：` + DataManager.familyDetail.familyKill
+        this.labelFLv.string = `家族等级：` + DataManager.familyDetail.familyLv
+        this.labelFName.string = `家族名称：` + DataManager.familyDetail.familyName
+        this.labelNotice.string = DataManager.familyDetail.notice
+        this.labelPurpose.string = DataManager.familyDetail.aim//家族宗旨：
+        this.labelReputation.string = `家族声望：` + DataManager.familyDetail.reputation
     }
 
     onCloseHandler() {

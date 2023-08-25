@@ -11,6 +11,7 @@ import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
 import firendRender from "./firendRender";
 import friendEFindPanel from "./friendEFindPanel";
+import opFirendPanel from "./opFirendPanel";
 
 const { ccclass, property } = cc._decorator;
 
@@ -60,7 +61,13 @@ export default class NewClass extends cc.Component {
 
     }
 
+    openOppanel(data,type){
+        this.node.getChildByName("opFirendPanel").getComponent(opFirendPanel).open(data,type)
+    }
+
     init() {
+        this.node.getChildByName("opFirendPanel").active = false
+        DataManager.wndFirendList = this
         this.type = 0
         this.LabelTopBtn.string = `仇人录`
         this.LabelTitle.string = `好友录`
@@ -78,6 +85,7 @@ export default class NewClass extends cc.Component {
 
     S2CFriendBlackRemove(retObj){
         console.log(`黑名单删除返回：` + JSON.stringify(retObj))
+        this.node.getChildByName("opFirendPanel").active = false
         MyProtocols.send_C2SFriendBlackList(DataManager._loginSocket)
     }
 
@@ -110,6 +118,7 @@ export default class NewClass extends cc.Component {
 
     S2CBlackFriendAdd(retObj) {
         console.log(`添加黑名单返回：` + JSON.stringify(retObj))
+        this.node.getChildByName("opFirendPanel").active = false
         MyProtocols.send_C2SFriendBlackList(DataManager._loginSocket)
 
     }

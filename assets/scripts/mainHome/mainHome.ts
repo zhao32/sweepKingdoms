@@ -307,10 +307,23 @@ export default class NewClass extends cc.Component {
         console.log(JSON.stringify(retObj))
     }
 
+    // {"familyID":12,"familyName":"aa","familyIcon":0,"familyNum":0,"familyLv":1,"familyExp":2,"familyKill":3,"familyFight":4,"contribution":5,"reputation":6,"aim":"家族说明","notice":"家族宗旨"}
     S2CFamilyDetail(retObj) {
         Logger.log('----------FamilyDetail---------------')
-        console.log('FamilyDetail:'+ JSON.stringify(retObj))
-        DataManager.familyDetail = retObj
+        console.log('FamilyDetail:' + JSON.stringify(retObj))
+        DataManager.familyDetail.familyID = retObj.familyID
+        DataManager.familyDetail.familyName = retObj.familyName
+        DataManager.familyDetail.familyIcon = retObj.familyIcon
+        DataManager.familyDetail.familyNum = retObj.familyNum
+        DataManager.familyDetail.familyLv = retObj.familyLv
+        DataManager.familyDetail.familyExp = retObj.familyExp
+        DataManager.familyDetail.familyKill = retObj.familyKill
+        DataManager.familyDetail.familyFight = retObj.familyFight
+        DataManager.familyDetail.contribution = retObj.contribution
+        DataManager.familyDetail.reputation = retObj.reputation
+        DataManager.familyDetail.aim = retObj.aim
+        DataManager.familyDetail.notice = retObj.notice
+
         // if (retObj.familyID) {
         //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
         // } else {

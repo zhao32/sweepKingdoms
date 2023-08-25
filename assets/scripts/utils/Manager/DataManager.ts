@@ -1,4 +1,5 @@
 import ChatPanel from "../../ChatPanel/ChatPanel";
+import wndFirendList from "../../firend/wndFirendList";
 import pageGoBattle from "../../goBattle/pageGoBattle";
 import wndHotelDetail from "../../hotel/wndHotelDetail";
 import wndJB from "../../jibao/wndJB";
@@ -43,6 +44,22 @@ interface playData {
     storgleave_data: any[]
 
 
+}
+
+// {"familyID":12,"familyName":"aa","familyIcon":0,"familyNum":0,"familyLv":1,"familyExp":2,"familyKill":3,"familyFight":4,"contribution":5,"reputation":6,"aim":"家族说明","notice":"家族宗旨"}
+interface familyData {
+    familyID: number,
+    familyName: string,
+    familyIcon: number,
+    familyNum: number,
+    familyLv: number,
+    familyExp: number,
+    familyKill: number,
+    familyFight: number,
+    contribution: number,
+    reputation: number,
+    aim: string,
+    notice: string
 }
 
 
@@ -110,7 +127,20 @@ export default class DataManager {
 
     }
 
-    static familyDetail
+    static familyDetail: familyData = {
+        familyID: 0,
+        familyName: '',
+        familyIcon: 0,
+        familyNum: 0,
+        familyLv: 0,
+        familyExp: 0,
+        familyKill: 0,
+        familyFight: 0,
+        contribution: 0,
+        reputation: 0,
+        aim: '',
+        notice: ''
+    }
 
     static group(array, subGroupLength) {
         let index = 0;
@@ -363,7 +393,11 @@ export default class DataManager {
 
     static ChatPanel: ChatPanel
 
-    static wndJB:wndJB
+    static wndJB: wndJB
+
+    static wndFirendList: wndFirendList
+
+
 
     /**当前矿的守卫详情信息 */
     static curMineDetailData = null

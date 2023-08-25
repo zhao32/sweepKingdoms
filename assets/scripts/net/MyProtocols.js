@@ -7553,6 +7553,9 @@ var MyProtocols = {
 			retObj.reputation = myDecoder.readInt();
 			retObj.aim = myDecoder.readString();
 			retObj.notice = myDecoder.readString();
+
+			retObj.familyChiefName = myDecoder.readString();
+			retObj.familyChiefID = myDecoder.readInt();
 		}
 		return retObj;
 	},

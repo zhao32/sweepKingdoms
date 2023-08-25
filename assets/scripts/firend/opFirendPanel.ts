@@ -12,6 +12,10 @@ const { ccclass, property } = cc._decorator;
 
 //@ts-ignore
 var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
+
 @ccclass
 export default class NewClass extends cc.Component {
 
@@ -27,16 +31,16 @@ export default class NewClass extends cc.Component {
     @property(cc.Label)
     labelLevel: cc.Label = null;
 
-    @property(cc.Label)
-    labelBtn: cc.Label = null;
-
     @property(cc.Node)
     head: cc.Node = null;
 
-    _type
+    @property(cc.Node)
+    opFirend: cc.Node = null;
+
+    @property(cc.Node)
+    opEnemy: cc.Node = null;
 
     _data
-
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -46,14 +50,13 @@ export default class NewClass extends cc.Component {
 
     }
 
-    /**type 1 好友 2 敌人 */
-    init(data, type) {
+    open(data,type) {
+        this.node.active = true
         this._data = data
         this.labelName.string = `姓名：${data.fiend_name}`
         this.labelFamily.string = `家族：${data.fiend_Guild}`
         this.labelLevel.string = `LV:${data.fiend_Lv}`
         this.labelNation.string = `国籍：${DataManager.countyList[data.fiend_Contry]}`
-        this._type = type
         if (data.fiend_Head == 0) {
             ResManager.loadItemIcon(`hero/head_1_1`, this.head)
         } else if (data.fiend_Head == 1) {
@@ -63,26 +66,37 @@ export default class NewClass extends cc.Component {
             ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.head)
         }
 
-        if (type == 1) {
-            this.labelBtn.string = `聊天`
-        } else {
-            this.labelBtn.string = `删除`
+        if (type == 1) {//好友
+            this.opFirend.active = true
+            this.opEnemy.active = false
+
+        } else {//敌人
+            this.opFirend.active = false
+            this.opEnemy.active = true
         }
     }
 
-    onOpHandler() {
-
-        DataManager.wndFirendList.openOppanel(this._data, this._type)
+    onCloseHandler() {
+        this.node.active = false
 
     }
 
-    onBtnHandler() {
-        if (this._type == 1) {//聊天 好友
-
-        } else {//删除 敌人
-            MyProtocols.send_C2SFriendBlackRemove(DataManager._loginSocket, this._data.playerId)
-        }
+    onRemoveEnemyHandler() {
+        MyProtocols.send_C2SFriendBlackRemove(DataManager._loginSocket,this._data.playerId)
     }
+
+    onChatHandler() {
+
+    }
+
+    onDeleateFirendHandler() {
+        MyProtocols.send_C2SBlackFriendAdd(DataManager._loginSocket,this._data.playerId)
+    }
+
+    onAddEnemyHandler() {
+        MyProtocols.send_C2SBlackFriendAdd(DataManager._loginSocket,this._data.playerId)
+    }
+
 
 
     // update (dt) {}
