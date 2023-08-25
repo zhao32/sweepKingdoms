@@ -7385,7 +7385,7 @@ var MyProtocols = {
 
 	get_13006: function (myDecoder) {
 		var retObj = {};
-		retObj.name = myDecoder.writeString();
+		retObj.name = myDecoder.readString();
 		return retObj;
 	},
 
@@ -7403,15 +7403,16 @@ var MyProtocols = {
 		var familys_size = myDecoder.readInt();
 		for (var i = 0; i < familys_size; i++) {
 			retObj.familys[i] = {};
-			retObj.familys[i].familyIcon = myDecoder.readInt();
 			retObj.familys[i].familyID = myDecoder.readInt();
 			retObj.familys[i].familyName = myDecoder.readString();
+			retObj.familys[i].familyIcon = myDecoder.readInt();
+
+
 			retObj.familys[i].familyLv = myDecoder.readInt();
 			retObj.familys[i].num = myDecoder.readString();
 		}
 		return retObj;
 	},
-
 	send_C2SFindFamily(senderSocket, familyID) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(13003);
@@ -7541,10 +7542,8 @@ var MyProtocols = {
 		retObj.familyID = myDecoder.readInt();
 		if (retObj.familyID != 0) {
 			retObj.familyName = myDecoder.readString();
-			retObj.familyIcon = myDecoder.readString();
-			retObj.familyID = myDecoder.readInt();
-			retObj.familyName = myDecoder.readString();
-			retObj.familyNum = myDecoder.readString();
+			retObj.familyIcon = myDecoder.readInt();
+			retObj.familyNum = myDecoder.readInt();
 
 			retObj.familyLv = myDecoder.readInt();
 			retObj.familyExp = myDecoder.readInt();
@@ -7555,8 +7554,6 @@ var MyProtocols = {
 			retObj.aim = myDecoder.readString();
 			retObj.notice = myDecoder.readString();
 		}
-
-
 		return retObj;
 	},
 
