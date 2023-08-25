@@ -5,11 +5,18 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -71,6 +78,28 @@ export default class NewClass extends cc.Component {
         this.labelNotice.string = DataManager.familyDetail.notice
         this.labelPurpose.string = DataManager.familyDetail.aim//家族宗旨：
         this.labelReputation.string = `家族声望：` + DataManager.familyDetail.reputation
+
+        if (DataManager.playData.account_id == DataManager.familyDetail.familyChiefID) {//我是族长
+            this.node.getChildByName(`mangerNode`).active = true
+        } else {
+            this.node.getChildByName(`mangerNode`).active = false
+        }
+
+        NetEventDispatcher.addListener(NetEvent.S2CFamilyLog, this.S2CFamilyLog, this)
+        NetEventDispatcher.addListener(NetEvent.S2CFamilyMember, this.S2CFamilyMember, this)
+
+        
+    }
+
+    S2CFamilyLog(retObj) {
+        console.log(`家族日志：` + JSON.stringify(retObj))
+        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_LOG)
+    }
+    S2CFamilyMember(retObj) {
+        console.log(`成员列表` + JSON.stringify(retObj))
+        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_MEMBER)
     }
 
     onCloseHandler() {
@@ -78,16 +107,24 @@ export default class NewClass extends cc.Component {
     }
 
     onMemberHandler() {
-        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_MEMBER)
+        MyProtocols.send_C2SFamilyMember(DataManager._loginSocket)
+        // ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        // ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_MEMBER)
     }
 
     onLogHandler() {
-        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_LOG)
+        MyProtocols.send_C2SFamilyLog(DataManager._loginSocket)
+        // ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        // ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_LOG)
     }
 
     onMangerHanlder() {
+        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_OFFICE)
+    }
+
+    /**修改主旨 公告 */
+    onModifyHanlder() {
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_OFFICE)
     }

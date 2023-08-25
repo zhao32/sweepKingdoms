@@ -323,6 +323,8 @@ export default class NewClass extends cc.Component {
         DataManager.familyDetail.reputation = retObj.reputation
         DataManager.familyDetail.aim = retObj.aim
         DataManager.familyDetail.notice = retObj.notice
+        DataManager.familyDetail.familyChiefID = retObj.familyChiefID
+        DataManager.familyDetail.familyChiefName = retObj.familyChiefName
 
         // if (retObj.familyID) {
         //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)

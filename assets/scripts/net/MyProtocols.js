@@ -7476,10 +7476,14 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	send_C2SFamilyNoticeChange(senderSocket, notice) {
+	send_C2SFamilyNoticeChange(senderSocket, playertId, zongzhi, gonggao, lv, tiaojian) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(13021);
-		myEncoder.writeString(notice);
+		myEncoder.writeInt(playertId);
+		myEncoder.writeString(zongzhi);
+		myEncoder.writeString(gonggao);
+		myEncoder.writeInt(lv);
+		myEncoder.writeInt(tiaojian);
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
@@ -7526,8 +7530,6 @@ var MyProtocols = {
 	},
 
 
-
-
 	// send_C2SFamilyDetail(senderSocket) {
 	// 	var myEncoder = WsEncoder.alloc();
 	// 	myEncoder.writeInt(13047);
@@ -7555,12 +7557,38 @@ var MyProtocols = {
 			retObj.notice = myDecoder.readString();
 
 			retObj.familyChiefName = myDecoder.readString();
-			retObj.familyChiefID = myDecoder.readInt();
+			retObj.familyChiefID = myDecoder.readString();
 		}
 		return retObj;
 	},
 
+	// 
 
+	send_C2SFamilyMember(senderSocket) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13001);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+
+	get_13002(myDecoder) {
+		var retObj = {};
+		retObj.members = [];
+		var members_size = myDecoder.readInt();
+		for (var i = 0; i < members_size; i++) {
+			retObj.members[i] = {};
+			retObj.members[i].icon = myDecoder.readInt();
+			retObj.members[i].playerName = myDecoder.readString();
+			retObj.members[i].playerId = myDecoder.readInt();
+			retObj.members[i].playerLv = myDecoder.readInt();
+			retObj.members[i].state = myDecoder.readInt();
+			retObj.members[i].contribution = myDecoder.readInt();
+			retObj.members[i].reputation = myDecoder.readInt();
+		}
+		return retObj;
+	},
 }
 
 // export default MyProtocols = MyProtocols

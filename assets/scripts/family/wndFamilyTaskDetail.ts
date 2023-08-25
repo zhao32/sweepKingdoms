@@ -37,7 +37,6 @@ export default class NewClass extends cc.Component {
     labelContribute: cc.Label = null;
 
 
-
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}

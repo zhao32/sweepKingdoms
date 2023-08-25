@@ -59,9 +59,10 @@ interface familyData {
     contribution: number,
     reputation: number,
     aim: string,
-    notice: string
+    notice: string,
+    familyChiefName:string,
+    familyChiefID:string
 }
-
 
 export default class DataManager {
     // retObj:{"id":9902,"account_id":"4682","server_id":1,"name":"丹阳游侠","sex":1,"level":74,"icon":194,"head_frame":1,"level_exp":14465,"fight":654920,"money":94081075,"gameMoney":692867744,"energy":494,"vip_level":13,"vip_exp":1002099996,"honor":8000,"stamina":6539,"nation_id":2,"formationSlots":10,"formationStatus":[],"team_skills":[9,8,9,9],"offline_minutes":0,"offline_add_level":0,"offline_rewards":[]}
@@ -139,7 +140,9 @@ export default class DataManager {
         contribution: 0,
         reputation: 0,
         aim: '',
-        notice: ''
+        notice: '',
+        familyChiefID:'',
+        familyChiefName:''
     }
 
     static group(array, subGroupLength) {

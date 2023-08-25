@@ -36,18 +36,26 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.EditBox, displayName: '公告' })
     editBox2: cc.EditBox = null;
 
+    aimStr: string
+
+    noticeStr: string
+
     // onLoad () {}
 
     start() {
         this.editBox1.node.on('editing-did-ended', (editBox: cc.EditBox) => {
+            this.aimStr = editBox.string
         }, this)
 
         this.editBox2.node.on('editing-did-ended', (editBox: cc.EditBox) => {
+            this.noticeStr = editBox.string
         }, this)
     }
 
 
     init() {
+        this.editBox1.string = this.aimStr = ``
+        this.editBox2.string = this.noticeStr = ''
 
     }
 
@@ -58,6 +66,12 @@ export default class NewClass extends cc.Component {
     }
 
     onSaveHandler() {
+        if (!this.aimStr && !this.noticeStr){
+            ViewManager.instance.showToast(`请输入家族宗旨或家族提示`)
+            return
+        }
+
+
 
     }
 

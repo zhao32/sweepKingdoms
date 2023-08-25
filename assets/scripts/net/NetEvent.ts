@@ -508,8 +508,10 @@ export enum NetEvent {
 
     S2CFamilyDetail = 13048,
 
+    /**家族成员 */
+    C2SFamilyMember = 13001,
 
-
+    S2CFamilyMember = 13002  
 
 
 
