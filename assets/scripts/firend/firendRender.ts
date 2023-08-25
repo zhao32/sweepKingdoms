@@ -10,6 +10,8 @@ import ResManager from "../utils/Manager/ResManager";
 
 const { ccclass, property } = cc._decorator;
 
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
 @ccclass
 export default class NewClass extends cc.Component {
 
@@ -34,6 +36,8 @@ export default class NewClass extends cc.Component {
     _type
 
     _data
+
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -67,10 +71,10 @@ export default class NewClass extends cc.Component {
     }
 
     onBtnHandler() {
-        if (this._type == 1) {//聊天
+        if (this._type == 1) {//聊天 好友
 
-        } else {//删除
-
+        } else {//删除 敌人
+            MyProtocols.send_C2SFriendBlackRemove(DataManager._loginSocket, this._data.playerId)
         }
     }
 

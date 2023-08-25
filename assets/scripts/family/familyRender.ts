@@ -34,8 +34,10 @@ export default class NewClass extends cc.Component {
     start() {
 
     }
-
-    init() {
+    // {"familyID":10,"familyName":"家族名称","familyIcon":10002,"familyLv":0,"num":""}
+    init(data) {
+        this.labelName.string = `家族名称:`+ data.familyName
+        this.labelCount.string = `家族人数:`+ data.num
 
     }
 

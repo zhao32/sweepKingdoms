@@ -71,6 +71,14 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.addListener(NetEvent.S2CFriendList, this.S2CFriendList, this)
         NetEventDispatcher.addListener(NetEvent.S2CFriendBlackList, this.S2CFriendBlackList, this)
         NetEventDispatcher.addListener(NetEvent.S2CBlackFriendAdd, this.S2CBlackFriendAdd, this)
+        NetEventDispatcher.addListener(NetEvent.S2CFriendBlackRemove, this.S2CFriendBlackRemove, this)
+
+        
+    }
+
+    S2CFriendBlackRemove(retObj){
+        console.log(`黑名单删除返回：` + JSON.stringify(retObj))
+        MyProtocols.send_C2SFriendBlackList(DataManager._loginSocket)
     }
 
     S2CFriendList(retObj) {
@@ -102,6 +110,7 @@ export default class NewClass extends cc.Component {
 
     S2CBlackFriendAdd(retObj) {
         console.log(`添加黑名单返回：` + JSON.stringify(retObj))
+        MyProtocols.send_C2SFriendBlackList(DataManager._loginSocket)
 
     }
 
@@ -140,6 +149,7 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.removeListener(NetEvent.S2CFriendList, this.S2CFriendList, this)
         NetEventDispatcher.removeListener(NetEvent.S2CFriendBlackList, this.S2CFriendBlackList, this)
         NetEventDispatcher.removeListener(NetEvent.S2CBlackFriendAdd, this.S2CBlackFriendAdd, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CFriendBlackRemove, this.S2CFriendBlackRemove, this)
 
 
     }

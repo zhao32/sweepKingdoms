@@ -7538,7 +7538,7 @@ var MyProtocols = {
 
 	get_13048: function (myDecoder) {
 		var retObj = {};
-		debugger;
+		// debugger;
 		retObj.familyID = myDecoder.readInt();
 		if (retObj.familyID != 0) {
 			retObj.familyName = myDecoder.readString();

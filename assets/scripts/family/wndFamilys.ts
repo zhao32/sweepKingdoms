@@ -9,6 +9,7 @@ import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
+import familyRender from "./familyRender";
 
 const { ccclass, property } = cc._decorator;
 
@@ -108,6 +109,8 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < retObj.familys.length; i++) {
             let render = cc.instantiate(this.pfb)
             render.parent = this.contect
+            console.log(retObj.familys[i])
+            render.getComponent(familyRender).init(retObj.familys[i])
             if (i < 5) {
                 render.x = 1000
                 this.scheduleOnce(() => {
