@@ -64,6 +64,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CCreaterFamily, this.S2CCreaterFamily, this)
 
     }
 

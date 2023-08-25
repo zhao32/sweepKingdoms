@@ -56,6 +56,7 @@ export default class NewClass extends cc.Component {
 
     start() {
         // this.showGroups()
+         
     }
 
     // showGroups() {
@@ -101,6 +102,16 @@ export default class NewClass extends cc.Component {
     init() {
         MyProtocols.send_C2SFindFamilys(DataManager._loginSocket)
         NetEventDispatcher.addListener(NetEvent.S2CFindFamilys, this.S2CFindFamilys, this)
+        NetEventDispatcher.addListener(NetEvent.S2CApplyEnterFamily, this.S2CApplyEnterFamily, this)
+
+        
+    }
+
+    S2CApplyEnterFamily(retObj){
+        console.log(`加入家族返回：` + JSON.stringify(retObj))
+        ViewManager.instance.hideWnd(DataManager.curWndPath,true)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
+
     }
 
     S2CFindFamilys(retObj) {

@@ -5,7 +5,16 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import DataManager from "../utils/Manager/DataManager";
+
 const { ccclass, property } = cc._decorator;
+
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -22,13 +31,14 @@ export default class NewClass extends cc.Component {
 
     @property
     text: string = 'hello';
+    _data
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
 
     onApplyHandler() {
-
+        MyProtocols.send_C2SApplyEnterFamily(DataManager._loginSocket, DataManager.playData.account_id, this._data.familyID)
     }
 
     start() {
@@ -36,9 +46,9 @@ export default class NewClass extends cc.Component {
     }
     // {"familyID":10,"familyName":"家族名称","familyIcon":10002,"familyLv":0,"num":""}
     init(data) {
-        this.labelName.string = `家族名称:`+ data.familyName
-        this.labelCount.string = `家族人数:`+ data.num
-
+        this._data = data
+        this.labelName.string = `家族名称:` + data.familyName
+        this.labelCount.string = `家族人数:` + data.num
     }
 
     // update (dt) {}
