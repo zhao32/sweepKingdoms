@@ -234,6 +234,9 @@ export default class EnumManager {
         /**家族创建 */
         WND_FAMILY_CREATE: 'prefabs/family/wndFamilyCreate',
 
+        /**家族申请管理 */
+        WND_FAMILY_APPLY_MANGER: 'prefabs/family/wndFamilyApplyManger',
+
 
     }
 }

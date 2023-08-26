@@ -7464,15 +7464,25 @@ var MyProtocols = {
 
 	send_C2SFamilyLog(senderSocket) {
 		var myEncoder = WsEncoder.alloc();
-		myEncoder.writeInt(13018);
+		myEncoder.writeInt(13017);
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
 	},
 
-	get_13019: function (myDecoder) {
+	get_13018: function (myDecoder) {
 		var retObj = {};
-		retObj.info = myDecoder.readString();
+		retObj.log = [];
+		var log_size = myDecoder.readInt();
+		for (var i = 0; i < log_size; i++) {
+			retObj.log[i] = {};
+
+			retObj.log[i].Player1Id = myDecoder.readInt();
+			retObj.log[i].Player1Id2 = myDecoder.readInt();
+			retObj.log[i].Action = myDecoder.readInt();
+			retObj.log[i].time = myDecoder.readLong();
+			retObj.log[i].icon = myDecoder.readInt();
+		}
 		return retObj;
 	},
 
@@ -7557,7 +7567,8 @@ var MyProtocols = {
 			retObj.notice = myDecoder.readString();
 
 			retObj.familyChiefName = myDecoder.readString();
-			retObj.familyChiefID = myDecoder.readString();
+			retObj.familyChiefID = myDecoder.readInt();
+			retObj.autoEnter = myDecoder.readBool();
 		}
 		return retObj;
 	},
@@ -7586,6 +7597,7 @@ var MyProtocols = {
 			retObj.members[i].state = myDecoder.readInt();
 			retObj.members[i].contribution = myDecoder.readInt();
 			retObj.members[i].reputation = myDecoder.readInt();
+			retObj.members[i].duties = myDecoder.readInt();
 		}
 		return retObj;
 	},

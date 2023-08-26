@@ -60,8 +60,9 @@ interface familyData {
     reputation: number,
     aim: string,
     notice: string,
-    familyChiefName:string,
-    familyChiefID:string
+    familyChiefName: string,
+    familyChiefID: string,
+    autoEnter: boolean
 }
 
 export default class DataManager {
@@ -141,8 +142,9 @@ export default class DataManager {
         reputation: 0,
         aim: '',
         notice: '',
-        familyChiefID:'',
-        familyChiefName:''
+        familyChiefID: '',
+        familyChiefName: '',
+        autoEnter: false
     }
 
     static group(array, subGroupLength) {

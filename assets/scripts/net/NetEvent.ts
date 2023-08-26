@@ -484,9 +484,9 @@ export enum NetEvent {
     S2CQuitFamily = 13016,
 
     /**工会日志 */
-    C2SFamilyLog = 13018,
+    C2SFamilyLog = 13017,
     /**工会日志 */
-    S2CFamilyLog = 13019,
+    S2CFamilyLog = 13018,
 
     /** 修改家族公告*/
     C2SFamilyNoticeChange = 13021,

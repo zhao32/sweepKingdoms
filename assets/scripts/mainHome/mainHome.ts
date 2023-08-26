@@ -325,6 +325,7 @@ export default class NewClass extends cc.Component {
         DataManager.familyDetail.notice = retObj.notice
         DataManager.familyDetail.familyChiefID = retObj.familyChiefID
         DataManager.familyDetail.familyChiefName = retObj.familyChiefName
+        DataManager.familyDetail.autoEnter = retObj.autoEnter
 
         // if (retObj.familyID) {
         //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)

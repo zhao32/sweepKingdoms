@@ -79,8 +79,10 @@ export default class NewClass extends cc.Component {
     showIntragroup(idx) {
         this.showType = 1
         let bulidData = []
-        if (idx == 0) bulidData = DataManager.GameData.build["basic"]
-        else if (idx == 1) bulidData = DataManager.GameData.build["resource"]
+        if (idx == 1){
+            bulidData = DataManager.GameData.build["basic"]
+            bulidData.push(...DataManager.GameData.build["resource"])
+        } 
         else if (idx == 2) bulidData = DataManager.GameData.build["barracks"]
 
         // for (let i = 0; i < Object.keys(DataManager.GameData.bulid).length; i++) {
@@ -106,10 +108,10 @@ export default class NewClass extends cc.Component {
 
     type
     init(type) {
-        this.type = type
+        // this.type = type
         if (type == 0) {
             this.titleLabel.string = `主城建设`
-            this.showGroups()
+            this.showIntragroup(1)
         } else {
             this.titleLabel.string = `军需要务`
             this.showIntragroup(2)

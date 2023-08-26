@@ -79,16 +79,14 @@ export default class NewClass extends cc.Component {
         this.labelPurpose.string = DataManager.familyDetail.aim//家族宗旨：
         this.labelReputation.string = `家族声望：` + DataManager.familyDetail.reputation
 
-        if (DataManager.playData.account_id == DataManager.familyDetail.familyChiefID) {//我是族长
-            this.node.getChildByName(`mangerNode`).active = true
-        } else {
-            this.node.getChildByName(`mangerNode`).active = false
-        }
+        // if (DataManager.playData.account_id == DataManager.familyDetail.familyChiefID) {//我是族长
+        //     this.node.getChildByName(`mangerNode`).active = true
+        // } else {
+        //     this.node.getChildByName(`mangerNode`).active = false
+        // }
 
         NetEventDispatcher.addListener(NetEvent.S2CFamilyLog, this.S2CFamilyLog, this)
         NetEventDispatcher.addListener(NetEvent.S2CFamilyMember, this.S2CFamilyMember, this)
-
-        
     }
 
     S2CFamilyLog(retObj) {
@@ -99,7 +97,7 @@ export default class NewClass extends cc.Component {
     S2CFamilyMember(retObj) {
         console.log(`成员列表` + JSON.stringify(retObj))
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_MEMBER)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_MEMBER,...[retObj.members])
     }
 
     onCloseHandler() {
@@ -120,7 +118,7 @@ export default class NewClass extends cc.Component {
 
     onMangerHanlder() {
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_OFFICE)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_APPLY_MANGER)
     }
 
     /**修改主旨 公告 */

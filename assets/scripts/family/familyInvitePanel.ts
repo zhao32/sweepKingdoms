@@ -5,46 +5,42 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import ViewManager from "../utils/Manager/ViewManager";
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class NewClass extends cc.Component {
 
-    @property({ type: cc.Label, displayName: `家族名` })
-    labelFamilyName: cc.Label = null;
+    @property(cc.EditBox)
+    editID: cc.EditBox = null;
 
-    @property({ type: cc.Label, displayName: `家族ID` })
-    labelFamilyID: cc.Label = null;
-
-    @property({ type: cc.Label, displayName: `族长` })
-    labelChief: cc.Label = null;
-
-    
-    @property({ type: cc.Node, displayName: `头像` })
-    icon: cc.Node = null;
-
-    // LIFE-CYCLE CALLBACKS:
-
+    id
     // onLoad () {}
 
     start() {
+        this.editID.node.on('editing-did-ended', (editBox: cc.EditBox) => {
+
+            this.id = editBox.string
+        }, this)
+    }
+
+    open() {
+        this.editID.string = ''
+        this.id = ''
 
     }
 
-    init() {
-
-    }
-
-    onSureHandler() {
-
+    onInviteHandler() {
+        if (!this.id) {
+            ViewManager.instance.showToast(`请输入玩家ID`)
+            return
+        }
     }
 
     onChanelHandler() {
+        this.node.active = false
 
-    }
-
-    onClose(){ 
-        
     }
 
     // update (dt) {}
