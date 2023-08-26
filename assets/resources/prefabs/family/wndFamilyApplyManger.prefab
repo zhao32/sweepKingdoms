@@ -1999,7 +1999,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 144,
+      "width": 192,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -2011,7 +2011,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -334,
+        -338,
         227,
         0,
         0,
@@ -2051,8 +2051,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "自动接受申请",
-    "_N$string": "自动接受申请",
+    "_string": "申请是否需要审核",
+    "_N$string": "申请是否需要审核",
     "_fontSize": 24,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -2764,7 +2764,7 @@
     },
     "component": "",
     "_componentId": "aeb153JIh1BZJA5YvM7gCQZ",
-    "handler": "onSearchHandler",
+    "handler": "onInviteHandler",
     "customEventData": ""
   },
   {

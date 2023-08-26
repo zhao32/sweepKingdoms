@@ -7431,7 +7431,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	send_C2SApplyEnterFamily(senderSocket,familyID) {
+	send_C2SApplyEnterFamily(senderSocket, familyID) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(13011);
 		myEncoder.writeInt(familyID);
@@ -7442,8 +7442,8 @@ var MyProtocols = {
 
 	get_13012: function (myDecoder) {
 		var retObj = {};
-		retObj.playid = myDecoder.readInt();
 		retObj.familyID = myDecoder.readInt();
+		retObj.familyName = myDecoder.readString();
 		return retObj;
 	},
 
@@ -7562,7 +7562,7 @@ var MyProtocols = {
 
 			retObj.familyChiefName = myDecoder.readString();
 			retObj.familyChiefID = myDecoder.readInt();
-			retObj.autoEnter = myDecoder.readBool();
+			retObj.autoEnter = myDecoder.readInt();// 0 不需要验证  1 需要验证  2 禁止加入
 		}
 		return retObj;
 	},
@@ -7608,6 +7608,22 @@ var MyProtocols = {
 	get_13050: function (myDecoder) {
 		var retObj = {};
 		retObj.aim = myDecoder.readString();
+		return retObj;
+	},
+
+// 0 不需要验证  1 需要验证  2 禁止加入
+	send_C2SFamilyAutoEnterChange(senderSocket, autoEnter) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13019);
+		myEncoder.writeInt(autoEnter);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13020: function (myDecoder) {
+		var retObj = {};
+		retObj.autoEnter = myDecoder.readInt();
 		return retObj;
 	},
 }

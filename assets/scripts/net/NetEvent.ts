@@ -518,7 +518,10 @@ export enum NetEvent {
 
     S2CFamilyAimChange = 13050,
 
+    C2SFamilyAutoEnterChange = 13019,
 
+    S2CFamilyAutoEnterChange = 13020,
+     
 
 
 }

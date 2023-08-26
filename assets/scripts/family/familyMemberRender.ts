@@ -51,7 +51,7 @@ export default class NewClass extends cc.Component {
         this.labelReputation.string = `声望：${data.reputation}`
         // 1 族长 2 精英  3 普通
         let duties = ['', '族长', '精英', '普通']
-        this.labelDuties.string = duties[data.runk]
+        this.labelDuties.string = `职位：` + duties[data.runk]
         if (data.icon == 0) {
             ResManager.loadItemIcon(`hero/head_1_1`, this.icon)
         } else if (data.icon == 1) {

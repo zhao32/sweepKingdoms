@@ -62,7 +62,7 @@ interface familyData {
     notice: string,
     familyChiefName: string,
     familyChiefID: string,
-    autoEnter: boolean
+    autoEnter: number
 }
 
 export default class DataManager {
@@ -144,7 +144,7 @@ export default class DataManager {
         notice: '',
         familyChiefID: '',
         familyChiefName: '',
-        autoEnter: false
+        autoEnter: 0
     }
 
     static group(array, subGroupLength) {
