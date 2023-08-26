@@ -30,6 +30,7 @@ export default class NewClass extends cc.Component {
         this.editID.string = ''
         this.id = ''
 
+        
     }
 
     onInviteHandler() {
