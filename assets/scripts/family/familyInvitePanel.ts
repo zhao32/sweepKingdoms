@@ -26,6 +26,7 @@ export default class NewClass extends cc.Component {
     }
 
     open() {
+        this.node.active = true
         this.editID.string = ''
         this.id = ''
 

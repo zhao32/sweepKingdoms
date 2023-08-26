@@ -5,11 +5,18 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -54,8 +61,28 @@ export default class NewClass extends cc.Component {
 
 
     init() {
-        this.editBox1.string = this.aimStr = ``
-        this.editBox2.string = this.noticeStr = ''
+        this.editBox1.string = DataManager.familyDetail.aim
+        this.editBox2.string = DataManager.familyDetail.notice
+        this.labelFBoss.string = `族长：${DataManager.familyDetail.familyChiefName}`
+        this.labelFLV.string = `LV:${DataManager.familyDetail.familyLv}`
+        this.labelFName.string = `家族名称：${DataManager.familyDetail.familyName}`
+        this.labelFID.string = `家族ID：${DataManager.familyDetail.familyID}`
+        NetEventDispatcher.addListener(NetEvent.S2CFamilyNoticeChange, this.S2CFamilyNoticeChange, this)
+        NetEventDispatcher.addListener(NetEvent.S2CFamilyAimChange, this.S2CFamilyAimChange, this)
+
+
+    }
+
+    S2CFamilyNoticeChange(retObj){
+        console.log(`修改公告返回：` + JSON.stringify(retObj))
+        DataManager.familyDetail.notice = retObj.familyNotice
+        this.editBox1.string = DataManager.familyDetail.notice
+    }
+
+    S2CFamilyAimChange(retObj){
+        console.log(`修改主旨返回：` + JSON.stringify(retObj))
+        DataManager.familyDetail.aim = retObj.aim
+        this.editBox2.string = DataManager.familyDetail.aim
 
     }
 
@@ -66,13 +93,18 @@ export default class NewClass extends cc.Component {
     }
 
     onSaveHandler() {
-        if (!this.aimStr && !this.noticeStr){
+        if (!this.aimStr && !this.noticeStr) {
             ViewManager.instance.showToast(`请输入家族宗旨或家族提示`)
             return
         }
 
+        if (this.noticeStr) {
+            MyProtocols.send_C2SFamilyNoticeChange(DataManager._loginSocket, this.noticeStr)
+        }
 
-
+        if (this.aimStr) {
+            MyProtocols.send_C2SFamilyAimChange(DataManager._loginSocket, this.aimStr)
+        }
     }
 
     onClose() {

@@ -511,7 +511,12 @@ export enum NetEvent {
     /**家族成员 */
     C2SFamilyMember = 13001,
 
-    S2CFamilyMember = 13002  
+    S2CFamilyMember = 13002,
+
+    /** 修改家族主旨*/
+    C2SFamilyAimChange = 13049,
+
+    S2CFamilyAimChange = 13050,
 
 
 

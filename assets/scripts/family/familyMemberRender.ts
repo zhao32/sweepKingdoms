@@ -30,7 +30,7 @@ export default class NewClass extends cc.Component {
 
     @property({ type: cc.Node, displayName: "头像" })
     icon: cc.Node = null;
- 
+
 
 
 
@@ -49,14 +49,16 @@ export default class NewClass extends cc.Component {
         this.labelContribute.string = `贡献度：${data.contribution}`
         this.labelLv.string = `LV：${data.playerLv}`
         this.labelReputation.string = `声望：${data.reputation}`
-
+        // 1 族长 2 精英  3 普通
+        let duties = ['', '族长', '精英', '普通']
+        this.labelDuties.string = duties[data.runk]
         if (data.icon == 0) {
             ResManager.loadItemIcon(`hero/head_1_1`, this.icon)
         } else if (data.icon == 1) {
             ResManager.loadItemIcon(`hero/head_2_1`, this.icon)
         } else {
             let defaultData = DataManager.GameData.Cards[data.icon]
-            if(defaultData){
+            if (defaultData) {
                 ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.icon)
             }
         }

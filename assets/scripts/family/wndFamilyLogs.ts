@@ -8,6 +8,7 @@
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
+import familyLogRender from "./familyLogRender";
 
 const {ccclass, property} = cc._decorator;
 
@@ -29,8 +30,15 @@ export default class NewClass extends cc.Component {
 
     }
 
-    
-    init() {
+    // [{"Player1Id":10001,"Player1Id2":0,"Action":2,"time":1693038782,"icon":0},{"Player1Id":10001,"Player1Id2":0,"Action":2,"time":1693038797,"icon":0}]
+    init(logs) {
+        this.contect.removeAllChildren()
+        for (let i = 0; i < logs.length; i++) {
+            let render = cc.instantiate(this.pfb)
+            render.parent = this.contect
+            render.getComponent(familyLogRender).init(logs[i])
+            
+        }
 
     }
 

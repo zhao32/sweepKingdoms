@@ -7406,13 +7406,12 @@ var MyProtocols = {
 			retObj.familys[i].familyID = myDecoder.readInt();
 			retObj.familys[i].familyName = myDecoder.readString();
 			retObj.familys[i].familyIcon = myDecoder.readInt();
-
-
 			retObj.familys[i].familyLv = myDecoder.readInt();
-			retObj.familys[i].num = myDecoder.readString();
+			retObj.familys[i].num = myDecoder.readInt();
 		}
 		return retObj;
 	},
+
 	send_C2SFindFamily(senderSocket, familyID) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(13003);
@@ -7434,7 +7433,7 @@ var MyProtocols = {
 
 	send_C2SApplyEnterFamily(senderSocket, playid, familyID) {
 		var myEncoder = WsEncoder.alloc();
-		myEncoder.writeInt(13013);
+		myEncoder.writeInt(13011);
 		myEncoder.writeInt(playid);
 		myEncoder.writeInt(familyID);
 		var rawContent = myEncoder.end();
@@ -7442,7 +7441,7 @@ var MyProtocols = {
 		senderSocket.sendMessage(rawContent);
 	},
 
-	get_13014: function (myDecoder) {
+	get_13012: function (myDecoder) {
 		var retObj = {};
 		retObj.playid = myDecoder.readInt();
 		retObj.familyID = myDecoder.readInt();
@@ -7486,14 +7485,10 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	send_C2SFamilyNoticeChange(senderSocket, playertId, zongzhi, gonggao, lv, tiaojian) {
+	send_C2SFamilyNoticeChange(senderSocket, notice) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(13021);
-		myEncoder.writeInt(playertId);
-		myEncoder.writeString(zongzhi);
-		myEncoder.writeString(gonggao);
-		myEncoder.writeInt(lv);
-		myEncoder.writeInt(tiaojian);
+		myEncoder.writeString(notice);
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
@@ -7590,15 +7585,30 @@ var MyProtocols = {
 		var members_size = myDecoder.readInt();
 		for (var i = 0; i < members_size; i++) {
 			retObj.members[i] = {};
-			retObj.members[i].icon = myDecoder.readInt();
-			retObj.members[i].playerName = myDecoder.readString();
 			retObj.members[i].playerId = myDecoder.readInt();
+			retObj.members[i].playerName = myDecoder.readString();
 			retObj.members[i].playerLv = myDecoder.readInt();
+			retObj.members[i].icon = myDecoder.readInt();
 			retObj.members[i].state = myDecoder.readInt();
+			retObj.members[i].runk = myDecoder.readInt();
 			retObj.members[i].contribution = myDecoder.readInt();
 			retObj.members[i].reputation = myDecoder.readInt();
-			retObj.members[i].duties = myDecoder.readInt();
 		}
+		return retObj;
+	},
+
+	send_C2SFamilyAimChange(senderSocket, aim) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13049);
+		myEncoder.writeString(aim);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13050: function (myDecoder) {
+		var retObj = {};
+		retObj.aim = myDecoder.readString();
 		return retObj;
 	},
 }

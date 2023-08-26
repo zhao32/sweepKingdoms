@@ -8,6 +8,7 @@
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
+import familyInvitePanel from "./familyInvitePanel";
 
 const { ccclass, property } = cc._decorator;
 
@@ -44,6 +45,11 @@ export default class NewClass extends cc.Component {
     onSaveHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
+    }
+
+    // familyInvitePanel
+    onInviteHandler() {
+        this.node.getComponent(familyInvitePanel).open()
     }
 
     // update (dt) {}
