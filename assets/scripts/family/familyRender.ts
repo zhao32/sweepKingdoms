@@ -38,10 +38,10 @@ export default class NewClass extends cc.Component {
     // onLoad () {}
 
     onApplyHandler() {
-        console.log(`playerid:`+DataManager.playData.id)
+        // console.log(`playerid:`+DataManager.playData.id)
         console.log(`familyID:`+this._data.familyID)
 
-        MyProtocols.send_C2SApplyEnterFamily(DataManager._loginSocket, DataManager.playData.id, this._data.familyID)
+        MyProtocols.send_C2SApplyEnterFamily(DataManager._loginSocket, this._data.familyID)
     }
 
     start() {

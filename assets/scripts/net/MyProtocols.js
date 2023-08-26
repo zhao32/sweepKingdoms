@@ -7431,10 +7431,9 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	send_C2SApplyEnterFamily(senderSocket, playid, familyID) {
+	send_C2SApplyEnterFamily(senderSocket,familyID) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(13011);
-		myEncoder.writeInt(playid);
 		myEncoder.writeInt(familyID);
 		var rawContent = myEncoder.end();
 		myEncoder.free();
