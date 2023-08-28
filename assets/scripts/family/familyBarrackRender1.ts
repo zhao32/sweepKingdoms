@@ -7,6 +7,7 @@
 
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
+import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
@@ -38,6 +39,8 @@ export default class NewClass extends cc.Component {
         this.data = data
         // this.nameLabel.string = data.name
         // this.desLabel.string = data.describe
+        ResManager.loadItemIcon(`family/familyArm${data.frameIdx}`,this.icon)
+
     }
 
 

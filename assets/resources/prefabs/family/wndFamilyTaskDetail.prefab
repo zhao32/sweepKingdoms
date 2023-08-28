@@ -5988,12 +5988,14 @@
     "proBar": {
       "__id__": 142
     },
+    "nameLabel": null,
     "LabelPro": {
       "__id__": 145
     },
     "LabelAward": {
       "__id__": 152
     },
+    "LabelBtn": null,
     "_id": ""
   },
   {
@@ -6991,12 +6993,14 @@
     "proBar": {
       "__id__": 170
     },
+    "nameLabel": null,
     "LabelPro": {
       "__id__": 173
     },
     "LabelAward": {
       "__id__": 180
     },
+    "LabelBtn": null,
     "_id": ""
   },
   {
@@ -7994,12 +7998,14 @@
     "proBar": {
       "__id__": 198
     },
+    "nameLabel": null,
     "LabelPro": {
       "__id__": 201
     },
     "LabelAward": {
       "__id__": 208
     },
+    "LabelBtn": null,
     "_id": ""
   },
   {
@@ -8997,12 +9003,14 @@
     "proBar": {
       "__id__": 226
     },
+    "nameLabel": null,
     "LabelPro": {
       "__id__": 229
     },
     "LabelAward": {
       "__id__": 236
     },
+    "LabelBtn": null,
     "_id": ""
   },
   {
@@ -9247,6 +9255,9 @@
     },
     "donatePfb": {
       "__uuid__": "1fad7437-c20e-4d50-ac3a-d1961507bd9f"
+    },
+    "icon": {
+      "__id__": 111
     },
     "_id": ""
   },

@@ -8,6 +8,7 @@
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
+import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 import familyDonateRender from "./familyDonateRender";
 
@@ -51,6 +52,8 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     donatePfb: cc.Prefab = null;
 
+    @property(cc.Node)
+    icon: cc.Node = null;
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -77,10 +80,12 @@ export default class NewClass extends cc.Component {
         if (type == 0) {//主线任务
             this.labelTaskName.string = `主线任务`
             this.labelTaskCont.string = data[0].des
+            ResManager.loadItemIcon(`family/familyTask0`,this.icon)
 
         } else {//支线任务
             this.labelTaskName.string = data[0].name
             this.labelTaskCont.string = data[0].des
+            ResManager.loadItemIcon(`family/familyTask1`,this.icon)
         }
 
         NetEventDispatcher.addListener(NetEvent.S2CFamilyTaskSend, this.S2CFamilyTaskSend, this)
