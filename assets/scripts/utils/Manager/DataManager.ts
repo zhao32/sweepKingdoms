@@ -216,7 +216,9 @@ export default class DataManager {
         /**矿场矿石 */
         MineStone: {},
         /**数值奖励 */
-        bonus: {}
+        bonus: {},
+        /**家族任务 */
+        familyTask: {},
     }
     /**我的将表 */
     static cardsList = []

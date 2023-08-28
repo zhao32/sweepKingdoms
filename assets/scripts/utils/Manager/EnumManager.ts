@@ -237,6 +237,8 @@ export default class EnumManager {
         /**家族申请管理 */
         WND_FAMILY_APPLY_MANGER: 'prefabs/family/wndFamilyApplyManger',
 
+        WND_CHAT: 'prefabs/ChatPanel/wndChat',
+
 
     }
 }

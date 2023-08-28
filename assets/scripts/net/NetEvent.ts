@@ -521,8 +521,25 @@ export enum NetEvent {
     C2SFamilyAutoEnterChange = 13019,
 
     S2CFamilyAutoEnterChange = 13020,
-     
 
+    /**家族商店列表 */
+    C2SFamilyMallList = 1047,
+
+    S2CFamilyMallList = 1048,
+
+    C2SFamilyRefreshMall = 1051,
+
+    S2CFamilyRefreshMall = 1052,
+
+    C2SFamilyMallBuy = 10049,
+
+    S2CFamilyMallBuy = 10050,
+
+    // 13023  家族任务   参数  任务id   提交道具个数
+    /**家族任务提交 */
+    C2SFamilyTaskSend = 13023,
+
+    S2CFamilyTaskSend = 13024
 
 }
 

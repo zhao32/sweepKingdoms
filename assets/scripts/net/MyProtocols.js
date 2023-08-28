@@ -7611,7 +7611,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
-// 0 不需要验证  1 需要验证  2 禁止加入
+	// 0 不需要验证  1 需要验证  2 禁止加入
 	send_C2SFamilyAutoEnterChange(senderSocket, autoEnter) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(13019);
@@ -7624,6 +7624,116 @@ var MyProtocols = {
 	get_13020: function (myDecoder) {
 		var retObj = {};
 		retObj.autoEnter = myDecoder.readInt();
+		return retObj;
+	},
+
+
+
+
+	send_C2SFamilyMallList: function (senderSocket) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(1047);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_1048: function (myDecoder) {
+		var retObj = {};
+		retObj.items = [];
+		let items_size = myDecoder.readInt();
+		if (items_size > 0) {
+			for (var i = 0; i < items_size; i++) {
+				retObj.items[i] = {};
+				retObj.items[i].slot_index = myDecoder.readInt();
+				retObj.items[i].buyNum = myDecoder.readInt();
+			}
+		}
+		retObj.packs = [];
+		let packs_size = myDecoder.readInt();
+		if (packs_size > 0) {
+			for (var i = 0; i < packs_size; i++) {
+				retObj.packs[i] = myDecoder.readInt();
+			}
+		}
+		return retObj;
+	},
+
+
+	send_C2SFamilyMallBuy: function (senderSocket, p_slot_index, p_buy_count) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(1049);
+		myEncoder.writeInt(p_slot_index);
+		myEncoder.writeInt(p_buy_count);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_1050: function (myDecoder) {
+		var retObj = {};
+		retObj.slot_index = myDecoder.readInt();
+		let item_info_exist = myDecoder.readBool();
+		if (item_info_exist == true) {
+			retObj.item_info = {};
+			retObj.item_info.slot_index = myDecoder.readInt();
+			retObj.item_info.buyNum = myDecoder.readInt();
+		}
+		retObj.gain_items = [];
+		let gain_items_size = myDecoder.readInt();
+		if (gain_items_size > 0) {
+			for (var i = 0; i < gain_items_size; i++) {
+				retObj.gain_items[i] = {};
+				retObj.gain_items[i].itemTemplateId = myDecoder.readInt();
+				retObj.gain_items[i].num = myDecoder.readInt();
+			}
+		}
+		return retObj;
+	},
+
+	send_C2SFamilyRefreshMall: function (senderSocket, type) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(1051);
+		myEncoder.writeInt(type);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_1052: function (myDecoder) {
+		var retObj = {};
+		retObj.items = [];
+		let items_size = myDecoder.readInt();
+		if (items_size > 0) {
+			for (var i = 0; i < items_size; i++) {
+				retObj.items[i] = {};
+				retObj.items[i].slot_index = myDecoder.readInt();
+				retObj.items[i].buyNum = myDecoder.readInt();
+			}
+		}
+		retObj.packs = [];
+		let packs_size = myDecoder.readInt();
+		if (packs_size > 0) {
+			for (var i = 0; i < packs_size; i++) {
+				retObj.packs[i] = myDecoder.readInt();
+			}
+		}
+		return retObj;
+	},
+
+
+	send_C2SFamilyTaskSend(senderSocket, id, num) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13023);
+		myEncoder.writeInt(id);
+		myEncoder.writeInt(num);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13023: function (myDecoder) {
+		var retObj = {};
 		return retObj;
 	},
 }

@@ -127,8 +127,10 @@ export default class NewClass extends cc.Component {
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_OFFICE)
     }
     onChatHandler() {
-        //  ViewManager.instance.hideWnd(DataManager.curWndPath, true)
-        //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_MEMBER)
+         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_CHAT,...[1])
+
+        console.log(`打开聊天面板`)
     }
 
     onTaskHandler() {
