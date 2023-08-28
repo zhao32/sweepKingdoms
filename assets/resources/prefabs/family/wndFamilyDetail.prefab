@@ -6228,7 +6228,7 @@
     },
     "component": "",
     "_componentId": "53cdekAdAhGT4XJI+LLFysN",
-    "handler": "onTaskHandler",
+    "handler": "onBarraksHandler",
     "customEventData": ""
   },
   {

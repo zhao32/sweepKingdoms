@@ -3,44 +3,84 @@
     {
       "id": 1,
       "good": 1452,
-      "name": "金币"
+      "name": "金币",
+      "donateNum":500000,
+      "awardType":0,
+      "awardNum":35,
+
+      "des": "为家族大战回积各种资源，请各位族员康慨解囊!为了家族!"
     },
     {
       "id": 2,
       "good": 1452,
-      "name": "粮草"
+      "name": "粮草",
+      "donateNum":500000,
+      "awardType":0,
+      "awardNum":35,
+
+      "des": "为家族大战回积各种资源，请各位族员康慨解囊!为了家族!"
     },
     {
       "id": 3,
       "good": 1452,
-      "name": "重镇之石"
+      "name": "重镇之石",
+      "donateNum":7,
+      "awardType":1,
+      "awardNum":7,
+
+      "des": "为家族大战回积各种资源，请各位族员康慨解囊!为了家族!"
     }
   ],
   "DailyTasks": [
     {
       "id": 4,
       "good": 1452,
-      "name": "收集重镇之石"
+      "name": "重镇之石",
+      "donateNum":1,
+      "awardType":1,
+      "awardNum":10,
+
+      "des": "重镇之石是每个家族必争的战略物资，想家族贡献他可以获得奖励。"
     },
     {
       "id": 5,
       "good": 1452,
-      "name": "收集遗迹之心"
+      "name": "遗迹之心",
+      "donateNum":1,
+      "awardType":1,
+      "awardNum":60,
+
+      "des": "遗迹之心的数量可以代表一个家族的实力，为了彰显家族的实力，请尽量的去收集吧!"
     },
     {
       "id": 6,
       "good": 1452,
-      "name": "收集财神古币"
+      "name": "财神古币",
+      "donateNum":1,
+      "awardType":1,
+      "awardNum":35,
+
+      "des": "财神古币可以为家族带来好运气，去手机吧，为了金币!"
     },
     {
       "id": 7,
       "good": 1452,
-      "name": "收集名城晶石"
+      "name": "名城晶石",
+      "donateNum":1,
+      "awardType":1,
+      "awardNum":30,
+
+      "des": "名城晶石是每个家族必争的战略物资，想家族贡献他可以获得奖励。"
     },
     {
       "id": 8,
       "good": 1452,
-      "name": "收集圣都碧玉"
+      "name": "圣都碧玉",
+      "donateNum":1,
+      "awardType":1,
+      "awardNum":40,
+
+      "des": "圣都碧玉足每个家族必争的战略物资，想家族责献他可以获得奖励。"
     }
   ]
 }
