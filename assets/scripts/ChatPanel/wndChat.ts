@@ -97,7 +97,6 @@ export default class NewClass extends cc.Component {
     lastContentPosY
     updateInterval
 
-    _type
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -111,7 +110,6 @@ export default class NewClass extends cc.Component {
     // }
     // use this for initialization
     onLoad() {
-        // DataManager.ChatPanel = this
         this._isShow = false;
         // this._NormalPos = new cc.Vec2(-603,0);
         // this._ShowPos =new cc.Vec2(0,0);
@@ -141,8 +139,13 @@ export default class NewClass extends cc.Component {
         // }
     }
 
-    init(type) {
-        this._type = type
+    targetId:number
+
+    init(type,targetId?:number) {
+        DataManager.ChatPanel = this
+        this.targetId = targetId
+        this._curselectIndex = type
+        this.OpenChatPanel(this._isShow);
 
     }
 
@@ -301,21 +304,21 @@ export default class NewClass extends cc.Component {
         this.showListView();
     }
     SetSize(isopen) {
-        if (isopen) {
-            this.node.width = 1334;
-            this.node.height = 750;
-            return;
-        }
-        this.node.width = this.node.height = 0;
+        // if (isopen) {
+        //     this.node.width = 1334;
+        //     this.node.height = 750;
+        //     return;
+        // }
+        // this.node.width = this.node.height = 0;
     }
     chatview_auth_cb(retObj) {
-        cc.log("接受打开聊天面版===" + retObj.chat_content.length);
+        cc.log("接受打开聊天面版  ===" + retObj.chat_content.length);
         this.ClearChatItem();
         if (!this._isShow) {
             this.m_pContent.active = true;
             // var moveto =  cc.moveTo(0.2, this._ShowPos);
-            var moveby = cc.moveBy(0.2, cc.v2(728, 0));
-            this.node.runAction(moveby);
+            // var moveby = cc.moveBy(0.2, cc.v2(728, 0));
+            // this.node.runAction(moveby);
             this._isShow = !this._isShow;
             this.SetSize(true);
         }
@@ -356,12 +359,12 @@ export default class NewClass extends cc.Component {
     }
     SendChatContent(params, targetid = 0) {
         cc.log("发送的对象ID===" + targetid + "type==" + this._curselectIndex);
-        MyProtocols.send_C2SChat(DataManager._loginSocket, this._curselectIndex, targetid, params);
+        MyProtocols.send_C2SChat(DataManager._loginSocket, this._curselectIndex, this.targetId, params);
     }
     ChatShow_OnClickHandler(event) {
         // SoundUtil.playBtnOpenEffect();
         this.OpenChatPanel(this._isShow);
-        cc.log(this.node.getPosition());
+        // cc.log(this.node.getPosition());
     }
     // RefreshData() {
     //     this._curselectIndex = 1;
@@ -374,13 +377,14 @@ export default class NewClass extends cc.Component {
     OpenChatPanel(isopen) {
         if (isopen) {
             // var moveto =  cc.moveTo(0.2, this._NormalPos);
-            var moveby = cc.moveBy(0.2, cc.v2(-728, 0));
-            var setactive = cc.callFunc(this.setcontentactive, this);
-            this.node.runAction(cc.sequence(moveby, setactive));
+            // var moveby = cc.moveBy(0.2, cc.v2(-728, 0));
+            // var setactive = cc.callFunc(this.setcontentactive, this);
+            // this.node.runAction(cc.sequence(moveby, setactive));
             // this.RefreshData();
+            this.setcontentactive()
             this._isShow = !this._isShow;
             this.ClearChatItem();
-            this.SetSize(false);
+            // this.SetSize(false);
             this.m_pNewMessageNode.active = false;
             this._newmesNum = 0;
             this._sendvalue = "";
@@ -459,20 +463,20 @@ export default class NewClass extends cc.Component {
         // SoundUtil.playBtnOpenEffect();
         this.mScrollView.scrollToTop()
         if (this._curselectIndex == 2) {
-            if (this._targetchatinfo == null) {
+            if (this.targetId == null) {
                 ViewManager.instance.showToast(`没有私聊对象！`)
                 return;
             }
         }
         if (this._sendvalue == "") {
-            ViewManager.instance.showToast(`没有私聊对象！`)
+            ViewManager.instance.showToast(`没有输入内容！`)
             return;
         }
-        var ntargetid = 0;
-        if (this._targetchatinfo != null) {
-            ntargetid = this._targetchatinfo.sender_uid;
-        }
-        this.SendChatContent(this._sendvalue, ntargetid);
+        // var ntargetid = 0;
+        // if (this._targetchatinfo != null) {
+        //     ntargetid = this._targetchatinfo.sender_uid;
+        // }
+        this.SendChatContent(this._sendvalue, this.targetId);
     }
 
     getPositionInView(item) { // get item position in scrollview's node space
@@ -521,8 +525,8 @@ export default class NewClass extends cc.Component {
     }
 
     onCloseHandler() {
-        ViewManager.instance.hideWnd(DataManager.curWndPath)
-        if (this._type == 1) {
+        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        if (this._curselectIndex == 4) {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
         } else {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_FIREND_LIST)

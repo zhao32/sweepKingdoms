@@ -237,6 +237,9 @@ export default class EnumManager {
         /**家族申请管理 */
         WND_FAMILY_APPLY_MANGER: 'prefabs/family/wndFamilyApplyManger',
 
+        /**兵种 效果捐赠 */
+        WND_FAMILY_ARM_EFF_UP: 'prefabs/family/wndFamilyArmEffUp',
+
         WND_CHAT: 'prefabs/ChatPanel/wndChat',
 
 

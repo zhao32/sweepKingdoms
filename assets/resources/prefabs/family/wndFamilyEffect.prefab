@@ -2076,8 +2076,15 @@
       "__id__": 1
     },
     "_enabled": true,
-    "label": null,
-    "text": "hello",
+    "pfb1": {
+      "__uuid__": "d607b6d9-cef8-49a8-9a83-f9f4b94f4a50"
+    },
+    "pfb2": {
+      "__uuid__": "c1757b76-3b01-4642-a6d9-bafd5ee5d55b"
+    },
+    "contect": {
+      "__id__": 44
+    },
     "_id": ""
   },
   {

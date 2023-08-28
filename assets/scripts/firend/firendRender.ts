@@ -6,7 +6,9 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import DataManager from "../utils/Manager/DataManager";
+import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
+import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -48,6 +50,7 @@ export default class NewClass extends cc.Component {
 
     /**type 1 好友 2 敌人 */
     init(data, type) {
+        console.log(data)
         this._data = data
         this.labelName.string = `姓名：${data.fiend_name}`
         this.labelFamily.string = `家族：${data.fiend_Guild}`
@@ -78,7 +81,9 @@ export default class NewClass extends cc.Component {
 
     onBtnHandler() {
         if (this._type == 1) {//聊天 好友
-
+            ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_CHAT,...[2,this._data.playerId])
+    
         } else {//删除 敌人
             MyProtocols.send_C2SFriendBlackRemove(DataManager._loginSocket, this._data.playerId)
         }

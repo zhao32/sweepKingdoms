@@ -219,6 +219,8 @@ export default class DataManager {
         bonus: {},
         /**家族任务 */
         familyTask: {},
+        /**家族兵 */
+        Mercenary:{}
     }
     /**我的将表 */
     static cardsList = []

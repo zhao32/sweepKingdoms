@@ -14,11 +14,13 @@ export default class NewClass extends cc.Component {
     nameLabel: cc.Label = null;
 
     @property(cc.Label)
-    decLabel: cc.Label = null;
+    desLabel: cc.Label = null;
+
+    @property(cc.Label)
+    stateLabel: cc.Label = null;
 
     @property(cc.Node)
     icon: cc.Node = null;
-
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -29,11 +31,8 @@ export default class NewClass extends cc.Component {
 
     init(data) {
         this.nameLabel.string = data.group
-        this.decLabel.string = data.describe
-
+        this.desLabel.string = data.describe
     }
-
-    
 
     // update (dt) {}
 }

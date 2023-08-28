@@ -7736,6 +7736,170 @@ var MyProtocols = {
 		var retObj = {};
 		return retObj;
 	},
+
+	send_C2SFamilyArmList(senderSocket, idx) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13031);
+
+		myEncoder.writeInt(idx);
+
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent)
+	},
+
+	get_13031: function (myDecoder) {
+		var retObj = {};
+		retObj.arms = [];
+		let arms_size = myDecoder.readInt();
+		if (arms_size > 0) {
+			for (var i = 0; i < arms_size; i++) {
+				retObj.arms[i] = {};
+				retObj.arms[i].idx = myDecoder.readInt();
+				retObj.arms[i].id = myDecoder.readInt();
+				retObj.arms[i].lv = myDecoder.readInt();
+
+				retObj.arms[i].name = myDecoder.readString();
+
+				retObj.arms[i].state = myDecoder.readInt();
+
+				let donates_size = myDecoder.readInt();
+				if (donates_size > 0) {
+					for (let j = 0; j < donates_size.length; j++) {
+						retObj.arms[i].donates = {}
+						retObj.arms[i].donates[j].id = myDecoder.readInt();
+						/**需要捐赠的总数量 */
+						retObj.arms[i].donates[j].needDonateNum = myDecoder.readInt();
+						/**已经捐赠的数量 */
+
+						retObj.arms[i].donates[j].donatedNum = myDecoder.readInt();
+						/**没次捐赠的数量 */
+						retObj.arms[i].donates[j].preDonateNum = myDecoder.readInt();
+						/**没次捐赠的奖励物品 */
+						retObj.arms[i].donates[j].preAwardId = myDecoder.readInt();
+						/**没次捐赠的奖励数量 */
+						retObj.arms[i].donates[j].preAwardNum = myDecoder.readInt();
+					}
+
+				}
+			}
+		}
+		return retObj;
+	},
+
+
+
+	send_C2SFamilyTaskSend(senderSocket, id, num) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13035);
+		myEncoder.writeInt(id);
+		myEncoder.writeInt(num);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13036: function (myDecoder) {
+		var retObj = {};
+		return retObj;
+	},
+
+
+	send_C2SEffectList(senderSocket, idx) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13033);
+
+		myEncoder.writeInt(idx);
+
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent)
+	},
+
+	get_13034: function (myDecoder) {
+		var retObj = {};
+		retObj.arms = [];
+		let arms_size = myDecoder.readInt();
+		if (arms_size > 0) {
+			for (var i = 0; i < arms_size; i++) {
+				retObj.arms[i] = {};
+				retObj.arms[i].idx = myDecoder.readInt();
+				retObj.arms[i].id = myDecoder.readInt();
+				retObj.arms[i].lv = myDecoder.readInt();
+
+				retObj.arms[i].name = myDecoder.readString();
+				retObj.arms[i].effectNum = myDecoder.readString();
+
+				retObj.arms[i].state = myDecoder.readInt();
+
+				let donates_size = myDecoder.readInt();
+				if (donates_size > 0) {
+					for (let j = 0; j < donates_size.length; j++) {
+						retObj.arms[i].donates = {}
+						retObj.arms[i].donates[j].id = myDecoder.readInt();
+						/**需要捐赠的总数量 */
+						retObj.arms[i].donates[j].needDonateNum = myDecoder.readInt();
+						/**已经捐赠的数量 */
+
+						retObj.arms[i].donates[j].donatedNum = myDecoder.readInt();
+						/**没次捐赠的数量 */
+						retObj.arms[i].donates[j].preDonateNum = myDecoder.readInt();
+						/**没次捐赠的奖励物品 */
+						retObj.arms[i].donates[j].preAwardId = myDecoder.readInt();
+						/**没次捐赠的奖励数量 */
+						retObj.arms[i].donates[j].preAwardNum = myDecoder.readInt();
+					}
+				}
+			}
+		}
+		return retObj;
+	},
+
+	send_C2SFamilyArmDonate(senderSocket, id, num) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13037);
+		myEncoder.writeInt(id);
+		myEncoder.writeInt(num);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13038: function (myDecoder) {
+		var retObj = {};
+		return retObj;
+	},
+
+	send_C2SFamilyEffDonate(senderSocket, id, num) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13037);
+		myEncoder.writeInt(id);
+		myEncoder.writeInt(num);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13038: function (myDecoder) {
+		var retObj = {};
+		return retObj;
+	},
+
+	send_C2SFamilyArmDonate(senderSocket, id, num) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13039);
+		myEncoder.writeInt(id);
+		myEncoder.writeInt(num);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13040: function (myDecoder) {
+		var retObj = {};
+		return retObj;
+	},
+
 }
 
 // export default MyProtocols = MyProtocols

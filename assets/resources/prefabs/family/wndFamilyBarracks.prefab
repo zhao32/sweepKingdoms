@@ -1965,8 +1965,15 @@
       "__id__": 1
     },
     "_enabled": true,
-    "label": null,
-    "text": "hello",
+    "pfb1": {
+      "__uuid__": "1cd5407c-a981-4acc-b9ab-1f3fb3194f29"
+    },
+    "pfb2": {
+      "__uuid__": "7c15cfa1-cd4f-4cd9-a477-caefed60ae5e"
+    },
+    "contect": {
+      "__id__": 41
+    },
     "_id": ""
   },
   {

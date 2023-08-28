@@ -539,7 +539,30 @@ export enum NetEvent {
     /**家族任务提交 */
     C2SFamilyTaskSend = 13023,
 
-    S2CFamilyTaskSend = 13024
+    S2CFamilyTaskSend = 13024,
+
+    /** 加载兵营数据*/  
+    C2SFamilyArmList = 13031,
+    
+    S2CFamilyArmList = 13032,
+
+    /**家族兵购买 */
+    C2SFamilyArmBuy = 13035,
+    S2CFamilyArmBuy = 13036,
+
+    /** 获取效果列表*/
+    C2SEffectList = 13033,
+    
+    S2CEffectList = 13034,
+
+    /**兵种升级捐赠 */
+    C2SFamilyArmDonate = 13037,
+
+    S2CFamilyArmDonate = 13038,
+    /**效果升级捐赠 */
+    C2SFamilyEffDonate = 13039,
+
+    S2CFamilyEffDonate = 13040,
 
 }
 

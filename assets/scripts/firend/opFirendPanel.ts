@@ -6,7 +6,9 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import DataManager from "../utils/Manager/DataManager";
+import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
+import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -50,7 +52,7 @@ export default class NewClass extends cc.Component {
 
     }
 
-    open(data,type) {
+    open(data, type) {
         this.node.active = true
         this._data = data
         this.labelName.string = `姓名：${data.fiend_name}`
@@ -82,19 +84,20 @@ export default class NewClass extends cc.Component {
     }
 
     onRemoveEnemyHandler() {
-        MyProtocols.send_C2SFriendBlackRemove(DataManager._loginSocket,this._data.playerId)
+        MyProtocols.send_C2SFriendBlackRemove(DataManager._loginSocket, this._data.playerId)
     }
 
     onChatHandler() {
-
+        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_CHAT, ...[2, this._data.playerId])
     }
 
     onDeleateFirendHandler() {
-        MyProtocols.send_C2SBlackFriendAdd(DataManager._loginSocket,this._data.playerId)
+        MyProtocols.send_C2SBlackFriendAdd(DataManager._loginSocket, this._data.playerId)
     }
 
     onAddEnemyHandler() {
-        MyProtocols.send_C2SBlackFriendAdd(DataManager._loginSocket,this._data.playerId)
+        MyProtocols.send_C2SBlackFriendAdd(DataManager._loginSocket, this._data.playerId)
     }
 
 

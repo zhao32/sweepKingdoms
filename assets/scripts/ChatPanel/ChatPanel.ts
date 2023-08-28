@@ -7,6 +7,7 @@
 
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
+import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
 const { ccclass, property } = cc._decorator;
@@ -115,11 +116,7 @@ export default class NewClass extends cc.Component {
         // this._ShowPos =new cc.Vec2(0,0);
         this._curZOrder = 1;
         this._pushZOrder = -100;
-        NetEventDispatcher.addListener(NetEvent.S2CChatView, this.chatview_auth_cb, this);
 
-        NetEventDispatcher.addListener(NetEvent.S2CChatPush, this.ChatPush_auth_cb, this);
-
-        NetEventDispatcher.addListener(NetEvent.S2CChat, this.s2cchat_auth_cb, this);
         this.RefreshData();
         this.node.on("touchstart", this.touch_start, this);
         this.m_pInput.node.on('editing-did-ended', this.EditEnd_callback, this);
@@ -127,6 +124,11 @@ export default class NewClass extends cc.Component {
 
         // NetEventDispatcher.addListener(MyUIEvent.redPointsRefresh, this.redPointsRefresh_cb_func);
 
+        NetEventDispatcher.addListener(NetEvent.S2CChatView, this.chatview_auth_cb, this);
+
+        NetEventDispatcher.addListener(NetEvent.S2CChatPush, this.ChatPush_auth_cb, this);
+
+        NetEventDispatcher.addListener(NetEvent.S2CChat, this.s2cchat_auth_cb, this);
         NetEventDispatcher.addListener(NetEvent.S2CPkEnemyFormation, this.S2CPkEnemyFormation_cb, this);
 
         NetEventDispatcher.addListener(NetEvent.S2CArenaFormation, this.S2CArenaFormation_cb, this);
@@ -263,10 +265,11 @@ export default class NewClass extends cc.Component {
     }
     onDestroy() {
         //网络消息移除
+        DataManager.ChatPanel = null
+
         NetEventDispatcher.removeListener(NetEvent.S2CChatView, this.chatview_auth_cb);
         NetEventDispatcher.removeListener(NetEvent.S2CChatPush, this.ChatPush_auth_cb);
         NetEventDispatcher.removeListener(NetEvent.S2CChat, this.s2cchat_auth_cb);
-        DataManager.ChatPanel = null
 
         // NetEventDispatcher.removeListener(MyUIEvent.redPointsRefresh, this.redPointsRefresh_cb_func);
         NetEventDispatcher.removeListener(NetEvent.S2CPkEnemyFormation, this.S2CPkEnemyFormation_cb);
@@ -302,9 +305,13 @@ export default class NewClass extends cc.Component {
         this.node.width = this.node.height = 0;
     }
     chatview_auth_cb(retObj) {
+        if (DataManager.curWndPath == EnumManager.viewPath.WND_CHAT) return
+
         cc.log("接受打开聊天面版===" + retObj.chat_content.length);
+
         this.ClearChatItem();
         if (!this._isShow) {
+
             this.m_pContent.active = true;
             // var moveto =  cc.moveTo(0.2, this._ShowPos);
             var moveby = cc.moveBy(0.2, cc.v2(728, 0));
@@ -378,8 +385,11 @@ export default class NewClass extends cc.Component {
             this._newmesNum = 0;
             this._sendvalue = "";
             MyProtocols.send_C2SChatVisit(DataManager._loginSocket);
+            DataManager.ChatPanel = null
+
         }
         else {
+            DataManager.ChatPanel = this
             MyProtocols.send_C2SChatView(DataManager._loginSocket, this._curselectIndex);
         }
     }
