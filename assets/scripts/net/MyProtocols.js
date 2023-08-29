@@ -7902,6 +7902,24 @@ var MyProtocols = {
 		return retObj;
 	},
 
+	
+
+	send_C2SFamilyInviteJion(senderSocket, id) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13051);
+		myEncoder.writeInt(id);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13052: function (myDecoder) {
+		var retObj = {};
+		 retObj.id = myDecoder.readInt();
+		return retObj;
+	},
+
+
 }
 
 // export default MyProtocols = MyProtocols

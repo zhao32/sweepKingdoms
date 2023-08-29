@@ -45,6 +45,14 @@ export default class NewClass extends cc.Component {
         this._autoEnter = DataManager.familyDetail.autoEnter
         this.check.isChecked = DataManager.familyDetail.autoEnter == 1
         NetEventDispatcher.addListener(NetEvent.S2CCreaterFamily, this.S2CFamilyAutoEnterChange, this)
+        NetEventDispatcher.addListener(NetEvent.S2CFamilyInviteJion, this.S2CFamilyInviteJion, this)
+
+        
+    }
+
+    S2CFamilyInviteJion(retObj){
+        console.log(`邀请玩家成功` + JSON.stringify(retObj))
+
     }
 
     S2CFamilyAutoEnterChange(retObj) {
@@ -55,6 +63,8 @@ export default class NewClass extends cc.Component {
 
     onClose() {
         NetEventDispatcher.removeListener(NetEvent.S2CCreaterFamily, this.S2CFamilyAutoEnterChange, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CFamilyInviteJion, this.S2CFamilyInviteJion, this)
+
     }
 
     onCloseHandler() {
