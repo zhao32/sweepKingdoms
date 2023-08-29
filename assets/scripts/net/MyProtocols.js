@@ -7514,24 +7514,24 @@ var MyProtocols = {
 	},
 
 
-	send_C2SFamilyArm(senderSocket) {
-		var myEncoder = WsEncoder.alloc();
-		myEncoder.writeInt(13031);
-		var rawContent = myEncoder.end();
-		myEncoder.free();
-		senderSocket.sendMessage(rawContent);
-	},
+	// send_C2SFamilyArm(senderSocket) {
+	// 	var myEncoder = WsEncoder.alloc();
+	// 	myEncoder.writeInt(13031);
+	// 	var rawContent = myEncoder.end();
+	// 	myEncoder.free();
+	// 	senderSocket.sendMessage(rawContent);
+	// },
 
-	get_13031: function (myDecoder) {
-		var retObj = {};
-		retObj.arms = [];
-		var arms_size = myDecoder.readInt();
-		for (var i = 0; i < arms_size; i++) {
-			retObj.arms[i] = {};
-			retObj.arms[i].armId = myDecoder.readString();
-		}
-		return retObj;
-	},
+	// get_13032: function (myDecoder) {
+	// 	var retObj = {};
+	// 	retObj.arms = [];
+	// 	var arms_size = myDecoder.readInt();
+	// 	for (var i = 0; i < arms_size; i++) {
+	// 		retObj.arms[i] = {};
+	// 		retObj.arms[i].armId = myDecoder.readString();
+	// 	}
+	// 	return retObj;
+	// },
 
 
 	// send_C2SFamilyDetail(senderSocket) {
@@ -7734,6 +7734,8 @@ var MyProtocols = {
 
 	get_13024: function (myDecoder) {
 		var retObj = {};
+		retObj.tempid = myDecoder.readInt();
+		retObj.number = myDecoder.readInt();
 		return retObj;
 	},
 
@@ -7748,7 +7750,7 @@ var MyProtocols = {
 		senderSocket.sendMessage(rawContent)
 	},
 
-	get_13031: function (myDecoder) {
+	get_13032: function (myDecoder) {
 		var retObj = {};
 		retObj.arms = [];
 		let arms_size = myDecoder.readInt();
