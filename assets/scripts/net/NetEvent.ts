@@ -531,9 +531,9 @@ export enum NetEvent {
 
     S2CFamilyRefreshMall = 1052,
 
-    C2SFamilyMallBuy = 10049,
+    C2SFamilyMallBuy = 1049,
 
-    S2CFamilyMallBuy = 10050,
+    S2CFamilyMallBuy = 1050,
 
     // 13023  家族任务   参数  任务id   提交道具个数
     /**家族任务提交 */

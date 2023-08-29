@@ -50,6 +50,7 @@ export default class NewClass extends cc.Component {
 
     S2CFamilyMallBuy(data) {
         console.log('道具购买返回' + JSON.stringify(data))
+        // 道具购买返回{"slot_index":5,"item_info":{"slot_index":4124,"buyNum":450},"gain_items":[]}
         ViewManager.instance.showToast(`购买成功`)
     }
 

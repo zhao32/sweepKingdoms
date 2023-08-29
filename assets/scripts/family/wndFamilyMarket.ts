@@ -11,6 +11,7 @@ import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
 import familyMallBuyPanel from "./familyMallBuyPanel";
+import familyMarketItem from "./familyMarketItem";
 
 const { ccclass, property } = cc._decorator;
 
@@ -57,7 +58,10 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.addListener(NetEvent.S2CFamilyMallList, this.S2CFamilyMallList, this)
         NetEventDispatcher.addListener(NetEvent.S2CFamilyRefreshMall, this.S2CFamilyMallList, this)
 
-
+        this.labelReputation.string = DataManager.familyDetail.reputation.toString()
+        this.labelContribute.string = DataManager.familyDetail.contribution.toString()
+        this.labelCoin.string = DataManager.playData.coinMoney
+        this.labelGold.string = DataManager.playData.goldMoney
     }
 
     S2CFamilyMallList(data) {
@@ -74,16 +78,30 @@ export default class NewClass extends cc.Component {
         //     }, this)
         // }
 
-        for (let i = 0; i < Object.keys(DataManager.GameData.goods).length; i++) {
-            let id = Object.keys(DataManager.GameData.goods)[i]
-            let item = cc.instantiate(this.pfb)
-            item.parent = this.contect
-            item.getComponent(marketItem).init(DataManager.GameData.goods[id])
-            item.on(cc.Node.EventType.TOUCH_END, () => {
-                this.node.getChildByName(`buyPanel`).active = true
-                this.node.getChildByName(`buyPanel`).getComponent(familyMallBuyPanel).init(DataManager.GameData.goods[id], i)
-            }, this)
+
+        let keyItems = Object.keys(DataManager.GameData.familyGoods)
+        console.log(`` + keyItems)
+
+        for (let i = 0; i < data.items.length; i++) {
+            console.log(data.items[i].itemTemplateId)
+            if (keyItems.indexOf(String(data.items[i].itemTemplateId)) != -1) {
+                console.log(`-------`)
+                let id = data.items[i].itemTemplateId
+                let item = cc.instantiate(this.pfb)
+                item.parent = this.contect
+                item.getComponent(familyMarketItem).init(DataManager.GameData.familyGoods[id])
+                item.on(cc.Node.EventType.TOUCH_END, () => {
+                    this.node.getChildByName(`buyPanel`).active = true
+                    this.node.getChildByName(`buyPanel`).getComponent(familyMallBuyPanel).init(DataManager.GameData.familyGoods[id], i)
+                }, this)
+            }
+
         }
+
+        // for (let i = 0; i < Object.keys(DataManager.GameData.familyGoods).length; i++) {
+        //     console.log(i)
+
+        // }
     }
 
     onRefreshHandler1() {

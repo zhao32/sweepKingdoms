@@ -90,117 +90,74 @@ export default class NewClass extends cc.Component {
         this.nation_id = data.contry
         this.node.getChildByName(`toggleContainer`).children[this.nation_id - 1].getComponent(cc.Toggle).isChecked = true
 
-        let my_points = []
-       
+        if (this.curPageIdx == data.page_index) {
+            let my_points = []
+            for (let i = 0; i < data.my_points.length; i++) {
+                if (data.my_points[i].hold_player) {
+                    if (data.my_points[i].hold_player.group != 101) {
+                        my_points.push(data.my_points[i])
+                    }
+                }
+            }
+            my_points.sort((a, b) => b.hold_player.group - a.hold_player.group)
 
-        for (let i = 0; i < data.my_points.length; i++) {
-            if (data.my_points[i].hold_player) {
-                if (data.my_points[i].hold_player.group != 101) {
-                    my_points.push(data.my_points[i])
+            for (let i = 0; i < data.my_points.length; i++) {
+                if (data.my_points[i].hold_player) {
+                    if (data.my_points[i].hold_player.group == 101) {
+                        my_points.unshift(data.my_points[i])
+                    }
+                }
+            }
+
+            data.my_points = my_points
+            for (let i = 0; i < data.my_points.length; i++) {
+                if (data.my_points[i].hold_player) {
+                    let myNode = cc.instantiate(this.myItemPfb)
+                    myNode.getComponent(myItem).init(data.my_points[i].hold_player)
+                    myNode.parent = this.myContect
+
+                    if (data.my_points[i].hold_player.group == 101) {
+                        this.myCityData = data.my_points[i].hold_player
+                    }
+
+                    myNode.on(cc.Node.EventType.TOUCH_END, () => {
+                        console.log(`定位矿的位置`)
+                        this.selectIdx = data.my_points[i].hold_player.idx
+                        console.log(`this.selectIdx:` + this.selectIdx)
+                        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, data.my_points[i].hold_player.page, data.my_points[i].hold_player.country)
+                    }, this)
+                }
+            }
+            this.my_points = data.my_points
+
+
+            this.filedContect.removeAllChildren()
+            this.mineData = data.mine_points
+            for (let i = 0; i < data.mine_points.length; i++) {
+                let filedNode = cc.instantiate(this.filedItemPfb)
+                filedNode.parent = this.filedContect
+                filedNode.getComponent(filedItem).init(data.mine_points[i])
+                if (this.selectIdx == i) {
+                    console.log('-----------light------------:')
+                    filedNode.getChildByName(`light`).active = true
+                    this.selectIdx = -1
+                } else {
+                    // filedNode.getChildByName(`light`).active = false
+                }
+                if (this.mineData[i].hold_player) {
+                    filedNode.on(cc.Node.EventType.TOUCH_END, () => {
+                        this.curFiledData = this.mineData[i].hold_player
+                        console.log('-------点击---------')
+                        filedNode.getChildByName(`light`).active = false
+                        MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this.mineData[i].hold_player.page, this.mineData[i].hold_player.idx, this.mineData[i].hold_player.country)
+                        this.clickIdx = i
+                    }, this)
                 }
             }
         }
-        my_points.sort((a, b) => b.hold_player.group - a.hold_player.group)
-
-        for (let i = 0; i < data.my_points.length; i++) {
-            if (data.my_points[i].hold_player) {
-                if (data.my_points[i].hold_player.group == 101) {
-                    my_points.unshift(data.my_points[i])
-                }
-            }
-        }
-
-        data.my_points = my_points
-        for (let i = 0; i < data.my_points.length; i++) {
-            if (data.my_points[i].hold_player) {
-                let myNode = cc.instantiate(this.myItemPfb)
-                myNode.getComponent(myItem).init(data.my_points[i].hold_player)
-                myNode.parent = this.myContect
-
-                if (data.my_points[i].hold_player.group == 101) {
-                    this.myCityData = data.my_points[i].hold_player
-                }
-
-                myNode.on(cc.Node.EventType.TOUCH_END, () => {
-                    console.log(`定位矿的位置`)
-                    this.selectIdx = data.my_points[i].hold_player.idx
-                    console.log(`this.selectIdx:` + this.selectIdx)
-                    MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, data.my_points[i].hold_player.page, data.my_points[i].hold_player.country)
-                }, this)
-            }
-        }
-        this.my_points = data.my_points
-
-        this.filedContect.removeAllChildren()
-        this.mineData = data.mine_points
-        for (let i = 0; i < data.mine_points.length; i++) {
-            let filedNode = cc.instantiate(this.filedItemPfb)
-            filedNode.parent = this.filedContect
-            filedNode.getComponent(filedItem).init(data.mine_points[i])
-            if (this.selectIdx == i) {
-                console.log('-----------light------------:')
-                filedNode.getChildByName(`light`).active = true
-                this.selectIdx = -1
-            } else {
-                // filedNode.getChildByName(`light`).active = false
-            }
-            // filedNode.on(cc.Node.EventType.TOUCH_END, () => {
-            //     filedNode.getChildByName(`light`).active = false
-
-            //     // if (data.mine_points[i].hold_player) {
-            //     //     // if (data.mine_points[i].hold_player.page == 0 && data.mine_points[i].hold_player.idx == 6) {
-            //     //     //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[data.mine_points[i]])
-            //     //     //     return
-            //     //     // }
-
-            //     //     // if (data.mine_points[i].hold_player.page == 0 && data.mine_points[i].hold_player.idx == 7) {
-            //     //     //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[data.mine_points[i]])
-            //     //     //     return
-            //     //     // }
-
-            //     //     if (data.mine_points[i].hold_player.id == DataManager.playData.id) {
-            //     //         if (data.mine_points[i].hold_player.group == 101) {
-            //     //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[data.mine_points[i]])
-            //     //         } else {
-            //     //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[data.mine_points[i]])
-            //     //         }
-            //     //     } else {
-            //     //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[data.mine_points[i]])
-            //     //     }
-            //     // }
 
 
-            //     if (data.mine_points[i].hold_player.id == DataManager.playData.id) {
-            //         if (data.mine_points[i].hold_player.group == 101) {
-            //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[data.mine_points[i]])
-            //         } else if (data.mine_points[i].hold_player.group == 105) {
-            //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[data.mine_points[i]])
-            //         } else {
-            //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[data.mine_points[i]])
-            //         }
-            //     } else {
-            //         if (data.mine_points[i].hold_player.group == 105) {//恶魔之门
-            //             if (data.mine_points[i].hold_player.id) {
-            //                 ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[data.mine_points[i]])
-            //             } else {
-            //                 ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[data.mine_points[i]])
-            //             }
-            //         } else {
-            //             ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[data.mine_points[i]])
-            //         }
-            //     }
-            // }, this)
-            if (this.mineData[i].hold_player) {
-                filedNode.on(cc.Node.EventType.TOUCH_END, () => {
-                    this.curFiledData = this.mineData[i].hold_player
-                    console.log('-------点击---------')
-                    filedNode.getChildByName(`light`).active = false
-                    MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this.mineData[i].hold_player.page, this.mineData[i].hold_player.idx, this.mineData[i].hold_player.country)
-                    this.clickIdx = i
-                }, this)
-            }
 
-        }
     }
 
     S2CMineEnemyDetail(retObj) {
@@ -346,6 +303,14 @@ export default class NewClass extends cc.Component {
         this.nation_id = DataManager.playData.nation_id
         this.curPageIdx = 0
         MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 1, this.nation_id)//左
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 1, this.nation_id)//右
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20, this.nation_id)//上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20, this.nation_id)//下
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 - 1, this.nation_id)//左上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 + 1, this.nation_id)//右上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 - 1, this.nation_id)//左下
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 + 1, this.nation_id)//右下
 
         for (let i = 0; i < this.node.getChildByName(`toggleContainer`).children.length; i++) {
             let child = this.node.getChildByName(`toggleContainer`).children[i]
@@ -355,8 +320,16 @@ export default class NewClass extends cc.Component {
             child.on('toggle', () => {
                 if (child.getComponent(cc.Toggle).isChecked == true) {
                     this.nation_id = i + 1
-                    this.curPageIdx = 0
+                    this.curPageIdx = 200
                     MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
+                    MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 1, this.nation_id)//左
+                    MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 1, this.nation_id)//右
+                    MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20, this.nation_id)//上
+                    MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20, this.nation_id)//下
+                    MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 - 1, this.nation_id)//左上
+                    MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 + 1, this.nation_id)//右上
+                    MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 - 1, this.nation_id)//左下
+                    MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 + 1, this.nation_id)//右下 
                 }
             }, this)
         }
@@ -367,23 +340,136 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName(`toggleContainer`).children[country - 1].getComponent(cc.Toggle).isChecked = true
     }
 
+    // btnLeft() {
+    //     console.log('左刷新')
+    //     if (this.curPageIdx > 0) {
+    //         this.curPageIdx--
+    //         MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
+    //     } else {
+    //         ViewManager.instance.showToast('没有更多了')
+    //     }
+    // }
+    // btnRight() {
+    //     console.log('右刷新')
+    //     if (this.curPageIdx < this.maxPage - 1) {
+    //         this.curPageIdx++
+    //         MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
+    //     } else {
+    //         ViewManager.instance.showToast('没有更多了')
+    //     }
+    // }
+
     btnLeft() {
         console.log('左刷新')
-        if (this.curPageIdx > 0) {
-            this.curPageIdx--
-            MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
-        } else {
-            ViewManager.instance.showToast('没有更多了')
-        }
+        this.curPageIdx--
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 1, this.nation_id)//左
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 1, this.nation_id)//右
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20, this.nation_id)//上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20, this.nation_id)//下
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 - 1, this.nation_id)//左上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 + 1, this.nation_id)//右上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 - 1, this.nation_id)//左下
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 + 1, this.nation_id)//右下
+
     }
     btnRight() {
         console.log('右刷新')
-        if (this.curPageIdx < this.maxPage - 1) {
-            this.curPageIdx++
-            MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
-        } else {
-            ViewManager.instance.showToast('没有更多了')
-        }
+        this.curPageIdx++
+
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 1, this.nation_id)//左
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 1, this.nation_id)//右
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20, this.nation_id)//上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20, this.nation_id)//下
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 - 1, this.nation_id)//左上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 + 1, this.nation_id)//右上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 - 1, this.nation_id)//左下
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 + 1, this.nation_id)//右下
+    }
+
+    btnTop() {
+        console.log('上刷新')
+        this.curPageIdx = this.curPageIdx - 20 * 1
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 1, this.nation_id)//左
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 1, this.nation_id)//右
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20, this.nation_id)//上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20, this.nation_id)//下
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 - 1, this.nation_id)//左上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 + 1, this.nation_id)//右上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 - 1, this.nation_id)//左下
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 + 1, this.nation_id)//右下
+    }
+
+    btnBottom() {
+        console.log('下刷新')
+        this.curPageIdx = this.curPageIdx + 20 * 1
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 1, this.nation_id)//左
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 1, this.nation_id)//右
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20, this.nation_id)//上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20, this.nation_id)//下
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 - 1, this.nation_id)//左上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 + 1, this.nation_id)//右上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 - 1, this.nation_id)//左下
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 + 1, this.nation_id)//右下
+    }
+
+    btnLeftTop() {
+        console.log('左上刷新')
+        this.curPageIdx = this.curPageIdx - 20 * 1 - 1
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 1, this.nation_id)//左
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 1, this.nation_id)//右
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20, this.nation_id)//上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20, this.nation_id)//下
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 - 1, this.nation_id)//左上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 + 1, this.nation_id)//右上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 - 1, this.nation_id)//左下
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 + 1, this.nation_id)//右下
+    }
+
+    btnRightTop() {
+        console.log('右上刷新')
+        this.curPageIdx = this.curPageIdx - 20 * 1 + 1
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 1, this.nation_id)//左
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 1, this.nation_id)//右
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20, this.nation_id)//上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20, this.nation_id)//下
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 - 1, this.nation_id)//左上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 + 1, this.nation_id)//右上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 - 1, this.nation_id)//左下
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 + 1, this.nation_id)//右下 
+    }
+
+    btnLeftBottom() {
+        console.log('左下刷新')
+        this.curPageIdx = this.curPageIdx + 20 * 1 - 1
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 1, this.nation_id)//左
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 1, this.nation_id)//右
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20, this.nation_id)//上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20, this.nation_id)//下
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 - 1, this.nation_id)//左上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 + 1, this.nation_id)//右上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 - 1, this.nation_id)//左下
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 + 1, this.nation_id)//右下
+    }
+
+    btnRightBottom() {
+        console.log('右下刷新')
+        this.curPageIdx = this.curPageIdx + 20 * 1 + 1
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 1, this.nation_id)//左
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 1, this.nation_id)//右
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20, this.nation_id)//上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20, this.nation_id)//下
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 - 1, this.nation_id)//左上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx - 20 + 1, this.nation_id)//右上
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 - 1, this.nation_id)//左下
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 + 1, this.nation_id)//右下
     }
 
 

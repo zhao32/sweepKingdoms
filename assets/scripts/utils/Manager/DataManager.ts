@@ -220,7 +220,9 @@ export default class DataManager {
         /**家族任务 */
         familyTask: {},
         /**家族兵 */
-        Mercenary:{}
+        Mercenary: {},
+        /**家族商店 */
+        familyGoods: {},
     }
     /**我的将表 */
     static cardsList = []

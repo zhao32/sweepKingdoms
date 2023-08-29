@@ -6023,57 +6023,57 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	send_C2SArmyShopItemList: function (senderSocket) {
-		var myEncoder = WsEncoder.alloc();
-		myEncoder.writeInt(1047);
-		var rawContent = myEncoder.end();
-		myEncoder.free();
-		senderSocket.sendMessage(rawContent);
-	},
+	// send_C2SArmyShopItemList: function (senderSocket) {
+	// 	var myEncoder = WsEncoder.alloc();
+	// 	myEncoder.writeInt(1047);
+	// 	var rawContent = myEncoder.end();
+	// 	myEncoder.free();
+	// 	senderSocket.sendMessage(rawContent);
+	// },
 
-	get_1048: function (myDecoder) {
-		var retObj = {};
-		retObj.refreshTimestamp = myDecoder.readInt();
-		retObj.freeTimes = myDecoder.readInt();
-		retObj.feeRefreshTimes = myDecoder.readInt();
-		retObj.items = [];
-		let items_size = myDecoder.readInt();
-		if (items_size > 0) {
-			for (var i = 0; i < items_size; i++) {
-				retObj.items[i] = {};
-				retObj.items[i].itemTemplateId = myDecoder.readInt();
-				retObj.items[i].num = myDecoder.readInt();
-				retObj.items[i].gamemoney = myDecoder.readInt();
-				retObj.items[i].money = myDecoder.readInt();
-				retObj.items[i].times = myDecoder.readInt();
-			}
-		}
-		return retObj;
-	},
+	// get_1048: function (myDecoder) {
+	// 	var retObj = {};
+	// 	retObj.refreshTimestamp = myDecoder.readInt();
+	// 	retObj.freeTimes = myDecoder.readInt();
+	// 	retObj.feeRefreshTimes = myDecoder.readInt();
+	// 	retObj.items = [];
+	// 	let items_size = myDecoder.readInt();
+	// 	if (items_size > 0) {
+	// 		for (var i = 0; i < items_size; i++) {
+	// 			retObj.items[i] = {};
+	// 			retObj.items[i].itemTemplateId = myDecoder.readInt();
+	// 			retObj.items[i].num = myDecoder.readInt();
+	// 			retObj.items[i].gamemoney = myDecoder.readInt();
+	// 			retObj.items[i].money = myDecoder.readInt();
+	// 			retObj.items[i].times = myDecoder.readInt();
+	// 		}
+	// 	}
+	// 	return retObj;
+	// },
 
-	send_C2SArmyShopBuy: function (senderSocket, p_slot_index) {
-		var myEncoder = WsEncoder.alloc();
-		myEncoder.writeInt(1049);
-		myEncoder.writeInt(p_slot_index);
-		var rawContent = myEncoder.end();
-		myEncoder.free();
-		senderSocket.sendMessage(rawContent);
-	},
+	// send_C2SArmyShopBuy: function (senderSocket, p_slot_index) {
+	// 	var myEncoder = WsEncoder.alloc();
+	// 	myEncoder.writeInt(1049);
+	// 	myEncoder.writeInt(p_slot_index);
+	// 	var rawContent = myEncoder.end();
+	// 	myEncoder.free();
+	// 	senderSocket.sendMessage(rawContent);
+	// },
 
-	get_1050: function (myDecoder) {
-		var retObj = {};
-		retObj.slot_index = myDecoder.readInt();
-		retObj.gain_items = [];
-		let gain_items_size = myDecoder.readInt();
-		if (gain_items_size > 0) {
-			for (var i = 0; i < gain_items_size; i++) {
-				retObj.gain_items[i] = {};
-				retObj.gain_items[i].itemTemplateId = myDecoder.readInt();
-				retObj.gain_items[i].num = myDecoder.readInt();
-			}
-		}
-		return retObj;
-	},
+	// get_1050: function (myDecoder) {
+	// 	var retObj = {};
+	// 	retObj.slot_index = myDecoder.readInt();
+	// 	retObj.gain_items = [];
+	// 	let gain_items_size = myDecoder.readInt();
+	// 	if (gain_items_size > 0) {
+	// 		for (var i = 0; i < gain_items_size; i++) {
+	// 			retObj.gain_items[i] = {};
+	// 			retObj.gain_items[i].itemTemplateId = myDecoder.readInt();
+	// 			retObj.gain_items[i].num = myDecoder.readInt();
+	// 		}
+	// 	}
+	// 	return retObj;
+	// },
 
 	send_C2SArmyShopRefresh: function (senderSocket) {
 		var myEncoder = WsEncoder.alloc();
@@ -7640,20 +7640,20 @@ var MyProtocols = {
 
 	get_1048: function (myDecoder) {
 		var retObj = {};
+		retObj.refreshTimestamp = myDecoder.readInt();
+		retObj.freeTimes = myDecoder.readInt();
+		retObj.feeRefreshTimes = myDecoder.readInt();
 		retObj.items = [];
 		let items_size = myDecoder.readInt();
+
 		if (items_size > 0) {
 			for (var i = 0; i < items_size; i++) {
 				retObj.items[i] = {};
-				retObj.items[i].slot_index = myDecoder.readInt();
-				retObj.items[i].buyNum = myDecoder.readInt();
-			}
-		}
-		retObj.packs = [];
-		let packs_size = myDecoder.readInt();
-		if (packs_size > 0) {
-			for (var i = 0; i < packs_size; i++) {
-				retObj.packs[i] = myDecoder.readInt();
+				retObj.items[i].itemTemplateId = myDecoder.readInt();
+				retObj.items[i].num = myDecoder.readInt();
+				retObj.items[i].gamemoney = myDecoder.readInt();
+				retObj.items[i].money = myDecoder.readInt();
+				retObj.items[i].times = myDecoder.readInt();
 			}
 		}
 		return retObj;
