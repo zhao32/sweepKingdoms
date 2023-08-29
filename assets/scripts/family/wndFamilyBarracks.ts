@@ -68,19 +68,27 @@ export default class NewClass extends cc.Component {
     }
 
     S2CFamilyArmList(retObj) {
-        this.showType = 1
-        this.contect.removeAllChildren()
-        for (let i = 0; i <retObj.arms.length; i++) {
-            let render = cc.instantiate(this.pfb2)
-            render.parent = this.contect
-            if (i < 5) {
-                render.x = 1000
-                this.scheduleOnce(() => {
-                    render.runAction(cc.moveTo(DataManager.SCROLLTIME1, cc.v2(0, render.y)))
-                }, DataManager.SCROLLTIME2 * i)
+        // this.showType = 1
+        // this.contect.removeAllChildren()
+        // for (let i = 0; i <retObj.arms.length; i++) {
+        //     let render = cc.instantiate(this.pfb2)
+        //     render.parent = this.contect
+        //     if (i < 5) {
+        //         render.x = 1000
+        //         this.scheduleOnce(() => {
+        //             render.runAction(cc.moveTo(DataManager.SCROLLTIME1, cc.v2(0, render.y)))
+        //         }, DataManager.SCROLLTIME2 * i)
+        //     }
+        //     render.getComponent(familyBarrackRender1).init(retObj.arms[i])
+
+        // }
+
+        for (let i = 0; i < retObj.arms; i++) {
+            if (this.contect.children[i]) {
+                let render = this.contect.children[i]
+                render.getComponent(familyBarrackRender1).initNetData(retObj.arms[i])
             }
-            render.getComponent(familyBarrackRender1).init(retObj.arms[i])
-          
+
         }
     }
 
@@ -98,7 +106,7 @@ export default class NewClass extends cc.Component {
             }
             render.getComponent(familyBarrackRender0).init(this.groupsData[i])
             render.on(cc.Node.EventType.TOUCH_END, () => {
-                // this.showIntragroup(i)
+                this.showIntragroup(i)
                 MyProtocols.send_C2SFamilyArmList(DataManager._loginSocket, i)
             }, this)
         }

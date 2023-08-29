@@ -29,6 +29,8 @@ export default class NewClass extends cc.Component {
     // LIFE-CYCLE CALLBACKS:
 
     data
+
+    netData
     // onLoad () {}
 
     start() {
@@ -37,15 +39,34 @@ export default class NewClass extends cc.Component {
 
     init(data) {
         this.data = data
-        // this.nameLabel.string = data.name
-        // this.desLabel.string = data.describe
+        this.nameLabel.string = data.name
+        this.desLabel.string =  `lv.${data.Lv}`//data.describe
         ResManager.loadItemIcon(`family/familyArm${data.frameIdx}`,this.icon)
+    }
+
+    initNetData(netData){
+        this.netData = netData
+        if(netData.state == 0){
+            this.node.getChildByName(`btn`).active = false
+        }else if(netData.state == 1){
+            this.node.getChildByName(`btn`).active = true
+            this.node.getChildByName(`btn`).children[0].getComponent(cc.Label).string = `升级`
+
+        }else if(netData.state == 2){
+            this.node.getChildByName(`btn`).active = true
+            this.node.getChildByName(`btn`).children[0].getComponent(cc.Label).string = `购买`
+        }
     }
 
 
     onBthHandler(){ 
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_ARM_EFF_UP, ...[this.data, 1])
+        if(this.netData.state == 1){
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_ARM_EFF_UP, ...[this.data, 1])
+
+        }else{
+            //购买
+        }
     }
 
 

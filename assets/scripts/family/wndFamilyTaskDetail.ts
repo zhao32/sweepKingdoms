@@ -94,6 +94,8 @@ export default class NewClass extends cc.Component {
 
     S2CFamilyTaskSend(retObj) {
         console.log(`捐献返回：`+ JSON.stringify(retObj))
+        ViewManager.instance.showToast(`捐献成功`)
+        // {"tempid":1,"number":500000}
 
     }
 

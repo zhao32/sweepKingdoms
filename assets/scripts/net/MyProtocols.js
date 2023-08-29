@@ -7563,6 +7563,20 @@ var MyProtocols = {
 			retObj.familyChiefName = myDecoder.readString();
 			retObj.familyChiefID = myDecoder.readInt();
 			retObj.autoEnter = myDecoder.readInt();// 0 不需要验证  1 需要验证  2 禁止加入
+
+			var task1_size = myDecoder.readInt();
+			for (var i = 0; i < task1_size; i++) {
+				retObj.task1[i] = {};
+				retObj.task1[i].id = myDecoder.readInt();
+				retObj.task1[i].num = myDecoder.readInt();
+			}
+
+			var task2_size = myDecoder.readInt();
+			for (var i = 0; i < task2_size; i++) {
+				retObj.task2[i] = {};
+				retObj.task2[i].id = myDecoder.readInt();
+				retObj.task2[i].num = myDecoder.readInt();
+			}
 		}
 		return retObj;
 	},
@@ -7902,7 +7916,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	
+
 
 	send_C2SFamilyInviteJion(senderSocket, id) {
 		var myEncoder = WsEncoder.alloc();
@@ -7915,7 +7929,7 @@ var MyProtocols = {
 
 	get_13052: function (myDecoder) {
 		var retObj = {};
-		 retObj.id = myDecoder.readInt();
+		retObj.id = myDecoder.readInt();
 		return retObj;
 	},
 
