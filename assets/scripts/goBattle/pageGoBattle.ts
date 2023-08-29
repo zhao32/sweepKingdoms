@@ -122,7 +122,6 @@ export default class NewClass extends cc.Component {
         console.log(`..this.selectIdx:` + this.selectIdx)
         // console.log(JSON.stringify(data))
         this.maxPage = data.pagecount
-        this.myContect.removeAllChildren()
         this.nation_id = data.contry
         this.node.getChildByName(`toggleContainer`).children[this.nation_id - 1].getComponent(cc.Toggle).isChecked = true
 
@@ -146,6 +145,7 @@ export default class NewClass extends cc.Component {
             }
 
             data.my_points = my_points
+            this.myContect.removeAllChildren()
             for (let i = 0; i < data.my_points.length; i++) {
                 if (data.my_points[i].hold_player) {
                     let myNode = cc.instantiate(this.myItemPfb)
@@ -156,12 +156,13 @@ export default class NewClass extends cc.Component {
                         this.myCityData = data.my_points[i].hold_player
                     }
 
-                    myNode.on(cc.Node.EventType.TOUCH_END, () => {
-                        console.log(`定位矿的位置`)
-                        this.selectIdx = data.my_points[i].hold_player.idx
-                        console.log(`this.selectIdx:` + this.selectIdx)
-                        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, data.my_points[i].hold_player.page, data.my_points[i].hold_player.country)
-                    }, this)
+                    // myNode.on(cc.Node.EventType.TOUCH_END, () => {
+                    //     console.log(`定位矿的位置`)
+                    //     this.selectIdx = data.my_points[i].hold_player.idx
+                    //     this.curPageIdx = data.page_index
+                    //     console.log(`this.selectIdx:` + this.selectIdx)
+                    //     MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, data.my_points[i].hold_player.page, data.my_points[i].hold_player.country)
+                    // }, this)
                 }
             }
             this.my_points = data.my_points
@@ -327,6 +328,21 @@ export default class NewClass extends cc.Component {
                 }
             }
         }
+
+        for (let i = 0; i < this.myContect.children.length; i++) {
+            if (data.my_points[i].hold_player) {
+                let myNode = this.myContect.children[i]
+
+
+                myNode.on(cc.Node.EventType.TOUCH_END, () => {
+                    console.log(`定位矿的位置`)
+                    this.selectIdx = data.my_points[i].hold_player.idx
+                    this.curPageIdx = data.my_points[i].hold_player.page
+                    console.log(`this.selectIdx:` + this.selectIdx)
+                    MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, data.my_points[i].hold_player.page, data.my_points[i].hold_player.country)
+                }, this)
+            }
+        }
     }
 
     S2CMineEnemyDetail(retObj) {
@@ -339,17 +355,17 @@ export default class NewClass extends cc.Component {
             if (hold_player.id == 0)//未被占领
             {
                 //只能出兵占领
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[this.mineData[this.clickIdx]])
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATECLOSE, ...[hold_player])
             } else {
                 if (hold_player.id == DataManager.playData.id) {//我占领了
-                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYEVI, ...[this.mineData[this.clickIdx]])
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYEVI, ...[hold_player])
                 } else {//别人占领了
                     if (retObj.state == 0) {
-                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVI, ...[this.mineData[this.clickIdx]])
+                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVI, ...[hold_player])
                     } else if (retObj.state == 1) {
-                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
+                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[hold_player, retObj.state])
                     } else if (retObj.state == 2) {//支援结束
-                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
+                        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[hold_player, retObj.state])
                     }
                 }
             }
@@ -357,33 +373,33 @@ export default class NewClass extends cc.Component {
             //
             if (hold_player.id == 0) {
                 //出兵占领
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[hold_player])
             } else if (hold_player.id != DataManager.playData.id) {
                 if (retObj.state == 0) //进攻
                 {
-                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[hold_player])
                 } else if (retObj.state == 1) {
                     //支援
-                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[hold_player, retObj.state])
                 } else if (retObj.state == 2) {//支援结束
-                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[this.mineData[this.clickIdx], retObj.state])
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[hold_player, retObj.state])
                 }
             } else if (hold_player.id == DataManager.playData.id) {
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[this.mineData[this.clickIdx]])
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[hold_player])
             }
         } else {
             if (hold_player.id == 0) {
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[hold_player])
             } else if (hold_player.id != DataManager.playData.id) {
                 if (this.curFiledData.lv == 0) {
                     //可以进攻 不可以掠夺
-                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[hold_player])
                 } else if (this.curFiledData.lv > 0) {
                     //掠夺
-                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[this.mineData[this.clickIdx]])
+                    ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_DETAILS, ...[hold_player])
                 }
             } else if (hold_player.id == DataManager.playData.id) {
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[this.mineData[this.clickIdx]])
+                ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYMINE_DETAILS, ...[hold_player])
             }
         }
 
@@ -506,6 +522,16 @@ export default class NewClass extends cc.Component {
         //         this.clickIdx = i
         //     }, this)
         // }
+        this.filedContect.removeAllChildren()
+        this.filedBottomContect.removeAllChildren()
+        this.filedTopContect.removeAllChildren()
+        this.filedLeftContect.removeAllChildren()
+        this.filedRightContect.removeAllChildren()
+
+        this.filedLeftBottomContect.removeAllChildren()
+        this.filedLeftTopContect.removeAllChildren()
+        this.filedRightBottomContect.removeAllChildren()
+        this.filedRightTopContect.removeAllChildren()
 
         NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
 

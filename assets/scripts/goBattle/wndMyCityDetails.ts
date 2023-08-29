@@ -65,34 +65,34 @@ export default class NewClass extends cc.Component {
     /**列表数据 阵容详情数据*/
     init(data = this._data) {
         this._data = data
-        let name = DataManager.getName(data.hold_player)
-        // let name = DataManager.mineData[data.hold_player.group].name
-        // this.nameLabel.string = data.hold_player.lv + '级' + name
-        if (data.hold_player.group >= 101) {
+        let name = DataManager.getName(data)
+        // let name = DataManager.mineData[data.group].name
+        // this.nameLabel.string = data.lv + '级' + name
+        if (data.group >= 101) {
             this.nameLabel.string = name
         } else {
-            if (data.hold_player.bulidLv == 0) {
-                this.nameLabel.string = `未建造` + data.hold_player.lv + '级' + name
+            if (data.bulidLv == 0) {
+                this.nameLabel.string = `未建造` + data.lv + '级' + name
             } else {
                 let lvList = ["微型", "小型", "中型", "大型", "巨型"]
-                this.nameLabel.string = data.hold_player.lv + "级 " + lvList[data.hold_player.bulidLv - 1] + name
+                this.nameLabel.string = data.lv + "级 " + lvList[data.bulidLv - 1] + name
             }
         }
 
-        if (!data.hold_player.lv) {
-            this.nameLabel.string = data.hold_player.lv + '级' + name
+        if (!data.lv) {
+            this.nameLabel.string = data.lv + '级' + name
         }
 
-        this.lordLabel.string = `领主：${data.hold_player.nickname}`
+        this.lordLabel.string = `领主：${data.nickname}`
         // this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
-        this.troopsLabel.string = `兵力：${data.hold_player.fight}`
-        this.posLabel.string = `坐标：` + DataManager.countyList[data.hold_player.country] + '国'
+        this.troopsLabel.string = `兵力：${data.fight}`
+        this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + '国'
 
         // : function (senderSocket, p_level_index, p_point_index) {
         // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket,)
 
-        // if(data.hold_player.id){
+        // if(data.id){
         //     ResManager.loadItemIcon(`goBattle/icon1`,this.icon)
         // }else{
         //     ResManager.loadItemIcon(`goBattle/icon0`,this.icon)
@@ -137,7 +137,7 @@ export default class NewClass extends cc.Component {
         console.log(`------调兵驻防--------`)
         let _from = DataManager.curWndPath
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'in', null, _from])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data, 'in', null, _from])
     }
 
 

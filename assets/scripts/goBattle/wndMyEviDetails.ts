@@ -70,60 +70,60 @@ export default class NewClass extends cc.Component {
 
     init(data = this._data) {
         this._data = data
-        // let name = DataManager.mineData[data.hold_player.group].name
+        // let name = DataManager.mineData[data.group].name
         console.log(JSON.stringify(data))
 
         let name: string
-        if (this._data.hold_player.group == 106) {
-            if (this._data.hold_player.country == 1) {
+        if (this._data.group == 106) {
+            if (this._data.country == 1) {
                 //华夏遗迹
                 name = '华夏遗迹'
-            } else if (this._data.hold_player.country == 4) {
+            } else if (this._data.country == 4) {
                 //蓬莱遗迹
                 name = '蓬莱遗迹'
-            } else if (this._data.hold_player.country == 6) {
+            } else if (this._data.country == 6) {
                 //归墟遗迹
                 name = '归墟遗迹'
             }
-        } else if (this._data.hold_player.group == 105) {
-            if (this._data.hold_player.country == 2) {
+        } else if (this._data.group == 105) {
+            if (this._data.country == 2) {
                 //上古战场
                 name = "上古战场"
-            } else if (this._data.hold_player.country == 7) {
+            } else if (this._data.country == 7) {
                 //财神庙
                 name = "财神庙"
             }
         } else {
-            name = DataManager.mineData[this._data.hold_player.group].name
+            name = DataManager.mineData[this._data.group].name
         }
-        // this.nameLabel.string = data.hold_player.lv + '级' + name
-        if (data.hold_player.group >= 101) {
+        // this.nameLabel.string = data.lv + '级' + name
+        if (data.group >= 101) {
             this.nameLabel.string = name
         } else {
-            if (data.hold_player.bulidLv == 0) {
-                this.nameLabel.string = `未建造` + data.hold_player.lv + '级' + name
+            if (data.bulidLv == 0) {
+                this.nameLabel.string = `未建造` + data.lv + '级' + name
             } else {
                 let lvList = ["微型", "小型", "中型", "大型", "巨型"]
-                this.nameLabel.string = data.hold_player.lv + "级 " + lvList[data.hold_player.bulidLv - 1] + name
+                this.nameLabel.string = data.lv + "级 " + lvList[data.bulidLv - 1] + name
             }
         }
 
         
-        // if (!data.hold_player.lv) {
-        //     this.nameLabel.string = data.hold_player.lv + '级' + name
+        // if (!data.lv) {
+        //     this.nameLabel.string = data.lv + '级' + name
         // }
 
-        this.troopsLabel.string = `兵力：${data.hold_player.fight}`
-        this.lordLabel.string = `领主：${data.hold_player.nickname}`
+        this.troopsLabel.string = `兵力：${data.fight}`
+        this.lordLabel.string = `领主：${data.nickname}`
         // this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
-        this.titleLabel.string = DataManager.mineData[data.hold_player.group].name
-        this.posLabel.string = `坐标：` + DataManager.countyList[data.hold_player.country] + '国'
+        this.titleLabel.string = DataManager.mineData[data.group].name
+        this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + '国'
 
         // : function (senderSocket, p_level_index, p_point_index) {
         // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket,)
 
-        // if(data.hold_player.id){
+        // if(data.id){
         //     ResManager.loadItemIcon(`goBattle/icon1`,this.icon)
         // }else{
         //     ResManager.loadItemIcon(`goBattle/icon0`,this.icon)
@@ -165,11 +165,11 @@ export default class NewClass extends cc.Component {
 
     onDetailHandler() {
         console.log(`------查看战场--------`)
-        // console.log(JSON.stringify(this._data.hold_player))
+        // console.log(JSON.stringify(this._data))
         ViewManager.instance.hideWnd(DataManager.curWndPath)
 
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_COMPYARMY, ...[this._data.hold_player])
-        // MyProtocols.send_C2SMineEviDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_COMPYARMY, ...[this._data])
+        // MyProtocols.send_C2SMineEviDetail(DataManager._loginSocket, this._data.page, this._data.idx, this._data.country)
     }
 
     doFightHandler() {
@@ -231,7 +231,7 @@ export default class NewClass extends cc.Component {
         // console.log('DataManager.cardsList:', JSON.stringify(DataManager.cardsList))
 
         let soliderData = []
-        let soliders = DataManager.mineData[this._data.hold_player.group].soliders
+        let soliders = DataManager.mineData[this._data.group].soliders
         // let soliders = DataManager.curMineDetailData.att_soliderUsed
 
         for (let i = 0; i < soliders.length; i++) {
@@ -260,7 +260,7 @@ export default class NewClass extends cc.Component {
         }
 
         console.log(`this.myHeroData:` + JSON.stringify(myHeroData))
-        MyProtocols.send_C2SEviGate(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country, 1)
+        MyProtocols.send_C2SEviGate(DataManager._loginSocket, this._data.page, this._data.idx, this._data.country, 1)
 
         ViewManager.instance.hideWnd(DataManager.curWndPath)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_BATTLE, ...[myData, otherData, this._data])
@@ -288,7 +288,7 @@ export default class NewClass extends cc.Component {
     }
 
     onOpenEviHandler() {
-        MyProtocols.send_C2SEviGate(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
+        MyProtocols.send_C2SEviGate(DataManager._loginSocket, this._data.page, this._data.idx, this._data.country)
     }
 
     onClose() {
@@ -347,7 +347,7 @@ export default class NewClass extends cc.Component {
         console.log(`------调兵驻防--------`)
         let _from = DataManager.curWndPath
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'in', null, _from])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data, 'in', null, _from])
     }
 
     /**撤回主城 */
@@ -355,7 +355,7 @@ export default class NewClass extends cc.Component {
         console.log(`------撤回主城--------`)
         let _from = DataManager.curWndPath
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'out', null, _from])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data, 'out', null, _from])
     }
 
 

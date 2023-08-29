@@ -67,7 +67,7 @@ export default class NewClass extends cc.Component {
 
         // {"level_index":0,"point_index":22,"base_info":{"id":0,"nickname":"","level":0,"icon":0,"head_frame_id":1,"fight":0,"cd_time":0},"formation":{"fid":0,"formationId":0,"forward":0,"flip":0,"a":0,"b":0,"c":0},"soliderUsed":[],"soliderUse":[],"cards":[],"exclude_cards":[],"rand_key":0}
 
-        if (this._data.hold_player.group == 101) {
+        if (this._data.group == 101) {
             for (let i = 0; i < data.soliderUse.length; i++) {
                 if (data.soliderUse[i].arm != 0) {
                     this.soliders.push(data.soliderUse[i])
@@ -163,7 +163,7 @@ export default class NewClass extends cc.Component {
         this.myContect.removeAllChildren()
 
         console.log('--------data------' + JSON.stringify(data))
-        // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.hold_player.page, data.hold_player.idx, data.hold_player.country)
+        // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, data.page, data.idx, data.country)
         // NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
         this.initDetailData(DataManager.curMineDetailData)
 
@@ -194,7 +194,7 @@ export default class NewClass extends cc.Component {
                 console.log(JSON.stringify(data))
                 console.log('this._data:' + JSON.stringify(this._data))
                 // MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
-                MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, data, this._data.hold_player.country, 2)
+                MyProtocols.send_C2SMineDefFormationSave(DataManager._loginSocket, this._data.page, this._data.idx, data, this._data.country, 2)
             }, this)
         }
     }

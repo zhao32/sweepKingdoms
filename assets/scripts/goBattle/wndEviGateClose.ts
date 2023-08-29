@@ -77,17 +77,17 @@ export default class NewClass extends cc.Component {
     init(data, state = DataManager.curMineDetailData.state) {
         console.log('filedData:' + JSON.stringify(data))
         this._data = data
-        this.nameLabel.string = data.hold_player.lv + '级' + data.hold_player.nickname
+        this.nameLabel.string = data.lv + '级' + data.nickname
         // this.posLabel.string = `(${data.x},${data.y})`  //`(${data.x,data.y})`
 
         // this.node.getChildByName('btnAtt').active = (state == 0) ? false : true
 
 
         // NetEventDispatcher.addListener(NetEvent.S2CMineEnemyDetail, this.S2CMineEnemyDetail, this)
-        // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
-        let name = DataManager.getName(data.hold_player)
+        // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.page, this._data.idx, this._data.country)
+        let name = DataManager.getName(data)
         this.initDetailData(DataManager.curMineDetailData)
-        this.titleLabel.string = name//DataManager.mineData[data.hold_player.group].name
+        this.titleLabel.string = name//DataManager.mineData[data.group].name
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
 
     }
@@ -180,7 +180,7 @@ export default class NewClass extends cc.Component {
 
     onBattleHandler() {
         this.initDetailData(DataManager.curMineDetailData)
-        // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
+        // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, this._data.page, this._data.idx, this._data.country)
         // ViewManager.instance.hideWnd(DataManager.curWndPath, true)
         // let defineData =
         // {

@@ -73,7 +73,7 @@ export default class NewClass extends cc.Component {
                 this.node.getChildByName('btnDefine').active = false
                 this.node.getChildByName('btnAtt').active = false
             } else {
-                if (data.hold_player.country == DataManager.playData.nation_id) {
+                if (data.country == DataManager.playData.nation_id) {
                     this.node.getChildByName('btnDefine').getComponent(cc.Button).interactable = true
                     this.node.getChildByName('btnAtt').getComponent(cc.Button).interactable = false
                 } else {
@@ -87,10 +87,10 @@ export default class NewClass extends cc.Component {
 
 
         this._data = data
-        let name = DataManager.getName(data.hold_player)//DataManager.mineData[data.hold_player.group].name
-        // this.nameLabel.string = data.hold_player.lv + '级' + name
-        this.lordLabel.string = data.hold_player.nickname ? `领主：${data.hold_player.nickname}` : `领主：无`
-        // this.awardLabel.string = `已产出：${data.hold_player.award}`
+        let name = DataManager.getName(data)//DataManager.mineData[data.group].name
+        // this.nameLabel.string = data.lv + '级' + name
+        this.lordLabel.string = data.nickname ? `领主：${data.nickname}` : `领主：无`
+        // this.awardLabel.string = `已产出：${data.award}`
         this.titleLabel.string = name
 
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
@@ -106,24 +106,24 @@ export default class NewClass extends cc.Component {
     /**查看战场 */
     onDetailHandler() {
         console.log(`------查看战场--------`)
-        // console.log(JSON.stringify(this._data.hold_player))
+        // console.log(JSON.stringify(this._data))
         ViewManager.instance.hideWnd(DataManager.curWndPath)
 
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_COMPYARMY, ...[this._data.hold_player])
-        // MyProtocols.send_C2SMineEviDetail(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_COMPYARMY, ...[this._data])
+        // MyProtocols.send_C2SMineEviDetail(DataManager._loginSocket, this._data.page, this._data.idx, this._data.country)
     }
 
     /**协助进攻 */
     onAttackHandler() {
         let _from = DataManager.curWndPath
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'in', 1, _from])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data, 'in', 1, _from])
     }
     /**协助防守 */
     onDefineHandler() {
         let _from = DataManager.curWndPath
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'in', 0, _from])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data, 'in', 0, _from])
     }
 
     onCloseHandler() {

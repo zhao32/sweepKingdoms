@@ -77,33 +77,33 @@ export default class NewClass extends cc.Component {
         this._data = data
         // this._detailData = DataManager.curMineDetailData
         console.log('detailData:' + JSON.stringify(DataManager.curMineDetailData))
-        // let name = DataManager.mineData[data.hold_player.group].name
-        let name = DataManager.getName(data.hold_player)
-        // if (data.hold_player.lv == 0) {
+        // let name = DataManager.mineData[data.group].name
+        let name = DataManager.getName(data)
+        // if (data.lv == 0) {
         //     this.nameLabel.string = `未建造建筑`
         // } else {
-        //     this.nameLabel.string = data.hold_player.lv + '级' + name
+        //     this.nameLabel.string = data.lv + '级' + name
         // }
 
-        if (data.hold_player.group >= 101) {
+        if (data.group >= 101) {
             this.nameLabel.string = name
         } else {
-            if (data.hold_player.bulidLv == 0) {
-                this.nameLabel.string = `未建造` + data.hold_player.lv + '级' + name
+            if (data.bulidLv == 0) {
+                this.nameLabel.string = `未建造` + data.lv + '级' + name
             } else {
                 let lvList = ["微型", "小型", "中型", "大型", "巨型"]
-                this.nameLabel.string = data.hold_player.lv + "级 " + lvList[data.hold_player.bulidLv - 1] + name
+                this.nameLabel.string = data.lv + "级 " + lvList[data.bulidLv - 1] + name
             }
         }
 
-        if (!data.hold_player.lv) {
-            this.nameLabel.string = data.hold_player.lv + '级' + name
+        if (!data.lv) {
+            this.nameLabel.string = data.lv + '级' + name
         }
 
-        this.lordLabel.string = `领主：${data.hold_player.nickname}`
+        this.lordLabel.string = `领主：${data.nickname}`
         this.awardLabel.string = `已产出：${DataManager.curMineDetailData.gains}`
-        this.troopsLabel.string = `兵力：${data.hold_player.fight}`
-        this.posLabel.string = `坐标：` + DataManager.countyList[data.hold_player.country] + '国'
+        this.troopsLabel.string = `兵力：${data.fight}`
+        this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + '国'
 
 
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
@@ -112,7 +112,7 @@ export default class NewClass extends cc.Component {
 
         NetEventDispatcher.addListener(NetEvent.S2CMineConstructionUp, this.S2CMineConstructionUp, this)
 
-        if (data.hold_player.bulidLv == 0) {
+        if (data.bulidLv == 0) {
             this.node.getChildByName('btnBulid').active = true
             this.node.getChildByName('btnUpLevel').active = false
             this.node.getChildByName('btnRecruit').getComponent(cc.Button).interactable = false
@@ -128,7 +128,7 @@ export default class NewClass extends cc.Component {
         // : function (senderSocket, p_level_index, p_point_index) {
         // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket,)
 
-        // if(data.hold_player.id){
+        // if(data.id){
         //     ResManager.loadItemIcon(`goBattle/icon1`,this.icon)
         // }else{
         //     ResManager.loadItemIcon(`goBattle/icon0`,this.icon)
@@ -155,7 +155,7 @@ export default class NewClass extends cc.Component {
     S2CMineConstructionUp(data) {
         console.log(`升级建造返回`)
         console.log(JSON.stringify(data))
-        this._data.hold_player.bulidLv = data.lv
+        this._data.bulidLv = data.lv
         if (data.lv == 1) {
             ViewManager.instance.showToast(`建筑建造成功`)
             this.node.getChildByName('btnBulid').active = false
@@ -165,24 +165,24 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showToast(`建筑升级成功`)
         }
 
-        let name = DataManager.mineData[this._data.hold_player.group].name
-        // this.nameLabel.string = this._data.hold_player.lv + '级' + name
+        let name = DataManager.mineData[this._data.group].name
+        // this.nameLabel.string = this._data.lv + '级' + name
 
-        if (this._data.hold_player.group >= 101) {
+        if (this._data.group >= 101) {
             this.nameLabel.string = name
         } else {
-            if (this._data.hold_player.bulidLv == 0) {
-                this.nameLabel.string = `未建造` + this._data.hold_player.lv + '级' + name
+            if (this._data.bulidLv == 0) {
+                this.nameLabel.string = `未建造` + this._data.lv + '级' + name
             } else {
                 let lvList = ["微型", "小型", "中型", "大型", "巨型"]
-                this.nameLabel.string = this._data.hold_player.lv + "级  " + lvList[this._data.hold_player.bulidLv - 1] + name
+                this.nameLabel.string = this._data.lv + "级  " + lvList[this._data.bulidLv - 1] + name
             }
         }
 
     }
 
     onCloseHandler() {
-        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this._data.hold_player.page, this._data.hold_player.country)
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this._data.page, this._data.country)
         ViewManager.instance.hideWnd(DataManager.curWndPath)
     }
 
@@ -191,7 +191,7 @@ export default class NewClass extends cc.Component {
         console.log(`------调兵驻防--------`)
         let _from = DataManager.curWndPath
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'in', null, _from])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data, 'in', null, _from])
     }
 
     /**撤回主城 */
@@ -199,7 +199,7 @@ export default class NewClass extends cc.Component {
         console.log(`------撤回主城--------`)
         let _from = DataManager.curWndPath
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data.hold_player, 'out', null, _from])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_ARMYHUTDISPATCH, ...[this._data, 'out', null, _from])
     }
     /**查看详情 */
     onDetailHutHandler() {
@@ -211,7 +211,7 @@ export default class NewClass extends cc.Component {
     onHarvestHandler() {
         console.log(`---------收获----------`)
         console.log(`this._data:` + JSON.stringify(this._data))
-        MyProtocols.send_C2SMineGetAward(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country)
+        MyProtocols.send_C2SMineGetAward(DataManager._loginSocket, this._data.page, this._data.idx, this._data.country)
     }
 
     onClose() {
@@ -221,7 +221,7 @@ export default class NewClass extends cc.Component {
 
     onBulidORUpHandler() {
         console.log(`this._data:` + JSON.stringify(this._data))
-        MyProtocols.send_C2SMineConstructionUp(DataManager._loginSocket, this._data.hold_player.page, this._data.hold_player.idx, this._data.hold_player.country, this._data.hold_player.bulidLv)
+        MyProtocols.send_C2SMineConstructionUp(DataManager._loginSocket, this._data.page, this._data.idx, this._data.country, this._data.bulidLv)
     }
 
     // update (dt) {}

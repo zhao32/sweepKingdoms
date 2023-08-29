@@ -40,7 +40,6 @@ export default class NewClass extends cc.Component {
         // this.nameLabel.string = data.name
         // this.desLabel.string = data.describe
         ResManager.loadItemIcon(`family/familyArm${data.frameIdx}`,this.icon)
-
     }
 
 

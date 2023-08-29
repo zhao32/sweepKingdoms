@@ -612,10 +612,10 @@ export default class NewClass extends cc.Component {
         let time = DataManager.instance.getDateDis(this.startTime, new Date().getTime())
         console.log('战斗耗时:' + time)
         console.log(JSON.stringify(this.filedData))
-        console.log(this.filedData.hold_player.page)
+        console.log(this.filedData.page)
 
         // MyProtocols.send_C2SStageEnd(DataManager._loginSocket, this.groupIdx, this.stageIdx, isWin, time.toFixed(0), 0, armList);
-        MyProtocols.send_C2SMineBattleCalculate(DataManager._loginSocket, this.filedData.hold_player.page, this.filedData.hold_player.idx, isWin, 10, DataManager.pageGoBattle.nation_id, DataManager.fightType)
+        MyProtocols.send_C2SMineBattleCalculate(DataManager._loginSocket, this.filedData.page, this.filedData.idx, isWin, 10, DataManager.pageGoBattle.nation_id, DataManager.fightType)
 
     }
 
