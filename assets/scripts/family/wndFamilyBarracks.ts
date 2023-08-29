@@ -64,7 +64,11 @@ export default class NewClass extends cc.Component {
     init() {
         this.showGroups()
         NetEventDispatcher.addListener(NetEvent.S2CFamilyArmList, this.S2CFamilyArmList, this)
+        NetEventDispatcher.addListener(NetEvent.S2CFamilyArmBuy, this.S2CFamilyArmBuy, this)
+    }
 
+    S2CFamilyArmBuy(retObj){ 
+        console.log(`家族兵购买返回：`+JSON.stringify(retObj))
     }
 
     S2CFamilyArmList(retObj) {
@@ -142,7 +146,8 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-
+        NetEventDispatcher.removeListener(NetEvent.S2CFamilyArmList, this.S2CFamilyArmList, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CFamilyArmBuy, this.S2CFamilyArmBuy, this)
     }
 
     // update (dt) {}

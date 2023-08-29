@@ -31,7 +31,7 @@ export default class NewClass extends cc.Component {
     data
 
     type
-
+    netData
     // onLoad () {}
 
     start() {
@@ -45,10 +45,25 @@ export default class NewClass extends cc.Component {
         ResManager.loadItemIcon(`family/effect${data.frameIdx}`,this.icon)
     }
 
+    initNetData(netData) {
+        this.netData = netData
+        if (netData.state == 0) {
+            this.node.getChildByName(`btn`).active = false
+        } else if (netData.state == 1) {
+            this.node.getChildByName(`btn`).active = true
+            this.node.getChildByName(`btn`).children[0].getComponent(cc.Label).string = `升级`
+
+        } else if (netData.state == 2) {
+            this.node.getChildByName(`btn`).active = true
+            this.node.getChildByName(`btn`).children[0].getComponent(cc.Label).string = `购买`
+        }
+    }
+
+
 
     onBthHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_ARM_EFF_UP, ...[this.data, 2])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_ARM_EFF_UP, ...[this.data,this.netData, 2])
 
     }
 

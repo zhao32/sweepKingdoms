@@ -635,7 +635,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "btn_back_1",
+    "_name": "btn",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1

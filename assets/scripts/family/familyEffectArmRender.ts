@@ -43,7 +43,7 @@ export default class NewClass extends cc.Component {
 
     }
 
-    init(data, type) {
+    init(data, type, netData?: any) {
         this.type = type
         this._data = data
         this.nameLabel.string = data.name

@@ -52,7 +52,7 @@ export default class NewClass extends cc.Component {
     @property(cc.Prefab)
     donatePfb: cc.Prefab = null;
 
-    type:number
+    type: number
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -63,7 +63,7 @@ export default class NewClass extends cc.Component {
 
     }
 
-    init(data,type) {
+    init(data, netdata, type) {
         this.type = type
         console.log("data:" + JSON.stringify(data))
         this.labelReputation.string = DataManager.familyDetail.reputation.toString()
@@ -71,11 +71,14 @@ export default class NewClass extends cc.Component {
         this.labelCoin.string = DataManager.playData.coinMoney
         this.labelFood.string = DataManager.playData.food.toString()
         this.contect.removeAllChildren()
-        for (let i = 0; i < data.length; i++) {
-            let render = cc.instantiate(this.donatePfb)
-            render.parent = this.contect
-            render.getComponent(familyEffectArmRender).init(data[i],type)
+        if(netdata){
+            for (let i = 0; i < netdata.donates.length; i++) {
+                let render = cc.instantiate(this.donatePfb)
+                render.parent = this.contect
+                render.getComponent(familyEffectArmRender).init(data[i], type, netdata.donates[i])
+            }
         }
+       
         // if (type == 0) {//主线任务
         //     this.labelTaskName.string = `主线任务`
         //     this.labelTaskCont.string = data[0].des
@@ -91,12 +94,12 @@ export default class NewClass extends cc.Component {
     }
 
     C2SFamilyArmDonate(retObj) {
-        console.log(`兵种捐赠返回：`+ JSON.stringify(retObj))
+        console.log(`兵种捐赠返回：` + JSON.stringify(retObj))
 
     }
 
     C2SFamilyEffDonate(retObj) {
-        console.log(`效果捐赠返回：`+ JSON.stringify(retObj))
+        console.log(`效果捐赠返回：` + JSON.stringify(retObj))
 
     }
 
