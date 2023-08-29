@@ -65,7 +65,7 @@ export default class NewClass extends cc.Component {
     }
 
     protected onDestroy(): void {
-       
+
     }
 
     private UPBulid(retObj) {
@@ -83,7 +83,7 @@ export default class NewClass extends cc.Component {
     }
 
     init(name, from: string) {
-        NetEventDispatcher.addListener(NetEvent.S2UPBulid, this.UPBulid,this)
+        NetEventDispatcher.addListener(NetEvent.S2UPBulid, this.UPBulid, this)
         this.reInit(name, from)
     }
 
@@ -207,7 +207,7 @@ export default class NewClass extends cc.Component {
     }
 
     onUpgrade1() {
-        // console.log('this.grade:' + this.grade + '  ' + this.buildType + '   ' + (parseInt(this.idx as any) + 1))
+        console.log('this.grade:' + this.grade + '  ' + this.buildType + '   ' + (parseInt(this.idx as any)))
         MyProtocols.send_C2UPBulid(DataManager._loginSocket, this.grade, this.buildType, parseInt(this.idx as any), 1)
     }
 
@@ -217,7 +217,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2UPBulid, this.UPBulid,this)
+        NetEventDispatcher.removeListener(NetEvent.S2UPBulid, this.UPBulid, this)
     }
 
     // update (dt) {}

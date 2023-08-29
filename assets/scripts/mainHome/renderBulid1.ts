@@ -33,6 +33,9 @@ export default class NewClass extends cc.Component {
     @property(cc.Label)
     tipDisplay: cc.Label = null;
 
+    @property(cc.Label)
+    upPremiseDisplay: cc.Label = null;
+
     @property(cc.Sprite)
     bulidSprite: cc.Sprite = null;
 
@@ -46,33 +49,51 @@ export default class NewClass extends cc.Component {
 
     curIdx: number
 
+    grade: number
+
+    idx: number
+
+
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
 
     start() {
-        this.node.on(cc.Node.EventType.TOUCH_END, () => {
-            if (this._data.grade == 0) {
-                if (DataManager.playData.level >= DataManager.GameData.buildUp[this._data.group][this._data.idx][this._data.grade].unlocklevel) {
-                    this.curIdx = this._data.idx
-                    MyProtocols.send_C2UPBulid(DataManager._loginSocket, 1, this.buildType, this._data.idx - 1, 1)
-                } else {
-                    let unlocklevel = DataManager.GameData.buildUp[this._data.group][this._data.idx][this._data.grade].unlocklevel
-                    ViewManager.instance.showToast(`达到${unlocklevel}级,才能解锁该建筑`)
-                }
+        // this.node.on(cc.Node.EventType.TOUCH_END, () => {
+        //     if (this._data.grade == 0) {
+        //         if (DataManager.playData.level >= DataManager.GameData.buildUp[this._data.group][this._data.idx][this._data.grade].unlocklevel) {
+        //             this.curIdx = this._data.idx
+        //             MyProtocols.send_C2UPBulid(DataManager._loginSocket, 1, this.buildType, this._data.idx - 1, 1)
+        //         } else {
+        //             let unlocklevel = DataManager.GameData.buildUp[this._data.group][this._data.idx][this._data.grade].unlocklevel
+        //             ViewManager.instance.showToast(`达到${unlocklevel}级,才能解锁该建筑`)
+        //         }
 
+        //     } else {
+        //         Logger.log('打开升级窗口：' + this._data.name)
+        //         ViewManager.instance.hideWnd(DataManager.curWndPath)
+        //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_UPGRADE, ...[this._data.name, EnumManager.viewPath.WND_MAIN_BULID])
+        //     }
+        // }, this)
+        NetEventDispatcher.addListener(NetEvent.S2UPBulid, this.UPBulid, this)
+    }
+
+    onBuildHandler(){
+        if (this._data.grade == 0) {
+            if (DataManager.playData.level >= DataManager.GameData.buildUp[this._data.group][this._data.idx][this._data.grade].unlocklevel) {
+                this.curIdx = this._data.idx
+                MyProtocols.send_C2UPBulid(DataManager._loginSocket, 1, this.buildType, this._data.idx - 1, 1)
             } else {
-                Logger.log('打开升级窗口：' + this._data.name)
-                ViewManager.instance.hideWnd(DataManager.curWndPath)
-                ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_UPGRADE, ...[this._data.name, EnumManager.viewPath.WND_MAIN_BULID])
+                let unlocklevel = DataManager.GameData.buildUp[this._data.group][this._data.idx][this._data.grade].unlocklevel
+                ViewManager.instance.showToast(`达到${unlocklevel}级,才能解锁该建筑`)
             }
-        }, this)
-        NetEventDispatcher.addListener(NetEvent.S2UPBulid, this.UPBulid,this)
+
+        }
     }
 
 
     protected onDestroy(): void {
-        NetEventDispatcher.removeListener(NetEvent.S2UPBulid, this.UPBulid,this)
+        NetEventDispatcher.removeListener(NetEvent.S2UPBulid, this.UPBulid, this)
     }
 
     UPBulid(retObj) {
@@ -95,12 +116,15 @@ export default class NewClass extends cc.Component {
     }
 
     init(data) {
+        this.idx = data.idx
+        this.grade = data.grade
         console.log(`data:` + JSON.stringify(data))
         // console.log(`DataManager.GameData.bulidUp:` + JSON.stringify(DataManager.GameData.buildUp))
         ResManager.loadItemIcon(`bulidHead/${data.name}head`, this.bulidSprite.node)
 
         if (!this._data) this._data = data
         this.nameDisplay.string = data.name + ` Lv${data.grade}`
+        this.upPremiseDisplay.string = ``
 
         if (data.grade == 0) {
             if (DataManager.playData.level >= DataManager.GameData.buildUp[data.group][data.idx][data.grade].unlocklevel) {
@@ -110,15 +134,24 @@ export default class NewClass extends cc.Component {
                 this.typeSprite.spriteFrame = this.typeFrames[3]
                 this.tipDisplay.string = '未解锁建筑'
             }
+            this.node.getChildByName(`btnUp1`).active = false
+            this.node.getChildByName(`btnUp2`).active = false
+            this.node.getChildByName(`btnBuild`).active = true
+
             this.nameDisplay.string = data.name
         } else if (data.grade == DataManager.GameData.buildUp[data.group][data.idx].length) {
             this.typeSprite.spriteFrame = this.typeFrames[2]
+            this.node.getChildByName(`btnUp1`).active = false
+            this.node.getChildByName(`btnUp2`).active = false
+            this.node.getChildByName(`btnBuild`).active = false
         } else {
             this.typeSprite.spriteFrame = this.typeFrames[0]
+            this.node.getChildByName(`btnUp1`).active = true
+            this.node.getChildByName(`btnUp2`).active = true
+            this.node.getChildByName(`btnBuild`).active = false
         }
 
         if (data.grade == 0) {
-
             if (data.group == 'basic') {
                 this.buildType = 3
             } else if (data.group == 'resource') {
@@ -130,18 +163,26 @@ export default class NewClass extends cc.Component {
         }
 
         let levelData = DataManager.GameData.buildUp[data.group][data.idx][data.grade - 1]
+        let upLevelData = DataManager.GameData.buildUp[data.group][data.idx][data.grade]
+        if (upLevelData) {
+            this.upPremiseDisplay.string = `升级条件: 玩家等级达到${levelData.unlocklevel}`
+        } else {
+            this.upPremiseDisplay.string = `已满级`
+        }
+
+
         if (data.group == 'basic') {
             this.buildType = 3
             if (data.idx == 1) {
-                this.tipDisplay.string = `每小时，提供 ${levelData.proportion[1]} 人口上限，每小时恢复 ${levelData.proportion[2]} 人口`
+                this.tipDisplay.string = `每小时,提供${levelData.proportion[1]}人口上限,每小时恢复${levelData.proportion[2]}人口`
             } else if (data.idx == 2) {
-                this.tipDisplay.string = `保护${levelData.protect[0]}金币，${levelData.protect[1]}粮草，${levelData.protect[2]}晶石，不被掠夺`
+                this.tipDisplay.string = `保护${levelData.protect[0]}金币,${levelData.protect[1]}粮草,${levelData.protect[2]}晶石,不被掠夺`
             } else if (data.idx == 3) {
                 this.tipDisplay.string = `所有士兵生命值加成 ${levelData.protect[0]}`
             } else if (data.idx == 4) {
-                this.tipDisplay.string = `可存储 ${levelData.protect} 阵亡士兵的灵魂，并复活他们`
+                this.tipDisplay.string = `可存储${levelData.protect}阵亡士兵的灵魂,并复活他们`
             } else if (data.idx == 5) {
-                this.tipDisplay.string = `守城士兵初始防御值加成 ${levelData.protect * 100}%`
+                this.tipDisplay.string = `守城士兵初始防御值加成${levelData.protect * 100}%`
             }
         } else if (data.group == 'resource') {
             this.buildType = 1
@@ -168,6 +209,18 @@ export default class NewClass extends cc.Component {
             }
 
         }
+    }
+
+
+    onUpgrade1() {
+        // console.log()
+        console.log('this.grade:' + this.grade + '  ' + this.buildType + '   ' + (parseInt(this.idx as any)))
+        MyProtocols.send_C2UPBulid(DataManager._loginSocket, this.grade + 1, this.buildType, parseInt(this.idx as any), 1)
+    }
+
+
+    onUpgrade2() {
+        MyProtocols.send_C2UPBulid(DataManager._loginSocket, this.grade + 1, this.buildType, parseInt(this.idx as any), 2)
     }
 
     // update (dt) {}

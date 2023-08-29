@@ -6,7 +6,6 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import DataManager from "../utils/Manager/DataManager";
-import EnumManager from "../utils/Manager/EnumManager";
 import { Logger } from "../utils/Manager/Logger";
 import ViewManager from "../utils/Manager/ViewManager";
 import renderBulid0 from "./renderBulid0";
@@ -119,16 +118,17 @@ export default class NewClass extends cc.Component {
     }
 
     onBackHandler() {
-        if (this.type == 1) {
-            ViewManager.instance.hideWnd(DataManager.curWndPath)
-        } else {
-            if (this.showType == 0) {
-                Logger.log('关闭窗口')
-                ViewManager.instance.hideWnd(DataManager.curWndPath)
-            } else if (this.showType == 1) {
-                this.showGroups()
-            }
-        }
+        // if (this.type == 1) {
+        //     ViewManager.instance.hideWnd(DataManager.curWndPath)
+        // } else {
+        //     if (this.showType == 0) {
+        //         Logger.log('关闭窗口')
+        //         ViewManager.instance.hideWnd(DataManager.curWndPath)
+        //     } else if (this.showType == 1) {
+        //         this.showGroups()
+        //     }
+        // }
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
 
     }
 

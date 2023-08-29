@@ -44,6 +44,12 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Label, displayName: '玩家等级' })
     labelLevel: cc.Label = null;
 
+    @property({ type: cc.Label, displayName: '玩家Vip等级' })
+    labelVipLevel: cc.Label = null;
+
+    @property({ type: cc.Label, displayName: '国籍' })
+    labelNation: cc.Label = null;
+
     @property({ type: cc.Label, displayName: '玩家名称' })
     labelName: cc.Label = null;
 
@@ -80,9 +86,60 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Node, displayName: '主城' })
     btnMainCity: cc.Node = null;
 
+    @property({ type: cc.Node, displayName: '副本' })
+    btnFuBen: cc.Node = null;
+
+    @property({ type: cc.Node, displayName: '出征' })
+    btnMine: cc.Node = null;
+
+    @property({ type: cc.Node, displayName: '背包' })
+    btnPack: cc.Node = null;
+
+    @property({ type: cc.Node, displayName: '奖励' })
+    btnAward: cc.Node = null;
+
+    @property({ type: cc.Node, displayName: '系统' })
+    btnSet: cc.Node = null;
+
+
     // onLoad () {}
 
     start() {
+        this.btnFuBen.on(cc.Node.EventType.TOUCH_END, () => {
+            if (DataManager.cardsList.length == 0) {
+                ViewManager.instance.showToast(`请先招募将领`)
+                return
+            }
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE)
+        }, this)
+
+        this.btnMine.on(cc.Node.EventType.TOUCH_END, () => {
+            if (DataManager.cardsList.length == 0) {
+                ViewManager.instance.showToast(`请先招募将领`)
+                return
+            }
+            if (DataManager.playData.level < 30) {
+                ViewManager.instance.showToast(`等级达到30级时开放`)
+                return
+            }
+            ViewManager.instance.showView(EnumManager.viewPath.PAGE_GOBATTLE)
+        }, this)
+
+        this.btnPack.on(cc.Node.EventType.TOUCH_END, () => {
+            Logger.log('----------打开背包----------')
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_PACK)
+            return
+        }, this)
+
+        this.btnAward.on(cc.Node.EventType.TOUCH_END, () => {
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_REWARD)
+        }, this)
+
+        this.btnSet.on(cc.Node.EventType.TOUCH_END, () => {
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_USERINFO)
+        }, this)
+
+
         this.btnHotel.on(cc.Node.EventType.TOUCH_END, () => {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_HOTEL)
         }, this)
@@ -168,17 +225,23 @@ export default class NewClass extends cc.Component {
     }
 
     chatPanel
-
     init() {
 
     }
+    
     updateInfo() {
         this.labelCoin.string = String(DataManager.playData.coinMoney)
         this.labelCombatPower.string = String(DataManager.playData.troops)
         this.labelGold.string = String(DataManager.playData.goldMoney)
-        this.labelLevel.string = String(DataManager.playData.level)
+        this.labelLevel.string = `lv.` + String(DataManager.playData.level)
         this.labelName.string = String(DataManager.playData.name)
         this.labelProvisions.string = String(DataManager.playData.food)
+        this.labelVipLevel.string = String(DataManager.playData.vip_level)
+        if (DataManager.countyList[DataManager.playData.nation_id]) {
+            this.labelNation.string = DataManager.countyList[DataManager.playData.nation_id] + `国`//String(DataManager.playData.account_id)
+        } else {
+            this.labelNation.string = `无国籍`
+        }
 
         if (DataManager.playData.icon == 0) {
             ResManager.loadItemIcon(`hero/head_1_1`, this.head)
