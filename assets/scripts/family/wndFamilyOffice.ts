@@ -69,18 +69,18 @@ export default class NewClass extends cc.Component {
         this.labelFID.string = `家族ID：${DataManager.familyDetail.familyID}`
         NetEventDispatcher.addListener(NetEvent.S2CFamilyNoticeChange, this.S2CFamilyNoticeChange, this)
         NetEventDispatcher.addListener(NetEvent.S2CFamilyAimChange, this.S2CFamilyAimChange, this)
-
-
     }
 
     S2CFamilyNoticeChange(retObj){
         console.log(`修改公告返回：` + JSON.stringify(retObj))
+        ViewManager.instance.showToast(`家族公告修改成功`)
         DataManager.familyDetail.notice = retObj.familyNotice
         this.editBox1.string = DataManager.familyDetail.notice
     }
 
     S2CFamilyAimChange(retObj){
         console.log(`修改主旨返回：` + JSON.stringify(retObj))
+        ViewManager.instance.showToast(`家族主旨修改成功`)
         DataManager.familyDetail.aim = retObj.aim
         this.editBox2.string = DataManager.familyDetail.aim
 
@@ -108,7 +108,8 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-
+        NetEventDispatcher.removeListener(NetEvent.S2CFamilyNoticeChange, this.S2CFamilyNoticeChange, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CFamilyAimChange, this.S2CFamilyAimChange, this)
     }
 
     // update (dt) {}

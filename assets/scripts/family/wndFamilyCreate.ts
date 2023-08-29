@@ -46,6 +46,7 @@ export default class NewClass extends cc.Component {
 
     S2CCreaterFamily(retObj){
         console.log(`创建家族返回` + JSON.stringify(retObj)) 
+        ViewManager.instance.showToast(`创建家族成功`)
         ViewManager.instance.hideWnd(DataManager.curWndPath)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
     }

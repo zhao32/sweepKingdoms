@@ -1989,7 +1989,7 @@
       "__id__": 48
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 54
@@ -2063,8 +2063,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "最多输入32个字符",
-    "_N$string": "最多输入32个字符",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 24,
     "_lineHeight": 25,
     "_enableWrapText": true,
@@ -2127,7 +2127,7 @@
       "__id__": 48
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 58
@@ -2201,8 +2201,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "请输入密码",
-    "_N$string": "请输入密码",
+    "_string": "最多输入64个字符",
+    "_N$string": "最多输入64个字符",
     "_fontSize": 24,
     "_lineHeight": 25,
     "_enableWrapText": true,
@@ -2265,7 +2265,7 @@
       "__id__": 48
     },
     "_enabled": true,
-    "_string": "最多输入32个字符",
+    "_string": "",
     "returnType": 0,
     "maxLength": 32,
     "_tabIndex": 0,
@@ -2847,7 +2847,7 @@
       "__id__": 72
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 78
@@ -2921,8 +2921,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "最多输入64个字符",
-    "_N$string": "最多输入64个字符",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 24,
     "_lineHeight": 25,
     "_enableWrapText": true,
@@ -2985,7 +2985,7 @@
       "__id__": 72
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 82
@@ -3059,8 +3059,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "请输入密码",
-    "_N$string": "请输入密码",
+    "_string": "最多输入64个字符",
+    "_N$string": "最多输入64个字符",
     "_fontSize": 24,
     "_lineHeight": 25,
     "_enableWrapText": true,
@@ -3123,7 +3123,7 @@
       "__id__": 72
     },
     "_enabled": true,
-    "_string": "最多输入64个字符",
+    "_string": "",
     "returnType": 0,
     "maxLength": 32,
     "_tabIndex": 0,
