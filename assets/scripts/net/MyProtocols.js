@@ -7732,7 +7732,7 @@ var MyProtocols = {
 		senderSocket.sendMessage(rawContent);
 	},
 
-	get_13023: function (myDecoder) {
+	get_13024: function (myDecoder) {
 		var retObj = {};
 		return retObj;
 	},
@@ -7789,7 +7789,7 @@ var MyProtocols = {
 
 
 
-	send_C2SFamilyTaskSend(senderSocket, id, num) {
+	send_C2SFamilyArmBuy(senderSocket, id, num) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(13035);
 		myEncoder.writeInt(id);

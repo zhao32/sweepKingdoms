@@ -3590,10 +3590,12 @@
   },
   {
     "__type__": "cc.ClickEvent",
-    "target": null,
+    "target": {
+      "__id__": 1
+    },
     "component": "",
-    "_componentId": "5fa5cc57HtFiofNEkaVrM/+",
-    "handler": "onSearchHandler",
+    "_componentId": "0c919HO4TJKqYSAo/1vwG9i",
+    "handler": "onSureHandler",
     "customEventData": ""
   },
   {
