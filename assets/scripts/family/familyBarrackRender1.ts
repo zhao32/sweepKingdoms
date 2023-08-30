@@ -46,13 +46,13 @@ export default class NewClass extends cc.Component {
     init(data) {
         this.data = data
         this.nameLabel.string = data.name
-        this.desLabel.string =data.des
+        this.desLabel.string = data.des
         ResManager.loadItemIcon(`family/familyArm${data.type}`, this.icon)
 
-        if(DataManager.familyDetail.familyLv < data.Lv){
+        if (DataManager.familyDetail.familyLv < data.Lv) {
             this.node.getChildByName(`btn`).active = false
             this.stateLabel.node.active = true
-        }else{
+        } else {
             this.node.getChildByName(`btn`).active = true
             this.stateLabel.node.active = false
         }
@@ -78,7 +78,7 @@ export default class NewClass extends cc.Component {
 
     onBthHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_ARM_EFF_UP, ...[this.data,this.netData, 1])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_ARM_EFF_UP, ...[this.data, this.netData, 1])
 
         // if (this.netData.state == 1) {
         //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_ARM_EFF_UP, ...[this.data, 1])

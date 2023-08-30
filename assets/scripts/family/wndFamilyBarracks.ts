@@ -88,7 +88,7 @@ export default class NewClass extends cc.Component {
 
         // }
 
-        for (let i = 0; i < retObj.arms; i++) {
+        for (let i = 0; i < retObj.arms.length; i++) {
             // retObj.arms
             if (this.contect.children[i]) {
                 let render = this.contect.children[i]
