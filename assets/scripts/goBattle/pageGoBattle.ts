@@ -277,10 +277,10 @@ export default class NewClass extends cc.Component {
                 }
             }
         } else if (this.curPageIdx == data.page_index - 20 + 1) {//righttop
-            this.filedLeftTopContect.removeAllChildren()
+            this.filedRightTopContect.removeAllChildren()
             for (let i = 15; i < data.mine_points.length; i++) {
                 let filedNode = cc.instantiate(this.filedItemPfb)
-                filedNode.parent = this.filedLeftTopContect
+                filedNode.parent = this.filedRightTopContect
                 filedNode.getComponent(filedItem).init(data.mine_points[i])
 
                 if (data.mine_points[i].hold_player) {
@@ -466,7 +466,7 @@ export default class NewClass extends cc.Component {
     }
 
     applyMines() {
-        let delay = 0.3
+        let delay = 0.2
         MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
         this.scheduleOnce(() => {
             console.log(`延迟请求`)

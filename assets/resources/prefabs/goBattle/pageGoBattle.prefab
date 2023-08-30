@@ -83799,7 +83799,7 @@
     },
     "component": "",
     "_componentId": "c1defhNcJpJJZkUGlneKIlb",
-    "handler": "",
+    "handler": "btnBottom",
     "customEventData": ""
   },
   {
@@ -84111,7 +84111,7 @@
     },
     "component": "",
     "_componentId": "c1defhNcJpJJZkUGlneKIlb",
-    "handler": "",
+    "handler": "btnTop",
     "customEventData": ""
   },
   {
@@ -90913,7 +90913,7 @@
     },
     "component": "",
     "_componentId": "c1defhNcJpJJZkUGlneKIlb",
-    "handler": "",
+    "handler": "btnLeftTop",
     "customEventData": ""
   },
   {
@@ -91225,7 +91225,7 @@
     },
     "component": "",
     "_componentId": "c1defhNcJpJJZkUGlneKIlb",
-    "handler": "",
+    "handler": "btnRightTop",
     "customEventData": ""
   },
   {
@@ -91537,7 +91537,7 @@
     },
     "component": "",
     "_componentId": "c1defhNcJpJJZkUGlneKIlb",
-    "handler": "",
+    "handler": "btnLeftBottom",
     "customEventData": ""
   },
   {
@@ -91849,7 +91849,7 @@
     },
     "component": "",
     "_componentId": "c1defhNcJpJJZkUGlneKIlb",
-    "handler": "",
+    "handler": "btnRightBottom",
     "customEventData": ""
   },
   {
