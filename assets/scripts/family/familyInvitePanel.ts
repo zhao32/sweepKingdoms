@@ -44,6 +44,7 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showToast(`请输入玩家ID`)
             return
         }
+        console.log(`邀请：`+this.id)
         MyProtocols.send_C2SFamilyInviteJion(DataManager._loginSocket, this.id)
     }
 

@@ -38,31 +38,34 @@ export default class NewClass extends cc.Component {
             } else {
                 this._autoEnter = 0
             }
+            console.log(`this._autoEnter:`+this._autoEnter)
         }, this)
     }
 
     init() {
         this._autoEnter = DataManager.familyDetail.autoEnter
         this.check.isChecked = DataManager.familyDetail.autoEnter == 1
-        NetEventDispatcher.addListener(NetEvent.S2CCreaterFamily, this.S2CFamilyAutoEnterChange, this)
+        NetEventDispatcher.addListener(NetEvent.S2CFamilyAutoEnterChange, this.S2CFamilyAutoEnterChange, this)
         NetEventDispatcher.addListener(NetEvent.S2CFamilyInviteJion, this.S2CFamilyInviteJion, this)
 
-        
+
     }
 
-    S2CFamilyInviteJion(retObj){
+    S2CFamilyInviteJion(retObj) {
         console.log(`邀请玩家成功` + JSON.stringify(retObj))
 
     }
 
     S2CFamilyAutoEnterChange(retObj) {
         console.log(`改变审核状态返回：` + JSON.stringify(retObj))
+        // 改变审核状态返回：{"autoEnter":1}
+        ViewManager.instance.showToast(`修改审核状态成功`)
         DataManager.familyDetail.autoEnter = this._autoEnter = retObj.autoEnter
         this.check.isChecked = DataManager.familyDetail.autoEnter == 1
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CCreaterFamily, this.S2CFamilyAutoEnterChange, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CFamilyAutoEnterChange, this.S2CFamilyAutoEnterChange, this)
         NetEventDispatcher.removeListener(NetEvent.S2CFamilyInviteJion, this.S2CFamilyInviteJion, this)
 
     }
@@ -75,6 +78,7 @@ export default class NewClass extends cc.Component {
     onSaveHandler() {
         // ViewManager.instance.hideWnd(DataManager.curWndPath, true)
         // ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
+        console.log(`--this._autoEnter:`+this._autoEnter)
         MyProtocols.send_C2SFamilyAutoEnterChange(DataManager._loginSocket, this._autoEnter)
     }
 

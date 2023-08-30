@@ -67,11 +67,12 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.addListener(NetEvent.S2CFamilyArmBuy, this.S2CFamilyArmBuy, this)
     }
 
-    S2CFamilyArmBuy(retObj){ 
-        console.log(`家族兵购买返回：`+JSON.stringify(retObj))
+    S2CFamilyArmBuy(retObj) {
+        console.log(`家族兵购买返回：` + JSON.stringify(retObj))
     }
 
     S2CFamilyArmList(retObj) {
+        console.log(`家族军队列表：` + JSON.stringify(retObj))
         // this.showType = 1
         // this.contect.removeAllChildren()
         // for (let i = 0; i <retObj.arms.length; i++) {

@@ -70,6 +70,11 @@ export default class NewClass extends cc.Component {
         this.labelContribute.string = DataManager.familyDetail.contribution.toString()
         this.labelCoin.string = DataManager.playData.coinMoney
         this.labelFood.string = DataManager.playData.food.toString()
+
+        this.labelTaskName.string = data.name
+        this.labelTaskCont.string = `以下条件全部达成，可召唤${data.name}`
+        this.labelTaskAward.string = ``
+        
         this.contect.removeAllChildren()
         if(netdata){
             for (let i = 0; i < netdata.donates.length; i++) {
