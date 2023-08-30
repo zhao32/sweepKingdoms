@@ -69,9 +69,12 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName(`btn`).children[0].getComponent(cc.Label).string = `升级`
 
         } else if (netData.state == 2) {
-            this.node.getChildByName(`btn`).active = true
-            this.stateLabel.node.active = false
-            this.node.getChildByName(`btn`).children[0].getComponent(cc.Label).string = `购买`
+            this.node.getChildByName(`btn`).active = false
+
+            this.stateLabel.node.active = true
+            this.stateLabel.string = `已完成`
+
+            // this.node.getChildByName(`btn`).children[0].getComponent(cc.Label).string = `购买`
         }
     }
 

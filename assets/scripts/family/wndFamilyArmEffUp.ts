@@ -141,6 +141,12 @@ export default class NewClass extends cc.Component {
            render.getComponent(familyEffectArmRender).upPro(retObj.type,retObj.id,retObj.idx,retObj.number) 
         }
 
+        this.labelReputation.string = DataManager.familyDetail.reputation.toString()
+        this.labelContribute.string = DataManager.familyDetail.contribution.toString()
+        this.labelCoin.string = DataManager.playData.coinMoney
+        this.labelFood.string = DataManager.playData.food.toString()
+
+
     }
 
     S2CFamilyEffDonate(retObj) {
@@ -150,6 +156,12 @@ export default class NewClass extends cc.Component {
             let render = this.contect.children[i]
             render.getComponent(familyEffectArmRender).upPro(retObj.type,retObj.id,retObj.idx,retObj.number) 
          }
+
+         this.labelReputation.string = DataManager.familyDetail.reputation.toString()
+         this.labelContribute.string = DataManager.familyDetail.contribution.toString()
+         this.labelCoin.string = DataManager.playData.coinMoney
+         this.labelFood.string = DataManager.playData.food.toString()
+ 
     }
 
     onCloseHandler() {

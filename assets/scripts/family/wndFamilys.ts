@@ -56,7 +56,7 @@ export default class NewClass extends cc.Component {
 
     start() {
         // this.showGroups()
-         
+
     }
 
     // showGroups() {
@@ -104,12 +104,12 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.addListener(NetEvent.S2CFindFamilys, this.S2CFindFamilys, this)
         NetEventDispatcher.addListener(NetEvent.S2CApplyEnterFamily, this.S2CApplyEnterFamily, this)
 
-        
+
     }
 
-    S2CApplyEnterFamily(retObj){
+    S2CApplyEnterFamily(retObj) {
         console.log(`加入家族返回：` + JSON.stringify(retObj))
-        ViewManager.instance.hideWnd(DataManager.curWndPath,true)
+        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
 
     }
@@ -132,8 +132,12 @@ export default class NewClass extends cc.Component {
     }
 
     onCloseHandler() {
+        console.log(`DataManager.familyDetail.familyID:`+DataManager.familyDetail.familyID)
+
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
+        if (DataManager.familyDetail.familyID) {
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
+        } 
     }
 
     onClose() {

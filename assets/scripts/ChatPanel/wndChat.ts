@@ -39,6 +39,9 @@ export default class NewClass extends cc.Component {
     @property(cc.Label)
     m_pNewMessageLab: cc.Label = null;
 
+    @property(cc.Label)
+    titleLabel: cc.Label = null;
+
     // @property(cc.Node)
     // m_pReddot: cc.Node = null;
 
@@ -139,13 +142,18 @@ export default class NewClass extends cc.Component {
         // }
     }
 
-    targetId:number
+    targetId: number
 
-    init(type,targetId?:number) {
+    init(type, targetId?: number) {
         DataManager.ChatPanel = this
         this.targetId = targetId
         this._curselectIndex = type
         this.OpenChatPanel(this._isShow);
+        if (type == 4) {
+            this.titleLabel.string = `家族聊天`
+        } else {
+            this.titleLabel.string = `私人聊天`
+        }
 
     }
 
