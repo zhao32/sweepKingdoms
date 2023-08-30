@@ -12,7 +12,7 @@ import ViewManager from "../utils/Manager/ViewManager";
 import familyEffectRender0 from "./familyEffectRender0";
 import familyEffectRender1 from "./familyEffectRender1";
 
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 //@ts-ignore
 var MyProtocols = require("MyProtocols");
@@ -75,7 +75,7 @@ export default class NewClass extends cc.Component {
 
         this.showType = 1
         this.contect.removeAllChildren()
-        for (let i = 0; i <retObj.arms.length; i++) {
+        for (let i = 0; i < retObj.arms.length; i++) {
             let render = cc.instantiate(this.pfb2)
             render.parent = this.contect
             if (i < 5) {
@@ -85,7 +85,7 @@ export default class NewClass extends cc.Component {
                 }, DataManager.SCROLLTIME2 * i)
             }
             render.getComponent(familyEffectRender1).init(retObj.arms[i])
-          
+
         }
     }
 
@@ -126,21 +126,17 @@ export default class NewClass extends cc.Component {
             // render.on(cc.Node.EventType.TOUCH_END, () => {
             //     this.showIntragroup(i)
             // }, this)
-
         }
-
     }
 
 
     onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
         ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
-
     }
 
     onClose() {
         NetEventDispatcher.removeListener(NetEvent.S2CEffectList, this.S2CEffectList, this)
-
     }
     // update (dt) {}
 }

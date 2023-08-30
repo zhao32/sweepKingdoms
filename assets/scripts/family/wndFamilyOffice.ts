@@ -61,6 +61,7 @@ export default class NewClass extends cc.Component {
 
 
     init() {
+        this.aimStr = this.noticeStr = ''
         this.editBox1.string = DataManager.familyDetail.aim
         this.editBox2.string = DataManager.familyDetail.notice
         this.labelFBoss.string = `族长：${DataManager.familyDetail.familyChiefName}`
@@ -94,16 +95,20 @@ export default class NewClass extends cc.Component {
 
     onSaveHandler() {
         if (!this.aimStr && !this.noticeStr) {
-            ViewManager.instance.showToast(`请输入家族宗旨或家族提示`)
+            ViewManager.instance.showToast(`请输入新的家族宗旨或家族提示`)
             return
         }
 
         if (this.noticeStr) {
+            console.log(`修改家族公告`)
             MyProtocols.send_C2SFamilyNoticeChange(DataManager._loginSocket, this.noticeStr)
+            this.noticeStr = ''
         }
 
         if (this.aimStr) {
+            console.log(`修改家族主旨`)
             MyProtocols.send_C2SFamilyAimChange(DataManager._loginSocket, this.aimStr)
+            this.aimStr  = ''
         }
     }
 

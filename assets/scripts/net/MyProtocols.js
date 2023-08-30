@@ -7641,9 +7641,6 @@ var MyProtocols = {
 		return retObj;
 	},
 
-
-
-
 	send_C2SFamilyMallList: function (senderSocket) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(1047);
