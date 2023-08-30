@@ -7,6 +7,7 @@
       "donateNum":500000,
       "awardType":0,
       "awardNum":35,
+      "donateMax":38000000,
       "des": "为家族大战回积各种资源，请各位族员康慨解囊!为了家族!"
     },
     {
@@ -16,6 +17,7 @@
       "donateNum":500000,
       "awardType":0,
       "awardNum":35,
+      "donateMax":38000000,
 
       "des": "为家族大战回积各种资源，请各位族员康慨解囊!为了家族!"
     },
@@ -26,7 +28,7 @@
       "donateNum":7,
       "awardType":1,
       "awardNum":7,
-
+      "donateMax":100,
       "des": "为家族大战回积各种资源，请各位族员康慨解囊!为了家族!"
     }
   ],
@@ -38,7 +40,7 @@
       "donateNum":1,
       "awardType":1,
       "awardNum":10,
-
+      "donateMax":100,
       "des": "重镇之石是每个家族必争的战略物资，想家族贡献他可以获得奖励。"
     },
     {
@@ -48,7 +50,7 @@
       "donateNum":1,
       "awardType":1,
       "awardNum":60,
-
+      "donateMax":100,
       "des": "遗迹之心的数量可以代表一个家族的实力，为了彰显家族的实力，请尽量的去收集吧!"
     },
     {
@@ -58,7 +60,7 @@
       "donateNum":1,
       "awardType":1,
       "awardNum":35,
-
+      "donateMax":100,
       "des": "财神古币可以为家族带来好运气，去手机吧，为了金币!"
     },
     {
@@ -68,7 +70,7 @@
       "donateNum":1,
       "awardType":1,
       "awardNum":30,
-
+      "donateMax":100,
       "des": "名城晶石是每个家族必争的战略物资，想家族贡献他可以获得奖励。"
     },
     {
@@ -78,7 +80,7 @@
       "donateNum":1,
       "awardType":1,
       "awardNum":40,
-
+      "donateMax":100,
       "des": "圣都碧玉足每个家族必争的战略物资，想家族责献他可以获得奖励。"
     }
   ]

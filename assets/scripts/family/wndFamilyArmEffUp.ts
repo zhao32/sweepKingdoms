@@ -8,6 +8,7 @@
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
+import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 import familyDonateRender from "./familyDonateRender";
 import familyEffectArmRender from "./familyEffectArmRender";
@@ -23,6 +24,10 @@ var NetEventDispatcher = require("NetEventDispatcher");
 
 @ccclass
 export default class NewClass extends cc.Component {
+
+    @property(cc.Node)
+    icon: cc.Node = null;
+
 
     @property(cc.Label)
     labelTaskName: cc.Label = null;
@@ -72,8 +77,20 @@ export default class NewClass extends cc.Component {
         this.labelFood.string = DataManager.playData.food.toString()
 
         this.labelTaskName.string = data.name
-        this.labelTaskCont.string = `以下条件全部达成，可召唤${data.name}`
+        this.labelTaskCont.string = `以下条件全部达成，${data.des}`
         this.labelTaskAward.string = ``
+
+        if (data.type == 0) {//人气滚滚
+            // this.labelTaskName.string = `主线任务`
+            // this.labelTaskCont.string = data[0].des
+            ResManager.loadItemIcon(`family/effect0`, this.icon)
+
+        } else {//支线任务
+            // this.labelTaskName.string = data[0].name
+            // this.labelTaskCont.string = data[0].des
+            // ResManager.loadItemIcon(`family/familyTask1`,this.icon)
+            ResManager.loadItemIcon(`UI/prop/effect1`, this.icon)
+        }
 
         this.contect.removeAllChildren()
         // if(netdata){
@@ -123,6 +140,7 @@ export default class NewClass extends cc.Component {
 
     S2CFamilyEffDonate(retObj) {
         console.log(`效果捐赠返回：` + JSON.stringify(retObj))
+        // 效果捐赠返回：{"id":11,"number":80000}
     }
 
     onCloseHandler() {

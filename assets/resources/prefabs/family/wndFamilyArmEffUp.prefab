@@ -9229,6 +9229,9 @@
       "__id__": 1
     },
     "_enabled": true,
+    "icon": {
+      "__id__": 111
+    },
     "labelTaskName": {
       "__id__": 118
     },

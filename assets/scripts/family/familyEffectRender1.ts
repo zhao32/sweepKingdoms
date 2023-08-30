@@ -38,6 +38,7 @@ export default class NewClass extends cc.Component {
     }
 
     init(data) {
+        // console.log(`this.data.des:`+JSON.stringify(data.des))
         this.data = data
         this.nameLabel.string = data.name
         this.desLabel.string =data.des

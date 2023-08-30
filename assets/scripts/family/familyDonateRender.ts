@@ -51,12 +51,14 @@ export default class NewClass extends cc.Component {
         } else {
             awardName = `家族贡献度`
         }
-        this.LabelAward.string = `每次捐献可获得：` + awardName+ `x${data.awardNum}`
+        this.LabelAward.string = `每次捐献可获得：` + awardName + `x${data.awardNum}`
         this.LabelBtn.string = `捐献:${data.donateNum}`
+        this.LabelPro.string = `${0}/${data.donateMax}`
+        this.proBar.progress = 0 / data.donateMax
     }
 
     onContributeHandler() {
-        MyProtocols.send_C2SFamilyTaskSend(DataManager._loginSocket,this._data.id,this._data.donateNum)
+        MyProtocols.send_C2SFamilyTaskSend(DataManager._loginSocket, this._data.id, this._data.donateNum)
     }
 
     // update (dt) {}

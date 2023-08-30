@@ -64,13 +64,15 @@ export default class NewClass extends cc.Component {
 
     init() {
         this.showGroups()
-        NetEventDispatcher.addListener(NetEvent.S2CFamilyArmList, this.S2CFamilyArmList, this)
+        NetEventDispatcher.addListener(NetEvent.S2CEffectList, this.S2CEffectList, this)
         this.labelContribute.string = `贡献值：` + DataManager.familyDetail.contribution
         this.labelReputation.string = `家族声望：` + DataManager.familyDetail.reputation
 
     }
 
-    S2CFamilyArmList(retObj) {
+    S2CEffectList(retObj) {
+        console.log(`家族效果列表：` + JSON.stringify(retObj))
+
         this.showType = 1
         this.contect.removeAllChildren()
         for (let i = 0; i <retObj.arms.length; i++) {
@@ -102,7 +104,7 @@ export default class NewClass extends cc.Component {
             render.getComponent(familyEffectRender0).init(this.groupsData[i])
             render.on(cc.Node.EventType.TOUCH_END, () => {
                 this.showIntragroup(i)
-                MyProtocols.send_C2SFamilyArmList(DataManager._loginSocket, i)
+                MyProtocols.send_C2SEffectList(DataManager._loginSocket, i)
             }, this)
         }
     }
@@ -137,6 +139,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CEffectList, this.S2CEffectList, this)
 
     }
     // update (dt) {}
