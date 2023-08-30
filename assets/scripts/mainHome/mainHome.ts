@@ -385,6 +385,7 @@ export default class NewClass extends cc.Component {
         Logger.log('----------FamilyDetail---------------')
         console.log('FamilyDetail:' + JSON.stringify(retObj))
         DataManager.familyDetail.familyID = retObj.familyID
+        if (retObj.familyID == 0) return
         DataManager.familyDetail.familyName = retObj.familyName
         DataManager.familyDetail.familyIcon = retObj.familyIcon
         DataManager.familyDetail.familyNum = retObj.familyNum

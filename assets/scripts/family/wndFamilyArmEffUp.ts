@@ -138,8 +138,7 @@ export default class NewClass extends cc.Component {
         // {"id":1,"number":80000}
         for (let i = 0; i < this.contect.children.length; i++) {
            let render = this.contect.children[i]
-           render.getComponent(familyEffectArmRender).upPro(retObj.type,retObj.id,retObj.idx,retObj.number)
-            
+           render.getComponent(familyEffectArmRender).upPro(retObj.type,retObj.id,retObj.idx,retObj.number) 
         }
 
     }
@@ -147,6 +146,10 @@ export default class NewClass extends cc.Component {
     S2CFamilyEffDonate(retObj) {
         console.log(`效果捐赠返回：` + JSON.stringify(retObj))
         // 效果捐赠返回：{"id":11,"number":80000}
+        for (let i = 0; i < this.contect.children.length; i++) {
+            let render = this.contect.children[i]
+            render.getComponent(familyEffectArmRender).upPro(retObj.type,retObj.id,retObj.idx,retObj.number) 
+         }
     }
 
     onCloseHandler() {
