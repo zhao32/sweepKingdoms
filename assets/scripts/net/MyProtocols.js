@@ -7772,10 +7772,11 @@ var MyProtocols = {
 				retObj.arms[i] = {};
 				retObj.arms[i].idx = myDecoder.readInt();
 				retObj.arms[i].state = myDecoder.readInt();
+				retObj.arms[i].donates = [];
 				let donates_size = myDecoder.readInt();
 				if (donates_size > 0) {
-					for (let j = 0; j < donates_size.length; j++) {
-						retObj.arms[i].donates = {}
+					for (let j = 0; j < donates_size; j++) {
+						retObj.arms[i].donates[j] = {}
 						retObj.arms[i].donates[j].id = j;
 						/**已经捐赠的数量 */
 						retObj.arms[i].donates[j].donatedNum = myDecoder.readInt();
@@ -7829,22 +7830,14 @@ var MyProtocols = {
 				retObj.effs[i].effectNum = myDecoder.readString();
 
 				retObj.effs[i].state = myDecoder.readInt();
-
+				retObj.effs[i].donates = [];
 				let donates_size = myDecoder.readInt();
 				if (donates_size > 0) {
-					for (let j = 0; j < donates_size.length; j++) {
-						retObj.effs[i].donates = {}
+					for (let j = 0; j < donates_size; j++) {
+						retObj.effs[i].donates[j] = {}
 						retObj.effs[i].donates[j].id = j;
-						/**需要捐赠的总数量 */
-						retObj.effs[i].donates[j].needDonateNum = myDecoder.readInt();
-						// /**已经捐赠的数量 */
-						// retObj.effs[i].donates[j].donatedNum = myDecoder.readInt();
-						// /**没次捐赠的数量 */
-						// retObj.effs[i].donates[j].preDonateNum = myDecoder.readInt();
-						// /**没次捐赠的奖励物品 */
-						// retObj.effs[i].donates[j].preAwardId = myDecoder.readInt();
-						// /**没次捐赠的奖励数量 */
-						// retObj.effs[i].donates[j].preAwardNum = myDecoder.readInt();
+						/**已经捐赠的数量 */
+						retObj.effs[i].donates[j].donatedNum = myDecoder.readInt();
 					}
 				}
 			}

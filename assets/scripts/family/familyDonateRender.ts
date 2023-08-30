@@ -53,7 +53,7 @@ export default class NewClass extends cc.Component {
         }
         this.LabelAward.string = `每次捐献可获得：` + awardName + `x${data.awardNum}`
         this.LabelBtn.string = `捐献:${data.donateNum}`
-        let curDonte: number
+        let curDonte: number = 0
         for (let i = 0; i < DataManager.familyDetail.task1.length; i++) {
             if (DataManager.familyDetail.task1[i].id == data.id) {
                 curDonte = DataManager.familyDetail.task1[i].num
@@ -70,6 +70,9 @@ export default class NewClass extends cc.Component {
     }
 
     onContributeHandler() {
+        console.log(`this._data.id:`+this._data.id)
+        console.log(`this._data.donateNum:`+this._data.donateNum)
+
         MyProtocols.send_C2SFamilyTaskSend(DataManager._loginSocket, this._data.id, this._data.donateNum)
     }
 

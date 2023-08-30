@@ -105,7 +105,7 @@ export default class NewClass extends cc.Component {
 
             let render = cc.instantiate(this.donatePfb)
             render.parent = this.contect
-            render.getComponent(familyEffectArmRender).init(data.item[i], type, data, i)
+            render.getComponent(familyEffectArmRender).init(data.item[i], type, data, i, netdata)
         }
 
         // if (type == 0) {//主线任务
@@ -120,7 +120,7 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.addListener(NetEvent.S2CFamilyArmDonate, this.S2CFamilyArmDonate, this)
         NetEventDispatcher.addListener(NetEvent.S2CFamilyEffDonate, this.S2CFamilyEffDonate, this)
 
-        
+
         let keys = Object.keys(DataManager.GameData.MineStone)
         console.log(`keys:` + JSON.stringify(keys))
         for (let i = 0; i < DataManager.instance.itemsList.length; i++) {

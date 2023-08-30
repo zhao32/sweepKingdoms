@@ -56,10 +56,16 @@ export default class NewClass extends cc.Component {
         // } else {
         //     awardName = `家族贡献度`
         // }
+        let curDonte = 0
+        if(netData){
+            curDonte = netData.donatedNum
+        }
+        
         this.LabelAward.string = `每次捐献可获得声望：` + donateData[2]
-        this.LabelPro.string = `0/${donateData[1]}`
+        this.LabelPro.string = `${curDonte}/${donateData[1]}`
         this.LabelBtn.string = `捐献` + donateData[3]
-        this.proBar.progress = 0 / donateData[1]
+      
+        this.proBar.progress = curDonte/ donateData[1]
         let donateItems = DataManager.GameData.Items[String(donateData[0])]
         console.log('donateItems:' + donateItems)
         if (donateItems) {

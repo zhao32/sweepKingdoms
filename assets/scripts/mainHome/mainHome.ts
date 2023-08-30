@@ -399,8 +399,26 @@ export default class NewClass extends cc.Component {
         DataManager.familyDetail.familyChiefID = retObj.familyChiefID
         DataManager.familyDetail.familyChiefName = retObj.familyChiefName
         DataManager.familyDetail.autoEnter = retObj.autoEnter
-        DataManager.familyDetail.task1 =  retObj.task1
-        DataManager.familyDetail.task2 =  retObj.task2
+        DataManager.familyDetail.task1 = [{ "id": 1, "num": 0 }, { "id": 2, "num": 0 }, { "id": 3, "num": 0 }]
+        DataManager.familyDetail.task2 = [{ "id": 4, "num": 0 }, { "id": 5, "num": 0 }, { "id": 6, "num": 0 }, { "id": 7, "num": 0 }, { "id": 8, "num": 0 }]
+        for (let i = 0; i < DataManager.familyDetail.task1.length; i++) {
+            for (let j = 0; j < retObj.task1.length; j++) {
+                if (DataManager.familyDetail.task1[i].id == retObj.task1[j].id) {
+                    DataManager.familyDetail.task1[i].num = retObj.task1[j].num
+                }
+            }
+        }
+
+        for (let i = 0; i < DataManager.familyDetail.task2.length; i++) {
+            for (let j = 0; j < retObj.task1.length; j++) {
+                if (DataManager.familyDetail.task2[i].id == retObj.task2[j].id) {
+                    DataManager.familyDetail.task2[i].num = retObj.task2[j].num
+                }
+            }
+        }
+
+        // DataManager.familyDetail.task1 = retObj.task1
+        // DataManager.familyDetail.task2 = retObj.task2
 
         // if (retObj.familyID) {
         //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
