@@ -32,6 +32,11 @@ export default class NewClass extends cc.Component {
     @property(cc.Node)
     contect: cc.Node = null;
 
+    @property({ type: cc.Label, displayName: "贡献值" })
+    labelContribute: cc.Label = null;
+
+    @property({ type: cc.Label, displayName: "声望" })
+    labelReputation: cc.Label = null;
 
     showType: number = 0 // 0 分组 1 分组内
 
@@ -60,6 +65,8 @@ export default class NewClass extends cc.Component {
     init() {
         this.showGroups()
         NetEventDispatcher.addListener(NetEvent.S2CFamilyArmList, this.S2CFamilyArmList, this)
+        this.labelContribute.string = `贡献值：` + DataManager.familyDetail.contribution
+        this.labelReputation.string = `家族声望：` + DataManager.familyDetail.reputation
 
     }
 

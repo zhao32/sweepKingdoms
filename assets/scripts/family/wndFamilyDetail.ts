@@ -68,7 +68,6 @@ export default class NewClass extends cc.Component {
     // {"familyID":12,"familyName":"aa","familyIcon":0,"familyNum":0,"familyLv":1,"familyExp":2,"familyKill":3,"familyFight":4,"contribution":5,"reputation":6,"aim":"家族说明","notice":"家族宗旨"}
     init() {
         this.labelContribute.string = `贡献值：` + DataManager.familyDetail.contribution
-        this.labelFBoss
         // this.labelFExp.string = 
         this.labelFFight.string = `家族战力：` + DataManager.familyDetail.familyFight
         this.labelFID.string = `家族ID：` + DataManager.familyDetail.familyID
@@ -78,6 +77,7 @@ export default class NewClass extends cc.Component {
         this.labelNotice.string = DataManager.familyDetail.notice
         this.labelPurpose.string = DataManager.familyDetail.aim//家族宗旨：
         this.labelReputation.string = `家族声望：` + DataManager.familyDetail.reputation
+        this.labelFBoss.string = `族长：${DataManager.familyDetail.familyChiefID}   成员：${DataManager.familyDetail.familyNum}`
 
         if (String(DataManager.playData.id) == DataManager.familyDetail.familyChiefID) {//我是族长
             this.node.getChildByName(`mangerNode`).active = true
