@@ -7926,6 +7926,51 @@ var MyProtocols = {
 		return retObj;
 	},
 
+	/** playerid 玩家id  agree 0 拒绝 1 通过*/
+	send_C2SExamineEnterFamily(senderSocket, playerId, agree) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13013);
+		myEncoder.writeInt(playerId);
+		myEncoder.writeInt(agree);
+
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13014: function (myDecoder) {
+		var retObj = {};
+		retObj.playerId = myDecoder.readInt();
+		retObj.agree = myDecoder.readInt();
+		return retObj;
+	},
+
+
+
+	send_C2SExamineFamilyList(senderSocket) {
+		var myEncoder = WsEncoder.alloc();
+		myEncoder.writeInt(13057);
+		var rawContent = myEncoder.end();
+		myEncoder.free();
+		senderSocket.sendMessage(rawContent);
+	},
+
+	get_13058(myDecoder) {
+		var retObj = {};
+		retObj.applys = [];
+		var applys_size = myDecoder.readInt();
+		for (var i = 0; i < applys_size; i++) {
+			retObj.applys[i] = {};
+			retObj.applys[i].playerId = myDecoder.readInt();
+			retObj.applys[i].playerName = myDecoder.readString();
+			retObj.applys[i].playerLv = myDecoder.readInt();
+			retObj.applys[i].icon = myDecoder.readInt();
+		}
+		return retObj;
+	},
+
+
+
 
 }
 

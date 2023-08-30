@@ -23,6 +23,13 @@ const { ccclass, property } = cc._decorator;
 @ccclass
 export default class NewClass extends cc.Component {
 
+    @property({ type: cc.ProgressBar, displayName: '经验进度条' })
+    proBarExp: cc.ProgressBar = null;
+
+    @property({ type: cc.Label, displayName: '经验进度label' })
+    labelProExp: cc.Label = null;
+
+
     @property({ type: cc.Node, displayName: '新手救济' })
     btnBeginner: cc.Node = null;
 
@@ -228,7 +235,7 @@ export default class NewClass extends cc.Component {
     init() {
 
     }
-    
+
     updateInfo() {
         this.labelCoin.string = String(DataManager.playData.coinMoney)
         this.labelCombatPower.string = String(DataManager.playData.troops)
@@ -237,6 +244,9 @@ export default class NewClass extends cc.Component {
         this.labelName.string = String(DataManager.playData.name)
         this.labelProvisions.string = String(DataManager.playData.food)
         this.labelVipLevel.string = String(DataManager.playData.vip_level)
+
+        this.proBarExp.progress = DataManager.playData.level_exp / DataManager.GameData.Levels[DataManager.playData.level - 1].exp
+        this.labelProExp.string = `${DataManager.playData.level_exp}/${DataManager.GameData.Levels[DataManager.playData.level - 1].exp}`
         if (DataManager.countyList[DataManager.playData.nation_id]) {
             this.labelNation.string = DataManager.countyList[DataManager.playData.nation_id] + `国`//String(DataManager.playData.account_id)
         } else {

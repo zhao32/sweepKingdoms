@@ -163,6 +163,8 @@ export default class DataManager {
 
     static GameData = {
         zh: {},
+        /**玩家等级配置 */
+        Levels:[],
         /**兵种信息 */
         Soldier: {},
         /**建筑信息 */

@@ -478,6 +478,13 @@ export enum NetEvent {
     /**审核加入家族 */
     S2CExamineEnterFamily = 13014,
 
+
+    /**申请加入家族列表 */
+    C2SExamineFamilyList = 13057,
+
+    S2CExamineFamilyList = 13058,
+
+
     /**退出家族 */
     C2SQuitFamily = 13015,
     /**退出家族 */

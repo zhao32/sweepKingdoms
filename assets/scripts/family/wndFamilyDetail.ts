@@ -33,6 +33,10 @@ export default class NewClass extends cc.Component {
     @property(cc.Label)
     labelFExp: cc.Label = null;
 
+    @property(cc.ProgressBar)
+    proBar: cc.ProgressBar = null;
+
+
     @property(cc.Label)
     labelFLv: cc.Label = null;
 
@@ -84,6 +88,11 @@ export default class NewClass extends cc.Component {
         } else {
             this.node.getChildByName(`mangerNode`).active = false
         }
+
+        let maxExps = [50, 200, 400, 600, 800, 1000]
+        this.proBar.progress = DataManager.familyDetail.familyExp / maxExps[Math.max(0, DataManager.familyDetail.familyLv - 1)]
+        this.labelFExp.string = `${DataManager.familyDetail.familyExp}/${maxExps[Math.max(0, DataManager.familyDetail.familyLv - 1)]}`
+
 
         NetEventDispatcher.addListener(NetEvent.S2CFamilyLog, this.S2CFamilyLog, this)
         NetEventDispatcher.addListener(NetEvent.S2CFamilyMember, this.S2CFamilyMember, this)

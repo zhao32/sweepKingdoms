@@ -1,0 +1,501 @@
+[ {
+  "max_energy" : 100,
+  "add_stamina" : 0,
+  "add_energy" : 0,
+  "exp" : 60
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 0,
+  "add_energy" : 0,
+  "exp" : 60
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 0,
+  "add_energy" : 0,
+  "exp" : 60
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 0,
+  "add_energy" : 0,
+  "exp" : 60
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 0,
+  "add_energy" : 0,
+  "exp" : 60
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 0,
+  "add_energy" : 0,
+  "exp" : 60
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 0,
+  "add_energy" : 0,
+  "exp" : 120
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 0,
+  "add_energy" : 15,
+  "exp" : 120
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 0,
+  "add_energy" : 15,
+  "exp" : 120
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 0,
+  "add_energy" : 15,
+  "exp" : 170
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 15,
+  "exp" : 230
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 15,
+  "exp" : 303
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 15,
+  "exp" : 368
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 15,
+  "exp" : 434
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 15,
+  "exp" : 501
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 20,
+  "exp" : 570
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 20,
+  "exp" : 639
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 20,
+  "exp" : 711
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 20,
+  "exp" : 784
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 20,
+  "exp" : 858
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 20,
+  "exp" : 933
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 20,
+  "exp" : 1043
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 20,
+  "exp" : 1156
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 20,
+  "exp" : 1270
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 30,
+  "exp" : 1421
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 30,
+  "exp" : 1575
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 30,
+  "exp" : 1731
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 30,
+  "exp" : 1926
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 30,
+  "exp" : 2124
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 30,
+  "exp" : 2325
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 30,
+  "exp" : 2603
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 30,
+  "exp" : 2886
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 30,
+  "exp" : 3173
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 30,
+  "exp" : 3540
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 30,
+  "exp" : 3280
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 30,
+  "exp" : 3654
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 30,
+  "exp" : 4717
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 30,
+  "exp" : 5148
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 30,
+  "exp" : 5585
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 30,
+  "exp" : 6636
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 7297
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 7967
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 8677
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 9398
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 10159
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 10931
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 11744
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 12569
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 13436
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 14315
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 15237
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 16171
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 17150
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 18142
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 19179
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 20229
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 21326
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 22436
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 23594
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 24765
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 25985
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 27220
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 28503
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 29802
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 31151
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 32516
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 33932
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 35364
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 36847
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 38348
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 39901
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 41472
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 43096
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 44738
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 46435
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 48150
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 49921
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 51711
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 53557
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 55422
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 57345
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 59288
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 61289
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 63311
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 65391
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 67493
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 69655
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 71838
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 74083
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 76349
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 78677
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 81028
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 83441
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 85879
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 88379
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 90903
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 93493
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 96106
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 98785
+}, {
+  "max_energy" : 100,
+  "add_stamina" : 5,
+  "add_energy" : 50,
+  "exp" : 101488
+} ]
