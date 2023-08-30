@@ -38,10 +38,20 @@ export default class NewClass extends cc.Component {
     type
     // LIFE-CYCLE CALLBACKS:
     donateIdx
+
+    curDonte
     // onLoad () {}
 
     start() {
 
+    }
+
+    upPro(type, id, idx, num) {
+        if (this.armData.type == type && this.armData.id == id && this.donateIdx == idx) {
+            this.curDonte += num
+            this.LabelPro.string = `${this.curDonte}/${this._donateData[1]}`
+            this.proBar.progress = this.curDonte / this._donateData[1]
+        }
     }
 
     init(donateData, type, armData, donateIdx, netData?: any) {
@@ -56,16 +66,16 @@ export default class NewClass extends cc.Component {
         // } else {
         //     awardName = `家族贡献度`
         // }
-        let curDonte = 0
-        if(netData){
-            curDonte = netData.donatedNum
+        this.curDonte = 0
+        if (netData) {
+            this.curDonte = netData.donatedNum
         }
 
         this.LabelAward.string = `每次捐献可获得声望：` + donateData[2]
-        this.LabelPro.string = `${curDonte}/${donateData[1]}`
+        this.LabelPro.string = `${this.curDonte}/${donateData[1]}`
         this.LabelBtn.string = `捐献` + donateData[3]
-      
-        this.proBar.progress = curDonte/ donateData[1]
+
+        this.proBar.progress = this.curDonte / donateData[1]
         let donateItems = DataManager.GameData.Items[String(donateData[0])]
         console.log('donateItems:' + donateItems)
         if (donateItems) {

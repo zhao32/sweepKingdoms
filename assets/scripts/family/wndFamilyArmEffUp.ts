@@ -135,6 +135,12 @@ export default class NewClass extends cc.Component {
 
     S2CFamilyArmDonate(retObj) {
         console.log(`兵种捐赠返回：` + JSON.stringify(retObj))
+        // {"id":1,"number":80000}
+        for (let i = 0; i < this.contect.children.length; i++) {
+           let render = this.contect.children[i]
+           render.getComponent(familyEffectArmRender).upPro(retObj.type,retObj.id,retObj.idx,retObj.number)
+            
+        }
 
     }
 

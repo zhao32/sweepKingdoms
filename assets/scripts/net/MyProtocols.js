@@ -7863,8 +7863,9 @@ var MyProtocols = {
 
 	get_13054: function (myDecoder) {
 		var retObj = {};
-
+		retObj.type = myDecoder.readInt();
 		retObj.id = myDecoder.readInt();
+		retObj.idx = myDecoder.readInt();
 		retObj.number = myDecoder.readInt();
 		return retObj;
 	},
@@ -7899,7 +7900,9 @@ var MyProtocols = {
 
 	get_13056: function (myDecoder) {
 		var retObj = {};
+		retObj.type = myDecoder.readInt();
 		retObj.id = myDecoder.readInt();
+		retObj.idx = myDecoder.readInt();
 		retObj.number = myDecoder.readInt();
 		return retObj;
 	},
