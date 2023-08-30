@@ -556,13 +556,13 @@ export enum NetEvent {
     S2CEffectList = 13034,
 
     /**兵种升级捐赠 */
-    C2SFamilyArmDonate = 13037,
+    C2SFamilyArmDonate = 13053,
 
-    S2CFamilyArmDonate = 13038,
+    S2CFamilyArmDonate = 13054,
     /**效果升级捐赠 */
-    C2SFamilyEffDonate = 13039,
+    C2SFamilyEffDonate = 13055,
 
-    S2CFamilyEffDonate = 13040,
+    S2CFamilyEffDonate = 13056,
 
 
     C2SFamilyInviteJion = 13051,

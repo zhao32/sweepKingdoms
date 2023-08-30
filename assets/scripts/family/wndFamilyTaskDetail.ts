@@ -66,7 +66,7 @@ export default class NewClass extends cc.Component {
     }
 
     init(data, type) {
-        console.log("data:" + JSON.stringify(data))
+        console.log("--data:" + JSON.stringify(data))
         this.labelReputation.string = DataManager.familyDetail.reputation.toString()
         this.labelContribute.string = DataManager.familyDetail.contribution.toString()
         this.labelCoin.string = DataManager.playData.coinMoney
@@ -85,10 +85,22 @@ export default class NewClass extends cc.Component {
         } else {//支线任务
             this.labelTaskName.string = data[0].name
             this.labelTaskCont.string = data[0].des
-            ResManager.loadItemIcon(`family/familyTask1`,this.icon)
+            // ResManager.loadItemIcon(`family/familyTask1`,this.icon)
+            ResManager.loadItemIcon(`UI/prop/${data[0].name}`, this.icon)
         }
 
         NetEventDispatcher.addListener(NetEvent.S2CFamilyTaskSend, this.S2CFamilyTaskSend, this)
+
+        
+        let keys = Object.keys(DataManager.GameData.MineStone)
+        console.log(`keys:` + JSON.stringify(keys))
+        for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+            for (let j = 0; j < keys.length; j++) {
+                if (keys[j] == DataManager.instance.itemsList[i].template_id) {
+                    this.node.getChildByName(`pearls`).children[7 + j].getComponent(cc.Label).string = `x` + DataManager.instance.itemsList[i].num
+                }
+            }
+        }
 
     }
 

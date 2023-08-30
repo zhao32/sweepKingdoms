@@ -89,7 +89,7 @@ export default class NewClass extends cc.Component {
                 let id = data.items[i].itemTemplateId
                 let item = cc.instantiate(this.pfb)
                 item.parent = this.contect
-                item.getComponent(familyMarketItem).init(DataManager.GameData.familyGoods[id])
+                item.getComponent(familyMarketItem).init(DataManager.GameData.familyGoods[id],data.items[i])
                 item.on(cc.Node.EventType.TOUCH_END, () => {
                     this.node.getChildByName(`buyPanel`).active = true
                     this.node.getChildByName(`buyPanel`).getComponent(familyMallBuyPanel).init(DataManager.GameData.familyGoods[id], i)

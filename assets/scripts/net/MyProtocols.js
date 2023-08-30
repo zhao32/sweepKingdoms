@@ -7817,36 +7817,35 @@ var MyProtocols = {
 
 	get_13034: function (myDecoder) {
 		var retObj = {};
-		retObj.arms = [];
-		let arms_size = myDecoder.readInt();
-		if (arms_size > 0) {
-			for (var i = 0; i < arms_size; i++) {
-				retObj.arms[i] = {};
-				retObj.arms[i].idx = myDecoder.readInt();
-				retObj.arms[i].id = myDecoder.readInt();
-				retObj.arms[i].lv = myDecoder.readInt();
+		retObj.effs = [];
+		let effs_size = myDecoder.readInt();
+		if (effs_size > 0) {
+			for (var i = 0; i < effs_size; i++) {
+				retObj.effs[i] = {};
+				retObj.effs[i].idx = myDecoder.readInt();
+				retObj.effs[i].id = myDecoder.readInt();
+				retObj.effs[i].lv = myDecoder.readInt();
 
-				retObj.arms[i].name = myDecoder.readString();
-				retObj.arms[i].effectNum = myDecoder.readString();
+				retObj.effs[i].name = myDecoder.readString();
+				retObj.effs[i].effectNum = myDecoder.readString();
 
-				retObj.arms[i].state = myDecoder.readInt();
+				retObj.effs[i].state = myDecoder.readInt();
 
 				let donates_size = myDecoder.readInt();
 				if (donates_size > 0) {
 					for (let j = 0; j < donates_size.length; j++) {
-						retObj.arms[i].donates = {}
-						retObj.arms[i].donates[j].id = myDecoder.readInt();
+						retObj.effs[i].donates = {}
+						retObj.effs[i].donates[j].id = j;
 						/**需要捐赠的总数量 */
-						retObj.arms[i].donates[j].needDonateNum = myDecoder.readInt();
-						/**已经捐赠的数量 */
-
-						retObj.arms[i].donates[j].donatedNum = myDecoder.readInt();
-						/**没次捐赠的数量 */
-						retObj.arms[i].donates[j].preDonateNum = myDecoder.readInt();
-						/**没次捐赠的奖励物品 */
-						retObj.arms[i].donates[j].preAwardId = myDecoder.readInt();
-						/**没次捐赠的奖励数量 */
-						retObj.arms[i].donates[j].preAwardNum = myDecoder.readInt();
+						retObj.effs[i].donates[j].needDonateNum = myDecoder.readInt();
+						// /**已经捐赠的数量 */
+						// retObj.effs[i].donates[j].donatedNum = myDecoder.readInt();
+						// /**没次捐赠的数量 */
+						// retObj.effs[i].donates[j].preDonateNum = myDecoder.readInt();
+						// /**没次捐赠的奖励物品 */
+						// retObj.effs[i].donates[j].preAwardId = myDecoder.readInt();
+						// /**没次捐赠的奖励数量 */
+						// retObj.effs[i].donates[j].preAwardNum = myDecoder.readInt();
 					}
 				}
 			}
@@ -7854,51 +7853,59 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	send_C2SFamilyArmDonate(senderSocket, id, taskid, num) {
+	/** 分类 兵种 序号 贡献数量 */
+	send_C2SFamilyArmDonate(senderSocket, type, id, idx, num) {
 		var myEncoder = WsEncoder.alloc();
-		myEncoder.writeInt(13037);
+		myEncoder.writeInt(13053);
+		myEncoder.writeInt(type);
 		myEncoder.writeInt(id);
-		myEncoder.writeInt(taskid);
+		myEncoder.writeInt(idx);
 		myEncoder.writeInt(num);
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
 	},
 
-	get_13038: function (myDecoder) {
+	get_13054: function (myDecoder) {
 		var retObj = {};
+
+		retObj.id = myDecoder.readInt();
+		retObj.number = myDecoder.readInt();
 		return retObj;
 	},
 
-	send_C2SFamilyEffDonate(senderSocket, id, num) {
+	// send_C2SFamilyEffDonate(senderSocket, id, num) {
+	// 	var myEncoder = WsEncoder.alloc();
+	// 	myEncoder.writeInt(13037);
+	// 	myEncoder.writeInt(id);
+	// 	myEncoder.writeInt(num);
+	// 	var rawContent = myEncoder.end();
+	// 	myEncoder.free();
+	// 	senderSocket.sendMessage(rawContent);
+	// },
+
+	// get_13038: function (myDecoder) {
+	// 	var retObj = {};
+	// 	return retObj;
+	// },
+
+	/** 分类 兵种 序号 贡献数量 */
+	send_C2SFamilyEffDonate(senderSocket, type, id, idx, num) {
 		var myEncoder = WsEncoder.alloc();
-		myEncoder.writeInt(13037);
+		myEncoder.writeInt(13055);
+		myEncoder.writeInt(type);
 		myEncoder.writeInt(id);
+		myEncoder.writeInt(idx);
 		myEncoder.writeInt(num);
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
 	},
 
-	get_13038: function (myDecoder) {
+	get_13056: function (myDecoder) {
 		var retObj = {};
-		return retObj;
-	},
-
-	send_C2SFamilyEffDonate(senderSocket, id, taskid,num) {
-		var myEncoder = WsEncoder.alloc();
-		myEncoder.writeInt(13039);
-		myEncoder.writeInt(id);
-		myEncoder.writeInt(taskid);
-
-		myEncoder.writeInt(num);
-		var rawContent = myEncoder.end();
-		myEncoder.free();
-		senderSocket.sendMessage(rawContent);
-	},
-
-	get_13040: function (myDecoder) {
-		var retObj = {};
+		retObj.id = myDecoder.readInt();
+		retObj.number = myDecoder.readInt();
 		return retObj;
 	},
 

@@ -100,17 +100,28 @@ export default class NewClass extends cc.Component {
         //     this.labelTaskCont.string = data[0].des
         // }
 
-        NetEventDispatcher.addListener(NetEvent.C2SFamilyArmDonate, this.C2SFamilyArmDonate, this)
-        NetEventDispatcher.addListener(NetEvent.C2SFamilyEffDonate, this.C2SFamilyEffDonate, this)
+        NetEventDispatcher.addListener(NetEvent.S2CFamilyArmDonate, this.S2CFamilyArmDonate, this)
+        NetEventDispatcher.addListener(NetEvent.S2CFamilyEffDonate, this.S2CFamilyEffDonate, this)
+
+        
+        let keys = Object.keys(DataManager.GameData.MineStone)
+        console.log(`keys:` + JSON.stringify(keys))
+        for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+            for (let j = 0; j < keys.length; j++) {
+                if (keys[j] == DataManager.instance.itemsList[i].template_id) {
+                    this.node.getChildByName(`pearls`).children[7 + j].getComponent(cc.Label).string = `x` + DataManager.instance.itemsList[i].num
+                }
+            }
+        }
 
     }
 
-    C2SFamilyArmDonate(retObj) {
+    S2CFamilyArmDonate(retObj) {
         console.log(`兵种捐赠返回：` + JSON.stringify(retObj))
 
     }
 
-    C2SFamilyEffDonate(retObj) {
+    S2CFamilyEffDonate(retObj) {
         console.log(`效果捐赠返回：` + JSON.stringify(retObj))
     }
 
@@ -125,8 +136,8 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CFamilyTaskSend, this.C2SFamilyArmDonate, this)
-        NetEventDispatcher.removeListener(NetEvent.C2SFamilyEffDonate, this.C2SFamilyEffDonate, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CFamilyArmDonate, this.S2CFamilyArmDonate, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CFamilyEffDonate, this.S2CFamilyEffDonate, this)
     }
 
     // update (dt) {}

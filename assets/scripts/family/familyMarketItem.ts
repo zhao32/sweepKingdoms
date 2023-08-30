@@ -20,14 +20,8 @@ export default class NewClass extends cc.Component {
 
     @property(cc.Node)
     icon: cc.Node = null;
-
-
-
     // @property(cc.Label)
     // moneyLabel: cc.Label = null;
-
-
-
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
@@ -36,10 +30,16 @@ export default class NewClass extends cc.Component {
 
     }
 
-    init(data) {
-        console.log(`data:`+data)
+    init(data,netData) {
+        console.log(`data:` + JSON.stringify(data) )
         this.nameLabel.string = data.name
-        this.moneyLabel.string = 'x' + data.price
+        if(netData.gamemoney > 0){
+            this.moneyLabel.string = 'x' + netData.gamemoney 
+        }
+
+        if(netData.money > 0){
+            this.moneyLabel.string = 'x' + netData.money 
+        }
         // ResManager.loadItemIcon(`UI/items/${data.icon}`, this.icon)
         ResManager.loadItemIcon(`UI/prop/${data.name}`, this.icon)
 
