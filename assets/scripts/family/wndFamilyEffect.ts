@@ -73,19 +73,27 @@ export default class NewClass extends cc.Component {
     S2CEffectList(retObj) {
         console.log(`家族效果列表：` + JSON.stringify(retObj))
 
-        this.showType = 1
-        this.contect.removeAllChildren()
-        for (let i = 0; i < retObj.effs.length; i++) {
-            let render = cc.instantiate(this.pfb2)
-            render.parent = this.contect
-            if (i < 5) {
-                render.x = 1000
-                this.scheduleOnce(() => {
-                    render.runAction(cc.moveTo(DataManager.SCROLLTIME1, cc.v2(0, render.y)))
-                }, DataManager.SCROLLTIME2 * i)
-            }
-            render.getComponent(familyEffectRender1).init(retObj.effs[i])
+        // this.showType = 1
+        // this.contect.removeAllChildren()
+        // for (let i = 0; i < retObj.effs.length; i++) {
+        //     let render = cc.instantiate(this.pfb2)
+        //     render.parent = this.contect
+        //     if (i < 5) {
+        //         render.x = 1000
+        //         this.scheduleOnce(() => {
+        //             render.runAction(cc.moveTo(DataManager.SCROLLTIME1, cc.v2(0, render.y)))
+        //         }, DataManager.SCROLLTIME2 * i)
+        //     }
+        //     render.getComponent(familyEffectRender1).init(retObj.effs[i])
 
+        // }
+
+        for (let i = 0; i < retObj.effs.length; i++) {
+            // retObj.arms
+            if (this.contect.children[i]) {
+                let render = this.contect.children[i]
+                render.getComponent(familyEffectRender1).initNetData(retObj.effs[i])
+            }
         }
     }
 

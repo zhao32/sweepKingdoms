@@ -7832,9 +7832,9 @@ var MyProtocols = {
 						retObj.effs[i].donates[j] = {}
 						retObj.effs[i].donates[j].id = j + 1;
 						/**需要捐赠的总数量 */
-						retObj.effs[i].donates[j].needDonateNum = myDecoder.readInt();
+						// retObj.effs[i].donates[j].needDonateNum = myDecoder.readInt();
 						// /**已经捐赠的数量 */
-						// retObj.effs[i].donates[j].donatedNum = myDecoder.readInt();
+						retObj.effs[i].donates[j].donatedNum = myDecoder.readInt();
 						// /**没次捐赠的数量 */
 						// retObj.effs[i].donates[j].preDonateNum = myDecoder.readInt();
 						// /**没次捐赠的奖励物品 */

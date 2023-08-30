@@ -27,7 +27,7 @@ export default class NewClass extends cc.Component {
     icon: cc.Node = null;
     // LIFE-CYCLE CALLBACKS:
 
-  
+
     data
 
     netData
@@ -41,13 +41,13 @@ export default class NewClass extends cc.Component {
         // console.log(`this.data.des:`+JSON.stringify(data.des))
         this.data = data
         this.nameLabel.string = data.name
-        this.desLabel.string =data.des
+        this.desLabel.string = data.des
         ResManager.loadItemIcon(`family/effect${data.type}`, this.icon)
 
-        if(DataManager.familyDetail.familyLv < data.Lv){
+        if (DataManager.familyDetail.familyLv < data.Lv) {
             this.node.getChildByName(`btn`).active = false
             this.stateLabel.node.active = true
-        }else{
+        } else {
             this.node.getChildByName(`btn`).active = true
             this.stateLabel.node.active = false
         }
@@ -73,7 +73,7 @@ export default class NewClass extends cc.Component {
 
     onBthHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_ARM_EFF_UP, ...[this.data,this.netData, 2])
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_ARM_EFF_UP, ...[this.data, this.netData, 2])
 
     }
 

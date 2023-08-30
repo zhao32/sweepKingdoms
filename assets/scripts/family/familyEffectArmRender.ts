@@ -66,6 +66,7 @@ export default class NewClass extends cc.Component {
         // } else {
         //     awardName = `家族贡献度`
         // }
+        console
         this.curDonte = 0
         if (netData) {
             this.curDonte = netData.donatedNum
