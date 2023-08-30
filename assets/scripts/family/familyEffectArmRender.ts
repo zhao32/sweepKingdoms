@@ -37,17 +37,18 @@ export default class NewClass extends cc.Component {
     armData
     type
     // LIFE-CYCLE CALLBACKS:
-
+    donateIdx
     // onLoad () {}
 
     start() {
 
     }
 
-    init(donateData, type, armData, netData?: any) {
+    init(donateData, type, armData, donateIdx, netData?: any) {
         this.type = type
         this._donateData = donateData
         this.armData = armData
+        this.donateIdx = donateData
         // this.nameLabel.string = data.name
         // let awardName
         // if (data.awardType == 0) {
@@ -69,15 +70,15 @@ export default class NewClass extends cc.Component {
 
     onContributeHandler() {
         console.log(`type:` + this.armData.type)
-        console.log(`id:` +  this.armData.id)
-        console.log(`this._donateData[3]:` +this._donateData[3])
+        console.log(`id:` + this.armData.id)
+        console.log(`this._donateData[3]:` + this._donateData[3])
 
         if (this.type == 1) {
             console.log(`兵种捐赠`)
-            MyProtocols.send_C2SFamilyArmDonate(DataManager._loginSocket, this.armData.type, this.armData.id, this._donateData[3])
+            MyProtocols.send_C2SFamilyArmDonate(DataManager._loginSocket, this.armData.type, this.armData.id, this.donateIdx, this._donateData[3])
         } else {
             console.log(`效果捐赠`)
-            MyProtocols.send_C2SFamilyEffDonate(DataManager._loginSocket, this.armData.type, this.armData.id, this._donateData[3])
+            MyProtocols.send_C2SFamilyEffDonate(DataManager._loginSocket, this.armData.type, this.armData.id, this.donateIdx, this._donateData[3])
         }
     }
 

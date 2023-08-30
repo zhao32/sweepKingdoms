@@ -88,7 +88,7 @@ export default class NewClass extends cc.Component {
 
             let render = cc.instantiate(this.donatePfb)
             render.parent = this.contect
-            render.getComponent(familyEffectArmRender).init(data.item[i], type, data)
+            render.getComponent(familyEffectArmRender).init(data.item[i], type, data, i)
         }
 
         // if (type == 0) {//主线任务
