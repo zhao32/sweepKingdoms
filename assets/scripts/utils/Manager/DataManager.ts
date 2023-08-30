@@ -221,6 +221,9 @@ export default class DataManager {
         familyTask: {},
         /**家族兵 */
         Mercenary: {},
+
+        /**家族兵 */
+        familyEffect: {},
         /**家族商店 */
         familyGoods: {},
     }

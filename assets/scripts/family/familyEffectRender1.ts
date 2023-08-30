@@ -14,7 +14,6 @@ const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class NewClass extends cc.Component {
-
     @property(cc.Label)
     nameLabel: cc.Label = null;
 
@@ -28,9 +27,9 @@ export default class NewClass extends cc.Component {
     icon: cc.Node = null;
     // LIFE-CYCLE CALLBACKS:
 
+  
     data
 
-    type
     netData
     // onLoad () {}
 
@@ -40,25 +39,35 @@ export default class NewClass extends cc.Component {
 
     init(data) {
         this.data = data
-        // this.nameLabel.string = data.name
-        // this.desLabel.string = data.describe
-        ResManager.loadItemIcon(`family/effect${data.frameIdx}`,this.icon)
+        this.nameLabel.string = data.name
+        this.desLabel.string =data.des
+        ResManager.loadItemIcon(`family/effect${data.type}`, this.icon)
+
+        if(DataManager.familyDetail.familyLv < data.Lv){
+            this.node.getChildByName(`btn`).active = false
+            this.stateLabel.node.active = true
+        }else{
+            this.node.getChildByName(`btn`).active = true
+            this.stateLabel.node.active = false
+        }
     }
 
     initNetData(netData) {
         this.netData = netData
         if (netData.state == 0) {
             this.node.getChildByName(`btn`).active = false
+            this.stateLabel.node.active = true
         } else if (netData.state == 1) {
             this.node.getChildByName(`btn`).active = true
+            this.stateLabel.node.active = false
             this.node.getChildByName(`btn`).children[0].getComponent(cc.Label).string = `升级`
 
         } else if (netData.state == 2) {
             this.node.getChildByName(`btn`).active = true
+            this.stateLabel.node.active = false
             this.node.getChildByName(`btn`).children[0].getComponent(cc.Label).string = `购买`
         }
     }
-
 
 
     onBthHandler() {

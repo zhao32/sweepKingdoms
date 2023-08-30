@@ -73,8 +73,10 @@ export default class NewClass extends cc.Component {
         console.log(`this._donateData[3]:` +this._donateData[3])
 
         if (this.type == 1) {
+            console.log(`兵种捐赠`)
             MyProtocols.send_C2SFamilyArmDonate(DataManager._loginSocket, this.armData.type, this.armData.id, this._donateData[3])
         } else {
+            console.log(`效果捐赠`)
             MyProtocols.send_C2SFamilyEffDonate(DataManager._loginSocket, this.armData.type, this.armData.id, this._donateData[3])
         }
     }

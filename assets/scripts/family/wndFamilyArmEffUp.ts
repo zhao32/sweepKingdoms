@@ -112,18 +112,21 @@ export default class NewClass extends cc.Component {
 
     C2SFamilyEffDonate(retObj) {
         console.log(`效果捐赠返回：` + JSON.stringify(retObj))
-
     }
 
     onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_TASK)
+        if (this.type == 1) {
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_BARRACKS)
+        } else {
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_EFFECT)
+        }
+        // ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
     }
 
     onClose() {
         NetEventDispatcher.removeListener(NetEvent.S2CFamilyTaskSend, this.C2SFamilyArmDonate, this)
         NetEventDispatcher.removeListener(NetEvent.C2SFamilyEffDonate, this.C2SFamilyEffDonate, this)
-
     }
 
     // update (dt) {}

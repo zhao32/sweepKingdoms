@@ -94,7 +94,7 @@ export default class NewClass extends cc.Component {
             }
             render.getComponent(familyEffectRender0).init(this.groupsData[i])
             render.on(cc.Node.EventType.TOUCH_END, () => {
-                // this.showIntragroup(i)
+                this.showIntragroup(i)
                 MyProtocols.send_C2SFamilyArmList(DataManager._loginSocket, i)
             }, this)
         }
@@ -103,8 +103,8 @@ export default class NewClass extends cc.Component {
     showIntragroup(idx) {
         this.showType = 1
         this.contect.removeAllChildren()
-        for (let i = 0; i < DataManager.GameData.Mercenary[idx].length; i++) {
-            let curData = DataManager.GameData.Mercenary[idx][i]
+        for (let i = 0; i < DataManager.GameData.familyEffect[idx].length; i++) {
+            let curData = DataManager.GameData.familyEffect[idx][i]
             let render = cc.instantiate(this.pfb2)
             render.parent = this.contect
             if (i < 5) {

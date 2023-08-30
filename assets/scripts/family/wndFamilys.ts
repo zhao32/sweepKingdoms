@@ -133,7 +133,7 @@ export default class NewClass extends cc.Component {
 
     onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        // ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
+        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
     }
 
     onClose() {
