@@ -32,8 +32,9 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Label, displayName: "捐献数量" })
     LabelBtn: cc.Label = null;
 
-    _data
+    _donateData
 
+    armData
     type
     // LIFE-CYCLE CALLBACKS:
 
@@ -43,25 +44,38 @@ export default class NewClass extends cc.Component {
 
     }
 
-    init(data, type, netData?: any) {
+    init(donateData, type, armData, netData?: any) {
         this.type = type
-        this._data = data
-        this.nameLabel.string = data.name
-        let awardName
-        if (data.awardType == 0) {
-            awardName = `家族声望`
-        } else {
-            awardName = `家族贡献度`
+        this._donateData = donateData
+        this.armData = armData
+        // this.nameLabel.string = data.name
+        // let awardName
+        // if (data.awardType == 0) {
+        //     awardName = `家族声望`
+        // } else {
+        //     awardName = `家族贡献度`
+        // }
+        this.LabelAward.string = `每次捐献可获得声望：` + donateData[2]
+        this.LabelPro.string = `0/${donateData[1]}`
+        this.LabelBtn.string = `捐献` + donateData[3]
+        this.proBar.progress = 0 / donateData[1]
+        let donateItems = DataManager.GameData.Items[String(donateData[0])]
+        console.log('donateItems:' + donateItems)
+        if (donateItems) {
+            this.nameLabel.string = donateItems.name
         }
-        this.LabelAward.string = `每次捐献可获得：` + awardName + `x${data.awardNum}`
-        this.LabelBtn.string = `捐献:${data.donateNum}`
+        // this.LabelBtn.string = `捐献:${data.donateNum}`
     }
 
     onContributeHandler() {
+        console.log(`type:` + this.armData.type)
+        console.log(`id:` +  this.armData.id)
+        console.log(`this._donateData[3]:` +this._donateData[3])
+
         if (this.type == 1) {
-            MyProtocols.send_C2SFamilyArmDonate(DataManager._loginSocket, this._data.id, this._data.donateNum)
+            MyProtocols.send_C2SFamilyArmDonate(DataManager._loginSocket, this.armData.type, this.armData.id, this._donateData[3])
         } else {
-            MyProtocols.send_C2SFamilyEffDonate(DataManager._loginSocket, this._data.id, this._data.donateNum)
+            MyProtocols.send_C2SFamilyEffDonate(DataManager._loginSocket, this.armData.type, this.armData.id, this._donateData[3])
         }
     }
 

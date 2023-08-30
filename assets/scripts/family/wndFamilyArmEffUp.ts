@@ -74,16 +74,23 @@ export default class NewClass extends cc.Component {
         this.labelTaskName.string = data.name
         this.labelTaskCont.string = `以下条件全部达成，可召唤${data.name}`
         this.labelTaskAward.string = ``
-        
+
         this.contect.removeAllChildren()
-        if(netdata){
-            for (let i = 0; i < netdata.donates.length; i++) {
-                let render = cc.instantiate(this.donatePfb)
-                render.parent = this.contect
-                render.getComponent(familyEffectArmRender).init(data[i], type, netdata.donates[i])
-            }
+        // if(netdata){
+        //     for (let i = 0; i < netdata.donates.length; i++) {
+        //         let render = cc.instantiate(this.donatePfb)
+        //         render.parent = this.contect
+        //         render.getComponent(familyEffectArmRender).init(data[i], type, netdata.donates[i])
+        //     }
+        // }
+
+        for (let i = 0; i < data.item.length; i++) {
+
+            let render = cc.instantiate(this.donatePfb)
+            render.parent = this.contect
+            render.getComponent(familyEffectArmRender).init(data.item[i], type, data)
         }
-       
+
         // if (type == 0) {//主线任务
         //     this.labelTaskName.string = `主线任务`
         //     this.labelTaskCont.string = data[0].des

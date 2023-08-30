@@ -46,8 +46,8 @@ export default class NewClass extends cc.Component {
     init(data) {
         this.data = data
         this.nameLabel.string = data.name
-        this.desLabel.string = `lv.${data.Lv}`//data.describe
-        ResManager.loadItemIcon(`family/familyArm${data.frameIdx}`, this.icon)
+        this.desLabel.string =data.des
+        ResManager.loadItemIcon(`family/familyArm${data.type}`, this.icon)
     }
 
     initNetData(netData) {

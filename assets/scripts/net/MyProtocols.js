@@ -7901,7 +7901,7 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	send_C2SFamilyArmDonate(senderSocket, id, num) {
+	send_C2SFamilyEffDonate(senderSocket, id, num) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(13039);
 		myEncoder.writeInt(id);
