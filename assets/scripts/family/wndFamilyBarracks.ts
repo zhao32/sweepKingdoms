@@ -89,6 +89,7 @@ export default class NewClass extends cc.Component {
         // }
 
         for (let i = 0; i < retObj.arms; i++) {
+            // retObj.arms
             if (this.contect.children[i]) {
                 let render = this.contect.children[i]
                 render.getComponent(familyBarrackRender1).initNetData(retObj.arms[i])

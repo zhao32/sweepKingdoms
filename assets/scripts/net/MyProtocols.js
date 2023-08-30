@@ -7829,7 +7829,7 @@ var MyProtocols = {
 				if (donates_size > 0) {
 					for (let j = 0; j < donates_size; j++) {
 						retObj.effs[i].donates[j] = {}
-						retObj.effs[i].donates[j].id = j;
+						retObj.effs[i].donates[j].id = j; 
 						/**需要捐赠的总数量 */
 						retObj.effs[i].donates[j].needDonateNum = myDecoder.readInt();
 						// /**已经捐赠的数量 */

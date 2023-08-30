@@ -48,7 +48,7 @@ export default class NewClass extends cc.Component {
         this.type = type
         this._donateData = donateData
         this.armData = armData
-        this.donateIdx = donateData
+        this.donateIdx = donateIdx
         // this.nameLabel.string = data.name
         // let awardName
         // if (data.awardType == 0) {
@@ -60,7 +60,7 @@ export default class NewClass extends cc.Component {
         if(netData){
             curDonte = netData.donatedNum
         }
-        
+
         this.LabelAward.string = `每次捐献可获得声望：` + donateData[2]
         this.LabelPro.string = `${curDonte}/${donateData[1]}`
         this.LabelBtn.string = `捐献` + donateData[3]
