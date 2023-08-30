@@ -53,8 +53,20 @@ export default class NewClass extends cc.Component {
         }
         this.LabelAward.string = `每次捐献可获得：` + awardName + `x${data.awardNum}`
         this.LabelBtn.string = `捐献:${data.donateNum}`
-        this.LabelPro.string = `${0}/${data.donateMax}`
-        this.proBar.progress = 0 / data.donateMax
+        let curDonte: number
+        for (let i = 0; i < DataManager.familyDetail.task1.length; i++) {
+            if (DataManager.familyDetail.task1[i].id == data.id) {
+                curDonte = DataManager.familyDetail.task1[i].num
+            }
+        }
+
+        for (let i = 0; i < DataManager.familyDetail.task2.length; i++) {
+            if (DataManager.familyDetail.task2[i].id == data.id) {
+                curDonte = DataManager.familyDetail.task2[i].num
+            }
+        }
+        this.LabelPro.string = `${curDonte}/${data.donateMax}`
+        this.proBar.progress = curDonte / data.donateMax
     }
 
     onContributeHandler() {

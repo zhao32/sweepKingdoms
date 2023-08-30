@@ -62,7 +62,12 @@ interface familyData {
     notice: string,
     familyChiefName: string,
     familyChiefID: string,
-    autoEnter: number
+    autoEnter: number,
+    /**主线任务 */
+    task1: any[],
+    /**日常任务 */
+    task2: any[],
+
 }
 
 export default class DataManager {
@@ -144,7 +149,10 @@ export default class DataManager {
         notice: '',
         familyChiefID: '',
         familyChiefName: '',
-        autoEnter: 0
+        autoEnter: 0,
+        task1: [],
+        task2: [],
+
     }
 
     static group(array, subGroupLength) {
@@ -164,7 +172,7 @@ export default class DataManager {
     static GameData = {
         zh: {},
         /**玩家等级配置 */
-        Levels:[],
+        Levels: [],
         /**兵种信息 */
         Soldier: {},
         /**建筑信息 */

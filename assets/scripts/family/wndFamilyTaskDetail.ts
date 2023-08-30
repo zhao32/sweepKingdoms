@@ -55,6 +55,7 @@ export default class NewClass extends cc.Component {
     @property(cc.Node)
     icon: cc.Node = null;
 
+    data
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -66,6 +67,7 @@ export default class NewClass extends cc.Component {
     }
 
     init(data, type) {
+        this.data = data
         console.log("--data:" + JSON.stringify(data))
         this.labelReputation.string = DataManager.familyDetail.reputation.toString()
         this.labelContribute.string = DataManager.familyDetail.contribution.toString()
@@ -80,7 +82,7 @@ export default class NewClass extends cc.Component {
         if (type == 0) {//主线任务
             this.labelTaskName.string = `主线任务`
             this.labelTaskCont.string = data[0].des
-            ResManager.loadItemIcon(`family/familyTask0`,this.icon)
+            ResManager.loadItemIcon(`family/familyTask0`, this.icon)
 
         } else {//支线任务
             this.labelTaskName.string = data[0].name
@@ -91,7 +93,7 @@ export default class NewClass extends cc.Component {
 
         NetEventDispatcher.addListener(NetEvent.S2CFamilyTaskSend, this.S2CFamilyTaskSend, this)
 
-        
+
         let keys = Object.keys(DataManager.GameData.MineStone)
         console.log(`keys:` + JSON.stringify(keys))
         for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
@@ -105,9 +107,26 @@ export default class NewClass extends cc.Component {
     }
 
     S2CFamilyTaskSend(retObj) {
-        console.log(`捐献返回：`+ JSON.stringify(retObj))
+        console.log(`捐献返回：` + JSON.stringify(retObj))
         ViewManager.instance.showToast(`捐献成功`)
         // {"tempid":1,"number":500000}
+
+        for (let i = 0; i < DataManager.familyDetail.task1.length; i++) {
+            if (DataManager.familyDetail.task1[i].id == retObj.tempid) {
+                DataManager.familyDetail.task1[i].num += retObj.number
+            }
+        }
+
+        for (let i = 0; i < DataManager.familyDetail.task2.length; i++) {
+            if (DataManager.familyDetail.task2[i].id == retObj.tempid) {
+                DataManager.familyDetail.task2[i].num += retObj.number
+            }
+        }
+
+        for (let i = 0; i < this.contect.children.length; i++) {
+            let render = this.contect.children[i]
+            render.getComponent(familyDonateRender).init(this.data[i])
+        }
 
     }
 

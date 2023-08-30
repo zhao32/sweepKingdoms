@@ -7562,9 +7562,10 @@ var MyProtocols = {
 
 			retObj.familyChiefName = myDecoder.readString();
 			retObj.familyChiefID = myDecoder.readInt();
-			retObj.autoEnter = myDecoder.readInt();// 0 不需要验证  1 需要验证  2 禁止加入
-
+			retObj.autoEnter = myDecoder.readInt();// 0 不需要验证  1 需要验证  2 禁止加入
+			// debugger;
 			var task1_size = myDecoder.readInt();
+			retObj.task1 = [];
 			for (var i = 0; i < task1_size; i++) {
 				retObj.task1[i] = {};
 				retObj.task1[i].id = myDecoder.readInt();
@@ -7572,6 +7573,7 @@ var MyProtocols = {
 			}
 
 			var task2_size = myDecoder.readInt();
+			retObj.task2 = [];
 			for (var i = 0; i < task2_size; i++) {
 				retObj.task2[i] = {};
 				retObj.task2[i].id = myDecoder.readInt();

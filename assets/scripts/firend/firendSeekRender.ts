@@ -5,6 +5,8 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import ResManager from "../utils/Manager/ResManager";
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass
@@ -30,7 +32,7 @@ export default class NewClass extends cc.Component {
     init(data) {
         this.labelDisPlay1.string = data.group
         this.labelDisPlay2.string = data.describe
-
+        ResManager.loadItemIcon(`firend/firendIcon${data.frameIdx}`, this.icon)
     }
 
     // update (dt) {}

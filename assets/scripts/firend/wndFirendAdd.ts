@@ -40,12 +40,12 @@ export default class NewClass extends cc.Component {
         {
             group: '同国玩家',
             describe: '查找和你同国的玩家',
-            frameIdx: 0
+            frameIdx: 1
         },
         {
             group: '按条件查询',
             describe: '通过指定的条件查询',
-            frameIdx: 1
+            frameIdx: 2
         }
     ]
 
