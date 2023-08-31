@@ -57,6 +57,8 @@ export default class NewClass extends cc.Component {
             return
         }
         DataManager.pageGoBattle.selectIdx = parseInt(this.PosY)
+        DataManager.pageGoBattle.curPageIdx = parseInt(this.PosX)
+
         MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.PosX, DataManager.pageGoBattle.nation_id)
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
 

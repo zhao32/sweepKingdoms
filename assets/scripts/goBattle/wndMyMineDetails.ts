@@ -76,7 +76,7 @@ export default class NewClass extends cc.Component {
     init(data = this._data) {
         this._data = data
         // this._detailData = DataManager.curMineDetailData
-        console.log('detailData:' + JSON.stringify(DataManager.curMineDetailData))
+        console.log('this._data:' + JSON.stringify(this._data))
         // let name = DataManager.mineData[data.group].name
         let name = DataManager.getName(data)
         // if (data.lv == 0) {
@@ -103,7 +103,7 @@ export default class NewClass extends cc.Component {
         this.lordLabel.string = `领主：${data.nickname}`
         this.awardLabel.string = `已产出：${DataManager.curMineDetailData.gains}`
         this.troopsLabel.string = `兵力：${data.fight}`
-        this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + '国'
+        this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + '国' + ` ` + `(` + data.page + `,` + data.idx + `)`
 
 
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)

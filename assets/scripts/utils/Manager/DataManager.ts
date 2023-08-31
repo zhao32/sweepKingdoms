@@ -288,9 +288,9 @@ export default class DataManager {
     /**技能属性索引 */
     static readonly skillAttributeList = ['', '挥砍防御', '挥砍攻击', '穿透防御', '穿透攻击', '法术攻击', '法术防御']
 
-    static readonly barracksList = ["军营", '盾卫训练场', '骑士训练场', '枪兵训练场', '箭手训练场', '法师训练场', '木牛工厂', '军魂祭坛', '部队强化']
-    static readonly resourceList = ["铸币工坊", "粮草工坊", "领土中心", "技术研究所"];
-    static readonly basicList = ["居民区", "资源仓库", "神像", "英魂墓地", "城墙"];
+    static readonly barracksList = ["军营", '盾卫训练场', '骑士训练场', '枪兵训练场', '箭手训练场', '法师训练场', '木牛工厂', '军魂祭坛', '部队强化', "神像", "英魂墓地"]
+    static readonly resourceList = ["城墙", "居民区", "铸币工坊", "粮草工坊", "领土中心", "技术研究所", "资源仓库"];
+    static readonly basicList = [];
     static readonly qualityList = ['', '上古', '传奇', '天选', '无双', '名将']
 
     /**矿区基本信息 */

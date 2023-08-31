@@ -96,7 +96,7 @@ export default class NewClass extends cc.Component {
             if (data.bulidLv == 0) {
                 this.nameLabel.string = `未建造` + data.lv + '级' + name
             } else {
-                let lvList =data.lv + "级 " +  ["微型", "小型", "中型", "大型", "巨型"]
+                let lvList = data.lv + "级 " + ["微型", "小型", "中型", "大型", "巨型"]
                 this.nameLabel.string = lvList[data.bulidLv - 1] + name
             }
         }
@@ -110,7 +110,8 @@ export default class NewClass extends cc.Component {
         this.troopsLabel.string = `兵力：${data.fight}`
 
         this.titleLabel.string = DataManager.mineData[data.group].name
-        this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + '国'
+        // this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + '国'
+        this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + '国' + ` ` + `(` + data.page + `,` + data.idx + `)`
 
 
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)

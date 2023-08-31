@@ -466,6 +466,19 @@ export default class NewClass extends cc.Component {
     }
 
     applyMines() {
+        console.log("prePageIdx:" + this.curPageIdx)
+        console.log("preNation:" + this.nation_id)
+        if (this.curPageIdx > 400) {
+            this.curPageIdx -= 400
+            this.nation_id = (this.nation_id + 1) % 7
+        } else if (this.curPageIdx < 0) {
+            this.curPageIdx += 400
+            this.nation_id = (this.nation_id - 1) % 7
+        }
+        if (this.nation_id == 0) this.nation_id = 7
+        console.log("curPageIdx:" + this.curPageIdx)
+        console.log("curNation:" + this.nation_id)
+
         let delay = 0.25
         MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
         this.scheduleOnce(() => {
@@ -539,7 +552,7 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines, this)
 
         this.nation_id = DataManager.playData.nation_id
-        this.curPageIdx = 2
+        this.curPageIdx = 10
         this.applyMines()
 
 

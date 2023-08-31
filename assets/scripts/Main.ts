@@ -196,7 +196,7 @@ export default class NewClass extends cc.Component {
         }
 
         for (let i = 0; i < retObj.resource_build.length; i++) {
-            DataManager.GameData.build['resource'][i].grade = retObj.resource_build[i]
+            if (DataManager.GameData.build['resource'][i]) DataManager.GameData.build['resource'][i].grade = retObj.resource_build[i]
         }
 
         EventManager.getInstance().sendListener(EventManager.UPDATE_MAINHOME_INFO)
@@ -271,7 +271,7 @@ export default class NewClass extends cc.Component {
             DataManager.playData.troops = retObj.value
         } else if (retObj.type == 12) {
 
-        }else if (retObj.type == 13) {
+        } else if (retObj.type == 13) {
             DataManager.playData.food = retObj.value
         }
 

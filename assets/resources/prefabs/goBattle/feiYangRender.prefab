@@ -357,8 +357,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -128,
-        42,
+        -142,
+        36,
         0,
         0,
         0,
@@ -488,8 +488,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -125,
-        4,
+        -139,
+        -33,
         0,
         0,
         0,
@@ -596,8 +596,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -107,
-        -40,
+        104.299,
+        -0.203,
         0,
         0,
         0,
@@ -672,7 +672,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 19
@@ -801,7 +801,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 59.14,
+      "width": 50.7,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -813,8 +813,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -84.913,
-        -39.756,
+        126.386,
+        0.041,
         0,
         0,
         0,
@@ -855,7 +855,7 @@
     "_dstBlendFactor": 771,
     "_string": "10万",
     "_N$string": "10万",
-    "_fontSize": 28,
+    "_fontSize": 24,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,
@@ -913,7 +913,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 26

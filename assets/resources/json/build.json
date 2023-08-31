@@ -62,73 +62,72 @@
       "grade": 1,
       "group": "barracks",
       "idx": 9
-    }
-  ],
-  "resource": [
+    },
     {
-      "name": "铸币工坊",
+      "name": "神像",
       "state": 1,
       "grade": 1,
-      "group": "resource",
+      "group": "barracks",
+      "idx": 10
+    },
+    {
+      "name": "英魂墓地",
+      "state": 1,
+      "grade": 1,
+      "group": "barracks",
+      "idx": 11
+    }
+  ],
+  "resource": [],
+  "basic": [
+    {
+      "name": "城墙",
+      "state": 1,
+      "grade": 1,
+      "group": "basic",
       "idx": 1
     },
-    {
-      "name": "粮草工坊",
-      "state": 1,
-      "grade": 1,
-      "group": "resource",
-      "idx": 2
-    },
-    {
-      "name": "领土中心",
-      "state": 1,
-      "grade": 1,
-      "group": "resource",
-      "idx": 3
-    },
-    {
-      "name": "技术研究所",
-      "state": 1,
-      "grade": 1,
-      "group": "resource",
-      "idx": 4
-    }
-  ],
-  "basic": [
     {
       "name": "居民区",
       "state": 1,
       "grade": 1,
       "group": "basic",
-      "idx": 1
+      "idx": 2
+    },
+    {
+      "name": "铸币工坊",
+      "state": 1,
+      "grade": 1,
+      "group": "basic",
+      "idx": 3
+    },
+    {
+      "name": "粮草工坊",
+      "state": 1,
+      "grade": 1,
+      "group": "basic",
+      "idx": 4
+    },
+    {
+      "name": "领土中心",
+      "state": 1,
+      "grade": 1,
+      "group": "basic",
+      "idx": 5
+    },
+    {
+      "name": "技术研究所",
+      "state": 1,
+      "grade": 1,
+      "group": "basic",
+      "idx": 6
     },
     {
       "name": "资源仓库",
       "state": 1,
       "grade": 1,
       "group": "basic",
-      "idx": 2
-    },
-    {
-      "name": "神像",
-      "state": 1,
-      "grade": 1,
-      "group": "basic",
-      "idx": 3
-    },
-    {
-      "name": "英魂墓地",
-      "state": 1,
-      "grade": 1,
-      "group": "basic",
-      "idx": 4
-    },
-    {
-      "name": "城墙",
-      "state": 1,
-      "grade": 1,
-      "group": "basic",
-      "idx": 5
+      "idx": 7
     }
   ]
 }

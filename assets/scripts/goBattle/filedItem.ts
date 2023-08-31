@@ -85,7 +85,6 @@ export default class NewClass extends cc.Component {
                 }
             }
             if (!data.hold_player.id) {
-                console.log(`&&&&&&&&&&&&&&&&&`)
                 this.nameLabel.string = data.hold_player.lv + `级` + filedName
             }
         }

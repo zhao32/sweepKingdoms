@@ -144,6 +144,8 @@ export default class NewClass extends cc.Component {
 
             render.on(cc.Node.EventType.TOUCH_END, () => {
                 DataManager.pageGoBattle.selectIdx = mineData[i].hold_player.idx
+                DataManager.pageGoBattle.curPageIdx = mineData[i].hold_player.page
+
                 console.log(`查找第 ${mineData[i].hold_player.page} 页   第 ${mineData[i].hold_player.idx}个`)
                 DataManager.pageGoBattle.changeCountryId(data[i].hold_player.country)
                 MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, mineData[i].hold_player.page, DataManager.pageGoBattle.nation_id)
@@ -154,7 +156,7 @@ export default class NewClass extends cc.Component {
 
     init() {
         // this.showGroups()
-        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines,this)
+        NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines, this)
 
     }
 
@@ -168,7 +170,7 @@ export default class NewClass extends cc.Component {
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CFindMines, this.S2CFindMines,this)
+        NetEventDispatcher.removeListener(NetEvent.S2CFindMines, this.S2CFindMines, this)
 
     }
     // update (dt) {}

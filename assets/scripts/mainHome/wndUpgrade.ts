@@ -143,35 +143,38 @@ export default class NewClass extends cc.Component {
             let tipStr = ''
             if (this.group == 'basic') {
                 if (idx == 1) {
-                    tipStr = `每小时，提供 ${upLevelData.proportion[1]} 人口上限，每小时恢复 ${upLevelData.proportion[2]} 人口`
-                } else if (idx == 2) {
-                    tipStr = `保护${upLevelData.protect[0]}金币，${upLevelData.protect[1]}粮草，${upLevelData.protect[2]}晶石，不被掠夺`
-                } else if (idx == 3) {
-                    tipStr = `所有士兵生命值加成 ${upLevelData.protect[0]}`
-                } else if (idx == 4) {
-                    tipStr = `可存储 ${upLevelData.protect} 阵亡士兵的灵魂，并复活他们`
-                } else if (idx == 5) {
-                    tipStr = `守城士兵初始防御值加成 ${upLevelData.protect * 100}%`
+                    tipStr = `守城士兵初始防御值加成 ${levelData.protect * 100}%`
+                } else if (idx == 2) {//居民区
+                    tipStr = `每小时，提供 ${levelData.proportion[1]} 人口上限，每小时恢复 ${levelData.proportion[2]} 人口`
+                } else if (idx == 3) {//铸币工坊
+                    tipStr = `每小时产出 ${levelData.species} 金币`
+                } else if (idx == 4) {//粮草工坊
+                    tipStr = `每小时产出 ${levelData.food} 粮草`
+                } else if (idx == 5) {//领土中心
+                    tipStr = `可占领 ${levelData.mine}个资源点`
+                } else if (idx == 6) {//技术研究所
+                    tipStr = `野外的资源点建筑每小时多产出 ${levelData.proportion[1]}%`
+                } else if (idx == 7) {//资源仓库
+                    tipStr = `保护${levelData.protect[0]}金币，${levelData.protect[1]}粮草，${levelData.protect[2]}晶石，不被掠夺`
                 }
+
             } else if (this.group == 'resource') {
-                if (idx == 1) {
-                    tipStr = `每小时产出 ${upLevelData.species} 金币`
-                } else if (idx == 2) {
-                    tipStr = `每小时产出 ${upLevelData.food} 粮草`
-                } else if (idx == 3) {
-                    tipStr = `可占领 ${upLevelData.mine}个资源点`
-                } else if (idx == 4) {
-                    tipStr = `野外的资源点建筑每小时多产出 ${upLevelData.proportion[1]}%`
-                }
+              
             } else if (this.group == 'barracks') {
+
+
                 if (idx == 1) {
-                    tipStr = `提供 ${upLevelData.Soldier} 个士兵上限`
+                    tipStr = `提供 ${levelData.Soldier} 个士兵上限`
                 } else if (idx == 8) {
-                    tipStr = `可以招募特色兵种，每次招募 ${upLevelData.population}%主城人口`
+                    tipStr = `可以招募特色兵种，每次招募 ${levelData.population[1]}%主城人口`
                 } else if (idx == 9) {
                     tipStr = `可以强化士兵的属性`
+                } else if (idx == 10) {//神像
+                    tipStr = `所有士兵生命值加成 ${levelData.protect[0]}`
+                } else if (idx == 11) {//英魂墓地
+                    tipStr = `可存储 ${levelData.protect} 阵亡士兵的灵魂，并复活他们`
                 } else {
-                    tipStr = `可以招募${DataManager.GameData.Soldier[upLevelData.soldier[0]].name}，每次招募 ${upLevelData.population[1]}%主城人口`
+                    tipStr = `可以招募${DataManager.GameData.Soldier[levelData.soldier[0]].name}，每次招募 ${levelData.population[1]}%主城人口`
                 }
             }
             this.upDisplay.string = `升级效果: ${tipStr}`

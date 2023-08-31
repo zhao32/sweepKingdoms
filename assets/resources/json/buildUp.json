@@ -768,85 +768,253 @@
         "money": 5000,
         "attribute": 10
       }
+    ],
+    "10": [
+      {
+        "unlocklevel": 20,
+        "money": 200000,
+        "protect": [
+          0.1
+        ]
+      },
+      {
+        "unlocklevel": 30,
+        "money": 200000,
+        "protect": [
+          1.22
+        ]
+      },
+      {
+        "unlocklevel": 40,
+        "money": 200000,
+        "protect": [
+          2.23
+        ]
+      },
+      {
+        "unlocklevel": 50,
+        "money": 200000,
+        "protect": [
+          3.16
+        ]
+      },
+      {
+        "unlocklevel": 60,
+        "money": 200000,
+        "protect": [
+          4.06
+        ]
+      }
+    ],
+    "11": [
+      {
+        "unlocklevel": 5,
+        "money": 100000,
+        "protect": 50000
+      },
+      {
+        "unlocklevel": 10,
+        "money": 100000,
+        "protect": 55000
+      },
+      {
+        "unlocklevel": 15,
+        "money": 100000,
+        "protect": 65000
+      },
+      {
+        "unlocklevel": 20,
+        "money": 100000,
+        "protect": 75000
+      },
+      {
+        "unlocklevel": 30,
+        "money": 100000,
+        "protect": 85000
+      },
+      {
+        "unlocklevel": 40,
+        "money": 100000,
+        "protect": 95000
+      },
+      {
+        "unlocklevel": 50,
+        "money": 100000,
+        "protect": 105000
+      },
+      {
+        "unlocklevel": 60,
+        "money": 100000,
+        "protect": 115000
+      }
     ]
   },
   "resource": {
     "1": [
       {
-        "unlocklevel": 1,
-        "money": 500,
-        "species": [
-          1,
-          670
-        ]
-      },
-      {
-        "unlocklevel": 2,
-        "money": 600,
-        "species": [
-          1,
-          770
-        ]
-      },
-      {
-        "unlocklevel": 3,
-        "money": 700,
-        "species": [
-          1,
-          870
-        ]
-      },
-      {
-        "unlocklevel": 4,
-        "money": 800,
-        "species": [
-          1,
-          970
-        ]
-      },
-      {
         "unlocklevel": 5,
-        "money": 900,
-        "species": [
-          1,
-          1070
-        ]
+        "money": 100000,
+        "protect": 0.1
       },
       {
-        "unlocklevel": 6,
-        "money": 1000,
-        "species": [
-          1,
-          1170
-        ]
+        "unlocklevel": 10,
+        "money": 100000,
+        "protect": 0.2
       },
       {
-        "unlocklevel": 7,
-        "money": 1100,
-        "species": [
-          1,
-          1270
-        ]
+        "unlocklevel": 15,
+        "money": 100000,
+        "protect": 0.3
       },
       {
-        "unlocklevel": 8,
-        "money": 1200,
-        "species": [
-          1,
-          1370
-        ]
+        "unlocklevel": 20,
+        "money": 100000,
+        "protect": 0.4
       },
       {
-        "unlocklevel": 9,
-        "money": 1300,
-        "species": [
-          1,
-          1470
-        ]
+        "unlocklevel": 30,
+        "money": 100000,
+        "protect": 0.5
+      },
+      {
+        "unlocklevel": 40,
+        "money": 100000,
+        "protect": 0.6
+      },
+      {
+        "unlocklevel": 50,
+        "money": 100000,
+        "protect": 0.7
+      },
+      {
+        "unlocklevel": 60,
+        "money": 100000,
+        "protect": 0.8
       }
     ],
     "2": [
       {
+        "unlocklevel": 10,
+        "money": 540,
+        "proportion": [
+          1,
+          15894,
+          21000
+        ]
+      },
+      {
+        "unlocklevel": 20,
+        "money": 1040,
+        "proportion": [
+          1,
+          16894,
+          21000
+        ]
+      },
+      {
+        "unlocklevel": 30,
+        "money": 2040,
+        "proportion": [
+          1,
+          16894,
+          21000
+        ]
+      },
+      {
+        "unlocklevel": 40,
+        "money": 3040,
+        "proportion": [
+          1,
+          18894,
+          21000
+        ]
+      },
+      {
+        "unlocklevel": 50,
+        "money": 4040,
+        "proportion": [
+          1,
+          19894,
+          21000
+        ]
+      }
+    ],
+    "3": [
+      {
+        "unlocklevel": 1,
+        "money": 500,
+        "species": [
+          1,
+          670
+        ]
+      },
+      {
+        "unlocklevel": 2,
+        "money": 600,
+        "species": [
+          1,
+          770
+        ]
+      },
+      {
+        "unlocklevel": 3,
+        "money": 700,
+        "species": [
+          1,
+          870
+        ]
+      },
+      {
+        "unlocklevel": 4,
+        "money": 800,
+        "species": [
+          1,
+          970
+        ]
+      },
+      {
+        "unlocklevel": 5,
+        "money": 900,
+        "species": [
+          1,
+          1070
+        ]
+      },
+      {
+        "unlocklevel": 6,
+        "money": 1000,
+        "species": [
+          1,
+          1170
+        ]
+      },
+      {
+        "unlocklevel": 7,
+        "money": 1100,
+        "species": [
+          1,
+          1270
+        ]
+      },
+      {
+        "unlocklevel": 8,
+        "money": 1200,
+        "species": [
+          1,
+          1370
+        ]
+      },
+      {
+        "unlocklevel": 9,
+        "money": 1300,
+        "species": [
+          1,
+          1470
+        ]
+      }
+    ],
+    "4": [
+      {
         "unlocklevel": 1,
         "money": 500,
         "food": [
@@ -919,7 +1087,7 @@
         ]
       }
     ],
-    "3": [
+    "5": [
       {
         "unlocklevel": 1,
         "money": 500,
@@ -966,7 +1134,7 @@
         "mine": 11
       }
     ],
-    "4": [
+    "6": [
       {
         "unlocklevel": 1,
         "money": 500,
@@ -1039,57 +1207,8 @@
           10
         ]
       }
-    ]
-  },
-  "basic": {
-    "1": [
-      {
-        "unlocklevel": 10,
-        "money": 540,
-        "proportion": [
-          1,
-          15894,
-          21000
-        ]
-      },
-      {
-        "unlocklevel": 20,
-        "money": 1040,
-        "proportion": [
-          1,
-          16894,
-          21000
-        ]
-      },
-      {
-        "unlocklevel": 30,
-        "money": 2040,
-        "proportion": [
-          1,
-          16894,
-          21000
-        ]
-      },
-      {
-        "unlocklevel": 40,
-        "money": 3040,
-        "proportion": [
-          1,
-          18894,
-          21000
-        ]
-      },
-      {
-        "unlocklevel": 50,
-        "money": 4040,
-        "proportion": [
-          1,
-          19894,
-          21000
-        ]
-      }
     ],
-    "2": [
+    "7": [
       {
         "unlocklevel": 10,
         "money": 500000,
@@ -1144,127 +1263,7 @@
           1050000
         ]
       }
-    ],
-    "3": [
-      {
-        "unlocklevel": 20,
-        "money": 200000,
-        "protect": [
-          0.1
-        ]
-      },
-      {
-        "unlocklevel": 30,
-        "money": 200000,
-        "protect": [
-          1.22
-        ]
-      },
-      {
-        "unlocklevel": 40,
-        "money": 200000,
-        "protect": [
-          2.23
-        ]
-      },
-      {
-        "unlocklevel": 50,
-        "money": 200000,
-        "protect": [
-          3.16
-        ]
-      },
-      {
-        "unlocklevel": 60,
-        "money": 200000,
-        "protect": [
-          4.06
-        ]
-      }
-    ],
-    "4": [
-      {
-        "unlocklevel": 5,
-        "money": 100000,
-        "protect": 50000
-      },
-      {
-        "unlocklevel": 10,
-        "money": 100000,
-        "protect": 55000
-      },
-      {
-        "unlocklevel": 15,
-        "money": 100000,
-        "protect": 65000
-      },
-      {
-        "unlocklevel": 20,
-        "money": 100000,
-        "protect": 75000
-      },
-      {
-        "unlocklevel": 30,
-        "money": 100000,
-        "protect": 85000
-      },
-      {
-        "unlocklevel": 40,
-        "money": 100000,
-        "protect": 95000
-      },
-      {
-        "unlocklevel": 50,
-        "money": 100000,
-        "protect": 105000
-      },
-      {
-        "unlocklevel": 60,
-        "money": 100000,
-        "protect": 115000
-      }
-    ],
-    "5": [
-      {
-        "unlocklevel": 5,
-        "money": 100000,
-        "protect": 0.1
-      },
-      {
-        "unlocklevel": 10,
-        "money": 100000,
-        "protect": 0.2
-      },
-      {
-        "unlocklevel": 15,
-        "money": 100000,
-        "protect": 0.3
-      },
-      {
-        "unlocklevel": 20,
-        "money": 100000,
-        "protect": 0.4
-      },
-      {
-        "unlocklevel": 30,
-        "money": 100000,
-        "protect": 0.5
-      },
-      {
-        "unlocklevel": 40,
-        "money": 100000,
-        "protect": 0.6
-      },
-      {
-        "unlocklevel": 50,
-        "money": 100000,
-        "protect": 0.7
-      },
-      {
-        "unlocklevel": 60,
-        "money": 100000,
-        "protect": 0.8
-      }
     ]
-  }
+  },
+  "basic": {}
 }

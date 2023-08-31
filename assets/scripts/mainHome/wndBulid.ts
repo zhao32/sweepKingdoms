@@ -80,7 +80,7 @@ export default class NewClass extends cc.Component {
         let bulidData = []
         if (idx == 1){
             bulidData = DataManager.GameData.build["basic"]
-            bulidData.push(...DataManager.GameData.build["resource"])
+            // bulidData.push(...DataManager.GameData.build["resource"])
         } 
         else if (idx == 2) bulidData = DataManager.GameData.build["barracks"]
 

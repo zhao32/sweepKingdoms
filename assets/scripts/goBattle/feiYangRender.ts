@@ -36,11 +36,15 @@ export default class NewClass extends cc.Component {
     }
 
     init(data) {
-
-        // {"hold_player":{"id":9976,"nickname":"无谓的遂平秀才","level":49,"icon":1,"head_frame_id":1,"fight":2796,"cd_time":0,"group":2,"lv":3,"page":0,"idx":3}}
-        this.nameLabel.string = data.hold_player.nickname
+        console.log(`data:` + JSON.stringify(data))
+        // data:{"hold_player":{"id":0,"nickname":"","level":0,"icon":0,"head_frame_id":0,"fight":0,"cd_time":0,"group":101,"lv":0,"page":25,"idx":12,"country":7,"reward":10000}}
+        this.nameLabel.string = data.hold_player.nickname == '' ? '未被占领' + ` ` + `(` + data.hold_player.page + `,` + data.hold_player.idx + `)` : `${data.hold_player.nickname}` + ` ` + `(` + data.hold_player.page + `,` + data.hold_player.idx + `)`
         // this.foodLabel.string = data.hold_player.nickname
         let name = DataManager.mineData[data.hold_player.group].name
+        this.coinLabel.string = data.hold_player.reward
+        this.fightLabel.string = `兵力：` + data.hold_player.fight
+
+        // + ` ` + `(` + data.page + `,` + data.idx + `)`
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
 
     }
