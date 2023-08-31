@@ -70,6 +70,7 @@ export default class NewClass extends cc.Component {
 
     init(data, netdata, type) {
         this.type = type
+        console.log(`this.type:`+ this.type)
         console.log("data:" + JSON.stringify(data))
         this.labelReputation.string = DataManager.familyDetail.reputation.toString()
         this.labelContribute.string = DataManager.familyDetail.contribution.toString()
@@ -80,16 +81,16 @@ export default class NewClass extends cc.Component {
         this.labelTaskCont.string = `以下条件全部达成，${data.des}`
         this.labelTaskAward.string = ``
 
-        if (data.type == 0) {//人气滚滚
+        if (this.type == 1) {//兵
             // this.labelTaskName.string = `主线任务`
             // this.labelTaskCont.string = data[0].des
-            ResManager.loadItemIcon(`family/effect0`, this.icon)
-
-        } else {//支线任务
+            // ResManager.loadItemIcon(`family/effect0`, this.icon)
+            ResManager.loadItemIcon(`family/familyArm${data.type}`, this.icon)
+        } else {//效果
             // this.labelTaskName.string = data[0].name
             // this.labelTaskCont.string = data[0].des
             // ResManager.loadItemIcon(`family/familyTask1`,this.icon)
-            ResManager.loadItemIcon(`UI/prop/effect1`, this.icon)
+            ResManager.loadItemIcon(`family/effect${data.type}`, this.icon)
         }
 
         this.contect.removeAllChildren()

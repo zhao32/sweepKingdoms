@@ -290,6 +290,10 @@ export default class NewClass extends cc.Component {
         }
         if (this._curselectIndex != retObj.chat_type) return;
         this._chatviewList.push(retObj);
+        if(retObj.chat_type == 1){
+            DataManager.chatviewList.push(retObj)
+            DataManager.mainHome.initChat( DataManager.chatviewList) 
+        }
 
         // this.m_pNewMessageNode.active = true;
         // this.m_pNewMessageLab.string = this._newmesNum+"条新消息";
@@ -306,7 +310,13 @@ export default class NewClass extends cc.Component {
     }
     chatview_auth_cb(retObj) {
         if (DataManager.curWndPath == EnumManager.viewPath.WND_CHAT) return
-
+        if (!DataManager.chatviewList) {
+            console.log(`初始化聊天面板`)
+            console.log(JSON.stringify(retObj.chat_content))
+            DataManager.chatviewList = retObj.chat_content
+            DataManager.mainHome.initChat(retObj.chat_content)
+            return
+        }
         cc.log("接受打开聊天面版===" + retObj.chat_content.length);
 
         this.ClearChatItem();
@@ -322,6 +332,11 @@ export default class NewClass extends cc.Component {
         this.m_pReddot.active = false;
         // var self = this;
         this._chatviewList = retObj.chat_content;
+        if(this._curselectIndex == 1){
+            DataManager.chatviewList = retObj.chat_content
+            DataManager.mainHome.initChat(retObj.chat_content)
+        }
+
         this.showListView();
         //红点提示
         this.node_private_redpoint.active = retObj.new_msg_list[0];
@@ -386,9 +401,11 @@ export default class NewClass extends cc.Component {
             this._sendvalue = "";
             MyProtocols.send_C2SChatVisit(DataManager._loginSocket);
             DataManager.ChatPanel = null
-
+            this.node.getChildByName(`ChatBtn`).runAction(cc.fadeOut(0.8))
+            DataManager.mainHome.btnChat.runAction(cc.fadeIn(0.8))
         }
         else {
+            this.node.getChildByName(`ChatBtn`).runAction(cc.fadeIn(0.8))
             DataManager.ChatPanel = this
             MyProtocols.send_C2SChatView(DataManager._loginSocket, this._curselectIndex);
         }

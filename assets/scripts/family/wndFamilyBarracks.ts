@@ -141,8 +141,17 @@ export default class NewClass extends cc.Component {
 
 
     onCloseHandler() {
-        ViewManager.instance.hideWnd(DataManager.curWndPath)
-        ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
+        // ViewManager.instance.hideWnd(DataManager.curWndPath)
+        // ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
+
+        if (this.showType == 0) {
+            // Logger.log('关闭窗口')
+            ViewManager.instance.hideWnd(DataManager.curWndPath)
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_FAMILY_DETAIL)
+
+        } else if (this.showType == 1) {
+            this.showGroups()
+        }
 
     }
 

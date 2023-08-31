@@ -41,16 +41,15 @@ export default class NewClass extends cc.Component {
         }
 
         // Action 1： 申请家族 2 加入家族 3 踢出工会 4 退出工会  5 修改公告 
-        let Actions = [``, '申请家族', '加入家族', '踢出工会', '退出工会', '修改公告']
+        let Actions = [``, '申请家族', '加入家族', '踢出家族', '退出家族', '修改职位', '修改公告']
         let runk = '';
-
 
         if (DataManager.familyDetail.familyChiefID == data.Player1Id) {
             runk = `族长`
         } else {
             runk = `成员`
         }
-        this.label.string = `${runk}在${this.formatDate(data.time)}时 ${Actions[data.Action]}`
+        this.label.string = `${runk}${data.Player1Id}在${this.formatDate(data.time)}时 ${Actions[data.Action]}`
     }
 
     formatDate(value) {

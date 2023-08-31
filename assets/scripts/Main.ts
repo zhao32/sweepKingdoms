@@ -208,6 +208,8 @@ export default class NewClass extends cc.Component {
 
         GameUtil.instance.resetSoliderStren()
 
+        MyProtocols.send_C2SChatView(DataManager._loginSocket, 1);
+
     }
 
     S2CStageList(retObj) {

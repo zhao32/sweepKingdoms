@@ -70,7 +70,12 @@ export default class NewClass extends cc.Component {
             let str: string
             let name: string = data.hold_player.nickname
             if (data.hold_player.group >= 101) {
-                this.nameLabel.string = filedName + name.charAt(0) + '...'
+
+                if (filedName == '主城') {
+                    this.nameLabel.string = name
+                } else {
+                    this.nameLabel.string = filedName + name.charAt(0) + '...'
+                }
             } else {
                 if (data.hold_player.bulidLv == 0) {
                     this.nameLabel.string = `未建造` + data.hold_player.lv + "级" + filedName + name.charAt(0) + '...'
@@ -79,8 +84,8 @@ export default class NewClass extends cc.Component {
                     this.nameLabel.string = data.hold_player.lv + "级" + lvList[data.hold_player.bulidLv - 1] + name.charAt(0) + '...'
                 }
             }
-
             if (!data.hold_player.id) {
+                console.log(`&&&&&&&&&&&&&&&&&`)
                 this.nameLabel.string = data.hold_player.lv + `级` + filedName
             }
         }

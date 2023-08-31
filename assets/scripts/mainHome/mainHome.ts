@@ -5,6 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
+import ChatPanel from "../ChatPanel/ChatPanel";
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
@@ -75,6 +76,9 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Label, displayName: '元宝' })
     labelGold: cc.Label = null;
 
+    @property({ type: cc.RichText, displayName: '元宝' })
+    richChat: cc.Label = null;
+
     @property({ type: cc.Node })
     nodeContect: cc.Node = null;
 
@@ -108,10 +112,29 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Node, displayName: '系统' })
     btnSet: cc.Node = null;
 
+    @property({ type: cc.Node, displayName: '聊天按钮' })
+    btnChat: cc.Node = null;
+    chatPanel
+
 
     // onLoad () {}
 
+    initChat(data) {
+        this.richChat.string = ''
+        for (let i = data.length - 1; i >= 0; i--) {
+            this.richChat.string += `<color=#E7C891>${data[i].sender_name}：</c><color=#ffffff>${data[i].content}</c>\n\n`
+        }
+    }
+
     start() {
+
+        DataManager.mainHome = this
+        this.btnChat.on(cc.Node.EventType.TOUCH_END, () => {
+            if (this.chatPanel) {
+                this.chatPanel.getComponent(ChatPanel).OpenChatPanel(false)
+                this.btnChat.runAction(cc.fadeOut(1))
+            }
+        }, this)
         this.btnFuBen.on(cc.Node.EventType.TOUCH_END, () => {
             if (DataManager.cardsList.length == 0) {
                 ViewManager.instance.showToast(`请先招募将领`)
@@ -211,11 +234,21 @@ export default class NewClass extends cc.Component {
         }, this)
 
 
+
         NetEventDispatcher.addListener(NetEvent.S2CListRedPoints, this.RedPointsBack, this)
         NetEventDispatcher.addListener(NetEvent.S2CFamilyDetail, this.S2CFamilyDetail, this)
+        NetEventDispatcher.addListener(NetEvent.S2CChatView, this.S2CChatView, this);
+
 
         EventManager.getInstance().registerListener(EventManager.UPDATE_MAINHOME_INFO, this, this.updateInfo.bind(this))
         EventManager.getInstance().registerListener(EventManager.UPDATE_BULID_STATE, this, this.updataBulidState.bind(this))
+
+    }
+
+    S2CChatView(retObj) {
+        // DataManager.chatviewList = retObj.chat_content
+        // console.log(` retObj.chat_content:`+ JSON.stringify( retObj.chat_content))
+
     }
 
     openGM() {
@@ -228,22 +261,28 @@ export default class NewClass extends cc.Component {
 
         EventManager.getInstance().unRegisterListener(EventManager.UPDATE_MAINHOME_INFO, this)
         EventManager.getInstance().unRegisterListener(EventManager.UPDATE_BULID_STATE, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CChatView, this.S2CChatView, this);
 
     }
 
-    chatPanel
     init() {
 
     }
 
     updateInfo() {
         this.labelCoin.string = String(DataManager.playData.coinMoney)
-        this.labelCombatPower.string = String(DataManager.playData.troops)
         this.labelGold.string = String(DataManager.playData.goldMoney)
         this.labelLevel.string = `lv.` + String(DataManager.playData.level)
         this.labelName.string = String(DataManager.playData.name)
         this.labelProvisions.string = String(DataManager.playData.food)
         this.labelVipLevel.string = String(DataManager.playData.vip_level)
+
+        let militray = 0
+        for (let i = 0; i < DataManager.playData.military_data.length; i++) {
+            militray += DataManager.playData.military_data[i]
+        }
+        this.labelCombatPower.string = String(militray)
+
 
         this.proBarExp.progress = DataManager.playData.level_exp / DataManager.GameData.Levels[DataManager.playData.level - 1].exp
         this.labelProExp.string = `${DataManager.playData.level_exp}/${DataManager.GameData.Levels[DataManager.playData.level - 1].exp}`
@@ -417,6 +456,7 @@ export default class NewClass extends cc.Component {
                 }
             }
         }
+
 
         // DataManager.familyDetail.task1 = retObj.task1
         // DataManager.familyDetail.task2 = retObj.task2

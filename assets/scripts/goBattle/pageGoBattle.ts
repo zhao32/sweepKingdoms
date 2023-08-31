@@ -466,7 +466,7 @@ export default class NewClass extends cc.Component {
     }
 
     applyMines() {
-        let delay = 0.2
+        let delay = 0.25
         MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
         this.scheduleOnce(() => {
             console.log(`延迟请求`)

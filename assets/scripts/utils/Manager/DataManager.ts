@@ -5,6 +5,7 @@ import wndHotelDetail from "../../hotel/wndHotelDetail";
 import wndJB from "../../jibao/wndJB";
 import wndMail from "../../mail/wndMail";
 import Main from "../../Main";
+import mainHome from "../../mainHome/mainHome";
 
 interface playData {
     id: number,
@@ -91,6 +92,8 @@ export default class DataManager {
 
     static Main: Main = null
 
+
+    static mainHome: mainHome = null
     static _loginSocket: any
 
     session_id: number = 0
@@ -241,6 +244,8 @@ export default class DataManager {
     static cardsList = []
 
     static maillist = []
+
+    static chatviewList = null
 
     /**我的副本信息 */
     static stagesData: any
