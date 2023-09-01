@@ -68,24 +68,28 @@ export default class NewClass extends cc.Component {
         this.labelFLV.string = `LV:${DataManager.familyDetail.familyLv}`
         this.labelFName.string = `家族名称：${DataManager.familyDetail.familyName}`
         this.labelFID.string = `家族ID：${DataManager.familyDetail.familyID}`
-        NetEventDispatcher.addListener(NetEvent.S2CFamilyNoticeChange, this.S2CFamilyNoticeChange, this)
-        NetEventDispatcher.addListener(NetEvent.S2CFamilyAimChange, this.S2CFamilyAimChange, this)
+        NetEventDispatcher.addListener(NetEvent.S2CFamilyNoticeAimChange, this.S2CFamilyNoticeAimChange, this)
+        // NetEventDispatcher.addListener(NetEvent.S2CFamilyAimChange, this.S2CFamilyAimChange, this)
     }
 
-    S2CFamilyNoticeChange(retObj){
+    S2CFamilyNoticeAimChange(retObj) {
         console.log(`修改公告返回：` + JSON.stringify(retObj))
         ViewManager.instance.showToast(`家族公告修改成功`)
         DataManager.familyDetail.notice = retObj.familyNotice
-        this.editBox1.string = DataManager.familyDetail.notice
-    }
-
-    S2CFamilyAimChange(retObj){
-        console.log(`修改主旨返回：` + JSON.stringify(retObj))
-        ViewManager.instance.showToast(`家族主旨修改成功`)
         DataManager.familyDetail.aim = retObj.aim
-        this.editBox2.string = DataManager.familyDetail.aim
+
+        this.editBox1.string = DataManager.familyDetail.aim
+        this.editBox2.string = DataManager.familyDetail.notice
 
     }
+
+    // S2CFamilyAimChange(retObj) {
+    //     console.log(`修改主旨返回：` + JSON.stringify(retObj))
+    //     ViewManager.instance.showToast(`家族主旨修改成功`)
+    //     DataManager.familyDetail.aim = retObj.aim
+    //     this.editBox2.string = DataManager.familyDetail.aim
+
+    // }
 
     onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
@@ -98,23 +102,28 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showToast(`请输入新的家族宗旨或家族提示`)
             return
         }
+        if (!this.aimStr) this.aimStr = DataManager.familyDetail.aim
+        if (!this.noticeStr) this.noticeStr = DataManager.familyDetail.notice
 
-        if (this.noticeStr) {
-            console.log(`修改家族公告`)
-            MyProtocols.send_C2SFamilyNoticeChange(DataManager._loginSocket, this.noticeStr)
-            this.noticeStr = ''
-        }
+        MyProtocols.send_C2SFamilyNoticeAimChange(DataManager._loginSocket, this.noticeStr, this.aimStr)
+        this.noticeStr = ''
+        this.aimStr = ''
+        // if (this.noticeStr) {
+        //     console.log(`修改家族公告`)
+        //     MyProtocols.send_C2SFamilyNoticeAimChange(DataManager._loginSocket, this.noticeStr, this.aimStr)
+        //     this.noticeStr = ''
+        // }
 
-        if (this.aimStr) {
-            console.log(`修改家族主旨`)
-            MyProtocols.send_C2SFamilyAimChange(DataManager._loginSocket, this.aimStr)
-            this.aimStr  = ''
-        }
+        // if (this.aimStr) {
+        //     console.log(`修改家族主旨`)
+        //     MyProtocols.send_C2SFamilyAimChange(DataManager._loginSocket, this.aimStr)
+        //     this.aimStr = ''
+        // }
     }
 
     onClose() {
-        NetEventDispatcher.removeListener(NetEvent.S2CFamilyNoticeChange, this.S2CFamilyNoticeChange, this)
-        NetEventDispatcher.removeListener(NetEvent.S2CFamilyAimChange, this.S2CFamilyAimChange, this)
+        NetEventDispatcher.removeListener(NetEvent.S2CFamilyNoticeAimChange, this.S2CFamilyNoticeAimChange, this)
+        // NetEventDispatcher.removeListener(NetEvent.S2CFamilyAimChange, this.S2CFamilyAimChange, this)
     }
 
     // update (dt) {}

@@ -495,10 +495,10 @@ export enum NetEvent {
     /**工会日志 */
     S2CFamilyLog = 13018,
 
-    /** 修改家族公告*/
-    C2SFamilyNoticeChange = 13021,
+    /** 修改家族公告主旨*/
+    C2SFamilyNoticeAimChange = 13021,
 
-    S2CFamilyNoticeChange = 13022,
+    S2CFamilyNoticeAimChange = 13022,
 
     /**剔出家族  参数 玩家id*/
     C2SFamilyQuite = 13027,

@@ -7484,10 +7484,12 @@ var MyProtocols = {
 		return retObj;
 	},
 
-	send_C2SFamilyNoticeChange(senderSocket, notice) {
+	send_C2SFamilyNoticeAimChange(senderSocket, notice, aim) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(13021);
 		myEncoder.writeString(notice);
+		myEncoder.writeString(aim);
+
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
@@ -7496,6 +7498,8 @@ var MyProtocols = {
 	get_13022: function (myDecoder) {
 		var retObj = {};
 		retObj.familyNotice = myDecoder.readString();
+		retObj.aim = myDecoder.readString();
+
 		return retObj;
 	},
 
