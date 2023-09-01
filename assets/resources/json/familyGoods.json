@@ -1,77 +1,77 @@
 {
   "1007": {
     "icon": "1007.png",
-    "quality": 1,
+    "level": 1,
     "name": "中级经验丹",
     "des": "点击使用可以获得中量领主经验。"
   },
 
   "1005": {
     "icon": "1005.png",
-    "quality": 1,
+    "level": 2,
     "name": "玫瑰",
     "des": "使用后恢复满人口。"
   },
   
   "4120": {
     "name": "商店货物2",
-    "quality": 2,
+    "level": 2,
     "icon": "1467.png",
     "des": "家族商店测试货物2",
     "price": 500
   },
   "4124": {
     "name": "商店货物3",
-    "quality": 3,
+    "level": 3,
     "icon": "1019.png",
     "des": "家族商店测试货物3",
     "price": 500
   },
   "4110": {
     "name": "商店货物4",
-    "quality": 3,
+    "level": 3,
     "icon": "1019.png",
     "des": "家族商店测试货物4",
     "price": 500
   },
   "4111": {
     "name": "商店货物5",
-    "quality": 3,
+    "level": 3,
     "icon": "1019.png",
     "des": "家族商店测试货物5",
     "price": 500
   },
   "4112": {
     "name": "商店货物6",
-    "quality": 3,
+    "level": 3,
     "icon": "1019.png",
     "des": "家族商店测试货物6",
     "price": 500
   },
   "4113": {
     "name": "商店货物7",
-    "quality": 3,
+    "level": 3,
     "icon": "1019.png",
     "des": "家族商店测试货物7",
     "price": 500
   },
   "4114": {
     "name": "商店货物8",
-    "quality": 3,
+    "level": 3,
     "icon": "1019.png",
     "des": "家族商店测试货物8",
     "price": 500
   },
   "4115": {
     "name": "商店货物9",
-    "quality": 3,
+    "level": 3,
     "icon": "1019.png",
     "des": "家族商店测试货物9",
     "price": 500
   },
   "4116": {
     "name": "商店货物10",
-    "quality": 3,
+    "level": 3,
     "icon": "1019.png",
     "des": "家族商店测试货物10",
     "price": 500

@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "fb663991-34b1-40ff-9f23-b743949f65f9",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 93,
+  "height": 95,
+  "platformSettings": {},
+  "subMetas": {
+    "技术研究所head": {
+      "ver": "1.0.6",
+      "uuid": "92bfff8c-1a8c-4024-b74b-901e3d88b1f5",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "fb663991-34b1-40ff-9f23-b743949f65f9",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": -1.5,
+      "trimX": 1,
+      "trimY": 3,
+      "width": 92,
+      "height": 92,
+      "rawWidth": 93,
+      "rawHeight": 95,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

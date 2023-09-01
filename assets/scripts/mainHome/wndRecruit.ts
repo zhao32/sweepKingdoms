@@ -104,14 +104,14 @@ export default class NewClass extends cc.Component {
         this._index = _index
         let group = 'barracks'
         /**居民区等级 */
-        let jmqGrade = DataManager.GameData.build['basic'][0].grade
-        let maxProportion = DataManager.GameData.buildUp["basic"][1][jmqGrade - 1].proportion[2]
+        let jmqGrade = DataManager.GameData.build['basic'][1].grade
+        let maxProportion = DataManager.GameData.buildUp["basic"][2][jmqGrade - 1].proportion[2]
 
 
         let grade = DataManager.GameData.build[group][_index - 1].grade
 
         // console.log('兵：' + JSON.stringify(DataManager.GameData.buildUp[group][1][grade - 1]))
-        let maxSolider = DataManager.GameData.buildUp[group][1][grade - 1].Soldier
+        let maxSolider = DataManager.GameData.buildUp[group][2][grade - 1].Soldier
 
         this.soldierNameDisplay.string = DataManager.GameData.Soldier[idx - 1].name
         this.populationDisplay.string = `${DataManager.playData.population}/${maxProportion}`
@@ -203,11 +203,11 @@ export default class NewClass extends cc.Component {
 
         let grade = DataManager.GameData.build[group][_index - 1].grade
         // console.log('兵：' + JSON.stringify(DataManager.GameData.buildUp[group][1][grade - 1]))
-        let maxSolider = DataManager.GameData.buildUp[group][1][grade - 1].Soldier
+        let maxSolider = DataManager.GameData.buildUp[group][2][grade - 1].Soldier
 
         /**居民区等级 */
-        let jmqGrade = DataManager.GameData.build['basic'][0].grade
-        let maxProportion = DataManager.GameData.buildUp["basic"][1][jmqGrade - 1].proportion[2]
+        let jmqGrade = DataManager.GameData.build['basic'][1].grade
+        let maxProportion = DataManager.GameData.buildUp["basic"][2][jmqGrade - 1].proportion[2]
 
         // console.log('maxSolider:' + maxSolider)
         // console.log('maxProportion:' + maxProportion)

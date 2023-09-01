@@ -43,6 +43,7 @@ export default class NewClass extends cc.Component {
         // ResManager.loadItemIcon(`UI/items/${data.icon}`, this.icon)
         ResManager.loadItemIcon(`UI/prop/${data.name}`, this.icon)
 
+
     }
 
     // update (dt) {}

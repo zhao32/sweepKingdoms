@@ -41,7 +41,7 @@ export default class NewClass extends cc.Component {
             }
             render.getComponent(renderRecruitOffice).init(DataManager.GameData.Soldier[key])
             render.on(cc.Node.EventType.TOUCH_END, () => {
-                if (DataManager.GameData.build['basic'][0].grade == 0) {
+                if (DataManager.GameData.build['basic'][1].grade == 0) {
                     ViewManager.instance.showToast('请先建造居民区')
                     return
                 }

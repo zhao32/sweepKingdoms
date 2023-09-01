@@ -31,6 +31,9 @@ export default class NewClass extends cc.Component {
     labelProExp: cc.Label = null;
 
 
+    @property({ type: cc.Label, displayName: '城镇坐标' })
+    labelPos: cc.Label = null;
+
     @property({ type: cc.Node, displayName: '新手救济' })
     btnBeginner: cc.Node = null;
 
@@ -243,6 +246,7 @@ export default class NewClass extends cc.Component {
         EventManager.getInstance().registerListener(EventManager.UPDATE_MAINHOME_INFO, this, this.updateInfo.bind(this))
         EventManager.getInstance().registerListener(EventManager.UPDATE_BULID_STATE, this, this.updataBulidState.bind(this))
 
+        this.upCityPos()
     }
 
     S2CChatView(retObj) {
@@ -267,6 +271,10 @@ export default class NewClass extends cc.Component {
 
     init() {
 
+    }
+
+    upCityPos(x = 0, y = 0) {
+        this.labelPos.string = ` (` + x + ` , ` + y + `) `
     }
 
     updateInfo() {

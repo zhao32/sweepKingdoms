@@ -210,6 +210,8 @@ export default class NewClass extends cc.Component {
 
         MyProtocols.send_C2SChatView(DataManager._loginSocket, 1);
 
+        DataManager.mainHome.upCityPos(0, 0)
+
     }
 
     S2CStageList(retObj) {

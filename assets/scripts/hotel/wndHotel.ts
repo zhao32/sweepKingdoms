@@ -105,8 +105,9 @@ export default class NewClass extends cc.Component {
             }, this)
         }
 
-        let jmqGrade = DataManager.GameData.build['basic'][0].grade
-        let maxProportion = DataManager.GameData.buildUp["basic"][1][jmqGrade - 1].proportion[2]
+        /**居民区 */
+        let jmqGrade = DataManager.GameData.build['basic'][1].grade
+        let maxProportion = DataManager.GameData.buildUp["basic"][2][jmqGrade - 1].proportion[2]
         this.populationDisplay.string = `${DataManager.playData.population}/${maxProportion}`
 
         let keys = Object.keys(DataManager.GameData.MineStone)

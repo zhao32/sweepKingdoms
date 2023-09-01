@@ -90,7 +90,17 @@ export default class NewClass extends cc.Component {
                 let item = cc.instantiate(this.pfb)
                 item.parent = this.contect
                 item.getComponent(familyMarketItem).init(DataManager.GameData.familyGoods[id],data.items[i])
+                if(DataManager.familyDetail.familyLv >= DataManager.GameData.familyGoods[id].level){
+                    item.getChildByName(`mask`).active = false     
+                }else{
+                    item.getChildByName(`mask`).active = true     
+
+                }
                 item.on(cc.Node.EventType.TOUCH_END, () => {
+                    if(DataManager.familyDetail.familyLv < DataManager.GameData.familyGoods[id].level){
+                        ViewManager.instance.showToast(`家族等级到达${DataManager.GameData.familyGoods[id].level}时解锁`)
+                        return
+                    }
                     this.node.getChildByName(`buyPanel`).active = true
                     this.node.getChildByName(`buyPanel`).getComponent(familyMallBuyPanel).init(DataManager.GameData.familyGoods[id], i)
                 }, this)
