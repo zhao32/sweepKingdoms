@@ -44,6 +44,18 @@ export default class NewClass extends cc.Component {
             this.PosY = editBox.string;
             Logger.log(editBox.string)
         }, this)
+
+        for (let i = 0; i < this.node.getChildByName(`toggleContainer`).children.length; i++) {
+            let child = this.node.getChildByName(`toggleContainer`).children[i]
+            if (i + 1 == DataManager.pageGoBattle.nation_id) {
+                child.getComponent(cc.Toggle).isChecked = true
+            }
+            child.on('toggle', () => {
+                if (child.getComponent(cc.Toggle).isChecked == true) {
+                    DataManager.pageGoBattle.nation_id = i + 1
+                }
+            }, this)
+        }
     }
 
     init() {
@@ -56,10 +68,10 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showToast('请输入完整的坐标')
             return
         }
-        DataManager.pageGoBattle.selectIdx = parseInt(this.PosY)
-        DataManager.pageGoBattle.curPageIdx = parseInt(this.PosX)
-
-        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.PosX, DataManager.pageGoBattle.nation_id)
+        DataManager.pageGoBattle.selectIdx = (parseInt(this.PosY) - 1)
+        DataManager.pageGoBattle.curPageIdx = (parseInt(this.PosX) - 1)
+        DataManager.pageGoBattle.changeCountryId(DataManager.pageGoBattle.nation_id)
+        MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, (parseInt(this.PosX) - 1), DataManager.pageGoBattle.nation_id)
         ViewManager.instance.hideWnd(DataManager.curWndPath, true)
 
     }

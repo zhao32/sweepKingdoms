@@ -119,7 +119,7 @@ export default class NewClass extends cc.Component {
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
         this.titleLabel.string = DataManager.mineData[data.group].name
         // this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + '国'
-        this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + '国' + ` ` + `(` + data.page + `,` + data.idx + `)`
+        this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + `国 (${data.page + 1},${data.idx + 1})` 
 
         // : function (senderSocket, p_level_index, p_point_index) {
         // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket,)

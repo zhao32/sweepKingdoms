@@ -204,7 +204,7 @@ export default class NewClass extends cc.Component {
             } else if (data.idx == 11) {//英魂墓地
                 this.tipDisplay.string = `可存储${levelData.protect}阵亡士兵的灵魂,并复活他们`
             } else {
-                this.tipDisplay.string = `可以招募${DataManager.GameData.Soldier[levelData.soldier[0]].name}，每次招募 ${levelData.population[1]}%主城人口`
+                if (levelData.soldier && levelData.soldier[0]) this.tipDisplay.string = `可以招募${DataManager.GameData.Soldier[levelData.soldier[0]].name}，每次招募 ${levelData.population[1]}%主城人口`
             }
         }
     }

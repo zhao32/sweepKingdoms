@@ -283,7 +283,7 @@ export default class NewClass extends cc.Component {
         this._sendvalue = "";
     }
     ChatPush_auth_cb(retObj) {
-        // cc.log("接受发送聊天内容消息=="+retObj.content);
+        cc.log("接受发送聊天内容消息=="+retObj.content);
         if (!this._isShow) {
             this.m_pReddot.active = true;
             return;
@@ -291,7 +291,7 @@ export default class NewClass extends cc.Component {
         if (this._curselectIndex != retObj.chat_type) return;
         this._chatviewList.push(retObj);
         if(retObj.chat_type == 1){
-            DataManager.chatviewList.push(retObj)
+            // DataManager.chatviewList.push(retObj)
             DataManager.mainHome.initChat( DataManager.chatviewList) 
         }
 

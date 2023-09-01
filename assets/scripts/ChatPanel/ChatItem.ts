@@ -95,6 +95,14 @@ export default class NewClass extends cc.Component {
                 } else {
                     this.m_pContent.string = this._chatinfo.sender_name + ":" + this._chatinfo.content;
                 }
+
+            case 4:
+                // let officeTitle = DataManager.countyList[DataManager.playData.account_id]//GuozhanBufferMgr.getOfficeNameByIndex(this._chatinfo.office_index);
+                if (this._chatinfo.sender_uid == DataManager.playData.id) {
+                    this.m_pContent.string = "<color=#00ff00>我</c>:" + this._chatinfo.content;
+                } else {
+                    this.m_pContent.string = this._chatinfo.sender_name + ":" + this._chatinfo.content;
+                }
                 break;
         }
         // cc.log("发送的类型"+this._chatinfo.chat_type);

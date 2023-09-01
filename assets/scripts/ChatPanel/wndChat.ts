@@ -294,11 +294,14 @@ export default class NewClass extends cc.Component {
     }
     s2cchat_auth_cb(retObj) {
         cc.log("NetEvent.S2CChat");
+        console.log(JSON.stringify(retObj))
         this.m_pInput.string = "";
         this._sendvalue = "";
     }
     ChatPush_auth_cb(retObj) {
-        // cc.log("接受发送聊天内容消息=="+retObj.content);
+        cc.log("接受发送聊天内容消息=="+retObj.content);
+        console.log(JSON.stringify(retObj))
+
         // if (!this._isShow) {
         //     this.m_pReddot.active = true;
         //     return;

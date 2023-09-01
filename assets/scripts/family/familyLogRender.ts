@@ -53,7 +53,7 @@ export default class NewClass extends cc.Component {
     }
 
     formatDate(value) {
-        let date = new Date(value);
+        let date = new Date(value * 1000);
         let y = date.getFullYear(),
             m = date.getMonth() + 1 as any,
             d = date.getDate() as any,

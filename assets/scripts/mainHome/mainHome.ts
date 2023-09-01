@@ -124,8 +124,8 @@ export default class NewClass extends cc.Component {
 
     initChat(data) {
         this.richChat.string = ''
-        for (let i = data.length - 1; i >= 0; i--) {
-            this.richChat.string += `<color=#E7C891>${data[i].sender_name}：</c><color=#ffffff>${data[i].content}</c>\n\n`
+        for (let i = data.length - 4; i < data.length - 1; i++) {
+            if (data[i]) this.richChat.string += `<color=#E7C891>${data[i].sender_name}：</c><color=#ffffff>${data[i].content}</c>\n\n`
         }
     }
 
@@ -133,7 +133,9 @@ export default class NewClass extends cc.Component {
 
         DataManager.mainHome = this
         this.btnChat.on(cc.Node.EventType.TOUCH_END, () => {
+            console.log(`点击聊天面板1`)
             if (this.chatPanel) {
+                console.log(`点击聊天面板2`)
                 this.chatPanel.getComponent(ChatPanel).OpenChatPanel(false)
                 this.btnChat.runAction(cc.fadeOut(1))
             }
@@ -274,6 +276,8 @@ export default class NewClass extends cc.Component {
     }
 
     upCityPos(x = 0, y = 0) {
+        x = x + 1
+        y = y + 1
         this.labelPos.string = ` (` + x + ` , ` + y + `) `
     }
 
@@ -458,7 +462,7 @@ export default class NewClass extends cc.Component {
         }
 
         for (let i = 0; i < DataManager.familyDetail.task2.length; i++) {
-            for (let j = 0; j < retObj.task1.length; j++) {
+            for (let j = 0; j < retObj.task2.length; j++) {
                 if (DataManager.familyDetail.task2[i].id == retObj.task2[j].id) {
                     DataManager.familyDetail.task2[i].num = retObj.task2[j].num
                 }

@@ -111,7 +111,7 @@ export default class NewClass extends cc.Component {
 
         this.titleLabel.string = DataManager.mineData[data.group].name
         // this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + '国'
-        this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + '国' + ` ` + `(` + data.page + `,` + data.idx + `)`
+        this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + `国 (${data.page + 1},${data.idx + 1})` 
 
 
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
