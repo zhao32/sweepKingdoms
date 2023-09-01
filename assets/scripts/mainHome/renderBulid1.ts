@@ -212,12 +212,14 @@ export default class NewClass extends cc.Component {
 
     onUpgrade1() {
         // console.log()
+        this.curIdx = this._data.idx
         console.log('this.grade:' + this.grade + '  ' + this.buildType + '   ' + (parseInt(this.idx as any)))
         MyProtocols.send_C2UPBulid(DataManager._loginSocket, this.grade + 1, this.buildType, this.idx - 1, 1)
     }
 
 
     onUpgrade2() {
+        this.curIdx = this._data.idx
         MyProtocols.send_C2UPBulid(DataManager._loginSocket, this.grade + 1, this.buildType, this.idx - 1, 2)
     }
 
