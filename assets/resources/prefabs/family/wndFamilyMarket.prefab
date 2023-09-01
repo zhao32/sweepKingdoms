@@ -3869,7 +3869,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 600,
-      "height": 650
+      "height": 560
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3988,7 +3988,7 @@
       "ctor": "Float64Array",
       "array": [
         -211.27,
-        239.529,
+        195.529,
         0,
         0,
         0,
@@ -4063,7 +4063,7 @@
       "__id__": 100
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 112
@@ -4202,7 +4202,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        102.801,
+        51.801,
         0,
         0,
         0,
@@ -4309,7 +4309,7 @@
       "ctor": "Float64Array",
       "array": [
         -134.567,
-        243.567,
+        198.567,
         0,
         0,
         0,
@@ -4417,7 +4417,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        103.962,
+        52.962,
         0,
         0,
         0,
@@ -4525,7 +4525,7 @@
       "ctor": "Float64Array",
       "array": [
         -211.27,
-        239.529,
+        195.529,
         0,
         0,
         0,
@@ -4623,7 +4623,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 120,
+      "width": 96,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -4635,8 +4635,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -216.838,
-        -1.345,
+        -111.838,
+        -52.345,
         0,
         0,
         0,
@@ -4668,7 +4668,7 @@
       "__id__": 126
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 128
@@ -4783,8 +4783,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "请选择购买",
-    "_N$string": "请选择购买",
+    "_string": "是否购买",
+    "_N$string": "是否购买",
     "_fontSize": 24,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -4844,15 +4844,15 @@
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.5,
+      "x": 0,
       "y": 0.5
     },
     "_trs": {
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        0,
-        0.001,
+        30,
+        -50.999,
         0,
         0,
         0,
@@ -4932,7 +4932,7 @@
         "__id__": 136
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 140
@@ -5263,7 +5263,7 @@
         "__id__": 145
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 149
@@ -5594,7 +5594,7 @@
         "__id__": 154
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 158
@@ -5921,7 +5921,7 @@
       "__id__": 100
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 163
@@ -6028,7 +6028,7 @@
       "__id__": 100
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 166
@@ -6167,8 +6167,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -103.073,
-        -209.289,
+        -87.073,
+        -125.28899999999999,
         0,
         0,
         0,
@@ -6207,8 +6207,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "总价",
-    "_N$string": "总价",
+    "_string": "价格",
+    "_N$string": "价格",
     "_fontSize": 24,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -6275,8 +6275,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -28.134999999999998,
-        -208.579,
+        -12.134999999999998,
+        -124.57900000000001,
         0,
         0,
         0,
@@ -6382,8 +6382,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        8.074,
-        -205.442,
+        24.073999999999998,
+        -121.44200000000001,
         0,
         0,
         0,
@@ -6498,7 +6498,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -274.196,
+        -203.19600000000003,
         0,
         0,
         0,
@@ -6992,7 +6992,7 @@
         "__id__": 192
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 196

@@ -39,7 +39,7 @@ export default class NewClass extends cc.Component {
     @property(cc.Node)
     pic: cc.Node = null;
 
-    num: number = 0
+    num: number = 1
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -58,12 +58,19 @@ export default class NewClass extends cc.Component {
     _idx
     init(data, idx) {
         this._idx = idx
-        this.num = 0
+        this.num = 1
         console.log(JSON.stringify(data))
         this.numLabel.string = "0"
         this.nameLabel1.string = this.nameLabel2.string = data.name
         this.decLabel.string = data.des
-        this.moneyLabel.string = 'x' + data.price
+        // this.moneyLabel.string = 'x' + data.price
+        if(data.gamemoney > 0){
+            this.moneyLabel.string = 'x' + data.gamemoney 
+        }
+
+        if(data.money > 0){
+            this.moneyLabel.string = 'x' + data.money 
+        }
         // ResManager.loadItemIcon(`UI/items/${data.icon}`, this.pic)
         ResManager.loadItemIcon(`UI/prop/${data.name}`, this.pic)
 

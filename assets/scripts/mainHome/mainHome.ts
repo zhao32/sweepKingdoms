@@ -283,7 +283,7 @@ export default class NewClass extends cc.Component {
         }
         this.labelCombatPower.string = String(militray)
 
-
+        console.log(`DataManager.playData.level - 1:` + (DataManager.playData.level - 1))
         this.proBarExp.progress = DataManager.playData.level_exp / DataManager.GameData.Levels[DataManager.playData.level - 1].exp
         this.labelProExp.string = `${DataManager.playData.level_exp}/${DataManager.GameData.Levels[DataManager.playData.level - 1].exp}`
         if (DataManager.countyList[DataManager.playData.nation_id]) {

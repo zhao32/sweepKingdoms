@@ -188,11 +188,11 @@ export default class NewClass extends cc.Component {
 
 
         for (let i = 0; i < retObj.basic_build.length; i++) {
-            DataManager.GameData.build['basic'][i].grade = retObj.basic_build[i]
+            if (DataManager.GameData.build['basic'][i]) DataManager.GameData.build['basic'][i].grade = retObj.basic_build[i]
         }
 
         for (let i = 0; i < retObj.barracks_build.length; i++) {
-            DataManager.GameData.build['barracks'][i].grade = retObj.barracks_build[i]
+            if (DataManager.GameData.build['barracks'][i]) DataManager.GameData.build['barracks'][i].grade = retObj.barracks_build[i]
         }
 
         for (let i = 0; i < retObj.resource_build.length; i++) {

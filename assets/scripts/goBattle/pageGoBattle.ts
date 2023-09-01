@@ -34,6 +34,10 @@ export default class NewClass extends cc.Component {
     @property(cc.Node)
     myContect: cc.Node = null;
 
+    @property(cc.Label)
+    countyLabel: cc.Label = null;
+
+
     @property(cc.Node)
     filedContect: cc.Node = null;
 
@@ -479,6 +483,8 @@ export default class NewClass extends cc.Component {
         console.log("curPageIdx:" + this.curPageIdx)
         console.log("curNation:" + this.nation_id)
 
+        this.changeCountryId(this.nation_id)
+
         let delay = 0.25
         MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
         this.scheduleOnce(() => {
@@ -552,6 +558,7 @@ export default class NewClass extends cc.Component {
         NetEventDispatcher.addListener(NetEvent.S2CFindMines, this.S2CFindMines, this)
 
         this.nation_id = DataManager.playData.nation_id
+        this.countyLabel.string = DataManager.countyList[this.nation_id]
         this.curPageIdx = 10
         this.applyMines()
 
@@ -573,6 +580,7 @@ export default class NewClass extends cc.Component {
 
     changeCountryId(country) {
         this.nation_id = country
+        this.countyLabel.string = DataManager.countyList[this.nation_id]
         this.node.getChildByName(`toggleContainer`).children[country - 1].getComponent(cc.Toggle).isChecked = true
     }
 
