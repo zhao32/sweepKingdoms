@@ -3836,6 +3836,9 @@ var MyProtocols = {
 		retObj.honor = myDecoder.readInt();
 		retObj.stamina = myDecoder.readInt();
 		retObj.nation_id = myDecoder.readInt();
+		retObj.coordinateX = myDecoder.readInt();
+		retObj.coordinateY = myDecoder.readInt();
+
 		/**战力 */
 		retObj.troops = myDecoder.readInt();
 		/**粮草 */

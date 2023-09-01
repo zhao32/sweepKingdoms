@@ -42,7 +42,10 @@ interface playData {
     basic_build: number[],
     /**军队数量 */
     military_data: number[],
-    storgleave_data: any[]
+    storgleave_data: any[],
+    coordinateX: number,
+    coordinateY: number,
+
 
 
 }
@@ -133,7 +136,11 @@ export default class DataManager {
         /**军队数量 */
         military_data: [],
         /**兵种强化数据 */
-        storgleave_data: []
+        storgleave_data: [],
+        /**坐标 */
+        coordinateX: null,
+        coordinateY: null,
+
 
     }
 

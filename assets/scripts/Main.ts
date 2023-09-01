@@ -179,6 +179,9 @@ export default class NewClass extends cc.Component {
         DataManager.playData.barracks_build = retObj.barracks_build
         DataManager.playData.resource_build = retObj.resource_build
         DataManager.playData.storgleave_data = retObj.storgleave_data
+        DataManager.playData.coordinateX = retObj.coordinateX
+        DataManager.playData.coordinateY = retObj.coordinateY
+
         if (retObj.military_data.length == 0) {
             for (let i = 0; i < 19; i++) {
                 retObj.military_data.push(0)
@@ -210,7 +213,7 @@ export default class NewClass extends cc.Component {
 
         MyProtocols.send_C2SChatView(DataManager._loginSocket, 1);
 
-        DataManager.mainHome.upCityPos(0, 0)
+        DataManager.mainHome.upCityPos(retObj.coordinateX, retObj.coordinateY)
 
     }
 
