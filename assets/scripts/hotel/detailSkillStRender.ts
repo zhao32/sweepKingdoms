@@ -68,6 +68,16 @@ export default class NewClass extends cc.Component {
         }, this)
     }
 
+    getDes(skillSt) {
+        if (skillSt.effect_1.length > 0) { //基础属性加成
+            for (let i = 0; i < skillSt.effect_1.length; i++) {
+                
+            }
+
+        }
+
+    }
+
     init(data, idx) {
         console.log(JSON.stringify(data))
         // "skills_equips":[{"id":0,"level":0,"type":2},{"id":0,"level":0,"type":1},{"id":0,"level":0,"type":2}]
@@ -91,6 +101,7 @@ export default class NewClass extends cc.Component {
             ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.icon)
             this.nameLabel.string = `${skillSt.name.slice(0, -2)} LV ${data.level + 1}`
             this.richLabel.string = skillSt.des
+
             this.btnLabel.string = `遗忘`
         } else {
             this.icon.active = false

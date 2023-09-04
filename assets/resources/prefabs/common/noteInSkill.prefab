@@ -43,28 +43,22 @@
       },
       {
         "__id__": 40
-      },
-      {
-        "__id__": 43
-      },
-      {
-        "__id__": 46
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 49
+        "__id__": 43
       },
       {
-        "__id__": 50
+        "__id__": 44
       },
       {
-        "__id__": 51
+        "__id__": 45
       }
     ],
     "_prefab": {
-      "__id__": 52
+      "__id__": 46
     },
     "_opacity": 255,
     "_color": {
@@ -378,7 +372,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 600,
-      "height": 500
+      "height": 400
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -457,7 +451,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        208.39999999999998,
+        158.39999999999998,
         0,
         0,
         0,
@@ -597,7 +591,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        210.63299999999998,
+        160.63299999999998,
         0,
         0,
         0,
@@ -741,7 +735,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 570,
-      "height": 420
+      "height": 320
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1037,7 +1031,7 @@
       "ctor": "Float64Array",
       "array": [
         -181.589,
-        119.257,
+        65.257,
         0,
         0,
         0,
@@ -1144,7 +1138,7 @@
       "ctor": "Float64Array",
       "array": [
         -181.438,
-        116.86,
+        62.86,
         0,
         0,
         0,
@@ -1211,7 +1205,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "quitly",
+    "_name": "类型",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1236,20 +1230,20 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 160,
+      "width": 400,
       "height": 40
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.5,
+      "x": 0,
       "y": 0.5
     },
     "_trs": {
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -38,
-        137,
+        -118,
+        83,
         0,
         0,
         0,
@@ -1319,7 +1313,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "quitly",
+    "_name": "品质",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1357,7 +1351,7 @@
       "ctor": "Float64Array",
       "array": [
         -118,
-        92,
+        38,
         0,
         0,
         0,
@@ -1427,7 +1421,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "quitly",
+    "_name": "描述",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1452,8 +1446,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 360,
-      "height": 40
+      "width": 460,
+      "height": 160
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1465,7 +1459,7 @@
       "ctor": "Float64Array",
       "array": [
         -231,
-        24,
+        -90,
         0,
         0,
         0,
@@ -1504,8 +1498,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "可学技能",
-    "_N$string": "可学技能",
+    "_string": "描述",
+    "_N$string": "描述",
     "_fontSize": 24,
     "_lineHeight": 28,
     "_enableWrapText": true,
@@ -1516,7 +1510,7 @@
     "_styleFlags": 0,
     "_underlineHeight": 0,
     "_N$horizontalAlign": 0,
-    "_N$verticalAlign": 1,
+    "_N$verticalAlign": 0,
     "_N$fontFamily": "Arial",
     "_N$overflow": 2,
     "_N$cacheMode": 0,
@@ -1531,222 +1525,6 @@
       "__uuid__": "21c729ed-3667-4bb3-a122-32d7de7c7b38"
     },
     "fileId": "f7MfXaQ/JOJYh7PdKuog9o",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "quitly",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 44
-      }
-    ],
-    "_prefab": {
-      "__id__": 45
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 360,
-      "height": 40
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        -231,
-        -42,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Label",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 43
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_string": "熟练兵种",
-    "_N$string": "熟练兵种",
-    "_fontSize": 24,
-    "_lineHeight": 28,
-    "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
-    "_spacingX": 0,
-    "_batchAsBitmap": false,
-    "_styleFlags": 0,
-    "_underlineHeight": 0,
-    "_N$horizontalAlign": 0,
-    "_N$verticalAlign": 1,
-    "_N$fontFamily": "Arial",
-    "_N$overflow": 2,
-    "_N$cacheMode": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "21c729ed-3667-4bb3-a122-32d7de7c7b38"
-    },
-    "fileId": "4cCALACVVFYLHAqLQ1gA+3",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Node",
-    "_name": "quitly",
-    "_objFlags": 0,
-    "_parent": {
-      "__id__": 1
-    },
-    "_children": [],
-    "_active": true,
-    "_components": [
-      {
-        "__id__": 47
-      }
-    ],
-    "_prefab": {
-      "__id__": 48
-    },
-    "_opacity": 255,
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_contentSize": {
-      "__type__": "cc.Size",
-      "width": 360,
-      "height": 40
-    },
-    "_anchorPoint": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0.5
-    },
-    "_trs": {
-      "__type__": "TypedArray",
-      "ctor": "Float64Array",
-      "array": [
-        -231,
-        -108,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1
-      ]
-    },
-    "_eulerAngles": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_skewX": 0,
-    "_skewY": 0,
-    "_is3DNode": false,
-    "_groupIndex": 0,
-    "groupIndex": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.Label",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 46
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_string": "固定技能效果",
-    "_N$string": "固定技能效果",
-    "_fontSize": 24,
-    "_lineHeight": 28,
-    "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
-    "_spacingX": 0,
-    "_batchAsBitmap": false,
-    "_styleFlags": 0,
-    "_underlineHeight": 0,
-    "_N$horizontalAlign": 0,
-    "_N$verticalAlign": 1,
-    "_N$fontFamily": "Arial",
-    "_N$overflow": 2,
-    "_N$cacheMode": 0,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "21c729ed-3667-4bb3-a122-32d7de7c7b38"
-    },
-    "fileId": "1ceM4FvVlKXaagpDZEehR7",
     "sync": false
   },
   {
@@ -1800,6 +1578,15 @@
     "_enabled": true,
     "titleDisplay": {
       "__id__": 15
+    },
+    "typeDisplay": {
+      "__id__": 35
+    },
+    "quitlyDisplay": {
+      "__id__": 38
+    },
+    "desDisplay": {
+      "__id__": 41
     },
     "head": {
       "__id__": 31

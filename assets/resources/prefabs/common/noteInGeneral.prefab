@@ -378,7 +378,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 600,
-      "height": 500
+      "height": 450
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -457,7 +457,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        208.39999999999998,
+        183.39999999999998,
         0,
         0,
         0,
@@ -597,7 +597,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        210.63299999999998,
+        185.63299999999998,
         0,
         0,
         0,
@@ -741,7 +741,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 570,
-      "height": 420
+      "height": 370
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1037,7 +1037,7 @@
       "ctor": "Float64Array",
       "array": [
         -181.589,
-        119.257,
+        75.257,
         0,
         0,
         0,
@@ -1144,7 +1144,7 @@
       "ctor": "Float64Array",
       "array": [
         -181.438,
-        116.86,
+        72.86,
         0,
         0,
         0,
@@ -1249,7 +1249,7 @@
       "ctor": "Float64Array",
       "array": [
         -38,
-        137,
+        93,
         0,
         0,
         0,
@@ -1357,7 +1357,7 @@
       "ctor": "Float64Array",
       "array": [
         -118,
-        92,
+        48,
         0,
         0,
         0,
@@ -1427,7 +1427,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "quitly",
+    "_name": "可学技能",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1465,7 +1465,7 @@
       "ctor": "Float64Array",
       "array": [
         -231,
-        24,
+        -20,
         0,
         0,
         0,
@@ -1535,7 +1535,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "quitly",
+    "_name": "熟练兵种",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1573,7 +1573,7 @@
       "ctor": "Float64Array",
       "array": [
         -231,
-        -42,
+        -72,
         0,
         0,
         0,
@@ -1643,7 +1643,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "quitly",
+    "_name": "分解材料",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -1681,7 +1681,7 @@
       "ctor": "Float64Array",
       "array": [
         -231,
-        -108,
+        -123,
         0,
         0,
         0,
@@ -1720,8 +1720,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "固定技能效果",
-    "_N$string": "固定技能效果",
+    "_string": "分解材料",
+    "_N$string": "分解材料",
     "_fontSize": 24,
     "_lineHeight": 28,
     "_enableWrapText": true,
@@ -1746,7 +1746,7 @@
     "asset": {
       "__uuid__": "2a57d158-eb23-48b0-8009-fc5727f1b730"
     },
-    "fileId": "1ceM4FvVlKXaagpDZEehR7",
+    "fileId": "36HBzXCIdPorbdFWFpsAIq",
     "sync": false
   },
   {
@@ -1806,6 +1806,15 @@
     },
     "skillDisplay": {
       "__id__": 38
+    },
+    "teachSkillDisplay": {
+      "__id__": 41
+    },
+    "talentDisplay": {
+      "__id__": 44
+    },
+    "decompDisplay": {
+      "__id__": 47
     },
     "head": {
       "__id__": 31

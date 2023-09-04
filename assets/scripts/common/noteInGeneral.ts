@@ -24,6 +24,16 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Label, displayName: '固定技能' })
     skillDisplay: cc.Label = null;
 
+    @property({ type: cc.Label, displayName: '学习技能' })
+    teachSkillDisplay: cc.Label = null;
+
+    @property({ type: cc.Label, displayName: '熟练兵种' })
+    talentDisplay: cc.Label = null;
+
+    @property({ type: cc.Label, displayName: '分解材料' })
+    decompDisplay: cc.Label = null;
+
+
     @property(cc.Node)
     head: cc.Node = null;
 
@@ -34,7 +44,7 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName('mask').on(cc.Node.EventType.TOUCH_END, () => {
             ViewManager.instance.hideNote(EnumManager.viewPath.NOTE_IN_GENERAL, true)
         }, this)
-        
+
     }
 
     onClose() {
@@ -52,6 +62,21 @@ export default class NewClass extends cc.Component {
             let skillData = DataManager.GameData.Skill[defaultData.skills[i][0]]
             this.skillDisplay.string += skillData.name + ` `
         }
+        this.teachSkillDisplay.string = `可学技能：${defaultData.free_skills}`
+        this.talentDisplay.string = `熟练兵种：`
+        for (let i = 0; i < defaultData.talents.length; i++) {
+            if (defaultData.talents[i] == 0) {
+                this.talentDisplay.string += ` + ?`
+            } else {
+                if (i == 0) {
+                    this.talentDisplay.string += ` ${DataManager.armList[defaultData.talents[i]]}`
+                } else {
+                    this.talentDisplay.string += ` + ${DataManager.armList[defaultData.talents[i]]}`
+                }
+            }
+        }
+
+        this.decompDisplay.string = `分解材料：战神的咆哮 + 同级别英雄将魂`
     }
 
     // update (dt) {}
