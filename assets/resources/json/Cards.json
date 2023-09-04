@@ -8,9 +8,9 @@
     },
     "name": "王翦",
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "arrow": 4,
     "co": 95,
@@ -70,9 +70,9 @@
     "potential": 105,
     "quality": 1,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "rune": [
       1,
@@ -138,13 +138,14 @@
       ]
     ],
     "talents": [
+      4,
       3,
-      4
+      0
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 85,
     "id": 3,
@@ -196,9 +197,9 @@
       4
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 89,
     "id": 4,
@@ -249,11 +250,11 @@
       5
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
-    "co": 88,
+    "co": 0.04,
     "id": 5,
     "name": "吕不韦",
     "quality": 1,
@@ -281,9 +282,9 @@
     },
     "name": "王翦",
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "arrow": 4,
     "co": 95,
@@ -343,9 +344,9 @@
     "potential": 105,
     "quality": 1,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "rune": [
       1,
@@ -414,9 +415,9 @@
       3
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 85,
     "id": 3,
@@ -466,9 +467,9 @@
       2
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 89,
     "id": 4,
@@ -517,11 +518,11 @@
       5
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
-    "co": 88,
+    "co": 0.04,
     "id": 5,
     "name": "吕不韦",
     "quality": 2,
@@ -575,9 +576,9 @@
     "potential": 95,
     "quality": 2,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "name": "李信",
     "id": 6,
@@ -631,9 +632,9 @@
     "potential": 95,
     "quality": 2,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "name": "燕丹",
     "id": 7,
@@ -680,9 +681,9 @@
     ],
     "name": "扶苏",
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 90,
     "id": 8,
@@ -732,9 +733,9 @@
       4
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 90,
     "name": "高渐离",
@@ -791,9 +792,9 @@
     "potential": 95,
     "quality": 2,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 10,
     "ori_attrs": {
@@ -839,9 +840,9 @@
       5
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "name": "韩非",
     "co": 90,
@@ -898,9 +899,9 @@
     "potential": 85,
     "quality": 2,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 12,
     "ori_attrs": {
@@ -952,9 +953,9 @@
     "potential": 95,
     "quality": 2,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 13,
     "ori_attrs": {
@@ -1007,9 +1008,9 @@
     "is_spine": true,
     "quality": 2,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 14,
     "ori_attrs": {
@@ -1055,9 +1056,9 @@
     ],
     "name": "赵高",
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 93,
     "id": 15,
@@ -1109,9 +1110,9 @@
     ],
     "name": "蒙恬",
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 96,
     "id": 16,
@@ -1169,9 +1170,9 @@
     "potential": 95,
     "quality": 2,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 17,
     "ori_attrs": {
@@ -1224,9 +1225,9 @@
     "potential": 90,
     "quality": 2,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 18,
     "extend_id": [
@@ -1276,9 +1277,9 @@
       3
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 99,
     "id": 19,
@@ -1330,9 +1331,9 @@
       2
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 95,
     "name": "韩信",
@@ -1383,9 +1384,9 @@
     ],
     "name": "荀子",
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 95,
     "id": 21,
@@ -1417,9 +1418,9 @@
     },
     "name": "王翦",
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "arrow": 4,
     "co": 95,
@@ -1479,9 +1480,9 @@
     "potential": 105,
     "quality": 3,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "rune": [
       1,
@@ -1550,9 +1551,9 @@
       3
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 85,
     "id": 3,
@@ -1602,9 +1603,9 @@
       2
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 89,
     "id": 4,
@@ -1653,11 +1654,11 @@
       5
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
-    "co": 88,
+    "co": 0.04,
     "id": 5,
     "name": "吕不韦",
     "quality": 3,
@@ -1711,9 +1712,9 @@
     "potential": 95,
     "quality": 3,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "name": "李信",
     "id": 6,
@@ -1767,9 +1768,9 @@
     "potential": 95,
     "quality": 3,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "name": "燕丹",
     "id": 7,
@@ -1816,9 +1817,9 @@
     ],
     "name": "扶苏",
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 90,
     "id": 8,
@@ -1868,9 +1869,9 @@
       4
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 90,
     "name": "高渐离",
@@ -1927,9 +1928,9 @@
     "potential": 95,
     "quality": 3,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 10,
     "ori_attrs": {
@@ -1975,9 +1976,9 @@
       5
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "name": "韩非",
     "co": 90,
@@ -2034,9 +2035,9 @@
     "potential": 85,
     "quality": 3,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 12,
     "ori_attrs": {
@@ -2088,9 +2089,9 @@
     "potential": 95,
     "quality": 3,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 13,
     "ori_attrs": {
@@ -2143,9 +2144,9 @@
     "is_spine": true,
     "quality": 3,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 14,
     "ori_attrs": {
@@ -2191,9 +2192,9 @@
     ],
     "name": "赵高",
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 93,
     "id": 15,
@@ -2245,9 +2246,9 @@
     ],
     "name": "蒙恬",
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 96,
     "id": 16,
@@ -2305,9 +2306,9 @@
     "potential": 95,
     "quality": 3,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 17,
     "ori_attrs": {
@@ -2360,9 +2361,9 @@
     "potential": 90,
     "quality": 3,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 18,
     "extend_id": [
@@ -2412,9 +2413,9 @@
       3
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 99,
     "id": 19,
@@ -2466,9 +2467,9 @@
       2
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 95,
     "name": "韩信",
@@ -2519,9 +2520,9 @@
     ],
     "name": "荀子",
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 95,
     "id": 21,
@@ -2570,9 +2571,9 @@
       3
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 78,
     "id": 22,
@@ -2619,9 +2620,9 @@
       2
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "name": "赵姬",
     "co": 80,
@@ -2668,9 +2669,9 @@
       1
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 90,
     "id": 24,
@@ -2723,9 +2724,9 @@
     "potential": 80,
     "quality": 4,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 25,
     "ori_attrs": {
@@ -2774,9 +2775,9 @@
     "name": "吴广",
     "quality": 4,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 26,
     "ori_attrs": {
@@ -2819,9 +2820,9 @@
     ],
     "name": "王贲",
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 94,
     "id": 27,
@@ -2877,9 +2878,9 @@
     "is_spine": true,
     "quality": 4,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 28,
     "ori_attrs": {
@@ -2921,9 +2922,9 @@
       5
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "name": "韩安",
     "co": 82,
@@ -2971,9 +2972,9 @@
     ],
     "name": "魏假",
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "co": 100,
     "id": 30,
@@ -3020,9 +3021,9 @@
       5
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "name": "燕喜",
     "co": 98,
@@ -3075,9 +3076,9 @@
     "name": "齐建",
     "quality": 4,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 32,
     "ori_attrs": {
@@ -3119,9 +3120,9 @@
       3
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "name": "尉缭",
     "co": 85,
@@ -3175,9 +3176,9 @@
     "potential": 95,
     "quality": 4,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 34,
     "ori_attrs": {
@@ -3226,9 +3227,9 @@
     "potential": 80,
     "quality": 5,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 35,
     "ori_attrs": {
@@ -3278,9 +3279,9 @@
     "is_spine": true,
     "quality": 5,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 36,
     "ori_attrs": {
@@ -3319,9 +3320,9 @@
       3
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "name": "王五",
     "co": 100,
@@ -3366,9 +3367,9 @@
       1
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "name": "赵六",
     "co": 90,
@@ -3412,9 +3413,9 @@
       2
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "name": "孙七",
     "co": 90,
@@ -3464,9 +3465,9 @@
     "potential": 85,
     "quality": 5,
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "id": 40,
     "ori_attrs": {
@@ -3505,9 +3506,9 @@
       5
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "name": "吴九",
     "co": 90,
@@ -3551,9 +3552,9 @@
       4
     ],
     "additions": {
-      "addition_1": 0,
-      "addition_2": 0,
-      "addition_3": 0
+      "addition_1": 5,
+      "addition_2": 5,
+      "addition_3": 5
     },
     "name": "郑十",
     "co": 78,

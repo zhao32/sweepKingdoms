@@ -97,10 +97,10 @@ export default class NewClass extends cc.Component {
 
                 plusStr = `${plusStr}+${num.toFixed(2)}`
                 if (j != data.attribute.length - 1) {
-                    plusStr += '，'
+                    plusStr += ','
                 }
             }
-            str = `${str}：${plusStr}\n`
+            str = `${str}:${plusStr}\n`
         }
         this.richLabel.string = str
     }

@@ -30,7 +30,6 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Label, displayName: '经验进度label' })
     labelProExp: cc.Label = null;
 
-
     @property({ type: cc.Label, displayName: '城镇坐标' })
     labelPos: cc.Label = null;
 
@@ -115,6 +114,9 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Node, displayName: '系统' })
     btnSet: cc.Node = null;
 
+    @property({ type: cc.Node, displayName: '图鉴' })
+    btnIntro: cc.Node = null;
+
     @property({ type: cc.Node, displayName: '聊天按钮' })
     btnChat: cc.Node = null;
     chatPanel
@@ -125,7 +127,7 @@ export default class NewClass extends cc.Component {
     initChat(data) {
         this.richChat.string = ''
         // console.log(`++++++++++++:`+ JSON.stringify(data))
-        for (let i = data.length - 3 ; i <= data.length; i++) {
+        for (let i = data.length - 3; i <= data.length; i++) {
             if (data[i]) this.richChat.string += `<color=#E7C891>${data[i].sender_name}：</c><color=#ffffff>${data[i].content}</c>\n\n`
         }
     }
@@ -133,6 +135,11 @@ export default class NewClass extends cc.Component {
     start() {
 
         DataManager.mainHome = this
+
+        this.btnIntro.on(cc.Node.EventType.TOUCH_END, () => {
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_INTRO)
+        }, this)
+
         this.btnChat.on(cc.Node.EventType.TOUCH_END, () => {
             console.log(`点击聊天面板1`)
             if (this.chatPanel) {
@@ -297,8 +304,11 @@ export default class NewClass extends cc.Component {
         this.labelCombatPower.string = String(militray)
 
         // console.log(`DataManager.playData.level - 1:` + (DataManager.playData.level - 1))
-        this.proBarExp.progress = DataManager.playData.level_exp / DataManager.GameData.Levels[DataManager.playData.level - 1].exp
-        this.labelProExp.string = `${DataManager.playData.level_exp}/${DataManager.GameData.Levels[DataManager.playData.level - 1].exp}`
+        if (DataManager.playData.level) {
+            this.proBarExp.progress = DataManager.playData.level_exp / DataManager.GameData.Levels[DataManager.playData.level - 1].exp
+            this.labelProExp.string = `${DataManager.playData.level_exp}/${DataManager.GameData.Levels[DataManager.playData.level - 1].exp}`
+        }
+
         if (DataManager.countyList[DataManager.playData.nation_id]) {
             this.labelNation.string = DataManager.countyList[DataManager.playData.nation_id] + `国`//String(DataManager.playData.account_id)
         } else {

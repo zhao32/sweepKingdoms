@@ -63,8 +63,10 @@ export default class EnumManager {
 
         WND_MAIN_RECOVER: 'prefabs/main/wndRecover',
 
+        /**图鉴 */
+        WND_MAIN_INTRO: 'prefabs/main/wndIntroduce',
 
-
+        
         ///////////////////// 酒馆
         /**酒馆 */
         WND_HOTEL: 'prefabs/hotel/wndHotel',
@@ -187,6 +189,11 @@ export default class EnumManager {
         NOTE_SOLIDER: 'prefabs/common/noteSolider',
 
         NOTE_GENERAL: 'prefabs/common/noteGeneral',
+
+        NOTE_IN_GENERAL: 'prefabs/common/noteInGeneral',
+
+        NOTE_IN_SKILL: 'prefabs/common/noteInSkill',
+
 
         /**好友系统 */
         WND_FIREND_LIST: 'prefabs/firend/wndFirendList',
