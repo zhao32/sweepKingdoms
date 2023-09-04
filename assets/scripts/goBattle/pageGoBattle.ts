@@ -486,6 +486,9 @@ export default class NewClass extends cc.Component {
 
         this.changeCountryId(this.nation_id)
 
+        cc.Canvas.instance.node.getChildByName('loadNetTip').active = true
+
+
         let delay = 0.25
         MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx, this.nation_id)
         this.scheduleOnce(() => {
@@ -526,6 +529,10 @@ export default class NewClass extends cc.Component {
             console.log(`延迟请求`)
             MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, this.curPageIdx + 20 + 1, this.nation_id)//右下
         }, delay * 9)
+
+        this.scheduleOnce(() => {
+            cc.Canvas.instance.node.getChildByName('loadNetTip').active = false
+        }, delay * 10)
     }
 
 
@@ -564,19 +571,19 @@ export default class NewClass extends cc.Component {
         this.applyMines()
 
 
-        for (let i = 0; i < this.node.getChildByName(`toggleContainer`).children.length; i++) {
-            let child = this.node.getChildByName(`toggleContainer`).children[i]
-            if (i + 1 == this.nation_id) {
-                child.getComponent(cc.Toggle).isChecked = true
-            }
-            child.on('toggle', () => {
-                if (child.getComponent(cc.Toggle).isChecked == true) {
-                    this.nation_id = i + 1
-                    this.curPageIdx = 200
-                    this.applyMines()
-                }
-            }, this)
-        }
+        // for (let i = 0; i < this.node.getChildByName(`toggleContainer`).children.length; i++) {
+        //     let child = this.node.getChildByName(`toggleContainer`).children[i]
+        //     if (i + 1 == this.nation_id) {
+        //         child.getComponent(cc.Toggle).isChecked = true
+        //     }
+        //     child.on('toggle', () => {
+        //         if (child.getComponent(cc.Toggle).isChecked == true) {
+        //             this.nation_id = i + 1
+        //             this.curPageIdx = 200
+        //             this.applyMines()
+        //         }
+        //     }, this)
+        // }
     }
 
     changeCountryId(country) {

@@ -309,6 +309,7 @@ export default class NewClass extends cc.Component {
         this.node.width = this.node.height = 0;
     }
     chatview_auth_cb(retObj) {
+        // retObj.chat_content.reverse()
         if (DataManager.curWndPath == EnumManager.viewPath.WND_CHAT) return
         if (!DataManager.chatviewList) {
             console.log(`初始化聊天面板`)
@@ -356,7 +357,7 @@ export default class NewClass extends cc.Component {
             for (let i = 0; i < this.spawnCount; ++i) { // spawn items, we only need to do this once
                 let item = cc.instantiate(this.itemTemplate);
                 this.content.addChild(item);
-                item.setPosition(0, -item.height * (0.5 + i) - this.spacing * (i + 1));
+                // item.setPosition(0, item.height * (0.5 + i) + this.spacing * (i + 1));
                 item.getComponent('ChatItem').updateItem(i);
                 this._spawnItems.push(item);
             }
@@ -364,10 +365,11 @@ export default class NewClass extends cc.Component {
             this.updateTimer = 0;
             for (let i = 0; i < this.spawnCount; ++i) { // spawn items, we only need to do this once
                 let item = this._spawnItems[i];
-                item.setPosition(0, -item.height * (0.5 + i) - this.spacing * (i + 1));
+                // item.setPosition(0, item.height * (0.5 + i) + this.spacing * (i + 1));
                 item.getComponent('ChatItem').updateItem(i);
             }
         }
+        this.mScrollView.scrollToBottom()
     }
     SendChatContent(params, targetid = 0) {
         cc.log("发送的对象ID===" + targetid + "type==" + this._curselectIndex);
@@ -448,7 +450,7 @@ export default class NewClass extends cc.Component {
         // MyProtocols.send_C2SChatView(DonotDestroyManager._gameSocket,this._curselectIndex);
     }
     SelectTabMenuIndex(nindex) {
-        this.mScrollView.scrollToTop()
+        this.mScrollView.scrollToBottom()
         if (nindex == 2) {
             if (this._targetchatinfo != null) {
                 var strvalue = "你对" + this._targetchatinfo.sender_name + "说:";
@@ -477,7 +479,7 @@ export default class NewClass extends cc.Component {
     }
     Send_OnClickHandler(event, customEventData) {
         // SoundUtil.playBtnOpenEffect();
-        this.mScrollView.scrollToTop()
+        this.mScrollView.scrollToBottom()
         if (this._curselectIndex == 2) {
             if (this._targetchatinfo == null) {
                 ViewManager.instance.showToast(`没有私聊对象！`)
@@ -502,38 +504,38 @@ export default class NewClass extends cc.Component {
     }
 
     update(dt) {
-        this.updateTimer += dt;
-        if (this.updateTimer < this.updateInterval) return; // we don't need to do the math every frame
-        this.updateTimer = 0;
-        let items = this._spawnItems;
-        if (items == null) {
-            return;
-        }
-        let buffer = this.bufferZone;
-        let isDown = this.mScrollView.content.y < this.lastContentPosY; // scrolling direction
-        let offset = (this.itemTemplateHeight + this.spacing) * items.length;
-        for (let i = 0; i < items.length; ++i) {
-            let viewPos = this.getPositionInView(items[i]);
-            if (isDown) {
-                // if away from buffer zone and not reaching top of content
-                if (viewPos.y < -buffer && items[i].y + offset < 0) {
-                    items[i].y = (items[i].y + offset);
-                    let item = items[i].getComponent('ChatItem');
-                    let itemId = item._itemID - items.length; // update item id
-                    item.updateItem(itemId);
-                }
-            } else {
-                // if away from buffer zone and not reaching bottom of content
-                if (viewPos.y > buffer && items[i].y - offset > -this.content.height) {
-                    items[i].y = (items[i].y - offset);
-                    let item = items[i].getComponent('ChatItem');
-                    let itemId = item._itemID + items.length;
-                    item.updateItem(itemId);
-                }
-            }
-        }
-        // update lastContentPosY
-        this.lastContentPosY = this.mScrollView.content.y;
+        // this.updateTimer += dt;
+        // if (this.updateTimer < this.updateInterval) return; // we don't need to do the math every frame
+        // this.updateTimer = 0;
+        // let items = this._spawnItems;
+        // if (items == null) {
+        //     return;
+        // }
+        // let buffer = this.bufferZone;
+        // let isDown = this.mScrollView.content.y < this.lastContentPosY; // scrolling direction
+        // let offset = (this.itemTemplateHeight + this.spacing) * items.length;
+        // for (let i = 0; i < items.length; ++i) {
+        //     let viewPos = this.getPositionInView(items[i]);
+        //     if (isDown) {
+        //         // if away from buffer zone and not reaching top of content
+        //         if (viewPos.y < -buffer && items[i].y + offset < 0) {
+        //             items[i].y = (items[i].y + offset);
+        //             let item = items[i].getComponent('ChatItem');
+        //             let itemId = item._itemID - items.length; // update item id
+        //             item.updateItem(itemId);
+        //         }
+        //     } else {
+        //         // if away from buffer zone and not reaching bottom of content
+        //         if (viewPos.y > buffer && items[i].y - offset > -this.content.height) {
+        //             items[i].y = (items[i].y - offset);
+        //             let item = items[i].getComponent('ChatItem');
+        //             let itemId = item._itemID + items.length;
+        //             item.updateItem(itemId);
+        //         }
+        //     }
+        // }
+        // // update lastContentPosY
+        // this.lastContentPosY = this.mScrollView.content.y;
     }
     // update (dt) {}
 }

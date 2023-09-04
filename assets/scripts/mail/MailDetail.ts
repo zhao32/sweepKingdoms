@@ -104,6 +104,7 @@ export default class NewClass extends cc.Component {
     }
     createReward(list) {
         var self = this;
+        self.rewardContent.removeAllChildren()
         list.forEach(function (element) {
             var newNode = cc.instantiate(self.itemBox_prefab);
             newNode.y = 0

@@ -124,7 +124,8 @@ export default class NewClass extends cc.Component {
 
     initChat(data) {
         this.richChat.string = ''
-        for (let i = data.length - 4; i < data.length - 1; i++) {
+        // console.log(`++++++++++++:`+ JSON.stringify(data))
+        for (let i = data.length - 3 ; i <= data.length; i++) {
             if (data[i]) this.richChat.string += `<color=#E7C891>${data[i].sender_name}：</c><color=#ffffff>${data[i].content}</c>\n\n`
         }
     }
