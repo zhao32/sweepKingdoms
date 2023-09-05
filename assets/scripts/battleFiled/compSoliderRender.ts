@@ -31,7 +31,7 @@ export default class NewClass extends cc.Component {
 
     }
 
-    init(data) {
+    init(data, cardData) {
         // console.log('data:'+ JSON.stringify(data))
         // debugger
         this.label0.string = DataManager.GameData.Soldier[data.arm].name
@@ -42,7 +42,7 @@ export default class NewClass extends cc.Component {
         let str = DataManager.getSoliderDes(DataManager.GameData.Soldier[data.arm])
         this.icon.on(cc.Node.EventType.TOUCH_END, () => {
             // ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES, ...[str])
-            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_SOLIDER, ...[DataManager.GameData.Soldier[data.arm]])
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_SOLIDER, ...[DataManager.GameData.Soldier[data.arm], cardData])
 
         }, this)
     }

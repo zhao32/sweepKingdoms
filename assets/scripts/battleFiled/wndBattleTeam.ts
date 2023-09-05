@@ -45,6 +45,7 @@ export default class NewClass extends cc.Component {
         this.contect.removeAllChildren()
         for (let i = 0; i < DataManager.myBattleFiledConfig.soliders.length; i++) {
             let soliderData = DataManager.myBattleFiledConfig.soliders[i]
+            let cardData = DataManager.myBattleFiledConfig.card[i]
             let solider = cc.instantiate(this.soliderPfb)
             solider.parent = this.contect
             let name = DataManager.GameData.Soldier[soliderData.arm].name
@@ -57,9 +58,9 @@ export default class NewClass extends cc.Component {
             let str = DataManager.getSoliderDes(DataManager.GameData.Soldier[soliderData.arm])
             solider.getChildByName(`equipBg`).on(cc.Node.EventType.TOUCH_END, () => {
                 // ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES, ...[str])
-                ViewManager.instance.showNote(EnumManager.viewPath.NOTE_SOLIDER, ...[DataManager.GameData.Soldier[soliderData.arm]])
+                ViewManager.instance.showNote(EnumManager.viewPath.NOTE_SOLIDER, ...[DataManager.GameData.Soldier[soliderData.arm], cardData])
 
-                
+
             }, this)
         }
 

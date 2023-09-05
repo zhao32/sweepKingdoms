@@ -33,6 +33,10 @@ export default class NewClass extends cc.Component {
     otherContect: cc.Node = null;
 
 
+    @property(cc.Label)
+    labelFight: cc.Label = null;
+
+
     @property(cc.Prefab)
     heroPfb: cc.Prefab = null;
 
@@ -70,6 +74,8 @@ export default class NewClass extends cc.Component {
         // "cardId":1,"soliders":[{"arm":1,"count":100}]
         console.log('stageData:' + JSON.stringify(stageData))
         // DataManager.playData.military_data = [500, 500, 500]
+        this.myHeroData = DataManager.cardsList[0]
+
         this.myContect.removeAllChildren()
         this.onSelectSolider = true
         for (let i = 0; i < DataManager.playData.military_data.length; i++) {
@@ -77,12 +83,12 @@ export default class NewClass extends cc.Component {
                 let solider = cc.instantiate(this.soliderPfb)
                 solider.x = 0
                 solider.parent = this.myContect
-                solider.getComponent(battleSoliderRender).init(i + 1, DataManager.playData.military_data[i])
+                solider.getComponent(battleSoliderRender).init(i + 1, DataManager.playData.military_data[i], null, null, this.myHeroData)
+
             }
         }
 
         this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(DataManager.cardsList[0])
-        this.myHeroData = DataManager.cardsList[0]
         this.initEnemyData(stageData.cardId, stageData.soliders)
 
 
@@ -103,6 +109,7 @@ export default class NewClass extends cc.Component {
         ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, enemyContect.getChildByName('iconBg'))
         ResManager.loadItemIcon(`hero/heroNameBg${defaultData.quality - 1}`, enemyContect.getChildByName('heroNameBg0'))
 
+        let count = 0
         this.otherContect.removeAllChildren()
         for (let i = 0; i < soliders.length; i++) {
             let solider = cc.instantiate(this.eSoliderPfb)
@@ -110,7 +117,9 @@ export default class NewClass extends cc.Component {
 
             solider.x = 0
             solider.parent = this.otherContect
+            count += soliders[i].count
         }
+        this.labelFight.string = `x${count}`
     }
 
     changeHero() {
@@ -137,7 +146,8 @@ export default class NewClass extends cc.Component {
                 let solider = cc.instantiate(this.soliderPfb)
                 solider.x = 0
                 solider.parent = this.myContect
-                solider.getComponent(battleSoliderRender).init(i + 1, DataManager.playData.military_data[i])
+                solider.getComponent(battleSoliderRender).init(i + 1, DataManager.playData.military_data[i], null, null, this.myHeroData)
+
             }
         }
     }
@@ -195,8 +205,8 @@ export default class NewClass extends cc.Component {
 
             ViewManager.instance.hideWnd(DataManager.curWndPath)
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_STAGE_BATTLE, ...[this._myData, this._otherData, this.groupIdx, this.stageIdx])
-    
-          
+
+
         }
     }
 
@@ -206,7 +216,7 @@ export default class NewClass extends cc.Component {
 
     // S2CPkEnemyFormation(data) {
     //     // console.log(`pk准备 返回` + JSON.stringify(data))
-       
+
     // }
 
     // update (dt) {}

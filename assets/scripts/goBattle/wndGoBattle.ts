@@ -335,6 +335,25 @@ export default class NewClass extends cc.Component {
             }
         }
 
+        /**自学技能加成 */
+        let skillstAdds = GameUtil.instance.skillstBaseAdd(this.myData.heroData)
+        for (let i = 0; i < myData.soliderList.length; i++) {
+            let hp = DataManager.GameData.Soldier[myData.soliderList[i].arm].hp + plusHp
+
+            for (let j = 0; j < skillstAdds.length; j++) {
+                if (myData.soliderList[i].arm == j + 1) {
+                    myData.soliderList[i].fight += skillstAdds[j].attack_1
+                    myData.soliderList[i].fight += skillstAdds[j].attack_2
+                    myData.soliderList[i].fight += skillstAdds[j].attack_3
+
+                    myData.soliderList[i].defense += skillstAdds[j].attack_4 * hp
+                    myData.soliderList[i].defense += skillstAdds[j].attack_5 * hp
+                    myData.soliderList[i].defense += skillstAdds[j].attack_6 * hp
+                }
+            }
+        }
+
+
         if (!otherData.heroData) {
             for (let i = 0; i < otherData.soliderList.length; i++) {
                 let hp = DataManager.GameData.Soldier[otherData.soliderList[i].arm].hp
@@ -365,6 +384,25 @@ export default class NewClass extends cc.Component {
                     }
                 }
             }
+
+            /**自学技能加成 */
+            let skillstAdds = GameUtil.instance.skillstBaseAdd(this.myData.heroData)
+            for (let i = 0; i < otherData.soliderList.length; i++) {
+                let hp = DataManager.GameData.Soldier[otherData.soliderList[i].arm].hp
+
+                for (let j = 0; j < skillstAdds.length; j++) {
+                    if (otherData.soliderList[i].arm == j + 1) {
+                        otherData.soliderList[i].fight += skillstAdds[j].attack_1
+                        otherData.soliderList[i].fight += skillstAdds[j].attack_2
+                        otherData.soliderList[i].fight += skillstAdds[j].attack_3
+
+                        otherData.soliderList[i].defense += skillstAdds[j].attack_4 * hp
+                        otherData.soliderList[i].defense += skillstAdds[j].attack_5 * hp
+                        otherData.soliderList[i].defense += skillstAdds[j].attack_6 * hp
+                    }
+                }
+            }
+
         }
 
         this.myContect.removeAllChildren()
@@ -377,7 +415,8 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < myData.soliderList.length; i++) {
             let item = cc.instantiate(this.soliderPfb)
             item.parent = this.myContect
-            item.getComponent(soliderItem).init(myData.soliderList[i])
+            item.getComponent(soliderItem).init(myData.soliderList[i], myData.heroData)
+
             this.myCount.troops += myData.soliderList[i].count
         }
 
@@ -391,7 +430,8 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < otherData.soliderList.length; i++) {
             let item = cc.instantiate(this.soliderPfb)
             item.parent = this.otherContect
-            item.getComponent(soliderItem).init(otherData.soliderList[i])
+            item.getComponent(soliderItem).init(otherData.soliderList[i], otherData.heroData)
+
             this.enemyCount.troops += otherData.soliderList[i].count
 
         }
@@ -406,12 +446,10 @@ export default class NewClass extends cc.Component {
         let self = this
         myAttack()
 
+        let buffNum = 0
         function myAttack() {
             let mySolider: solider = myData.soliderList[myIdx]
             let enemySolider: solider = otherData.soliderList[enemyIdx]
-
-            let myAttacknum = mySolider.fight * mySolider.count
-            let enemyDefensenum = enemySolider.defense * enemySolider.count
 
             let data = {
                 myArm: mySolider.arm,
@@ -419,6 +457,36 @@ export default class NewClass extends cc.Component {
                 enemyNum: 0,
                 skillId: GameUtil.instance.getMyTeamSkill(self.myData.heroData.skills_equips)
             }
+
+            let fightPlus = 0
+            let defensePlus = 0
+            if (data.skillId) {
+                let skillstData = DataManager.GameData.SkillStudy[data.skillId]
+                buffNum = skillstData.target_num
+                for (let j = 0; j < skillstData.buff_target.length; j++) {
+                    if (Math.random() * 1 < skillstData.buff_target.buff_rate) {
+                        if (skillstData.buff_target[j][0] <= 6) {//基础加成
+                            for (let k = 0; k < self.myData.heroData.talents.length; k++) {
+                                if (self.myData.heroData.talents[k] == data.myArm) {
+                                    let plus = self.myData.heroData.proficiency[k] * skillstData.buff_target[j][1] * skillstData.buff_target[j][2]
+                                    if (skillstData.buff_target[j][0] <= 3) {
+                                        if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
+                                            fightPlus += plus
+                                        }
+                                    } else {
+                                        if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
+                                            defensePlus += plus
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            let myAttacknum = (mySolider.fight + fightPlus) * mySolider.count
+            let enemyDefensenum = (enemySolider.defense + defensePlus) * enemySolider.count
 
             let info: string
             if (myAttacknum - enemyDefensenum > 0) {//打死了这一波敌人
@@ -636,6 +704,7 @@ export default class NewClass extends cc.Component {
         let enemyCount = this.myAttackList[this.myAttIdx].enemyNum
 
         if (this.myAttackList[this.myAttIdx].skillId > 0) {
+            console.log(`this.myAttackList[this.myAttIdx].skillId:` + this.myAttackList[this.myAttIdx].skillId)
             let skillNode = this.node.getChildByName(`skillat`)
             skillNode.active = true
             skillNode.opacity = 0

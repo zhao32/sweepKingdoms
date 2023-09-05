@@ -10,7 +10,7 @@ import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class NewClass extends cc.Component {
@@ -28,13 +28,13 @@ export default class NewClass extends cc.Component {
 
     // onLoad () {}
 
-    start () {
+    start() {
 
     }
 
-    init(idx, soliderNum){ 
+    init(idx, soliderNum, cardData?: any) {
         // let arm = DataManager.GameData.Soldier[idx].arm
-        ResManager.loadItemIcon(`soliderHead/${ DataManager.GameData.Soldier[idx].name}`,this.node.getChildByName(`head`))
+        ResManager.loadItemIcon(`soliderHead/${DataManager.GameData.Soldier[idx].name}`, this.node.getChildByName(`head`))
         this.nameLabel.string = `${DataManager.GameData.Soldier[idx].name}`
 
         this.numLabel.string = `数量: x${soliderNum}`
@@ -42,11 +42,11 @@ export default class NewClass extends cc.Component {
 
         let data = DataManager.GameData.Soldier[idx]
 
-        
+
         let str = DataManager.getSoliderDes(data)
         this.node.getChildByName(`head`).on(cc.Node.EventType.TOUCH_END, () => {
             // ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES, ...[str])
-            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_SOLIDER, ...[data])
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_SOLIDER, ...[data, cardData])
 
         }, this)
 

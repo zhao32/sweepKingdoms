@@ -53,7 +53,7 @@ export default class NewClass extends cc.Component {
         }
 
         if (count > 150000 && this.slider.progress > this.selectNum / this.allNum) {
-            let selectNum =150000 - (count - myCount)
+            let selectNum = 150000 - (count - myCount)
             // selectNum = Math.max(0, selectNum)
             this.slider.progress = Math.max(selectNum / this.allNum, 0)
             ViewManager.instance.showToast('已招满150000人')
@@ -77,7 +77,7 @@ export default class NewClass extends cc.Component {
         return { arm: this.idx, count: this._selectNum }
     }
 
-    init(idx, soliderNum, allNum) {
+    init(idx, soliderNum, allNum, cardData?: any) {
         this.idx = idx
         this.allNum = allNum
         this.selectNum = soliderNum
@@ -91,7 +91,7 @@ export default class NewClass extends cc.Component {
         let str = DataManager.getSoliderDes(DataManager.GameData.Soldier[idx])
         this.node.getChildByName(`head`).on(cc.Node.EventType.TOUCH_END, () => {
             // ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES, ...[str])
-            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_SOLIDER, ...[DataManager.GameData.Soldier[idx]])
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_SOLIDER, ...[DataManager.GameData.Soldier[idx], cardData])
 
         }, this)
     }

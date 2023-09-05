@@ -334,11 +334,31 @@ export default class NewClass extends cc.Component {
             }
         }
 
+
+        let my_points = []
+        for (let i = 0; i < data.my_points.length; i++) {
+            if (data.my_points[i].hold_player) {
+                if (data.my_points[i].hold_player.group != 101) {
+                    my_points.push(data.my_points[i])
+                }
+            }
+        }
+        my_points.sort((a, b) => b.hold_player.group - a.hold_player.group)
+
+        for (let i = 0; i < data.my_points.length; i++) {
+            if (data.my_points[i].hold_player) {
+                if (data.my_points[i].hold_player.group == 101) {
+                    my_points.unshift(data.my_points[i])
+                }
+            }
+        }
+
+        data.my_points = my_points
+
         for (let i = 0; i < this.myContect.children.length; i++) {
             if (data.my_points[i].hold_player) {
                 let myNode = this.myContect.children[i]
-
-
+                myNode.off(cc.Node.EventType.TOUCH_END)
                 myNode.on(cc.Node.EventType.TOUCH_END, () => {
                     console.log(`定位矿的位置`)
                     this.selectIdx = data.my_points[i].hold_player.idx

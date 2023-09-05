@@ -73,7 +73,7 @@ export default class NewClass extends cc.Component {
         }
     }
 
-    init(idx, soliderNum, used?: number, type?: string) {
+    init(idx, soliderNum, used?: number, type?: string, cardData?: any) {
         this.type = type
         this.used = used
         this.idx = idx
@@ -96,7 +96,8 @@ export default class NewClass extends cc.Component {
         let str = DataManager.getSoliderDes(data)
         this.node.getChildByName(`head`).on(cc.Node.EventType.TOUCH_END, () => {
             // ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES, ...[str])
-            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_SOLIDER, ...[data])
+            console.log(`cardData:`+JSON.stringify(cardData))
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_SOLIDER, ...[data, cardData])
 
         }, this)
     }

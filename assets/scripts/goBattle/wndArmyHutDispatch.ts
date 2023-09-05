@@ -119,26 +119,7 @@ export default class NewClass extends cc.Component {
             this.cards = data.cards
         }
 
-        console.log(`this.soliders:` + JSON.stringify(this.soliders))
-        if (this.soliders.length == 0) {
-            this.tipDisplay.string = `暂无可派遣兵力`
-        } else {
-            this.tipDisplay.string = ``
-            this.myContect.removeAllChildren()
-            // this.onSelectSolider = true
-            for (let i = 0; i < this.soliders.length; i++) {
-                let solider = cc.instantiate(this.soliderPfb)
-                solider.x = 0
-                solider.parent = this.myContect
-                let used = 0
-                for (let j = 0; j < this.soliderUsed.length; j++) {
-                    if (this.soliderUsed[j].arm == this.soliders[i].arm) {
-                        used = this.soliderUsed[j].count
-                    }
-                }
-                solider.getComponent(battleSoliderRender).init(this.soliders[i].arm, this.soliders[i].count, used, this._type)
-            }
-        }
+
 
         if (this.eviType == 0 || this.eviType == 1) return
 
@@ -157,7 +138,6 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName(`noHeroDefine`).active = false
             let heroRender = this.node.getChildByName(`heroRender`)
             heroRender.active = true
-            this.myHeroData = DataManager.GameData.Cards[data.formation.a]
 
             let tempId
             let card
@@ -173,6 +153,29 @@ export default class NewClass extends cc.Component {
             } else {
                 this.node.getChildByName(`noHeroDefine`).active = true
                 this.node.getChildByName(`heroRender`).active = false
+            }
+            this.myHeroData = card// DataManager.GameData.Cards[data.formation.a]
+
+            console.log(`this.soliders:` + JSON.stringify(this.soliders))
+            if (this.soliders.length == 0) {
+                this.tipDisplay.string = `暂无可派遣兵力`
+            } else {
+                this.tipDisplay.string = ``
+                this.myContect.removeAllChildren()
+                // this.onSelectSolider = true
+                for (let i = 0; i < this.soliders.length; i++) {
+                    let solider = cc.instantiate(this.soliderPfb)
+                    solider.x = 0
+                    solider.parent = this.myContect
+                    let used = 0
+                    for (let j = 0; j < this.soliderUsed.length; j++) {
+                        if (this.soliderUsed[j].arm == this.soliders[i].arm) {
+                            used = this.soliderUsed[j].count
+                        }
+                    }
+                    console.log(`this.myHeroData:` + JSON.stringify(this.myHeroData))
+                    solider.getComponent(battleSoliderRender).init(this.soliders[i].arm, this.soliders[i].count, used, this._type, this.myHeroData)
+                }
             }
 
             // heroRender.getComponent(battleHeroRender).init(DataManager.GameData.Cards[tempId])
@@ -293,7 +296,7 @@ export default class NewClass extends cc.Component {
                         used = this.soliderUsed[j].count
                     }
                 }
-                solider.getComponent(battleSoliderRender).init(this.soliders[i].arm, this.soliders[i].count, used, this._type)
+                solider.getComponent(battleSoliderRender).init(this.soliders[i].arm, this.soliders[i].count, used, this._type, this.myHeroData)
 
                 if (this.mobilizeSoliders[i]) {
                     solider.getComponent(battleSoliderRender).setSelectNum(this.mobilizeSoliders[i].count)

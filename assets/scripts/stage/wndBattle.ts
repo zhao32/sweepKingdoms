@@ -232,9 +232,10 @@ export default class NewClass extends cc.Component {
 
 
     getEnemyPlusList() {
+        // console.log(`this.enemyData:` + JSON.stringify(this.enemyData))
         let skills = this.enemyData.heroData.skills
-        let talents = this.enemyData.heroData.skills
-        let proficiency = [1000, 1000, 1000]
+        let talents = this.enemyData.heroData.talents
+        let proficiency =[1000, 1000, 1000]// this.enemyData.heroData.proficiency //[1000, 1000, 1000]
 
         let plusList = []
         for (let i = 0; i < skills.length; i++) {
@@ -418,40 +419,65 @@ export default class NewClass extends cc.Component {
 
         let myPlusList = this.getMyPlusList()
 
+        let grade = DataManager.GameData.build['barracks'][10 - 1].grade
+        let plusHp = 0
+        let levelData = DataManager.GameData.buildUp['barracks'][10][grade - 1]
+        if (levelData) plusHp = levelData.protect[0]
+
         for (let i = 0; i < myData.soliderList.length; i++) {
+            let hp = DataManager.GameData.Soldier[myData.soliderList[i].arm].hp + plusHp
             myData.soliderList[i].fight += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_1
             myData.soliderList[i].fight += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_2
             myData.soliderList[i].fight += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_3
 
-            myData.soliderList[i].defense += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_4
-            myData.soliderList[i].defense += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_5
-            myData.soliderList[i].defense += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_6
+            myData.soliderList[i].defense += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_4 * hp
+            myData.soliderList[i].defense += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_5 * hp
+            myData.soliderList[i].defense += DataManager.GameData.Soldier[myData.soliderList[i].arm].defense.attack_6 * hp
 
             for (let j = 0; j < myPlusList.length; j++) {
                 if (myPlusList[j].arm == myData.soliderList[i].arm) {
                     myData.soliderList[i].fight += myPlusList[j].fight
-                    myData.soliderList[i].defense += myPlusList[j].defense
+                    myData.soliderList[i].defense += myPlusList[j].defense * hp
                 }
             }
         }
+        /**自学技能加成 */
+        let skillstAdds = GameUtil.instance.skillstBaseAdd(this.myData.heroData)
+        for (let i = 0; i < myData.soliderList.length; i++) {
+            let hp = DataManager.GameData.Soldier[myData.soliderList[i].arm].hp + plusHp
+
+            for (let j = 0; j < skillstAdds.length; j++) {
+                if (myData.soliderList[i].arm == j + 1) {
+                    myData.soliderList[i].fight += skillstAdds[j].attack_1
+                    myData.soliderList[i].fight += skillstAdds[j].attack_2
+                    myData.soliderList[i].fight += skillstAdds[j].attack_3
+
+                    myData.soliderList[i].defense += skillstAdds[j].attack_4 * hp
+                    myData.soliderList[i].defense += skillstAdds[j].attack_5 * hp
+                    myData.soliderList[i].defense += skillstAdds[j].attack_6 * hp
+                }
+            }
+        }
+
 
         // console.log('myData:' + JSON.stringify(myData))
 
         let enemyPlusList = this.getEnemyPlusList()
 
         for (let i = 0; i < otherData.soliderList.length; i++) {
+            let hp = DataManager.GameData.Soldier[otherData.soliderList[i].arm].hp
             otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_1
             otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_2
             otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_3
 
-            otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_4
-            otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_5
-            otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_6
+            otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_4 * hp
+            otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_5 * hp
+            otherData.soliderList[i].defense += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_6 * hp
 
             for (let j = 0; j < enemyPlusList.length; j++) {
                 if (enemyPlusList[j].arm == otherData.soliderList[i].arm) {
                     otherData.soliderList[i].fight += enemyPlusList[j].fight
-                    otherData.soliderList[i].defense += enemyPlusList[j].defense
+                    otherData.soliderList[i].defense += enemyPlusList[j].defense * hp
                 }
             }
         }
@@ -469,7 +495,8 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < myData.soliderList.length; i++) {
             let item = cc.instantiate(this.soliderPfb)
             item.parent = this.myContect
-            item.getComponent(soliderItem).init(myData.soliderList[i])
+            item.getComponent(soliderItem).init(myData.soliderList[i], myData.heroData)
+
             this.myCount.troops += myData.soliderList[i].count
         }
 
@@ -480,7 +507,8 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < otherData.soliderList.length; i++) {
             let item = cc.instantiate(this.soliderPfb)
             item.parent = this.otherContect
-            item.getComponent(soliderItem).init(otherData.soliderList[i])
+            item.getComponent(soliderItem).init(myData.soliderList[i], otherData.heroData)
+
             this.enemyCount.troops += otherData.soliderList[i].count
 
         }

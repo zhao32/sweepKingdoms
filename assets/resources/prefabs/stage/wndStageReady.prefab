@@ -1170,7 +1170,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "2559e5f1-0c1a-48a6-a06c-6bdb42401107"
+      "__uuid__": "a5d568fa-c85e-4094-9230-399deb367790"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -8969,6 +8969,9 @@
     },
     "otherContect": {
       "__id__": 135
+    },
+    "labelFight": {
+      "__id__": 26
     },
     "heroPfb": {
       "__uuid__": "2725e9f6-9ca9-4aab-a116-1d99370b60fa"

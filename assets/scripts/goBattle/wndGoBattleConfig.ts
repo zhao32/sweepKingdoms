@@ -126,7 +126,8 @@ export default class NewClass extends cc.Component {
                 let solider = cc.instantiate(this.soliderPfb)
                 solider.x = 0
                 solider.parent = this.myContect
-                solider.getComponent(battleSoliderRender).init(this.mySoliders[i].arm, this.mySoliders[i].count)
+                solider.getComponent(battleSoliderRender).init(this.mySoliders[i].arm, this.mySoliders[i].count, null, null, this.myHeroData)
+
             }
         }
         if (this.myHeroData) {
@@ -177,13 +178,17 @@ export default class NewClass extends cc.Component {
             // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, cityData.page, cityData.idx, cityData.country)
         } else {
             this.mySoliders = []
+
+            this.myHeroData = DataManager.cardsList[0]
+            this.myCards = DataManager.cardsList
+
             this.myContect.removeAllChildren()
             for (let i = 0; i < DataManager.playData.military_data.length; i++) {
                 if (DataManager.playData.military_data[i] != 0) {
                     let solider = cc.instantiate(this.soliderPfb)
                     solider.x = 0
                     solider.parent = this.myContect
-                    solider.getComponent(battleSoliderRender).init(i + 1, DataManager.playData.military_data[i])
+                    solider.getComponent(battleSoliderRender).init(i + 1, DataManager.playData.military_data[i], null, null, this.myHeroData)
                     this.mySoliders.push({ arm: i + 1, count: DataManager.playData.military_data[i] })
                 }
             }
@@ -192,8 +197,7 @@ export default class NewClass extends cc.Component {
             } else {
                 this.node.getChildByName('stageHeroRender').active = false
             }
-            this.myHeroData = DataManager.cardsList[0]
-            this.myCards = DataManager.cardsList
+
         }
 
         this.initEnemyData(enemyData.cardId, enemyData.soliders)
@@ -266,7 +270,7 @@ export default class NewClass extends cc.Component {
                 let solider = cc.instantiate(this.soliderPfb)
                 solider.x = 0
                 solider.parent = this.myContect
-                solider.getComponent(battleSoliderRender).init(this.mySoliders[i].arm, this.mySoliders[i].count)
+                solider.getComponent(battleSoliderRender).init(this.mySoliders[i].arm, this.mySoliders[i].count, null, null, this.myHeroData)
 
             }
         }

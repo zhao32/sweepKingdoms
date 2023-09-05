@@ -98,20 +98,7 @@ export default class NewClass extends cc.Component {
             }
         }
 
-        console.log(`this.soliders:` + JSON.stringify(this.soliders))
-        if (this.soliders.length == 0) {
-            this.tipDisplay.string = `暂无派遣兵力`
-        } else {
-            this.tipDisplay.string = ``
-            this.myContect.removeAllChildren()
-            // this.onSelectSolider = true
-            for (let i = 0; i < this.soliders.length; i++) {
-                let solider = cc.instantiate(this.soliderPfb)
-                solider.x = 0
-                solider.parent = this.myContect
-                solider.getComponent(eSoliderRender).init(this.soliders[i].arm, this.soliders[i].count)
-            }
-        }
+
 
         let hasHero = false
         for (let i = 0; i < DataManager.cardsList.length; i++) {
@@ -148,9 +135,24 @@ export default class NewClass extends cc.Component {
             // this.myHeroData = DataManager.GameData.Cards[data.formation.a]
             // heroRender.getComponent(battleHeroRender).init(DataManager.GameData.Cards[data.formation.a])
 
-           
+
             // heroRender.getComponent(battleHeroRender).init(DataManager.GameData.Cards[card.template_id])
-            
+
+        }
+
+        console.log(`this.soliders:` + JSON.stringify(this.soliders))
+        if (this.soliders.length == 0) {
+            this.tipDisplay.string = `暂无派遣兵力`
+        } else {
+            this.tipDisplay.string = ``
+            this.myContect.removeAllChildren()
+            // this.onSelectSolider = true
+            for (let i = 0; i < this.soliders.length; i++) {
+                let solider = cc.instantiate(this.soliderPfb)
+                solider.x = 0
+                solider.parent = this.myContect
+                solider.getComponent(eSoliderRender).init(this.soliders[i].arm, this.soliders[i].count, this.myHeroData)
+            }
         }
     }
 
@@ -206,7 +208,7 @@ export default class NewClass extends cc.Component {
             let solider = cc.instantiate(this.soliderPfb)
             solider.x = 0
             solider.parent = this.myContect
-            solider.getComponent(eSoliderRender).init(this.soliders[i].arm, this.soliders[i].count)
+            solider.getComponent(eSoliderRender).init(this.soliders[i].arm, this.soliders[i].count,this.myHeroData)
         }
     }
 

@@ -289,6 +289,9 @@ export default class NewClass extends cc.Component {
         )
         console.log('我的将表:' + JSON.stringify(retObj))
         DataManager.cardsList = retObj.cards
+        for (let i = 0; i < retObj.cards.length; i++) {
+            console.log(GameUtil.instance.skillstBaseAdd(retObj.cards[i]))
+        }
     }
 
     PushAddCard(retObj) {

@@ -33,7 +33,7 @@ export default class NewClass extends cc.Component {
 
     }
 
-    init(data) {
+    init(data, cardData?: any) {
         console.log(JSON.stringify(data))
         let soldierData = DataManager.GameData.Soldier[data.arm]
         ResManager.loadItemIcon(`soliderHead/${soldierData.name}`, this.head)
@@ -45,7 +45,7 @@ export default class NewClass extends cc.Component {
         let str = DataManager.getSoliderDes(soldierData)
         this.head.on(cc.Node.EventType.TOUCH_END, () => {
             // ViewManager.instance.showNote(EnumManager.viewPath.NOTE_DES, ...[str])
-            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_SOLIDER, ...[soldierData])
+            ViewManager.instance.showNote(EnumManager.viewPath.NOTE_SOLIDER, ...[soldierData, cardData])
 
         }, this)
     }

@@ -266,5 +266,48 @@ export default class GameUtil {
         }
     }
 
+    skillstBaseAdd(card) {
+        let plusData = []
+        for (let i = 0; i < 5; i++) {
+            plusData.push({
+                "attack_1": 0, "attack_2": 0, "attack_3": 0,
+                "attack_4": 0, "attack_5": 0, "attack_6": 0
+            })
+        }
+        for (let i = 0; i < card.skills_equips.length; i++) {
+            if (card.skills_equips[i].id != 0) {
+                let skillstData = DataManager.GameData.SkillStudy[card.skills_equips[i].id]
+                for (let j = 0; j < skillstData.effect_1.length; j++) {
+                    for (let k = 0; k < card.talents.length; k++) {
+                        if (DataManager.GameData.Soldier[card.talents[k]].defense[`attack_${skillstData.effect_1[j][0]}`] != 0) {
+                            plusData[card.talents[k] - 1][`attack_${skillstData.effect_1[j][0]}`] += skillstData.effect_1[j][1] * skillstData.effect_1[j][2] * card.proficiency[k]
+                        } else {
+                            console.log(`初始属性值为0，不加成`)
+                        }
+                    }
+                }
+            }
+        }
+        return plusData
+    }
+
+    skllstBuff(card) {
+        for (let i = 0; i < card.skills_equips.length; i++) {
+            if (card.skills_equips[i].id != 0) {
+                let skillstData = DataManager.GameData.SkillStudy[card.skills_equips[i].id]
+                for (let j = 0; j < skillstData.buff_target.length; j++) {
+                    if( Math.random()*1 < skillstData.buff_target.buff_rate){
+                        if (skillstData.buff_target[0] <= 6) {//基础加成
+                            
+                       
+                        }
+         
+                    }
+                  
+                }
+            }
+        }
+    }
+
 }
 

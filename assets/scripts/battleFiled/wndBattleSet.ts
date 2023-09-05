@@ -90,7 +90,8 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < DataManager.myBattleFiledConfig.soliders.length; i++) {
             let soliderItem = cc.instantiate(this.soliderPfb)
             let soliderData = DataManager.myBattleFiledConfig.soliders[i]
-            soliderItem.getComponent(soliderRender).init(soliderData.arm, soliderData.count, soliderData.countAll)
+            let cardData = DataManager.myBattleFiledConfig.card[i]
+            soliderItem.getComponent(soliderRender).init(soliderData.arm, soliderData.count, soliderData.countAll, cardData)
             soliderItem.parent = this.soliderContect
         }
 

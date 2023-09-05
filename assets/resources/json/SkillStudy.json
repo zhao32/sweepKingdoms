@@ -6,6 +6,7 @@
     "effect_1":[[1,0.04,4]],
     "target_num":0,
     "buff_target":[],
+    "buff_rate":0,
     "att_target":[],
     "buff_die":0
   },
@@ -16,6 +17,7 @@
     "effect_1":[[2,0.04,4]],
     "target_num":0,
     "buff_target":[],
+    "buff_rate":0,
     "att_target":[],
     "buff_die":0
   },
@@ -26,6 +28,7 @@
     "effect_1":[[3,0.04,4]],
     "target_num":0,
     "buff_target":[],
+    "buff_rate":0,
     "att_target":[],
     "buff_die":0
   },
@@ -36,6 +39,7 @@
     "effect_1":[[4,0.04,4]],
     "target_num":0,
     "buff_target":[],
+    "buff_rate":0,
     "att_target":[],
     "buff_die":0
   },
@@ -46,6 +50,7 @@
     "effect_1":[[5,0.04,4]],
     "target_num":0,
     "buff_target":[],
+    "buff_rate":0,
     "att_target":[],
     "buff_die":0
   },
@@ -56,6 +61,7 @@
     "effect_1":[[7,0.04,4]],
     "target_num":0,
     "buff_target":[],
+    "buff_rate":0,
     "att_target":[],
     "buff_die":0
   },
@@ -66,6 +72,7 @@
     "effect_1":[],
     "target_num":0,
     "buff_target":[[1,0.4,5]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -76,6 +83,7 @@
     "effect_1":[],
     "target_num":2,
     "buff_target":[[2,0.4,5]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -86,6 +94,7 @@
     "effect_1":[],
     "target_num":2,
     "buff_target":[[1,0.4,10],[3,0.4,10]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -96,6 +105,7 @@
     "effect_1":[],
     "target_num":2,
     "buff_target":[[4,0.4,10],[5,0.4,10]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -105,7 +115,8 @@
     "des": "士兵产生暴击时，提高额外暴击伤害",
     "effect_1":[],
     "target_num":2,
-    "buff_target":[[5,0.4,10]],
+    "buff_target":[[1,0.4,10]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -116,6 +127,7 @@
     "effect_1":[],
     "target_num":2,
     "buff_target":[[6,0.4,10]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -126,6 +138,7 @@
     "effect_1":[],
     "target_num":2,
     "buff_target":[[7,0.4,10]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -136,6 +149,7 @@
     "effect_1":[],
     "target_num":2,
     "buff_target":[[8,0.4,10]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -146,6 +160,7 @@
     "effect_1":[[1,0.04,5],[2,0.04,5]],
     "target_num":2,
     "buff_target":[[8,0.4,10]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -156,6 +171,7 @@
     "effect_1":[[4,0.04,5],[5,0.04,5]],
     "target_num":0,
     "buff_target":[],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -166,6 +182,7 @@
     "effect_1":[[2,0.04,5],[6,0.04,5]],
     "target_num":0,
     "buff_target":[],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -176,6 +193,7 @@
     "effect_1":[[6,0.04,5],[2,0.04,5]],
     "target_num":0,
     "buff_target":[],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -186,6 +204,7 @@
     "effect_1":[[3,0.04,5],[7,0.04,5]],
     "target_num":0,
     "buff_target":[],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -196,6 +215,7 @@
     "effect_1":[[3,0.04,5],[7,0.04,5]],
     "target_num":0,
     "buff_target":[],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -206,6 +226,7 @@
     "effect_1":[[3,0.04,5],[1,0.04,5]],
     "target_num":0,
     "buff_target":[],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -216,6 +237,7 @@
     "effect_1":[[3,0.04,5],[1,0.04,5]],
     "target_num":0,
     "buff_target":[],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -226,6 +248,7 @@
     "effect_1":[],
     "target_num":3,
     "buff_target":[[3,0.04,5],[1,0.04,5]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -236,6 +259,7 @@
     "effect_1":[],
     "target_num":3,
     "buff_target":[[3,0.04,5]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -246,6 +270,7 @@
     "effect_1":[],
     "target_num":3,
     "buff_target":[[3,0.04,5],[3,0.04,5]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -256,6 +281,7 @@
     "effect_1":[],
     "target_num":3,
     "buff_target":[[3,0.04,5],[4,0.04,5]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -266,6 +292,7 @@
     "effect_1":[],
     "target_num":3,
     "buff_target":[[3,0.04,5],[4,0.04,5]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -276,6 +303,7 @@
     "effect_1":[],
     "target_num":3,
     "buff_target":[[4,0.04,5],[4,0.04,5]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -286,6 +314,7 @@
     "effect_1":[],
     "target_num":3,
     "buff_target":[[4,0.04,5],[4,0.04,5]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -296,6 +325,7 @@
     "effect_1":[],
     "target_num":2,
     "buff_target":[[4,0.04,5],[1,0.04,5],[6,0.04,5],[8,1,-20]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -306,6 +336,7 @@
     "effect_1":[],
     "target_num":0,
     "buff_target":[],
+    "buff_rate":0.3,
     "att_target":[[1,0.4,3]],
     "buff_die":0
   },
@@ -316,6 +347,7 @@
     "effect_1":[],
     "target_num":3,
     "buff_target":[[1,0.4,3]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":5
   },
@@ -326,6 +358,7 @@
     "effect_1":[],
     "target_num":0,
     "buff_target":[],
+    "buff_rate":0.3,
     "att_target":[2,0.6,2],
     "buff_die":1
   },
@@ -336,6 +369,7 @@
     "effect_1":[],
     "target_num":0,
     "buff_target":[],
+    "buff_rate":0.3,
     "att_target":[[3,0.6,2],[4,0.6,-20]],
     "buff_die":6
   },
@@ -346,6 +380,7 @@
     "effect_1":[],
     "target_num":0,
     "buff_target":[[4,0.6,10]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":6
   },
@@ -356,6 +391,7 @@
     "effect_1":[],
     "target_num":2,
     "buff_target":[[4,0.6,10],[5,0.6,-10],[6,0.6,-10]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -366,6 +402,7 @@
     "effect_1":[],
     "target_num":2,
     "buff_target":[[10,0.6,10],[11,0.6,10]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -376,6 +413,7 @@
     "effect_1":[],
     "target_num":2,
     "buff_target":[],
+    "buff_rate":0.3,
     "att_target":[4,0.1,220000],
     "buff_die":0
   },
@@ -386,6 +424,7 @@
     "effect_1":[],
     "target_num":2,
     "buff_target":[[1,0.1,5],[2,0.1,7]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -396,6 +435,7 @@
     "effect_1":[],
     "target_num":2,
     "buff_target":[[11,0.1,7]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -406,6 +446,7 @@
     "effect_1":[],
     "target_num":150,
     "buff_target":[[6,0.1,-7],[2,0.1,5]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -416,6 +457,7 @@
     "effect_1":[],
     "target_num":150,
     "buff_target":[[2,0.1,5],[3,0.1,5]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":3
   },
@@ -426,6 +468,7 @@
     "effect_1":[],
     "target_num":150,
     "buff_target":[[2,0.1,-5]],
+    "buff_rate":0.3,
     "att_target":[[9,0.6,5]],
     "buff_die":10
   },
@@ -436,6 +479,7 @@
     "effect_1":[],
     "target_num":3,
     "buff_target":[[6,0.1,20]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":1
   },
@@ -446,6 +490,7 @@
     "effect_1":[],
     "target_num":6,
     "buff_target":[[1,0.1,20],[2,0.1,20],[3,0.1,20]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":4
   },
@@ -456,6 +501,7 @@
     "effect_1":[],
     "target_num":3,
     "buff_target":[[6,0.1,5]],
+    "buff_rate":0.3,
     "att_target":[[1,0.1,3]],
     "buff_die":20
   },
@@ -466,6 +512,7 @@
     "effect_1":[],
     "target_num":2,
     "buff_target":[[7,0.1,-5],[8,0.1,-5]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -476,6 +523,7 @@
     "effect_1":[],
     "target_num":6,
     "buff_target":[[2,0.1,-5],[3,0.1,-5]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":2
   },
@@ -486,6 +534,7 @@
     "effect_1":[],
     "target_num":1,
     "buff_target":[[9,0.01,5]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":1
   },
@@ -496,6 +545,7 @@
     "effect_1":[],
     "target_num":3,
     "buff_target":[[6,0.01,10]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":1
   },
@@ -506,6 +556,7 @@
     "effect_1":[],
     "target_num":3,
     "buff_target":[[7,0.01,5]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":1
   },
@@ -516,6 +567,7 @@
     "effect_1":[],
     "target_num":3,
     "buff_target":[[12,0.01,5]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":1
   },
@@ -526,6 +578,7 @@
     "effect_1":[],
     "target_num":1,
     "buff_target":[],
+    "buff_rate":0.3,
     "att_target":[[15,0.01,2]],
     "buff_die":1
   },
@@ -536,6 +589,7 @@
     "effect_1":[],
     "target_num":1,
     "buff_target":[[10,0.1,2],[11,0.1,-2]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":1
   },
@@ -546,6 +600,7 @@
     "effect_1":[],
     "target_num":150,
     "buff_target":[[1,0.1,2]],
+    "buff_rate":0.3,
     "att_target":[[4,1,3]],
     "buff_die":10
   },
@@ -556,6 +611,7 @@
     "effect_1":[],
     "target_num":150,
     "buff_target":[[9,1,2],[10,1,1]],
+    "buff_rate":0.3,
     "att_target":[],
     "buff_die":0
   },
@@ -566,6 +622,7 @@
     "effect_1":[],
     "target_num":0,
     "buff_target":[],
+    "buff_rate":0.3,
     "att_target":[[5,0.4,2000]],
     "buff_die":0
   }

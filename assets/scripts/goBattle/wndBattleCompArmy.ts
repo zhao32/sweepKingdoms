@@ -118,7 +118,7 @@ export default class NewClass extends cc.Component {
         console.log(`请求恶魔之门阵容返回`);
         console.log(JSON.stringify(retObj))
 
-      
+
 
         // debugger;
         if (retObj.formation) {
@@ -129,8 +129,8 @@ export default class NewClass extends cc.Component {
                     hasHero = true
                 }
             }
-            
-            if (retObj.formation.a != 0 && hasHero&& retObj.cards.length > 0) {
+
+            if (retObj.formation.a != 0 && hasHero && retObj.cards.length > 0) {
                 let heroItem = cc.instantiate(this.heroPfb)
                 heroItem.parent = this.definContect
                 let cardData
@@ -180,14 +180,14 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < this.attSoliders.length; i++) {
             let soliderItem = cc.instantiate(this.armPfb)
             soliderItem.parent = this.attContect
-            soliderItem.getComponent(compSoliderRender).init(this.attSoliders[i])
+            soliderItem.getComponent(compSoliderRender).init(this.attSoliders[i], retObj.att_cards[0])
             attSoliderNum += this.attSoliders[i].count
         }
 
         for (let i = 0; i < this.definSoliders.length; i++) {
             let soliderItem = cc.instantiate(this.armPfb)
             soliderItem.parent = this.definContect
-            soliderItem.getComponent(compSoliderRender).init(this.definSoliders[i])
+            soliderItem.getComponent(compSoliderRender).init(this.definSoliders[i], retObj.cards[0])
             definSoliderNum += this.definSoliders[i].count
 
         }
