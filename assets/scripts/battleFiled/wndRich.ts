@@ -105,38 +105,38 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < retObj.items.length; i++) {
             let render = cc.instantiate(this.renderPfb)
             render.parent = this.contect
-            // render.getComponent(battleRender).init(retObj.items[i], i + 1)
+            render.getComponent(battleRender).init(retObj.items[i], i + 1)
 
-            // if (i < 5) {
-            //     render.x = 1000
-            //     this.scheduleOnce(() => {
-            //         render.runAction(cc.moveTo(DataManager.SCROLLTIME1, cc.v2(0, render.y)))
-            //     }, DataManager.SCROLLTIME2 * i)
-            // }
+            if (i < 5) {
+                render.x = 1000
+                this.scheduleOnce(() => {
+                    render.runAction(cc.moveTo(DataManager.SCROLLTIME1, cc.v2(0, render.y)))
+                }, DataManager.SCROLLTIME2 * i)
+            }
 
-            // if (retObj.items[i].playerId == DataManager.playData.id) {
-            //     DataManager.myBattleFiledConfig.card = retObj.items[i].card
+            if (retObj.items[i].playerId == DataManager.playData.id) {
+                DataManager.myBattleFiledConfig.card = retObj.items[i].card
 
-            //     myHoner = Math.max(365, Math.floor(15000 * Math.pow(1 - 0.01, i)))
-            //     console.log('myHoner:' + myHoner)
+                myHoner = Math.max(365, Math.floor(15000 * Math.pow(1 - 0.01, i)))
+                console.log('myHoner:' + myHoner)
 
-            //     myData.icon = retObj.items[i].icon
-            //     console.log(`-------点击我的-----------`)
-            //     render.on(cc.Node.EventType.TOUCH_END, () => {
-            //         ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLEFILED)
-            //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_MYTEAM, ...[retObj.items[i].card])
-            //     }, this)
-            // } else {
-            //     render.on(cc.Node.EventType.TOUCH_END, () => {
-            //         ePlayerData.name = retObj.items[i].nickname
-            //         ePlayerData.playerId = retObj.items[i].playerId
-            //         ePlayerData.rank = i + 1
-            //         ePlayerData.icon = retObj.items[i].icon
+                myData.icon = retObj.items[i].icon
+                console.log(`-------点击我的-----------`)
+                // render.on(cc.Node.EventType.TOUCH_END, () => {
+                //     ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLEFILED)
+                //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_MYTEAM, ...[retObj.items[i].card])
+                // }, this)
+            } else {
+                // render.on(cc.Node.EventType.TOUCH_END, () => {
+                //     ePlayerData.name = retObj.items[i].nickname
+                //     ePlayerData.playerId = retObj.items[i].playerId
+                //     ePlayerData.rank = i + 1
+                //     ePlayerData.icon = retObj.items[i].icon
 
-            //         ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLEFILED)
-            //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_COMPARMY, ...[myData, ePlayerData])
-            //     }, this)
-            // }
+                //     ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLEFILED)
+                //     ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_COMPARMY, ...[myData, ePlayerData])
+                // }, this)
+            }
         }
 
         // myData.myHonerBouns = myHoner

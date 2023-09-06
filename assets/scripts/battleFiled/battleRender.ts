@@ -51,6 +51,10 @@ export default class NewClass extends cc.Component {
         this.nameLabel.string = data.nickname
         this.idxLabel.string = `No.${idx}`
 
+        if (this.node.getChildByName("vip")) {
+            this.node.getChildByName("vip").getComponent(cc.Label).string = `VIP：` + data.vipLevel
+        }
+
         let honer = Math.max(365, Math.floor(15000 * Math.pow(1 - 0.01, idx - 1)))
         this.node.getChildByName('honer').getComponent(cc.Label).string = `x${honer} \n 每10分钟`
 

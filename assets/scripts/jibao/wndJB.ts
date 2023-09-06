@@ -62,6 +62,9 @@ export default class NewClass extends cc.Component {
     @property(cc.Toggle)
     rypeToggle3: cc.Toggle = null;
 
+    @property(cc.Toggle)
+    rypeToggle4: cc.Toggle = null;
+
     @property(cc.Label)
     pageLabel: cc.Label = null;
 
@@ -216,6 +219,11 @@ export default class NewClass extends cc.Component {
 
         this.rypeToggle3.node.on(`toggle`, () => {
             this.type = 3
+            this.upType()
+        }, this)
+
+        this.rypeToggle4.node.on(`toggle`, () => {
+            this.type = 4
             this.upType()
         }, this)
 
