@@ -119,6 +119,10 @@ export default class NewClass extends cc.Component {
 
     @property({ type: cc.Node, displayName: '聊天按钮' })
     btnChat: cc.Node = null;
+
+    @property({ type: cc.Node, displayName: '军队介绍' })
+    btnInArm: cc.Node = null;
+
     chatPanel
 
 
@@ -128,7 +132,12 @@ export default class NewClass extends cc.Component {
         this.richChat.string = ''
         // console.log(`++++++++++++:`+ JSON.stringify(data))
         for (let i = data.length - 3; i <= data.length; i++) {
-            if (data[i]) this.richChat.string += `<color=#E7C891>${data[i].sender_name}：</c><color=#ffffff>${data[i].content}</c>\n\n`
+            if (data[i]) {
+                if (i != data.length - 1) this.richChat.string += `<color=#E7C891>${data[i].sender_name}：</c><color=#ffffff>${data[i].content}</c>\n\n`
+                else {
+                    this.richChat.string += `<color=#E7C891>${data[i].sender_name}：</c><color=#ffffff>${data[i].content}</c>`
+                }
+            }
         }
     }
 
@@ -138,6 +147,10 @@ export default class NewClass extends cc.Component {
 
         this.btnIntro.on(cc.Node.EventType.TOUCH_END, () => {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_INTRO)
+        }, this)
+
+        this.btnInArm.on(cc.Node.EventType.TOUCH_END, () => {
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_INARM)
         }, this)
 
         this.btnChat.on(cc.Node.EventType.TOUCH_END, () => {

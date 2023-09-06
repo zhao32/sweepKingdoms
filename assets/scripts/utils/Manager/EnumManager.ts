@@ -65,6 +65,10 @@ export default class EnumManager {
 
         /**图鉴 */
         WND_MAIN_INTRO: 'prefabs/main/wndIntroduce',
+        /**军队介绍 */
+        WND_MAIN_INARM: 'prefabs/main/wndInArm',
+
+        
 
         
         ///////////////////// 酒馆
@@ -193,6 +197,11 @@ export default class EnumManager {
         NOTE_IN_GENERAL: 'prefabs/common/noteInGeneral',
 
         NOTE_IN_SKILL: 'prefabs/common/noteInSkill',
+
+        NOTE_IN_EQUIP: 'prefabs/common/noteInEquip',
+
+
+        
 
 
         /**好友系统 */

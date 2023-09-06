@@ -507,7 +507,7 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < otherData.soliderList.length; i++) {
             let item = cc.instantiate(this.soliderPfb)
             item.parent = this.otherContect
-            item.getComponent(soliderItem).init(myData.soliderList[i], otherData.heroData)
+            item.getComponent(soliderItem).init(otherData.soliderList[i], otherData.heroData)
 
             this.enemyCount.troops += otherData.soliderList[i].count
 

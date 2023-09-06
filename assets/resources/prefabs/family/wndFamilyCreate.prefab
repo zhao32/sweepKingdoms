@@ -2485,7 +2485,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 193.01,
+      "width": 177.43,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -2537,8 +2537,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "金币：1000000",
-    "_N$string": "金币：1000000",
+    "_string": "金币：100000",
+    "_N$string": "金币：100000",
     "_fontSize": 28,
     "_lineHeight": 40,
     "_enableWrapText": true,

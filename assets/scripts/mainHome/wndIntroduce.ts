@@ -8,6 +8,7 @@
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ViewManager from "../utils/Manager/ViewManager";
+import inEquipRender from "./inEquipRender";
 import inHeroRender from "./inHeroRender";
 import inSkillRender from "./inSkillRender";
 
@@ -30,6 +31,10 @@ export default class NewClass extends cc.Component {
     btnHero: cc.Node = null;
 
     @property(cc.Node)
+    btnEquip: cc.Node = null;
+
+
+    @property(cc.Node)
     contect: cc.Node = null;
 
     @property(cc.Prefab)
@@ -37,6 +42,10 @@ export default class NewClass extends cc.Component {
 
     @property(cc.Prefab)
     pfb1: cc.Prefab = null;
+
+    @property(cc.Prefab)
+    pfb2: cc.Prefab = null;
+
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -60,6 +69,8 @@ export default class NewClass extends cc.Component {
 
             this.btnSkill.getComponent(cc.Sprite).spriteFrame = this.spriteFrames[1]
             this.btnHero.getComponent(cc.Sprite).spriteFrame = this.spriteFrames[0]
+            this.btnEquip.getComponent(cc.Sprite).spriteFrame = this.spriteFrames[0]
+
         }, this)
 
         this.btnHero.on(cc.Node.EventType.TOUCH_END, () => {
@@ -75,9 +86,31 @@ export default class NewClass extends cc.Component {
                 }, this)
             }
 
-            this.btnSkill.getComponent(cc.Sprite).spriteFrame = this.spriteFrames[0]
             this.btnHero.getComponent(cc.Sprite).spriteFrame = this.spriteFrames[1]
+            this.btnSkill.getComponent(cc.Sprite).spriteFrame = this.spriteFrames[0]
+            this.btnEquip.getComponent(cc.Sprite).spriteFrame = this.spriteFrames[0]
+
         }, this)
+
+        this.btnEquip.on(cc.Node.EventType.TOUCH_END, () => {
+            let equipList = Object.keys(DataManager.GameData.Equips)
+            this.contect.removeAllChildren()
+            for (let i = 0; i < equipList.length; i++) {
+                let render = cc.instantiate(this.pfb2)
+                render.parent = this.contect
+                let data = DataManager.GameData.Equips[equipList[i]]
+                render.getComponent(inEquipRender).init(data)
+                render.on(cc.Node.EventType.TOUCH_END, () => {
+                    ViewManager.instance.showNote(EnumManager.viewPath.NOTE_IN_EQUIP, ...[data])
+                }, this)
+            }
+
+            this.btnSkill.getComponent(cc.Sprite).spriteFrame = this.spriteFrames[0]
+            this.btnHero.getComponent(cc.Sprite).spriteFrame = this.spriteFrames[0]
+            this.btnEquip.getComponent(cc.Sprite).spriteFrame = this.spriteFrames[1]
+
+        }, this)
+
 
         this.btnClose.on(cc.Node.EventType.TOUCH_END, () => {
             ViewManager.instance.hideWnd(DataManager.curWndPath)
