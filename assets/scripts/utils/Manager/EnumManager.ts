@@ -68,6 +68,10 @@ export default class EnumManager {
         /**军队介绍 */
         WND_MAIN_INARM: 'prefabs/main/wndInArm',
 
+        /**富豪榜 */
+        WND_MAIN_RICH: 'prefabs/main/wndRich',
+
+
         
 
         

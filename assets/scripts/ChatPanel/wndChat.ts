@@ -96,9 +96,9 @@ export default class NewClass extends cc.Component {
 
     content
     _spawnItems
-    updateTimer
-    lastContentPosY
-    updateInterval
+    // updateTimer
+    // lastContentPosY
+    // updateInterval
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -345,27 +345,25 @@ export default class NewClass extends cc.Component {
     showListView() {
         //组件初始化
         this.content = this.mScrollView.content;
-        // console.log(`this._chatviewList:` + JSON.stringify(this._chatviewList))
-        this.content.height = this._chatviewList.length * (this.itemTemplateHeight + this.spacing) + this.spacing; // get total content height
+        let showNum = 0
         if (this.content.children.length == 0) {
             this._spawnItems = []; // array to store spawned items
-            this.updateTimer = 0;
-            this.updateTimer = 0.2;
-            this.lastContentPosY = 0; // use this variable to detect if we are scrolling up or down
             for (let i = 0; i < this.spawnCount; ++i) { // spawn items, we only need to do this once
                 let item = cc.instantiate(this.itemTemplate);
                 this.content.addChild(item);
-                item.setPosition(0, -item.height * (0.5 + i) - this.spacing * (i + 1));
-                item.getComponent('ChatItem').updateItem(i);
+                let isShow = item.getComponent('ChatItem').updateItem(i);
+                if (isShow) showNum++
                 this._spawnItems.push(item);
             }
         } else {
-            this.updateTimer = 0;
             for (let i = 0; i < this.spawnCount; ++i) { // spawn items, we only need to do this once
                 let item = this._spawnItems[i];
-                item.setPosition(0, -item.height * (0.5 + i) - this.spacing * (i + 1));
-                item.getComponent('ChatItem').updateItem(i);
+                let isShow = item.getComponent('ChatItem').updateItem(i);
+                if (isShow) showNum++
             }
+        }
+        if (showNum > 4) {
+            this.mScrollView.scrollToBottom()
         }
     }
     SendChatContent(params, targetid = 0) {
@@ -497,38 +495,38 @@ export default class NewClass extends cc.Component {
     }
 
     update(dt) {
-        this.updateTimer += dt;
-        if (this.updateTimer < this.updateInterval) return; // we don't need to do the math every frame
-        this.updateTimer = 0;
-        let items = this._spawnItems;
-        if (items == null) {
-            return;
-        }
-        let buffer = this.bufferZone;
-        let isDown = this.mScrollView.content.y < this.lastContentPosY; // scrolling direction
-        let offset = (this.itemTemplateHeight + this.spacing) * items.length;
-        for (let i = 0; i < items.length; ++i) {
-            let viewPos = this.getPositionInView(items[i]);
-            if (isDown) {
-                // if away from buffer zone and not reaching top of content
-                if (viewPos.y < -buffer && items[i].y + offset < 0) {
-                    items[i].y = (items[i].y + offset);
-                    let item = items[i].getComponent('ChatItem');
-                    let itemId = item._itemID - items.length; // update item id
-                    item.updateItem(itemId);
-                }
-            } else {
-                // if away from buffer zone and not reaching bottom of content
-                if (viewPos.y > buffer && items[i].y - offset > -this.content.height) {
-                    items[i].y = (items[i].y - offset);
-                    let item = items[i].getComponent('ChatItem');
-                    let itemId = item._itemID + items.length;
-                    item.updateItem(itemId);
-                }
-            }
-        }
-        // update lastContentPosY
-        this.lastContentPosY = this.mScrollView.content.y;
+        // this.updateTimer += dt;
+        // if (this.updateTimer < this.updateInterval) return; // we don't need to do the math every frame
+        // this.updateTimer = 0;
+        // let items = this._spawnItems;
+        // if (items == null) {
+        //     return;
+        // }
+        // let buffer = this.bufferZone;
+        // let isDown = this.mScrollView.content.y < this.lastContentPosY; // scrolling direction
+        // let offset = (this.itemTemplateHeight + this.spacing) * items.length;
+        // for (let i = 0; i < items.length; ++i) {
+        //     let viewPos = this.getPositionInView(items[i]);
+        //     if (isDown) {
+        //         // if away from buffer zone and not reaching top of content
+        //         if (viewPos.y < -buffer && items[i].y + offset < 0) {
+        //             items[i].y = (items[i].y + offset);
+        //             let item = items[i].getComponent('ChatItem');
+        //             let itemId = item._itemID - items.length; // update item id
+        //             item.updateItem(itemId);
+        //         }
+        //     } else {
+        //         // if away from buffer zone and not reaching bottom of content
+        //         if (viewPos.y > buffer && items[i].y - offset > -this.content.height) {
+        //             items[i].y = (items[i].y - offset);
+        //             let item = items[i].getComponent('ChatItem');
+        //             let itemId = item._itemID + items.length;
+        //             item.updateItem(itemId);
+        //         }
+        //     }
+        // }
+        // // update lastContentPosY
+        // this.lastContentPosY = this.mScrollView.content.y;
     }
 
     onClose() {

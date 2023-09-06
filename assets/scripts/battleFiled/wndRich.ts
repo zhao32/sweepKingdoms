@@ -1,0 +1,161 @@
+// Learn TypeScript:
+//  - https://docs.cocos.com/creator/manual/en/scripting/typescript.html
+// Learn Attribute:
+//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
+// Learn life-cycle callbacks:
+//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
+
+import { NetEvent } from "../net/NetEvent";
+import DataManager from "../utils/Manager/DataManager";
+import EnumManager from "../utils/Manager/EnumManager";
+import EventManager from "../utils/Manager/EventManager";
+import ViewManager from "../utils/Manager/ViewManager";
+import battleRender from "./battleRender";
+import filedBounsArea from "./filedBounsArea";
+
+const { ccclass, property } = cc._decorator;
+
+//@ts-ignore
+var MyProtocols = require("MyProtocols");
+
+//@ts-ignore
+var NetEventDispatcher = require("NetEventDispatcher");
+
+@ccclass
+export default class NewClass extends cc.Component {
+
+    @property(cc.Node)
+    contect: cc.Node = null;
+
+    @property(cc.Prefab)
+    renderPfb: cc.Prefab = null;
+
+  
+    @property(cc.Node)
+    scrollView: cc.Node = null;
+
+
+    _myData: any
+
+    // LIFE-CYCLE CALLBACKS:
+
+    // onLoad () {}
+
+    start() {
+        console.log('11111111111111111111')
+        // this.contect.removeAllChildren()
+        // for (let i = 0; i < 5; i++) {
+        //     let render = cc.instantiate(this.renderPfb)
+        //     render.parent = this.contect
+
+        //     if (i < 5) {
+        //         render.x = 1000
+        //         this.scheduleOnce(() => {
+        //             render.runAction(cc.moveTo(0.4, cc.v2(0, render.y)))
+        //         }, 0.3 * i)
+        //     }
+        //     render.on(cc.Node.EventType.TOUCH_END, () => {
+        //         ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLEFILED)
+        //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_ARMY)
+        //     }, this)
+        // }
+
+    
+    }
+
+    init() {
+
+      
+        NetEventDispatcher.addListener(NetEvent.S2CRankView, this.S2CRankView,this)
+
+       
+        console.log('-----------------------------')
+        this.contect.removeAllChildren()
+        MyProtocols.send_C2SRankView(DataManager._loginSocket, 1)
+
+        // let retObj = { "my_rank": 0, "my_rank change": 0, "rank_type": 2, "items": [{ "playerId": 9935, "nickname": "相心的官读知", "sexid": 1, "icon": 1, "head_frame": 1, "level": 48, "fight": 9889, "viplevel": 0, "rank_change": 8, "hero count": 8, "hero_stars": 8, "win_count": 8, "like_count": 8, "card": [1, 2, 3] }, { "playerId": 9952, "nickname": "伏义的巴都力", "sexid": 0, "icon": 8, "head_frame": 1, "level": 78, "fight": 2395, "viplevel": 0, "rankchange": 0, "hero_count": 0, "hero_stars": 0, "win count": 0, "like count": 0, "card": [4, 5, 6] }, { "playerId": 5798, "nickname": "我的测试", "sexid": 0, "icon": 8, "head_frame": 1, "level": 78, "fight": 2395, "viplevel": 0, "rankchange": 0, "hero_count": 0, "hero_stars": 0, "win count": 0, "like count": 0, "card": [1, 11, 15] }], "today_my_like_players": [], "pkwinLoose": [] }
+        // this.S2CRankView(retObj)
+    }
+
+    S2CRankView(retObj) {
+        console.log(`富豪榜列表返回`)
+        console.log(JSON.stringify(retObj))
+
+        let myData = {
+            playerId: DataManager.playData.id,
+            rank: retObj.my_rank,
+            name: DataManager.playData.name,
+            rank_type: retObj.rank_type,
+            icon: 0,
+            last_time: retObj.last_time,
+            myHonerBouns: 0
+        }
+
+        let ePlayerData = {
+            playerId: 0,
+            rank: 0,
+            name: '',
+            rank_type: retObj.rank_type,
+            icon: 0
+        }
+        let myHoner: number = 0
+
+        this.contect.removeAllChildren()
+        this.scrollView.getComponent(cc.ScrollView).scrollToTop()
+        for (let i = 0; i < retObj.items.length; i++) {
+            let render = cc.instantiate(this.renderPfb)
+            render.parent = this.contect
+            // render.getComponent(battleRender).init(retObj.items[i], i + 1)
+
+            // if (i < 5) {
+            //     render.x = 1000
+            //     this.scheduleOnce(() => {
+            //         render.runAction(cc.moveTo(DataManager.SCROLLTIME1, cc.v2(0, render.y)))
+            //     }, DataManager.SCROLLTIME2 * i)
+            // }
+
+            // if (retObj.items[i].playerId == DataManager.playData.id) {
+            //     DataManager.myBattleFiledConfig.card = retObj.items[i].card
+
+            //     myHoner = Math.max(365, Math.floor(15000 * Math.pow(1 - 0.01, i)))
+            //     console.log('myHoner:' + myHoner)
+
+            //     myData.icon = retObj.items[i].icon
+            //     console.log(`-------点击我的-----------`)
+            //     render.on(cc.Node.EventType.TOUCH_END, () => {
+            //         ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLEFILED)
+            //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_MYTEAM, ...[retObj.items[i].card])
+            //     }, this)
+            // } else {
+            //     render.on(cc.Node.EventType.TOUCH_END, () => {
+            //         ePlayerData.name = retObj.items[i].nickname
+            //         ePlayerData.playerId = retObj.items[i].playerId
+            //         ePlayerData.rank = i + 1
+            //         ePlayerData.icon = retObj.items[i].icon
+
+            //         ViewManager.instance.hideWnd(EnumManager.viewPath.WND_BATTLEFILED)
+            //         ViewManager.instance.showWnd(EnumManager.viewPath.WND_BATTLE_COMPARMY, ...[myData, ePlayerData])
+            //     }, this)
+            // }
+        }
+
+        // myData.myHonerBouns = myHoner
+        // this._myData = myData
+    }
+
+    getBonus() {
+
+    }
+
+    onClose() {
+        NetEventDispatcher.removeListener(NetEvent.S2CRankView, this.S2CRankView,this)
+    }
+
+    onCloseHandler() {
+        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        DataManager.myBattleFiledConfig.soliders = []
+        DataManager.myBattleFiledConfig.card = []
+    }
+
+    // update (dt) {}
+}

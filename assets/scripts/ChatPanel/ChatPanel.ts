@@ -283,16 +283,16 @@ export default class NewClass extends cc.Component {
         this._sendvalue = "";
     }
     ChatPush_auth_cb(retObj) {
-        cc.log("接受发送聊天内容消息=="+retObj.content);
+        cc.log("接受发送聊天内容消息==" + retObj.content);
         if (!this._isShow) {
             this.m_pReddot.active = true;
             return;
         }
         if (this._curselectIndex != retObj.chat_type) return;
         this._chatviewList.push(retObj);
-        if(retObj.chat_type == 1){
+        if (retObj.chat_type == 1) {
             // DataManager.chatviewList.push(retObj)
-            DataManager.mainHome.initChat( DataManager.chatviewList) 
+            DataManager.mainHome.initChat(DataManager.chatviewList)
         }
 
         // this.m_pNewMessageNode.active = true;
@@ -333,7 +333,7 @@ export default class NewClass extends cc.Component {
         this.m_pReddot.active = false;
         // var self = this;
         this._chatviewList = retObj.chat_content;
-        if(this._curselectIndex == 1){
+        if (this._curselectIndex == 1) {
             DataManager.chatviewList = retObj.chat_content
             DataManager.mainHome.initChat(retObj.chat_content)
         }
@@ -347,29 +347,26 @@ export default class NewClass extends cc.Component {
     showListView() {
         //组件初始化
         this.content = this.mScrollView.content;
-        console.log(`this._chatviewList:` + JSON.stringify(this._chatviewList))
-        // this.content.height = this._chatviewList.length * (this.itemTemplateHeight + this.spacing) + this.spacing; // get total content height
+        let showNum = 0
         if (this.content.children.length == 0) {
             this._spawnItems = []; // array to store spawned items
-            // this.updateTimer = 0;
-            // this.updateTimer = 0.2;
-            // this.lastContentPosY = 0; // use this variable to detect if we are scrolling up or down
             for (let i = 0; i < this.spawnCount; ++i) { // spawn items, we only need to do this once
                 let item = cc.instantiate(this.itemTemplate);
                 this.content.addChild(item);
-                // item.setPosition(0, item.height * (0.5 + i) + this.spacing * (i + 1));
-                item.getComponent('ChatItem').updateItem(i);
+                let isShow = item.getComponent('ChatItem').updateItem(i);
+                if (isShow) showNum++
                 this._spawnItems.push(item);
             }
         } else {
-            // this.updateTimer = 0;
             for (let i = 0; i < this.spawnCount; ++i) { // spawn items, we only need to do this once
                 let item = this._spawnItems[i];
-                // item.setPosition(0, item.height * (0.5 + i) + this.spacing * (i + 1));
-                item.getComponent('ChatItem').updateItem(i);
+                let isShow = item.getComponent('ChatItem').updateItem(i);
+                if (isShow) showNum++
             }
         }
-        this.mScrollView.scrollToBottom()
+        if (showNum > 4) {
+            this.mScrollView.scrollToBottom()
+        }
     }
     SendChatContent(params, targetid = 0) {
         cc.log("发送的对象ID===" + targetid + "type==" + this._curselectIndex);

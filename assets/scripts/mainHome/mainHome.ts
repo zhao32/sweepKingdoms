@@ -123,6 +123,10 @@ export default class NewClass extends cc.Component {
     @property({ type: cc.Node, displayName: '军队介绍' })
     btnInArm: cc.Node = null;
 
+    @property({ type: cc.Node, displayName: '富豪榜' })
+    btnRich: cc.Node = null;
+
+
     chatPanel
 
 
@@ -144,6 +148,11 @@ export default class NewClass extends cc.Component {
     start() {
 
         DataManager.mainHome = this
+
+        this.btnRich.on(cc.Node.EventType.TOUCH_END, () => {
+            ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_RICH)
+        }, this)
+
 
         this.btnIntro.on(cc.Node.EventType.TOUCH_END, () => {
             ViewManager.instance.showWnd(EnumManager.viewPath.WND_MAIN_INTRO)

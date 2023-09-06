@@ -47,10 +47,12 @@ export default class NewClass extends cc.Component {
         this._itemID = nIndex;
         if (this._itemID >= DataManager.ChatPanel._chatviewList.length) {
             this.node.active = false;
+            return false
         } else {
             this.node.active = true;
             this._chatinfo = DataManager.ChatPanel._chatviewList[DataManager.ChatPanel._chatviewList.length - 1 - this._itemID];
             this.Init();
+            return true
         }
         // if(this._itemID == 0)
         // {
