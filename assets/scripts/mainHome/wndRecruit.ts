@@ -177,6 +177,7 @@ export default class NewClass extends cc.Component {
 
     S2CRecSoldiers(retObj) {
         console.log(`------------招募返回-------------`)
+        ViewManager.instance.showToast(`招募成功`)
         console.log(JSON.stringify(retObj))
         // {"type":2,"num":630}
         console.log('招募成功')
