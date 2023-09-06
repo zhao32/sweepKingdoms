@@ -6,6 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import DataManager from "../utils/Manager/DataManager";
+import ResManager from "../utils/Manager/ResManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -39,6 +40,15 @@ export default class NewClass extends cc.Component {
         if (keySkillatList.indexOf(String(data.template_id)) != -1) {
             itemData = DataManager.GameData.SkillStudy[data.template_id]
         }
+        let keyFlagList = Object.keys(DataManager.GameData.CardFrags)
+        if (keyFlagList.indexOf(String(data.template_id)) != -1) {
+            itemData = DataManager.GameData.CardFrags[data.template_id]
+            // ResManager.loadItemIcon(`hero/icon/${itemData.name.slice(0, -2)}`, this.sprite.node)
+            // ResManager.loadItemIcon(`hero/heroHeadBg${itemData.quality - 1}`, this.node)
+
+            // ResManager.loadItemIcon(`hero/debrisBg${fragData.quality - 1}`, this.node)
+        }
+
 
         if (itemData) {
             this.nameLabel.string = itemData.name + `x${data.num}`

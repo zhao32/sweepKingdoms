@@ -42,6 +42,12 @@ export default class NewClass extends cc.Component {
     @property(cc.Sprite)
     typeSprite: cc.Sprite = null;
 
+    @property({ type: cc.Label, displayName: '金币升级' })
+    coinLabel: cc.Label = null;
+
+    @property({ type: cc.Label, displayName: '元宝升级' })
+    goldLabel: cc.Label = null;
+
     _data: any
 
     /**1:资源建筑 ，2 兵营建筑 ，3 基础建筑 */
@@ -166,6 +172,11 @@ export default class NewClass extends cc.Component {
 
         let levelData = DataManager.GameData.buildUp[data.group][data.idx][data.grade - 1]
         let upLevelData = DataManager.GameData.buildUp[data.group][data.idx][data.grade]
+
+        this.coinLabel.string = `金币升级(${(levelData.money)})`
+        this.goldLabel.string = `元宝升级(${(Math.ceil(levelData.money / 10000))})`
+
+
         if (upLevelData) {
             this.upPremiseDisplay.string = `升级条件: 玩家等级达到${levelData.unlocklevel}`
         } else {

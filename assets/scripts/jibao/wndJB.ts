@@ -52,14 +52,24 @@ export default class NewClass extends cc.Component {
     @property(cc.Toggle)
     toggle3: cc.Toggle = null;
 
+
+    @property(cc.Toggle)
+    rypeToggle1: cc.Toggle = null;
+
+    @property(cc.Toggle)
+    rypeToggle2: cc.Toggle = null;
+
+    @property(cc.Toggle)
+    rypeToggle3: cc.Toggle = null;
+
     @property(cc.Label)
     pageLabel: cc.Label = null;
 
-
     curPage = 1
-
-
-
+    /**全部 装备 技能 将魂 */
+    type = 1
+    /**集市 寄售 上架中 */
+    classType = 1
 
     start() {
         DataManager.wndJB = this
@@ -84,7 +94,103 @@ export default class NewClass extends cc.Component {
         this.goldLabel.string = String(DataManager.playData.goldMoney)
     }
 
+    upType() {
+        if (this.classType == 1) {
+
+        } else if (this.classType == 2) {
+            this.contect.removeAllChildren()
+            if (this.type == 1) {
+                /**装备 */
+                let keyEquipList = Object.keys(DataManager.GameData.Equips)
+                for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+                    let template_id = DataManager.instance.itemsList[i].template_id.toString()
+                    if (DataManager.instance.itemsList[i].bagId == 1) {
+                        if (keyEquipList.indexOf(template_id.toString()) != -1 && template_id != "1000" && template_id != "1001") {
+                            let item = cc.instantiate(this.sellPfb)
+                            item.parent = this.contect
+                            item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
+                        }
+                    }
+                }
+
+                /**技能 */
+                let keySkillatList = Object.keys(DataManager.GameData.SkillStudy)
+                for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+                    let template_id = DataManager.instance.itemsList[i].template_id.toString()
+                    if (DataManager.instance.itemsList[i].bagId == 3) {
+                        if (keySkillatList.indexOf(template_id.toString()) != -1) {
+                            let item = cc.instantiate(this.sellPfb)
+                            item.parent = this.contect
+                            item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
+                        }
+                    }
+                }
+
+
+            } else if (this.type == 2) {
+                /**装备 */
+                let keyEquipList = Object.keys(DataManager.GameData.Equips)
+                for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+                    let template_id = DataManager.instance.itemsList[i].template_id.toString()
+                    if (DataManager.instance.itemsList[i].bagId == 1) {
+                        if (keyEquipList.indexOf(template_id.toString()) != -1 && template_id != "1000" && template_id != "1001") {
+                            let item = cc.instantiate(this.sellPfb)
+                            item.parent = this.contect
+                            item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
+                        }
+                    }
+                }
+
+
+            } else if (this.type == 3) {
+                /**技能 */
+                let keySkillatList = Object.keys(DataManager.GameData.SkillStudy)
+                for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+                    let template_id = DataManager.instance.itemsList[i].template_id.toString()
+                    if (DataManager.instance.itemsList[i].bagId == 3) {
+                        if (keySkillatList.indexOf(template_id.toString()) != -1) {
+                            let item = cc.instantiate(this.sellPfb)
+                            item.parent = this.contect
+                            item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
+                        }
+                    }
+                }
+
+                // let keyFlagList = Object.keys(DataManager.GameData.CardFrags)
+
+                // for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+                //     let template_id = DataManager.instance.itemsList[i].template_id.toString()
+                //     if (DataManager.instance.itemsList[i].bagId == 3) {
+                //         if (keyFlagList.indexOf(template_id.toString()) != -1) {
+                //             let item = cc.instantiate(this.sellPfb)
+                //             item.parent = this.contect
+                //             item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
+                //         }
+                //     }
+                // }
+
+            } else if (this.type == 4) {
+                // let fragList = []
+                let keys = Object.keys(DataManager.GameData.CardFrags)
+                for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+                    if (keys.indexOf(String(DataManager.instance.itemsList[i].template_id)) != -1) {
+                        // fragList.push(DataManager.instance.itemsList[i])
+                        let item = cc.instantiate(this.sellPfb)
+                        item.parent = this.contect
+                        item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
+                    }
+                }
+            }
+
+        } else if (this.classType == 3) {
+
+        }
+
+    }
+
     init() {
+        this.type = 1
+
         this.contect.removeAllChildren()
         MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage, 5)
         NetEventDispatcher.addListener(NetEvent.S2CBussizeList, this.S2CBussizeList, this)
@@ -98,43 +204,63 @@ export default class NewClass extends cc.Component {
         this.goldLabel.string = String(DataManager.playData.goldMoney)
         this.node.getChildByName(`page`).active = true
 
+        this.rypeToggle1.node.on(`toggle`, () => {
+            this.type = 1
+            this.upType()
+        }, this)
+
+        this.rypeToggle2.node.on(`toggle`, () => {
+            this.type = 2
+            this.upType()
+        }, this)
+
+        this.rypeToggle3.node.on(`toggle`, () => {
+            this.type = 3
+            this.upType()
+        }, this)
+
         this.toggle1.node.on(`toggle`, () => {
+            this.classType = 1
             this.node.getChildByName(`page`).active = true
             this.contect.removeAllChildren()
             MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage, 5)
         }, this)
 
         this.toggle2.node.on(`toggle`, () => {
+            this.classType = 2
             this.node.getChildByName(`page`).active = false
-            this.contect.removeAllChildren()
-            /**装备 */
-            let keyEquipList = Object.keys(DataManager.GameData.Equips)
-            let keySkillatList = Object.keys(DataManager.GameData.SkillStudy)
+            this.upType()
+            // this.contect.removeAllChildren()
+            // /**装备 */
+            // let keyEquipList = Object.keys(DataManager.GameData.Equips)
+            // /**技能 */
+            // let keySkillatList = Object.keys(DataManager.GameData.SkillStudy)
 
-            for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
-                let template_id = DataManager.instance.itemsList[i].template_id.toString()
-                if (DataManager.instance.itemsList[i].bagId == 1) {
-                    if (keyEquipList.indexOf(template_id.toString()) != -1 && template_id != "1000" && template_id != "1001") {
-                        let item = cc.instantiate(this.sellPfb)
-                        item.parent = this.contect
-                        item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
-                    }
-                }
-            }
+            // for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+            //     let template_id = DataManager.instance.itemsList[i].template_id.toString()
+            //     if (DataManager.instance.itemsList[i].bagId == 1) {
+            //         if (keyEquipList.indexOf(template_id.toString()) != -1 && template_id != "1000" && template_id != "1001") {
+            //             let item = cc.instantiate(this.sellPfb)
+            //             item.parent = this.contect
+            //             item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
+            //         }
+            //     }
+            // }
 
-            for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
-                let template_id = DataManager.instance.itemsList[i].template_id.toString()
-                if (DataManager.instance.itemsList[i].bagId == 3) {
-                    if (keySkillatList.indexOf(template_id.toString()) != -1) {
-                        let item = cc.instantiate(this.sellPfb)
-                        item.parent = this.contect
-                        item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
-                    }
-                }
-            }
+            // for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+            //     let template_id = DataManager.instance.itemsList[i].template_id.toString()
+            //     if (DataManager.instance.itemsList[i].bagId == 3) {
+            //         if (keySkillatList.indexOf(template_id.toString()) != -1) {
+            //             let item = cc.instantiate(this.sellPfb)
+            //             item.parent = this.contect
+            //             item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
+            //         }
+            //     }
+            // }
         }, this)
 
         this.toggle3.node.on(`toggle`, () => {
+            this.classType = 3
             this.node.getChildByName(`page`).active = false
             this.contect.removeAllChildren()
             MyProtocols.send_C2SBussizeList(DataManager._loginSocket)

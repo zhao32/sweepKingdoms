@@ -861,7 +861,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 180,
+      "width": 200,
       "height": 60
     },
     "_anchorPoint": {
@@ -873,7 +873,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        336.184,
+        328.184,
         32.881,
         0,
         0,
@@ -928,7 +928,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 118.4,
+      "width": 98,
       "height": 56.4
     },
     "_anchorPoint": {
@@ -982,7 +982,7 @@
     "_dstBlendFactor": 771,
     "_string": "元宝升级",
     "_N$string": "元宝升级",
-    "_fontSize": 28.1,
+    "_fontSize": 23,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,
@@ -1198,7 +1198,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 180,
+      "width": 200,
       "height": 60
     },
     "_anchorPoint": {
@@ -1210,7 +1210,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        335.184,
+        327.184,
         -35.119,
         0,
         0,
@@ -1265,7 +1265,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 118.4,
+      "width": 98,
       "height": 56.4
     },
     "_anchorPoint": {
@@ -1319,7 +1319,7 @@
     "_dstBlendFactor": 771,
     "_string": "金币升级",
     "_N$string": "金币升级",
-    "_fontSize": 28.1,
+    "_fontSize": 23,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,
@@ -1529,7 +1529,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 180,
+      "width": 200,
       "height": 60
     },
     "_anchorPoint": {
@@ -1541,7 +1541,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        336.184,
+        328.184,
         0,
         0,
         0,
@@ -1596,7 +1596,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 118.4,
+      "width": 98,
       "height": 56.4
     },
     "_anchorPoint": {
@@ -1650,7 +1650,7 @@
     "_dstBlendFactor": 771,
     "_string": "建造建筑",
     "_N$string": "建造建筑",
-    "_fontSize": 28.1,
+    "_fontSize": 23,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": null,
@@ -1900,6 +1900,12 @@
     },
     "typeSprite": {
       "__id__": 6
+    },
+    "coinLabel": {
+      "__id__": 34
+    },
+    "goldLabel": {
+      "__id__": 25
     },
     "_id": ""
   },

@@ -2143,7 +2143,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 146.7,
+      "width": 134.47,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -2192,7 +2192,7 @@
     "_isSystemFontUsed": true,
     "_N$string": "<color=#ffffff>挥砍攻击：</c><color=#0fffff>10</color>",
     "_N$horizontalAlign": 0,
-    "_N$fontSize": 24,
+    "_N$fontSize": 22,
     "_N$font": null,
     "_N$cacheMode": 0,
     "_N$maxWidth": 0,
@@ -2239,7 +2239,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 146.7,
+      "width": 134.47,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -2288,7 +2288,7 @@
     "_isSystemFontUsed": true,
     "_N$string": "<color=#ffffff>挥砍防御：</c><color=#0fffff>10</color>",
     "_N$horizontalAlign": 0,
-    "_N$fontSize": 24,
+    "_N$fontSize": 22,
     "_N$font": null,
     "_N$cacheMode": 0,
     "_N$maxWidth": 0,
@@ -2335,7 +2335,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 146.7,
+      "width": 134.47,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -2384,7 +2384,7 @@
     "_isSystemFontUsed": true,
     "_N$string": "<color=#ffffff>穿刺攻击：</c><color=#0fffff>10</color>",
     "_N$horizontalAlign": 0,
-    "_N$fontSize": 24,
+    "_N$fontSize": 22,
     "_N$font": null,
     "_N$cacheMode": 0,
     "_N$maxWidth": 0,
@@ -2431,7 +2431,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 146.7,
+      "width": 134.47,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -2480,7 +2480,7 @@
     "_isSystemFontUsed": true,
     "_N$string": "<color=#ffffff>穿刺防御：</c><color=#0fffff>10</color>",
     "_N$horizontalAlign": 0,
-    "_N$fontSize": 24,
+    "_N$fontSize": 22,
     "_N$font": null,
     "_N$cacheMode": 0,
     "_N$maxWidth": 0,
@@ -2527,7 +2527,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 146.7,
+      "width": 134.47,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -2576,7 +2576,7 @@
     "_isSystemFontUsed": true,
     "_N$string": "<color=#ffffff>法术攻击：</c><color=#0fffff>10</color>",
     "_N$horizontalAlign": 0,
-    "_N$fontSize": 24,
+    "_N$fontSize": 22,
     "_N$font": null,
     "_N$cacheMode": 0,
     "_N$maxWidth": 0,
@@ -2623,7 +2623,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 146.7,
+      "width": 134.47,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -2672,7 +2672,7 @@
     "_isSystemFontUsed": true,
     "_N$string": "<color=#ffffff>法术防御：</c><color=#0fffff>10</color>",
     "_N$horizontalAlign": 0,
-    "_N$fontSize": 24,
+    "_N$fontSize": 22,
     "_N$font": null,
     "_N$cacheMode": 0,
     "_N$maxWidth": 0,

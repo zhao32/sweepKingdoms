@@ -77,13 +77,16 @@ export default class NewClass extends cc.Component {
             let cardsList = Object.keys(DataManager.GameData.Cards)
             this.contect.removeAllChildren()
             for (let i = 0; i < cardsList.length; i++) {
-                let render = cc.instantiate(this.pfb1)
-                render.parent = this.contect
                 let data = DataManager.GameData.Cards[cardsList[i]]
-                render.getComponent(inHeroRender).init(data)
-                render.on(cc.Node.EventType.TOUCH_END, () => {
-                    ViewManager.instance.showNote(EnumManager.viewPath.NOTE_IN_GENERAL, ...[data])
-                }, this)
+                if (data.name != `王翦` && data.name != `李信`) {
+                    let render = cc.instantiate(this.pfb1)
+                    render.parent = this.contect
+                    render.getComponent(inHeroRender).init(data)
+                    render.on(cc.Node.EventType.TOUCH_END, () => {
+                        ViewManager.instance.showNote(EnumManager.viewPath.NOTE_IN_GENERAL, ...[data])
+                    }, this)
+                }
+
             }
 
             this.btnHero.getComponent(cc.Sprite).spriteFrame = this.spriteFrames[1]

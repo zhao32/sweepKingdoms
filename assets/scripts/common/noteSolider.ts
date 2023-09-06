@@ -93,39 +93,180 @@ export default class NewClass extends cc.Component {
         this.射程.string = `<color=#ffffff>射程：</c><color=#0fffff>${data.attr.addition_2}</color>`
         this.暴击.string = `<color=#ffffff>暴击：</c><color=#0fffff>${data.attr.addition_3}</color>`
         this.韧性.string = `<color=#ffffff>韧性：</c><color=#0fffff>${data.attr.addition_3}</color>`
-        this.挥砍攻击.string = `<color=#ffffff>挥砍攻击：</c><color=#0fffff>${data.defense.attack_1}</color>`
-        this.穿刺攻击.string = `<color=#ffffff>穿刺攻击：</c><color=#0fffff>${data.defense.attack_2}</color>`
-        this.法术攻击.string = `<color=#ffffff>法术攻击：</c><color=#0fffff>${data.defense.attack_3}</color>`
+        this.挥砍攻击.string = `<color=#ffffff>挥砍攻击:</c><color=#0fffff>${data.defense.attack_1}</color>`
+        this.穿刺攻击.string = `<color=#ffffff>穿刺攻击:</c><color=#0fffff>${data.defense.attack_2}</color>`
+        this.法术攻击.string = `<color=#ffffff>法术攻击:</c><color=#0fffff>${data.defense.attack_3}</color>`
 
-        this.挥砍防御.string = `<color=#ffffff>挥砍防御：</c><color=#0fffff>${data.defense.attack_4}</color>`
-        this.穿刺防御.string = `<color=#ffffff>穿刺防御：</c><color=#0fffff>${data.defense.attack_5}</color>`
-        this.法术防御.string = `<color=#ffffff>法术防御：</c><color=#0fffff>${data.defense.attack_6}</color>`
+        this.挥砍防御.string = `<color=#ffffff>挥砍防御:</c><color=#0fffff>${data.defense.attack_4}</color>`
+        this.穿刺防御.string = `<color=#ffffff>穿刺防御:</c><color=#0fffff>${data.defense.attack_5}</color>`
+        this.法术防御.string = `<color=#ffffff>法术防御:</c><color=#0fffff>${data.defense.attack_6}</color>`
 
         this.出征消耗.string = 'x' + data.consume.battle + `/次`
         this.驻防消耗.string = 'x' + data.consume.garrison + `/时`
 
         if (cardData) {
             console.log(`cardData:` + JSON.stringify(cardData))
+            let plus1 = 0
+            let plus2 = 0
+            let plus3 = 0
+            let plus4 = 0
+            let plus5 = 0
+            let plus6 = 0
+
             let adds = GameUtil.instance.skillstBaseAdd(cardData)
             if (adds[data.arm - 1].attack_1 > 0) {
-                this.挥砍攻击.string += `+${adds[data.arm - 1].attack_1}`
+                plus1 += adds[data.arm - 1].attack_1
             }
             if (adds[data.arm - 1].attack_2 > 0) {
-                this.穿刺攻击.string += `+${adds[data.arm - 1].attack_2}`
+                plus2 += adds[data.arm - 1].attack_2
             }
             if (adds[data.arm - 1].attack_3 > 0) {
-                this.法术攻击.string += `+${adds[data.arm - 1].attack_3}`
+                plus3 += adds[data.arm - 1].attack_3
             }
             if (adds[data.arm - 1].attack_4 > 0) {
-                this.挥砍防御.string += `+${adds[data.arm - 1].attack_4}`
+                plus4 += adds[data.arm - 1].attack_4
             }
             if (adds[data.arm - 1].attack_5 > 0) {
-                this.穿刺防御.string += `+${adds[data.arm - 1].attack_5}`
+                plus5 += adds[data.arm - 1].attack_5
             }
             if (adds[data.arm - 1].attack_6 > 0) {
-                this.法术防御.string += `+${adds[data.arm - 1].attack_6}`
+                plus6 += adds[data.arm - 1].attack_6
             }
+
+            let adds2 = GameUtil.instance.equipAdd(cardData)
+            if (adds2[data.arm - 1].attack_1 > 0) {
+                plus1 += adds2[data.arm - 1].attack_1
+            }
+            if (adds2[data.arm - 1].attack_2 > 0) {
+                plus2 += adds2[data.arm - 1].attack_2
+            }
+            if (adds2[data.arm - 1].attack_3 > 0) {
+                plus3 += adds2[data.arm - 1].attack_3
+            }
+            if (adds2[data.arm - 1].attack_4 > 0) {
+                plus4 += adds2[data.arm - 1].attack_4
+            }
+            if (adds2[data.arm - 1].attack_5 > 0) {
+                plus5 += adds2[data.arm - 1].attack_5
+            }
+            if (adds2[data.arm - 1].attack_6 > 0) {
+                plus6 += adds2[data.arm - 1].attack_6
+            }
+
+            let adds3 = GameUtil.instance.skillAdd(cardData)
+            // console.log(`adds3:`+JSON.stringify(adds3))
+            if (adds3[data.arm - 1].attack_1 > 0) {
+                plus1 += adds3[data.arm - 1].attack_1
+            }
+            if (adds3[data.arm - 1].attack_2 > 0) {
+                plus2 += adds3[data.arm - 1].attack_2
+            }
+            if (adds3[data.arm - 1].attack_3 > 0) {
+                plus3 += adds3[data.arm - 1].attack_3
+            }
+            if (adds3[data.arm - 1].attack_4 > 0) {
+                plus4 += adds3[data.arm - 1].attack_4
+            }
+            if (adds3[data.arm - 1].attack_5 > 0) {
+                plus5 += adds3[data.arm - 1].attack_5
+            }
+            if (adds3[data.arm - 1].attack_6 > 0) {
+                plus6 += adds3[data.arm - 1].attack_6
+            }
+
+            if (plus1 > 0) {
+                this.挥砍攻击.string += `+${plus1}`
+            }
+            if (plus2 > 0) {
+                this.穿刺攻击.string += `+${plus2}`
+            }
+            if (plus3 > 0) {
+                this.法术攻击.string += `+${plus3}`
+            }
+            if (plus4 > 0) {
+                this.挥砍防御.string += `+${plus4}`
+            }
+            if (plus5 > 0) {
+                this.穿刺防御.string += `+${plus5}`
+            }
+            if (plus6 > 0) {
+                this.法术防御.string += `+${plus6}`
+            }
+
+
+
+
         }
+
+
+
+
+        // if (cardData) {
+        //     console.log(`cardData:` + JSON.stringify(cardData))
+        //     let adds = GameUtil.instance.skillstBaseAdd(cardData)
+        //     if (adds[data.arm - 1].attack_1 > 0) {
+        //         this.挥砍攻击.string += `+${adds[data.arm - 1].attack_1}`
+        //     }
+        //     if (adds[data.arm - 1].attack_2 > 0) {
+        //         this.穿刺攻击.string += `+${adds[data.arm - 1].attack_2}`
+        //     }
+        //     if (adds[data.arm - 1].attack_3 > 0) {
+        //         this.法术攻击.string += `+${adds[data.arm - 1].attack_3}`
+        //     }
+        //     if (adds[data.arm - 1].attack_4 > 0) {
+        //         this.挥砍防御.string += `+${adds[data.arm - 1].attack_4}`
+        //     }
+        //     if (adds[data.arm - 1].attack_5 > 0) {
+        //         this.穿刺防御.string += `+${adds[data.arm - 1].attack_5}`
+        //     }
+        //     if (adds[data.arm - 1].attack_6 > 0) {
+        //         this.法术防御.string += `+${adds[data.arm - 1].attack_6}`
+        //     }
+
+        //     let adds2 = GameUtil.instance.equipAdd(cardData)
+        //     if (adds2[data.arm - 1].attack_1 > 0) {
+        //         this.挥砍攻击.string += `+${adds2[data.arm - 1].attack_1}`
+        //     }
+        //     if (adds2[data.arm - 1].attack_2 > 0) {
+        //         this.穿刺攻击.string += `+${adds2[data.arm - 1].attack_2}`
+        //     }
+        //     if (adds2[data.arm - 1].attack_3 > 0) {
+        //         this.法术攻击.string += `+${adds2[data.arm - 1].attack_3}`
+        //     }
+        //     if (adds2[data.arm - 1].attack_4 > 0) {
+        //         this.挥砍防御.string += `+${adds2[data.arm - 1].attack_4}`
+        //     }
+        //     if (adds2[data.arm - 1].attack_5 > 0) {
+        //         this.穿刺防御.string += `+${adds2[data.arm - 1].attack_5}`
+        //     }
+        //     if (adds2[data.arm - 1].attack_6 > 0) {
+        //         this.法术防御.string += `+${adds2[data.arm - 1].attack_6}`
+        //     }
+
+        //     let adds3 = GameUtil.instance.skillAdd(cardData)
+        //     // console.log(`adds3:`+JSON.stringify(adds3))
+        //     if (adds3[data.arm - 1].attack_1 > 0) {
+        //         this.挥砍攻击.string += `+${adds3[data.arm - 1].attack_1}`
+        //     }
+        //     if (adds3[data.arm - 1].attack_2 > 0) {
+        //         this.穿刺攻击.string += `+${adds3[data.arm - 1].attack_2}`
+        //     }
+        //     if (adds3[data.arm - 1].attack_3 > 0) {
+        //         this.法术攻击.string += `+${adds3[data.arm - 1].attack_3}`
+        //     }
+        //     if (adds3[data.arm - 1].attack_4 > 0) {
+        //         this.挥砍防御.string += `+${adds3[data.arm - 1].attack_4}`
+        //     }
+        //     if (adds3[data.arm - 1].attack_5 > 0) {
+        //         this.穿刺防御.string += `+${adds3[data.arm - 1].attack_5}`
+        //     }
+        //     if (adds3[data.arm - 1].attack_6 > 0) {
+        //         this.法术防御.string += `+${adds3[data.arm - 1].attack_6}`
+        //     }
+
+
+        // }
+
 
 
     }

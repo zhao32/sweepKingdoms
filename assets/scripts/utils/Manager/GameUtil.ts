@@ -143,6 +143,7 @@ export default class GameUtil {
             }
             plusList.push(plusData)
         }
+        console.error(`plusList:` + JSON.stringify(plusList))
         return plusList
     }
 
@@ -266,6 +267,40 @@ export default class GameUtil {
         }
     }
 
+    skillAdd(card) {
+        let plusData = []
+        for (let i = 0; i < 5; i++) {
+            plusData.push({
+                "attack_1": 0, "attack_2": 0, "attack_3": 0,
+                "attack_4": 0, "attack_5": 0, "attack_6": 0
+            })
+        }
+
+        let template_id = card.template_id
+        let skills = DataManager.GameData.Cards[template_id].skills
+        let proficiency = card.proficiency
+        let talents = card.talents//DataManager.GameData.Cards[template_id].talents
+
+        for (let i = 0; i < skills.length; i++) {
+            let skillData = DataManager.GameData.Skill[skills[i][0]]
+            let getList = this.doCount1(skillData, proficiency, talents)
+            // console.log(`getList:`+JSON.stringify(getList))
+            for (let j = 0; j < plusData.length; j++) {
+                for (let k = 0; k < getList.length; k++) {
+                    if (j == k) {
+                        plusData[j].attack_1 += getList[k].attack_1
+                        plusData[j].attack_2 += getList[k].attack_2
+                        plusData[j].attack_3 += getList[k].attack_3
+                        plusData[j].attack_4 += getList[k].attack_4
+                        plusData[j].attack_5 += getList[k].attack_5
+                        plusData[j].attack_6 += getList[k].attack_6
+                    }
+                }
+            }
+        }
+        return plusData
+    }
+
     skillstBaseAdd(card) {
         let plusData = []
         for (let i = 0; i < 5; i++) {
@@ -291,22 +326,131 @@ export default class GameUtil {
         return plusData
     }
 
+
+    equipAdd(card) {
+        let plusData = []
+        for (let i = 0; i < 5; i++) {
+            plusData.push({
+                "attack_1": 0, "attack_2": 0, "attack_3": 0,
+                "attack_4": 0, "attack_5": 0, "attack_6": 0
+            })
+        }
+        let equips = card.equips
+        if (equips) {
+            for (let j = 0; j < equips.length; j++) {
+                let equipData
+                for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+                    if (DataManager.instance.itemsList[i].uuid == equips[j]) {
+                        equipData = DataManager.GameData.Equips[DataManager.instance.itemsList[i].template_id]
+                    }
+                }
+
+                if (equipData) {
+                    for (let k = 0; k < card.talents.length; k++) {
+                        for (let m = 1; m <= 6; m++) {
+                            if (DataManager.GameData.Soldier[card.talents[k]].defense[`attack_${m}`] != 0) {
+                                plusData[card.talents[k] - 1][`attack_${m}`] += equipData.defense[`attack_${m}`]
+                                plusData[card.talents[k] - 1][`attack_${m}`] += DataManager.GameData.Soldier[card.talents[k]].defense[`attack_${m}`] * equipData.defense_percent[`attack_${m}`]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return plusData
+    }
+
     skllstBuff(card) {
         for (let i = 0; i < card.skills_equips.length; i++) {
             if (card.skills_equips[i].id != 0) {
                 let skillstData = DataManager.GameData.SkillStudy[card.skills_equips[i].id]
                 for (let j = 0; j < skillstData.buff_target.length; j++) {
-                    if( Math.random()*1 < skillstData.buff_target.buff_rate){
+                    if (Math.random() * 1 < skillstData.buff_target.buff_rate) {
                         if (skillstData.buff_target[0] <= 6) {//基础加成
-                            
-                       
+
+
                         }
-         
+
                     }
-                  
+
                 }
             }
         }
+    }
+
+
+
+    /**
+ * 
+ * @param data 技能数据
+ * @param proficiency 熟练度
+ * @param talents 熟练兵种
+ */
+    doCount1(data, proficiency, talents) {
+        // this.nameLabel.string = data.name
+        //skillAttributeList ['', '挥砍防御', '挥砍攻击', '穿透防御', '穿透攻击', '法术攻击', '法术防御']
+
+        // ResManager.loadItemIcon(`skills/${data.name}`, this.icon)
+        // 三字奥义	熟练度减熟练度的10%	减去之后除以20		
+        // 四字奥义	熟练度减熟练度的10%	减去之后除以18	减去之后除以40	
+        // 五字奥义	熟练度减熟练度的10%	减去之后除以16.4	减去之后除以36	减去之后除以90
+        let plusData = []
+        for (let i = 0; i < 5; i++) {
+            plusData.push({
+                "attack_1": 0, "attack_2": 0, "attack_3": 0,
+                "attack_4": 0, "attack_5": 0, "attack_6": 0
+            })
+        }
+        for (let i = 0; i < talents.length; i++) {
+            // let plusData = {
+            //     arm: talents[i],
+            //     fight: 0,
+            //     defense: 0
+            // }
+            for (let j = 0; j < data.attribute.length; j++) {
+                let num = proficiency[i] * 0.9
+                if (data.name.length == 2) {
+                    if (j == 0) {
+                        num = num / 21
+                    }
+                } else if (data.name.length == 3) {
+                    if (j == 0) {
+                        num = num / 20
+                    }
+                } else if (data.name.length == 4) {
+                    if (j == 0) {
+                        num = num / 18
+                    } else if (j == 1) {
+                        if (num / 18 > 40) {
+                            num = num / 18 - 40
+                        } else {
+                            num = num / 18 / 2
+                        }
+                    }
+                } else if (data.name.length == 5) {
+                    if (j == 0) {
+                        num = num / 16.4
+                    } else if (j == 1) {
+                        if (num / 16.4 > 36) {
+                            num = num / 16.4 - 36
+                        } else {
+                            num = num / 16.4 / 2
+                        }
+                    } else if (j == 2) {
+                        if (num / 16.4 > 36) {
+                            num = (num / 16.4 - 36) / 90
+                        } else {
+                            num = (num / 16.4 / 2) / 90
+                        }
+                    }
+                }
+                if (DataManager.GameData.Soldier[talents[i] - 1][`attack_${data.attribute[j]}`] > 0) plusData[talents[i] - 1][`attack_${data.attribute[j]}`] += Math.floor(num * 100) / 100  //Number(num.toFixed(2))
+
+            }
+        }
+        // console.log(`plusData:`+ JSON.stringify(plusData))
+        return plusData
     }
 
 }
