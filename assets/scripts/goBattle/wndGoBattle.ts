@@ -447,46 +447,91 @@ export default class NewClass extends cc.Component {
         myAttack()
 
         let buffNum = 0
+
+        /**我的技能 致使我的攻击力加成 */
+        let myFightPlus = 0
+        /**我的技能 致使我的防御力加成 */
+        let myDefensePlus = 0
+
+        /**我的技能 致使敌方的攻击力加成 */
+        let eFightDis = 0
+        /**我的技能 致使敌方的防御力加成 */
+        let eDefenseDis = 0
+
+
+        /**当前正在起作用的技能 */
+        let curSkill = 0
         function myAttack() {
             let mySolider: solider = myData.soliderList[myIdx]
             let enemySolider: solider = otherData.soliderList[enemyIdx]
+
+            let skillid: number
+            if (curSkill) {
+                skillid = 0
+            } else {
+                skillid = GameUtil.instance.getMyTeamSkill(self.myData.heroData.skills_equips)
+                curSkill = skillid
+            }
 
             let data = {
                 myArm: mySolider.arm,
                 enemyArm: enemySolider.arm,
                 enemyNum: 0,
-                skillId: GameUtil.instance.getMyTeamSkill(self.myData.heroData.skills_equips)
+                skillId: skillid
             }
 
-            let fightPlus = 0
-            let defensePlus = 0
+
+
             if (data.skillId) {
                 let skillstData = DataManager.GameData.SkillStudy[data.skillId]
-                buffNum = skillstData.target_num
+                if (buffNum == 0) buffNum = skillstData.target_num
                 for (let j = 0; j < skillstData.buff_target.length; j++) {
                     if (Math.random() * 1 < skillstData.buff_target.buff_rate) {
                         if (skillstData.buff_target[j][0] <= 6) {//基础加成
                             for (let k = 0; k < self.myData.heroData.talents.length; k++) {
-                                if (self.myData.heroData.talents[k] == data.myArm) {
+                                if (skillstData.buff_target[j][2] > 0) {
+                                    if (self.myData.heroData.talents[k] == data.myArm) {
+                                        let plus = self.myData.heroData.proficiency[k] * skillstData.buff_target[j][1] * skillstData.buff_target[j][2]
+                                        if (skillstData.buff_target[j][0] <= 3) {
+                                            if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
+                                                myFightPlus += plus
+                                            }
+                                        } else {
+                                            if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
+                                                myDefensePlus += plus
+                                            }
+                                        }
+                                    }
+                                } else {//敌方士兵属性降低
                                     let plus = self.myData.heroData.proficiency[k] * skillstData.buff_target[j][1] * skillstData.buff_target[j][2]
                                     if (skillstData.buff_target[j][0] <= 3) {
                                         if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
-                                            fightPlus += plus
+                                            eFightDis += plus
                                         }
                                     } else {
                                         if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
-                                            defensePlus += plus
+                                            eDefenseDis += plus
                                         }
                                     }
                                 }
+
                             }
                         }
                     }
                 }
+                buffNum--
+                if (buffNum <= 0) {
+                    curSkill = 0
+                    myFightPlus = 0
+                    myDefensePlus = 0
+                    eDefenseDis = 0
+                    eFightDis = 0
+                }
             }
 
-            let myAttacknum = (mySolider.fight + fightPlus) * mySolider.count
-            let enemyDefensenum = (enemySolider.defense + defensePlus) * enemySolider.count
+            let myAttacknum = (mySolider.fight + myFightPlus) * mySolider.count
+            let enemyDefensenum = (enemySolider.defense - eDefenseDis) * enemySolider.count
+            if (enemyDefensenum < 0) enemyDefensenum = 0
 
             let info: string
             if (myAttacknum - enemyDefensenum > 0) {//打死了这一波敌人
@@ -540,8 +585,8 @@ export default class NewClass extends cc.Component {
             let mySolider: solider = myData.soliderList[myIdx]
             let enemySolider: solider = otherData.soliderList[enemyIdx]
 
-            let enemyAttackNum = enemySolider.fight * enemySolider.count
-            let myDefanceNum = mySolider.defense * mySolider.count
+            let enemyAttackNum = (enemySolider.fight + eFightDis) * enemySolider.count
+            let myDefanceNum = (mySolider.defense + myDefensePlus) * mySolider.count
 
             let data = {
                 myArm: mySolider.arm,

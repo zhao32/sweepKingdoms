@@ -280,7 +280,7 @@
       "atk": 71,
       "def": 11
     },
-    "name": "王翦",
+    "name": "李信",
     "additions": {
       "addition_1": 5,
       "addition_2": 5,
@@ -298,7 +298,7 @@
       "def": 260
     },
     "potential": 105,
-    "quality": 2,
+    "quality": 1,
     "root_id": 65,
     "rune": [
       1,
