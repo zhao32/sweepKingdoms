@@ -2766,7 +2766,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "金块",
+    "_name": "元宝",
     "_objFlags": 0,
     "_parent": {
       "__id__": 73

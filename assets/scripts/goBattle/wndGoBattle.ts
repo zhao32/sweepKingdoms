@@ -491,7 +491,7 @@ export default class NewClass extends cc.Component {
                             if (skillstData.buff_target[j][2] > 0) {
                                 if (self.myData.heroData.talents[k] == data.myArm) {
                                     let plus = self.myData.heroData.proficiency[k] * skillstData.buff_target[j][1] * skillstData.buff_target[j][2]
-                                    console.error(`plus：` + plus)
+                                    console.error(`plus1：` + plus)
                                     if (skillstData.buff_target[j][0] <= 3) {
                                         if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
                                             myFightPlus += plus
@@ -504,7 +504,7 @@ export default class NewClass extends cc.Component {
                                 }
                             } else {//敌方士兵属性降低
                                 let plus = self.myData.heroData.proficiency[k] * skillstData.buff_target[j][1] * skillstData.buff_target[j][2]
-                                console.error(`plus：` + plus)
+                                console.error(`plus2：` + plus)
                                 if (skillstData.buff_target[j][0] <= 3) {
                                     if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
                                         eFightDis += plus

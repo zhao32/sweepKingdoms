@@ -6791,6 +6791,8 @@ var MyProtocols = {
 		var retObj = {};
 		retObj.lv = myDecoder.readInt();
 		retObj.type = myDecoder.readInt();
+		retObj.idx = myDecoder.readInt();
+
 		// console.log(`升级返回：`+ JSON.stringify(retObj))
 		return retObj;
 	},

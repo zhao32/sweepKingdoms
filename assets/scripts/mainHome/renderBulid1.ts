@@ -81,7 +81,6 @@ export default class NewClass extends cc.Component {
     onBuildHandler() {
         if (this._data.grade == 0) {
             if (DataManager.playData.level >= DataManager.GameData.buildUp[this._data.group][this._data.idx][this._data.grade].unlocklevel) {
-                this.curIdx = this._data.idx
                 MyProtocols.send_C2UPBulid(DataManager._loginSocket, 1, this.buildType, this._data.idx - 1, 1)
             } else {
                 let unlocklevel = DataManager.GameData.buildUp[this._data.group][this._data.idx][this._data.grade].unlocklevel
@@ -97,7 +96,9 @@ export default class NewClass extends cc.Component {
     }
 
     UPBulid(retObj) {
-        if (this._data.idx != this.curIdx) return
+        console.log('升级后返回：' + JSON.stringify(retObj))
+
+        if (this._data.idx - 1 != retObj.idx) return
         // console.log('升级后返回：' + JSON.stringify(retObj))
         // console.log('idx:' + this.curIdx)
         // // 升级后返回：{"lv":2,"type":2}
@@ -116,6 +117,7 @@ export default class NewClass extends cc.Component {
     }
 
     init(data) {
+        this.curIdx = data.idx
         this.idx = data.idx
         this.grade = data.grade
         console.log(`data:` + JSON.stringify(data))
@@ -212,14 +214,14 @@ export default class NewClass extends cc.Component {
 
     onUpgrade1() {
         // console.log()
-        this.curIdx = this._data.idx
+        if (this._data.idx != this.curIdx) return
         console.log('this.grade:' + this.grade + '  ' + this.buildType + '   ' + (parseInt(this.idx as any)))
         MyProtocols.send_C2UPBulid(DataManager._loginSocket, this.grade + 1, this.buildType, this.idx - 1, 1)
     }
 
 
     onUpgrade2() {
-        this.curIdx = this._data.idx
+        if (this._data.idx != this.curIdx) return
         MyProtocols.send_C2UPBulid(DataManager._loginSocket, this.grade + 1, this.buildType, this.idx - 1, 2)
     }
 

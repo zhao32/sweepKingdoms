@@ -93,9 +93,9 @@ export default class NewClass extends cc.Component {
 
     content
     _spawnItems
-    updateTimer
-    lastContentPosY
-    updateInterval
+    // updateTimer
+    // lastContentPosY
+    // updateInterval
 
 
     // LIFE-CYCLE CALLBACKS:
@@ -347,13 +347,13 @@ export default class NewClass extends cc.Component {
     showListView() {
         //组件初始化
         this.content = this.mScrollView.content;
-        // console.log(`this._chatviewList:` + JSON.stringify(this._chatviewList))
-        this.content.height = this._chatviewList.length * (this.itemTemplateHeight + this.spacing) + this.spacing; // get total content height
+        console.log(`this._chatviewList:` + JSON.stringify(this._chatviewList))
+        // this.content.height = this._chatviewList.length * (this.itemTemplateHeight + this.spacing) + this.spacing; // get total content height
         if (this.content.children.length == 0) {
             this._spawnItems = []; // array to store spawned items
-            this.updateTimer = 0;
-            this.updateTimer = 0.2;
-            this.lastContentPosY = 0; // use this variable to detect if we are scrolling up or down
+            // this.updateTimer = 0;
+            // this.updateTimer = 0.2;
+            // this.lastContentPosY = 0; // use this variable to detect if we are scrolling up or down
             for (let i = 0; i < this.spawnCount; ++i) { // spawn items, we only need to do this once
                 let item = cc.instantiate(this.itemTemplate);
                 this.content.addChild(item);
@@ -362,7 +362,7 @@ export default class NewClass extends cc.Component {
                 this._spawnItems.push(item);
             }
         } else {
-            this.updateTimer = 0;
+            // this.updateTimer = 0;
             for (let i = 0; i < this.spawnCount; ++i) { // spawn items, we only need to do this once
                 let item = this._spawnItems[i];
                 // item.setPosition(0, item.height * (0.5 + i) + this.spacing * (i + 1));
