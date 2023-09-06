@@ -464,6 +464,7 @@ export default class NewClass extends cc.Component {
         function myAttack() {
             let mySolider: solider = myData.soliderList[myIdx]
             let enemySolider: solider = otherData.soliderList[enemyIdx]
+            console.log(`enemySolider:` + JSON.stringify(enemySolider))
 
             let skillid: number
             if (curSkill) {
@@ -480,44 +481,43 @@ export default class NewClass extends cc.Component {
                 skillId: skillid
             }
 
-
-
             if (data.skillId) {
                 let skillstData = DataManager.GameData.SkillStudy[data.skillId]
                 if (buffNum == 0) buffNum = skillstData.target_num
                 for (let j = 0; j < skillstData.buff_target.length; j++) {
-                    if (Math.random() * 1 < skillstData.buff_target.buff_rate) {
-                        if (skillstData.buff_target[j][0] <= 6) {//基础加成
-                            for (let k = 0; k < self.myData.heroData.talents.length; k++) {
-                                if (skillstData.buff_target[j][2] > 0) {
-                                    if (self.myData.heroData.talents[k] == data.myArm) {
-                                        let plus = self.myData.heroData.proficiency[k] * skillstData.buff_target[j][1] * skillstData.buff_target[j][2]
-                                        if (skillstData.buff_target[j][0] <= 3) {
-                                            if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
-                                                myFightPlus += plus
-                                            }
-                                        } else {
-                                            if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
-                                                myDefensePlus += plus
-                                            }
-                                        }
-                                    }
-                                } else {//敌方士兵属性降低
+                    // if (Math.random() * 1 < skillstData.buff_target.buff_rate) {
+                    if (skillstData.buff_target[j][0] <= 6) {//基础加成
+                        for (let k = 0; k < self.myData.heroData.talents.length; k++) {
+                            if (skillstData.buff_target[j][2] > 0) {
+                                if (self.myData.heroData.talents[k] == data.myArm) {
                                     let plus = self.myData.heroData.proficiency[k] * skillstData.buff_target[j][1] * skillstData.buff_target[j][2]
+                                    console.error(`plus：` + plus)
                                     if (skillstData.buff_target[j][0] <= 3) {
                                         if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
-                                            eFightDis += plus
+                                            myFightPlus += plus
                                         }
                                     } else {
                                         if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
-                                            eDefenseDis += plus
+                                            myDefensePlus += plus
                                         }
                                     }
                                 }
-
+                            } else {//敌方士兵属性降低
+                                let plus = self.myData.heroData.proficiency[k] * skillstData.buff_target[j][1] * skillstData.buff_target[j][2]
+                                console.error(`plus：` + plus)
+                                if (skillstData.buff_target[j][0] <= 3) {
+                                    if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
+                                        eFightDis += plus
+                                    }
+                                } else {
+                                    if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
+                                        eDefenseDis += plus
+                                    }
+                                }
                             }
                         }
                     }
+                    // }
                 }
                 buffNum--
                 if (buffNum <= 0) {
@@ -528,6 +528,20 @@ export default class NewClass extends cc.Component {
                     eFightDis = 0
                 }
             }
+            if (!myFightPlus) myFightPlus = 0
+            if (!eDefenseDis) eDefenseDis = 0
+
+            // console.error(`myFightPlus：` + myFightPlus)
+            // console.error(`eDefenseDis：` + eDefenseDis)
+
+            if (!myFightPlus) {
+                myFightPlus = 0
+            }
+
+            if (!eDefenseDis) {
+                eDefenseDis = 0
+            }
+
 
             let myAttacknum = (mySolider.fight + myFightPlus) * mySolider.count
             let enemyDefensenum = (enemySolider.defense - eDefenseDis) * enemySolider.count
@@ -584,6 +598,14 @@ export default class NewClass extends cc.Component {
         function enemyAttack() {
             let mySolider: solider = myData.soliderList[myIdx]
             let enemySolider: solider = otherData.soliderList[enemyIdx]
+
+            if (!eFightDis) {
+                eFightDis = 0
+            }
+
+            if (!myDefensePlus) {
+                myDefensePlus = 0
+            }
 
             let enemyAttackNum = (enemySolider.fight + eFightDis) * enemySolider.count
             let myDefanceNum = (mySolider.defense + myDefensePlus) * mySolider.count

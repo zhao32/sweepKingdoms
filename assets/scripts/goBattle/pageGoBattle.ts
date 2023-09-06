@@ -375,6 +375,18 @@ export default class NewClass extends cc.Component {
         DataManager.curMineDetailData = retObj
         let hold_player = this.curFiledData//this.mineData[this.clickIdx].hold_player
         // retObj.state = 3
+        let soliderUsed = 0
+        let soliderUse = 0
+
+        for (let i = 0; i < retObj.soliderUsed.length; i++) {
+            soliderUsed += retObj.soliderUsed[i].count
+        }
+
+        
+        for (let i = 0; i < retObj.soliderUse.length; i++) {
+            soliderUse += retObj.soliderUse[i].count
+        }
+        hold_player.fight = soliderUsed
 
         if (hold_player.group > 101) {//恶魔之门
             if (hold_player.id == 0)//未被占领
@@ -410,6 +422,7 @@ export default class NewClass extends cc.Component {
                     ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_EVIGATEOPEN, ...[hold_player, retObj.state])
                 }
             } else if (hold_player.id == DataManager.playData.id) {
+                hold_player.fight = soliderUse
                 ViewManager.instance.showWnd(EnumManager.viewPath.WND_GOBATTLE_MYCITY_DETAILS, ...[hold_player])
             }
         } else {
