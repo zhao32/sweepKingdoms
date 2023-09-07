@@ -11,7 +11,7 @@ import soliderItem from "../battle/soliderItem";
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
-import GameUtil from "../utils/Manager/GameUtil";
+import GameUtil, { attr } from "../utils/Manager/GameUtil";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
@@ -621,8 +621,19 @@ export default class NewClass extends cc.Component {
                 eDefenseDis = 0
             }
 
+            ///////////////////////////////////暴击加成
+            let att: attr = DataManager.GameData.Soldier[mySolider.arm]
+            let attPlus = GameUtil.instance.runeRataAddition(self.myData.heroData)
+            for (let i = 1; i <= 7; i++) {
+                att[`addition_${i}`] += attPlus[`addition_${i}`]
+            }
+            let baojiFightPlus = 0
+            let hasBaoji = Math.random() * 1 <= (att.addition_5)/100 
+            if (hasBaoji) {
+                baojiFightPlus = att.addition_4
+            }
 
-            let myAttacknum = (mySolider.fight + myFightPlus) * mySolider.count
+            let myAttacknum = (mySolider.fight + myFightPlus + baojiFightPlus) * mySolider.count
             let enemyDefensenum = (enemySolider.defense - eDefenseDis) * enemySolider.count
             if (enemyDefensenum < 0) enemyDefensenum = 0
 
@@ -678,6 +689,10 @@ export default class NewClass extends cc.Component {
                 } else {
                     enemyAttack()
                 }
+            }
+
+            if (hasBaoji) {
+                self.battleInfo += `我方${DataManager.GameData.Soldier[mySolider.arm].name}触发暴击伤害\n`;
             }
         }
 

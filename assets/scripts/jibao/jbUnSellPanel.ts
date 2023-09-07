@@ -34,16 +34,35 @@ export default class NewClass extends cc.Component {
     init(data) {
         this.node.active = true
         this.data = data
-        let keyEquip = Object.keys(DataManager.GameData.Equips)
-        let keySkillatList = Object.keys(DataManager.GameData.SkillStudy)
-
         let itemData
+
+        let keyItem = Object.keys(DataManager.GameData.Items)
+        if (keyItem.indexOf(String(data.template_id)) != -1) {
+            itemData = DataManager.GameData.Items[data.template_id]
+        }
+
+        let keyRune = Object.keys(DataManager.GameData.Runes)
+        if (keyRune.indexOf(String(data.template_id)) != -1) {
+            itemData = DataManager.GameData.Runes[data.template_id]
+        }
+
+        let keyEquip = Object.keys(DataManager.GameData.Equips)
+
         if (keyEquip.indexOf(String(data.template_id)) != -1) {
             itemData = DataManager.GameData.Equips[data.template_id]
         }
 
+        let keySkillatList = Object.keys(DataManager.GameData.SkillStudy)
         if (keySkillatList.indexOf(String(data.template_id)) != -1) {
             itemData = DataManager.GameData.SkillStudy[data.template_id]
+        }
+        let keyFlagList = Object.keys(DataManager.GameData.CardFrags)
+        if (keyFlagList.indexOf(String(data.template_id)) != -1) {
+            itemData = DataManager.GameData.CardFrags[data.template_id]
+            // ResManager.loadItemIcon(`hero/icon/${itemData.name.slice(0, -2)}`, this.sprite.node)
+            // ResManager.loadItemIcon(`hero/heroHeadBg${itemData.quality - 1}`, this.node)
+
+            // ResManager.loadItemIcon(`hero/debrisBg${fragData.quality - 1}`, this.node)
         }
 
         if (itemData) {

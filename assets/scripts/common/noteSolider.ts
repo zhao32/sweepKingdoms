@@ -91,8 +91,8 @@ export default class NewClass extends cc.Component {
         this.desLabel.string = data.describe
         this.生命.string = `<color=#ffffff>生命：</c><color=#0fffff>${data.attr.addition_1}</color>`
         this.射程.string = `<color=#ffffff>射程：</c><color=#0fffff>${data.attr.addition_2}</color>`
-        this.暴击.string = `<color=#ffffff>暴击：</c><color=#0fffff>${data.attr.addition_3}</color>`
         this.韧性.string = `<color=#ffffff>韧性：</c><color=#0fffff>${data.attr.addition_3}</color>`
+        this.暴击.string = `<color=#ffffff>暴击：</c><color=#0fffff>${data.attr.addition_4}</color>`
         this.挥砍攻击.string = `<color=#ffffff>挥砍攻击:</c><color=#0fffff>${data.defense.attack_1}</color>`
         this.穿刺攻击.string = `<color=#ffffff>穿刺攻击:</c><color=#0fffff>${data.defense.attack_2}</color>`
         this.法术攻击.string = `<color=#ffffff>法术攻击:</c><color=#0fffff>${data.defense.attack_3}</color>`
@@ -193,9 +193,9 @@ export default class NewClass extends cc.Component {
                 this.法术防御.string += `+${plus6}`
             }
 
-
-
-
+            let att = GameUtil.instance.runeRataAddition(cardData)
+            console.log(`att:` + JSON.stringify(att))
+            this.暴击.string += `+${att.addition_4}`
         }
 
 

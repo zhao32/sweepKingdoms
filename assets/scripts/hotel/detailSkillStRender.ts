@@ -7,6 +7,7 @@
 
 import AlertLayer from "../common/AlertLayer";
 import DataManager from "../utils/Manager/DataManager";
+import GameUtil from "../utils/Manager/GameUtil";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
@@ -71,7 +72,7 @@ export default class NewClass extends cc.Component {
     getDes(skillSt) {
         if (skillSt.effect_1.length > 0) { //基础属性加成
             for (let i = 0; i < skillSt.effect_1.length; i++) {
-                
+
             }
 
         }
@@ -100,7 +101,9 @@ export default class NewClass extends cc.Component {
             let skillSt = DataManager.GameData.SkillStudy[data.id]
             ResManager.loadItemIcon(`skillats/${skillSt.name}`, this.icon)
             this.nameLabel.string = `${skillSt.name.slice(0, -2)} LV ${data.level + 1}`
-            this.richLabel.string = skillSt.des
+            this.richLabel.string = GameUtil.instance.getSkillStDes(DataManager.wndHotelDetail._card, skillSt)
+
+            DataManager.wndHotelDetail._card
 
             this.btnLabel.string = `遗忘`
         } else {
@@ -121,7 +124,7 @@ export default class NewClass extends cc.Component {
             _alert_layer.getComponent(AlertLayer).init("是否遗忘此技能？",
                 function () {
                     // MyProtocols.send_C2SCardTakeOffItem(DataManager._loginSocket, this._data.id, this._idx);//
-                    MyProtocols.send_C2SSKillTeach(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, self._idx, self._data.id, 1)
+                    MyProtocols.send_C2SSKillTeach(DataManager._loginSocket, DataManager.wndHotelDetail._card.id, self._idx, self._data.id, 1)
                     _alert_layer.destroy();
                 });
         }

@@ -45,9 +45,6 @@ interface playData {
     storgleave_data: any[],
     coordinateX: number,
     coordinateY: number,
-
-
-
 }
 
 // {"familyID":12,"familyName":"aa","familyIcon":0,"familyNum":0,"familyLv":1,"familyExp":2,"familyKill":3,"familyFight":4,"contribution":5,"reputation":6,"aim":"家族说明","notice":"家族宗旨"}
@@ -72,6 +69,18 @@ interface familyData {
     /**日常任务 */
     task2: any[],
 
+}
+
+/**加成几率 */
+ export interface rateAddition {
+    /** 暴击几率加成*/
+    "crit_rate": number,
+    /** 暴击伤害加成*/
+    "atk": number,
+    /**降低暴击伤害加成*/
+    "def": number,
+    /**降低暴击几率加成*/
+    "dmg_deal_static": number,
 }
 
 export default class DataManager {

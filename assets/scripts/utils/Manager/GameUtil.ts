@@ -1,5 +1,23 @@
-import DataManager from "./DataManager";
+import DataManager, { rateAddition } from "./DataManager";
 import ResManager from "./ResManager";
+
+export interface attr {
+    /**生命 */
+    addition_1: number,
+    /**射程 */
+    addition_2: number,
+    /** 韧性*/
+    addition_3: number,
+    /**暴击伤害 */
+    addition_4: number,
+    /** 暴击率*/
+    addition_5: number,
+    /**免暴率 */
+    addition_6: number
+    /**降低暴击伤害加成 */
+    addition_7: number
+}
+
 
 export default class GameUtil {
 
@@ -301,6 +319,7 @@ export default class GameUtil {
         return plusData
     }
 
+    /**自学技能初始加成 */
     skillstBaseAdd(card) {
         let plusData = []
         for (let i = 0; i < 5; i++) {
@@ -326,7 +345,7 @@ export default class GameUtil {
         return plusData
     }
 
-
+    /**装备基础加成 */
     equipAdd(card) {
         let plusData = []
         for (let i = 0; i < 5; i++) {
@@ -357,9 +376,48 @@ export default class GameUtil {
                 }
             }
         }
-
         return plusData
     }
+
+
+    /**符石几率及系数加成 */
+    runeRataAddition(card) {
+
+        let attPlus: attr = {
+            addition_1: 0,
+            addition_2: 0,
+            addition_3: 0,
+            addition_4: 0,
+            addition_5: 0,
+            addition_6: 0,
+            addition_7: 0,
+        }
+
+        for (let i = 0; i < card.runePutup.length; i++) {
+            let runeId = card.runePutup[i]
+            let runeData = DataManager.GameData.Runes[String(runeId)]
+            if (runeData) {
+                if (runeData.crit_rate) {
+                    attPlus.addition_5 += runeData.crit_rate
+                }
+
+                if (runeData.atk) {
+                    attPlus.addition_4 += runeData.atk
+                }
+
+                if (runeData.def) {
+                    attPlus.addition_7 += runeData.def
+                }
+
+                if (runeData.dmg_deal_static) {
+                    attPlus.addition_6 += runeData.dmg_deal_static
+                }
+            }
+        }
+        return attPlus
+
+    }
+
 
     skllstBuff(card) {
         for (let i = 0; i < card.skills_equips.length; i++) {
@@ -451,6 +509,41 @@ export default class GameUtil {
         }
         // console.log(`plusData:`+ JSON.stringify(plusData))
         return plusData
+    }
+
+
+    getSkillStDes(card, skillst) {
+        let des = ``
+        if (skillst.effect_1.length > 0) {//基础加成
+            let chatList = [`挥砍攻击`, `穿刺攻击`, `法术攻击`, `挥砍防御`, `穿刺防御`, `法术防御`]
+            let soliderList = [`盾兵`, `骑兵`, `枪兵`, `弓兵`, `法兵`]
+
+            for (let i = 0; i < skillst.effect_1.length; i++) {
+                for (let j = 0; j < card.talents.length; j++) {
+                    let plusNum = skillst.effect_1[i][1] * skillst.effect_1[i][2] * card.proficiency[j]
+                    des += `<color=#00ff00>${soliderList[card.talents[j] - 1]}</c>` + chatList[skillst.effect_1[i][0] - 1] + ` +<color=#00ff00>${plusNum}</c>` + `,`
+                }
+            }
+        }
+
+        if (skillst.buff_target.length > 0) {
+            if (des.length > 0) des += `;`
+            for (let i = 0; i < skillst.buff_target.length; i++) {
+                for (let j = 0; j < card.talents.length; j++) {
+                    
+                    
+                }
+                if(skillst.buff_target[i][0] < 6){
+                    
+                }
+
+            }
+        }
+
+
+        if (des.length > 0) des = des.substring(0, des.length - 1)
+        else des = skillst.des
+        return des
     }
 
 }

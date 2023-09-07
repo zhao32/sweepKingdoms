@@ -54,6 +54,8 @@ export default class NewClass extends cc.Component {
 
 
     @property(cc.Toggle)
+    rypeToggle0: cc.Toggle = null;
+    @property(cc.Toggle)
     rypeToggle1: cc.Toggle = null;
 
     @property(cc.Toggle)
@@ -99,29 +101,72 @@ export default class NewClass extends cc.Component {
 
     upType() {
         if (this.classType == 1) {
-
+            this.contect.removeAllChildren()
+            MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage, 5, this.type)
         } else if (this.classType == 2) {
             this.contect.removeAllChildren()
-            if (this.type == 1) {
-                /**装备 */
-                let keyEquipList = Object.keys(DataManager.GameData.Equips)
-                for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
-                    let template_id = DataManager.instance.itemsList[i].template_id.toString()
-                    if (DataManager.instance.itemsList[i].bagId == 1) {
-                        if (keyEquipList.indexOf(template_id.toString()) != -1 && template_id != "1000" && template_id != "1001") {
-                            let item = cc.instantiate(this.sellPfb)
-                            item.parent = this.contect
-                            item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
-                        }
-                    }
-                }
+            if (this.type == 0) {
+                  /**装备 */
+                  let keyEquipList = Object.keys(DataManager.GameData.Equips)
+                  for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+                      let template_id = DataManager.instance.itemsList[i].template_id.toString()
+                      if (DataManager.instance.itemsList[i].bagId == 1) {
+                          if (keyEquipList.indexOf(template_id.toString()) != -1 && template_id != "1000" && template_id != "1001") {
+                              let item = cc.instantiate(this.sellPfb)
+                              item.parent = this.contect
+                              item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
+                          }
+                      }
+                  }
+  
+                  /**技能 */
+                  let keySkillatList = Object.keys(DataManager.GameData.SkillStudy)
+                  for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+                      let template_id = DataManager.instance.itemsList[i].template_id.toString()
+                      if (DataManager.instance.itemsList[i].bagId == 3) {
+                          if (keySkillatList.indexOf(template_id.toString()) != -1) {
+                              let item = cc.instantiate(this.sellPfb)
+                              item.parent = this.contect
+                              item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
+                          }
+                      }
+                  }
 
-                /**技能 */
-                let keySkillatList = Object.keys(DataManager.GameData.SkillStudy)
+                  let keys = Object.keys(DataManager.GameData.CardFrags)
+                  for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+                      if (keys.indexOf(String(DataManager.instance.itemsList[i].template_id)) != -1) {
+                          // fragList.push(DataManager.instance.itemsList[i])
+                          let item = cc.instantiate(this.sellPfb)
+                          item.parent = this.contect
+                          item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
+                      }
+                  }
+
+                  let keyItemList = Object.keys(DataManager.GameData.Items)
+                  let keyRuneList = Object.keys(DataManager.GameData.Runes)
+          
+                  /**装备 */
+                  for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+                      let template_id = DataManager.instance.itemsList[i].template_id.toString()
+                      if (DataManager.instance.itemsList[i].bagId == 4) {
+                          if (keyItemList.indexOf(template_id.toString()) != -1 ||keyRuneList.indexOf(template_id.toString()) != -1 ) {
+                              let item = cc.instantiate(this.sellPfb)
+                              item.parent = this.contect
+                              item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
+                          }
+                      }
+                  }
+
+            } else if (this.type == 1) {
+
+                let keyItemList = Object.keys(DataManager.GameData.Items)
+                let keyRuneList = Object.keys(DataManager.GameData.Runes)
+        
+                /**道具 */
                 for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
                     let template_id = DataManager.instance.itemsList[i].template_id.toString()
-                    if (DataManager.instance.itemsList[i].bagId == 3) {
-                        if (keySkillatList.indexOf(template_id.toString()) != -1) {
+                    if (DataManager.instance.itemsList[i].bagId == 4) {
+                        if (keyItemList.indexOf(template_id.toString()) != -1 ||keyRuneList.indexOf(template_id.toString()) != -1 ) {
                             let item = cc.instantiate(this.sellPfb)
                             item.parent = this.contect
                             item.getComponent(sellRender).init(DataManager.instance.itemsList[i])
@@ -174,6 +219,7 @@ export default class NewClass extends cc.Component {
 
             } else if (this.type == 4) {
                 // let fragList = []
+                //将魂
                 let keys = Object.keys(DataManager.GameData.CardFrags)
                 for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
                     if (keys.indexOf(String(DataManager.instance.itemsList[i].template_id)) != -1) {
@@ -192,10 +238,10 @@ export default class NewClass extends cc.Component {
     }
 
     init() {
-        this.type = 1
+        this.type = 0
 
         this.contect.removeAllChildren()
-        MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage, 5)
+        MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage, 5,  this.type)
         NetEventDispatcher.addListener(NetEvent.S2CBussizeList, this.S2CBussizeList, this)
         NetEventDispatcher.addListener(NetEvent.S2CBussizeListAll, this.S2CBussizeListAll, this)
         NetEventDispatcher.addListener(NetEvent.S2CBussizeSave, this.S2CBussizeSave, this)
@@ -206,6 +252,11 @@ export default class NewClass extends cc.Component {
 
         this.goldLabel.string = String(DataManager.playData.goldMoney)
         this.node.getChildByName(`page`).active = true
+        this.rypeToggle0.node.on(`toggle`, () => {
+            this.type = 0
+            this.upType()
+        }, this)
+
 
         this.rypeToggle1.node.on(`toggle`, () => {
             this.type = 1
@@ -230,13 +281,15 @@ export default class NewClass extends cc.Component {
         this.toggle1.node.on(`toggle`, () => {
             this.classType = 1
             this.node.getChildByName(`page`).active = true
+            this.node.getChildByName(`typetoggleContainer`).active = true
             this.contect.removeAllChildren()
-            MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage, 5)
+            MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage, 5, this.type)
         }, this)
 
         this.toggle2.node.on(`toggle`, () => {
             this.classType = 2
             this.node.getChildByName(`page`).active = false
+            this.node.getChildByName(`typetoggleContainer`).active = true
             this.upType()
             // this.contect.removeAllChildren()
             // /**装备 */
@@ -270,6 +323,7 @@ export default class NewClass extends cc.Component {
         this.toggle3.node.on(`toggle`, () => {
             this.classType = 3
             this.node.getChildByName(`page`).active = false
+            this.node.getChildByName(`typetoggleContainer`).active = false
             this.contect.removeAllChildren()
             MyProtocols.send_C2SBussizeList(DataManager._loginSocket)
         }, this)
@@ -282,13 +336,13 @@ export default class NewClass extends cc.Component {
         }
         // this.curPage--
         // this.pageLabel.string = `第${this.curPage}页`
-        MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage - 1, 5)
+        MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage - 1, 5, this.type)
     }
 
     nextPage() {
         // this.curPage++
         // this.pageLabel.string = `第${this.curPage}页`
-        MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage + 1, 5)
+        MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage + 1, 5, this.type)
     }
 
     S2CBussizeList(data) {
@@ -309,8 +363,8 @@ export default class NewClass extends cc.Component {
         }
         this.curPage = data.page
         this.pageLabel.string = `第${this.curPage}页`
-        this.contect.removeAllChildren()
         console.log('商店列表返回：' + JSON.stringify(data))
+        this.contect.removeAllChildren()
         for (let i = 0; i < data.bussize_item.length; i++) {
             let item = cc.instantiate(this.marketPfb)
             item.parent = this.contect
@@ -357,7 +411,7 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName(`jbBuyPanel`).active = false
 
         this.contect.removeAllChildren()
-        MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage, 5)
+        MyProtocols.send_C2SBussizeListAll(DataManager._loginSocket, this.curPage, 5, this.type)
     }
 
     S2CBussizeOff(data) {

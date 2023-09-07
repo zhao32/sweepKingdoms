@@ -34,9 +34,20 @@ export default class NewClass extends cc.Component {
     init(data) {
         this.data = data
         this.node.active = true
+        let itemData
+
+        let keyItem = Object.keys(DataManager.GameData.Items)
+        if (keyItem.indexOf(String(data.template_id)) != -1) {
+            itemData = DataManager.GameData.Items[data.template_id]
+        }
+
+        let keyRune = Object.keys(DataManager.GameData.Runes)
+        if (keyRune.indexOf(String(data.template_id)) != -1) {
+            itemData = DataManager.GameData.Runes[data.template_id]
+        }
+
         let keyEquip = Object.keys(DataManager.GameData.Equips)
 
-        let itemData
         if (keyEquip.indexOf(String(data.template_id)) != -1) {
             itemData = DataManager.GameData.Equips[data.template_id]
         }
@@ -45,8 +56,14 @@ export default class NewClass extends cc.Component {
         if (keySkillatList.indexOf(String(data.template_id)) != -1) {
             itemData = DataManager.GameData.SkillStudy[data.template_id]
         }
+        let keyFlagList = Object.keys(DataManager.GameData.CardFrags)
+        if (keyFlagList.indexOf(String(data.template_id)) != -1) {
+            itemData = DataManager.GameData.CardFrags[data.template_id]
+            // ResManager.loadItemIcon(`hero/icon/${itemData.name.slice(0, -2)}`, this.sprite.node)
+            // ResManager.loadItemIcon(`hero/heroHeadBg${itemData.quality - 1}`, this.node)
 
-
+            // ResManager.loadItemIcon(`hero/debrisBg${fragData.quality - 1}`, this.node)
+        }
         if (itemData) {
             this.descLabel.string = `你是否愿意花费 ${data.price}元宝 购买${itemData.name} x${data.num}`
         }
@@ -59,8 +76,8 @@ export default class NewClass extends cc.Component {
         // retObj.bussize_item[i].template_id = myDecoder.readInt();
         // retObj.bussize_item[i].num = myDecoder.readInt();
         // retObj.bussize_item[i].playerid = myDecoder.readInt();
-        console.log(`this.data.id:` + this.data.id + '  ' + "this.data.template_id:" + this.data.template_id + "   " + "this.data.num:" + this.data.num +  `  playerid:` + this.data.playerid)
-        MyProtocols.send_C2SBussizeBuy(DataManager._loginSocket, this.data.id, this.data.template_id, this.data.num,  this.data.playerid)
+        console.log(`this.data.id:` + this.data.id + '  ' + "this.data.template_id:" + this.data.template_id + "   " + "this.data.num:" + this.data.num + `  playerid:` + this.data.playerid)
+        MyProtocols.send_C2SBussizeBuy(DataManager._loginSocket, this.data.id, this.data.template_id, this.data.num, this.data.playerid)
     }
 
     onCloseHandler() {

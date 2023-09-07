@@ -8,10 +8,11 @@
     "attr": {
       "addition_1": 1,
       "addition_2": 10,
-      "addition_3": 220,
-      "addition_4": 110,
+      "addition_3": 110,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 5
+      "addition_6": 5,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 60,
@@ -40,10 +41,11 @@
     "attr": {
       "addition_1": 1,
       "addition_2": 20,
-      "addition_3": 220,
-      "addition_4": 110,
+      "addition_3": 110,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 5
+      "addition_6": 5,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 80,
@@ -72,10 +74,11 @@
     "attr": {
       "addition_1": 1,
       "addition_2": 30,
-      "addition_3": 220,
-      "addition_4": 110,
+      "addition_3": 110,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 5
+      "addition_6": 5,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 20,
@@ -104,10 +107,11 @@
     "attr": {
       "addition_1": 1,
       "addition_2": 80,
-      "addition_3": 220,
-      "addition_4": 110,
+      "addition_3": 110,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 5
+      "addition_6": 5,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 80,
@@ -140,10 +144,11 @@
     "attr": {
       "addition_1": 1,
       "addition_2": 60,
-      "addition_3": 220,
-      "addition_4": 110,
+      "addition_3": 110,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 5
+      "addition_6": 5,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 0,
@@ -176,10 +181,11 @@
     "attr": {
       "addition_1": 1,
       "addition_2": 200,
-      "addition_3": 220,
-      "addition_4": 1760,
+      "addition_3": 1760,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 40
+      "addition_6": 40,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 0,
@@ -208,10 +214,11 @@
     "attr": {
       "addition_1": 2,
       "addition_2": 20,
-      "addition_3": 220,
-      "addition_4": 110,
+      "addition_3": 110,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 5
+      "addition_6": 5,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 120,
@@ -240,10 +247,11 @@
     "attr": {
       "addition_1": 2,
       "addition_2": 30,
-      "addition_3": 220,
-      "addition_4": 110,
+      "addition_3": 110,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 5
+      "addition_6": 5,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 160,
@@ -272,10 +280,11 @@
     "attr": {
       "addition_1": 2,
       "addition_2": 40,
-      "addition_3": 220,
-      "addition_4": 110,
+      "addition_3": 110,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 5
+      "addition_6": 5,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 40,
@@ -304,10 +313,11 @@
     "attr": {
       "addition_1": 2,
       "addition_2": 90,
-      "addition_3": 220,
-      "addition_4": 110,
+      "addition_3": 110,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 5
+      "addition_6": 5,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 0,
@@ -340,10 +350,11 @@
     "attr": {
       "addition_1": 2,
       "addition_2": 70,
-      "addition_3": 220,
-      "addition_4": 110,
+      "addition_3": 110,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 5
+      "addition_6": 5,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 0,
@@ -376,10 +387,11 @@
     "attr": {
       "addition_1": 2,
       "addition_2": 210,
-      "addition_3": 220,
-      "addition_4": 1760,
+      "addition_3": 1760,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 40
+      "addition_6": 40,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 0,
@@ -408,10 +420,11 @@
     "attr": {
       "addition_1": 2,
       "addition_2": 10,
-      "addition_3": 220,
-      "addition_4": 110,
+      "addition_3": 110,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 5
+      "addition_6": 5,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 50,
@@ -440,10 +453,11 @@
     "attr": {
       "addition_1": 2,
       "addition_2": 10,
-      "addition_3": 220,
-      "addition_4": 110,
+      "addition_3": 110,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 5
+      "addition_6": 5,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 90,
@@ -472,10 +486,11 @@
     "attr": {
       "addition_1": 2,
       "addition_2": 30,
-      "addition_3": 220,
-      "addition_4": 110,
+      "addition_3": 110,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 5
+      "addition_6": 5,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 100,
@@ -504,10 +519,11 @@
     "attr": {
       "addition_1": 2,
       "addition_2": 20,
-      "addition_3": 220,
-      "addition_4": 110,
+      "addition_3": 110,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 5
+      "addition_6": 5,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 60,
@@ -536,10 +552,11 @@
     "attr": {
       "addition_1": 2,
       "addition_2": 30,
-      "addition_3": 220,
-      "addition_4": 110,
+      "addition_3": 110,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 5
+      "addition_6": 5,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 30,
@@ -568,10 +585,11 @@
     "attr": {
       "addition_1": 2,
       "addition_2": 80,
-      "addition_3": 220,
-      "addition_4": 110,
+      "addition_3": 110,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 5
+      "addition_6": 5,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 80,
@@ -604,10 +622,11 @@
     "attr": {
       "addition_1": 2,
       "addition_2": 70,
-      "addition_3": 220,
-      "addition_4": 110,
+      "addition_3": 110,
+      "addition_4": 220,
       "addition_5": 10,
-      "addition_6": 5
+      "addition_6": 5,
+      "addition_7": 5 
     },
     "defense": {
       "attack_1": 0,

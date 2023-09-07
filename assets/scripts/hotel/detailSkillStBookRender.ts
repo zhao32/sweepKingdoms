@@ -70,7 +70,7 @@ export default class NewClass extends cc.Component {
     onTeachHandler() {
         console.log('this.skillId:'+this.skillId)
         DataManager.wndHotelDetail.node.getChildByName('skillstPanel').active = false
-        MyProtocols.send_C2SSKillTeach(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this.pos, this.skillId)
+        MyProtocols.send_C2SSKillTeach(DataManager._loginSocket, DataManager.wndHotelDetail._card.id, this.pos, this.skillId)
     }
 
     // update (dt) {}

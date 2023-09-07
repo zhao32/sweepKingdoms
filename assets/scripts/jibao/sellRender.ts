@@ -27,11 +27,22 @@ export default class NewClass extends cc.Component {
     }
 
     init(data) {
+        console.log(`data:` + JSON.stringify(data))
         this.data = data
+        let itemData
+
+        let keyItem = Object.keys(DataManager.GameData.Items)
+        if (keyItem.indexOf(String(data.template_id)) != -1) {
+            itemData = DataManager.GameData.Items[data.template_id]
+        }
+
+        let keyRune = Object.keys(DataManager.GameData.Runes)
+        if (keyRune.indexOf(String(data.template_id)) != -1) {
+            itemData = DataManager.GameData.Runes[data.template_id]
+        }
+
         let keyEquip = Object.keys(DataManager.GameData.Equips)
 
-
-        let itemData
         if (keyEquip.indexOf(String(data.template_id)) != -1) {
             itemData = DataManager.GameData.Equips[data.template_id]
         }
@@ -49,6 +60,7 @@ export default class NewClass extends cc.Component {
             // ResManager.loadItemIcon(`hero/debrisBg${fragData.quality - 1}`, this.node)
         }
 
+        console.log(`itemData:` + JSON.stringify(itemData))
 
         if (itemData) {
             this.nameLabel.string = itemData.name + `x${data.num}`

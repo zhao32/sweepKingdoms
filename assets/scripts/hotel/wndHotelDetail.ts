@@ -84,7 +84,8 @@ export default class NewClass extends cc.Component {
 
     // LIFE-CYCLE CALLBACKS:
 
-    _data
+    /**当前将的数据 */
+    _card
 
 
     // onLoad () {}
@@ -94,20 +95,20 @@ export default class NewClass extends cc.Component {
 
     S2CRuneUnlock(retObj) {
         console.log('开启石槽返回：' + JSON.stringify(retObj))
-        // this._data.runeUnlock.push(retObj.pos_index)
-        this._data.runeUnlock[retObj.pos_index - 1] = retObj.pos_index
+        // this._card.runeUnlock.push(retObj.pos_index)
+        this._card.runeUnlock[retObj.pos_index - 1] = retObj.pos_index
         this.node.getChildByName('cao').children[retObj.pos_index - 1].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[1]
 
-        for (let i = 0; i < this._data.runePutup.length; i++) {
+        for (let i = 0; i < this._card.runePutup.length; i++) {
             let render = this.contect.children[i]
-            let state = this._data.runeUnlock[i] >= 1 ? 1 : 0
-            render.getComponent(detailRuneRender).init(state, i, this._data)
+            let state = this._card.runeUnlock[i] >= 1 ? 1 : 0
+            render.getComponent(detailRuneRender).init(state, i, this._card)
         }
 
-        for (let i = 0; i < this._data.runeUnlock.length; i++) {
+        for (let i = 0; i < this._card.runeUnlock.length; i++) {
             // ResManager.loadItemIcon(`hero/runePot1`, this.node.getChildByName('cao').children[data.runeUnlock[i]])
             this.node.getChildByName('cao').children[i].active = true
-            if (this._data.runeUnlock[i] == 0) {
+            if (this._card.runeUnlock[i] == 0) {
                 this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[0]
             } else {
                 this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[1]
@@ -117,31 +118,31 @@ export default class NewClass extends cc.Component {
 
     updateRunes() {
 
-        for (let i = 0; i < this._data.runeUnlock.length; i++) {
+        for (let i = 0; i < this._card.runeUnlock.length; i++) {
             this.node.getChildByName('cao').children[i].active = true
-            if (this._data.runeUnlock[i] == 0) {
+            if (this._card.runeUnlock[i] == 0) {
                 this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[0]
             } else {
                 this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[1]
             }
         }
 
-        for (let i = 0; i < this._data.runePutup.length; i++) {
+        for (let i = 0; i < this._card.runePutup.length; i++) {
             let rune = this.node.getChildByName('cao1').children[i].children[0]
-            if (this._data.runePutup[i] > 0) {
+            if (this._card.runePutup[i] > 0) {
                 rune.active = true
-                console.log('data.runePutup[i]:' + this._data.runePutup[i])
-                ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[this._data.runePutup[i]].icon}`, rune)
+                console.log('data.runePutup[i]:' + this._card.runePutup[i])
+                ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[this._card.runePutup[i]].icon}`, rune)
             } else {
                 rune.active = false
             }
 
             let render = this.contect.children[i]
             let state = 0
-            if (this._data.runeUnlock[i] >= 1) {
+            if (this._card.runeUnlock[i] >= 1) {
                 state = 1
             }
-            render.getComponent(detailRuneRender).init(state, i, this._data)
+            render.getComponent(detailRuneRender).init(state, i, this._card)
         }
 
     }
@@ -149,12 +150,12 @@ export default class NewClass extends cc.Component {
     S2CSKillTeach(data) {
         console.log("学习技能返回:" + JSON.stringify(data))
         // {"cardid":152035,"idx":0,"skillid":10009}
-        let defaultData = DataManager.GameData.Cards[this._data.template_id]
+        let defaultData = DataManager.GameData.Cards[this._card.template_id]
 
         let len = defaultData.skills.length
         console.log('this.contect.children.length:' + this.contect.children.length)
         let render = this.contect.children[len + data.idx]
-        let stData = this._data.skills_equips[data.idx]
+        let stData = this._card.skills_equips[data.idx]
         stData.level = 0
         stData.id = data.skillid
         console.log("stData:"+ JSON.stringify(stData))
@@ -168,12 +169,12 @@ export default class NewClass extends cc.Component {
         console.log("学习技能升级返回:" + JSON.stringify(data))
         // {"cardid":152038,"idx":0,"skillid":10011,"lv":2}
         ViewManager.instance.showToast(`技能升级成功`)
-        let defaultData = DataManager.GameData.Cards[this._data.template_id]
+        let defaultData = DataManager.GameData.Cards[this._card.template_id]
 
         let len = defaultData.skills.length
         console.log('this.contect.children.length:' + this.contect.children.length)
         let render = this.contect.children[len + data.idx]
-        let stData = this._data.skills_equips[data.idx]
+        let stData = this._card.skills_equips[data.idx]
         stData.id = data.skillid
         stData.level = data.lv
         // let stData = {"id":data.skillid,"level":0,"type":1}
@@ -182,30 +183,30 @@ export default class NewClass extends cc.Component {
 
     S2CDumpRuneSlot(data) {
         console.log("符石卸载返回:" + JSON.stringify(data))
-        this._data.runePutup[data.p_pos_index] = 0
+        this._card.runePutup[data.p_pos_index] = 0
 
-        for (let i = 0; i < this._data.runePutup.length; i++) {
+        for (let i = 0; i < this._card.runePutup.length; i++) {
             let rune = this.node.getChildByName('cao1').children[i].children[0]
             // ResManager.loadItemIcon(`hero/runePot${data.runePutup[i]}`, this.node.getChildByName('cao').children[i])
-            if (this._data.runePutup[i] < 1000) {
+            if (this._card.runePutup[i] < 1000) {
                 rune.active = false
-                this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[this._data.runePutup[i]]
+                this.node.getChildByName('cao').children[i].getComponent(cc.Sprite).spriteFrame = this.runePotsFrame[this._card.runePutup[i]]
             } else {
                 rune.active = true
-                console.log('data.runePutup[i]:' + this._data.runePutup[i])
-                ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[this._data.runePutup[i]].icon}`, rune)
+                console.log('data.runePutup[i]:' + this._card.runePutup[i])
+                ResManager.loadItemIcon(`Rune/${DataManager.GameData.Runes[this._card.runePutup[i]].icon}`, rune)
             }
         }
 
-        for (let i = 0; i < this._data.runePutup.length; i++) {
+        for (let i = 0; i < this._card.runePutup.length; i++) {
             let render = cc.instantiate(this.runPfb)
             render.parent = this.contect
 
             let state = 0
-            if (this._data.runeUnlock[i] > 1) {
+            if (this._card.runeUnlock[i] > 1) {
                 state = 1
             }
-            render.getComponent(detailRuneRender).init(state, i, this._data)
+            render.getComponent(detailRuneRender).init(state, i, this._card)
         }
 
 
@@ -231,7 +232,7 @@ export default class NewClass extends cc.Component {
 
 
         console.log('-----data:' + JSON.stringify(data))
-        this._data = data
+        this._card = data
         let defaultData = DataManager.GameData.Cards[data.template_id]
         ResManager.loadItemIcon(`hero/icon/${defaultData.name}`, this.head)
         ResManager.loadItemIcon(`hero/heroHeadBg${defaultData.quality - 1}`, this.headBg)
@@ -340,7 +341,7 @@ export default class NewClass extends cc.Component {
 
     openSkillstPanel(data, idx) {
         this.node.getChildByName('skillstPanel').active = true
-        this.node.getChildByName('skillstPanel').getComponent(skillstPanel).init(data, idx, this._data)
+        this.node.getChildByName('skillstPanel').getComponent(skillstPanel).init(data, idx, this._card)
 
     }
 
@@ -389,15 +390,15 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName('btnEquip').getComponent(cc.Sprite).spriteFrame = this.checkFrames[0]
         this.node.getChildByName('btnRune').getComponent(cc.Sprite).spriteFrame = this.checkFrames[1]
 
-        for (let i = 0; i < this._data.runeUnlock.length; i++) {
+        for (let i = 0; i < this._card.runeUnlock.length; i++) {
             let render = cc.instantiate(this.runPfb)
             render.parent = this.contect
 
             let state = 0
-            if (this._data.runeUnlock[i] >= 1) {
+            if (this._card.runeUnlock[i] >= 1) {
                 state = 1
             }
-            render.getComponent(detailRuneRender).init(state, i, this._data)
+            render.getComponent(detailRuneRender).init(state, i, this._card)
         }
     }
 
@@ -407,8 +408,8 @@ export default class NewClass extends cc.Component {
         this.node.getChildByName('btnEquip').getComponent(cc.Sprite).spriteFrame = this.checkFrames[1]
 
         this.contect.removeAllChildren();
-        this._data.equips = [this._data.equips[0], this._data.equips[1]]
-        for (let i = 0; i < this._data.equips.length; i++) {
+        this._card.equips = [this._card.equips[0], this._card.equips[1]]
+        for (let i = 0; i < this._card.equips.length; i++) {
             let equip = cc.instantiate(this.equipPfb)
             equip.parent = this.contect
             if (i < 4) {
@@ -416,7 +417,7 @@ export default class NewClass extends cc.Component {
             } else {
                 ResManager.loadItemIcon(`UI/items/trea_${i + 1 - 4}`, equip.getChildByName('equipBg'))
             }
-            equip.getComponent(detailQuipRender).init(i, this._data)
+            equip.getComponent(detailQuipRender).init(i, this._card)
         }
     }
 
@@ -430,11 +431,11 @@ export default class NewClass extends cc.Component {
                 let template_id = DataManager.instance.itemsList[i].template_id
                 let defaultData = DataManager.GameData.Equips[template_id]
                 pos = defaultData.position
-                this._data.equips[pos] = data.item_uuid
+                this._card.equips[pos] = data.item_uuid
                 if (defaultData.position == 0) {
-                    this.contect.children[0].getComponent(detailQuipRender).init(0, this._data)
+                    this.contect.children[0].getComponent(detailQuipRender).init(0, this._card)
                 } else {
-                    this.contect.children[1].getComponent(detailQuipRender).init(1, this._data)
+                    this.contect.children[1].getComponent(detailQuipRender).init(1, this._card)
                 }
             }
         }
@@ -453,13 +454,13 @@ export default class NewClass extends cc.Component {
         for (let i = 0; i < DataManager.cardsList.length; i++) {
             if (DataManager.cardsList[i].id == data.cardId) {
                 DataManager.cardsList[i].equips[data.position] = "0"
-                this._data.equips[data.position] = "0"
+                this._card.equips[data.position] = "0"
             }
         }
 
-        for (let i = 0; i < this._data.equips.length; i++) {
+        for (let i = 0; i < this._card.equips.length; i++) {
             let equip = this.contect.children[i]
-            equip.getComponent(detailQuipRender).init(i, this._data)
+            equip.getComponent(detailQuipRender).init(i, this._card)
         }
 
     }
@@ -469,7 +470,7 @@ export default class NewClass extends cc.Component {
         // {"card_id":153486,"rune_pos_index":0,"rune_level":999,"fight":2868}
         // {"card_id":153505,"rune_pos_index":2,"rune_level":999,"fight":2255}
         // [999,999,0]
-        this._data.runeLevel[data.rune_pos_index] = data.rune_level
+        this._card.runeLevel[data.rune_pos_index] = data.rune_level
         this.initRunes()
 
     }

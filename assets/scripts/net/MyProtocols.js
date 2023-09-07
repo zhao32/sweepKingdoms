@@ -7128,12 +7128,15 @@ var MyProtocols = {
 		}
 		return retObj;
 	},
-	send_C2SBussizeListAll: function (senderSocket, page, size) {
+	//1 道具 2 装备  3 技能 4 将魂  0 全部
+	send_C2SBussizeListAll: function (senderSocket, page, size,type) {
 		// debugger;
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(1073);
 		myEncoder.writeInt(page);
 		myEncoder.writeInt(size);
+		myEncoder.writeInt(type);
+
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);

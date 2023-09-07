@@ -7,10 +7,11 @@
     "attr": {
       "addition_1": 1,    生命	
       "addition_2": 10, 射程	
-      "addition_3": 220, 暴击	
-      "addition_4": 110,韧性	
+      "addition_3": 110,韧性	
+      "addition_4": 220, 暴击伤害	
       "addition_5": 10, 暴击率	
       "addition_6": 5 免暴率
+      "addition_7": 5 降低暴击伤害加成
     },
     "defense": {
       "attack_1": 60,  挥砍攻击	
