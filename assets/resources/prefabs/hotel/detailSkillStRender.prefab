@@ -337,7 +337,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 400,
+      "width": 430,
       "height": 81.5
     },
     "_anchorPoint": {
@@ -349,8 +349,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -22,
-        -31,
+        -7,
+        -30,
         0,
         0,
         0,
@@ -389,7 +389,7 @@
     "_N$fontSize": 18,
     "_N$font": null,
     "_N$cacheMode": 0,
-    "_N$maxWidth": 400,
+    "_N$maxWidth": 430,
     "_N$lineHeight": 25,
     "_N$imageAtlas": null,
     "_N$handleTouchEvent": true,
@@ -652,7 +652,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        253,
+        272,
         -2,
         0,
         0,

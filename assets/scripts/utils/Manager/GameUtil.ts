@@ -514,29 +514,112 @@ export default class GameUtil {
 
     getSkillStDes(card, skillst) {
         let des = ``
+        let soliderList = [`盾兵`, `骑兵`, `枪兵`, `弓兵`, `法兵`]
+        let chatList = [`挥砍攻击`, `穿刺攻击`, `法术攻击`, `挥砍防御`, `穿刺防御`, `法术防御`]
+
         if (skillst.effect_1.length > 0) {//基础加成
-            let chatList = [`挥砍攻击`, `穿刺攻击`, `法术攻击`, `挥砍防御`, `穿刺防御`, `法术防御`]
-            let soliderList = [`盾兵`, `骑兵`, `枪兵`, `弓兵`, `法兵`]
 
             for (let i = 0; i < skillst.effect_1.length; i++) {
                 for (let j = 0; j < card.talents.length; j++) {
                     let plusNum = skillst.effect_1[i][1] * skillst.effect_1[i][2] * card.proficiency[j]
-                    des += `<color=#00ff00>${soliderList[card.talents[j] - 1]}</c>` + chatList[skillst.effect_1[i][0] - 1] + ` +<color=#00ff00>${plusNum}</c>` + `,`
+                    if (DataManager.GameData.Soldier[card.talents[j]].defense[`attack_${skillst.effect_1[i][0]}`] > 0) {
+                        des += `<color=#00ff00>${soliderList[card.talents[j] - 1]}</c>` + chatList[skillst.effect_1[i][0] - 1] + ` +<color=#00ff00>${plusNum}</c>` + `,`
+                    }
                 }
             }
         }
 
         if (skillst.buff_target.length > 0) {
+            if (skillst.buff_target[0].length != 4) return
             if (des.length > 0) des += `;`
-            for (let i = 0; i < skillst.buff_target.length; i++) {
-                for (let j = 0; j < card.talents.length; j++) {
-                    
-                    
-                }
-                if(skillst.buff_target[i][0] < 6){
-                    
-                }
 
+            if (skillst.buff_target[0][0] == 1) {
+                des += `攻击时`
+            } else if (skillst.buff_target[0][0] == 2) {
+                des += `被攻击时`
+            } else if (skillst.buff_target[0][0] == 3) {
+                des += `暴击时`
+            } else if (skillst.buff_target[0][0] == 4) {
+                des += `被暴击时`
+            }
+            if (skillst.buff_rate > 0) {
+                des += `有${skillst.buff_rate * 100}%的概率,使`
+            }
+            for (let i = 0; i < skillst.buff_target.length; i++) {
+
+                if (skillst.buff_target[i][1] <= 6) {
+
+                    if (skillst.buff_target[i][3] > 0) {//增加我的属性值
+                        des += `我方`
+                        for (let j = 0; j < card.talents.length; j++) {
+                            let plusNum = skillst.buff_target[i][2] * skillst.buff_target[i][3] * card.proficiency[j]
+                            let solider = DataManager.GameData.Soldier[card.talents[j]]
+                            if (solider.defense[`attack_${skillst.buff_target[i][1]}`] > 0) {
+                                des += `<color=#00ff00>${soliderList[card.talents[j] - 1]}</c>` + chatList[skillst.buff_target[i][1] - 1] + ` +<color=#00ff00>${plusNum}</c>` + `,`
+                            }
+                        }
+                    } else {//降低对方属性值
+                        des += `敌方士兵`
+                        let plusNum = skillst.buff_target[i][2] * skillst.buff_target[i][3] * 1000
+                        des += chatList[skillst.buff_target[i][1] - 1] + ` <color=#00ff00>${plusNum}</c>` + `,`
+                    }
+                } else if (skillst.buff_target[i][1] == 7) {//暴击伤害
+                    if (skillst.buff_target[0][0] == 4) {
+                        des += `我方`
+                        for (let j = 0; j < card.talents.length; j++) {
+                            let plusNum = skillst.buff_target[i][2] * skillst.buff_target[i][3] * card.proficiency[j]
+                            des += `<color=#00ff00>${soliderList[card.talents[j] - 1]}</c>` + `暴击伤害` + ` +<color=#00ff00>${plusNum}</c>` + `,`
+                        }
+                    } else {
+                        des += `我方`
+                        for (let j = 0; j < card.talents.length; j++) {
+                            let plusNum = skillst.buff_target[i][2] * skillst.buff_target[i][3] * card.proficiency[j]
+                            des += `<color=#00ff00>${soliderList[card.talents[j] - 1]}</c>` + `的暴击值` + ` +<color=#00ff00>${plusNum}</c>` + `,`
+                        }
+                    }
+                } else if (skillst.buff_target[i][1] == 8) {//暴击率
+                    des += `我方`
+                    for (let j = 0; j < card.talents.length; j++) {
+                        let plusNum = skillst.buff_target[i][2] * skillst.buff_target[i][3] * card.proficiency[j]
+                        des += `<color=#00ff00>${soliderList[card.talents[j] - 1]}</c>` + `的暴击几率` + ` +<color=#00ff00>${plusNum}</c>` + `,`
+                    }
+                } else if (skillst.buff_target[i][1] == 9) {//被暴击伤害
+                    des += `我方`
+                    for (let j = 0; j < card.talents.length; j++) {
+                        let plusNum = skillst.buff_target[i][2] * skillst.buff_target[i][3] * card.proficiency[j]
+                        des += `<color=#00ff00>${soliderList[card.talents[j] - 1]}</c>` + `受到到的暴击伤害` + ` -<color=#00ff00>${plusNum}</c>` + `,`
+                    }
+                } else if (skillst.buff_target[i][1] == 11) {//所有攻击值
+                    if (skillst.buff_target[i][3] > 0) {
+                        des += `我方`
+                        for (let j = 0; j < card.talents.length; j++) {
+                            let plusNum = skillst.buff_target[i][2] * skillst.buff_target[i][3] * card.proficiency[j]
+                            let solider = DataManager.GameData.Soldier[card.talents[j]]
+                            if (solider.defense[`attack_${skillst.buff_target[i][1]}`] > 0) {
+                                des += `<color=#00ff00>${soliderList[card.talents[j] - 1]}</c>` + `的攻击属性均` + ` +<color=#00ff00>${plusNum}</c>` + `,`
+                            }
+                        }
+                    } else {//降低对方属性值
+                        des += `敌方士兵`
+                        let plusNum = skillst.buff_target[i][2] * skillst.buff_target[i][3] * 1000
+                        des += `的攻击属性均` + ` -<color=#00ff00>${plusNum}</c>` + `,`
+                    }
+                } else if (skillst.buff_target[i][1] == 12) {//所有防御属性
+                    if (skillst.buff_target[i][3] > 0) {
+                        des += `我方`
+                        for (let j = 0; j < card.talents.length; j++) {
+                            let plusNum = skillst.buff_target[i][2] * skillst.buff_target[i][3] * card.proficiency[j]
+                            let solider = DataManager.GameData.Soldier[card.talents[j]]
+                            if (solider.defense[`attack_${skillst.buff_target[i][1]}`] > 0) {
+                                des += `<color=#00ff00>${soliderList[card.talents[j] - 1]}</c>` + `的防御属性均` + ` +<color=#00ff00>${plusNum}</c>` + `,`
+                            }
+                        }
+                    } else {//降低对方属性值
+                        des += `敌方士兵`
+                        let plusNum = skillst.buff_target[i][2] * skillst.buff_target[i][3] * 1000
+                        des += `的防御属性均` + ` -<color=#00ff00>${plusNum}</c>` + `,`
+                    }
+                }
             }
         }
 
