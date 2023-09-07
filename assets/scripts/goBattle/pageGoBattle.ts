@@ -364,7 +364,8 @@ export default class NewClass extends cc.Component {
                     this.selectIdx = data.my_points[i].hold_player.idx
                     this.curPageIdx = data.my_points[i].hold_player.page
                     console.log(`this.selectIdx:` + this.selectIdx)
-                    MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, data.my_points[i].hold_player.page, data.my_points[i].hold_player.country)
+                    this.applyMines()
+                    // MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, data.my_points[i].hold_player.page, data.my_points[i].hold_player.country)
                 }, this)
             }
         }

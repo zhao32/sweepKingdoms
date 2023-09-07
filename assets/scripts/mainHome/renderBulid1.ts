@@ -105,6 +105,11 @@ export default class NewClass extends cc.Component {
         console.log('升级后返回：' + JSON.stringify(retObj))
 
         if (this._data.idx - 1 != retObj.idx) return
+        if (retObj.lv == 1) {
+            ViewManager.instance.showToast(`建筑建造成功`)
+        } else {
+            ViewManager.instance.showToast(`建筑升级成功`)
+        }
         // console.log('升级后返回：' + JSON.stringify(retObj))
         // console.log('idx:' + this.curIdx)
         // // 升级后返回：{"lv":2,"type":2}

@@ -369,6 +369,9 @@ export default class NewClass extends cc.Component {
 
     }
     init(myData, otherData, groupIdx, stageIdx) {
+        let panel = this.node.getChildByName('resultPanel')
+        panel.active = false
+
         this.battleInfo = ''
         NetEventDispatcher.addListener(NetEvent.S2CStageEnd, this.S2CStageEnd, this)
 
@@ -563,38 +566,44 @@ export default class NewClass extends cc.Component {
             if (data.skillId) {
                 let skillstData = DataManager.GameData.SkillStudy[data.skillId]
                 if (buffNum == 0) buffNum = skillstData.target_num
+                if (skillstData.buff_target.length == 0 || skillstData.buff_target[0].length != 4) return
                 for (let j = 0; j < skillstData.buff_target.length; j++) {
                     // if (Math.random() * 1 < skillstData.buff_target.buff_rate) {
-                    if (skillstData.buff_target[j][0] <= 6) {//基础加成
-                        for (let k = 0; k < self.myData.heroData.talents.length; k++) {
-                            if (skillstData.buff_target[j][2] > 0) {
-                                if (self.myData.heroData.talents[k] == data.myArm) {
-                                    let plus = self.myData.heroData.proficiency[k] * skillstData.buff_target[j][1] * skillstData.buff_target[j][2]
-                                    console.error(`plus1：` + plus)
-                                    if (skillstData.buff_target[j][0] <= 3) {
-                                        if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
-                                            myFightPlus += plus
+                    if (skillstData.buff_target[j][0] == 1) {//攻击
+
+                        if (skillstData.buff_target[j][1] <= 6) {//基础加成
+                            for (let k = 0; k < self.myData.heroData.talents.length; k++) {
+                                if (skillstData.buff_target[j][3] > 0) {
+                                    if (self.myData.heroData.talents[k] == data.myArm) {
+                                        let plus = self.myData.heroData.proficiency[k] * skillstData.buff_target[j][2] * skillstData.buff_target[j][3]
+                                        console.error(`plus1：` + plus)
+                                        if (skillstData.buff_target[j][1] <= 3) {
+                                            if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][1]}`] != 0) {
+                                                myFightPlus += plus
+                                            }
+                                        } else {
+                                            if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][1]}`] != 0) {
+                                                myDefensePlus += plus
+                                            }
+                                        }
+                                    }
+                                } else {//敌方士兵属性降低
+                                    let plus = self.myData.heroData.proficiency[k] * skillstData.buff_target[j][2] * skillstData.buff_target[j][3]
+                                    console.error(`plus2：` + plus)
+                                    if (skillstData.buff_target[j][1] <= 3) {
+                                        if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][1]}`] != 0) {
+                                            eFightDis += plus
                                         }
                                     } else {
-                                        if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
-                                            myDefensePlus += plus
+                                        if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][1]}`] != 0) {
+                                            eDefenseDis += plus
                                         }
-                                    }
-                                }
-                            } else {//敌方士兵属性降低
-                                let plus = self.myData.heroData.proficiency[k] * skillstData.buff_target[j][1] * skillstData.buff_target[j][2]
-                                console.error(`plus2：` + plus)
-                                if (skillstData.buff_target[j][0] <= 3) {
-                                    if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
-                                        eFightDis += plus
-                                    }
-                                } else {
-                                    if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
-                                        eDefenseDis += plus
                                     }
                                 }
                             }
                         }
+                    } else if (skillstData.buff_target[j][0] == 3) {//暴击
+
                     }
                     // }
                 }
@@ -620,6 +629,9 @@ export default class NewClass extends cc.Component {
             if (!eDefenseDis) {
                 eDefenseDis = 0
             }
+            eDefenseDis = Math.abs(eDefenseDis)
+            console.log(`myFightPlus:` + myFightPlus)
+            console.log(`eDefenseDis:` + eDefenseDis)
 
             ///////////////////////////////////暴击加成
             let att: attr = DataManager.GameData.Soldier[mySolider.arm]
@@ -628,7 +640,7 @@ export default class NewClass extends cc.Component {
                 att[`addition_${i}`] += attPlus[`addition_${i}`]
             }
             let baojiFightPlus = 0
-            let hasBaoji = Math.random() * 1 <= (att.addition_5)/100 
+            let hasBaoji = Math.random() * 1 <= (att.addition_5) / 100
             if (hasBaoji) {
                 baojiFightPlus = att.addition_4
             }

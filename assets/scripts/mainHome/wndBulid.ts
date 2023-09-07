@@ -78,10 +78,10 @@ export default class NewClass extends cc.Component {
     showIntragroup(idx) {
         this.showType = 1
         let bulidData = []
-        if (idx == 1){
+        if (idx == 1) {
             bulidData = DataManager.GameData.build["basic"]
             // bulidData.push(...DataManager.GameData.build["resource"])
-        } 
+        }
         else if (idx == 2) bulidData = DataManager.GameData.build["barracks"]
 
         // for (let i = 0; i < Object.keys(DataManager.GameData.bulid).length; i++) {
@@ -128,7 +128,7 @@ export default class NewClass extends cc.Component {
         //         this.showGroups()
         //     }
         // }
-        ViewManager.instance.hideWnd(DataManager.curWndPath)
+        ViewManager.instance.hideWnd(DataManager.curWndPath, true)
 
     }
 
