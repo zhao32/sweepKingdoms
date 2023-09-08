@@ -12,7 +12,7 @@ import GetRewardPanel from "../mail/GetRewardPanel";
 import { NetEvent } from "../net/NetEvent";
 import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
-import GameUtil from "../utils/Manager/GameUtil";
+import GameUtil, { attr } from "../utils/Manager/GameUtil";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
 
@@ -446,32 +446,43 @@ export default class NewClass extends cc.Component {
         let self = this
         myAttack()
 
-        let buffNum = 0
+        let myBuffNum = 0
 
         /**我的技能 致使我的攻击力加成 */
         let myFightPlus = 0
         /**我的技能 致使我的防御力加成 */
         let myDefensePlus = 0
 
-        /**我的技能 致使敌方的攻击力加成 */
+        /**我的技能 致使敌方的攻击力减少 */
         let eFightDis = 0
-        /**我的技能 致使敌方的防御力加成 */
+        /**我的技能 致使敌方的防御力减少 */
         let eDefenseDis = 0
+
+          /**敌方的技能 致使敌方的攻击力加成 */
+          let eFightPlus = 0
+          /**我的技能 致使我的防御力加成 */
+          let eDefensePlus = 0
+  
+          /**敌方的技能 致使的我的攻击力减少 */
+          let myFightDis = 0
+          /**敌方的技能 致使我方的防御力减少 */
+          let myDefenseDis = 0
+  
 
 
         /**当前正在起作用的技能 */
-        let curSkill = 0
+        let myCurSkill = 0
         function myAttack() {
             let mySolider: solider = myData.soliderList[myIdx]
             let enemySolider: solider = otherData.soliderList[enemyIdx]
             console.log(`enemySolider:` + JSON.stringify(enemySolider))
 
             let skillid: number
-            if (curSkill) {
+            if (myCurSkill) {
                 skillid = 0
             } else {
                 skillid = GameUtil.instance.getMyTeamSkill(self.myData.heroData.skills_equips)
-                curSkill = skillid
+                myCurSkill = skillid
             }
 
             let data = {
@@ -481,47 +492,60 @@ export default class NewClass extends cc.Component {
                 skillId: skillid
             }
 
+
             if (data.skillId) {
                 let skillstData = DataManager.GameData.SkillStudy[data.skillId]
-                if (buffNum == 0) buffNum = skillstData.target_num
+                self.battleInfo += `我方${DataManager.GameData.Soldier[mySolider.arm].name}触发${skillstData.name}\n`;
+
+                if (data.skillId > 20017 && skillstData.buff_target.length == 0) {
+                    myFightPlus = Math.floor(Math.random() * 2000) + 2000
+                }
+
+                if (myBuffNum == 0) myBuffNum = skillstData.target_num
+                if (skillstData.buff_target.length == 0 || skillstData.buff_target[0].length != 4) return
                 for (let j = 0; j < skillstData.buff_target.length; j++) {
                     // if (Math.random() * 1 < skillstData.buff_target.buff_rate) {
-                    if (skillstData.buff_target[j][0] <= 6) {//基础加成
-                        for (let k = 0; k < self.myData.heroData.talents.length; k++) {
-                            if (skillstData.buff_target[j][2] > 0) {
-                                if (self.myData.heroData.talents[k] == data.myArm) {
-                                    let plus = self.myData.heroData.proficiency[k] * skillstData.buff_target[j][1] * skillstData.buff_target[j][2]
-                                    console.error(`plus1：` + plus)
-                                    if (skillstData.buff_target[j][0] <= 3) {
-                                        if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
-                                            myFightPlus += plus
+                    if (skillstData.buff_target[j][0] == 1) {//攻击
+
+                        if (skillstData.buff_target[j][1] <= 6) {//基础加成
+                            for (let k = 0; k < self.myData.heroData.talents.length; k++) {
+                                if (skillstData.buff_target[j][3] > 0) {
+                                    if (self.myData.heroData.talents[k] == data.myArm) {
+                                        let plus = self.myData.heroData.proficiency[k] * skillstData.buff_target[j][2] * skillstData.buff_target[j][3]
+                                        console.error(`plus1：` + plus)
+                                        if (skillstData.buff_target[j][1] <= 3) {
+                                            if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][1]}`] != 0) {
+                                                myFightPlus += plus
+                                            }
+                                        } else {
+                                            if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][1]}`] != 0) {
+                                                myDefensePlus += plus
+                                            }
+                                        }
+                                    }
+                                } else {//敌方士兵属性降低
+                                    let plus = self.myData.heroData.proficiency[k] * skillstData.buff_target[j][2] * skillstData.buff_target[j][3]
+                                    console.error(`plus2：` + plus)
+                                    if (skillstData.buff_target[j][1] <= 3) {
+                                        if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][1]}`] != 0) {
+                                            eFightDis += plus
                                         }
                                     } else {
-                                        if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
-                                            myDefensePlus += plus
+                                        if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][1]}`] != 0) {
+                                            eDefenseDis += plus
                                         }
-                                    }
-                                }
-                            } else {//敌方士兵属性降低
-                                let plus = self.myData.heroData.proficiency[k] * skillstData.buff_target[j][1] * skillstData.buff_target[j][2]
-                                console.error(`plus2：` + plus)
-                                if (skillstData.buff_target[j][0] <= 3) {
-                                    if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
-                                        eFightDis += plus
-                                    }
-                                } else {
-                                    if (DataManager.GameData.Soldier[data.myArm].defense[`attack_${skillstData.buff_target[j][0]}`] != 0) {
-                                        eDefenseDis += plus
                                     }
                                 }
                             }
                         }
+                    } else if (skillstData.buff_target[j][0] == 3) {//暴击
+
                     }
                     // }
                 }
-                buffNum--
-                if (buffNum <= 0) {
-                    curSkill = 0
+                myBuffNum--
+                if (myBuffNum <= 0) {
+                    myCurSkill = 0
                     myFightPlus = 0
                     myDefensePlus = 0
                     eDefenseDis = 0
@@ -541,9 +565,32 @@ export default class NewClass extends cc.Component {
             if (!eDefenseDis) {
                 eDefenseDis = 0
             }
+            eDefenseDis = Math.abs(eDefenseDis)
 
 
-            let myAttacknum = (mySolider.fight + myFightPlus) * mySolider.count
+             ///////////////////////////////////暴击加成
+             let att: attr = GameUtil.deepClone(DataManager.GameData.Soldier[mySolider.arm].attr) 
+             let attPlus = GameUtil.instance.runeRataAddition(self.myData.heroData)
+             let attPlus2 = GameUtil.instance.equipRataAddition(self.myData.heroData)
+ 
+             for (let i = 1; i <= 7; i++) {
+                 att[`addition_${i}`] += attPlus[`addition_${i}`]
+             }
+             for (let i = 1; i <= 7; i++) {
+                 att[`addition_${i}`] += attPlus2[`addition_${i}`]
+             }
+
+            let baojiFightPlus = 0
+            let hasBaoji = Math.random() * 1 <= (att.addition_5 - DataManager.GameData.Soldier[mySolider.arm].attr.addition_6) / 100
+            if (hasBaoji) {
+                baojiFightPlus = att.addition_4
+            }
+            if (hasBaoji) {
+                self.battleInfo += `我方${DataManager.GameData.Soldier[mySolider.arm].name}触发暴击伤害\n`;
+            }
+            console.error(`暴击率：`+(att.addition_5) / 100)
+
+            let myAttacknum = (mySolider.fight + myFightPlus + baojiFightPlus) * mySolider.count
             let enemyDefensenum = (enemySolider.defense - eDefenseDis) * enemySolider.count
             if (enemyDefensenum < 0) enemyDefensenum = 0
 
@@ -593,6 +640,7 @@ export default class NewClass extends cc.Component {
                     enemyAttack()
                 }
             }
+           
         }
 
         function enemyAttack() {
@@ -606,6 +654,29 @@ export default class NewClass extends cc.Component {
             if (!myDefensePlus) {
                 myDefensePlus = 0
             }
+
+              ///////////////////////////////////暴击加成
+               ///////////////////////////////////暴击加成
+               let att: attr = GameUtil.deepClone(DataManager.GameData.Soldier[enemySolider.arm].attr) 
+               let attPlus = GameUtil.instance.runeRataAddition(self.enemyData.heroData)
+               let attPlus2 = GameUtil.instance.equipRataAddition(self.enemyData.heroData)
+   
+               for (let i = 1; i <= 7; i++) {
+                   att[`addition_${i}`] += attPlus[`addition_${i}`]
+               }
+               for (let i = 1; i <= 7; i++) {
+                   att[`addition_${i}`] += attPlus2[`addition_${i}`]
+               }
+               let baojiFightPlus = 0
+               console.error(`暴击率：`+(att.addition_5) / 100)
+               let hasBaoji = Math.random() * 1 <= (att.addition_5) / 100
+               if (hasBaoji) {
+                   baojiFightPlus = att.addition_4
+               }
+   
+               if (hasBaoji) {
+                   self.battleInfo += `敌方${DataManager.GameData.Soldier[enemySolider.arm].name}触发暴击伤害\n`;
+               }
 
             let enemyAttackNum = (enemySolider.fight + eFightDis) * enemySolider.count
             let myDefanceNum = (mySolider.defense + myDefensePlus) * mySolider.count

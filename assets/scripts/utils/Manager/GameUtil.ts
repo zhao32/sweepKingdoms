@@ -263,7 +263,7 @@ export default class GameUtil {
             return 0
         } else {
             let rate = Math.random() * 1
-            if (rate > 0.2) {
+            if (rate < skill.buff_rate && (skill.buff_target.length > 0 || skill.att_target.length > 0)) {
                 return skill.id
             } else {
                 return 0
@@ -392,6 +392,7 @@ export default class GameUtil {
             addition_6: 0,
             addition_7: 0,
         }
+        if (!card || !card.runePutup) return attPlus
 
         for (let i = 0; i < card.runePutup.length; i++) {
             let runeId = card.runePutup[i]
@@ -416,6 +417,39 @@ export default class GameUtil {
         }
         return attPlus
 
+    }
+
+    /**装备暴击率及免爆率加成 */
+    equipRataAddition(card) {
+        let attPlus: attr = {
+            addition_1: 0,
+            addition_2: 0,
+            addition_3: 0,
+            addition_4: 0,
+            addition_5: 0,
+            addition_6: 0,
+            addition_7: 0,
+        }
+        if (!card) return attPlus
+
+        let equips = card.equips
+        if (equips) {
+            for (let j = 0; j < equips.length; j++) {
+                let equipData
+                for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
+                    if (DataManager.instance.itemsList[i].uuid == equips[j]) {
+                        equipData = DataManager.GameData.Equips[DataManager.instance.itemsList[i].template_id]
+                    }
+                }
+
+                if (equipData) {
+                    attPlus.addition_5 += equipData.attr.addition_5
+                    attPlus.addition_6 += equipData.attr.addition_6
+                }
+            }
+        }
+
+        return attPlus
     }
 
 
@@ -503,7 +537,7 @@ export default class GameUtil {
                         }
                     }
                 }
-                if (DataManager.GameData.Soldier[talents[i] - 1][`attack_${data.attribute[j]}`] > 0) plusData[talents[i] - 1][`attack_${data.attribute[j]}`] += Math.floor(num * 100) / 100  //Number(num.toFixed(2))
+                if (DataManager.GameData.Soldier[talents[i]][`defense`][`attack_${data.attribute[j]}`] > 0) plusData[talents[i] - 1][`attack_${data.attribute[j]}`] += Math.floor(num * 100) / 100  //Number(num.toFixed(2))
 
             }
         }
@@ -511,7 +545,7 @@ export default class GameUtil {
         return plusData
     }
 
-
+    /**自学技能描述 */
     getSkillStDes(card, skillst) {
         let des = ``
         let soliderList = [`盾兵`, `骑兵`, `枪兵`, `弓兵`, `法兵`]

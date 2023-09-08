@@ -565,6 +565,13 @@ export default class NewClass extends cc.Component {
 
             if (data.skillId) {
                 let skillstData = DataManager.GameData.SkillStudy[data.skillId]
+                self.battleInfo += `我方${DataManager.GameData.Soldier[mySolider.arm].name}触发${skillstData.name}\n`;
+
+                
+                if (data.skillId > 20017 && skillstData.buff_target.length == 0) {
+                    myFightPlus = Math.floor(Math.random() * 2000) + 2000
+                }
+
                 if (buffNum == 0) buffNum = skillstData.target_num
                 if (skillstData.buff_target.length == 0 || skillstData.buff_target[0].length != 4) return
                 for (let j = 0; j < skillstData.buff_target.length; j++) {
@@ -634,17 +641,26 @@ export default class NewClass extends cc.Component {
             console.log(`eDefenseDis:` + eDefenseDis)
 
             ///////////////////////////////////暴击加成
-            let att: attr = DataManager.GameData.Soldier[mySolider.arm]
+            let att: attr = GameUtil.deepClone(DataManager.GameData.Soldier[mySolider.arm].attr) 
             let attPlus = GameUtil.instance.runeRataAddition(self.myData.heroData)
+            let attPlus2 = GameUtil.instance.equipRataAddition(self.myData.heroData)
+
             for (let i = 1; i <= 7; i++) {
                 att[`addition_${i}`] += attPlus[`addition_${i}`]
             }
+            for (let i = 1; i <= 7; i++) {
+                att[`addition_${i}`] += attPlus2[`addition_${i}`]
+            }
             let baojiFightPlus = 0
+            console.error(`暴击率：`+(att.addition_5) / 100)
             let hasBaoji = Math.random() * 1 <= (att.addition_5) / 100
             if (hasBaoji) {
                 baojiFightPlus = att.addition_4
             }
 
+            if (hasBaoji) {
+                self.battleInfo += `我方${DataManager.GameData.Soldier[mySolider.arm].name}触发暴击伤害\n`;
+            }
             let myAttacknum = (mySolider.fight + myFightPlus + baojiFightPlus) * mySolider.count
             let enemyDefensenum = (enemySolider.defense - eDefenseDis) * enemySolider.count
             if (enemyDefensenum < 0) enemyDefensenum = 0
@@ -703,9 +719,7 @@ export default class NewClass extends cc.Component {
                 }
             }
 
-            if (hasBaoji) {
-                self.battleInfo += `我方${DataManager.GameData.Soldier[mySolider.arm].name}触发暴击伤害\n`;
-            }
+          
         }
 
         function enemyAttack() {
@@ -720,7 +734,30 @@ export default class NewClass extends cc.Component {
                 myDefensePlus = 0
             }
 
-            let enemyAttackNum = (enemySolider.fight + eFightDis) * enemySolider.count
+             ///////////////////////////////////暴击加成
+             let att: attr = GameUtil.deepClone(DataManager.GameData.Soldier[enemySolider.arm].attr) 
+             let attPlus = GameUtil.instance.runeRataAddition(self.enemyData.heroData)
+             let attPlus2 = GameUtil.instance.equipRataAddition(self.enemyData.heroData)
+ 
+             for (let i = 1; i <= 7; i++) {
+                 att[`addition_${i}`] += attPlus[`addition_${i}`]
+             }
+             for (let i = 1; i <= 7; i++) {
+                 att[`addition_${i}`] += attPlus2[`addition_${i}`]
+             }
+             let baojiFightPlus = 0
+             console.error(`暴击率：`+(att.addition_5) / 100)
+             let hasBaoji = Math.random() * 1 <= (att.addition_5) / 100
+             if (hasBaoji) {
+                 baojiFightPlus = att.addition_4
+             }
+ 
+             if (hasBaoji) {
+                 self.battleInfo += `敌方${DataManager.GameData.Soldier[enemySolider.arm].name}触发暴击伤害\n`;
+             }
+             
+
+            let enemyAttackNum = (enemySolider.fight + eFightDis + baojiFightPlus) * enemySolider.count
             let myDefanceNum = (mySolider.defense + myDefensePlus) * mySolider.count
 
 

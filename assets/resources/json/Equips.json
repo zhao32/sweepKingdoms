@@ -321,6 +321,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 4530,
     "des2": "",
@@ -378,6 +387,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -437,6 +455,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -486,6 +513,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "defense_percent": {
       "attack_1": 0,
@@ -553,6 +589,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0.3, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 4510,
     "des2": "",
@@ -610,6 +655,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 4509,
@@ -669,6 +723,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -726,6 +789,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -785,6 +857,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 4505,
     "des2": "",
@@ -843,6 +924,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0.3, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -883,6 +973,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -925,6 +1024,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 4500,
     "des2": "",
@@ -965,6 +1073,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -1007,6 +1124,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1048,6 +1174,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0.3, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1088,6 +1223,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -1147,6 +1291,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 4530,
     "des2": "",
@@ -1204,6 +1357,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -1263,6 +1425,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1320,6 +1491,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0.3,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -1380,6 +1560,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 4509,
     "des2": "",
@@ -1437,6 +1626,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -1496,6 +1694,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1553,6 +1760,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 4505,
@@ -1612,6 +1828,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0.3,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1654,6 +1879,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1694,6 +1928,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 4500,
@@ -1736,6 +1979,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1776,6 +2028,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -1818,6 +2079,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0.3,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -1859,6 +2129,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -1918,6 +2197,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 4530,
     "des2": "",
@@ -1975,6 +2263,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -2034,6 +2331,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -2091,6 +2397,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0.3, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -2150,6 +2465,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 4510,
     "des2": "",
@@ -2207,6 +2531,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 4509,
@@ -2266,6 +2599,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -2323,6 +2665,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -2382,6 +2733,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0.3, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 4505,
     "des2": "",
@@ -2440,6 +2800,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -2480,6 +2849,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -2522,6 +2900,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 4500,
     "des2": "",
@@ -2562,6 +2949,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -2604,6 +3000,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0.3, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -2645,6 +3050,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -2685,6 +3099,15 @@
       "attack_4": 0,
       "attack_5": 0.136,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -2744,6 +3167,15 @@
       "attack_5": 0.5,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 4530,
     "des2": "",
@@ -2801,6 +3233,15 @@
       "attack_4": 0,
       "attack_5": 0.764,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -2860,6 +3301,15 @@
       "attack_5": 0.85,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0.3,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -2917,6 +3367,15 @@
       "attack_4": 0.038,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -2976,6 +3435,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 4510,
     "des2": "",
@@ -3033,6 +3501,15 @@
       "attack_4": 0.5,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 4509,
@@ -3092,6 +3569,15 @@
       "attack_5": 0,
       "attack_6": 0
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -3149,6 +3635,15 @@
       "attack_4": 0.85,
       "attack_5": 0,
       "attack_6": 0
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0.3,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -3208,6 +3703,15 @@
       "attack_5": 0,
       "attack_6": 0.038
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 4505,
     "des2": "",
@@ -3266,6 +3770,15 @@
       "attack_5": 0,
       "attack_6": 0.136
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 0,
     "des2": "",
@@ -3306,6 +3819,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0.5
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
@@ -3348,6 +3870,15 @@
       "attack_5": 0,
       "attack_6": 0.764
     },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0,
+      "addition_7": 0
+    },
     "require_level": 1,
     "tier": 4500,
     "des2": "",
@@ -3388,6 +3919,15 @@
       "attack_4": 0,
       "attack_5": 0,
       "attack_6": 0.85
+    },
+    "attr": {
+      "addition_1": 0,    	
+      "addition_2": 0, 	
+      "addition_3": 0,	
+      "addition_4": 0, 	
+      "addition_5": 0, 	
+      "addition_6": 0.3,
+      "addition_7": 0
     },
     "require_level": 1,
     "tier": 0,
