@@ -151,7 +151,7 @@ export default class NewClass extends cc.Component {
 
             pfb.getChildByName(`check`).on(cc.Node.EventType.TOUCH_END, () => {
                 // if (this.selectIdList.indexOf(cards[i].id) == -1) {
-                if (this.selectIdList.length < 4) {
+                if (this.selectIdList.length < 1) {
                     if (pfb.getComponent(hotelSJRender).selected == false) {
                         this.selectIdList.push(cards[i].id)
                         pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[1]
@@ -167,7 +167,7 @@ export default class NewClass extends cc.Component {
                     }
                 } else {
                     if (pfb.getComponent(hotelSJRender).selected == false) {
-                        ViewManager.instance.showToast(`每次最高吞噬九个将领`)
+                        ViewManager.instance.showToast(`每次最高吞噬1个将领`)
                     } else {
                         pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[0]
                         for (let j = 0; j < this.selectIdList.length; j++) {
@@ -289,7 +289,7 @@ export default class NewClass extends cc.Component {
 
             pfb.getChildByName(`check`).on(cc.Node.EventType.TOUCH_END, () => {
                 // if (this.selectIdList.indexOf(cards[i].id) == -1) {
-                if (this.selectIdList.length < 4) {
+                if (this.selectIdList.length < 1) {
                     if (pfb.getComponent(hotelSJRender).selected == false) {
                         this.selectIdList.push(cards[i].id)
                         pfb.getChildByName(`check`).getComponent(cc.Sprite).spriteFrame = pfb.getComponent(hotelSJRender).checkFrames[1]

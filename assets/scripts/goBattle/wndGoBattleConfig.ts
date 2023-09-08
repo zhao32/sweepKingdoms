@@ -169,10 +169,10 @@ export default class NewClass extends cc.Component {
         this.filedData = filedData
 
         console.log(`DataManager.pageGoBattle.myCityData:` + JSON.stringify(DataManager.pageGoBattle.myCityData))
-        let cityData = DataManager.pageGoBattle.myCityData
+        let myCityData = DataManager.pageGoBattle.myCityData
         this.onSelectSolider = true
 
-        if (DataManager.pageGoBattle.myCityData) {
+        if (myCityData && myCityData.id == filedData.id) {
             this.initDetailData(DataManager.curMineDetailData)
 
             // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, cityData.page, cityData.idx, cityData.country)

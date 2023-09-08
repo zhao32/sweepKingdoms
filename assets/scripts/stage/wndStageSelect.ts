@@ -194,54 +194,54 @@ export default class NewClass extends cc.Component {
         let keyRune = Object.keys(DataManager.GameData.Runes)
         let keyEquip = Object.keys(DataManager.GameData.Equips)
 
-        if (keyGiftList.indexOf(template_id) != -1) {
+        if (keyGiftList.indexOf(String(template_id)) != -1) {
             itemData = DataManager.GameData.Boxes[template_id]
         }
 
-        if (keyConsList.indexOf(template_id) != -1) {
+        if (keyConsList.indexOf(String(template_id)) != -1) {
             itemData = DataManager.GameData.Consumes[template_id]
         }
 
-        if (keyEquip.indexOf(template_id) != -1) {
+        if (keyEquip.indexOf(String(template_id)) != -1) {
             itemData = DataManager.GameData.Equips[template_id]
         }
 
-        if (keyEquipFrag.indexOf(template_id) != -1) {
+        if (keyEquipFrag.indexOf(String(template_id)) != -1) {
             itemData = DataManager.GameData.EquipFrags[template_id]
         }
 
-        if (keyStoneList.indexOf(template_id) != -1) {
+        if (keyStoneList.indexOf(String(template_id)) != -1) {
             itemData = DataManager.GameData.MineStone[template_id]
         }
 
-        if (keyItem.indexOf(template_id) != -1) {
+        if (keyItem.indexOf(String(template_id)) != -1) {
             itemData = DataManager.GameData.Items[template_id]
         }
 
         if (itemData) {
-            ResManager.loadItemIcon(`UI/prop/${itemData.name}`, item.getChildByName("pic"))
+            ResManager.loadItemIcon(`UI/prop/${itemData.name}`, item)
         }
 
-        if (keyCardFrag.indexOf(template_id) != -1) {
+        if (keyCardFrag.indexOf(String(template_id)) != -1) {
             let fragData = DataManager.GameData.CardFrags[template_id]
-            ResManager.loadItemIcon(`hero/icon/${fragData.name.slice(0, -2)}`, item.getChildByName("pic"))
+            ResManager.loadItemIcon(`hero/icon/${fragData.name.slice(0, -2)}`, item)
             // ResManager.loadItemIcon(`hero/heroHeadBg${fragData.quality - 1}`, this.node)
             // ResManager.loadItemIcon(`hero/debrisBg${fragData.quality - 1}`, this.node)
         }
 
-        if (keyBonus.indexOf(template_id) != -1) {
+        if (keyBonus.indexOf(String(template_id)) != -1) {
             let bonusData = DataManager.GameData.bonus[template_id]
-            ResManager.loadItemIcon(`UI/bonus/${bonusData.name}`, item.getChildByName("pic"))
+            ResManager.loadItemIcon(`UI/bonus/${bonusData.name}`, item)
         }
 
-        if (keyStudy.indexOf(template_id) != -1) {
+        if (keyStudy.indexOf(String(template_id)) != -1) {
             let skillSt = DataManager.GameData.SkillStudy[template_id]
-            ResManager.loadItemIcon(`skillats/${skillSt.name}`, item.getChildByName("pic"))
+            ResManager.loadItemIcon(`skillats/${skillSt.name}`, item)
         }
 
-        if (keyRune.indexOf(template_id) != -1) {
+        if (keyRune.indexOf(String(template_id)) != -1) {
             let rune = DataManager.GameData.Runes[template_id]
-            ResManager.loadItemIcon(`Rune/${rune.icon}`, item.getChildByName("pic"))
+            ResManager.loadItemIcon(`Rune/${rune.icon}`, item)
         }
     }
 

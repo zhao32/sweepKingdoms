@@ -33,6 +33,10 @@ export default class NewClass extends cc.Component {
     lordLabel: cc.Label = null;
 
     @property(cc.Label)
+    generalLabel: cc.Label = null;
+
+
+    @property(cc.Label)
     troopsLabel: cc.Label = null;
 
     @property(cc.Label)
@@ -103,8 +107,23 @@ export default class NewClass extends cc.Component {
         this.lordLabel.string = `领主：${data.nickname}`
         this.awardLabel.string = `已产出：${DataManager.curMineDetailData.gains}`
         this.troopsLabel.string = `兵力：${data.fight}`
-        this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + `国 (${data.page + 1},${data.idx + 1})` 
+        this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + `国 (${data.page + 1},${data.idx + 1})`
 
+
+        if (DataManager.curMineDetailData.formation.a == 0) {
+            this.generalLabel.string = `守将：无`
+        } else {
+            for (let i = 0; i < DataManager.cardsList.length; i++) {
+                if (DataManager.cardsList[i].id == DataManager.curMineDetailData.formation.a) {
+                    let general = DataManager.GameData.Cards[DataManager.cardsList[i].template_id]
+                    if (general) {
+                        this.generalLabel.string = `守将：${general.name}`
+                    } else {
+                        this.generalLabel.string = `守将：无`
+                    }
+                }
+            }
+        }
 
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
 

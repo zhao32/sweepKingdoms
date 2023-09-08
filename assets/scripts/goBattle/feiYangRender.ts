@@ -20,7 +20,7 @@ export default class NewClass extends cc.Component {
     foodLabel: cc.Label = null;
 
     @property(cc.Label)
-    fightLabel: cc.Label = null;
+    nationLabel: cc.Label = null;
 
     @property(cc.Label)
     nameLabel: cc.Label = null;
@@ -42,7 +42,7 @@ export default class NewClass extends cc.Component {
         // this.foodLabel.string = data.hold_player.nickname
         let name = DataManager.mineData[data.hold_player.group].name
         this.coinLabel.string = data.hold_player.reward
-        this.fightLabel.string = `兵力：` + data.hold_player.fight
+        this.nationLabel.string = `国籍：` + DataManager.countyList[data.hold_player.country] 
 
         // + ` ` + `(` + data.page + `,` + data.idx + `)`
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)

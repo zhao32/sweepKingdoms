@@ -31,6 +31,10 @@ export default class NewClass extends cc.Component {
     lordLabel: cc.Label = null;
 
     @property(cc.Label)
+    generalLabel: cc.Label = null;
+
+
+    @property(cc.Label)
     troopsLabel: cc.Label = null;
 
     @property(cc.Node)
@@ -65,6 +69,7 @@ export default class NewClass extends cc.Component {
     /**列表数据 阵容详情数据*/
     init(data = this._data) {
         this._data = data
+        console.log(`矿场信息：`+ JSON.stringify(data))
         let name = DataManager.getName(data)
         // let name = DataManager.mineData[data.group].name
         // this.nameLabel.string = data.lv + '级' + name
@@ -88,7 +93,23 @@ export default class NewClass extends cc.Component {
         ResManager.loadItemIcon(`goBattle/${name}`, this.icon)
         this.troopsLabel.string = `兵力：${data.fight}`
         // this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + '国'
-        this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + `国 (${data.page + 1},${data.idx + 1})` 
+        this.posLabel.string = `坐标：` + DataManager.countyList[data.country] + `国 (${data.page + 1},${data.idx + 1})`
+
+       
+        if (DataManager.curMineDetailData.formation.a == 0) {
+            this.generalLabel.string = `守将：无`
+        } else {
+            for (let i = 0; i < DataManager.cardsList.length; i++) {
+                if (DataManager.cardsList[i].id ==  DataManager.curMineDetailData.formation.a) {
+                    let general = DataManager.GameData.Cards[DataManager.cardsList[i].template_id]
+                    if (general) {
+                        this.generalLabel.string = `守将：${general.name}`
+                    } else {
+                        this.generalLabel.string = `守将：无`
+                    }
+                }
+            }
+        }
 
         // : function (senderSocket, p_level_index, p_point_index) {
         // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket,)

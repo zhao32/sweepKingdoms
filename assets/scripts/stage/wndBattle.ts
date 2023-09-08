@@ -315,27 +315,27 @@ export default class NewClass extends cc.Component {
             let keyEquip = Object.keys(DataManager.GameData.Equips)
             let template_id = String(retObj.rewards[i].template_id)
 
-            if (keyGiftList.indexOf(template_id) != -1) {
+            if (keyGiftList.indexOf(String(template_id)) != -1) {
                 itemData = DataManager.GameData.Boxes[template_id]
             }
 
-            if (keyConsList.indexOf(template_id) != -1) {
+            if (keyConsList.indexOf(String(template_id)) != -1) {
                 itemData = DataManager.GameData.Consumes[template_id]
             }
 
-            if (keyEquip.indexOf(template_id) != -1) {
+            if (keyEquip.indexOf(String(template_id)) != -1) {
                 itemData = DataManager.GameData.Equips[template_id]
             }
 
-            if (keyEquipFrag.indexOf(template_id) != -1) {
+            if (keyEquipFrag.indexOf(String(template_id)) != -1) {
                 itemData = DataManager.GameData.EquipFrags[template_id]
             }
 
-            if (keyStoneList.indexOf(template_id) != -1) {
+            if (keyStoneList.indexOf(String(template_id)) != -1) {
                 itemData = DataManager.GameData.MineStone[template_id]
             }
 
-            if (keyItem.indexOf(template_id) != -1) {
+            if (keyItem.indexOf(String(template_id)) != -1) {
                 itemData = DataManager.GameData.Items[template_id]
             }
 
@@ -343,24 +343,24 @@ export default class NewClass extends cc.Component {
                 ResManager.loadItemIcon(`UI/prop/${itemData.name}`, item.getChildByName("pic"))
             }
 
-            if (keyCardFrag.indexOf(template_id) != -1) {
+            if (keyCardFrag.indexOf(String(template_id)) != -1) {
                 let fragData = DataManager.GameData.CardFrags[template_id]
                 ResManager.loadItemIcon(`hero/icon/${fragData.name.slice(0, -2)}`, item.getChildByName("pic"))
                 // ResManager.loadItemIcon(`hero/heroHeadBg${fragData.quality - 1}`, this.node)
                 // ResManager.loadItemIcon(`hero/debrisBg${fragData.quality - 1}`, this.node)
             }
 
-            if (keyBonus.indexOf(template_id) != -1) {
+            if (keyBonus.indexOf(String(template_id)) != -1) {
                 let bonusData = DataManager.GameData.bonus[template_id]
                 ResManager.loadItemIcon(`UI/bonus/${bonusData.name}`, item.getChildByName("pic"))
             }
 
-            if (keyStudy.indexOf(template_id) != -1) {
+            if (keyStudy.indexOf(String(template_id)) != -1) {
                 let skillSt = DataManager.GameData.SkillStudy[template_id]
                 ResManager.loadItemIcon(`skillats/${skillSt.name}`, item.getChildByName("pic"))
             }
 
-            if (keyRune.indexOf(template_id) != -1) {
+            if (keyRune.indexOf(String(template_id)) != -1) {
                 let rune = DataManager.GameData.Runes[template_id]
                 ResManager.loadItemIcon(`Rune/${rune.icon}`, item.getChildByName("pic"))
             }
@@ -567,7 +567,7 @@ export default class NewClass extends cc.Component {
                 let skillstData = DataManager.GameData.SkillStudy[data.skillId]
                 self.battleInfo += `我方${DataManager.GameData.Soldier[mySolider.arm].name}触发${skillstData.name}\n`;
 
-                
+
                 if (data.skillId > 20017 && skillstData.buff_target.length == 0) {
                     myFightPlus = Math.floor(Math.random() * 2000) + 2000
                 }
@@ -641,7 +641,7 @@ export default class NewClass extends cc.Component {
             console.log(`eDefenseDis:` + eDefenseDis)
 
             ///////////////////////////////////暴击加成
-            let att: attr = GameUtil.deepClone(DataManager.GameData.Soldier[mySolider.arm].attr) 
+            let att: attr = GameUtil.deepClone(DataManager.GameData.Soldier[mySolider.arm].attr)
             let attPlus = GameUtil.instance.runeRataAddition(self.myData.heroData)
             let attPlus2 = GameUtil.instance.equipRataAddition(self.myData.heroData)
 
@@ -652,7 +652,7 @@ export default class NewClass extends cc.Component {
                 att[`addition_${i}`] += attPlus2[`addition_${i}`]
             }
             let baojiFightPlus = 0
-            console.error(`暴击率：`+(att.addition_5) / 100)
+            console.error(`暴击率：` + (att.addition_5) / 100)
             let hasBaoji = Math.random() * 1 <= (att.addition_5) / 100
             if (hasBaoji) {
                 baojiFightPlus = att.addition_4
@@ -719,7 +719,7 @@ export default class NewClass extends cc.Component {
                 }
             }
 
-          
+
         }
 
         function enemyAttack() {
@@ -734,28 +734,28 @@ export default class NewClass extends cc.Component {
                 myDefensePlus = 0
             }
 
-             ///////////////////////////////////暴击加成
-             let att: attr = GameUtil.deepClone(DataManager.GameData.Soldier[enemySolider.arm].attr) 
-             let attPlus = GameUtil.instance.runeRataAddition(self.enemyData.heroData)
-             let attPlus2 = GameUtil.instance.equipRataAddition(self.enemyData.heroData)
- 
-             for (let i = 1; i <= 7; i++) {
-                 att[`addition_${i}`] += attPlus[`addition_${i}`]
-             }
-             for (let i = 1; i <= 7; i++) {
-                 att[`addition_${i}`] += attPlus2[`addition_${i}`]
-             }
-             let baojiFightPlus = 0
-             console.error(`暴击率：`+(att.addition_5) / 100)
-             let hasBaoji = Math.random() * 1 <= (att.addition_5) / 100
-             if (hasBaoji) {
-                 baojiFightPlus = att.addition_4
-             }
- 
-             if (hasBaoji) {
-                 self.battleInfo += `敌方${DataManager.GameData.Soldier[enemySolider.arm].name}触发暴击伤害\n`;
-             }
-             
+            ///////////////////////////////////暴击加成
+            let att: attr = GameUtil.deepClone(DataManager.GameData.Soldier[enemySolider.arm].attr)
+            let attPlus = GameUtil.instance.runeRataAddition(self.enemyData.heroData)
+            let attPlus2 = GameUtil.instance.equipRataAddition(self.enemyData.heroData)
+
+            for (let i = 1; i <= 7; i++) {
+                att[`addition_${i}`] += attPlus[`addition_${i}`]
+            }
+            for (let i = 1; i <= 7; i++) {
+                att[`addition_${i}`] += attPlus2[`addition_${i}`]
+            }
+            let baojiFightPlus = 0
+            console.error(`暴击率：` + (att.addition_5) / 100)
+            let hasBaoji = Math.random() * 1 <= (att.addition_5) / 100
+            if (hasBaoji) {
+                baojiFightPlus = att.addition_4
+            }
+
+            if (hasBaoji) {
+                self.battleInfo += `敌方${DataManager.GameData.Soldier[enemySolider.arm].name}触发暴击伤害\n`;
+            }
+
 
             let enemyAttackNum = (enemySolider.fight + eFightDis + baojiFightPlus) * enemySolider.count
             let myDefanceNum = (mySolider.defense + myDefensePlus) * mySolider.count
