@@ -86,30 +86,31 @@ export default class NewClass extends cc.Component {
     }
 
     resetArmyData(data) {
+        console.log(`data:`+ JSON.stringify(data))
         let resetData = []
         for (let i = 0; i < data.cards.length; i++) {
             let plusList = this.getsPlusList(data.cards[i])
-            let soliders = this.deepClone(data.soliders)
-            for (let i = 0; i < soliders.length; i++) {
-                soliders[i].fight += DataManager.GameData.Soldier[soliders[i].arm].defense.attack_1
-                soliders[i].fight += DataManager.GameData.Soldier[soliders[i].arm].defense.attack_2
-                soliders[i].fight += DataManager.GameData.Soldier[soliders[i].arm].defense.attack_3
+            let soliderList = this.deepClone(data.soliderList)
+            for (let i = 0; i < soliderList.length; i++) {
+                soliderList[i].fight += DataManager.GameData.Soldier[soliderList[i].arm].defense.attack_1
+                soliderList[i].fight += DataManager.GameData.Soldier[soliderList[i].arm].defense.attack_2
+                soliderList[i].fight += DataManager.GameData.Soldier[soliderList[i].arm].defense.attack_3
 
-                soliders[i].defense += DataManager.GameData.Soldier[soliders[i].arm].defense.attack_4
-                soliders[i].defense += DataManager.GameData.Soldier[soliders[i].arm].defense.attack_5
-                soliders[i].defense += DataManager.GameData.Soldier[soliders[i].arm].defense.attack_6
+                soliderList[i].defense += DataManager.GameData.Soldier[soliderList[i].arm].defense.attack_4
+                soliderList[i].defense += DataManager.GameData.Soldier[soliderList[i].arm].defense.attack_5
+                soliderList[i].defense += DataManager.GameData.Soldier[soliderList[i].arm].defense.attack_6
 
                 for (let j = 0; j < plusList.length; j++) {
-                    if (plusList[j].arm == soliders[i].arm) {
-                        soliders[i].fight += plusList[j].fight
-                        soliders[i].defense += plusList[j].defense
+                    if (plusList[j].arm == soliderList[i].arm) {
+                        soliderList[i].fight += plusList[j].fight
+                        soliderList[i].defense += plusList[j].defense
                     }
                 }
             }
 
             let rdefinetData = {
                 card: data.cards[i],
-                soliders: soliders
+                soliderList: soliderList
             }
             resetData.push(rdefinetData)
         }
@@ -201,7 +202,6 @@ export default class NewClass extends cc.Component {
         console.log('myResetData:' + JSON.stringify(myResetData))
         console.log('enemyResetData:' + JSON.stringify(enemyResetData))
 
-        // console.log(this.fightDeduction(myResetData[0].soliders, enemyResetData[0].soliders))
 
         // for (let i = 0;  i< myResetData.length;i ++) {
         //     for (let j = 0; j < enemyResetData.length; j++) {
@@ -226,13 +226,13 @@ export default class NewClass extends cc.Component {
         myAttack()
         function myAttack() {
             if (myHeroDeath) {
-                mySoliders = self.deepClone(myResetData[myIdx].soliders)
+                mySoliders = self.deepClone(myResetData[myIdx].soliderList)
             } else {
-                if (!mySoliders) mySoliders = self.deepClone(myResetData[myIdx].soliders)
+                if (!mySoliders) mySoliders = self.deepClone(myResetData[myIdx].soliderList)
             }
 
 
-            let result = self.fightDeduction(mySoliders, self.deepClone(enemyResetData[eIdx].soliders), true)
+            let result = self.fightDeduction(mySoliders, self.deepClone(enemyResetData[eIdx].soliderList), true)
             let myData = myResetData[myIdx]
             let eData = enemyResetData[eIdx]
             let defineData = {
@@ -266,12 +266,12 @@ export default class NewClass extends cc.Component {
 
         function eAttack() {
             if (enemyHeroDeath) {
-                enemySoliders = self.deepClone(enemyResetData[myIdx].soliders)
+                enemySoliders = self.deepClone(enemyResetData[myIdx].soliderList)
             } else {
-                if (!enemySoliders) enemySoliders = self.deepClone(enemyResetData[myIdx].soliders)
+                if (!enemySoliders) enemySoliders = self.deepClone(enemyResetData[myIdx].soliderList)
             }
 
-            let result = self.fightDeduction(self.deepClone(myResetData[myIdx].soliders), enemySoliders, false)
+            let result = self.fightDeduction(self.deepClone(myResetData[myIdx].soliderList), enemySoliders, false)
             let myData = myResetData[myIdx]
             let eData = enemyResetData[eIdx]
             let defineData = {

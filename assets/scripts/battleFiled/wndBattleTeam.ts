@@ -43,8 +43,8 @@ export default class NewClass extends cc.Component {
         // MyProtocols.send_C2SRankPlayerDetail(DataManager._loginSocket, rankType, playerid)
         // this.heroList = heroList
         this.contect.removeAllChildren()
-        for (let i = 0; i < DataManager.myBattleFiledConfig.soliders.length; i++) {
-            let soliderData = DataManager.myBattleFiledConfig.soliders[i]
+        for (let i = 0; i < DataManager.myBattleFiledConfig.soliderList.length; i++) {
+            let soliderData = DataManager.myBattleFiledConfig.soliderList[i]
             let cardData = DataManager.myBattleFiledConfig.card[i]
             let solider = cc.instantiate(this.soliderPfb)
             solider.parent = this.contect

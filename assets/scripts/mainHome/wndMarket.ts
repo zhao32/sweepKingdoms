@@ -85,6 +85,7 @@ export default class NewClass extends cc.Component {
         //     }, this)
         // }
 
+        console.log(`DataManager.GameData.goods:`+ JSON.stringify(DataManager.GameData.goods))
         for (let i = 0; i < Object.keys(DataManager.GameData.goods).length; i++) {
             let id = Object.keys(DataManager.GameData.goods)[i]
             let item = cc.instantiate(this.itemPfb)

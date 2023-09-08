@@ -412,7 +412,7 @@ export default class DataManager {
     }
 
 
-    static myBattleFiledConfig = { card: [], soliders: [] }
+    static myBattleFiledConfig = { card: [], soliderList: [] }
 
     getDateDis(sTime: any, eTime: any) {
         //将日期字符串转换为时间戳

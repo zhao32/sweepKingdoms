@@ -91,7 +91,7 @@ export default class NewClass extends cc.Component {
 
         NetEventDispatcher.addListener(NetEvent.S2CRankView, this.S2CRankView,this)
 
-        if (DataManager.myBattleFiledConfig.soliders.length == 0) {
+        if (DataManager.myBattleFiledConfig.soliderList.length == 0) {
             for (let i = 0; i < 5; i++) {
                 // if (DataManager.playData.military_data[i] != 0) {
                 let data = {
@@ -99,7 +99,7 @@ export default class NewClass extends cc.Component {
                     count: 30000,//DataManager.playData.military_data[i],
                     countAll: 100000//DataManager.playData.military_data[i],
                 }
-                DataManager.myBattleFiledConfig.soliders.push(data)
+                DataManager.myBattleFiledConfig.soliderList.push(data)
                 // }
             }
         }
@@ -189,7 +189,7 @@ export default class NewClass extends cc.Component {
 
     onCloseHandler() {
         ViewManager.instance.hideWnd(DataManager.curWndPath)
-        DataManager.myBattleFiledConfig.soliders = []
+        DataManager.myBattleFiledConfig.soliderList = []
         DataManager.myBattleFiledConfig.card = []
     }
 

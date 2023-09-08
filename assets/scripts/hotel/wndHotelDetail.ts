@@ -6,8 +6,8 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import { NetEvent } from "../net/NetEvent";
-// import packManager from "../pack/packManager";
 import DataManager from "../utils/Manager/DataManager";
+// import packManager from "../pack/packManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";

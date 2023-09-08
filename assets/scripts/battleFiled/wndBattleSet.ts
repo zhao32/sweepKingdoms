@@ -87,9 +87,9 @@ export default class NewClass extends cc.Component {
         //     soliderItem.parent = this.soliderContect
         // }
 
-        for (let i = 0; i < DataManager.myBattleFiledConfig.soliders.length; i++) {
+        for (let i = 0; i < DataManager.myBattleFiledConfig.soliderList.length; i++) {
             let soliderItem = cc.instantiate(this.soliderPfb)
-            let soliderData = DataManager.myBattleFiledConfig.soliders[i]
+            let soliderData = DataManager.myBattleFiledConfig.soliderList[i]
             let cardData = DataManager.myBattleFiledConfig.card[i]
             soliderItem.getComponent(soliderRender).init(soliderData.arm, soliderData.count, soliderData.countAll, cardData)
             soliderItem.parent = this.soliderContect
@@ -165,16 +165,16 @@ export default class NewClass extends cc.Component {
     // }
 
     doSaveHandler() {
-        DataManager.myBattleFiledConfig.soliders = []
+        DataManager.myBattleFiledConfig.soliderList = []
         for (let i = 0; i < this.soliderContect.children.length; i++) {
             let soliderItem = this.soliderContect.children[i]
             let data = soliderItem.getComponent(soliderRender).getSelectNum()
             if (data.count != 0) {
-                DataManager.myBattleFiledConfig.soliders.push(data)
+                DataManager.myBattleFiledConfig.soliderList.push(data)
             }
         }
         let card = DataManager.myBattleFiledConfig.card
-        let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: card[0], b: card[1], c: card[2], soldier: DataManager.myBattleFiledConfig.soliders }
+        let data = { fid: 2, formationId: 0, forward: 0, flip: 0, a: card[0], b: card[1], c: card[2], soldier: DataManager.myBattleFiledConfig.soliderList }
         console.log(JSON.stringify(data))
         MyProtocols.send_C2SBattleFormationSave(DataManager._loginSocket, data)
     }

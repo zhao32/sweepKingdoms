@@ -160,20 +160,19 @@ export default class NewClass extends cc.Component {
             item.getComponent(compHeroRender).init(myCards[i])
         }
 
-        for (let i = 0; i < DataManager.myBattleFiledConfig.soliders.length; i++) {
+        for (let i = 0; i < DataManager.myBattleFiledConfig.soliderList.length; i++) {
             let item = cc.instantiate(this.armPfb)
             item.parent = this.myContect
-            item.getComponent(compSoliderRender).init(DataManager.myBattleFiledConfig.soliders[i])
+            item.getComponent(compSoliderRender).init(DataManager.myBattleFiledConfig.soliderList[i])
         }
 
         // console.log("myCards:" + JSON.stringify(myCards))
-        // console.log("soliders:" + JSON.stringify(DataManager.myBattleFiledConfig.soliders))
 
         let mySoliderList = []
-        for (let i = 0; i < DataManager.myBattleFiledConfig.soliders.length; i++) {
+        for (let i = 0; i < DataManager.myBattleFiledConfig.soliderList.length; i++) {
             let data = {
-                arm: DataManager.myBattleFiledConfig.soliders[i].arm,
-                count: DataManager.myBattleFiledConfig.soliders[i].count,
+                arm: DataManager.myBattleFiledConfig.soliderList[i].arm,
+                count: DataManager.myBattleFiledConfig.soliderList[i].count,
                 defense: 0,
                 fight: 0
             }
@@ -194,13 +193,13 @@ export default class NewClass extends cc.Component {
         let myData = {
             player: this.myData,
             cards: myCards,
-            soliders: mySoliderList
+            soliderList: mySoliderList
         }
 
         let enemyData = {
             player: this.eData,
             cards: retObj.cardlist,
-            soliders: enemySoliderList
+            soliderList: enemySoliderList
         }
 
         this.myAllData = myData

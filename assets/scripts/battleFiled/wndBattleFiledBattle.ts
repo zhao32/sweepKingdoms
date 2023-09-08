@@ -128,15 +128,15 @@ export default class NewClass extends cc.Component {
         this.enemyData = otherData
 
 
-        for (let i = 0; i < myData.soliders.length; i++) {
-            if (myData.soliders[i].arm == 6 || myData.soliders[i].arm == 12) {
-                myData.soliders.splice(i, 1)
+        for (let i = 0; i < myData.soliderList.length; i++) {
+            if (myData.soliderList[i].arm == 6 || myData.soliderList[i].arm == 12) {
+                myData.soliderList.splice(i, 1)
             }
         }
 
-        for (let i = 0; i < otherData.soliders.length; i++) {
-            if (otherData.soliders[i].arm == 6 || otherData.soliders[i].arm == 12) {
-                otherData.soliders.splice(i, 1)
+        for (let i = 0; i < otherData.soliderList.length; i++) {
+            if (otherData.soliderList[i].arm == 6 || otherData.soliderList[i].arm == 12) {
+                otherData.soliderList.splice(i, 1)
             }
         }
 
@@ -169,7 +169,7 @@ export default class NewClass extends cc.Component {
             }
         }
 
-        if (!otherData.heroData) {
+        if (!otherData.card) {
             for (let i = 0; i < otherData.soliderList.length; i++) {
                 let hp = DataManager.GameData.Soldier[otherData.soliderList[i].arm].hp
                 otherData.soliderList[i].fight += DataManager.GameData.Soldier[otherData.soliderList[i].arm].defense.attack_1
@@ -217,11 +217,11 @@ export default class NewClass extends cc.Component {
         item0.parent = this.myContect
         item0.getComponent(heroItem).init(myData.card)
 
-        for (let i = 0; i < myData.soliders.length; i++) {
+        for (let i = 0; i < myData.soliderList.length; i++) {
             let item = cc.instantiate(this.soliderPfb)
             item.parent = this.myContect
-            item.getComponent(soliderItem).init(myData.soliders[i], myData.card)
-            this.myCount.troops += myData.soliders[i].count
+            item.getComponent(soliderItem).init(myData.soliderList[i], myData.card)
+            this.myCount.troops += myData.soliderList[i].count
         }
 
         this.otherContect.removeAllChildren()
@@ -232,11 +232,11 @@ export default class NewClass extends cc.Component {
             item.parent = this.otherContect
         }
 
-        for (let i = 0; i < otherData.soliders.length; i++) {
+        for (let i = 0; i < otherData.soliderList.length; i++) {
             let item = cc.instantiate(this.soliderPfb)
             item.parent = this.otherContect
-            item.getComponent(soliderItem).init(otherData.soliders[i])
-            this.enemyCount.troops += otherData.soliders[i].count
+            item.getComponent(soliderItem).init(otherData.soliderList[i])
+            this.enemyCount.troops += otherData.soliderList[i].count
 
         }
         // this.myAttack(0, 0)
@@ -251,8 +251,9 @@ export default class NewClass extends cc.Component {
         myAttack()
 
         function myAttack() {
-            let mySolider: solider = myData.soliders[myIdx]
-            let enemySolider: solider = otherData.soliders[enemyIdx]
+            // console.log(`self.myData.card:`+JSON.stringify(self.myData.card))
+            let mySolider: solider = myData.soliderList[myIdx]
+            let enemySolider: solider = otherData.soliderList[enemyIdx]
 
             let myAttacknum = mySolider.fight * mySolider.count
             let enemyDefensenum = enemySolider.defense * enemySolider.count
@@ -261,7 +262,7 @@ export default class NewClass extends cc.Component {
                 myArm: mySolider.arm,
                 enemyArm: enemySolider.arm,
                 enemyNum: 0,
-                skillId: GameUtil.instance.getMyTeamSkill(self.myData.heroData.skills_equips)
+                skillId: GameUtil.instance.getMyTeamSkill(self.myData.card.skills_equips)
 
             }
 
@@ -277,7 +278,7 @@ export default class NewClass extends cc.Component {
                 console.log(info)
                 self.enemyCount.hurt += disCount
 
-                if (enemyIdx == otherData.soliders.length - 1) {
+                if (enemyIdx == otherData.soliderList.length - 1) {
                     console.log(`敌方士兵全部战死，挑战成功`)
                 } else {
                     enemyIdx += 1
@@ -299,7 +300,7 @@ export default class NewClass extends cc.Component {
 
                 console.log('enemySolider.count:' + enemySolider.count)
                 if (enemySolider.count == 0) {
-                    if (enemyIdx == otherData.soliders.length - 1) {
+                    if (enemyIdx == otherData.soliderList.length - 1) {
                         console.log(`敌方士兵全部战死，挑战成功`)
                     } else {
                         enemyIdx += 1
@@ -312,8 +313,8 @@ export default class NewClass extends cc.Component {
         }
 
         function enemyAttack() {
-            let mySolider: solider = myData.soliders[myIdx]
-            let enemySolider: solider = otherData.soliders[enemyIdx]
+            let mySolider: solider = myData.soliderList[myIdx]
+            let enemySolider: solider = otherData.soliderList[enemyIdx]
 
             let enemyAttackNum = enemySolider.fight * enemySolider.count
             let myDefanceNum = mySolider.defense * mySolider.count
@@ -336,7 +337,7 @@ export default class NewClass extends cc.Component {
                 self.myCount.hurt += disCount
                 self.battleInfo += info
 
-                if (myIdx == myData.soliders.length - 1) {
+                if (myIdx == myData.soliderList.length - 1) {
                     console.log(`我的士兵全部战死，挑战失败`)
                 } else {
                     myIdx += 1
@@ -355,7 +356,7 @@ export default class NewClass extends cc.Component {
                 self.myCount.hurt += disCount
                 self.battleInfo += info
                 if (mySolider.count == 0) {
-                    if (myIdx == myData.soliders.length - 1) {
+                    if (myIdx == myData.soliderList.length - 1) {
                         console.log(`我的士兵全部战死，挑战失败`)
                     } else {
                         myIdx += 1
@@ -426,13 +427,13 @@ export default class NewClass extends cc.Component {
 
     sendResult(isWin) {
         let armList = []
-        for (let i = 0; i < this.myData.soliders.length; i++) {
+        for (let i = 0; i < this.myData.soliderList.length; i++) {
             let data = {
                 arm: 0,
                 count: 0
             }
-            data.arm = this.myData.soliders[i].arm
-            data.count = this.myData.soliders[i].count
+            data.arm = this.myData.soliderList[i].arm
+            data.count = this.myData.soliderList[i].count
             armList.push(data)
         }
 
