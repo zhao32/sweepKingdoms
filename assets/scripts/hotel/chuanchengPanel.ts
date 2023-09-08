@@ -49,17 +49,22 @@ export default class NewClass extends cc.Component {
                 }
                 this.node.getChildByName(nameList[i]).color = cc.Color.YELLOW
                 this.curTemplateid = templateList[i]
+                this.curNum = 0
                 for (let k = 0; k < DataManager.instance.itemsList.length; k++) {
                     if (DataManager.instance.itemsList[k].template_id == this.curTemplateid) {
                         let data = DataManager.instance.itemsList[k]
-                        for (let j = 0; j < templateList.length; j++) {
-                            if (this.curTemplateid == templateList[k]) {
-                                this.curNum = data.num
-                            }
-                        }
+                        if (data) this.curNum = data.num
+
+                        // for (let j = 0; j < templateList.length; j++) {
+                        //     this.curNum = data.num
+
+                        //     // if (this.curTemplateid == templateList[k]) {
+                        //     //     this.curNum = data.num
+                        //     // }
+                        // }
                     }
                 }
-
+                console.log(`this.curTemplateid:` + this.curTemplateid)
             }, this)
 
         }
@@ -87,14 +92,13 @@ export default class NewClass extends cc.Component {
         }
 
         for (let i = 0; i < DataManager.instance.itemsList.length; i++) {
-            if (DataManager.instance.itemsList[i].template_id == this.curTemplateid) {
-                let data = DataManager.instance.itemsList[i]
-                for (let j = 0; j < templateList.length; j++) {
-                    if (this.curTemplateid == templateList[i]) {
-                        this.node.getChildByName(nameList[i]).children[0].getComponent(cc.Label).string = `x${data.num}`
-                    }
+            let data = DataManager.instance.itemsList[i]
+            for (let j = 0; j < templateList.length; j++) {
+                if (DataManager.instance.itemsList[i].template_id == templateList[j]) {
+                    this.node.getChildByName(nameList[j]).children[0].getComponent(cc.Label).string = `x${data.num}`
                 }
             }
+
         }
 
 
@@ -102,11 +106,12 @@ export default class NewClass extends cc.Component {
     }
 
     btnOk1() {
+        console.log(`this.curNum:` + this.curNum)
         if (!this.curTemplateid) {
             ViewManager.instance.showToast(`请选择要使用的传承符`)
         } else {
             if (this.curNum) {
-                MyProtocols.send_C2SCardAddLevel(DataManager._loginSocket, this.id, this.list, null, 1, this.curTemplateid)
+                MyProtocols.send_C2SCardAddLevel(DataManager._loginSocket, this.id, this.list, { id: this.curTemplateid, count: 1 }, 1,)
                 this.node.active = false
             } else {
                 ViewManager.instance.showToast(`您不拥有该传承符，请选择其他，或在商店购买`)

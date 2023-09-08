@@ -11442,7 +11442,7 @@
         "__id__": 390
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 399
@@ -13664,7 +13664,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 144,
+      "width": 60,
       "height": 54.4
     },
     "_anchorPoint": {
@@ -13716,8 +13716,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "使用传承符",
-    "_N$string": "使用传承符",
+    "_string": "传承",
+    "_N$string": "传承",
     "_fontSize": 28,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -13880,7 +13880,7 @@
     },
     "component": "",
     "_componentId": "79f880WcPJJ6ZfdUYF71J61",
-    "handler": "btnOk",
+    "handler": "btnOk1",
     "customEventData": ""
   },
   {
