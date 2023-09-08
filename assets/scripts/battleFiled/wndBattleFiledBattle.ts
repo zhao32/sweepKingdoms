@@ -142,8 +142,8 @@ export default class NewClass extends cc.Component {
 
 
 
-        console.log(`myData1:`+JSON.stringify(myData))
-        console.log(`otherData1:`+JSON.stringify(otherData))
+        console.log(`myData1:` + JSON.stringify(myData))
+        console.log(`otherData1:` + JSON.stringify(otherData))
 
         /**神像 */
         let grade = DataManager.GameData.build['barracks'][10 - 1].grade
@@ -201,8 +201,8 @@ export default class NewClass extends cc.Component {
             }
         }
 
-        console.log(`myData2:`+JSON.stringify(myData))
-        console.log(`otherData2:`+JSON.stringify(otherData))
+        console.log(`myData2:` + JSON.stringify(myData))
+        console.log(`otherData2:` + JSON.stringify(otherData))
 
 
 
@@ -438,7 +438,7 @@ export default class NewClass extends cc.Component {
         }
 
         console.log('armList:' + JSON.stringify(armList))
-
+       
         // let disTime = new Date().getTime() - this.startTime
         let time = DataManager.instance.getDateDis(this.startTime, new Date().getTime())
         console.log('战斗耗时:' + time)
@@ -455,6 +455,9 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName('resultPanel').zIndex = 10
             // this.sendResult(false)
             this.initResultPanel()
+          
+            ViewManager.instance.showToast(`很遗憾，失败了`)
+
             return
         }
         this.posMy.removeAllChildren()
@@ -529,6 +532,7 @@ export default class NewClass extends cc.Component {
             // this.initResultPanel()
             // this.sendResult(true)
             this.initResultPanel()
+            ViewManager.instance.showToast(`恭喜您，胜利了`)
             return
         }
         this.posMy.removeAllChildren()

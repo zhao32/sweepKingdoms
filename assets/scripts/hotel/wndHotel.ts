@@ -28,7 +28,7 @@ export default class NewClass extends cc.Component {
     @property(cc.Label)
     populationDisplay: cc.Label = null;
 
-    
+
 
 
     hotelData = [
@@ -107,6 +107,7 @@ export default class NewClass extends cc.Component {
 
         /**居民区 */
         let jmqGrade = DataManager.GameData.build['basic'][1].grade
+        if (jmqGrade < 1) jmqGrade = 1
         let maxProportion = DataManager.GameData.buildUp["basic"][2][jmqGrade - 1].proportion[2]
         this.populationDisplay.string = `${DataManager.playData.population}/${maxProportion}`
 

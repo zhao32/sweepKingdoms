@@ -850,11 +850,11 @@ export default class NewClass extends cc.Component {
         let meNode = panel.getChildByName('iconMe')
         let otherNode = panel.getChildByName('iconEnemy')
 
-        this.btnReacord.getComponent(cc.Sprite).spriteFrame = this.btnFrames[1]
-        this.btnReward.getComponent(cc.Sprite).spriteFrame = this.btnFrames[0]
+        this.btnReacord.getComponent(cc.Sprite).spriteFrame = this.btnFrames[0]
+        this.btnReward.getComponent(cc.Sprite).spriteFrame = this.btnFrames[1]
 
-        this.recordContect.active = true
-        this.rewardContect.active = false
+        this.recordContect.active = false
+        this.rewardContect.active = true
 
         this.btnReacord.on(cc.Node.EventType.TOUCH_END, () => {
             this.btnReacord.getComponent(cc.Sprite).spriteFrame = this.btnFrames[1]
@@ -928,6 +928,8 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName('resultPanel').active = true
             this.node.getChildByName('resultPanel').zIndex = 10
             // this.sendResult(false)
+            ViewManager.instance.showToast(`很遗憾，失败了`)
+
             this.initResultPanel()
             return
         }
@@ -1015,6 +1017,7 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName('resultPanel').active = true
             this.node.getChildByName('resultPanel').zIndex = 10
             this.initResultPanel()
+            ViewManager.instance.showToast(`恭喜您，胜利了`)
             // this.sendResult(true)
             return
         }

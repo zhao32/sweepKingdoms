@@ -114,7 +114,7 @@ export default class NewClass extends cc.Component {
         this._resultData = data
         // {"level_index":0,"point_index":18,"result":0,"gain":[]}
         if (data.result == 0) {
-            // ViewManager.instance.showToast('很遗憾，没有打赢')
+            ViewManager.instance.showToast('很遗憾，没有打赢')
         }
         MyProtocols.send_C2SMineList(DataManager._loginSocket, 0, DataManager.pageGoBattle.curPageIdx, DataManager.pageGoBattle.nation_id)
 
@@ -812,6 +812,7 @@ export default class NewClass extends cc.Component {
             armList.push(data)
         }
 
+      
         console.log('armList:' + JSON.stringify(armList))
 
         // let disTime = new Date().getTime() - this.startTime
@@ -833,6 +834,7 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName('resultPanel').zIndex = 10
             // this.sendResult(false)
             this.initResultPanel()
+            ViewManager.instance.showToast(`很遗憾，失败了`)
             return
         }
         this.posMy.removeAllChildren()
@@ -907,6 +909,7 @@ export default class NewClass extends cc.Component {
             this.node.getChildByName('resultPanel').active = true
             this.node.getChildByName('resultPanel').zIndex = 10
             this.initResultPanel()
+            ViewManager.instance.showToast(`恭喜您，胜利了`)
             // this.sendResult(true)
             return
         }
