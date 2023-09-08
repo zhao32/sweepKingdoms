@@ -111,7 +111,7 @@ export default class NewClass extends cc.Component {
             ViewManager.instance.showToast(`请选择要使用的传承符`)
         } else {
             if (this.curNum) {
-                MyProtocols.send_C2SCardAddLevel(DataManager._loginSocket, this.id, this.list, { id: this.curTemplateid, count: 1 }, 1,)
+                MyProtocols.send_C2SCardAddLevel(DataManager._loginSocket, this.id, this.list, [{ id: this.curTemplateid, count: 1 }], 1,)
                 this.node.active = false
             } else {
                 ViewManager.instance.showToast(`您不拥有该传承符，请选择其他，或在商店购买`)
