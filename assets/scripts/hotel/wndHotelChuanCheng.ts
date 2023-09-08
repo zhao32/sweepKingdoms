@@ -10,6 +10,7 @@ import DataManager from "../utils/Manager/DataManager";
 import EnumManager from "../utils/Manager/EnumManager";
 import ResManager from "../utils/Manager/ResManager";
 import ViewManager from "../utils/Manager/ViewManager";
+import chuanchengPanel from "./chuanchengPanel";
 import hotelSJRender from "./hotelSJRender";
 
 const { ccclass, property } = cc._decorator;
@@ -65,6 +66,7 @@ export default class NewClass extends cc.Component {
     myId: number
 
     init(data) {
+        this.node.getChildByName(`chuanchengPanel`).active = false
         NetEventDispatcher.addListener(NetEvent.S2CCardAddLevel, this.S2CCardAddLevel, this)
         this._data = data
         this.myId = data.id
@@ -249,7 +251,8 @@ export default class NewClass extends cc.Component {
                 }
                 objList.push(item)
             }
-            MyProtocols.send_C2SCardAddLevel(DataManager._loginSocket, this.myId, objList, null, 1)
+            // MyProtocols.send_C2SCardAddLevel(DataManager._loginSocket, this.myId, objList, null, 1)
+            this.node.getChildByName(`chuanchengPanel`).getComponent(chuanchengPanel).open(this.myId, objList)
         } else {
             ViewManager.instance.showToast(`请选择吞噬将领`)
         }

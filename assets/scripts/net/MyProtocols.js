@@ -2602,7 +2602,7 @@ var MyProtocols = {
 	},
 
 	/**装备升级 */
-	send_C2SCardAddLevel: function (senderSocket, p_card_id, p_cost_cards, p_cost_items, type) {
+	send_C2SCardAddLevel: function (senderSocket, p_card_id, p_cost_cards, p_cost_items, type,template_id) {
 		var myEncoder = WsEncoder.alloc();
 		myEncoder.writeInt(2009);
 		myEncoder.writeInt(p_card_id);
@@ -2625,6 +2625,7 @@ var MyProtocols = {
 			});
 		}
 		myEncoder.writeInt(type);
+		myEncoder.writeInt(template_id);
 		var rawContent = myEncoder.end();
 		myEncoder.free();
 		senderSocket.sendMessage(rawContent);
