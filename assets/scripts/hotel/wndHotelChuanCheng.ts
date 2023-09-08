@@ -259,6 +259,33 @@ export default class NewClass extends cc.Component {
 
     }
 
+    doEatHandler2() {
+
+        let aptitudes = 0
+        for (let j = 0; j < this._data.aptitude.length; j++) {
+            aptitudes += this._data.aptitude[j]
+        }
+        if (aptitudes == 0) {
+            ViewManager.instance.showToast(`未鉴定将领不可传承`)
+            return
+        }
+
+        if (this.selectIdList.length > 0) {
+            let objList = []
+            for (let i = 0; i < this.selectIdList.length; i++) {
+                let item = {
+                    id: this.selectIdList[i],
+                    count: 1
+                }
+                objList.push(item)
+            }
+            MyProtocols.send_C2SCardAddLevel(DataManager._loginSocket, this.myId, objList, null, 1)
+        } else {
+            ViewManager.instance.showToast(`请选择吞噬将领`)
+        }
+
+    }
+
     S2CCardAddLevel(data) {
         console.log(`传承返回`)
         ViewManager.instance.showToast(`传承成功`)

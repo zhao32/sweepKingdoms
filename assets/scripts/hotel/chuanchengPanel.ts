@@ -101,7 +101,7 @@ export default class NewClass extends cc.Component {
         this.curTemplateid = ``
     }
 
-    btnOk() {
+    btnOk1() {
         if (!this.curTemplateid) {
             ViewManager.instance.showToast(`请选择要使用的传承符`)
         } else {
@@ -113,6 +113,7 @@ export default class NewClass extends cc.Component {
             }
         }
     }
+
 
     btnChanel() {
         this.node.active = false
