@@ -37,13 +37,13 @@ export default class NewClass extends cc.Component {
     /**元宝升级 */
     onUpHandler1() {
         this.onCloseHandler()
-        MyProtocols.send_C2SRuneLevelup(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this._idx, 0)
+        MyProtocols.send_C2SRuneLevelup(DataManager._loginSocket, DataManager.wndHotelDetail._card.id, this._idx, 0)
     }
 
     /**功勋升级 */
     onUpHandler2() {
         this.onCloseHandler()
-        MyProtocols.send_C2SRuneLevelup(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this._idx, 1)
+        MyProtocols.send_C2SRuneLevelup(DataManager._loginSocket, DataManager.wndHotelDetail._card.id, this._idx, 1)
     }
 
     onCloseHandler() {

@@ -178,19 +178,28 @@ export default class NewClass extends cc.Component {
             // MyProtocols.send_C2SMineEnemyDetail(DataManager._loginSocket, cityData.page, cityData.idx, cityData.country)
         } else {
             this.mySoliders = []
-
+            console.log(`curMineDetailData:`+ JSON.stringify(DataManager.curMineDetailData))
             this.myHeroData = DataManager.cardsList[0]
             this.myCards = DataManager.cardsList
 
+            
             this.myContect.removeAllChildren()
-            for (let i = 0; i < DataManager.playData.military_data.length; i++) {
-                if (DataManager.playData.military_data[i] != 0) {
+            // for (let i = 0; i < DataManager.playData.military_data.length; i++) {
+            //     if (DataManager.playData.military_data[i] != 0) {
+            //         let solider = cc.instantiate(this.soliderPfb)
+            //         solider.x = 0
+            //         solider.parent = this.myContect
+            //         solider.getComponent(battleSoliderRender).init(i + 1, DataManager.playData.military_data[i], null, null, this.myHeroData)
+            //         this.mySoliders.push({ arm: i + 1, count: DataManager.playData.military_data[i] })
+            //     }
+            // }
+            for (let i = 0; i < DataManager.curMineDetailData.soliderUse.length; i++) {
                     let solider = cc.instantiate(this.soliderPfb)
                     solider.x = 0
                     solider.parent = this.myContect
-                    solider.getComponent(battleSoliderRender).init(i + 1, DataManager.playData.military_data[i], null, null, this.myHeroData)
-                    this.mySoliders.push({ arm: i + 1, count: DataManager.playData.military_data[i] })
-                }
+                    solider.getComponent(battleSoliderRender).init(DataManager.curMineDetailData.soliderUse[i].arm, DataManager.curMineDetailData.soliderUse[i].count, null, null, this.myHeroData)
+                    this.mySoliders.push( DataManager.curMineDetailData.soliderUse[i])
+                
             }
             if (DataManager.cardsList[0]) {
                 this.node.getChildByName('stageHeroRender').getComponent(battleHeroRender).init(DataManager.cardsList[0])

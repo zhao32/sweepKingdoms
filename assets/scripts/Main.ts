@@ -352,11 +352,10 @@ export default class NewClass extends cc.Component {
                         if (res[i]._name == keys[j]) {
                             DataManager.GameData[keys[j]] = res[i].json
                         }
-                                                //@ts-ignore
-
-                        if(res[i]._name ==`goods` ){
-                            console.log(JSON.stringify(res[i].json))
-                        }
+                        // //@ts-ignore
+                        // if (res[i]._name == `goods`) {
+                        //     console.log(JSON.stringify(res[i].json))
+                        // }
                     }
                 }
             } else {

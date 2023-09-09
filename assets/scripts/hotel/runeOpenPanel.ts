@@ -48,7 +48,7 @@ export default class NewClass extends cc.Component {
 
     onUpHandler() {
         this.onCloseHandler()
-        MyProtocols.send_C2SOpenRuneSlot(DataManager._loginSocket, DataManager.wndHotelDetail._data.id, this._idx)
+        MyProtocols.send_C2SOpenRuneSlot(DataManager._loginSocket, DataManager.wndHotelDetail._card.id, this._idx)
     }
 
     onCloseHandler() {

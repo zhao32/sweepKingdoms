@@ -663,5 +663,13 @@ export default class GameUtil {
         return des
     }
 
+    getSkillDes(card,skill){
+        let des = ``
+        for (let i = 0; i < skill.attribute.length; i++) {
+            let attrStr             
+        }
+
+    }
+
 }
 
