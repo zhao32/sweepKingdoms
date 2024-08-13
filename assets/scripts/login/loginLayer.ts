@@ -157,7 +157,7 @@ export default class NewClass extends cc.Component {
         Logger.log('----------选择服务器---------------')
         console.log(JSON.stringify(retObj))
 
-        let socketUrl = `ws://${this.selectSeverData.ip_addr}:${this.selectSeverData.port}/ws`
+        let socketUrl = `wss://${this.selectSeverData.ip_addr}:${this.selectSeverData.port}/ws`
         DataManager._loginSocket = new LejiSocket(socketUrl);
 
         Logger.log('this.session_id  1:' + DataManager.instance.session_id)
